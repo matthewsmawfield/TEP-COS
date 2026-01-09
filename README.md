@@ -3,7 +3,7 @@
 [![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.18165798.svg)](https://doi.org/10.5281/zenodo.18165798)
 [![License: CC BY 4.0](https://img.shields.io/badge/License-CC%20BY%204.0-lightgrey.svg)](https://creativecommons.org/licenses/by/4.0/)
 
-![TEP-COS: Suppressed Density Scaling](site/public/header-image.webp)
+![TEP-COS: Suppressed Density Scaling](site/public/image3.webp)
 
 **Author:** Matthew Lukin Smawfield  
 **Version:** v0.2 (Caracas)  
