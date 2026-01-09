@@ -11,7 +11,7 @@
 **Status:** Preprint  
 **DOI:** [10.5281/zenodo.18165798](https://doi.org/10.5281/zenodo.18165798)  
 **Website:** [https://mlsmawfield.com/tep/cos/](https://mlsmawfield.com/tep/cos/)  
-**Paper Series:** TEP Series: Paper 11 (Experimental Foundations)
+**Paper Series:** TEP Series: Paper 11 (Astrophysical Evidence)
 
 ## Abstract
 
