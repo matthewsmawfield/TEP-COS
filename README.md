@@ -6,7 +6,7 @@
 ![TEP-COS: Suppressed Density Scaling](site/public/header-image.webp)
 
 **Author:** Matthew Lukin Smawfield  
-**Version:** v0.1 (Caracas)  
+**Version:** v0.2 (Caracas)  
 **Date:** 9 January 2026  
 **Status:** Preprint  
 **DOI:** [10.5281/zenodo.18165799](https://doi.org/10.5281/zenodo.18165799)  
@@ -19,7 +19,7 @@ Gravitational time dilation in General Relativity is verified to 10⁻⁵ precis
 
 This work reports an 8.7σ dynamical anomaly in globular cluster pulsar timing that challenges standard density scaling (4.0σ tension). Pulsar timing provides a spatially-resolved probe of time-dilation effects at the 10⁵–10⁶ M☉ scale. Analysis of 380 millisecond pulsars (182 GC, 198 field) reveals a 0.13 dex *excess* in spin-down magnitude—cluster pulsars spin down *faster* than field controls (95% CI: 0.10–0.16 dex).
 
-We detect a spatially-stratified spin-down anomaly in 182 globular cluster pulsars compared to 198 field controls (p=1.7×10⁻¹⁵). The signal exhibits "Suppressed Density Scaling" (Slope 0.35 vs Newtonian 0.82 fiducial; ~0.72 with exact structures + segregation), saturating in dense cores in a manner consistent with TEP screening but in tension with standard dynamics (4.0σ rejection). Furthermore, we observe a "Mass Segregation Inversion" where binaries—predicted to be dynamically hotter—exhibit significantly lower residuals (-0.31 dex, p=0.01) than isolated pulsars. Complementary analysis of gravitational lensing (COSMOGRAIL) reveals temporal shear of |Γ| ≈ 33 days/decade (2.2σ) in DESJ0408, where the sign inversion between pairs is geometrically consistent with TEP.
+A spatially-stratified spin-down anomaly is detected in 182 globular cluster pulsars compared to 198 field controls (p=1.7×10⁻¹⁵). The signal exhibits "Suppressed Density Scaling" (Slope 0.35 vs Newtonian 0.82 fiducial; ~0.72 with exact structures + segregation), saturating in dense cores in a manner consistent with TEP screening but in tension with standard dynamics (4.0σ rejection). Notably, a "Binary Inversion" is detected where typically noisy binary systems—predicted to be dynamically hotter—exhibit significantly lower residuals (-0.31 dex, p=0.01) than isolated pulsars, challenging standard dynamical heating models. Complementary analysis of gravitational lensing (COSMOGRAIL) places upper limits on cosmological temporal shear (|Γ| ≤ 60 days/decade), which rules out runaway modifications but remains consistent with the screened parameters suggested by pulsars.
 
 The convergence of time-domain evidence (pulsars) with geometric constraints (lensing) presents a coherent "Ladder of Evidence" for potential-dependent modifications to gravitational time flow. The pulsar signal is spatially resolved, field-controlled, and shows suppressed density scaling consistent with the saturation of a gravitational soliton at the screening transition scale predicted by the universal critical density ρc ≈ 20 g/cm³.
 
@@ -43,14 +43,14 @@ The convergence of time-domain evidence (pulsars) with geometric constraints (le
 
 ### Pulsar Timing (Primary Detection)
 - **Cluster Spin-down Excess:** 0.13 dex (95% CI: 0.10–0.16 dex, p=1.7×10⁻¹⁵)
-- **Suppressed Density Scaling:** Observed slope 0.29 vs Newtonian prediction 0.82 (>4σ tension)
+- **Suppressed Density Scaling:** Observed slope 0.35 vs Newtonian prediction 0.82 (>4σ tension)
 - **Field Binary Control:** No difference between binary and isolated pulsars in the field (p=0.70), ruling out intrinsic binary clock errors.
-- **Mass Segregation Inversion:** Binaries in clusters show *lower* residuals (-0.31 dex) than isolated pulsars, contrary to dynamical heating predictions.
+- **Binary Inversion:** Binaries in clusters show *lower* residuals (-0.31 dex) than isolated pulsars, contrary to dynamical heating predictions.
 
 ### Gravitational Lensing (Geometric Evidence)
-- **Temporal Shear Detection:** |Γ| ≈ 33 days/decade (DESJ0408)
-- **Geometric Verification:** Sign inversion geometrically verified by saddle-point slowing.
-- **Consistency:** Results consistent with TEP screening in halo-scale potentials.
+- **Temporal Shear Constraint:** |Γ| ≤ 60 days/decade
+- **Geometric Verification:** Sign inversion geometrically consistent with TEP screening.
+- **Consistency:** Constraints consistent with screened parameters suggested by pulsars.
 
 ## Directory Structure
 
@@ -159,7 +159,7 @@ python3 reproduce_manuscript.py
   year={2026},
   doi={10.5281/zenodo.18165799},
   url={https://doi.org/10.5281/zenodo.18165799},
-  note={Preprint v0.1 (Caracas)}
+  note={Preprint v0.2 (Caracas)}
 }
 ```
 

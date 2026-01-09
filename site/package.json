@@ -1,8 +1,8 @@
 {
   "name": "tep-cos-site",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "description": "The Temporal Equivalence Principle: Suppressed Density Scaling in Globular Cluster Pulsars",
-  "comment": "Package version matches manuscript version v0.1 (Caracas)",
+  "comment": "Package version matches manuscript version v0.2 (Caracas)",
   "main": "index.html",
   "scripts": {
     "dev": "node dev-server.js",

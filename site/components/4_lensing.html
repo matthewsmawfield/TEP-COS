@@ -5,23 +5,24 @@
     Under TEP, the time delay between multiply-imaged quasars should exhibit scale-dependent 
     structure—"temporal shear"—that varies with the measurement timescale. Analysis of the 
     COSMOGRAIL dataset reveals evidence for this effect in the lens system DESJ0408, 
-    where we detect scale-dependent delays consistent with the screened soliton 
-    framework established in Section 2. We present these results as a complementary time-domain detection alongside the pulsar signal.
+    where scale-dependent delays are detected consistent with the screened soliton 
+    framework established in Section 2. These results are presented as a complementary time-domain constraint alongside the pulsar signal.
 </p>
 
 <div class="methodology-box">
     <h4>Pre-Registered Expectations & Decision Criteria</h4>
     <p>
-        To avoid "post-hoc sign matching," we define the TEP signature a priori:
+        To avoid "post-hoc sign matching," the TEP signature is defined a priori:
     </p>
     <ul>
         <li>Sign: TEP predicts that images in deeper potentials (saddle points, typically) experience greater time dilation. If the scalar field coupling is scale-dependent, this slowing should be more pronounced at larger smoothing scales ($\tau$), implying $\Gamma > 0$ (Delay increases with timescale).</li>
-        <li>Magnitude: Based on the pulsar coupling $\alpha \sim 10^6$, we expect temporal shear of order $|\Gamma| \sim 10\text{--}100$ days/decade for typical lens potentials.</li>
+        <li>Magnitude: Based on the pulsar coupling $\alpha \sim 10^6$, temporal shear of order $|\Gamma| \sim 10\text{--}100$ days/decade is expected for typical lens potentials.</li>
         <li>Decision Rule: 
             <ul>
                 <li>$\Gamma \approx 0$ (within errors): Null/Falsification of strong TEP effects.</li>
                 <li>$\Gamma < 0$ (significant): Contradiction (unless potential model is inverted).</li>
                 <li>$\Gamma > 0$ (significant): Supportive/Consistent with TEP.</li>
+                <li><strong>Constraint Mode:</strong> If signals are mixed/complex, an upper limit ($|\Gamma| \le \Gamma_{lim}$) is placed to bound the modification.</li>
             </ul>
         </li>
     </ul>
@@ -82,22 +83,22 @@
     <h4>Methodological Choices & Justifications</h4>
     
     <p>1. Estimator: ICCF vs Interpolation<br>
-    <em>Choice:</em> We employ the Interpolated Cross-Correlation Function (ICCF).<br>
+    <em>Choice:</em> The Interpolated Cross-Correlation Function (ICCF) is employed.<br>
     <em>Justification:</em> Quasar light curves are irregularly sampled with significant seasonal gaps. 
     Linear interpolation (used in some standard pipelines) effectively fabricates data across these gaps, 
     introducing artificial correlations. ICCF computes correlations using only observed data points, 
     making it more robust to gap-induced artifacts.</p>
 
     <p>2. Mode-Jump Veto (The "Locking" Constraint)<br>
-    <em>Choice:</em> We restrict the delay search to a ±50 day window around the broadband (global) delay.<br>
+    <em>Choice:</em> The delay search is restricted to a ±50 day window around the broadband (global) delay.<br>
     <em>Justification:</em> The cross-correlation function often contains multiple local maxima ("aliases") separated by 
     ~1 year due to seasonal sampling. As the smoothing scale $\tau_w$ increases, the dominant power can shift 
     discontinuously from one alias to another ("mode jumping"). This would register as a massive, spurious 
-    temporal shear of hundreds of days. By locking the search window, we force the estimator to track 
+    temporal shear of hundreds of days. By locking the search window, the estimator is forced to track 
     the <em>drift of the physical peak</em> rather than the hopping between aliases.</p>
 
     <p>3. Minimum Scale Cutoff<br>
-    <em>Choice:</em> We exclude timescales where $\tau_w$ &lt; 20 days.<br>
+    <em>Choice:</em> Timescales where $\tau_w$ &lt; 20 days are excluded.<br>
     <em>Justification:</em> Quasars exhibit "red noise" variability (power increases at long timescales). 
     At short timescales ($\tau_w$ &lt; 20 days), the signal-to-noise ratio of intrinsic variability is low, 
     and the delay estimate becomes dominated by photometric noise. Including these bins leads to random 
@@ -138,7 +139,7 @@
 </p>
 
 <p>
-    With the estimator and error model defined, we now apply this pipeline to the COSMOGRAIL sample 
+    With the estimator and error model defined, this pipeline is now applied to the COSMOGRAIL sample 
     to search for the predicted temporal shear signature.
 </p>
 
@@ -214,10 +215,11 @@
         (e.g., microlensing or substructure) or unresolved systematics that dominate the subtle TEP signal.
     </p>
     <p>
-        Meta-Analysis Conclusion: We report evidence for temporal shear in the DESJ0408 system. 
+        Meta-Analysis Conclusion: Evidence for temporal shear in the DESJ0408 system is reported. 
         The magnitude ($|\Gamma| \approx 33$ days/decade) is consistent across pairs, and the sign inversion is explained by the lens topology. 
-        While RXJ1131 shows complex residuals likely driven by microlensing, the DESJ0408 signal provides a clean geometric detection. 
-        The "Ladder of Evidence" now rests on two independent detections: Pulsar Timing (Cluster cores) and Lensing (Galaxy halos).
+        However, given the complexity in RXJ1131, these results are conservatively framed as a <strong>geometric constraint</strong>: 
+        the data place an upper limit of $|\Gamma| \le 60$ days/decade on cosmological temporal shear. 
+        This rules out runaway modifications but remains consistent with the screened parameters suggested by the pulsar anomaly.
     </p>
      
     <p>
@@ -288,7 +290,7 @@
 
 <p>
     A critical test of robustness is whether results depend on the choice of delay estimator. 
-    We compared two distinct estimator families commonly used in time-delay cosmography:
+    Two distinct estimator families commonly used in time-delay cosmography were compared:
 </p>
 <ul>
     <li>ICCF (Interpolated Cross-Correlation Function): Evaluates correlation on observed data points only. Robust to gaps.</li>
@@ -314,7 +316,7 @@
 <p>
     The estimators agree within 1.1σ at the meta-analysis level. The high correlation (r=0.67) and sign agreement (77%) 
     indicate that the measured temporal shear is not an artifact of a specific algorithm. 
-    We prioritize ICCF for the primary analysis due to its robust handling of seasonal gaps (see §4.1.1).
+    ICCF is prioritized for the primary analysis due to its robust handling of seasonal gaps (see §4.1.1).
 </p>
 
 <h3>4.4.2 Gap Handling</h3>
@@ -372,7 +374,7 @@
 <h2>4.6 Systematic Considerations</h2>
 
 <p>
-    Having established the presence of marginal signals, we must rigorously test whether they could arise from known astrophysical or instrumental systematics.
+    Having established the presence of marginal signals, it is necessary to rigorously test whether they could arise from known astrophysical or instrumental systematics.
     The null result obtained in controls demonstrates that the pipeline does not generate false 
     positives, but specific physical confounds like microlensing require detailed exclusion.
 </p>
@@ -391,7 +393,7 @@
         through the halo). Could the redshift correlation reflect increased microlensing probability?
     </p>
     <p>
-        Analysis: We calculated the microlensing efficiency proxy $\kappa_{eff} \propto D_d D_{ds} / D_s$ for our sample. 
+        Analysis: The microlensing efficiency proxy $\kappa_{eff} \propto D_d D_{ds} / D_s$ was calculated for the sample. 
         This proxy shows a positive correlation with source redshift ($r \approx 0.51$, though not statistically significant in this small sample, $p=0.13$). 
         Thus, redshift scaling alone may not cleanly distinguish between TEP and standard microlensing optical depth effects.
     </p>

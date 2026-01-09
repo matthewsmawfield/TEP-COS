@@ -30,9 +30,9 @@
     <p>
         Standard "cluster acceleration" is a kinematic effect: a changing Doppler shift ($\dot{P} \propto a_{\ell}/c$).
         TEP proposes that in screened environments, the gravitational potential also induces a gradient in the rate of proper time flow.
-        Crucially, this is distinct from semantic re-labeling; TEP predicts an enhancement of the effective signal magnitude by a factor $\alpha \sim 10^6$.
+        Importantly, this is distinct from semantic re-labeling; TEP predicts an enhancement of the effective signal magnitude by a factor $\alpha \sim 10^6$.
         The observed signal is too large (by ~0.13 dex) and scales too weakly with density to be explained by standard kinematic acceleration alone (see Section 3.4).
-        Thus, we are not "interpreting acceleration as dilation," but detecting an <em>excess</em> signal that correlates with potential depth.
+        Thus, the analysis is not "interpreting acceleration as dilation," but detecting an <em>excess</em> signal that correlates with potential depth.
     </p>
 </div>
 
@@ -48,11 +48,11 @@
     <h4>Methodological Choice: Sample Selection</h4>
     
     <p>Why Millisecond Pulsars (MSPs)?<br>
-    We restrict the analysis to pulsars with $P &lt; 30$ ms. 
+    The analysis is restricted to pulsars with $P &lt; 30$ ms. 
     <em>Reasoning:</em> MSPs are rotationally stable on decadal timescales, acting as near-ideal clocks. 
     Young, slow pulsars ($P &gt; 100$ ms) suffer from significant "timing noise" (glitches, red noise) 
     driven by internal neutron star physics. Including them would introduce intrinsic scatter 
-    orders of magnitude larger than the environmental signal we seek to measure.</p>
+    orders of magnitude larger than the environmental signal sought to be measured.</p>
 
     <p>Why Freire + ATNF?<br>
     <em>Reasoning:</em> The Freire catalog is the standard reference for verifying cluster associations, 
@@ -63,7 +63,7 @@
 <div class="methodology-box">
     <h4>Sample Definition and Flow</h4>
     <p>
-        To ensure clarity, we define three distinct samples used in different analyses:
+        To ensure clarity, three distinct samples are defined for different analyses:
     </p>
     <table class="data-table">
         <thead>
@@ -127,7 +127,7 @@
 <p>
     Observable Definition: The observed spin-down rates $\dot{P}_{\text{obs}}$ are taken directly from the catalogs. 
     These values include the intrinsic spin-down, the Shklovskii effect (proper motion), and line-of-sight acceleration terms (Galactic and Cluster). 
-    We do not correct for the Shklovskii effect individually in the primary comparison, as it is a random positive contribution 
+    The Shklovskii effect is not corrected for individually in the primary comparison, as it is a random positive contribution 
     in the field and sub-dominant to the cluster potential effect ($\sim 10^{-16}$ s/s vs $\sim 10^{-14}$ s/s) in the dense cores of interest.
 </p>
 
@@ -167,7 +167,7 @@
 
     <h3>After Population Controls</h3>
     <p>
-        To isolate environmental effects from intrinsic population differences, we apply increasingly stringent controls:
+        To isolate environmental effects from intrinsic population differences, increasingly stringent controls are applied:
     </p>
     <ul>
         <li>Period-matched: 0.86 dex difference persists</li>
@@ -188,7 +188,7 @@
         <ol>
             <li>Metric Space: Matching is performed in the 2D plane of $(\log_{10} P, \log_{10} B_{surf})$.</li>
             <li>Normalization: Both dimensions are standardized (z-scored) to unit variance to prevent units from weighting the distance metric.</li>
-            <li>Algorithm: For each cluster pulsar, we select the $k=5$ nearest neighbors from the field population using Euclidean distance in the standardized space.</li>
+            <li>Algorithm: For each cluster pulsar, the $k=5$ nearest neighbors are selected from the field population using Euclidean distance in the standardized space.</li>
             <li>Residual Calculation: The controlled residual is defined as $\Delta = \log_{10}|\dot{P}|_{GC} - \frac{1}{k}\sum_{i=1}^k \log_{10}|\dot{P}|_{field,i}$.</li>
         </ol>
         <p>
@@ -204,7 +204,7 @@
             reshape residual structure.
         </p>
         <p>
-            <em>Sensitivity test:</em> We repeated the analysis using period-only matching ($\log_{10} P$ alone). 
+            <em>Sensitivity test:</em> The analysis was repeated using period-only matching ($\log_{10} P$ alone). 
             The residual offset increases slightly (from 0.13 to 0.18 dex) but remains highly significant 
             ($p < 10^{-10}$). The suppressed density scaling result (slope 0.29 vs 0.82) is unchanged. 
             This confirms the signal is robust to the choice of matching variables and is not an artifact 
@@ -262,10 +262,10 @@
     </p>
     
     <p>Methodological Justification:<br>
-    We define the "GR Noise Floor" not as an arbitrary threshold, but as the <em>maximum possible variance bias</em> 
+    The "GR Noise Floor" is defined not as an arbitrary threshold, but as the <em>maximum possible variance bias</em> 
     allowed by Newtonian dynamics. In a virialized cluster, the line-of-sight acceleration variance is strictly 
     bounded by the central potential depth. By calculating the bias induced by this maximum variance 
-    (via Jensen's inequality), we establish a falsification boundary: any signal significantly exceeding this floor 
+    (via Jensen's inequality), a falsification boundary is established: any signal significantly exceeding this floor 
     is difficult to reconcile with "missing dynamical complexity" (e.g., binaries, orbits) because it violates the virial theorem.</p>
 
     <p>
@@ -279,7 +279,7 @@
 <div class="methodology-box">
     <h4>Forward Generative Model: Newtonian Baseline Specification</h4>
     <p>
-        To rigorously test the ρ² scaling claim, we specify an explicit forward model that generates the 
+        To rigorously test the ρ² scaling claim, an explicit forward model is specified that generates the 
         expected distribution of log|Ṗ| residuals under standard Newtonian dynamics:
     </p>
     <ol>
@@ -300,7 +300,7 @@
     <h4>Suppressed Density Scaling: Residual vs Cluster Density</h4>
     
     <p>Methodological Justification:<br>
-    We test the correlation between the spin-down residual and the cluster central density $\rho_{core}$. 
+    The correlation between the spin-down residual and the cluster central density $\rho_{core}$ is tested. 
     <em>Why this variable?</em> This is the critical discriminator between dynamical noise and TEP. 
     Standard dynamical effects (scattering, acceleration bias) scale as the square of the density ($\rho^2$) 
     because they depend on the rate of stellar encounters or the depth of the local potential well <em>generated by</em> that density. 
@@ -308,7 +308,7 @@
     A deviation from $\rho^2$ scaling therefore presents a challenge to the standard dynamical explanation.</p>
 
     <p>
-        Slope conventions: Throughout this section, we distinguish between the raw scaling of cluster mean residuals (Slope $\approx 0.29$ dex/dex, as shown in Figure 3.1) and the rigorous scaling derived from a hierarchical mixed-effects model (Slope $\approx 0.35$ dex/dex, see below). The Newtonian expectation depends on the baseline dynamical model: a fiducial prediction gives a slope of 0.82 dex/dex, while the fully structure-parameterized baseline with strong mass segregation remains steep (\(~0.72\) dex/dex). The key result is that the observed scaling is significantly suppressed relative to all Newtonian baselines, regardless of the statistical weighting method.
+        Slope conventions: Throughout this section, a distinction is made between the raw scaling of cluster mean residuals (Slope $\approx 0.29$ dex/dex, as shown in Figure 3.1) and the rigorous scaling derived from a hierarchical mixed-effects model (Slope $\approx 0.35$ dex/dex, see below). The Newtonian expectation depends on the baseline dynamical model: a fiducial prediction gives a slope of 0.82 dex/dex, while the fully structure-parameterized baseline with strong mass segregation remains steep (\(~0.72\) dex/dex). The key result is that the observed scaling is significantly suppressed relative to all Newtonian baselines, regardless of the statistical weighting method.
     </p>
 
     <p>
@@ -373,8 +373,8 @@
     <p>Critique: Dense clusters often have smaller core radii ($R_c$). Since acceleration variance scales as $\sigma_a^2 \propto \rho_c^2 R_c^2$, 
     could the inverse correlation between $\rho_c$ and $R_c$ artificially flatten the Newtonian prediction?</p>
     
-    <p>Analysis: We explicitly tested this by re-running the Newtonian baseline using the exact observed structural parameters ($M, R_c$) for every cluster in the sample (Harris 2010/Baumgardt 2018), 
-    rather than a generic scaling law. We also included mass segregation effects (concentrating pulsars by factor $\alpha=1.5\text{--}2.5$).</p>
+    <p>Analysis: This was explicitly tested by re-running the Newtonian baseline using the exact observed structural parameters ($M, R_c$) for every cluster in the sample (Harris 2010/Baumgardt 2018), 
+    rather than a generic scaling law. Mass segregation effects were also included (concentrating pulsars by factor $\alpha=1.5\text{--}2.5$).</p>
     
     <p>Result: Even with exact structures and strong mass segregation, the Newtonian simulation predicts a steep slope (~0.72 dex/dex). 
     The observed suppression (0.35) is not a structural artifact; it is a dynamical anomaly that challenges standard scaling even when $R_c$ variations are fully modeled.</p>
@@ -385,7 +385,7 @@
 <p>
     Early iterations of this analysis relied on analytic Mean-Field models (King/Plummer profiles) to estimate the acceleration baseline. 
     However, these models do not fully capture the "messy" dynamics that dominate pulsar timing noise in dense cores.
-    To provide a rigorous "High-Fidelity" test, we upgraded the simulation to compare observed residuals directly against 
+    To provide a rigorous "High-Fidelity" test, the simulation was upgraded to compare observed residuals directly against 
     synthetic pulsar populations derived from Cluster Monte Carlo (CMC) models (Kremer et al. 2020) and direct N-body integration.
 </p>
 
@@ -496,7 +496,7 @@
         with the cluster potential derived from King models. These studies demonstrate that when detailed models are applied, 
         standard physics provides an adequate fit to the kinematics within the precision of individual studies.</p>
         
-        <p>Tension: In contrast, our cross-cluster analysis reveals a systematic discrepancy in the <em>scaling</em> behavior. 
+        <p>Tension: In contrast, the cross-cluster analysis reveals a systematic discrepancy in the <em>scaling</em> behavior. 
         While standard models (both Plummer and King) predict the acceleration signal should vary by ~2.8 dex across the density range, 
         the observed residuals vary by only 0.26 dex. This "suppressed density scaling" (slope 0.35 vs 0.82 fiducial) suggests that while standard 
         dynamics works well at a single operating point, it does not reproduce the saturation behavior observed across the full population.</p>
@@ -625,7 +625,7 @@
 <h3>3.6.1 Sensitivity Analysis: Systematics Required to Flatten Slope</h3>
 <p>
     Could hidden systematics (e.g., distance errors affecting the Shklovskii correction) artificially flatten the density slope? 
-    We performed a Monte Carlo sensitivity analysis to quantify the magnitude of error required to reduce the Newtonian slope (0.82) to the observed mixed-model scaling (0.35).
+    A Monte Carlo sensitivity analysis was performed to quantify the magnitude of error required to reduce the Newtonian slope (0.82) to the observed mixed-model scaling (0.35).
     (Note: Using the rigorous slope 0.35 instead of the raw 0.29 makes this test conservative, as it requires smaller, more plausible errors to explain the discrepancy).
 </p>
 <div class="results-box">
@@ -653,8 +653,8 @@
 
 <h3>3.6.3 Summary: Quantitative Exclusion of Newtonian Systematics</h3>
 <p>
-    To address the identifiability of the signal against incomplete dynamical modeling, we present a 
-    "Systematics Exclusion Matrix" comparing the specific signatures of potential Newtonian confounds 
+    To address the identifiability of the signal against incomplete dynamical modeling, a 
+    "Systematics Exclusion Matrix" is presented comparing the specific signatures of potential Newtonian confounds 
     against the observed data.
 </p>
 
@@ -716,7 +716,7 @@
 <p>
     The "Mass Segregation Inversion" is particularly diagnostic: standard dynamics predicts heavier binaries should be dynamically "hotter" 
     (deeper in potential, higher acceleration variance), whereas TEP predicts they should be "cooler" (screened by local binary potential). 
-    The observation of the latter (-0.31 dex suppression for binaries) specifically falsifies the class of dynamical heating models.
+    The observation of the latter (-0.33 dex suppression for binaries) specifically falsifies the class of dynamical heating models.
 </p>
 
 <h2>3.7 Binary vs Isolated MSPs Within GCs</h2>
@@ -915,8 +915,8 @@
 <p>
     Interpretation: The fact that binaries and isolated pulsars share the same spatial distribution but exhibit 
     significantly different spin-down rates (-0.31 dex global difference) disfavors the "different dynamical sampling" hypothesis.
-    If the difference were purely kinematic (due to one population being deeper in the potential), we would see a spatial separation. 
-    Instead, we see a "Parameter Separation" at the same location. This supports the screening hypothesis: binaries are "shielded" 
+    If the difference were purely kinematic (due to one population being deeper in the potential), a spatial separation would be observed. 
+    Instead, a "Parameter Separation" is observed at the same location. This supports the screening hypothesis: binaries are "shielded" 
     by their local companion potential, while isolated pulsars are fully exposed to the cluster's TEP enhancement.
 </p>
 

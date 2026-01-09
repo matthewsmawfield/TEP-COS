@@ -16,7 +16,7 @@ KEY_LOCATION="https://mlsmawfield.com/tep/cos/${KEY}.txt"
 # URLs to index
 URL_TO_INDEX="https://mlsmawfield.com/tep/cos/"
 # Note: Update PDF filename when available
-PDF_TO_INDEX="https://mlsmawfield.com/tep/cos/public/docs/Smawfield_2026_TEP-COS_v0.1_Caracas.pdf"
+PDF_TO_INDEX="https://mlsmawfield.com/tep/cos/public/docs/Smawfield_2026_TEP-COS_v0.2_Caracas.pdf"
 
 # JSON Payload
 JSON_PAYLOAD=$(cat <<EOF
