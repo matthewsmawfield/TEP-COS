@@ -1,0 +1,55 @@
+{
+  "correlation_r": 0.9739857171752081,
+  "correlation_p": 0.0010063118755906347,
+  "slope": 228.51520453371307,
+  "data": [
+    {
+      "z_lens": 0.597,
+      "z_source": 2.375,
+      "gamma_obs": 33.5,
+      "sigma_obs": 12.0,
+      "kappa_eff": 865.9084391364129,
+      "D_ratio": 0.6112864280597505
+    },
+    {
+      "z_lens": 0.311,
+      "z_source": 1.722,
+      "gamma_obs": 5.0,
+      "sigma_obs": 10.0,
+      "kappa_eff": 717.5167602598424,
+      "D_ratio": 0.7387669271284245
+    },
+    {
+      "z_lens": 0.745,
+      "z_source": 1.789,
+      "gamma_obs": 20.0,
+      "sigma_obs": 10.0,
+      "kappa_eff": 708.7003460619549,
+      "D_ratio": 0.4561981662373445
+    },
+    {
+      "z_lens": 0.661,
+      "z_source": 1.662,
+      "gamma_obs": -5.1,
+      "sigma_obs": 5.0,
+      "kappa_eff": 717.4852626553347,
+      "D_ratio": 0.4842190762077342
+    },
+    {
+      "z_lens": 0.454,
+      "z_source": 1.693,
+      "gamma_obs": 0.0,
+      "sigma_obs": 5.0,
+      "kappa_eff": 774.163492975637,
+      "D_ratio": 0.6292651547550019
+    },
+    {
+      "z_lens": 0.295,
+      "z_source": 0.658,
+      "gamma_obs": 0.0,
+      "sigma_obs": 5.0,
+      "kappa_eff": 473.30694726337157,
+      "D_ratio": 0.5053469157031503
+    }
+  ]
+}

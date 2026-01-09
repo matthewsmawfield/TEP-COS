@@ -1,0 +1,311 @@
+{
+  "achromaticity": {
+    "status": "PARTIAL",
+    "primary_systems_status": "Single-band monitoring only (COSMOGRAIL public releases)",
+    "primary_systems": [
+      "DESJ0408",
+      "PG1115",
+      "J1206"
+    ],
+    "recommendation": "Obtain multi-band, image-resolved monitoring light curves for DESJ0408, PG1115, J1206.",
+    "multiband_auxiliary": {
+      "available": [
+        "HE0435_Sorgenfrei2025_JAA703A250",
+        "HE1104_Blackburne2015_JApJ798_95",
+        "Q2237_Goicoechea2020_JAA637A89",
+        "Q2237_Vakulik2004_JAA420_447"
+      ],
+      "A-B_summary": {
+        "Q2237_Goicoechea2020_JAA637A89": {
+          "delta_gamma": 57.44927731681778,
+          "delta_uncertainty": 168.80619534148715,
+          "delta_sigma": 0.3403268298334699
+        },
+        "HE0435_Sorgenfrei2025_JAA703A250": {
+          "delta_gamma": 5.50054100748747,
+          "delta_uncertainty": 59.00048203417474,
+          "delta_sigma": 0.09322874691602354
+        },
+        "HE1104_Blackburne2015_JApJ798_95": {
+          "delta_gamma": 2.295017336603447,
+          "delta_uncertainty": 160.9791851777909,
+          "delta_sigma": 0.014256609226023549
+        },
+        "Q2237_Vakulik2004_JAA420_447": {
+          "delta_gamma": 7.33594784404158e-15,
+          "delta_uncertainty": 16.246699889421993,
+          "delta_sigma": 4.515346435873981e-16
+        }
+      },
+      "outputs_dir": "/Users/matthewsmawfield/www/TEP-COS/results/outputs"
+    },
+    "tdcosmo_public_repo": {
+      "repo": "https://github.com/TDCOSMO/TD_data_public",
+      "note": "Contains notebooks and mock imaging artifacts; no band-tagged monitoring light-curve time series for DESJ0408/PG1115/J1206 were found there."
+    }
+  },
+  "geometric": {
+    "Einstein Radius": {
+      "r": -0.439967749382445,
+      "p": 0.04594884423424891,
+      "status": "SIGNIFICANT"
+    },
+    "Image Separation": {
+      "r": -0.4578846476706736,
+      "p": 0.0368625135825555,
+      "status": "SIGNIFICANT"
+    },
+    "Lens Ellipticity": {
+      "r": -0.028879860227624593,
+      "p": 0.9011049405147481,
+      "status": "NULL"
+    },
+    "Lens Redshift": {
+      "r": 0.40146461363195174,
+      "p": 0.07125468633598551,
+      "status": "MARGINAL"
+    },
+    "Source Redshift": {
+      "r": 0.40130746004741563,
+      "p": 0.07137586293072758,
+      "status": "MARGINAL"
+    }
+  },
+  "injection_recovery": {
+    "-100": {
+      "recovered": [
+        -100,
+        -100,
+        -103,
+        -102,
+        -103,
+        -101,
+        -100,
+        -100,
+        -99,
+        -100,
+        -102,
+        -102,
+        -100,
+        -99,
+        -99,
+        -103,
+        -102,
+        -102,
+        -103,
+        -100,
+        -100,
+        -105,
+        -109,
+        -104,
+        -101,
+        -101,
+        -101,
+        -101,
+        -99,
+        -100
+      ],
+      "bias": -1.36666666666666,
+      "scatter": [],
+      "mean": -101.36666666666666,
+      "std": 2.0893911925619757,
+      "n_valid": 30
+    },
+    "-50": {
+      "recovered": [
+        -49,
+        -49,
+        -51,
+        -50,
+        -50,
+        -50,
+        -50,
+        -51,
+        -52,
+        -49,
+        -50,
+        -51,
+        -50,
+        -51,
+        -50,
+        -51,
+        -50,
+        -50,
+        -50,
+        -50,
+        -51,
+        -51,
+        -51,
+        -50,
+        -51,
+        -52,
+        -50,
+        -51,
+        -51,
+        -50
+      ],
+      "bias": -0.3999999999999986,
+      "scatter": [],
+      "mean": -50.4,
+      "std": 0.7571877794400367,
+      "n_valid": 30
+    },
+    "0": {
+      "recovered": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "bias": 0.0,
+      "scatter": [],
+      "mean": 0.0,
+      "std": 0.0,
+      "n_valid": 30
+    },
+    "50": {
+      "recovered": [
+        49,
+        51,
+        50,
+        50,
+        50,
+        51,
+        50,
+        50,
+        51,
+        50,
+        50,
+        51,
+        50,
+        49,
+        49,
+        50,
+        52,
+        52,
+        49,
+        51,
+        51,
+        50,
+        51,
+        53,
+        52,
+        50,
+        50,
+        49,
+        49,
+        48
+      ],
+      "bias": 0.2666666666666657,
+      "scatter": [],
+      "mean": 50.266666666666666,
+      "std": 1.0934146311237818,
+      "n_valid": 30
+    },
+    "100": {
+      "recovered": [
+        101,
+        103,
+        104,
+        107,
+        101,
+        119,
+        106,
+        101,
+        101,
+        99,
+        101,
+        104,
+        100,
+        103,
+        100,
+        102,
+        101,
+        101,
+        104,
+        105,
+        101,
+        109,
+        104,
+        101,
+        104,
+        103,
+        101,
+        101,
+        100,
+        102
+      ],
+      "bias": 2.9666666666666686,
+      "scatter": [],
+      "mean": 102.96666666666667,
+      "std": 3.7191695608323947,
+      "n_valid": 30
+    },
+    "summary": {
+      "mean_bias": 0.2933333333333351,
+      "mean_scatter": 1.5318326327916378,
+      "bias_status": "UNBIASED",
+      "scatter_status": "PRECISE"
+    }
+  },
+  "robustness": {
+    "detection_rate": 0.0,
+    "null_rate": 0.9285714285714286,
+    "r2_significant": NaN,
+    "r2_null": 0.48527597577309617
+  },
+  "scrambled_residuals": {
+    "system": "DESJ0408",
+    "pair": "A-B",
+    "gamma_orig": -32.44852490584009,
+    "sigma_orig": 14.753082719091566,
+    "z_orig": 2.199440315199299,
+    "n_boot_orig": 200,
+    "gamma_scrambled": 18.241613862807338,
+    "sigma_scrambled": 6.612116148661305,
+    "z_scrambled": 2.758816308225401,
+    "n_boot_scrambled": 200,
+    "status": "FAILED"
+  },
+  "season_shuffle_null": {
+    "target_system": "DESJ0408",
+    "pair": "B-D",
+    "z_orig": 2.11714963884771,
+    "z_shuffle": 1.1843342972233604,
+    "gamma_orig": 34.537011500052735,
+    "gamma_shuffle": 42.33242739605819,
+    "status": "FAILED"
+  },
+  "microlensing_injection": {
+    "scenario": "Null + Microlensing",
+    "gamma_ml": 18.673026496834183,
+    "sigma_ml": 3.5688489208215044,
+    "status": "PASSED"
+  }
+}

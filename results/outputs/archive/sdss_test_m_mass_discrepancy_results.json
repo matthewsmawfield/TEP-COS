@@ -1,0 +1,53 @@
+{
+  "n_galaxies": 10000,
+  "fsps_pca_discrepancy": {
+    "r": -0.4028851265022737,
+    "p": 0.0,
+    "mean_diff": -0.05027191874361893
+  },
+  "fsps_port_discrepancy": {
+    "r": -0.46022347531350283,
+    "p": 0.0,
+    "mean_diff": 0.40105731319712096
+  },
+  "virial_slope": {
+    "slope": 0.7599813228915037,
+    "slope_err": 0.008395654959649144,
+    "deviation_from_unity": -0.24001867710849634
+  },
+  "binned_by_sigma": [
+    {
+      "sigma_range": "50-100",
+      "mean_diff": 0.04648888452357909,
+      "stderr": 0.003665268576102247,
+      "n": 2647
+    },
+    {
+      "sigma_range": "100-150",
+      "mean_diff": -0.01060754100730612,
+      "stderr": 0.0036602727800911917,
+      "n": 2911
+    },
+    {
+      "sigma_range": "150-200",
+      "mean_diff": -0.1114892440600953,
+      "stderr": 0.003295243407288759,
+      "n": 2407
+    },
+    {
+      "sigma_range": "200-300",
+      "mean_diff": -0.15951820041146378,
+      "stderr": 0.003555638871468995,
+      "n": 1943
+    },
+    {
+      "sigma_range": "300-400",
+      "mean_diff": -0.1804156418012119,
+      "stderr": 0.01313630129601631,
+      "n": 92
+    }
+  ],
+  "verdict": "Signal",
+  "interpretation": "Mass discrepancy decreases with \u03c3. High-\u03c3 galaxies show more agreement between methods.",
+  "figure_path": "/Users/matthewsmawfield/www/TEP-COS/results/figures/test_m_mass_discrepancy.png"
+}

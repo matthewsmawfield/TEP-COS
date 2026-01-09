@@ -1,0 +1,104 @@
+======================================================================
+SN Ia STRETCH vs HOST σ: TEP TIME-DOMAIN TEST
+======================================================================
+Started: 2026-01-09T02:19:16.651741
+
+TEP Prediction: r(x1, σ_host) > 0
+  SNe in deep potential wells should show stretched light curves
+  because proper time flows slower.
+
+Loading cached Pantheon+ data from /Users/matthewsmawfield/www/TEP-COS/scripts/steps/../../data/supernovae/pantheon_plus_parsed.csv
+  Loaded 1543 supernovae
+
+--- Attempting SDSS velocity dispersion query ---
+Querying SDSS for σ near 1543 SN positions...
+  (This may take a few minutes...)
+    Queried 50/1543, found 0 matches
+    Queried 100/1543, found 0 matches
+    Queried 150/1543, found 0 matches
+    Queried 200/1543, found 0 matches
+    Queried 250/1543, found 0 matches
+    Queried 300/1543, found 0 matches
+    Queried 350/1543, found 0 matches
+    Queried 400/1543, found 0 matches
+    Queried 450/1543, found 0 matches
+    Queried 500/1543, found 0 matches
+    Queried 550/1543, found 0 matches
+    Queried 600/1543, found 0 matches
+    Queried 650/1543, found 0 matches
+    Queried 700/1543, found 0 matches
+    Queried 750/1543, found 0 matches
+    Queried 800/1543, found 0 matches
+    Queried 850/1543, found 0 matches
+    Queried 900/1543, found 0 matches
+    Queried 950/1543, found 0 matches
+    Queried 1000/1543, found 0 matches
+    Queried 1050/1543, found 0 matches
+    Queried 1100/1543, found 0 matches
+    Queried 1150/1543, found 0 matches
+    Queried 1200/1543, found 0 matches
+    Queried 1250/1543, found 0 matches
+    Queried 1300/1543, found 0 matches
+    Queried 1350/1543, found 0 matches
+    Queried 1400/1543, found 0 matches
+    Queried 1450/1543, found 0 matches
+    Queried 1500/1543, found 0 matches
+  No SDSS matches found
+
+*** INSUFFICIENT SDSS MATCHES ***
+Falling back to Faber-Jackson σ estimate from host mass...
+  Generated σ estimates for 1543 SNe
+
+======================================================================
+STRETCH vs HOST VELOCITY DISPERSION
+======================================================================
+
+Sample after quality cuts: 1285
+
+Pearson:  r = -0.3254, p = 4.48e-33
+Spearman: ρ = -0.3165, p = 2.76e-31
+
+Binned analysis (σ quartiles):
+  σ = 50-82: ⟨x1⟩ = +0.330 ± 0.043 (n=321)
+  σ = 82-117: ⟨x1⟩ = +0.066 ± 0.050 (n=321)
+  σ = 117-158: ⟨x1⟩ = -0.268 ± 0.054 (n=321)
+  σ = 158-354: ⟨x1⟩ = -0.500 ± 0.061 (n=322)
+
+Linear fit: x1 = -1.801 × log(σ) + 3.612
+  Slope uncertainty: 0.146
+
+--------------------------------------------------
+INTERPRETATION
+--------------------------------------------------
+
+  Verdict: CONTRADICTED
+  Higher σ → compressed light curves (OPPOSITE to TEP)
+
+Partial correlation (controlling for host mass):
+  r_partial = -0.0487, p = 8.10e-02
+
+======================================================================
+HOST MASS STEP ANALYSIS
+======================================================================
+
+Correlation (x1 vs HOST_LOGMASS): r = -0.2215, p = 1.32e-18
+
+x1 step (high - low mass): Δx1 = -0.5752
+  Low mass (n=725):  ⟨x1⟩ = +0.258
+  High mass (n=818): ⟨x1⟩ = -0.317
+
+  → Standard physics: Older progenitors in massive hosts
+
+Figure saved: /Users/matthewsmawfield/www/TEP-COS/scripts/steps/../../results/figures/step_7_0_sn_ia_stretch_sigma.png
+
+Results saved: /Users/matthewsmawfield/www/TEP-COS/scripts/steps/../../results/outputs/step_7_0_sn_ia_stretch_sigma.json
+
+======================================================================
+FINAL SUMMARY
+======================================================================
+
+Sample: 1285 SNe with host σ
+Correlation: r = -0.3254 (p = 4.48e-33)
+Verdict: CONTRADICTED
+
+✗ Standard physics dominates (progenitor effects)

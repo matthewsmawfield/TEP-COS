@@ -1,0 +1,8 @@
+{
+    "model_a_ols_slope": 0.2935892946261909,
+    "model_a_ols_error": 0.11581730538828926,
+    "model_b_mixed_slope": 0.34860013943151097,
+    "model_b_mixed_error": 0.0925947157990769,
+    "model_b_mixed_p": 0.00016668565867308455,
+    "rejection_sigma": 4.011026518774536
+}

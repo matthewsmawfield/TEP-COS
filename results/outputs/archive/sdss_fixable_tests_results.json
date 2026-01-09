@@ -1,0 +1,132 @@
+{
+  "counts": {
+    "Signal": 4,
+    "Null": 3,
+    "Skipped": 17
+  },
+  "results": {
+    "BT": {
+      "status": "Skipped",
+      "metric": "Insufficient data",
+      "n": 0
+    },
+    "CA": {
+      "status": "Skipped",
+      "metric": "Insufficient AGN",
+      "n": 0
+    },
+    "CE": {
+      "status": "Skipped",
+      "metric": "Query failed",
+      "n": 0
+    },
+    "CI": {
+      "status": "Skipped",
+      "metric": "Query failed",
+      "n": 0
+    },
+    "CS": {
+      "status": "Signal",
+      "metric": "r=-0.440, p=1.92e-95",
+      "n": 2000
+    },
+    "CT": {
+      "status": "Signal",
+      "metric": "t=38.48, p=5.17e-281",
+      "n": 10000
+    },
+    "CU": {
+      "status": "Null",
+      "metric": "N_QSO=5000",
+      "n": 5000,
+      "note": "Binary matching requires spatial cross-match"
+    },
+    "CW": {
+      "status": "Skipped",
+      "metric": "Query failed",
+      "n": 0
+    },
+    "CX": {
+      "status": "Signal",
+      "metric": "r=-0.108, p=1.78e-14",
+      "n": 5000
+    },
+    "CZ": {
+      "status": "Skipped",
+      "metric": "Query failed",
+      "n": 0
+    },
+    "DA": {
+      "status": "Skipped",
+      "metric": "Query failed",
+      "n": 0
+    },
+    "DB": {
+      "status": "Null",
+      "metric": "\u0394slope=-0.90",
+      "n": 10000
+    },
+    "DC": {
+      "status": "Skipped",
+      "metric": "Query failed",
+      "n": 0
+    },
+    "DF": {
+      "status": "Skipped",
+      "metric": "Table access failed",
+      "n": 0
+    },
+    "DI": {
+      "status": "Skipped",
+      "metric": "Query failed",
+      "n": 0
+    },
+    "DK": {
+      "status": "Skipped",
+      "metric": "Query failed",
+      "n": 0
+    },
+    "DL": {
+      "status": "Signal",
+      "metric": "r=0.538, p=0.00e+00",
+      "n": 5000
+    },
+    "DM": {
+      "status": "Skipped",
+      "metric": "Query failed",
+      "n": 0
+    },
+    "DN": {
+      "status": "Skipped",
+      "metric": "Query failed",
+      "n": 0
+    },
+    "DP": {
+      "status": "Skipped",
+      "metric": "Query failed",
+      "n": 0
+    },
+    "DR": {
+      "status": "Skipped",
+      "metric": "Query failed",
+      "n": 0
+    },
+    "DS": {
+      "status": "Null",
+      "metric": "N=2000",
+      "n": 2000,
+      "note": "Variability requires Stripe 82 time-domain"
+    },
+    "DU": {
+      "status": "Skipped",
+      "metric": "Query failed",
+      "n": 0
+    },
+    "DZ": {
+      "status": "Skipped",
+      "metric": "K not in standard APOGEE",
+      "n": 0,
+      "note": "Potassium requires specialized analysis"
+    }
+  }
+}

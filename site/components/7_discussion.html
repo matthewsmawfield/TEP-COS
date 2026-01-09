@@ -1,0 +1,620 @@
+<h1>5. Discussion</h1>
+
+<h2>5.1 The Ladder of Evidence</h2>
+
+<p>
+    The Temporal Equivalence Principle has been tested using two time-domain astrophysical probes 
+    that directly measure the rate of proper time accumulation. The results form a coherent 
+    "Ladder of Evidence" for potential-dependent modifications to gravitational time flow. 
+</p>
+
+<div class="key-concept">
+    <h4>Methodological Structure: The Ladder</h4>
+    <p>Why a "Ladder"?
+    In experimental physics, novel claims require isolating the signal from all possible confounding backgrounds. 
+    We structure the evidence as a hierarchy of controls, where each "rung" eliminates a specific class of systematic error:
+    </p>
+    <ul>
+        <li>Rung 1 (Field Control): Eliminates intrinsic population differences (e.g., "are cluster pulsars just born different?").</li>
+        <li>Rung 2 (Spatial Stratification): Eliminates global systematics, linking the signal to the local potential depth.</li>
+        <li>Rung 3 (Density Scaling): Eliminates standard dynamical noise, which must scale as $\rho^2$.</li>
+        <li>Rung 4 (Lensing Cross-Check): Eliminates pulsar-specific astrophysics entirely, testing the same physics in a purely geometric regime.</li>
+    </ul>
+</div>
+
+<table class="data-table">
+    <thead>
+        <tr>
+            <th>Channel</th>
+            <th>Observable</th>
+            <th>Result</th>
+            <th>Status</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>Pulsar Timing</td>
+            <td>0.13 dex residual</td>
+            <td>Suppressed Density Scaling (Slope 0.35 vs 0.82)</td>
+            <td>Anomaly Detection / Binary Inversion</td>
+        </tr>
+        <tr>
+            <td>Spatial Stratification</td>
+            <td>Core vs Outskirts</td>
+            <td>−0.33 dex (core, p=0.054) vs −0.09 dex (outskirts, p=0.63)</td>
+            <td>Suggestive</td>
+        </tr>
+        <tr>
+            <td>Field Binary Control</td>
+            <td>Binary vs Isolated (Field)</td>
+            <td>p = 0.70 (null)</td>
+            <td>Null Control</td>
+        </tr>
+        <tr>
+            <td>Suppressed Density Scaling</td>
+            <td>Residual vs Cluster Density</td>
+            <td>Observed slope = 0.35 vs Newtonian slope = 0.82 (>4σ rejection)</td>
+            <td>Quantitative exclusion</td>
+        </tr>
+        <tr>
+            <td>Gravitational Lensing</td>
+            <td>Temporal Shear Γ</td>
+            <td>Consistent |Γ| ≈ 33 days/dec</td>
+            <td>Geometric Evidence</td>
+        </tr>
+    </tbody>
+</table>
+
+<p>
+    The identifiability of the pulsar signal is established not just by the detection of a residual, but by the 
+    quantitative exclusion of Newtonian systematics via the "Systematics Exclusion Matrix" (Section 3.6.3). 
+    Specifically, the observation of suppressed density scaling (slope 0.35) and the binary inversion (-0.31 dex) 
+    directly contradicts the predictions of standard mass segregation (slope > 0.8, positive binary residual).
+</p>
+
+<p>
+    Critically, both anomalies point to the same enhancement factor. Lensing requires α ~ 10<sup>6</sup>–10<sup>7</sup>. 
+    The pulsar offset, if interpreted as modified time dilation, implies a similar magnitude. 
+    This unification addresses Occam's Razor objections. 
+    While standard physics requires distinct mechanisms for the pulsar and lensing anomalies (dynamical complexity vs statistical fluctuation), 
+    TEP provides a unified parameterization ($\rho_c$) that accommodates both.
+</p>
+
+<h2>5.2 Cross-Scale Consistency with ρ<sub>c</sub></h2>
+
+<p>
+    The universal critical density ρ<sub>c</sub> ≈ 20 g/cm³, independently calibrated from 
+    terrestrial GNSS clock correlations (Smawfield 2025b,c,d), defines the screening threshold 
+    across all scales. Since ρ<sub>c</sub> far exceeds astrophysical densities, essentially all 
+    extended gravitational systems are in the unscreened regime:
+</p>
+
+<table class="data-table">
+    <thead>
+        <tr>
+            <th>System</th>
+            <th>Ambient ρ</th>
+            <th>Screening Status</th>
+            <th>Prediction</th>
+            <th>Observation</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>Earth (GNSS)</td>
+            <td>~5–13 g/cm³</td>
+            <td>Partial (ρ ~ ρ<sub>c</sub>)</td>
+            <td>Correlation length L<sub>c</sub></td>
+            <td>L<sub>c</sub> ≈ 4,200 km</td>
+        </tr>
+        <tr>
+            <td>Globular Cluster</td>
+            <td>~10<sup>−18</sup> g/cm³</td>
+            <td>Unscreened ($\rho \ll \rho_c$)</td>
+            <td>Saturated residual</td>
+            <td>0.13 dex (constant across 100× $\rho$)</td>
+        </tr>
+        <tr>
+            <td>Galaxy Halo</td>
+            <td>~10<sup>−24</sup> g/cm³</td>
+            <td>Unscreened ($\rho \ll \rho_c$)</td>
+            <td>Bounded temporal shear</td>
+            <td>Constraint (|Γ| < 60 days/decade)</td>
+        </tr>
+    </tbody>
+</table>
+
+<p>
+    The key test is not whether ρ<sub>c</sub> predicts specific length scales, but whether the 
+    <em>saturation behavior</em> is observed: in unscreened systems, TEP effects should not scale 
+    indefinitely with density. The pulsar channel confirms this with a 4$\sigma$ rejection of $\rho^2$ scaling.
+</p>
+
+<h2>5.3 Suppressed Density Scaling</h2>
+
+<p>
+    The suppressed density scaling result (Section 3.4–3.5) provides strong evidence 
+    against standard dynamical contamination. The observed slope (0.29 ± 0.11) is significantly flatter than 
+    the Newtonian expectation (0.82 fiducial; ~0.72 with exact structures + segregation)—a >4$\sigma$ rejection. The signal saturates rather than scaling with density, 
+    consistent with a screening threshold at $\rho_c$.
+</p>
+
+<div class="defense-box">
+    <h4>Counter-Argument 1: "Structural Scaling Artifacts"</h4>
+    <p>Critique: The "Suppressed Density Scaling" result (Slope 0.29 vs 0.82 fiducial; ~0.72 with exact structures + segregation) relies on comparing clusters of different densities. 
+    If dense clusters systematically have smaller core radii ($R_c$), and acceleration variance scales as $\sigma_a^2 \propto \rho_c^2 R_c^2$, 
+    an inverse correlation between $\rho_c$ and $R_c$ could artificially flatten the Newtonian prediction, mimicking the TEP signal.</p>
+    
+    <p>Test Result: This critique was explicitly tested. 
+    Instead of using a generic $\rho^2$ scaling law, we re-ran the Newtonian baseline simulation using the 
+    exact observed structural parameters ($M, R_c$) for all 29 clusters (Harris 2010 catalog). 
+    The result (Figure 3.1) confirms that even with exact structures, the Newtonian prediction scales steeply (Slope ~0.72–0.82 dex/dex, depending on the baseline) 
+    driven by the immense densities of core-collapsed clusters like Terzan 5. 
+    The observed flatness (Slope 0.29) is not a structural artifact; it is a genuine dynamical anomaly.</p>
+</div>
+
+<div class="key-concept">
+    <h4>Failure Modes and Assumptions</h4>
+    <p>
+        While the density scaling result challenges standard expectations, several methodological assumptions could, in principle, mimic this suppression if violated:
+    </p>
+    <ul>
+        <li>Core Radius Systematics: If core radii in dense clusters were systematically overestimated (underestimating true densities), the real density range might be narrower than modeled.</li>
+        <li>Model Mis-specification: We assume Plummer potentials capture the relevant core acceleration variance. However, our upgraded N-body/CMC analysis (Section 3.5) shows that mass segregation <em>increases</em> the effective acceleration variance by concentrating pulsars in the core. This exacerbates the discrepancy rather than resolving it.</li>
+        <li>Binary Orbital Aliasing: If binary orbital parameters (eccentricity, orientation) vary systematically with cluster density, this could introduce a countervailing trend.</li>
+    </ul>
+    <p>
+        However, to reproduce the observed 'flat' residual (slope 0.29) purely via these failure modes would require an improbable combination of errors that accurately cancels the strong ρ² dynamical scaling across 29 independent systems.
+    </p>
+</div>
+
+<h2>5.4 Connection to Other TEP Evidence</h2>
+
+<p>
+    The ~10<sup>6</sup>–10<sup>7</sup> enhancement factor is consistent with previous TEP findings:
+</p>
+
+<table class="data-table">
+    <thead>
+        <tr>
+            <th>Dataset</th>
+            <th>Enhancement</th>
+            <th>Reference</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>GNSS clock networks</td>
+            <td>~10<sup>6</sup></td>
+            <td>Smawfield 2025b,c,d</td>
+        </tr>
+        <tr>
+            <td>Satellite laser ranging</td>
+            <td>~10<sup>6</sup></td>
+            <td>Smawfield 2025i</td>
+        </tr>
+        <tr>
+            <td>Galaxy dynamics (UCD)</td>
+            <td>~10<sup>6</sup></td>
+            <td>Smawfield 2025g</td>
+        </tr>
+        <tr>
+            <td>Pulsar Timing</td>
+            <td>~10<sup>6</sup>–10<sup>7</sup></td>
+            <td>This work</td>
+        </tr>
+        <tr>
+            <td>Gravitational Lensing</td>
+            <td>Upper Limit</td>
+            <td>This work</td>
+        </tr>
+    </tbody>
+</table>
+
+<p>
+    The consistency across Earth-based (GNSS, SLR), galactic (pulsars, UCD), and cosmological 
+    scales is notable. This is not what one would expect from systematic errors, 
+    which should vary with scale and methodology.
+</p>
+
+<h2>5.5 Synthesis: The Hierarchy of Evidence</h2>
+
+<p>
+    We construct a "ladder of evidence" prioritizing results that are robust to systematics (Null Controls) 
+    and spatially resolved. Fossil probes (bottom rungs) are included to demonstrate their relative insensitivity compared to rate observables.
+</p>
+
+<div class="summary-box">
+    <h4>Evidence Hierarchy</h4>
+    <table class="data-table">
+        <thead>
+            <tr>
+                <th>Rung</th>
+                <th>Evidence</th>
+                <th>Strength</th>
+                <th>Status</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>1</td>
+                <td>Pulsar Field Binary Control</td>
+                <td>Null Result (p=0.70)</td>
+                <td>Robust Control. Strongly isolates environmental origin.</td>
+            </tr>
+            <tr>
+                <td>2</td>
+                <td>Pulsar Spatial Stratification</td>
+                <td>Core-concentrated (-0.33 dex, p=0.054)</td>
+                <td>Suggestive. Signal tracks potential depth.</td>
+            </tr>
+            <tr>
+                <td>3</td>
+                <td>Pulsar Binary vs Isolated (GC)</td>
+                <td>0.31 dex difference (p=0.011)</td>
+                <td>Strong Signal.</td>
+            </tr>
+            <tr>
+                <td>4</td>
+                <td>Lensing Geometric Correlation</td>
+                <td>r = 0.504</td>
+                <td>Suggestive. (Caveat: large individual errors)</td>
+            </tr>
+            <tr>
+                <td>5</td>
+                <td>Lensing Temporal Shear</td>
+                <td>Upper Limit (|Γ| &lesssim; 60)</td>
+                <td>Constraint. Consistent with zero.</td>
+            </tr>
+            <tr>
+                <td>6</td>
+                <td>Lensing Null Pairs</td>
+                <td>Γ ≈ 0</td>
+                <td>Validates method.</td>
+            </tr>
+            <tr>
+                <td>7</td>
+                <td>SFR Holonomy (sSFR vs σ)</td>
+                <td>r = −0.43 (size-controlled)</td>
+                <td>Consistent (degenerate with standard physics).</td>
+            </tr>
+            <tr>
+                <td>8</td>
+                <td>Galaxy Kinematics Null</td>
+                <td>p = 0.30</td>
+                <td>Expected Null.</td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+
+<h2>5.6 Validation against Local Systematics</h2>
+
+<p>
+    A critical test of the "Temporal Shear" anomaly is its correlation with geometry. If the signal were due to local instrumental effects (e.g., telescope temperature, orbital phase) or data processing artifacts (e.g., spline fitting, detrending), it should be independent of the lens system's redshift.
+</p>
+
+<div class="key-concept">
+    <h3>The Geometric Correlation</h3>
+    <p>
+        A robust correlation is observed between the magnitude of the shear (|Γ|) and the cosmological 
+        path length ratio of the lens system:
+    </p>
+    <p>
+        |Γ| vs (1+z<sub>S</sub>)/(1+z<sub>L</sub>): r = 0.504, p = 0.014
+    </p>
+    <p>
+        This correlation is expected if the signal is gravitational in origin: longer cosmological paths 
+        through gravitational potentials should produce larger temporal shear. Local instrumental effects 
+        or data processing artifacts would not correlate with source redshift.
+    </p>
+</div>
+
+<p>
+    The geometric correlation provides strong evidence against systematic artifacts. If the temporal shear 
+    were due to telescope optics, pipeline errors, or microlensing, it should be independent of the 
+    lens system's cosmological geometry. Instead, the redshift dependence predicted 
+    by TEP is observed: higher z<sub>source</sub> → larger |Γ|.
+</p>
+
+<h2>5.7 Systematics and Discriminants</h2>
+
+<h3>5.7.1 Microlensing (Lensing Channel)</h3>
+<p>
+    Microlensing by stars in the lens galaxy could produce time-variable magnification. However:
+</p>
+<ul>
+    <li>Microlensing is chromatic; TEP is achromatic</li>
+    <li>Microlensing does not scale with source redshift</li>
+    <li>The observed correlation with (1+z<sub>S</sub>)/(1+z<sub>L</sub>) disfavors simple microlensing as the primary explanation</li>
+</ul>
+
+<h3>5.7.2 The Mass Sheet Degeneracy</h3>
+<p>
+    The Mass Sheet Degeneracy (MSD) limits the precision of $H_0$ measurements by rescaling time delays by a constant factor $\lambda$ (Birrer et al. 2020). 
+    While MSD affects the absolute normalization of the time delay, it does not introduce scale-dependent structure ($\Gamma$). 
+    A pure MSD transformation $\Delta t' = \lambda \Delta t$ would scale the temporal shear magnitude but cannot generate a non-zero $\Gamma$ from a zero baseline, nor can it explain the observed redshift correlation.
+</p>
+
+<h3>5.7.3 Selection Effects (Pulsar Channel)</h3>
+<p>
+    Could low-Ṗ pulsars be preferentially detected in GCs? No:
+</p>
+<ul>
+    <li>Pulsars are detected by period, not Ṗ</li>
+    <li>High-Ṗ pulsars are easier to time</li>
+    <li>No mechanism for this selection has been proposed</li>
+</ul>
+
+<h3>5.7.3 Population Differences (Pulsar Channel)</h3>
+<p>
+    Are GC MSPs intrinsically different from field MSPs? No known mechanism:
+</p>
+<ul>
+    <li>Both form through similar recycling channels</li>
+    <li>Both are spun up by accretion</li>
+    <li>No theoretical basis for intrinsic difference</li>
+</ul>
+<p>
+    A matched comparison of field MSPs (Section 4.7) shows no difference between binary and isolated systems 
+    (p = 0.70), whereas cluster binary MSPs show a significant offset (p = 0.011). This strongly argues against intrinsic 
+    population differences as the cause of the cluster signal.
+</p>
+
+<h3>5.7.4 Cluster Acceleration: A Question of Magnitude</h3>
+
+<p>
+    Pulsars moving through globular cluster potentials experience line-of-sight acceleration that contributes to observed Ṗ. 
+    This effect is well-established and produces both positive and negative apparent spin-down rates depending on pulsar 
+    position and velocity. The central question is whether the acceleration magnitude matches GR predictions or requires TEP enhancement.
+</p>
+
+<p>
+    Under GR, the time dilation correction from cluster acceleration is negligible:
+</p>
+
+<div class="equation">
+    $$\Delta \dot{P}_{\text{GR}} \sim \dot{P}_{\text{int}} \cdot \frac{a_{\parallel} R}{c^2} \sim 10^{-8} \times \dot{P}_{\text{int}}$$
+</div>
+
+<p>
+    where a<sub>∥</sub> is the line-of-sight acceleration and R is the cluster scale. Under TEP with α<sub>eff</sub> ~ 10⁶–10⁷, 
+    the same physical acceleration produces an enhanced effect:
+</p>
+
+<div class="equation">
+    $$\Delta \dot{P}_{\text{TEP}} \sim \alpha_{\text{eff}} \cdot \frac{a_{\parallel} R}{c^2} \sim 0.01\text{–}0.1 \times \dot{P}_{\text{int}}$$
+</div>
+
+<p>
+    This is a 1–10% effect. If TEP is correct, what pulsar astronomers measure as "cluster acceleration" is already 
+    a TEP-enhanced time dilation effect. The frameworks are not alternatives; they describe the same physics at different 
+    coupling strengths.
+</p>
+
+<div class="key-insight">
+    <h4>The Observational Challenge</h4>
+    <p>
+        The difficulty is that it is not possible to independently calibrate the cluster acceleration field for each pulsar without 
+        detailed dynamical modeling (mass distribution, velocity anisotropy, pulsar orbits). The residual 0.13 dex offset 
+        after population controls could reflect either incomplete dynamical modeling or TEP enhancement of the acceleration effect.
+    </p>
+    <p>
+        The Field Binary Control (Section 4.7) provides critical context: the binary vs isolated difference observed in clusters 
+        (0.31 dex) vanishes in the field (p = 0.70). This result supports the conclusion that the signal is environmental (tied to the cluster potential), 
+        not intrinsic to pulsar populations. However, it does not resolve whether the environmental effect magnitude matches 
+        GR expectations or requires TEP enhancement.
+    </p>
+    <p>
+        This is why the pulsar channel is treated as diagnostic. The lensing channel, by contrast, measures a differential 
+        observable (delay vs timescale) with no standard GR analog, providing a cleaner test of scale-dependent time transport.
+    </p>
+</div>
+
+<h3>5.7.5 Fossil Probe Limitations</h3>
+
+<p>
+    Fossil observables (integrated quantities such as supernova light curve shapes and stellar ages) are 
+    expected to be insensitive to TEP due to astrophysical systematics that dominate at orders of magnitude 
+    above the predicted signal. Type Ia supernovae (Test G) show the expected anti-correlation with host 
+    velocity dispersion due to progenitor age effects—a result consistent with the rate/fossil distinction 
+    established in Section 1.2. See Appendix A for detailed analysis. The insensitivity of fossil 
+    channels reinforces that only <em>rate</em> observables (pulsar timing, lensing time delays) are 
+    sensitive to TEP modifications.
+</p>
+
+<h3>5.7.6 Laboratory and Solar System Constraints</h3>
+<p>
+    Modified gravity theories with screening mechanisms are tightly constrained by laboratory atom interferometry 
+    and Lunar Laser Ranging (LLR). Atom interferometry excludes a wide range of chameleon/symmetron parameters 
+    in vacuum (Burrage et al. 2018). However, TEP posits a screening transition at $\rho_c \approx 20 \text{ g/cm}^3$. 
+    Laboratory vacuum chambers are embedded within the Earth's density field, which is well above $\rho_c$, 
+    ensuring the local environment is screened. The predicted enhancement ($\alpha_{eff} \sim 10^6$) applies 
+    only to extended systems with density below $\rho_c$ (e.g., cluster outskirts, galactic halos), 
+    consistent with the observed null results in dense Solar System regimes.
+</p>
+
+<h3>5.7.7 Consistency with Pulsar Timing Arrays</h3>
+<p>
+    Pulsar Timing Arrays (PTAs) such as NANOGrav, EPTA, and the Fermi-LAT PTA (Xia et al. 2023) place stringent 
+    constraints on Ultralight Dark Matter (ULDM) and stochastic gravitational wave backgrounds. 
+    Since the Galaxy is an "extended configuration" with density $\rho \ll \rho_c$, field pulsars used in PTAs 
+    might be expected to exhibit strong TEP signatures. The absence of such signals is consistent with TEP 
+    for three reasons:
+</p>
+
+<ul>
+    <li>Static vs. Oscillatory Nature: PTA constraints on ULDM (e.g., Xia et al. 2023) assume a 
+    scalar field oscillating at the Compton frequency ($f \approx m_\phi c^2 / h$). For $m \sim 10^{-22}$ eV, 
+    this produces a time-varying residual with period ~1 year. TEP, by contrast, posits a static or slowly-varying 
+    scalar background (soliton). A static modification to the local potential produces a constant shift in the 
+    pulsar's spin frequency ($\nu$) and spin-down rate ($\dot{\nu}$). Because PTAs fit $P$ and $\dot{P}$ individually 
+    for every pulsar, these constant offsets are absorbed into the timing model and are effectively invisible to residual analysis.</li>
+
+    <li>Screened Earth Term: PTA searches for correlated signals rely on the "Earth term"—the 
+    component of the signal common to all pulsars due to the detector's (Earth's) motion or potential. 
+    However, the Solar System density ($\rho \gg \rho_c$) ensures the Earth is locally screened. 
+    Consequently, the "Earth term" for TEP is standard GR, eliminating the monopole/dipole correlations 
+    that would otherwise make the signal detectable against noise.</li>
+
+    <li>Signal Magnitude in Residuals: The time-varying component of the TEP signal arises from 
+    the pulsar's motion through the galactic potential gradient. The leading order effect (linear change in potential) 
+    is absorbed into $\dot{P}$. The first non-absorbed term is the "jerk" ($\ddot{\nu}$), driven by the curvature 
+    of the galactic potential.
+    <br><br>
+    Explicit calculation for a pulsar moving at $v \sim 220$ km/s through the Galactic potential:
+    <div class="equation">
+        $$\Delta t_{\text{TEP}} \approx \frac{1}{6} \frac{\alpha \ddot{\Phi}}{c^2} T_{\text{obs}}^3 \sim 1 \mu\text{s} \quad (\text{over 10 years})$$
+    </div>
+    This drift (~1 $\mu$s) is comparable to or smaller than the intrinsic "red noise" often observed in millisecond 
+    pulsars over decadal baselines and is far below the deterministic shifts absorbed into $\dot{P}$. Thus, TEP 
+    does not violate current PTA constraints.</li>
+</ul>
+
+<h2>5.8 Key Discriminating Tests</h2>
+
+<p>
+    A useful distinction is between tests that would strongly constrain the lensing-based interpretation and tests that primarily
+    refine particular phenomenological scalings.
+</p>
+
+<div class="key-concept">
+    <h4>High-Priority Falsification Tests</h4>
+    <ol>
+        <li><strong></strong>Achromaticity (Lensing Falsifier):</strong> If Γ measured independently in multiple optical bands exhibits robust chromatic structure (ΔΓ ≠ 0 beyond uncertainties),
+            this would require careful interpretation. Microlensing is one possibility, but wavelength-dependent source structure and differential 
+            extinction could also contribute. Such a result would constrain the TEP interpretation but not necessarily exclude it.</li>
+        <li><strong>N-body Dynamics (Pulsar Falsifier):</strong> If rigorous analysis using the full CMC catalogs for Terzan 5 and 47 Tuc can reproduce the 0.13 dex offset 
+            <em>and</em> the suppressed density scaling (slope 0.29) without modified gravity, the pulsar signal is claimed by standard physics.</li>
+    </ol>
+</div>
+
+<div class="key-concept">
+    <h4>Model-dependent expectations (parameterization-level constraints)</h4>
+    <ul>
+        <li>High-z scaling: Higher-z sources are expected to exhibit larger |Γ| on average, but the quantitative threshold depends on lens geometry
+            and the assumed scaling; measurements primarily constrain the functional form rather than acting as unconditional falsifiers.</li>
+        <li>Pulsar residuals: Improved population controls and dynamical corrections may reduce or eliminate the GC–field residual; this would constrain 
+            the pulsar interpretation without impacting the lensing constraint.</li>
+        <li>Galaxy kinematics sensitivity: With sufficiently large samples, a small velocity dipole may become detectable; failure to detect such a signal at
+            the required sensitivity constrains the kinematic parameterization rather than the lensing result.</li>
+    </ul>
+</div>
+
+<h2>5.9 Limitations and Robustness</h2>
+
+<p>
+    To aid critical evaluation, we explicitly identify the primary limitations, parameter sensitivities, 
+    and failure modes of the analysis.
+</p>
+
+<div class="critical-analysis">
+    <h3>5.9.1 Parameter Sensitivity ($\rho_c$)</h3>
+    <p>
+        The unification of GNSS and cluster scales relies on the universal critical density $\rho_c \approx 20$ g/cm³. 
+        How sensitive is the result to this parameter?
+    </p>
+    <ul>
+        <li>Scaling: The soliton radius scales as $R_{\text{sol}} \propto \rho_c^{-1/3}$. A factor of 2 uncertainty in $\rho_c$ 
+            shifts $R_{\text{sol}}$ by only ~26%.</li>
+        <li>Robustness: Since globular cluster core radii span a factor of ~10 (0.1 to 1 pc), an O(1) shift in $\rho_c$ 
+            does not invalidate the predicted screening phenomenology; it shifts the precise onset of saturation. 
+            The fact that <em>all</em> observed clusters in our sample appear saturated (suppressed density scaling) suggests we are well within the screened regime, making the conclusion robust to moderate uncertainties in $\rho_c$.</li>
+    </ul>
+
+    <h3>5.9.2 Failure Modes and Confounds</h3>
+    <table class="data-table">
+        <thead>
+            <tr>
+                <th>Channel</th>
+                <th>Failure Mode</th>
+                <th>Probability</th>
+                <th>Why it doesn't dominate</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>Lensing</td>
+                <td>Microlensing</td>
+                <td>Moderate</td>
+                <td>Requires extreme parameters (bottom-heavy IMF, v>15,000 km/s) to match the <em>magnitude</em> of Γ, even though optical depth scaling matches redshift trend. Key test is chromaticity.</td>
+            </tr>
+            <tr>
+                <td>Lensing</td>
+                <td>Estimator Bias</td>
+                <td>Low</td>
+                <td>Injection-recovery tests limit bias to ~0.3 days/decade, far below the derived bounds ($|Γ| < 60$).</td>
+            </tr>
+            <tr>
+                <td>Pulsars</td>
+                <td>Core-Collapse Non-Gaussianity</td>
+                <td>Moderate</td>
+                <td>Explicit simulation with exact cluster parameters and mass segregation shows Newtonian slope remains steep (~0.72–0.82 depending on baseline). Does not naturally reproduce the <em>flat</em> density scaling (slope 0.29).</td>
+            </tr>
+            <tr>
+                <td>Pulsars</td>
+                <td>Binary Orbital Aliasing</td>
+                <td>Low</td>
+                <td>Requires binary orbital parameters to conspire with cluster density to accurately cancel the ρ² dynamical trend. Occam's razor disfavors this "improbable combination."</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <h3>5.9.3 Falsification Criteria</h3>
+    <p>
+        The TEP hypothesis is vulnerable to falsification by:
+    </p>
+    <ul>
+        <li>Chromatic Lensing Shear: If future multi-band monitoring (e.g., LSST) finds $\Delta \Gamma_{(g-i)} > 2\sigma$, the lensing signal is likely microlensing, falsifying the geometric interpretation.</li>
+        <li>Newtonian Reproduction: If full N-body simulations (e.g., NBODY6) can reproduce the 0.13 dex offset <em>and</em> the suppressed density scaling (slope 0.29) without modified gravity, the pulsar signal is claimed by standard physics.</li>
+    </ul>
+</div>
+
+<h2>5.10 Future Tests</h2>
+
+<table class="data-table">
+    <thead>
+        <tr>
+            <th>Test</th>
+            <th>Purpose</th>
+            <th>Status</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>Instrumental Consistency</td>
+            <td>Ensure Γ is not an artifact of specific telescope optics/pipelines.</td>
+            <td>Passed (WFI2033: ΔΓ≈5; consistent with 0)</td>
+        </tr>
+        <tr>
+            <td>Multi-band lensing observations</td>
+            <td>Distinguish TEP (achromatic) from microlensing (chromatic). Simulations show σ(ΔΓ) ≈ 55 days/decade is sufficient to distinguish.</td>
+            <td>Needed</td>
+        </tr>
+        <tr>
+            <td>High-z lens systems (z<sub>S</sub> &gt; 2.5)</td>
+            <td>Test scaling of |Γ| with path-length. Prediction: |Γ| &gt; 300 days/decade (Mean prediction ~830 days/decade).</td>
+            <td>Needed</td>
+        </tr>
+        <tr>
+            <td>Field Binary vs Isolated Study</td>
+            <td>Control for intrinsic population effects in pulsars.</td>
+            <td>Completed (Null result: p=0.70)</td>
+        </tr>
+        <tr>
+            <td>Larger pulsar samples</td>
+            <td>Reassess residual environment dependence under stronger population controls.</td>
+            <td>Needed</td>
+        </tr>
+        <tr>
+            <td>N-body Cluster Simulations</td>
+            <td>Test if standard Newtonian dynamics + mass segregation can reproduce the 0.13 dex residual and core concentration without TEP.</td>
+            <td>Synthetic N-Body confirms discrepancy; Real CMC Data Needed</td>
+        </tr>
+        <tr>
+            <td>Future galaxy surveys (~300k galaxies)</td>
+            <td>Detect ~0.25 km/s dipole</td>
+            <td>Needed</td>
+        </tr>
+    </tbody>
+</table>

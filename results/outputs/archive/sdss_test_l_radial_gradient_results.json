@@ -1,0 +1,16 @@
+{
+  "n_galaxies": 2566,
+  "lw_mw_diff_vs_sigma": {
+    "r": 0.5268622193040022,
+    "p": 2.75961449067783e-183,
+    "interpretation": "Positive r means high-\u03c3 galaxies have younger light-weighted ages relative to mass-weighted"
+  },
+  "lw_mw_analysis": {
+    "mean_diff": -0.22652675744816836,
+    "stderr": 0.002362707131058698,
+    "note": "Analyzed LW vs MW age discrepancy as gradient proxy"
+  },
+  "verdict": "Indirect",
+  "interpretation": "Used LW-MW age comparison (no explicit gradient data available).",
+  "figure_path": "/Users/matthewsmawfield/www/TEP-COS/results/figures/test_l_radial_age_gradient.png"
+}

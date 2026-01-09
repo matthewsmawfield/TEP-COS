@@ -1,0 +1,148 @@
+[01:54:25] [PROCESS] Found 8 RDB + 13 multi-band CSV light curve files
+[01:54:25] [PROCESS] Processing DESJ0408_Courbin2017.rdb
+[01:54:25] [PROCESS]   System DESJ0408: 3 images, [('A', 'B'), ('A', 'D'), ('B', 'D')] pairs
+[01:54:25] [PROCESS]   Analyzing pair A-B
+[01:54:25] [PROCESS]   Analyzing pair A-D
+[01:54:25] [PROCESS]   Analyzing pair B-D
+[01:54:25] [PROCESS]   Running 100 bootstrap iterations...
+[01:54:45] [PROCESS] Processing HE0435_Bonvin2016.rdb
+[01:54:45] [PROCESS]   System HE0435: 4 images, [('A', 'B'), ('A', 'C'), ('A', 'D'), ('B', 'C'), ('B', 'D'), ('C', 'D')] pairs
+[01:54:45] [PROCESS]   Analyzing pair A-B
+[01:54:45] [PROCESS]   Analyzing pair A-C
+[01:54:45] [PROCESS]   Analyzing pair A-D
+[01:54:45] [PROCESS]   Analyzing pair B-C
+[01:54:45] [PROCESS]   Analyzing pair B-D
+[01:54:46] [PROCESS]   Analyzing pair C-D
+[01:54:46] [PROCESS]   Running 100 bootstrap iterations...
+[01:56:43] [PROCESS] Processing HS2209_Eulaers2013.rdb
+[01:56:43] [PROCESS]   System HS2209: 2 images, [('A', 'B')] pairs
+[01:56:43] [PROCESS]   Analyzing pair A-B
+[01:56:43] [PROCESS]   Running 100 bootstrap iterations...
+[01:56:58] [PROCESS] Processing J1001_Rathnakumar2013.rdb
+[01:56:58] [PROCESS]   System J1001: 2 images, [('A', 'B')] pairs
+[01:56:58] [PROCESS]   Analyzing pair A-B
+[01:56:58] [PROCESS]   Running 100 bootstrap iterations...
+[01:57:11] [PROCESS] Processing J1206_Eulaers2013.rdb
+[01:57:11] [PROCESS]   System J1206: 2 images, [('A', 'B')] pairs
+[01:57:11] [PROCESS]   Analyzing pair A-B
+[01:57:11] [PROCESS]   Running 100 bootstrap iterations...
+[01:57:24] [PROCESS] Processing PG1115_Bonvin2018.rdb
+[01:57:24] [PROCESS]   System PG1115: 3 images, [('A', 'B'), ('A', 'C'), ('B', 'C')] pairs
+[01:57:24] [PROCESS]   Analyzing pair A-B
+[01:57:24] [PROCESS]   Analyzing pair A-C
+[01:57:24] [PROCESS]   Analyzing pair B-C
+[01:57:24] [PROCESS]   Running 100 bootstrap iterations...
+[01:57:41] [PROCESS] Processing RXJ1131_Tewes2013.rdb
+[01:57:41] [PROCESS]   System RXJ1131: 4 images, [('A', 'B'), ('A', 'C'), ('A', 'D'), ('B', 'C'), ('B', 'D'), ('C', 'D')] pairs
+[01:57:41] [PROCESS]   Analyzing pair A-B
+[01:57:41] [PROCESS]   Analyzing pair A-C
+[01:57:42] [PROCESS]   Analyzing pair A-D
+[01:57:42] [PROCESS]   Analyzing pair B-C
+[01:57:42] [PROCESS]   Analyzing pair B-D
+[01:57:42] [PROCESS]   Analyzing pair C-D
+[01:57:42] [PROCESS]   Running 100 bootstrap iterations...
+[01:59:13] [PROCESS] Processing WFI2033_Bonvin2019.rdb
+[01:59:13] [PROCESS]   System WFI2033: 3 images, [('A', 'B'), ('A', 'C'), ('B', 'C')] pairs
+[01:59:13] [PROCESS]   Analyzing pair A-B
+[01:59:13] [PROCESS]   Analyzing pair A-C
+[01:59:14] [PROCESS]   Analyzing pair B-C
+[01:59:14] [PROCESS]   Running 100 bootstrap iterations...
+[02:00:14] [PROCESS] Processing he0435_JAA703A250_R.csv
+[02:00:14] [PROCESS]   System HE0435_R: 4 images, [('A', 'B'), ('A', 'C'), ('A', 'D'), ('B', 'C'), ('B', 'D'), ('C', 'D')] pairs
+[02:00:14] [PROCESS]   Analyzing pair A-B
+[02:00:15] [PROCESS]   Analyzing pair A-C
+[02:00:15] [PROCESS]   Analyzing pair A-D
+[02:00:15] [PROCESS]   Analyzing pair B-C
+[02:00:15] [PROCESS]   Analyzing pair B-D
+[02:00:15] [PROCESS]   Analyzing pair C-D
+[02:00:15] [PROCESS]   Running 100 bootstrap iterations...
+[02:01:32] [PROCESS] Processing he0435_JAA703A250_V.csv
+[02:01:32] [PROCESS]   System HE0435_V: 4 images, [('A', 'B'), ('A', 'C'), ('A', 'D'), ('B', 'C'), ('B', 'D'), ('C', 'D')] pairs
+[02:01:32] [PROCESS]   Analyzing pair A-B
+[02:01:32] [PROCESS]   Analyzing pair A-C
+[02:01:32] [PROCESS]   Analyzing pair A-D
+[02:01:32] [PROCESS]   Analyzing pair B-C
+[02:01:32] [PROCESS]   Analyzing pair B-D
+[02:01:32] [PROCESS]   Analyzing pair C-D
+[02:01:33] [PROCESS]   Running 100 bootstrap iterations...
+[02:02:56] [PROCESS] Processing he1104_JApJ798_95_B.csv
+[02:02:56] [PROCESS]   System HE1104_B: 2 images, [('A', 'B')] pairs
+[02:02:56] [PROCESS]   Analyzing pair A-B
+[02:02:56] [PROCESS]   Running 100 bootstrap iterations...
+[02:03:07] [PROCESS] Processing he1104_JApJ798_95_I.csv
+[02:03:07] [PROCESS]   System HE1104_I: 2 images, [('A', 'B')] pairs
+[02:03:07] [PROCESS]   Analyzing pair A-B
+[02:03:07] [PROCESS]   Running 100 bootstrap iterations...
+[02:03:18] [PROCESS] Processing he1104_JApJ798_95_J.csv
+[02:03:18] [PROCESS]   System HE1104_J: 2 images, [('A', 'B')] pairs
+[02:03:18] [PROCESS]   Analyzing pair A-B
+[02:03:18] [PROCESS]   Running 100 bootstrap iterations...
+[02:03:30] [PROCESS] Processing he1104_JApJ798_95_R.csv
+[02:03:30] [PROCESS]   System HE1104_R: 2 images, [('A', 'B')] pairs
+[02:03:30] [PROCESS]   Analyzing pair A-B
+[02:03:30] [PROCESS]   Running 100 bootstrap iterations...
+[02:03:43] [PROCESS] Processing q2237_JAA637A89_I.csv
+[02:03:43] [PROCESS]   System Q2237_I: 4 images, [('A', 'B'), ('A', 'C'), ('A', 'D'), ('B', 'C'), ('B', 'D'), ('C', 'D')] pairs
+[02:03:43] [PROCESS]   Analyzing pair A-B
+[02:03:43] [PROCESS]   Analyzing pair A-C
+[02:03:44] [PROCESS]   Analyzing pair A-D
+[02:03:44] [PROCESS]   Analyzing pair B-C
+[02:03:44] [PROCESS]   Analyzing pair B-D
+[02:03:44] [PROCESS]   Analyzing pair C-D
+[02:03:44] [PROCESS]   Running 100 bootstrap iterations...
+[02:05:12] [PROCESS] Processing q2237_JAA637A89_V.csv
+[02:05:12] [PROCESS]   System Q2237_V: 4 images, [('A', 'B'), ('A', 'C'), ('A', 'D'), ('B', 'C'), ('B', 'D'), ('C', 'D')] pairs
+[02:05:12] [PROCESS]   Analyzing pair A-B
+[02:05:12] [PROCESS]   Analyzing pair A-C
+[02:05:12] [PROCESS]   Analyzing pair A-D
+[02:05:13] [PROCESS]   Analyzing pair B-C
+[02:05:13] [PROCESS]   Analyzing pair B-D
+[02:05:13] [PROCESS]   Analyzing pair C-D
+[02:05:13] [PROCESS]   Running 100 bootstrap iterations...
+[02:06:43] [PROCESS] Processing q2237_JAA637A89_g.csv
+[02:06:43] [PROCESS]   System Q2237_G: 4 images, [('A', 'B'), ('A', 'C'), ('A', 'D'), ('B', 'C'), ('B', 'D'), ('C', 'D')] pairs
+[02:06:43] [PROCESS]   Analyzing pair A-B
+[02:06:43] [PROCESS]   Analyzing pair A-C
+[02:06:43] [PROCESS]   Analyzing pair A-D
+[02:06:43] [PROCESS]   Analyzing pair B-C
+[02:06:44] [PROCESS]   Analyzing pair B-D
+[02:06:44] [PROCESS]   Analyzing pair C-D
+[02:06:44] [PROCESS]   Running 100 bootstrap iterations...
+[02:08:27] [PROCESS] Processing q2237_JAA637A89_r.csv
+[02:08:27] [PROCESS]   System Q2237_R: 4 images, [('A', 'B'), ('A', 'C'), ('A', 'D'), ('B', 'C'), ('B', 'D'), ('C', 'D')] pairs
+[02:08:27] [PROCESS]   Analyzing pair A-B
+[02:08:27] [PROCESS]   Analyzing pair A-C
+[02:08:27] [PROCESS]   Analyzing pair A-D
+[02:08:27] [PROCESS]   Analyzing pair B-C
+[02:08:27] [PROCESS]   Analyzing pair B-D
+[02:08:27] [PROCESS]   Analyzing pair C-D
+[02:08:27] [PROCESS]   Running 100 bootstrap iterations...
+[02:10:13] [PROCESS] Processing q2237_vakulik_JAA420_447_I.csv
+[02:10:13] [WARNING]   Skipping: insufficient images
+[02:10:13] [PROCESS] Processing q2237_vakulik_JAA420_447_R.csv
+[02:10:13] [WARNING]   Skipping: insufficient images
+[02:10:13] [PROCESS] Processing q2237_vakulik_JAA420_447_V.csv
+[02:10:13] [WARNING]   Skipping: insufficient images
+[02:10:13] [SUCCESS] Saved results: results/outputs/step_3_0_cosmograil_temporal_shear.json
+
+============================================================
+COSMOGRAIL TEMPORAL SHEAR ANALYSIS SUMMARY
+============================================================
+Systems analyzed: 18
+Image pairs analyzed: 64
+Valid Γ measurements: 44
+
+Γ (temporal shear slope) statistics:
+  Mean:   -3.866 days/decade
+  Median: 0.220 days/decade
+  Std:    46.295 days/decade
+
+Significance:
+  >2σ (raw): 1 pairs
+  >3σ (raw): 0 pairs
+  >2σ (practical cuts): 1 pairs
+  >3σ (practical cuts): 0 pairs
+
+Interpretation: MARGINAL: One pair shows >2σ temporal shear. Could be statistical fluctuation or systematics.
+============================================================
+[02:10:13] [SUCCESS] Step 3.0 complete

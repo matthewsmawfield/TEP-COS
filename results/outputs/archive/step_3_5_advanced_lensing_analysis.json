@@ -1,0 +1,777 @@
+{
+  "meta": {
+    "timestamp_utc": "2026-01-03T22:51:37.689772+00:00",
+    "script": "step_3_5_advanced_lensing_analysis.py",
+    "description": "Advanced analyses: chromaticity, redshift scaling, residual correlations, error budget"
+  },
+  "chromaticity": {
+    "status": "NOT_FEASIBLE_WITH_CURRENT_DATA",
+    "reason": "COSMOGRAIL monitoring data is single-band (R-band)",
+    "bands_available": [
+      "R"
+    ],
+    "recommendation": "Multi-band chromaticity test requires separate V/I or g/r observations from dedicated follow-up",
+    "tep_prediction": "Temporal shear should be achromatic (same \u0393 in all bands)",
+    "microlensing_prediction": "Microlensing produces chromatic effects (different \u0393 per band)",
+    "falsifier_protocol": {
+      "step_1": "Obtain multi-band light curves (e.g., g/r or V/I) for detection systems",
+      "step_2": "Compute \u0393_band for each band using identical estimator settings",
+      "step_3": "Test \u0394\u0393 = \u0393_blue - \u0393_red against zero",
+      "step_4": "TEP: \u0394\u0393 \u2248 0; Microlensing: \u0394\u0393 \u2260 0"
+    }
+  },
+  "redshift_scaling": {
+    "system_level": [
+      {
+        "system": "DESJ0408",
+        "z_source": 2.375,
+        "z_lens": 0.597,
+        "geometric_factor": 2.113337507827176,
+        "mean_abs_gamma": 186.8852520763443,
+        "max_abs_gamma": 333.0884412487252,
+        "n_pairs": 3
+      },
+      {
+        "system": "HE0435",
+        "z_source": 1.693,
+        "z_lens": 0.454,
+        "geometric_factor": 1.8521320495185696,
+        "mean_abs_gamma": 0.7509050025115481,
+        "max_abs_gamma": 1.6083098656622556,
+        "n_pairs": 6
+      },
+      {
+        "system": "J1001",
+        "z_source": 1.838,
+        "z_lens": 0.415,
+        "geometric_factor": 2.00565371024735,
+        "mean_abs_gamma": 10.142866552791547,
+        "max_abs_gamma": 10.142866552791547,
+        "n_pairs": 1
+      },
+      {
+        "system": "J1206",
+        "z_source": 1.789,
+        "z_lens": 0.745,
+        "geometric_factor": 1.5982808022922634,
+        "mean_abs_gamma": 103.43646644632578,
+        "max_abs_gamma": 103.43646644632578,
+        "n_pairs": 1
+      },
+      {
+        "system": "PG1115",
+        "z_source": 1.722,
+        "z_lens": 0.311,
+        "geometric_factor": 2.0762776506483602,
+        "mean_abs_gamma": 147.35605741489124,
+        "max_abs_gamma": 206.88478775501608,
+        "n_pairs": 3
+      },
+      {
+        "system": "RXJ1131",
+        "z_source": 0.658,
+        "z_lens": 0.295,
+        "geometric_factor": 1.2803088803088802,
+        "mean_abs_gamma": 10.879970583687347,
+        "max_abs_gamma": 21.625553580178817,
+        "n_pairs": 6
+      },
+      {
+        "system": "WFI2033",
+        "z_source": 1.662,
+        "z_lens": 0.661,
+        "geometric_factor": 1.6026490066225165,
+        "mean_abs_gamma": 0.7484501169957225,
+        "max_abs_gamma": 1.251356982906757,
+        "n_pairs": 3
+      }
+    ],
+    "pair_level": [
+      {
+        "system": "DESJ0408",
+        "pair": "A-B",
+        "gamma": 98.6733447517176,
+        "abs_gamma": 98.6733447517176,
+        "sigma": 1.7409804580054722,
+        "uncertainty": 56.67688244172552,
+        "z_source": 2.375,
+        "z_lens": 0.597,
+        "geometric_factor": 2.113337507827176
+      },
+      {
+        "system": "DESJ0408",
+        "pair": "A-D",
+        "gamma": -333.0884412487252,
+        "abs_gamma": 333.0884412487252,
+        "sigma": 6.263224943049319,
+        "uncertainty": 53.18161877905626,
+        "z_source": 2.375,
+        "z_lens": 0.597,
+        "geometric_factor": 2.113337507827176
+      },
+      {
+        "system": "DESJ0408",
+        "pair": "B-D",
+        "gamma": -128.8939702285901,
+        "abs_gamma": 128.8939702285901,
+        "sigma": 6.079281842967814,
+        "uncertainty": 21.202170512572582,
+        "z_source": 2.375,
+        "z_lens": 0.597,
+        "geometric_factor": 2.113337507827176
+      },
+      {
+        "system": "HE0435",
+        "pair": "A-B",
+        "gamma": -0.4433258677608507,
+        "abs_gamma": 0.4433258677608507,
+        "sigma": 0.015106452592872835,
+        "uncertainty": 29.346788402858397,
+        "z_source": 1.693,
+        "z_lens": 0.454,
+        "geometric_factor": 1.8521320495185696
+      },
+      {
+        "system": "HE0435",
+        "pair": "A-C",
+        "gamma": -0.8421776674383608,
+        "abs_gamma": 0.8421776674383608,
+        "sigma": 0.019387821199084162,
+        "uncertainty": 43.438489492472904,
+        "z_source": 1.693,
+        "z_lens": 0.454,
+        "geometric_factor": 1.8521320495185696
+      },
+      {
+        "system": "HE0435",
+        "pair": "A-D",
+        "gamma": -0.9288498680455739,
+        "abs_gamma": 0.9288498680455739,
+        "sigma": 0.022743397627715628,
+        "uncertainty": 40.8404180962679,
+        "z_source": 1.693,
+        "z_lens": 0.454,
+        "geometric_factor": 1.8521320495185696
+      },
+      {
+        "system": "HE0435",
+        "pair": "B-C",
+        "gamma": 1.6083098656622556,
+        "abs_gamma": 1.6083098656622556,
+        "sigma": 0.04939828170779085,
+        "uncertainty": 32.558012344963835,
+        "z_source": 1.693,
+        "z_lens": 0.454,
+        "geometric_factor": 1.8521320495185696
+      },
+      {
+        "system": "HE0435",
+        "pair": "B-D",
+        "gamma": 0.5810045774248798,
+        "abs_gamma": 0.5810045774248798,
+        "sigma": 0.014065637191822595,
+        "uncertainty": 41.30666599040825,
+        "z_source": 1.693,
+        "z_lens": 0.454,
+        "geometric_factor": 1.8521320495185696
+      },
+      {
+        "system": "HE0435",
+        "pair": "C-D",
+        "gamma": -0.10176216873736758,
+        "abs_gamma": 0.10176216873736758,
+        "sigma": 0.0024108641610925585,
+        "uncertainty": 42.20983097249696,
+        "z_source": 1.693,
+        "z_lens": 0.454,
+        "geometric_factor": 1.8521320495185696
+      },
+      {
+        "system": "J1001",
+        "pair": "A-B",
+        "gamma": -10.142866552791547,
+        "abs_gamma": 10.142866552791547,
+        "sigma": 0.10122396240363604,
+        "uncertainty": 100.20222793044118,
+        "z_source": 1.838,
+        "z_lens": 0.415,
+        "geometric_factor": 2.00565371024735
+      },
+      {
+        "system": "J1206",
+        "pair": "A-B",
+        "gamma": -103.43646644632578,
+        "abs_gamma": 103.43646644632578,
+        "sigma": 3.398352426178595,
+        "uncertainty": 30.437239425058337,
+        "z_source": 1.789,
+        "z_lens": 0.745,
+        "geometric_factor": 1.5982808022922634
+      },
+      {
+        "system": "PG1115",
+        "pair": "A-B",
+        "gamma": 156.34991310186842,
+        "abs_gamma": 156.34991310186842,
+        "sigma": 3.7930281808330117,
+        "uncertainty": 41.22034048993841,
+        "z_source": 1.722,
+        "z_lens": 0.311,
+        "geometric_factor": 2.0762776506483602
+      },
+      {
+        "system": "PG1115",
+        "pair": "A-C",
+        "gamma": 78.83347138778927,
+        "abs_gamma": 78.83347138778927,
+        "sigma": 1.8652854043884175,
+        "uncertainty": 42.26349018885766,
+        "z_source": 1.722,
+        "z_lens": 0.311,
+        "geometric_factor": 2.0762776506483602
+      },
+      {
+        "system": "PG1115",
+        "pair": "B-C",
+        "gamma": -206.88478775501608,
+        "abs_gamma": 206.88478775501608,
+        "sigma": 5.411935709300239,
+        "uncertainty": 38.22750285068819,
+        "z_source": 1.722,
+        "z_lens": 0.311,
+        "geometric_factor": 2.0762776506483602
+      },
+      {
+        "system": "RXJ1131",
+        "pair": "A-B",
+        "gamma": 3.109141000765031,
+        "abs_gamma": 3.109141000765031,
+        "sigma": 0.12353671587160478,
+        "uncertainty": 25.16774854203223,
+        "z_source": 0.658,
+        "z_lens": 0.295,
+        "geometric_factor": 1.2803088803088802
+      },
+      {
+        "system": "RXJ1131",
+        "pair": "A-C",
+        "gamma": -5.076052379907616,
+        "abs_gamma": 5.076052379907616,
+        "sigma": 0.17595821762097974,
+        "uncertainty": 28.84805522889311,
+        "z_source": 0.658,
+        "z_lens": 0.295,
+        "geometric_factor": 1.2803088803088802
+      },
+      {
+        "system": "RXJ1131",
+        "pair": "A-D",
+        "gamma": 16.744253756237057,
+        "abs_gamma": 16.744253756237057,
+        "sigma": 0.3174663014774177,
+        "uncertainty": 52.743405137216186,
+        "z_source": 0.658,
+        "z_lens": 0.295,
+        "geometric_factor": 1.2803088803088802
+      },
+      {
+        "system": "RXJ1131",
+        "pair": "B-C",
+        "gamma": -8.724549154568688,
+        "abs_gamma": 8.724549154568688,
+        "sigma": 0.280927899613872,
+        "uncertainty": 31.056186183573622,
+        "z_source": 0.658,
+        "z_lens": 0.295,
+        "geometric_factor": 1.2803088803088802
+      },
+      {
+        "system": "RXJ1131",
+        "pair": "B-D",
+        "gamma": 10.000273630466872,
+        "abs_gamma": 10.000273630466872,
+        "sigma": 0.17607580751872118,
+        "uncertainty": 56.79527341882898,
+        "z_source": 0.658,
+        "z_lens": 0.295,
+        "geometric_factor": 1.2803088803088802
+      },
+      {
+        "system": "RXJ1131",
+        "pair": "C-D",
+        "gamma": 21.625553580178817,
+        "abs_gamma": 21.625553580178817,
+        "sigma": 0.3674134784860875,
+        "uncertainty": 58.85890106505086,
+        "z_source": 0.658,
+        "z_lens": 0.295,
+        "geometric_factor": 1.2803088803088802
+      },
+      {
+        "system": "WFI2033",
+        "pair": "A-B",
+        "gamma": 1.251356982906757,
+        "abs_gamma": 1.251356982906757,
+        "sigma": 0.07909331763615021,
+        "uncertainty": 15.821273153104084,
+        "z_source": 1.662,
+        "z_lens": 0.661,
+        "geometric_factor": 1.6026490066225165
+      },
+      {
+        "system": "WFI2033",
+        "pair": "A-C",
+        "gamma": -0.29381439082170346,
+        "abs_gamma": 0.29381439082170346,
+        "sigma": 0.018932481682935567,
+        "uncertainty": 15.51906378372612,
+        "z_source": 1.662,
+        "z_lens": 0.661,
+        "geometric_factor": 1.6026490066225165
+      },
+      {
+        "system": "WFI2033",
+        "pair": "B-C",
+        "gamma": -0.7001789772587071,
+        "abs_gamma": 0.7001789772587071,
+        "sigma": 0.04507258347378586,
+        "uncertainty": 15.534476244653916,
+        "z_source": 1.662,
+        "z_lens": 0.661,
+        "geometric_factor": 1.6026490066225165
+      }
+    ],
+    "correlations": {
+      "gamma_vs_zsource": {
+        "r": 0.5763874802471758,
+        "p": 0.17557862561441218
+      },
+      "gamma_vs_geometric_factor": {
+        "r": 0.5453328828557491,
+        "p": 0.2054932577956784
+      }
+    },
+    "linear_fit": {
+      "slope": 139.69629453775113,
+      "intercept": -184.28636579546202,
+      "std_err": 96.02758224334754,
+      "interpretation": "|\u0393| increases by 139.7 days/log(\u03c4) per unit increase in (1+z_S)/(1+z_L)"
+    },
+    "high_z_predictions": [
+      {
+        "z_source": 2.5,
+        "z_lens_typical": 0.55,
+        "geometric_factor": 2.258064516129032,
+        "predicted_gamma": 131.15687993494373,
+        "exceeds_300": "False"
+      },
+      {
+        "z_source": 3.0,
+        "z_lens_typical": 0.6000000000000001,
+        "geometric_factor": 2.5,
+        "predicted_gamma": 164.9543705489158,
+        "exceeds_300": "False"
+      },
+      {
+        "z_source": 3.5,
+        "z_lens_typical": 0.65,
+        "geometric_factor": 2.7272727272727275,
+        "predicted_gamma": 196.70352839840473,
+        "exceeds_300": "False"
+      },
+      {
+        "z_source": 4.0,
+        "z_lens_typical": 0.7,
+        "geometric_factor": 2.9411764705882355,
+        "predicted_gamma": 226.58508872733546,
+        "exceeds_300": "False"
+      }
+    ],
+    "falsifiable_prediction": "Systems with z_S > 2.5 should show |\u0393| > 300 days/log(\u03c4)",
+    "current_max_zsource": 2.375,
+    "current_max_gamma": 333.0884412487252
+  },
+  "residual_correlation": {
+    "cross_correlations": [
+      {
+        "system": "DESJ0408",
+        "pair_1": "A-B",
+        "pair_2": "A-D",
+        "correlation": 0.7508031387536757,
+        "p_value": 0.08541116611276534,
+        "n_points": 6
+      },
+      {
+        "system": "DESJ0408",
+        "pair_1": "A-B",
+        "pair_2": "B-D",
+        "correlation": 0.2753018829083243,
+        "p_value": 0.5974798955861648,
+        "n_points": 6
+      },
+      {
+        "system": "DESJ0408",
+        "pair_1": "A-D",
+        "pair_2": "B-D",
+        "correlation": 0.15149475950524585,
+        "p_value": 0.7744963132641536,
+        "n_points": 6
+      },
+      {
+        "system": "HE0435",
+        "pair_1": "A-B",
+        "pair_2": "A-C",
+        "correlation": -0.8389712056578226,
+        "p_value": 0.0756677256471426,
+        "n_points": 5
+      },
+      {
+        "system": "HE0435",
+        "pair_1": "A-B",
+        "pair_2": "A-D",
+        "correlation": 0.8978929701095422,
+        "p_value": 0.03856127056162466,
+        "n_points": 5
+      },
+      {
+        "system": "HE0435",
+        "pair_1": "A-B",
+        "pair_2": "B-C",
+        "correlation": -0.9526549451796336,
+        "p_value": 0.0033092680702969213,
+        "n_points": 6
+      },
+      {
+        "system": "HE0435",
+        "pair_1": "A-B",
+        "pair_2": "B-D",
+        "correlation": -0.9932486296332125,
+        "p_value": 0.0006652447504510895,
+        "n_points": 5
+      },
+      {
+        "system": "HE0435",
+        "pair_1": "A-B",
+        "pair_2": "C-D",
+        "correlation": -0.039396090232163616,
+        "p_value": 0.9498523183557085,
+        "n_points": 5
+      },
+      {
+        "system": "HE0435",
+        "pair_1": "A-C",
+        "pair_2": "A-D",
+        "correlation": -0.8378536611843137,
+        "p_value": 0.07644325836148806,
+        "n_points": 5
+      },
+      {
+        "system": "HE0435",
+        "pair_1": "A-C",
+        "pair_2": "B-C",
+        "correlation": 0.907411565395704,
+        "p_value": 0.03334598855134067,
+        "n_points": 5
+      },
+      {
+        "system": "HE0435",
+        "pair_1": "A-C",
+        "pair_2": "B-D",
+        "correlation": 0.8909490254700001,
+        "p_value": 0.042515133212048986,
+        "n_points": 5
+      },
+      {
+        "system": "HE0435",
+        "pair_1": "A-C",
+        "pair_2": "C-D",
+        "correlation": -0.4995579860013591,
+        "p_value": 0.3914896809179194,
+        "n_points": 5
+      },
+      {
+        "system": "HE0435",
+        "pair_1": "A-D",
+        "pair_2": "B-C",
+        "correlation": -0.8989112255907613,
+        "p_value": 0.03799188972839257,
+        "n_points": 5
+      },
+      {
+        "system": "HE0435",
+        "pair_1": "A-D",
+        "pair_2": "B-D",
+        "correlation": -0.892616991988044,
+        "p_value": 0.04155423002498094,
+        "n_points": 5
+      },
+      {
+        "system": "HE0435",
+        "pair_1": "A-D",
+        "pair_2": "C-D",
+        "correlation": 0.19497247601647885,
+        "p_value": 0.7533352450492299,
+        "n_points": 5
+      },
+      {
+        "system": "HE0435",
+        "pair_1": "B-C",
+        "pair_2": "B-D",
+        "correlation": 0.9744445976858558,
+        "p_value": 0.004885242471489512,
+        "n_points": 5
+      },
+      {
+        "system": "HE0435",
+        "pair_1": "B-C",
+        "pair_2": "C-D",
+        "correlation": -0.14691723440598822,
+        "p_value": 0.8136143042822959,
+        "n_points": 5
+      },
+      {
+        "system": "HE0435",
+        "pair_1": "B-D",
+        "pair_2": "C-D",
+        "correlation": -0.05545287256039799,
+        "p_value": 0.9294314116988245,
+        "n_points": 5
+      },
+      {
+        "system": "PG1115",
+        "pair_1": "A-B",
+        "pair_2": "A-C",
+        "correlation": -0.5626710783698026,
+        "p_value": 0.2450638603531812,
+        "n_points": 6
+      },
+      {
+        "system": "PG1115",
+        "pair_1": "A-B",
+        "pair_2": "B-C",
+        "correlation": -0.3876126580651223,
+        "p_value": 0.4476991681865499,
+        "n_points": 6
+      },
+      {
+        "system": "PG1115",
+        "pair_1": "A-C",
+        "pair_2": "B-C",
+        "correlation": 0.7833479226020482,
+        "p_value": 0.06532256307162242,
+        "n_points": 6
+      },
+      {
+        "system": "RXJ1131",
+        "pair_1": "A-B",
+        "pair_2": "A-C",
+        "correlation": 0.8790267720288929,
+        "p_value": 0.021066590152457713,
+        "n_points": 6
+      },
+      {
+        "system": "RXJ1131",
+        "pair_1": "A-B",
+        "pair_2": "A-D",
+        "correlation": 0.8263758328855654,
+        "p_value": 0.0845477774367651,
+        "n_points": 5
+      },
+      {
+        "system": "RXJ1131",
+        "pair_1": "A-B",
+        "pair_2": "B-C",
+        "correlation": 0.9720959252619281,
+        "p_value": 0.0011570925025616685,
+        "n_points": 6
+      },
+      {
+        "system": "RXJ1131",
+        "pair_1": "A-B",
+        "pair_2": "B-D",
+        "correlation": 0.8177895359770664,
+        "p_value": 0.09077216281665645,
+        "n_points": 5
+      },
+      {
+        "system": "RXJ1131",
+        "pair_1": "A-B",
+        "pair_2": "C-D",
+        "correlation": 0.7908272800966893,
+        "p_value": 0.11116615282163159,
+        "n_points": 5
+      },
+      {
+        "system": "RXJ1131",
+        "pair_1": "A-C",
+        "pair_2": "A-D",
+        "correlation": 0.9236898658819772,
+        "p_value": 0.025013390848727775,
+        "n_points": 5
+      },
+      {
+        "system": "RXJ1131",
+        "pair_1": "A-C",
+        "pair_2": "B-C",
+        "correlation": 0.8765532842169416,
+        "p_value": 0.021918029549344027,
+        "n_points": 6
+      },
+      {
+        "system": "RXJ1131",
+        "pair_1": "A-C",
+        "pair_2": "B-D",
+        "correlation": 0.9782434740904151,
+        "p_value": 0.0038396865917430805,
+        "n_points": 5
+      },
+      {
+        "system": "RXJ1131",
+        "pair_1": "A-C",
+        "pair_2": "C-D",
+        "correlation": 0.9103859507921284,
+        "p_value": 0.03176672118509594,
+        "n_points": 5
+      },
+      {
+        "system": "RXJ1131",
+        "pair_1": "A-D",
+        "pair_2": "B-C",
+        "correlation": 0.8637434042774802,
+        "p_value": 0.059127373687976895,
+        "n_points": 5
+      },
+      {
+        "system": "RXJ1131",
+        "pair_1": "A-D",
+        "pair_2": "B-D",
+        "correlation": 0.9721594060594412,
+        "p_value": 0.00555302462840514,
+        "n_points": 5
+      },
+      {
+        "system": "RXJ1131",
+        "pair_1": "A-D",
+        "pair_2": "C-D",
+        "correlation": 0.9981172588030007,
+        "p_value": 9.803860169236143e-05,
+        "n_points": 5
+      },
+      {
+        "system": "RXJ1131",
+        "pair_1": "B-C",
+        "pair_2": "B-D",
+        "correlation": 0.8527407066449629,
+        "p_value": 0.06631693784871284,
+        "n_points": 5
+      },
+      {
+        "system": "RXJ1131",
+        "pair_1": "B-C",
+        "pair_2": "C-D",
+        "correlation": 0.8312186295750265,
+        "p_value": 0.0810976098098973,
+        "n_points": 5
+      },
+      {
+        "system": "RXJ1131",
+        "pair_1": "B-D",
+        "pair_2": "C-D",
+        "correlation": 0.968953371646948,
+        "p_value": 0.006536159232608208,
+        "n_points": 5
+      },
+      {
+        "system": "WFI2033",
+        "pair_1": "A-B",
+        "pair_2": "A-C",
+        "correlation": 0.19801307958451553,
+        "p_value": 0.7068623458320845,
+        "n_points": 6
+      },
+      {
+        "system": "WFI2033",
+        "pair_1": "A-B",
+        "pair_2": "B-C",
+        "correlation": -0.9918716167500037,
+        "p_value": 9.883739775110189e-05,
+        "n_points": 6
+      },
+      {
+        "system": "WFI2033",
+        "pair_1": "A-C",
+        "pair_2": "B-C",
+        "correlation": -0.30210143189685695,
+        "p_value": 0.5606335373079765,
+        "n_points": 6
+      }
+    ],
+    "summary": {
+      "n_pairs_tested": 39,
+      "mean_correlation": 0.2842747304808814,
+      "std_correlation": 0.724010054092965,
+      "t_statistic": 2.4203906000476136,
+      "t_p_value": 0.020392312026462744,
+      "n_significant_at_0.05": 18,
+      "interpretation": "Positive mean correlation suggests shared systematic structure; negative or zero suggests independent noise"
+    },
+    "tep_expectation": "Coherent residuals across pairs (positive correlation) if shared gravitational path",
+    "noise_expectation": "Independent residuals (correlation ~ 0)"
+  },
+  "error_budget": {
+    "measurements": {
+      "total_pairs": 23,
+      "detections_gt_3sigma": 5,
+      "null_pairs": 18
+    },
+    "statistical_summary": {
+      "median_uncertainty_days": 40.8404180962679,
+      "median_fractional_uncertainty": 5.683167365073199,
+      "detection_mean_abs_gamma": 185.7307157561051,
+      "detection_mean_sigma": 4.989164620465795,
+      "null_mean_abs_gamma": 14.426682586693273,
+      "null_mean_sigma": 0.3008377268144144
+    },
+    "combined_significance": {
+      "method": "Fisher's method",
+      "chi2_statistic": 149.86649260216532,
+      "combined_p_value": 0.0,
+      "interpretation": "Combined p < 0.00e+00"
+    },
+    "systematic_budget": {
+      "statistical_bootstrap": {
+        "description": "Bootstrap resampling uncertainty on \u0393",
+        "median_value_days": 40.8404180962679,
+        "status": "QUANTIFIED"
+      },
+      "filtering_sensitivity": {
+        "description": "Sensitivity to Gaussian smoothing scale choice",
+        "estimated_contribution": "~10-20% based on \u03c4 range coverage",
+        "status": "PARTIALLY_QUANTIFIED",
+        "note": "Injection-recovery tests validate estimator linearity"
+      },
+      "microlensing_contamination": {
+        "description": "Stellar microlensing in lens galaxy",
+        "expected_signature": "Chromatic (wavelength-dependent)",
+        "tep_signature": "Achromatic",
+        "discriminator": "Multi-band observations needed",
+        "status": "NOT_YET_TESTED"
+      },
+      "intrinsic_variability": {
+        "description": "Non-stationary quasar variability structure",
+        "mitigation": "Detrending with 200-day window",
+        "status": "MITIGATED"
+      },
+      "geometric_model": {
+        "description": "Lens model uncertainties affecting path length",
+        "note": "Affects absolute \u0393 prediction, not detection significance",
+        "status": "SECONDARY"
+      }
+    },
+    "overall_assessment": {
+      "dominant_uncertainty": "Statistical (bootstrap)",
+      "key_systematic": "Microlensing (requires multi-band test)",
+      "validation_status": "Null controls (HE0435, WFI2033) confirm no false positives"
+    }
+  }
+}

@@ -1,0 +1,14 @@
+Parsed 349 pulsars from Freire catalog
+MSPs (P < 30 ms): 325
+
+Binary vs Isolated MSPs in GCs:
+  Binary MSPs: 111
+  Isolated MSPs: 81
+  Difference (binary - isolated): -0.305 dex
+  t-test p-value: 0.01092
+
+Orbital Parameter Analysis:
+  Binaries with measured Pdot: 111
+
+Wrote: /Users/matthewsmawfield/www/TEP-COS/results/outputs/step_5_11_binary_pulsar_analysis.json
+Wrote: /Users/matthewsmawfield/www/TEP-COS/results/outputs/step_5_11_binary_pulsar_analysis.md

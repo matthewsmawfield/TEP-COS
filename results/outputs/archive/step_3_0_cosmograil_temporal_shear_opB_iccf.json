@@ -1,0 +1,4109 @@
+{
+  "analysis_date": "2026-01-05T14:31:06.717106",
+  "detrend_window_days": 200.0,
+  "tau_values": [
+    10.0,
+    20.0,
+    40.0,
+    80.0,
+    160.0
+  ],
+  "n_bootstrap": 120,
+  "systems": {
+    "DESJ0408": {
+      "system_id": "DESJ0408",
+      "band": "R",
+      "n_images": 3,
+      "image_labels": [
+        "A",
+        "B",
+        "D"
+      ],
+      "tau_values": [
+        10.0,
+        20.0,
+        40.0,
+        80.0,
+        160.0
+      ],
+      "detrend_window_days": 200.0,
+      "mode_lock_window_days": 50.0,
+      "min_variance_fraction": 0.01,
+      "pairs": {
+        "A-B": {
+          "broadband": {
+            "delay_days": -114.14928064076113,
+            "correlation": 0.965704177962845,
+            "uncertainty_days": 91.06382978723404
+          },
+          "multiscale": {
+            "10.0": {
+              "delay_days": NaN,
+              "correlation": NaN,
+              "uncertainty_days": NaN
+            },
+            "20.0": {
+              "delay_days": -113.14642607050469,
+              "correlation": 0.9606308999448709,
+              "uncertainty_days": 22.97872340425532
+            },
+            "40.0": {
+              "delay_days": -110.58078058596902,
+              "correlation": 0.9898574021037462,
+              "uncertainty_days": 31.06382978723404
+            },
+            "80.0": {
+              "delay_days": -126.76655183295739,
+              "correlation": 0.9991444334666477,
+              "uncertainty_days": 37.87234042553192
+            },
+            "160.0": {
+              "delay_days": -139.9553339266944,
+              "correlation": 0.9995704541072246,
+              "uncertainty_days": 29.361702127659573
+            }
+          },
+          "gamma": {
+            "value": -32.44852490584009,
+            "uncertainty": 12.342679932087204,
+            "sigma": 2.628969161023435,
+            "p_value": 0.008564412722083636,
+            "intercept": -65.67787327162831,
+            "r_squared": 0.8475651870918615,
+            "passes_practical_cuts": true,
+            "uncertainty_method": "bootstrap"
+          },
+          "n_valid_scales": 4,
+          "max_delay_jump_days": 16.185771246988367,
+          "mode_stable": true
+        },
+        "A-D": {
+          "broadband": {
+            "delay_days": -151.89547090097932,
+            "correlation": 0.8184705719277603,
+            "uncertainty_days": 99.14893617021276
+          },
+          "multiscale": {
+            "10.0": {
+              "delay_days": NaN,
+              "correlation": NaN,
+              "uncertainty_days": NaN
+            },
+            "20.0": {
+              "delay_days": -160.45883915371567,
+              "correlation": 0.8590810297233624,
+              "uncertainty_days": 18.72340425531915
+            },
+            "40.0": {
+              "delay_days": -160.93771602572534,
+              "correlation": 0.9974735538526378,
+              "uncertainty_days": 24.680851063829785
+            },
+            "80.0": {
+              "delay_days": -165.49462884286459,
+              "correlation": 0.9999695940704467,
+              "uncertainty_days": 39.57446808510638
+            },
+            "160.0": {
+              "delay_days": -167.39301862430855,
+              "correlation": 0.9994921825528027,
+              "uncertainty_days": 38.723404255319146
+            }
+          },
+          "gamma": {
+            "value": -8.642423139600933,
+            "uncertainty": 24.60866844457475,
+            "sigma": 0.35119426144758553,
+            "p_value": 0.7254426149925055,
+            "intercept": -148.37089532179306,
+            "r_squared": 0.9188058329841129,
+            "passes_practical_cuts": true,
+            "uncertainty_method": "bootstrap"
+          },
+          "n_valid_scales": 4,
+          "max_delay_jump_days": 4.556912817139249,
+          "mode_stable": true
+        },
+        "B-D": {
+          "broadband": {
+            "delay_days": -44.87952804653969,
+            "correlation": 0.7635325544625846,
+            "uncertainty_days": 27.23404255319149
+          },
+          "multiscale": {
+            "10.0": {
+              "delay_days": -70.22510290150838,
+              "correlation": 0.28191239935067275,
+              "uncertainty_days": 15.74468085106383
+            },
+            "20.0": {
+              "delay_days": -52.445654594670195,
+              "correlation": 0.8143124180503596,
+              "uncertainty_days": 20.0
+            },
+            "40.0": {
+              "delay_days": -47.9552978959544,
+              "correlation": 0.9765450837551894,
+              "uncertainty_days": 22.127659574468083
+            },
+            "80.0": {
+              "delay_days": -35.90055298970828,
+              "correlation": 0.982717405274997,
+              "uncertainty_days": 28.51063829787234
+            },
+            "160.0": {
+              "delay_days": -23.526396639914722,
+              "correlation": 0.9976296456791516,
+              "uncertainty_days": 27.23404255319149
+            }
+          },
+          "gamma": {
+            "value": 34.537011500052735,
+            "uncertainty": 17.61481803484357,
+            "sigma": 1.9606794365820677,
+            "p_value": 0.04991642932566753,
+            "intercept": -100.83096114497995,
+            "r_squared": 0.9678974890150331,
+            "passes_practical_cuts": true,
+            "uncertainty_method": "bootstrap"
+          },
+          "n_valid_scales": 5,
+          "max_delay_jump_days": 17.779448306838184,
+          "mode_stable": true
+        }
+      },
+      "bootstrap": {
+        "A-B": {
+          "gamma_mean": -28.173464386782026,
+          "gamma_std": 12.342679932087204,
+          "gamma_std_phot": 12.342679932087204,
+          "gamma_std_jackknife": NaN,
+          "n_valid": 120,
+          "n_valid_jackknife": 0,
+          "n_seasons": 1,
+          "sigma_floor": 2.0
+        },
+        "A-D": {
+          "gamma_mean": -2.555076485185354,
+          "gamma_std": 24.60866844457475,
+          "gamma_std_phot": 24.60866844457475,
+          "gamma_std_jackknife": NaN,
+          "n_valid": 120,
+          "n_valid_jackknife": 0,
+          "n_seasons": 1,
+          "sigma_floor": 2.0
+        },
+        "B-D": {
+          "gamma_mean": 29.19952934407071,
+          "gamma_std": 17.61481803484357,
+          "gamma_std_phot": 17.61481803484357,
+          "gamma_std_jackknife": NaN,
+          "n_valid": 120,
+          "n_valid_jackknife": 0,
+          "n_seasons": 1,
+          "sigma_floor": 2.0
+        }
+      }
+    },
+    "HE0435": {
+      "system_id": "HE0435",
+      "band": "R",
+      "n_images": 4,
+      "image_labels": [
+        "A",
+        "B",
+        "C",
+        "D"
+      ],
+      "tau_values": [
+        10.0,
+        20.0,
+        40.0,
+        80.0,
+        160.0
+      ],
+      "detrend_window_days": 200.0,
+      "mode_lock_window_days": 50.0,
+      "min_variance_fraction": 0.01,
+      "pairs": {
+        "A-B": {
+          "broadband": {
+            "delay_days": -9.507279693233972,
+            "correlation": 0.8796610311471071,
+            "uncertainty_days": 40.42553191489362
+          },
+          "multiscale": {
+            "10.0": {
+              "delay_days": -7.992315044340134,
+              "correlation": 0.6686751959650583,
+              "uncertainty_days": 11.063829787234042
+            },
+            "20.0": {
+              "delay_days": -9.511990918599697,
+              "correlation": 0.847944261425916,
+              "uncertainty_days": 15.74468085106383
+            },
+            "40.0": {
+              "delay_days": -9.461435985124218,
+              "correlation": 0.9080176131367127,
+              "uncertainty_days": 28.085106382978722
+            },
+            "80.0": {
+              "delay_days": -16.02110269896085,
+              "correlation": 0.9044795961442136,
+              "uncertainty_days": 42.97872340425532
+            },
+            "160.0": {
+              "delay_days": -10.417134687255839,
+              "correlation": 0.8663093853181109,
+              "uncertainty_days": 42.97872340425532
+            }
+          },
+          "gamma": {
+            "value": -3.755346648061443,
+            "uncertainty": 2.538049996157867,
+            "sigma": 1.4796188624126143,
+            "p_value": 0.1389749897769541,
+            "intercept": -4.755878896478423,
+            "r_squared": 0.27776470599683745,
+            "passes_practical_cuts": false,
+            "uncertainty_method": "bootstrap"
+          },
+          "n_valid_scales": 5,
+          "max_delay_jump_days": 6.559666713836631,
+          "mode_stable": true
+        },
+        "A-C": {
+          "broadband": {
+            "delay_days": 1.2658456678669971,
+            "correlation": 0.9011004034326133,
+            "uncertainty_days": 40.42553191489362
+          },
+          "multiscale": {
+            "10.0": {
+              "delay_days": -0.2474238398329964,
+              "correlation": 0.70132599725654,
+              "uncertainty_days": 10.212765957446807
+            },
+            "20.0": {
+              "delay_days": -0.707595753401019,
+              "correlation": 0.8761476992886007,
+              "uncertainty_days": 16.170212765957448
+            },
+            "40.0": {
+              "delay_days": 0.23900903437736198,
+              "correlation": 0.9210649196188317,
+              "uncertainty_days": 28.085106382978722
+            },
+            "80.0": {
+              "delay_days": -6.227687116655989,
+              "correlation": 0.9211489789362016,
+              "uncertainty_days": 42.5531914893617
+            },
+            "160.0": {
+              "delay_days": 0.3052714578182129,
+              "correlation": 0.9145199116913085,
+              "uncertainty_days": 42.97872340425532
+            }
+          },
+          "gamma": {
+            "value": -1.4089242876370336,
+            "uncertainty": 2.2053106650135765,
+            "sigma": 0.6388779186484186,
+            "p_value": 0.5229023538405537,
+            "intercept": 0.895475122435584,
+            "r_squared": 0.04777715237445934,
+            "passes_practical_cuts": false,
+            "uncertainty_method": "bootstrap"
+          },
+          "n_valid_scales": 5,
+          "max_delay_jump_days": 6.532958574474202,
+          "mode_stable": true
+        },
+        "A-D": {
+          "broadband": {
+            "delay_days": -12.516127650723348,
+            "correlation": 0.9268950875421558,
+            "uncertainty_days": 40.0
+          },
+          "multiscale": {
+            "10.0": {
+              "delay_days": -13.983414369293286,
+              "correlation": 0.7826964551359581,
+              "uncertainty_days": 10.638297872340425
+            },
+            "20.0": {
+              "delay_days": -14.038453014404247,
+              "correlation": 0.9218611264457073,
+              "uncertainty_days": 15.74468085106383
+            },
+            "40.0": {
+              "delay_days": -12.590373115062551,
+              "correlation": 0.9543978447802604,
+              "uncertainty_days": 28.085106382978722
+            },
+            "80.0": {
+              "delay_days": -13.003248159590946,
+              "correlation": 0.9674421716947796,
+              "uncertainty_days": 42.97872340425532
+            },
+            "160.0": {
+              "delay_days": -12.851983793678592,
+              "correlation": 0.9796186097009341,
+              "uncertainty_days": 42.97872340425532
+            }
+          },
+          "gamma": {
+            "value": 1.0663416596372362,
+            "uncertainty": 2.824178340099592,
+            "sigma": 0.37757589331261304,
+            "p_value": 0.7057456756281055,
+            "intercept": -14.994898510800047,
+            "r_squared": 0.5594161951976497,
+            "passes_practical_cuts": false,
+            "uncertainty_method": "bootstrap"
+          },
+          "n_valid_scales": 5,
+          "max_delay_jump_days": 1.4480798993416961,
+          "mode_stable": true
+        },
+        "B-C": {
+          "broadband": {
+            "delay_days": 7.3674760939226385,
+            "correlation": 0.9146678591076987,
+            "uncertainty_days": 40.42553191489362
+          },
+          "multiscale": {
+            "10.0": {
+              "delay_days": 5.826931927457187,
+              "correlation": 0.7308381135727723,
+              "uncertainty_days": 10.638297872340425
+            },
+            "20.0": {
+              "delay_days": 7.3997914424155535,
+              "correlation": 0.9011086806873403,
+              "uncertainty_days": 16.170212765957448
+            },
+            "40.0": {
+              "delay_days": 8.849688662832822,
+              "correlation": 0.9631573492030875,
+              "uncertainty_days": 29.361702127659573
+            },
+            "80.0": {
+              "delay_days": 7.925034611334702,
+              "correlation": 0.9804221087789835,
+              "uncertainty_days": 42.97872340425532
+            },
+            "160.0": {
+              "delay_days": 7.416502128779328,
+              "correlation": 0.9799084126616351,
+              "uncertainty_days": 42.97872340425532
+            }
+          },
+          "gamma": {
+            "value": 0.8722341559173143,
+            "uncertainty": 8.303701854374552,
+            "sigma": 0.10504160327695344,
+            "p_value": 0.9163427966622173,
+            "intercept": 6.1842709128668725,
+            "r_squared": 0.15759132419309396,
+            "passes_practical_cuts": false,
+            "uncertainty_method": "bootstrap"
+          },
+          "n_valid_scales": 5,
+          "max_delay_jump_days": 1.5728595149583668,
+          "mode_stable": true
+        },
+        "B-D": {
+          "broadband": {
+            "delay_days": -6.563832914040454,
+            "correlation": 0.9288982362314426,
+            "uncertainty_days": 39.148936170212764
+          },
+          "multiscale": {
+            "10.0": {
+              "delay_days": -5.647056808516634,
+              "correlation": 0.7526883196805582,
+              "uncertainty_days": 10.212765957446807
+            },
+            "20.0": {
+              "delay_days": -4.106421010070381,
+              "correlation": 0.9062190180384531,
+              "uncertainty_days": 15.319148936170212
+            },
+            "40.0": {
+              "delay_days": -3.0260943103914424,
+              "correlation": 0.9558382849213886,
+              "uncertainty_days": 29.361702127659573
+            },
+            "80.0": {
+              "delay_days": 2.9585789638300386,
+              "correlation": 0.9495821269710619,
+              "uncertainty_days": 42.97872340425532
+            },
+            "160.0": {
+              "delay_days": -5.705774592175424,
+              "correlation": 0.9215089444395433,
+              "uncertainty_days": 42.97872340425532
+            }
+          },
+          "gamma": {
+            "value": 2.0904251091511887,
+            "uncertainty": 2.7110389915227637,
+            "sigma": 0.7710789537471823,
+            "p_value": 0.44066013455539177,
+            "intercept": -6.290572465479568,
+            "r_squared": 0.066905545585914,
+            "passes_practical_cuts": false,
+            "uncertainty_method": "bootstrap"
+          },
+          "n_valid_scales": 5,
+          "max_delay_jump_days": 8.664353556005462,
+          "mode_stable": true
+        },
+        "C-D": {
+          "broadband": {
+            "delay_days": -13.505243140296727,
+            "correlation": 0.935365255366241,
+            "uncertainty_days": 39.57446808510638
+          },
+          "multiscale": {
+            "10.0": {
+              "delay_days": -13.479919779140166,
+              "correlation": 0.7055065268886385,
+              "uncertainty_days": 10.212765957446807
+            },
+            "20.0": {
+              "delay_days": -13.508596721440082,
+              "correlation": 0.8831034112491041,
+              "uncertainty_days": 16.170212765957448
+            },
+            "40.0": {
+              "delay_days": -12.041009913962023,
+              "correlation": 0.9546551731343794,
+              "uncertainty_days": 28.936170212765955
+            },
+            "80.0": {
+              "delay_days": -5.5791716080343114,
+              "correlation": 0.9621804509212274,
+              "uncertainty_days": 42.97872340425532
+            },
+            "160.0": {
+              "delay_days": -12.865635563095507,
+              "correlation": 0.9569981890134059,
+              "uncertainty_days": 42.97872340425532
+            }
+          },
+          "gamma": {
+            "value": 2.9057132737722733,
+            "uncertainty": 3.526437441030456,
+            "sigma": 0.8239798159933324,
+            "p_value": 0.40995102663733274,
+            "intercept": -16.07407923084942,
+            "r_squared": 0.13906009344764958,
+            "passes_practical_cuts": false,
+            "uncertainty_method": "bootstrap"
+          },
+          "n_valid_scales": 5,
+          "max_delay_jump_days": 7.286463955061196,
+          "mode_stable": true
+        }
+      },
+      "bootstrap": {
+        "A-B": {
+          "gamma_mean": -3.398033474492466,
+          "gamma_std": 2.538049996157867,
+          "gamma_std_phot": 1.0201436804276178,
+          "gamma_std_jackknife": 2.3240061648542465,
+          "n_valid": 120,
+          "n_valid_jackknife": 13,
+          "n_seasons": 13,
+          "sigma_floor": 2.0
+        },
+        "A-C": {
+          "gamma_mean": -1.8757717837093153,
+          "gamma_std": 2.2053106650135765,
+          "gamma_std_phot": 0.9943221715612126,
+          "gamma_std_jackknife": 1.9684304784178732,
+          "n_valid": 120,
+          "n_valid_jackknife": 13,
+          "n_seasons": 13,
+          "sigma_floor": 2.0
+        },
+        "A-D": {
+          "gamma_mean": 1.0748726750875588,
+          "gamma_std": 2.824178340099592,
+          "gamma_std_phot": 0.7473203099492929,
+          "gamma_std_jackknife": 2.723507967865154,
+          "n_valid": 120,
+          "n_valid_jackknife": 13,
+          "n_seasons": 13,
+          "sigma_floor": 2.0
+        },
+        "B-C": {
+          "gamma_mean": -1.4862003668148562,
+          "gamma_std": 8.303701854374552,
+          "gamma_std_phot": 2.4052231709683625,
+          "gamma_std_jackknife": 7.947727095477063,
+          "n_valid": 120,
+          "n_valid_jackknife": 13,
+          "n_seasons": 13,
+          "sigma_floor": 2.0
+        },
+        "B-D": {
+          "gamma_mean": 2.296561543139626,
+          "gamma_std": 2.7110389915227637,
+          "gamma_std_phot": 0.9510449092737138,
+          "gamma_std_jackknife": 2.538748903318585,
+          "n_valid": 120,
+          "n_valid_jackknife": 13,
+          "n_seasons": 13,
+          "sigma_floor": 2.0
+        },
+        "C-D": {
+          "gamma_mean": 2.7169544809120043,
+          "gamma_std": 3.526437441030456,
+          "gamma_std_phot": 0.8784724443173996,
+          "gamma_std_jackknife": 3.415266781684331,
+          "n_valid": 120,
+          "n_valid_jackknife": 13,
+          "n_seasons": 13,
+          "sigma_floor": 2.0
+        }
+      }
+    },
+    "HS2209": {
+      "system_id": "HS2209",
+      "band": "R",
+      "n_images": 2,
+      "image_labels": [
+        "A",
+        "B"
+      ],
+      "tau_values": [
+        10.0,
+        20.0,
+        40.0,
+        80.0,
+        160.0
+      ],
+      "detrend_window_days": 200.0,
+      "mode_lock_window_days": 50.0,
+      "min_variance_fraction": 0.01,
+      "pairs": {
+        "A-B": {
+          "broadband": {
+            "delay_days": 53.10215350688855,
+            "correlation": 0.6429778104653516,
+            "uncertainty_days": 55.744680851063826
+          },
+          "multiscale": {
+            "10.0": {
+              "delay_days": 19.624868093242885,
+              "correlation": 0.4233598335376448,
+              "uncertainty_days": 7.234042553191489
+            },
+            "20.0": {
+              "delay_days": 29.562762090148727,
+              "correlation": 0.5615224321298129,
+              "uncertainty_days": 14.893617021276595
+            },
+            "40.0": {
+              "delay_days": 21.83353624811493,
+              "correlation": 0.8567713115874688,
+              "uncertainty_days": 21.70212765957447
+            },
+            "80.0": {
+              "delay_days": 28.583807372432293,
+              "correlation": 0.8972154292227953,
+              "uncertainty_days": 30.638297872340424
+            },
+            "160.0": {
+              "delay_days": 46.05839580470979,
+              "correlation": 0.9417430864204381,
+              "uncertainty_days": 42.97872340425532
+            }
+          },
+          "gamma": {
+            "value": 22.349295149388904,
+            "uncertainty": 87.89177436839131,
+            "sigma": 0.25428198838851096,
+            "p_value": 0.7992777137713911,
+            "intercept": -8.4437273715303,
+            "r_squared": 0.6472162455851603,
+            "passes_practical_cuts": true,
+            "uncertainty_method": "bootstrap"
+          },
+          "n_valid_scales": 5,
+          "max_delay_jump_days": 17.474588432277496,
+          "mode_stable": true
+        }
+      },
+      "bootstrap": {
+        "A-B": {
+          "gamma_mean": 4.041379432297544,
+          "gamma_std": 87.89177436839131,
+          "gamma_std_phot": 19.074073769940018,
+          "gamma_std_jackknife": 85.79710782679736,
+          "n_valid": 120,
+          "n_valid_jackknife": 19,
+          "n_seasons": 19,
+          "sigma_floor": 2.0
+        }
+      }
+    },
+    "J1001": {
+      "system_id": "J1001",
+      "band": "R",
+      "n_images": 2,
+      "image_labels": [
+        "A",
+        "B"
+      ],
+      "tau_values": [
+        10.0,
+        20.0,
+        40.0,
+        80.0,
+        160.0
+      ],
+      "detrend_window_days": 200.0,
+      "mode_lock_window_days": 50.0,
+      "min_variance_fraction": 0.01,
+      "pairs": {
+        "A-B": {
+          "broadband": {
+            "delay_days": -79.0371060556213,
+            "correlation": 0.7961478494822762,
+            "uncertainty_days": 82.12765957446808
+          },
+          "multiscale": {
+            "10.0": {
+              "delay_days": NaN,
+              "correlation": NaN,
+              "uncertainty_days": NaN
+            },
+            "20.0": {
+              "delay_days": -50.15392284283886,
+              "correlation": 0.27724930630474653,
+              "uncertainty_days": 16.170212765957448
+            },
+            "40.0": {
+              "delay_days": -48.127593521762975,
+              "correlation": 0.5045257502846953,
+              "uncertainty_days": 21.27659574468085
+            },
+            "80.0": {
+              "delay_days": -49.03036790914022,
+              "correlation": 0.5985197323254363,
+              "uncertainty_days": 22.97872340425532
+            },
+            "160.0": {
+              "delay_days": -93.58328349039655,
+              "correlation": 0.5473354205209885,
+              "uncertainty_days": 42.97872340425532
+            }
+          },
+          "gamma": {
+            "value": -56.188493348460035,
+            "uncertainty": 98.62328074196154,
+            "sigma": 0.5697284953992953,
+            "p_value": 0.5688618599627364,
+            "intercept": 42.436453841791455,
+            "r_squared": 0.6093576084730533,
+            "passes_practical_cuts": true,
+            "uncertainty_method": "bootstrap"
+          },
+          "n_valid_scales": 4,
+          "max_delay_jump_days": 44.552915581256336,
+          "mode_stable": true
+        }
+      },
+      "bootstrap": {
+        "A-B": {
+          "gamma_mean": -36.73978433491166,
+          "gamma_std": 98.62328074196154,
+          "gamma_std_phot": 18.854159635462782,
+          "gamma_std_jackknife": 96.8042982968641,
+          "n_valid": 120,
+          "n_valid_jackknife": 9,
+          "n_seasons": 9,
+          "sigma_floor": 2.0
+        }
+      }
+    },
+    "J1206": {
+      "system_id": "J1206",
+      "band": "R",
+      "n_images": 2,
+      "image_labels": [
+        "A",
+        "B"
+      ],
+      "tau_values": [
+        10.0,
+        20.0,
+        40.0,
+        80.0,
+        160.0
+      ],
+      "detrend_window_days": 200.0,
+      "mode_lock_window_days": 50.0,
+      "min_variance_fraction": 0.01,
+      "pairs": {
+        "A-B": {
+          "broadband": {
+            "delay_days": -103.71176939056276,
+            "correlation": 0.8415927588474329,
+            "uncertainty_days": 57.4468085106383
+          },
+          "multiscale": {
+            "10.0": {
+              "delay_days": -112.94336836678937,
+              "correlation": 0.24827768636922237,
+              "uncertainty_days": 15.319148936170212
+            },
+            "20.0": {
+              "delay_days": -102.68220720463907,
+              "correlation": 0.42435803148165663,
+              "uncertainty_days": 25.106382978723403
+            },
+            "40.0": {
+              "delay_days": -97.41093039951794,
+              "correlation": 0.6575788454245153,
+              "uncertainty_days": 31.914893617021274
+            },
+            "80.0": {
+              "delay_days": -106.95288382281764,
+              "correlation": 0.6921169135151136,
+              "uncertainty_days": 38.29787234042553
+            },
+            "160.0": {
+              "delay_days": -121.56714435558642,
+              "correlation": 0.4358405499547243,
+              "uncertainty_days": 42.5531914893617
+            }
+          },
+          "gamma": {
+            "value": -12.09760160707429,
+            "uncertainty": 45.680944151498174,
+            "sigma": 0.2648281867150842,
+            "p_value": 0.7911418220477251,
+            "intercept": -85.09519761732133,
+            "r_squared": 0.2503242319840815,
+            "passes_practical_cuts": false,
+            "uncertainty_method": "bootstrap"
+          },
+          "n_valid_scales": 5,
+          "max_delay_jump_days": 14.614260532768782,
+          "mode_stable": true
+        }
+      },
+      "bootstrap": {
+        "A-B": {
+          "gamma_mean": -21.11316460640383,
+          "gamma_std": 45.680944151498174,
+          "gamma_std_phot": 18.704118232312357,
+          "gamma_std_jackknife": 41.676187682224196,
+          "n_valid": 120,
+          "n_valid_jackknife": 10,
+          "n_seasons": 10,
+          "sigma_floor": 2.0
+        }
+      }
+    },
+    "PG1115": {
+      "system_id": "PG1115",
+      "band": "R",
+      "n_images": 3,
+      "image_labels": [
+        "A",
+        "B",
+        "C"
+      ],
+      "tau_values": [
+        10.0,
+        20.0,
+        40.0,
+        80.0,
+        160.0
+      ],
+      "detrend_window_days": 200.0,
+      "mode_lock_window_days": 50.0,
+      "min_variance_fraction": 0.01,
+      "pairs": {
+        "A-B": {
+          "broadband": {
+            "delay_days": -6.784243198362008,
+            "correlation": 0.973715753676349,
+            "uncertainty_days": 47.659574468085104
+          },
+          "multiscale": {
+            "10.0": {
+              "delay_days": -5.789417029750236,
+              "correlation": 0.9231214955266678,
+              "uncertainty_days": 6.382978723404255
+            },
+            "20.0": {
+              "delay_days": -6.262024600316716,
+              "correlation": 0.9729236147239162,
+              "uncertainty_days": 11.48936170212766
+            },
+            "40.0": {
+              "delay_days": -9.30313725877937,
+              "correlation": 0.995576708015445,
+              "uncertainty_days": 25.53191489361702
+            },
+            "80.0": {
+              "delay_days": -6.7558614768360625,
+              "correlation": 0.9993951394941737,
+              "uncertainty_days": 42.97872340425532
+            },
+            "160.0": {
+              "delay_days": -6.614197649338479,
+              "correlation": 0.9999302704299138,
+              "uncertainty_days": 42.97872340425532
+            }
+          },
+          "gamma": {
+            "value": -0.6239180729243219,
+            "uncertainty": 2.0,
+            "sigma": 0.31195903646216094,
+            "p_value": 0.7550716549961556,
+            "intercept": -5.970743785828518,
+            "r_squared": 0.04551854172216285,
+            "passes_practical_cuts": false,
+            "uncertainty_method": "bootstrap"
+          },
+          "n_valid_scales": 5,
+          "max_delay_jump_days": 3.041112658462655,
+          "mode_stable": true
+        },
+        "A-C": {
+          "broadband": {
+            "delay_days": 9.776125675146348,
+            "correlation": 0.9638228343887068,
+            "uncertainty_days": 47.234042553191486
+          },
+          "multiscale": {
+            "10.0": {
+              "delay_days": 8.751465800182773,
+              "correlation": 0.8452366094952676,
+              "uncertainty_days": 7.234042553191489
+            },
+            "20.0": {
+              "delay_days": 8.325100477918038,
+              "correlation": 0.9327430159922308,
+              "uncertainty_days": 13.191489361702127
+            },
+            "40.0": {
+              "delay_days": 5.358118058515945,
+              "correlation": 0.9753106179819433,
+              "uncertainty_days": 26.382978723404253
+            },
+            "80.0": {
+              "delay_days": 14.73156142496625,
+              "correlation": 0.9992027316223049,
+              "uncertainty_days": 42.97872340425532
+            },
+            "160.0": {
+              "delay_days": 10.064370823994194,
+              "correlation": 0.9999516422945486,
+              "uncertainty_days": 42.97872340425532
+            }
+          },
+          "gamma": {
+            "value": 3.237462280957747,
+            "uncertainty": 2.0,
+            "sigma": 1.6187311404788736,
+            "p_value": 0.1055051236066713,
+            "intercept": 4.2271836466104045,
+            "r_squared": 0.1797153394274038,
+            "passes_practical_cuts": false,
+            "uncertainty_method": "bootstrap"
+          },
+          "n_valid_scales": 5,
+          "max_delay_jump_days": 9.373443366450305,
+          "mode_stable": true
+        },
+        "B-C": {
+          "broadband": {
+            "delay_days": 16.325454682745722,
+            "correlation": 0.9623901117243444,
+            "uncertainty_days": 42.97872340425532
+          },
+          "multiscale": {
+            "10.0": {
+              "delay_days": 15.791523483228797,
+              "correlation": 0.8804120066747121,
+              "uncertainty_days": 8.51063829787234
+            },
+            "20.0": {
+              "delay_days": 15.302449845953367,
+              "correlation": 0.9641944200460442,
+              "uncertainty_days": 12.76595744680851
+            },
+            "40.0": {
+              "delay_days": 14.380807211212248,
+              "correlation": 0.9875743899079545,
+              "uncertainty_days": 24.25531914893617
+            },
+            "80.0": {
+              "delay_days": 21.783113917756143,
+              "correlation": 0.9996559210598502,
+              "uncertainty_days": 42.97872340425532
+            },
+            "160.0": {
+              "delay_days": 16.484015804935183,
+              "correlation": 0.9999934165380322,
+              "uncertainty_days": 42.97872340425532
+            }
+          },
+          "gamma": {
+            "value": 2.698808259971849,
+            "uncertainty": 2.0,
+            "sigma": 1.3494041299859245,
+            "p_value": 0.17720719499207926,
+            "intercept": 12.414029735752045,
+            "r_squared": 0.17680907887420538,
+            "passes_practical_cuts": false,
+            "uncertainty_method": "bootstrap"
+          },
+          "n_valid_scales": 5,
+          "max_delay_jump_days": 7.402306706543895,
+          "mode_stable": true
+        }
+      },
+      "bootstrap": {
+        "A-B": {
+          "gamma_mean": -0.7904851550316363,
+          "gamma_std": 2.0,
+          "gamma_std_phot": 1.0625284790922886,
+          "gamma_std_jackknife": NaN,
+          "n_valid": 120,
+          "n_valid_jackknife": 0,
+          "n_seasons": 1,
+          "sigma_floor": 2.0
+        },
+        "A-C": {
+          "gamma_mean": 3.055969937952591,
+          "gamma_std": 2.0,
+          "gamma_std_phot": 0.7365623211017952,
+          "gamma_std_jackknife": NaN,
+          "n_valid": 120,
+          "n_valid_jackknife": 0,
+          "n_seasons": 1,
+          "sigma_floor": 2.0
+        },
+        "B-C": {
+          "gamma_mean": 2.4996316784885892,
+          "gamma_std": 2.0,
+          "gamma_std_phot": 1.3778250885848222,
+          "gamma_std_jackknife": NaN,
+          "n_valid": 120,
+          "n_valid_jackknife": 0,
+          "n_seasons": 1,
+          "sigma_floor": 2.0
+        }
+      }
+    },
+    "RXJ1131": {
+      "system_id": "RXJ1131",
+      "band": "R",
+      "n_images": 4,
+      "image_labels": [
+        "A",
+        "B",
+        "C",
+        "D"
+      ],
+      "tau_values": [
+        10.0,
+        20.0,
+        40.0,
+        80.0,
+        160.0
+      ],
+      "detrend_window_days": 200.0,
+      "mode_lock_window_days": 50.0,
+      "min_variance_fraction": 0.01,
+      "pairs": {
+        "A-B": {
+          "broadband": {
+            "delay_days": 1.7557262784648082,
+            "correlation": 0.9136138153220148,
+            "uncertainty_days": 40.0
+          },
+          "multiscale": {
+            "10.0": {
+              "delay_days": -0.26124245638835647,
+              "correlation": 0.7676550087759961,
+              "uncertainty_days": 8.936170212765957
+            },
+            "20.0": {
+              "delay_days": 1.2331073142680469,
+              "correlation": 0.8746713128788424,
+              "uncertainty_days": 17.02127659574468
+            },
+            "40.0": {
+              "delay_days": 1.7231551864999395,
+              "correlation": 0.9351149460756694,
+              "uncertainty_days": 26.80851063829787
+            },
+            "80.0": {
+              "delay_days": 2.2339886568251983,
+              "correlation": 0.9375597407589196,
+              "uncertainty_days": 42.5531914893617
+            },
+            "160.0": {
+              "delay_days": 1.5222535512861477,
+              "correlation": 0.9425527184040575,
+              "uncertainty_days": 42.97872340425532
+            }
+          },
+          "gamma": {
+            "value": 1.3563173855305586,
+            "uncertainty": 2.0,
+            "sigma": 0.6781586927652793,
+            "p_value": 0.4976710800740405,
+            "intercept": -0.841252141023672,
+            "r_squared": 0.5239066050301311,
+            "passes_practical_cuts": false,
+            "uncertainty_method": "bootstrap"
+          },
+          "n_valid_scales": 5,
+          "max_delay_jump_days": 1.4943497706564033,
+          "mode_stable": true
+        },
+        "A-C": {
+          "broadband": {
+            "delay_days": -1.1327675667033832,
+            "correlation": 0.8884003763323935,
+            "uncertainty_days": 41.702127659574465
+          },
+          "multiscale": {
+            "10.0": {
+              "delay_days": 0.37784681198389014,
+              "correlation": 0.7038713095317866,
+              "uncertainty_days": 8.51063829787234
+            },
+            "20.0": {
+              "delay_days": -1.1434133660968477,
+              "correlation": 0.8305179040917492,
+              "uncertainty_days": 17.02127659574468
+            },
+            "40.0": {
+              "delay_days": -3.132434114047036,
+              "correlation": 0.9023117429014803,
+              "uncertainty_days": 27.659574468085104
+            },
+            "80.0": {
+              "delay_days": -3.63435712713986,
+              "correlation": 0.936634872431185,
+              "uncertainty_days": 42.12765957446808
+            },
+            "160.0": {
+              "delay_days": -1.534975996968878,
+              "correlation": 0.9341419878385405,
+              "uncertainty_days": 42.97872340425532
+            }
+          },
+          "gamma": {
+            "value": -1.7207242551703221,
+            "uncertainty": 2.8208642079264727,
+            "sigma": 0.6099989678110637,
+            "p_value": 0.5418624913184837,
+            "intercept": 0.8385337861277538,
+            "r_squared": 0.26549884667122814,
+            "passes_practical_cuts": false,
+            "uncertainty_method": "bootstrap"
+          },
+          "n_valid_scales": 5,
+          "max_delay_jump_days": 2.0993811301709817,
+          "mode_stable": true
+        },
+        "A-D": {
+          "broadband": {
+            "delay_days": -86.97655103998325,
+            "correlation": 0.8082098935216657,
+            "uncertainty_days": 43.40425531914894
+          },
+          "multiscale": {
+            "10.0": {
+              "delay_days": -89.95794270480368,
+              "correlation": 0.6180806535723791,
+              "uncertainty_days": 7.659574468085106
+            },
+            "20.0": {
+              "delay_days": -87.51253188895636,
+              "correlation": 0.7068395323128165,
+              "uncertainty_days": 17.4468085106383
+            },
+            "40.0": {
+              "delay_days": -80.01552667598811,
+              "correlation": 0.7345884737986114,
+              "uncertainty_days": 26.80851063829787
+            },
+            "80.0": {
+              "delay_days": -64.83328593809826,
+              "correlation": 0.7609122102889228,
+              "uncertainty_days": 30.638297872340424
+            },
+            "160.0": {
+              "delay_days": -80.13769053042024,
+              "correlation": 0.9180252893657006,
+              "uncertainty_days": 42.97872340425532
+            }
+          },
+          "gamma": {
+            "value": 11.52929138023863,
+            "uncertainty": 15.057858899311649,
+            "sigma": 0.7656660523473013,
+            "p_value": 0.4438750313237727,
+            "intercept": -99.30575679628336,
+            "r_squared": 0.34075805282992944,
+            "passes_practical_cuts": true,
+            "uncertainty_method": "bootstrap"
+          },
+          "n_valid_scales": 5,
+          "max_delay_jump_days": 15.304404592321987,
+          "mode_stable": true
+        },
+        "B-C": {
+          "broadband": {
+            "delay_days": -3.540011297332401,
+            "correlation": 0.9385390337661459,
+            "uncertainty_days": 40.85106382978723
+          },
+          "multiscale": {
+            "10.0": {
+              "delay_days": -0.034657237146650165,
+              "correlation": 0.7440412369529588,
+              "uncertainty_days": 9.787234042553191
+            },
+            "20.0": {
+              "delay_days": -2.009588463926571,
+              "correlation": 0.9272181047686706,
+              "uncertainty_days": 17.02127659574468
+            },
+            "40.0": {
+              "delay_days": -4.049732132219907,
+              "correlation": 0.9718667039785784,
+              "uncertainty_days": 26.80851063829787
+            },
+            "80.0": {
+              "delay_days": -5.040733805212595,
+              "correlation": 0.9627022910168802,
+              "uncertainty_days": 42.97872340425532
+            },
+            "160.0": {
+              "delay_days": -3.4514093539947637,
+              "correlation": 0.972630078210458,
+              "uncertainty_days": 42.97872340425532
+            }
+          },
+          "gamma": {
+            "value": -2.9302094373044394,
+            "uncertainty": 2.2374617060420747,
+            "sigma": 1.3096132234986004,
+            "p_value": 0.19032671272545598,
+            "intercept": 1.678924411473825,
+            "r_squared": 0.5563844127083966,
+            "passes_practical_cuts": false,
+            "uncertainty_method": "bootstrap"
+          },
+          "n_valid_scales": 5,
+          "max_delay_jump_days": 2.040143668293336,
+          "mode_stable": true
+        },
+        "B-D": {
+          "broadband": {
+            "delay_days": -87.90089029917351,
+            "correlation": 0.8357379160086658,
+            "uncertainty_days": 37.87234042553192
+          },
+          "multiscale": {
+            "10.0": {
+              "delay_days": -91.8796864793479,
+              "correlation": 0.6600847792034291,
+              "uncertainty_days": 9.787234042553191
+            },
+            "20.0": {
+              "delay_days": -89.91825511022377,
+              "correlation": 0.8177789458004099,
+              "uncertainty_days": 17.02127659574468
+            },
+            "40.0": {
+              "delay_days": -80.97356529801627,
+              "correlation": 0.7957202123975833,
+              "uncertainty_days": 25.53191489361702
+            },
+            "80.0": {
+              "delay_days": -69.14743028234444,
+              "correlation": 0.7270157003881883,
+              "uncertainty_days": 31.48936170212766
+            },
+            "160.0": {
+              "delay_days": -83.25656729875816,
+              "correlation": 0.8744343897231039,
+              "uncertainty_days": 42.97872340425532
+            }
+          },
+          "gamma": {
+            "value": 10.852734243986399,
+            "uncertainty": 19.51115490605142,
+            "sigma": 0.5562322833396399,
+            "p_value": 0.578052072488191,
+            "intercept": -100.97339280466764,
+            "r_squared": 0.37011947562981484,
+            "passes_practical_cuts": true,
+            "uncertainty_method": "bootstrap"
+          },
+          "n_valid_scales": 5,
+          "max_delay_jump_days": 14.109137016413712,
+          "mode_stable": true
+        },
+        "C-D": {
+          "broadband": {
+            "delay_days": -80.861923448469,
+            "correlation": 0.8150566063243546,
+            "uncertainty_days": 41.702127659574465
+          },
+          "multiscale": {
+            "10.0": {
+              "delay_days": -89.91436535947808,
+              "correlation": 0.5198260278268687,
+              "uncertainty_days": 9.787234042553191
+            },
+            "20.0": {
+              "delay_days": -85.8815080328821,
+              "correlation": 0.7574311999419462,
+              "uncertainty_days": 17.4468085106383
+            },
+            "40.0": {
+              "delay_days": -75.9826215557415,
+              "correlation": 0.7909635666572494,
+              "uncertainty_days": 26.382978723404253
+            },
+            "80.0": {
+              "delay_days": -62.13626023687981,
+              "correlation": 0.7654507906633153,
+              "uncertainty_days": 33.191489361702125
+            },
+            "160.0": {
+              "delay_days": -77.71569393141935,
+              "correlation": 0.8966959889025444,
+              "uncertainty_days": 42.97872340425532
+            }
+          },
+          "gamma": {
+            "value": 12.87136990034587,
+            "uncertainty": 15.089819984544812,
+            "sigma": 0.8529836614041051,
+            "p_value": 0.3936683648573238,
+            "intercept": -99.01932836338061,
+            "r_squared": 0.34327145775378276,
+            "passes_practical_cuts": true,
+            "uncertainty_method": "bootstrap"
+          },
+          "n_valid_scales": 5,
+          "max_delay_jump_days": 15.579433694539546,
+          "mode_stable": true
+        }
+      },
+      "bootstrap": {
+        "A-B": {
+          "gamma_mean": 1.447961056211645,
+          "gamma_std": 2.0,
+          "gamma_std_phot": 0.21432133377230855,
+          "gamma_std_jackknife": 1.9626384768646725,
+          "n_valid": 120,
+          "n_valid_jackknife": 9,
+          "n_seasons": 9,
+          "sigma_floor": 2.0
+        },
+        "A-C": {
+          "gamma_mean": -1.5125364103378667,
+          "gamma_std": 2.8208642079264727,
+          "gamma_std_phot": 0.6057470490864819,
+          "gamma_std_jackknife": 2.7550581467699855,
+          "n_valid": 120,
+          "n_valid_jackknife": 9,
+          "n_seasons": 9,
+          "sigma_floor": 2.0
+        },
+        "A-D": {
+          "gamma_mean": 11.423267957198327,
+          "gamma_std": 15.057858899311649,
+          "gamma_std_phot": 1.3399449677128707,
+          "gamma_std_jackknife": 14.998121952933973,
+          "n_valid": 120,
+          "n_valid_jackknife": 9,
+          "n_seasons": 9,
+          "sigma_floor": 2.0
+        },
+        "B-C": {
+          "gamma_mean": -2.996856389386361,
+          "gamma_std": 2.2374617060420747,
+          "gamma_std_phot": 0.5118530063462582,
+          "gamma_std_jackknife": 2.178127954436793,
+          "n_valid": 120,
+          "n_valid_jackknife": 9,
+          "n_seasons": 9,
+          "sigma_floor": 2.0
+        },
+        "B-D": {
+          "gamma_mean": 10.167127812433614,
+          "gamma_std": 19.51115490605142,
+          "gamma_std_phot": 1.7599001353532235,
+          "gamma_std_jackknife": 19.431621581368812,
+          "n_valid": 120,
+          "n_valid_jackknife": 9,
+          "n_seasons": 9,
+          "sigma_floor": 2.0
+        },
+        "C-D": {
+          "gamma_mean": 11.530233305047886,
+          "gamma_std": 15.089819984544812,
+          "gamma_std_phot": 1.9873898004862511,
+          "gamma_std_jackknife": 14.958373873750157,
+          "n_valid": 120,
+          "n_valid_jackknife": 9,
+          "n_seasons": 9,
+          "sigma_floor": 2.0
+        }
+      }
+    },
+    "WFI2033": {
+      "system_id": "WFI2033",
+      "band": "R",
+      "n_images": 3,
+      "image_labels": [
+        "A",
+        "B",
+        "C"
+      ],
+      "tau_values": [
+        10.0,
+        20.0,
+        40.0,
+        80.0,
+        160.0
+      ],
+      "detrend_window_days": 200.0,
+      "mode_lock_window_days": 50.0,
+      "min_variance_fraction": 0.01,
+      "pairs": {
+        "A-B": {
+          "broadband": {
+            "delay_days": 2.659620576676647e-05,
+            "correlation": 0.9525385576027731,
+            "uncertainty_days": 5.106382978723404
+          },
+          "multiscale": {
+            "10.0": {
+              "delay_days": -0.01584335630713611,
+              "correlation": 0.9639194722757058,
+              "uncertainty_days": 4.680851063829787
+            },
+            "20.0": {
+              "delay_days": -0.042183523406583316,
+              "correlation": 0.9274929503221601,
+              "uncertainty_days": 8.936170212765957
+            },
+            "40.0": {
+              "delay_days": 1.4439674346218565,
+              "correlation": 0.9033494503610147,
+              "uncertainty_days": 21.27659574468085
+            },
+            "80.0": {
+              "delay_days": 6.955000188882019,
+              "correlation": 0.9661192332385518,
+              "uncertainty_days": 42.97872340425532
+            },
+            "160.0": {
+              "delay_days": 0.17066162495588771,
+              "correlation": 0.9910510801488173,
+              "uncertainty_days": 42.97872340425532
+            }
+          },
+          "gamma": {
+            "value": 2.3189096277824,
+            "uncertainty": 3.527685404719676,
+            "sigma": 0.6573459256542378,
+            "p_value": 0.510958512724097,
+            "intercept": -2.0203737852438732,
+            "r_squared": 0.13731597049999933,
+            "passes_practical_cuts": false,
+            "uncertainty_method": "bootstrap"
+          },
+          "n_valid_scales": 5,
+          "max_delay_jump_days": 6.7843385639261315,
+          "mode_stable": true
+        },
+        "A-C": {
+          "broadband": {
+            "delay_days": -0.0008808386274576113,
+            "correlation": 0.9571543614556007,
+            "uncertainty_days": 5.106382978723404
+          },
+          "multiscale": {
+            "10.0": {
+              "delay_days": -0.013333683207353604,
+              "correlation": 0.9617812343453882,
+              "uncertainty_days": 4.680851063829787
+            },
+            "20.0": {
+              "delay_days": -0.4870003417642299,
+              "correlation": 0.9309800342813603,
+              "uncertainty_days": 8.936170212765957
+            },
+            "40.0": {
+              "delay_days": -0.5001116772794739,
+              "correlation": 0.9380888476244575,
+              "uncertainty_days": 22.5531914893617
+            },
+            "80.0": {
+              "delay_days": 5.374590371201279,
+              "correlation": 0.9682935635618997,
+              "uncertainty_days": 42.97872340425532
+            },
+            "160.0": {
+              "delay_days": -0.00638710296657712,
+              "correlation": 0.9863992900780439,
+              "uncertainty_days": 42.97872340425532
+            }
+          },
+          "gamma": {
+            "value": 1.882777786638955,
+            "uncertainty": 4.132533216302334,
+            "sigma": 0.4555989481733937,
+            "p_value": 0.6486783996497607,
+            "intercept": -2.1294611748996197,
+            "r_squared": 0.1270852332944694,
+            "passes_practical_cuts": false,
+            "uncertainty_method": "bootstrap"
+          },
+          "n_valid_scales": 5,
+          "max_delay_jump_days": 5.874702048480753,
+          "mode_stable": true
+        },
+        "B-C": {
+          "broadband": {
+            "delay_days": 0.0007889739599097093,
+            "correlation": 0.9682504469932338,
+            "uncertainty_days": 6.382978723404255
+          },
+          "multiscale": {
+            "10.0": {
+              "delay_days": 0.005251007847586033,
+              "correlation": 0.9880600989546218,
+              "uncertainty_days": 4.680851063829787
+            },
+            "20.0": {
+              "delay_days": 0.022456682331862036,
+              "correlation": 0.9549032186398738,
+              "uncertainty_days": 8.936170212765957
+            },
+            "40.0": {
+              "delay_days": 0.49211752578350626,
+              "correlation": 0.8941573619633734,
+              "uncertainty_days": 20.851063829787233
+            },
+            "80.0": {
+              "delay_days": 0.098773925317027,
+              "correlation": 0.9649418255742588,
+              "uncertainty_days": 42.97872340425532
+            },
+            "160.0": {
+              "delay_days": -0.1233869966468716,
+              "correlation": 0.9933683941908569,
+              "uncertainty_days": 42.97872340425532
+            }
+          },
+          "gamma": {
+            "value": -0.0636231104404099,
+            "uncertainty": 5.273900489975175,
+            "sigma": 0.012063767710700469,
+            "p_value": 0.9903747394669855,
+            "intercept": 0.18661903334567495,
+            "r_squared": 0.019189734210063092,
+            "passes_practical_cuts": false,
+            "uncertainty_method": "bootstrap"
+          },
+          "n_valid_scales": 5,
+          "max_delay_jump_days": 0.4696608434516442,
+          "mode_stable": true
+        }
+      },
+      "bootstrap": {
+        "A-B": {
+          "gamma_mean": 2.3868963246120756,
+          "gamma_std": 3.527685404719676,
+          "gamma_std_phot": 0.08799437757432502,
+          "gamma_std_jackknife": 3.5265877706626743,
+          "n_valid": 120,
+          "n_valid_jackknife": 16,
+          "n_seasons": 16,
+          "sigma_floor": 2.0
+        },
+        "A-C": {
+          "gamma_mean": 1.9430369786592274,
+          "gamma_std": 4.132533216302334,
+          "gamma_std_phot": 0.09822612545158381,
+          "gamma_std_jackknife": 4.131365683659688,
+          "n_valid": 120,
+          "n_valid_jackknife": 16,
+          "n_seasons": 16,
+          "sigma_floor": 2.0
+        },
+        "B-C": {
+          "gamma_mean": -0.07836641841035817,
+          "gamma_std": 5.273900489975175,
+          "gamma_std_phot": 0.050471042746695643,
+          "gamma_std_jackknife": 5.273658981390858,
+          "n_valid": 120,
+          "n_valid_jackknife": 16,
+          "n_seasons": 16,
+          "sigma_floor": 2.0
+        }
+      }
+    },
+    "HE0435_R": {
+      "system_id": "HE0435_R",
+      "band": "R",
+      "n_images": 4,
+      "image_labels": [
+        "A",
+        "B",
+        "C",
+        "D"
+      ],
+      "tau_values": [
+        10.0,
+        20.0,
+        40.0,
+        80.0,
+        160.0
+      ],
+      "detrend_window_days": 200.0,
+      "mode_lock_window_days": 50.0,
+      "min_variance_fraction": 0.01,
+      "pairs": {
+        "A-B": {
+          "broadband": {
+            "delay_days": -7.705267280935721,
+            "correlation": 0.7911447490460619,
+            "uncertainty_days": 32.76595744680851
+          },
+          "multiscale": {
+            "10.0": {
+              "delay_days": 4.4526826628892175,
+              "correlation": 0.6200800705143905,
+              "uncertainty_days": 10.212765957446807
+            },
+            "20.0": {
+              "delay_days": 0.8167503834921254,
+              "correlation": 0.6518811596435223,
+              "uncertainty_days": 13.191489361702127
+            },
+            "40.0": {
+              "delay_days": 1.978239794685087,
+              "correlation": 0.769994805498039,
+              "uncertainty_days": 20.851063829787233
+            },
+            "80.0": {
+              "delay_days": 2.4403776995924447,
+              "correlation": 0.9100669084895611,
+              "uncertainty_days": 31.48936170212766
+            },
+            "160.0": {
+              "delay_days": -10.854197011100622,
+              "correlation": 0.6522028137845124,
+              "uncertainty_days": 33.191489361702125
+            }
+          },
+          "gamma": {
+            "value": -8.372757221417904,
+            "uncertainty": 39.52824946657019,
+            "sigma": 0.2118170507019014,
+            "p_value": 0.8322497658005188,
+            "intercept": 14.113451900506888,
+            "r_squared": 0.429624049374568,
+            "passes_practical_cuts": true,
+            "uncertainty_method": "bootstrap"
+          },
+          "n_valid_scales": 5,
+          "max_delay_jump_days": 13.294574710693066,
+          "mode_stable": true
+        },
+        "A-C": {
+          "broadband": {
+            "delay_days": -2.2026908854435874,
+            "correlation": 0.931615578963169,
+            "uncertainty_days": 50.638297872340424
+          },
+          "multiscale": {
+            "10.0": {
+              "delay_days": -2.735178488505246,
+              "correlation": 0.7705839849248394,
+              "uncertainty_days": 8.936170212765957
+            },
+            "20.0": {
+              "delay_days": -1.2321232048053483,
+              "correlation": 0.8814215726574404,
+              "uncertainty_days": 13.191489361702127
+            },
+            "40.0": {
+              "delay_days": 0.2784854345169971,
+              "correlation": 0.9570675134277632,
+              "uncertainty_days": 22.97872340425532
+            },
+            "80.0": {
+              "delay_days": 1.202939963150382,
+              "correlation": 0.9817302455534627,
+              "uncertainty_days": 32.76595744680851
+            },
+            "160.0": {
+              "delay_days": -1.9602084906580681,
+              "correlation": 0.9774101985946152,
+              "uncertainty_days": 34.46808510638298
+            }
+          },
+          "gamma": {
+            "value": 0.9773319398036723,
+            "uncertainty": 3.8937161317007436,
+            "sigma": 0.2510023604049383,
+            "p_value": 0.8018122842594642,
+            "intercept": -2.3521041596856915,
+            "r_squared": 0.07825491247064387,
+            "passes_practical_cuts": false,
+            "uncertainty_method": "bootstrap"
+          },
+          "n_valid_scales": 5,
+          "max_delay_jump_days": 3.16314845380845,
+          "mode_stable": true
+        },
+        "A-D": {
+          "broadband": {
+            "delay_days": -11.318172447876224,
+            "correlation": 0.8559115999532424,
+            "uncertainty_days": 69.7872340425532
+          },
+          "multiscale": {
+            "10.0": {
+              "delay_days": -9.714788825121182,
+              "correlation": 0.469018719046574,
+              "uncertainty_days": 7.659574468085106
+            },
+            "20.0": {
+              "delay_days": -5.032698098227048,
+              "correlation": 0.6897560766321179,
+              "uncertainty_days": 14.893617021276595
+            },
+            "40.0": {
+              "delay_days": -5.139573792038079,
+              "correlation": 0.8984586590958165,
+              "uncertainty_days": 25.53191489361702
+            },
+            "80.0": {
+              "delay_days": -13.69171508044341,
+              "correlation": 0.899843177824242,
+              "uncertainty_days": 33.61702127659574
+            },
+            "160.0": {
+              "delay_days": -5.025446857369715,
+              "correlation": 0.983811689913372,
+              "uncertainty_days": 33.61702127659574
+            }
+          },
+          "gamma": {
+            "value": -0.2702400908971558,
+            "uncertainty": 17.32571905442102,
+            "sigma": 0.01559762628311801,
+            "p_value": 0.987555399404977,
+            "intercept": -7.029735580074026,
+            "r_squared": 0.0007305545039172356,
+            "passes_practical_cuts": false,
+            "uncertainty_method": "bootstrap"
+          },
+          "n_valid_scales": 5,
+          "max_delay_jump_days": 8.666268223073695,
+          "mode_stable": true
+        },
+        "B-C": {
+          "broadband": {
+            "delay_days": 8.03455373835742,
+            "correlation": 0.7404153796016056,
+            "uncertainty_days": 47.659574468085104
+          },
+          "multiscale": {
+            "10.0": {
+              "delay_days": -9.952342650823352,
+              "correlation": 0.4767492828915641,
+              "uncertainty_days": 8.936170212765957
+            },
+            "20.0": {
+              "delay_days": -0.37951721625896034,
+              "correlation": 0.5967043550761615,
+              "uncertainty_days": 14.468085106382977
+            },
+            "40.0": {
+              "delay_days": -1.1434598115214807,
+              "correlation": 0.7657532585279415,
+              "uncertainty_days": 21.27659574468085
+            },
+            "80.0": {
+              "delay_days": -2.5944724395576784,
+              "correlation": 0.911397788272426,
+              "uncertainty_days": 30.21276595744681
+            },
+            "160.0": {
+              "delay_days": 6.546668501692739,
+              "correlation": 0.7725090406605081,
+              "uncertainty_days": 32.76595744680851
+            }
+          },
+          "gamma": {
+            "value": 9.274482880371135,
+            "uncertainty": 53.645202196085904,
+            "sigma": 0.17288559835175393,
+            "p_value": 0.8627413520414833,
+            "intercept": -16.669514746131412,
+            "r_squared": 0.5670051246151315,
+            "passes_practical_cuts": true,
+            "uncertainty_method": "bootstrap"
+          },
+          "n_valid_scales": 5,
+          "max_delay_jump_days": 9.572825434564392,
+          "mode_stable": true
+        },
+        "B-D": {
+          "broadband": {
+            "delay_days": -13.151234307352293,
+            "correlation": 0.6319668207209534,
+            "uncertainty_days": 60.0
+          },
+          "multiscale": {
+            "10.0": {
+              "delay_days": -8.04301026236367,
+              "correlation": 0.3711499986942921,
+              "uncertainty_days": 11.48936170212766
+            },
+            "20.0": {
+              "delay_days": -14.255942007011857,
+              "correlation": 0.43599947503623393,
+              "uncertainty_days": 14.468085106382977
+            },
+            "40.0": {
+              "delay_days": -7.636115120437876,
+              "correlation": 0.6762794542161633,
+              "uncertainty_days": 22.127659574468083
+            },
+            "80.0": {
+              "delay_days": -19.100521971931613,
+              "correlation": 0.7953676583287326,
+              "uncertainty_days": 33.191489361702125
+            },
+            "160.0": {
+              "delay_days": -21.646771746201214,
+              "correlation": 0.7389785346456438,
+              "uncertainty_days": 29.361702127659573
+            }
+          },
+          "gamma": {
+            "value": -13.025398664582827,
+            "uncertainty": 26.823542115789756,
+            "sigma": 0.4855957728608627,
+            "p_value": 0.627253794109998,
+            "intercept": 7.487330791357473,
+            "r_squared": 0.6529832437629532,
+            "passes_practical_cuts": true,
+            "uncertainty_method": "bootstrap"
+          },
+          "n_valid_scales": 5,
+          "max_delay_jump_days": 11.464406851493738,
+          "mode_stable": true
+        },
+        "C-D": {
+          "broadband": {
+            "delay_days": -1.8712177493888495,
+            "correlation": 0.864966114673978,
+            "uncertainty_days": 79.57446808510637
+          },
+          "multiscale": {
+            "10.0": {
+              "delay_days": -2.341296422883557,
+              "correlation": 0.6465160656807001,
+              "uncertainty_days": 6.808510638297872
+            },
+            "20.0": {
+              "delay_days": -1.8961659142962093,
+              "correlation": 0.8210692166489985,
+              "uncertainty_days": 14.042553191489361
+            },
+            "40.0": {
+              "delay_days": -3.341931023836274,
+              "correlation": 0.9036338515629156,
+              "uncertainty_days": 24.680851063829785
+            },
+            "80.0": {
+              "delay_days": -13.716113307087113,
+              "correlation": 0.9364938048902796,
+              "uncertainty_days": 34.46808510638298
+            },
+            "160.0": {
+              "delay_days": -2.7447622018412523,
+              "correlation": 0.9940694869519449,
+              "uncertainty_days": 35.31914893617021
+            }
+          },
+          "gamma": {
+            "value": -3.569443983190335,
+            "uncertainty": 4.560903751997947,
+            "sigma": 0.7826176953694114,
+            "p_value": 0.43385164703749135,
+            "intercept": 0.8735687107629342,
+            "r_squared": 0.09299706937547203,
+            "passes_practical_cuts": false,
+            "uncertainty_method": "bootstrap"
+          },
+          "n_valid_scales": 5,
+          "max_delay_jump_days": 10.97135110524586,
+          "mode_stable": true
+        }
+      },
+      "bootstrap": {
+        "A-B": {
+          "gamma_mean": -5.23476362217069,
+          "gamma_std": 39.52824946657019,
+          "gamma_std_phot": 3.7345201828061207,
+          "gamma_std_jackknife": 39.35144044244912,
+          "n_valid": 120,
+          "n_valid_jackknife": 17,
+          "n_seasons": 20,
+          "sigma_floor": 2.0
+        },
+        "A-C": {
+          "gamma_mean": 0.6116038133443934,
+          "gamma_std": 3.8937161317007436,
+          "gamma_std_phot": 1.1039342316906822,
+          "gamma_std_jackknife": 3.7339462404228727,
+          "n_valid": 120,
+          "n_valid_jackknife": 19,
+          "n_seasons": 20,
+          "sigma_floor": 2.0
+        },
+        "A-D": {
+          "gamma_mean": -1.2797683056208067,
+          "gamma_std": 17.32571905442102,
+          "gamma_std_phot": 2.66418008867326,
+          "gamma_std_jackknife": 17.119657858959812,
+          "n_valid": 111,
+          "n_valid_jackknife": 14,
+          "n_seasons": 20,
+          "sigma_floor": 2.0
+        },
+        "B-C": {
+          "gamma_mean": 3.3593778286502305,
+          "gamma_std": 53.645202196085904,
+          "gamma_std_phot": 6.161420641269925,
+          "gamma_std_jackknife": 53.290192477981094,
+          "n_valid": 119,
+          "n_valid_jackknife": 17,
+          "n_seasons": 20,
+          "sigma_floor": 2.0
+        },
+        "B-D": {
+          "gamma_mean": -15.283156290996759,
+          "gamma_std": 26.823542115789756,
+          "gamma_std_phot": 5.966128097765973,
+          "gamma_std_jackknife": 26.15162953161034,
+          "n_valid": 99,
+          "n_valid_jackknife": 13,
+          "n_seasons": 20,
+          "sigma_floor": 2.0
+        },
+        "C-D": {
+          "gamma_mean": -3.0320322499452907,
+          "gamma_std": 4.560903751997947,
+          "gamma_std_phot": 1.4560968259759726,
+          "gamma_std_jackknife": 4.322224550896408,
+          "n_valid": 117,
+          "n_valid_jackknife": 17,
+          "n_seasons": 20,
+          "sigma_floor": 2.0
+        }
+      }
+    },
+    "HE0435_V": {
+      "system_id": "HE0435_V",
+      "band": "V",
+      "n_images": 4,
+      "image_labels": [
+        "A",
+        "B",
+        "C",
+        "D"
+      ],
+      "tau_values": [
+        10.0,
+        20.0,
+        40.0,
+        80.0,
+        160.0
+      ],
+      "detrend_window_days": 200.0,
+      "mode_lock_window_days": 50.0,
+      "min_variance_fraction": 0.01,
+      "pairs": {
+        "A-B": {
+          "broadband": {
+            "delay_days": 62.56309235137078,
+            "correlation": 0.7469009730650671,
+            "uncertainty_days": 32.76595744680851
+          },
+          "multiscale": {
+            "10.0": {
+              "delay_days": 13.97140421852704,
+              "correlation": 0.5968403311082369,
+              "uncertainty_days": 3.829787234042553
+            },
+            "20.0": {
+              "delay_days": 14.465023841974395,
+              "correlation": 0.5079781283105299,
+              "uncertainty_days": 3.829787234042553
+            },
+            "40.0": {
+              "delay_days": 15.957639221961168,
+              "correlation": 0.6101357643017935,
+              "uncertainty_days": 5.106382978723404
+            },
+            "80.0": {
+              "delay_days": 30.707328437124463,
+              "correlation": 0.8487974819669503,
+              "uncertainty_days": 21.27659574468085
+            },
+            "160.0": {
+              "delay_days": 55.8503452490973,
+              "correlation": 0.5669670539056558,
+              "uncertainty_days": 14.468085106382977
+            }
+          },
+          "gamma": {
+            "value": 31.024378668110725,
+            "uncertainty": 46.951941038549926,
+            "sigma": 0.6607688198159505,
+            "p_value": 0.5087605816428724,
+            "intercept": -24.532174661433395,
+            "r_squared": 0.7434970377818513,
+            "passes_practical_cuts": true,
+            "uncertainty_method": "bootstrap"
+          },
+          "n_valid_scales": 5,
+          "max_delay_jump_days": 25.14301681197284,
+          "mode_stable": true
+        },
+        "A-C": {
+          "broadband": {
+            "delay_days": -140.9629166998742,
+            "correlation": 0.803847453163792,
+            "uncertainty_days": 42.97872340425532
+          },
+          "multiscale": {
+            "10.0": {
+              "delay_days": NaN,
+              "correlation": NaN,
+              "uncertainty_days": NaN
+            },
+            "20.0": {
+              "delay_days": NaN,
+              "correlation": NaN,
+              "uncertainty_days": NaN
+            },
+            "40.0": {
+              "delay_days": NaN,
+              "correlation": NaN,
+              "uncertainty_days": NaN
+            },
+            "80.0": {
+              "delay_days": NaN,
+              "correlation": NaN,
+              "uncertainty_days": NaN
+            },
+            "160.0": {
+              "delay_days": NaN,
+              "correlation": NaN,
+              "uncertainty_days": NaN
+            }
+          },
+          "gamma": {
+            "value": NaN,
+            "uncertainty": 47.576211969700985,
+            "sigma": NaN,
+            "p_value": NaN,
+            "intercept": NaN,
+            "r_squared": NaN,
+            "passes_practical_cuts": false,
+            "uncertainty_method": "bootstrap"
+          },
+          "n_valid_scales": 0,
+          "max_delay_jump_days": null,
+          "mode_stable": false
+        },
+        "A-D": {
+          "broadband": {
+            "delay_days": -7.561318890137987,
+            "correlation": 0.8624919517229641,
+            "uncertainty_days": 35.31914893617021
+          },
+          "multiscale": {
+            "10.0": {
+              "delay_days": -5.631037838185574,
+              "correlation": 0.8320266242861626,
+              "uncertainty_days": 9.787234042553191
+            },
+            "20.0": {
+              "delay_days": -2.6245062289737358,
+              "correlation": 0.8930146382082207,
+              "uncertainty_days": 12.76595744680851
+            },
+            "40.0": {
+              "delay_days": 0.38702358205016235,
+              "correlation": 0.8085839908647033,
+              "uncertainty_days": 22.5531914893617
+            },
+            "80.0": {
+              "delay_days": -19.489687650665655,
+              "correlation": 0.8641825691858532,
+              "uncertainty_days": 40.85106382978723
+            },
+            "160.0": {
+              "delay_days": -21.111871387050567,
+              "correlation": 0.8805546838144369,
+              "uncertainty_days": 42.97872340425532
+            }
+          },
+          "gamma": {
+            "value": -16.24802990524117,
+            "uncertainty": 27.059359789293136,
+            "sigma": 0.6004587703390604,
+            "p_value": 0.5482005304592195,
+            "intercept": 16.182997269530397,
+            "r_squared": 0.6111157836577337,
+            "passes_practical_cuts": true,
+            "uncertainty_method": "bootstrap"
+          },
+          "n_valid_scales": 5,
+          "max_delay_jump_days": 19.876711232715817,
+          "mode_stable": true
+        },
+        "B-C": {
+          "broadband": {
+            "delay_days": -141.26675560557936,
+            "correlation": 0.866937711787703,
+            "uncertainty_days": 51.06382978723404
+          },
+          "multiscale": {
+            "10.0": {
+              "delay_days": NaN,
+              "correlation": NaN,
+              "uncertainty_days": NaN
+            },
+            "20.0": {
+              "delay_days": NaN,
+              "correlation": NaN,
+              "uncertainty_days": NaN
+            },
+            "40.0": {
+              "delay_days": NaN,
+              "correlation": NaN,
+              "uncertainty_days": NaN
+            },
+            "80.0": {
+              "delay_days": NaN,
+              "correlation": NaN,
+              "uncertainty_days": NaN
+            },
+            "160.0": {
+              "delay_days": NaN,
+              "correlation": NaN,
+              "uncertainty_days": NaN
+            }
+          },
+          "gamma": {
+            "value": NaN,
+            "uncertainty": 17.89799347676197,
+            "sigma": NaN,
+            "p_value": NaN,
+            "intercept": NaN,
+            "r_squared": NaN,
+            "passes_practical_cuts": false,
+            "uncertainty_method": "bootstrap"
+          },
+          "n_valid_scales": 0,
+          "max_delay_jump_days": null,
+          "mode_stable": false
+        },
+        "B-D": {
+          "broadband": {
+            "delay_days": -141.25060804374695,
+            "correlation": 0.6937610039973487,
+            "uncertainty_days": 48.51063829787234
+          },
+          "multiscale": {
+            "10.0": {
+              "delay_days": NaN,
+              "correlation": NaN,
+              "uncertainty_days": NaN
+            },
+            "20.0": {
+              "delay_days": NaN,
+              "correlation": NaN,
+              "uncertainty_days": NaN
+            },
+            "40.0": {
+              "delay_days": NaN,
+              "correlation": NaN,
+              "uncertainty_days": NaN
+            },
+            "80.0": {
+              "delay_days": NaN,
+              "correlation": NaN,
+              "uncertainty_days": NaN
+            },
+            "160.0": {
+              "delay_days": NaN,
+              "correlation": NaN,
+              "uncertainty_days": NaN
+            }
+          },
+          "gamma": {
+            "value": NaN,
+            "uncertainty": 20.250392168303865,
+            "sigma": NaN,
+            "p_value": NaN,
+            "intercept": NaN,
+            "r_squared": NaN,
+            "passes_practical_cuts": false,
+            "uncertainty_method": "bootstrap"
+          },
+          "n_valid_scales": 0,
+          "max_delay_jump_days": null,
+          "mode_stable": false
+        },
+        "C-D": {
+          "broadband": {
+            "delay_days": -0.16240822549796208,
+            "correlation": 0.7888888983327973,
+            "uncertainty_days": 41.27659574468085
+          },
+          "multiscale": {
+            "10.0": {
+              "delay_days": 1.3241262452782494,
+              "correlation": 0.709945052218737,
+              "uncertainty_days": 9.787234042553191
+            },
+            "20.0": {
+              "delay_days": 0.3327879561968094,
+              "correlation": 0.7420002357176384,
+              "uncertainty_days": 11.063829787234042
+            },
+            "40.0": {
+              "delay_days": 0.2587941520444067,
+              "correlation": 0.7957323525593412,
+              "uncertainty_days": 20.425531914893615
+            },
+            "80.0": {
+              "delay_days": -11.555249963762522,
+              "correlation": 0.8816014701603102,
+              "uncertainty_days": 40.0
+            },
+            "160.0": {
+              "delay_days": -6.172601553634691,
+              "correlation": 0.8053068930670646,
+              "uncertainty_days": 42.97872340425532
+            }
+          },
+          "gamma": {
+            "value": -9.378356252122526,
+            "uncertainty": 16.399689998711146,
+            "sigma": 0.5718618006108391,
+            "p_value": 0.5674156049167403,
+            "intercept": 11.64786776424893,
+            "r_squared": 0.558918991783437,
+            "passes_practical_cuts": true,
+            "uncertainty_method": "bootstrap"
+          },
+          "n_valid_scales": 5,
+          "max_delay_jump_days": 11.81404411580693,
+          "mode_stable": true
+        }
+      },
+      "bootstrap": {
+        "A-B": {
+          "gamma_mean": 30.46036262391495,
+          "gamma_std": 46.951941038549926,
+          "gamma_std_phot": 1.3774722127061922,
+          "gamma_std_jackknife": 46.93173060511077,
+          "n_valid": 120,
+          "n_valid_jackknife": 22,
+          "n_seasons": 24,
+          "sigma_floor": 2.0
+        },
+        "A-C": {
+          "gamma_mean": -9.346316425860413,
+          "gamma_std": 47.576211969700985,
+          "gamma_std_phot": NaN,
+          "gamma_std_jackknife": 47.576211969700985,
+          "n_valid": 0,
+          "n_valid_jackknife": 3,
+          "n_seasons": 24,
+          "sigma_floor": 2.0
+        },
+        "A-D": {
+          "gamma_mean": -16.22226341649382,
+          "gamma_std": 27.059359789293136,
+          "gamma_std_phot": 2.7410888588151576,
+          "gamma_std_jackknife": 26.920166865650994,
+          "n_valid": 120,
+          "n_valid_jackknife": 24,
+          "n_seasons": 24,
+          "sigma_floor": 2.0
+        },
+        "B-C": {
+          "gamma_mean": -15.196801986917842,
+          "gamma_std": 17.89799347676197,
+          "gamma_std_phot": NaN,
+          "gamma_std_jackknife": 17.89799347676197,
+          "n_valid": 0,
+          "n_valid_jackknife": 3,
+          "n_seasons": 24,
+          "sigma_floor": 2.0
+        },
+        "B-D": {
+          "gamma_mean": -34.19762052206569,
+          "gamma_std": 20.250392168303865,
+          "gamma_std_phot": 2.9241269802478835,
+          "gamma_std_jackknife": 20.038160204307403,
+          "n_valid": 27,
+          "n_valid_jackknife": 5,
+          "n_seasons": 24,
+          "sigma_floor": 2.0
+        },
+        "C-D": {
+          "gamma_mean": -10.046928901873782,
+          "gamma_std": 16.399689998711146,
+          "gamma_std_phot": 1.259635968587497,
+          "gamma_std_jackknife": 16.351243050008982,
+          "n_valid": 120,
+          "n_valid_jackknife": 24,
+          "n_seasons": 24,
+          "sigma_floor": 2.0
+        }
+      }
+    },
+    "HE1104_B": {
+      "system_id": "HE1104_B",
+      "band": "B",
+      "n_images": 2,
+      "image_labels": [
+        "A",
+        "B"
+      ],
+      "tau_values": [
+        10.0,
+        20.0,
+        40.0,
+        80.0,
+        160.0
+      ],
+      "detrend_window_days": 200.0,
+      "mode_lock_window_days": 50.0,
+      "min_variance_fraction": 0.01,
+      "pairs": {
+        "A-B": {
+          "broadband": {
+            "delay_days": 119.87731506964157,
+            "correlation": 0.9158149831046425,
+            "uncertainty_days": 44.680851063829785
+          },
+          "multiscale": {
+            "10.0": {
+              "delay_days": 72.75322965326303,
+              "correlation": 0.4232406510768971,
+              "uncertainty_days": 4.25531914893617
+            },
+            "20.0": {
+              "delay_days": 76.67823319304607,
+              "correlation": 0.3883293543948432,
+              "uncertainty_days": 5.957446808510638
+            },
+            "40.0": {
+              "delay_days": 85.36686295221388,
+              "correlation": 0.4813996931257959,
+              "uncertainty_days": 18.72340425531915
+            },
+            "80.0": {
+              "delay_days": 100.38302869325884,
+              "correlation": 0.7336328280948583,
+              "uncertainty_days": 18.72340425531915
+            },
+            "160.0": {
+              "delay_days": 99.7637579394896,
+              "correlation": 0.8128365528704014,
+              "uncertainty_days": 18.72340425531915
+            }
+          },
+          "gamma": {
+            "value": 24.456529937900527,
+            "uncertainty": 31.54710216935091,
+            "sigma": 0.7752385561948978,
+            "p_value": 0.43819870911008874,
+            "intercept": 48.50414587098748,
+            "r_squared": 0.8755650684009826,
+            "passes_practical_cuts": true,
+            "uncertainty_method": "bootstrap"
+          },
+          "n_valid_scales": 5,
+          "max_delay_jump_days": 15.016165741044958,
+          "mode_stable": true
+        }
+      },
+      "bootstrap": {
+        "A-B": {
+          "gamma_mean": 23.74472647390584,
+          "gamma_std": 31.54710216935091,
+          "gamma_std_phot": 5.13818164055151,
+          "gamma_std_jackknife": 31.12585331701228,
+          "n_valid": 120,
+          "n_valid_jackknife": 20,
+          "n_seasons": 20,
+          "sigma_floor": 2.0
+        }
+      }
+    },
+    "HE1104_I": {
+      "system_id": "HE1104_I",
+      "band": "I",
+      "n_images": 2,
+      "image_labels": [
+        "A",
+        "B"
+      ],
+      "tau_values": [
+        10.0,
+        20.0,
+        40.0,
+        80.0,
+        160.0
+      ],
+      "detrend_window_days": 200.0,
+      "mode_lock_window_days": 50.0,
+      "min_variance_fraction": 0.01,
+      "pairs": {
+        "A-B": {
+          "broadband": {
+            "delay_days": 182.9342912375926,
+            "correlation": 0.8967035449067534,
+            "uncertainty_days": 74.46808510638297
+          },
+          "multiscale": {
+            "10.0": {
+              "delay_days": NaN,
+              "correlation": -0.08969265138700062,
+              "uncertainty_days": NaN
+            },
+            "20.0": {
+              "delay_days": NaN,
+              "correlation": 0.03656971971125035,
+              "uncertainty_days": NaN
+            },
+            "40.0": {
+              "delay_days": 135.49308382438917,
+              "correlation": 0.3902567293329459,
+              "uncertainty_days": 2.553191489361702
+            },
+            "80.0": {
+              "delay_days": 135.51830517377283,
+              "correlation": 0.49475211174884004,
+              "uncertainty_days": 2.553191489361702
+            },
+            "160.0": {
+              "delay_days": 135.43609649101987,
+              "correlation": 0.9454505856473745,
+              "uncertainty_days": 2.553191489361702
+            }
+          },
+          "gamma": {
+            "value": -0.13510994657278702,
+            "uncertainty": 15.85170663981469,
+            "sigma": 0.008523369101055132,
+            "p_value": 0.9931994177295906,
+            "intercept": 135.73889730329256,
+            "r_squared": 0.6810943576974768,
+            "passes_practical_cuts": false,
+            "uncertainty_method": "bootstrap"
+          },
+          "n_valid_scales": 3,
+          "max_delay_jump_days": 0.08220868275296311,
+          "mode_stable": true
+        }
+      },
+      "bootstrap": {
+        "A-B": {
+          "gamma_mean": 3.016631817301835,
+          "gamma_std": 15.85170663981469,
+          "gamma_std_phot": 14.6397355793863,
+          "gamma_std_jackknife": 6.079041500137661,
+          "n_valid": 99,
+          "n_valid_jackknife": 7,
+          "n_seasons": 13,
+          "sigma_floor": 2.0
+        }
+      }
+    },
+    "HE1104_J": {
+      "system_id": "HE1104_J",
+      "band": "J",
+      "n_images": 2,
+      "image_labels": [
+        "A",
+        "B"
+      ],
+      "tau_values": [
+        10.0,
+        20.0,
+        40.0,
+        80.0,
+        160.0
+      ],
+      "detrend_window_days": 200.0,
+      "mode_lock_window_days": 50.0,
+      "min_variance_fraction": 0.01,
+      "pairs": {
+        "A-B": {
+          "broadband": {
+            "delay_days": 166.44418973247653,
+            "correlation": 0.7924670023852426,
+            "uncertainty_days": 25.95744680851064
+          },
+          "multiscale": {
+            "10.0": {
+              "delay_days": 155.61451008885496,
+              "correlation": 0.36883535857780986,
+              "uncertainty_days": 6.382978723404255
+            },
+            "20.0": {
+              "delay_days": 154.43755236467075,
+              "correlation": 0.4609412378779032,
+              "uncertainty_days": 8.936170212765957
+            },
+            "40.0": {
+              "delay_days": 166.969841207307,
+              "correlation": 0.7450815565325755,
+              "uncertainty_days": 22.127659574468083
+            },
+            "80.0": {
+              "delay_days": 159.92067397014884,
+              "correlation": 0.8160307662830728,
+              "uncertainty_days": 25.53191489361702
+            },
+            "160.0": {
+              "delay_days": 156.44234391011688,
+              "correlation": 0.8783604047423519,
+              "uncertainty_days": 27.659574468085104
+            }
+          },
+          "gamma": {
+            "value": -2.71501350321297,
+            "uncertainty": 22.688338755008402,
+            "sigma": 0.1196655926434295,
+            "p_value": 0.9047480575423539,
+            "intercept": 164.64972440899365,
+            "r_squared": 0.047320182478390316,
+            "passes_practical_cuts": false,
+            "uncertainty_method": "bootstrap"
+          },
+          "n_valid_scales": 5,
+          "max_delay_jump_days": 12.532288842636262,
+          "mode_stable": true
+        }
+      },
+      "bootstrap": {
+        "A-B": {
+          "gamma_mean": 2.790685568028091,
+          "gamma_std": 22.688338755008402,
+          "gamma_std_phot": 12.97759763049425,
+          "gamma_std_jackknife": 18.6102841247254,
+          "n_valid": 120,
+          "n_valid_jackknife": 13,
+          "n_seasons": 15,
+          "sigma_floor": 2.0
+        }
+      }
+    },
+    "HE1104_R": {
+      "system_id": "HE1104_R",
+      "band": "R",
+      "n_images": 2,
+      "image_labels": [
+        "A",
+        "B"
+      ],
+      "tau_values": [
+        10.0,
+        20.0,
+        40.0,
+        80.0,
+        160.0
+      ],
+      "detrend_window_days": 200.0,
+      "mode_lock_window_days": 50.0,
+      "min_variance_fraction": 0.01,
+      "pairs": {
+        "A-B": {
+          "broadband": {
+            "delay_days": 140.89756062706928,
+            "correlation": 0.7215348049053557,
+            "uncertainty_days": 64.68085106382979
+          },
+          "multiscale": {
+            "10.0": {
+              "delay_days": 149.95090293232775,
+              "correlation": 0.28251041051546716,
+              "uncertainty_days": 6.382978723404255
+            },
+            "20.0": {
+              "delay_days": 159.88482596745587,
+              "correlation": 0.3867327540740536,
+              "uncertainty_days": 15.319148936170212
+            },
+            "40.0": {
+              "delay_days": 145.46662656497642,
+              "correlation": 0.3522648605545262,
+              "uncertainty_days": 40.42553191489362
+            },
+            "80.0": {
+              "delay_days": 141.85432688202252,
+              "correlation": 0.8131741751213211,
+              "uncertainty_days": 42.97872340425532
+            },
+            "160.0": {
+              "delay_days": 140.4451667014637,
+              "correlation": 0.8821677896653745,
+              "uncertainty_days": 42.97872340425532
+            }
+          },
+          "gamma": {
+            "value": -13.32952953733413,
+            "uncertainty": 64.7333607162764,
+            "sigma": 0.20591437536754656,
+            "p_value": 0.8368577961542416,
+            "intercept": 168.9508850436167,
+            "r_squared": 0.6953263325630561,
+            "passes_practical_cuts": true,
+            "uncertainty_method": "bootstrap"
+          },
+          "n_valid_scales": 5,
+          "max_delay_jump_days": 14.418199402479445,
+          "mode_stable": true
+        }
+      },
+      "bootstrap": {
+        "A-B": {
+          "gamma_mean": -4.813875969422304,
+          "gamma_std": 64.7333607162764,
+          "gamma_std_phot": 13.071743227458784,
+          "gamma_std_jackknife": 63.399822701794214,
+          "n_valid": 120,
+          "n_valid_jackknife": 11,
+          "n_seasons": 11,
+          "sigma_floor": 2.0
+        }
+      }
+    },
+    "Q2237_I": {
+      "system_id": "Q2237_I",
+      "band": "I",
+      "n_images": 4,
+      "image_labels": [
+        "A",
+        "B",
+        "C",
+        "D"
+      ],
+      "tau_values": [
+        10.0,
+        20.0,
+        40.0,
+        80.0,
+        160.0
+      ],
+      "detrend_window_days": 200.0,
+      "mode_lock_window_days": 50.0,
+      "min_variance_fraction": 0.01,
+      "pairs": {
+        "A-B": {
+          "broadband": {
+            "delay_days": -142.19548857919523,
+            "correlation": 0.9663087900677365,
+            "uncertainty_days": 11.914893617021276
+          },
+          "multiscale": {
+            "10.0": {
+              "delay_days": NaN,
+              "correlation": 0.05219641634391531,
+              "uncertainty_days": NaN
+            },
+            "20.0": {
+              "delay_days": NaN,
+              "correlation": -0.28273095902247153,
+              "uncertainty_days": NaN
+            },
+            "40.0": {
+              "delay_days": NaN,
+              "correlation": 0.14937241388446898,
+              "uncertainty_days": NaN
+            },
+            "80.0": {
+              "delay_days": -106.26596304880815,
+              "correlation": 0.4171744576822365,
+              "uncertainty_days": 5.957446808510638
+            },
+            "160.0": {
+              "delay_days": -106.25248037234694,
+              "correlation": 0.3230758193509681,
+              "uncertainty_days": 5.957446808510638
+            }
+          },
+          "gamma": {
+            "value": NaN,
+            "uncertainty": 15.177218307608188,
+            "sigma": NaN,
+            "p_value": NaN,
+            "intercept": NaN,
+            "r_squared": NaN,
+            "passes_practical_cuts": false,
+            "uncertainty_method": "bootstrap"
+          },
+          "n_valid_scales": 2,
+          "max_delay_jump_days": 0.013482676461208598,
+          "mode_stable": true
+        },
+        "A-C": {
+          "broadband": {
+            "delay_days": -140.10626982934338,
+            "correlation": 0.9170952133528942,
+            "uncertainty_days": 10.638297872340425
+          },
+          "multiscale": {
+            "10.0": {
+              "delay_days": NaN,
+              "correlation": -0.2090292990601824,
+              "uncertainty_days": NaN
+            },
+            "20.0": {
+              "delay_days": NaN,
+              "correlation": -0.2149843645716229,
+              "uncertainty_days": NaN
+            },
+            "40.0": {
+              "delay_days": NaN,
+              "correlation": -0.13073300332284027,
+              "uncertainty_days": NaN
+            },
+            "80.0": {
+              "delay_days": NaN,
+              "correlation": -0.06855963843843613,
+              "uncertainty_days": NaN
+            },
+            "160.0": {
+              "delay_days": NaN,
+              "correlation": -0.16036758771579354,
+              "uncertainty_days": NaN
+            }
+          },
+          "gamma": {
+            "value": NaN,
+            "uncertainty": NaN,
+            "sigma": NaN,
+            "p_value": NaN,
+            "intercept": NaN,
+            "r_squared": NaN,
+            "passes_practical_cuts": false,
+            "uncertainty_method": "bootstrap"
+          },
+          "n_valid_scales": 0,
+          "max_delay_jump_days": null,
+          "mode_stable": false
+        },
+        "A-D": {
+          "broadband": {
+            "delay_days": -144.0,
+            "correlation": 0.9328813980625251,
+            "uncertainty_days": 19.574468085106382
+          },
+          "multiscale": {
+            "10.0": {
+              "delay_days": -101.99562981543018,
+              "correlation": 0.3663455254342215,
+              "uncertainty_days": 5.957446808510638
+            },
+            "20.0": {
+              "delay_days": NaN,
+              "correlation": -0.0793104541182236,
+              "uncertainty_days": NaN
+            },
+            "40.0": {
+              "delay_days": -107.00722330128902,
+              "correlation": 0.31298595792708445,
+              "uncertainty_days": 6.382978723404255
+            },
+            "80.0": {
+              "delay_days": -103.70322941178814,
+              "correlation": 0.5746277604712922,
+              "uncertainty_days": 7.234042553191489
+            },
+            "160.0": {
+              "delay_days": -103.55598402006834,
+              "correlation": 0.7776512633062034,
+              "uncertainty_days": 7.234042553191489
+            }
+          },
+          "gamma": {
+            "value": -0.4793180543531255,
+            "uncertainty": 18.978483446323466,
+            "sigma": 0.025255867030090837,
+            "p_value": 0.9798508756992086,
+            "intercept": -102.78282791641237,
+            "r_squared": 0.02685824467037201,
+            "passes_practical_cuts": false,
+            "uncertainty_method": "bootstrap"
+          },
+          "n_valid_scales": 4,
+          "max_delay_jump_days": 5.011593485858839,
+          "mode_stable": true
+        },
+        "B-C": {
+          "broadband": {
+            "delay_days": -0.04459593135374421,
+            "correlation": 0.36964049794450493,
+            "uncertainty_days": 20.851063829787233
+          },
+          "multiscale": {
+            "10.0": {
+              "delay_days": -2.4973364772571367,
+              "correlation": 0.3537244901671207,
+              "uncertainty_days": 11.063829787234042
+            },
+            "20.0": {
+              "delay_days": -0.615085321025615,
+              "correlation": 0.5203776502157944,
+              "uncertainty_days": 12.340425531914892
+            },
+            "40.0": {
+              "delay_days": -2.60341629747608,
+              "correlation": 0.5894410107922188,
+              "uncertainty_days": 18.72340425531915
+            },
+            "80.0": {
+              "delay_days": -3.06640987364647,
+              "correlation": 0.6675852075273627,
+              "uncertainty_days": 29.78723404255319
+            },
+            "160.0": {
+              "delay_days": 0.9190074769251629,
+              "correlation": 0.619840336011951,
+              "uncertainty_days": 28.085106382978722
+            }
+          },
+          "gamma": {
+            "value": 1.6104918653843676,
+            "uncertainty": 48.6975386110914,
+            "sigma": 0.03307131964607263,
+            "p_value": 0.9736177138412918,
+            "intercept": -4.31734627917454,
+            "r_squared": 0.14034854005710107,
+            "passes_practical_cuts": false,
+            "uncertainty_method": "bootstrap"
+          },
+          "n_valid_scales": 5,
+          "max_delay_jump_days": 3.985417350571633,
+          "mode_stable": true
+        },
+        "B-D": {
+          "broadband": {
+            "delay_days": -0.13168074211761205,
+            "correlation": 0.45738331791499,
+            "uncertainty_days": 34.04255319148936
+          },
+          "multiscale": {
+            "10.0": {
+              "delay_days": -1.098557092352269,
+              "correlation": 0.4657182426376939,
+              "uncertainty_days": 7.234042553191489
+            },
+            "20.0": {
+              "delay_days": -3.6480170209642186,
+              "correlation": 0.30544805258900243,
+              "uncertainty_days": 17.872340425531913
+            },
+            "40.0": {
+              "delay_days": 5.895564499792536,
+              "correlation": 0.608331928179518,
+              "uncertainty_days": 31.06382978723404
+            },
+            "80.0": {
+              "delay_days": 1.2495698902714172,
+              "correlation": 0.7287942837927843,
+              "uncertainty_days": 41.702127659574465
+            },
+            "160.0": {
+              "delay_days": 0.37552225789681803,
+              "correlation": 0.6773631327871588,
+              "uncertainty_days": 29.361702127659573
+            }
+          },
+          "gamma": {
+            "value": 0.5647297750987519,
+            "uncertainty": 25.300814813820562,
+            "sigma": 0.022320616124594867,
+            "p_value": 0.982192203688937,
+            "intercept": 0.46181820894952524,
+            "r_squared": 0.00696353002802097,
+            "passes_practical_cuts": false,
+            "uncertainty_method": "bootstrap"
+          },
+          "n_valid_scales": 5,
+          "max_delay_jump_days": 9.543581520756755,
+          "mode_stable": true
+        },
+        "C-D": {
+          "broadband": {
+            "delay_days": 132.1385698054125,
+            "correlation": 0.7139915471220326,
+            "uncertainty_days": 7.659574468085106
+          },
+          "multiscale": {
+            "10.0": {
+              "delay_days": NaN,
+              "correlation": 0.07959513589455991,
+              "uncertainty_days": NaN
+            },
+            "20.0": {
+              "delay_days": NaN,
+              "correlation": -0.30073149822404316,
+              "uncertainty_days": NaN
+            },
+            "40.0": {
+              "delay_days": NaN,
+              "correlation": -0.31747854045908097,
+              "uncertainty_days": NaN
+            },
+            "80.0": {
+              "delay_days": NaN,
+              "correlation": -0.1860382532194632,
+              "uncertainty_days": NaN
+            },
+            "160.0": {
+              "delay_days": 83.13904713782883,
+              "correlation": 0.25006424492757134,
+              "uncertainty_days": 5.957446808510638
+            }
+          },
+          "gamma": {
+            "value": NaN,
+            "uncertainty": NaN,
+            "sigma": NaN,
+            "p_value": NaN,
+            "intercept": NaN,
+            "r_squared": NaN,
+            "passes_practical_cuts": false,
+            "uncertainty_method": "bootstrap"
+          },
+          "n_valid_scales": 1,
+          "max_delay_jump_days": null,
+          "mode_stable": false
+        }
+      },
+      "bootstrap": {
+        "A-B": {
+          "gamma_mean": 1.0792687253499615,
+          "gamma_std": 15.177218307608188,
+          "gamma_std_phot": 4.236981650802936,
+          "gamma_std_jackknife": 14.573810141742493,
+          "n_valid": 67,
+          "n_valid_jackknife": 4,
+          "n_seasons": 18,
+          "sigma_floor": 2.0
+        },
+        "A-C": {
+          "gamma_mean": NaN,
+          "gamma_std": NaN,
+          "gamma_std_phot": NaN,
+          "gamma_std_jackknife": NaN,
+          "n_valid": 3,
+          "n_valid_jackknife": 0,
+          "n_seasons": 18,
+          "sigma_floor": 2.0
+        },
+        "A-D": {
+          "gamma_mean": -1.3303784720556444,
+          "gamma_std": 18.978483446323466,
+          "gamma_std_phot": 4.33019898703328,
+          "gamma_std_jackknife": 18.47788436631937,
+          "n_valid": 105,
+          "n_valid_jackknife": 17,
+          "n_seasons": 18,
+          "sigma_floor": 2.0
+        },
+        "B-C": {
+          "gamma_mean": 0.7661399323880944,
+          "gamma_std": 48.6975386110914,
+          "gamma_std_phot": 17.494216707643012,
+          "gamma_std_jackknife": 45.44670118462684,
+          "n_valid": 55,
+          "n_valid_jackknife": 18,
+          "n_seasons": 18,
+          "sigma_floor": 2.0
+        },
+        "B-D": {
+          "gamma_mean": 3.850741025742471,
+          "gamma_std": 25.300814813820562,
+          "gamma_std_phot": 24.973793041247387,
+          "gamma_std_jackknife": 4.054736905914568,
+          "n_valid": 87,
+          "n_valid_jackknife": 15,
+          "n_seasons": 18,
+          "sigma_floor": 2.0
+        },
+        "C-D": {
+          "gamma_mean": NaN,
+          "gamma_std": NaN,
+          "gamma_std_phot": NaN,
+          "gamma_std_jackknife": NaN,
+          "n_valid": 10,
+          "n_valid_jackknife": 0,
+          "n_seasons": 18,
+          "sigma_floor": 2.0
+        }
+      }
+    },
+    "Q2237_V": {
+      "system_id": "Q2237_V",
+      "band": "V",
+      "n_images": 4,
+      "image_labels": [
+        "A",
+        "B",
+        "C",
+        "D"
+      ],
+      "tau_values": [
+        10.0,
+        20.0,
+        40.0,
+        80.0,
+        160.0
+      ],
+      "detrend_window_days": 200.0,
+      "mode_lock_window_days": 50.0,
+      "min_variance_fraction": 0.01,
+      "pairs": {
+        "A-B": {
+          "broadband": {
+            "delay_days": -130.3430117464179,
+            "correlation": 0.992034860562059,
+            "uncertainty_days": 37.02127659574468
+          },
+          "multiscale": {
+            "10.0": {
+              "delay_days": NaN,
+              "correlation": 0.02936812882821696,
+              "uncertainty_days": NaN
+            },
+            "20.0": {
+              "delay_days": NaN,
+              "correlation": -0.2394702215208819,
+              "uncertainty_days": NaN
+            },
+            "40.0": {
+              "delay_days": NaN,
+              "correlation": -0.35980770044631294,
+              "uncertainty_days": NaN
+            },
+            "80.0": {
+              "delay_days": NaN,
+              "correlation": -0.11378709037765414,
+              "uncertainty_days": NaN
+            },
+            "160.0": {
+              "delay_days": -105.92927370142664,
+              "correlation": 0.27319704357063923,
+              "uncertainty_days": 4.680851063829787
+            }
+          },
+          "gamma": {
+            "value": NaN,
+            "uncertainty": NaN,
+            "sigma": NaN,
+            "p_value": NaN,
+            "intercept": NaN,
+            "r_squared": NaN,
+            "passes_practical_cuts": false,
+            "uncertainty_method": "bootstrap"
+          },
+          "n_valid_scales": 1,
+          "max_delay_jump_days": null,
+          "mode_stable": false
+        },
+        "A-C": {
+          "broadband": {
+            "delay_days": -132.41014058627522,
+            "correlation": 0.9377613596594596,
+            "uncertainty_days": 17.872340425531913
+          },
+          "multiscale": {
+            "10.0": {
+              "delay_days": NaN,
+              "correlation": 0.032614953603504485,
+              "uncertainty_days": NaN
+            },
+            "20.0": {
+              "delay_days": NaN,
+              "correlation": -0.0662104170122466,
+              "uncertainty_days": NaN
+            },
+            "40.0": {
+              "delay_days": NaN,
+              "correlation": -0.23844592419813393,
+              "uncertainty_days": NaN
+            },
+            "80.0": {
+              "delay_days": NaN,
+              "correlation": -0.2472749706975182,
+              "uncertainty_days": NaN
+            },
+            "160.0": {
+              "delay_days": NaN,
+              "correlation": -0.491178363313567,
+              "uncertainty_days": NaN
+            }
+          },
+          "gamma": {
+            "value": NaN,
+            "uncertainty": NaN,
+            "sigma": NaN,
+            "p_value": NaN,
+            "intercept": NaN,
+            "r_squared": NaN,
+            "passes_practical_cuts": false,
+            "uncertainty_method": "bootstrap"
+          },
+          "n_valid_scales": 0,
+          "max_delay_jump_days": null,
+          "mode_stable": false
+        },
+        "A-D": {
+          "broadband": {
+            "delay_days": -134.51210943927603,
+            "correlation": 0.9957803421122945,
+            "uncertainty_days": 13.617021276595745
+          },
+          "multiscale": {
+            "10.0": {
+              "delay_days": -103.51210943927603,
+              "correlation": 0.28376991990588796,
+              "uncertainty_days": 1.702127659574468
+            },
+            "20.0": {
+              "delay_days": NaN,
+              "correlation": -0.10647549229829262,
+              "uncertainty_days": NaN
+            },
+            "40.0": {
+              "delay_days": NaN,
+              "correlation": 0.10108140751896458,
+              "uncertainty_days": NaN
+            },
+            "80.0": {
+              "delay_days": -107.01122085201928,
+              "correlation": 0.4292022079694945,
+              "uncertainty_days": 2.127659574468085
+            },
+            "160.0": {
+              "delay_days": -106.09864638201236,
+              "correlation": 0.7026678423507166,
+              "uncertainty_days": 7.659574468085106
+            }
+          },
+          "gamma": {
+            "value": -1.9236253695531578,
+            "uncertainty": 4.861702088297777,
+            "sigma": 0.3956691164157026,
+            "p_value": 0.6923491415925296,
+            "intercept": -102.18488202791873,
+            "r_squared": 0.5536917217756228,
+            "passes_practical_cuts": false,
+            "uncertainty_method": "bootstrap"
+          },
+          "n_valid_scales": 3,
+          "max_delay_jump_days": 3.4991114127432468,
+          "mode_stable": true
+        },
+        "B-C": {
+          "broadband": {
+            "delay_days": -135.29004268636788,
+            "correlation": 0.8710756312743081,
+            "uncertainty_days": 8.51063829787234
+          },
+          "multiscale": {
+            "10.0": {
+              "delay_days": -86.25216565535118,
+              "correlation": 0.24672602610330502,
+              "uncertainty_days": 1.276595744680851
+            },
+            "20.0": {
+              "delay_days": NaN,
+              "correlation": 0.15243708819972365,
+              "uncertainty_days": NaN
+            },
+            "40.0": {
+              "delay_days": NaN,
+              "correlation": -0.5508187915830086,
+              "uncertainty_days": NaN
+            },
+            "80.0": {
+              "delay_days": NaN,
+              "correlation": -0.7828892828610962,
+              "uncertainty_days": NaN
+            },
+            "160.0": {
+              "delay_days": NaN,
+              "correlation": -0.12815154716703353,
+              "uncertainty_days": NaN
+            }
+          },
+          "gamma": {
+            "value": NaN,
+            "uncertainty": 13.17832635033359,
+            "sigma": NaN,
+            "p_value": NaN,
+            "intercept": NaN,
+            "r_squared": NaN,
+            "passes_practical_cuts": false,
+            "uncertainty_method": "bootstrap"
+          },
+          "n_valid_scales": 1,
+          "max_delay_jump_days": null,
+          "mode_stable": false
+        },
+        "B-D": {
+          "broadband": {
+            "delay_days": -135.36935390160232,
+            "correlation": 0.9328393530859167,
+            "uncertainty_days": 13.617021276595745
+          },
+          "multiscale": {
+            "10.0": {
+              "delay_days": -89.85655264050075,
+              "correlation": 0.2110226293736872,
+              "uncertainty_days": 5.531914893617021
+            },
+            "20.0": {
+              "delay_days": NaN,
+              "correlation": -0.16472025361310685,
+              "uncertainty_days": NaN
+            },
+            "40.0": {
+              "delay_days": NaN,
+              "correlation": -0.5871992341008934,
+              "uncertainty_days": NaN
+            },
+            "80.0": {
+              "delay_days": NaN,
+              "correlation": -0.3292318751972916,
+              "uncertainty_days": NaN
+            },
+            "160.0": {
+              "delay_days": -106.86735166284542,
+              "correlation": 0.3028485878032498,
+              "uncertainty_days": 2.978723404255319
+            }
+          },
+          "gamma": {
+            "value": NaN,
+            "uncertainty": NaN,
+            "sigma": NaN,
+            "p_value": NaN,
+            "intercept": NaN,
+            "r_squared": NaN,
+            "passes_practical_cuts": false,
+            "uncertainty_method": "bootstrap"
+          },
+          "n_valid_scales": 2,
+          "max_delay_jump_days": 17.01079902234467,
+          "mode_stable": true
+        },
+        "C-D": {
+          "broadband": {
+            "delay_days": 119.48032615847372,
+            "correlation": 0.5563256479101027,
+            "uncertainty_days": 13.617021276595745
+          },
+          "multiscale": {
+            "10.0": {
+              "delay_days": 78.49245354321846,
+              "correlation": 0.21633506010896117,
+              "uncertainty_days": 7.659574468085106
+            },
+            "20.0": {
+              "delay_days": NaN,
+              "correlation": -0.09071613358922671,
+              "uncertainty_days": NaN
+            },
+            "40.0": {
+              "delay_days": NaN,
+              "correlation": -0.3396732994010102,
+              "uncertainty_days": NaN
+            },
+            "80.0": {
+              "delay_days": NaN,
+              "correlation": -0.365535642312214,
+              "uncertainty_days": NaN
+            },
+            "160.0": {
+              "delay_days": NaN,
+              "correlation": 0.0075640679603430835,
+              "uncertainty_days": NaN
+            }
+          },
+          "gamma": {
+            "value": NaN,
+            "uncertainty": NaN,
+            "sigma": NaN,
+            "p_value": NaN,
+            "intercept": NaN,
+            "r_squared": NaN,
+            "passes_practical_cuts": false,
+            "uncertainty_method": "bootstrap"
+          },
+          "n_valid_scales": 1,
+          "max_delay_jump_days": null,
+          "mode_stable": false
+        }
+      },
+      "bootstrap": {
+        "A-B": {
+          "gamma_mean": NaN,
+          "gamma_std": NaN,
+          "gamma_std_phot": NaN,
+          "gamma_std_jackknife": NaN,
+          "n_valid": 1,
+          "n_valid_jackknife": 1,
+          "n_seasons": 17,
+          "sigma_floor": 2.0
+        },
+        "A-C": {
+          "gamma_mean": NaN,
+          "gamma_std": NaN,
+          "gamma_std_phot": NaN,
+          "gamma_std_jackknife": NaN,
+          "n_valid": 0,
+          "n_valid_jackknife": 0,
+          "n_seasons": 17,
+          "sigma_floor": 2.0
+        },
+        "A-D": {
+          "gamma_mean": -1.325010993487174,
+          "gamma_std": 4.861702088297777,
+          "gamma_std_phot": 3.5383542196714415,
+          "gamma_std_jackknife": 3.3340960711251677,
+          "n_valid": 84,
+          "n_valid_jackknife": 10,
+          "n_seasons": 17,
+          "sigma_floor": 2.0
+        },
+        "B-C": {
+          "gamma_mean": 18.18640347217512,
+          "gamma_std": 13.17832635033359,
+          "gamma_std_phot": NaN,
+          "gamma_std_jackknife": 13.17832635033359,
+          "n_valid": 0,
+          "n_valid_jackknife": 2,
+          "n_seasons": 17,
+          "sigma_floor": 2.0
+        },
+        "B-D": {
+          "gamma_mean": -6.549396930792057,
+          "gamma_std": 5.464860242323684,
+          "gamma_std_phot": 5.464860242323684,
+          "gamma_std_jackknife": NaN,
+          "n_valid": 14,
+          "n_valid_jackknife": 0,
+          "n_seasons": 17,
+          "sigma_floor": 2.0
+        },
+        "C-D": {
+          "gamma_mean": NaN,
+          "gamma_std": NaN,
+          "gamma_std_phot": NaN,
+          "gamma_std_jackknife": NaN,
+          "n_valid": 3,
+          "n_valid_jackknife": 1,
+          "n_seasons": 17,
+          "sigma_floor": 2.0
+        }
+      }
+    },
+    "Q2237_G": {
+      "system_id": "Q2237_G",
+      "band": "G",
+      "n_images": 4,
+      "image_labels": [
+        "A",
+        "B",
+        "C",
+        "D"
+      ],
+      "tau_values": [
+        10.0,
+        20.0,
+        40.0,
+        80.0,
+        160.0
+      ],
+      "detrend_window_days": 200.0,
+      "mode_lock_window_days": 50.0,
+      "min_variance_fraction": 0.01,
+      "pairs": {
+        "A-B": {
+          "broadband": {
+            "delay_days": -1.5147715455561064,
+            "correlation": 0.5693217808253944,
+            "uncertainty_days": 33.191489361702125
+          },
+          "multiscale": {
+            "10.0": {
+              "delay_days": 0.04139593418333105,
+              "correlation": 0.37500062254000444,
+              "uncertainty_days": 11.914893617021276
+            },
+            "20.0": {
+              "delay_days": 1.4905983131920795,
+              "correlation": 0.5409797777498755,
+              "uncertainty_days": 18.29787234042553
+            },
+            "40.0": {
+              "delay_days": 5.936061173068931,
+              "correlation": 0.7033580878428989,
+              "uncertainty_days": 33.61702127659574
+            },
+            "80.0": {
+              "delay_days": 7.098155757295162,
+              "correlation": 0.9127640324853954,
+              "uncertainty_days": 42.97872340425532
+            },
+            "160.0": {
+              "delay_days": -0.21952357161429326,
+              "correlation": 0.8636742022272041,
+              "uncertainty_days": 42.97872340425532
+            }
+          },
+          "gamma": {
+            "value": -1.1921061220355116,
+            "uncertainty": 30.691102055057033,
+            "sigma": 0.03884207611368865,
+            "p_value": 0.9690162982425019,
+            "intercept": 5.801659614887969,
+            "r_squared": 0.01653851697634756,
+            "passes_practical_cuts": false,
+            "uncertainty_method": "bootstrap"
+          },
+          "n_valid_scales": 5,
+          "max_delay_jump_days": 7.317679328909455,
+          "mode_stable": true
+        },
+        "A-C": {
+          "broadband": {
+            "delay_days": 0.10826350261203922,
+            "correlation": 0.4130935851161095,
+            "uncertainty_days": 13.617021276595745
+          },
+          "multiscale": {
+            "10.0": {
+              "delay_days": 1.479502678990596,
+              "correlation": 0.6883389596315665,
+              "uncertainty_days": 9.787234042553191
+            },
+            "20.0": {
+              "delay_days": 3.062441762504199,
+              "correlation": 0.6788102818629975,
+              "uncertainty_days": 19.574468085106382
+            },
+            "40.0": {
+              "delay_days": 2.2215792361854807,
+              "correlation": 0.7991667595489925,
+              "uncertainty_days": 39.57446808510638
+            },
+            "80.0": {
+              "delay_days": 0.2756617514933582,
+              "correlation": 0.9520108429542462,
+              "uncertainty_days": 42.97872340425532
+            },
+            "160.0": {
+              "delay_days": 0.8267369581190028,
+              "correlation": 0.853589911625892,
+              "uncertainty_days": 42.97872340425532
+            }
+          },
+          "gamma": {
+            "value": -1.5015851463102436,
+            "uncertainty": 25.75510683694804,
+            "sigma": 0.05830242350833829,
+            "p_value": 0.9535077371204177,
+            "intercept": 3.9064512394389372,
+            "r_squared": 0.3897507478791177,
+            "passes_practical_cuts": false,
+            "uncertainty_method": "bootstrap"
+          },
+          "n_valid_scales": 5,
+          "max_delay_jump_days": 1.9459174846921226,
+          "mode_stable": true
+        },
+        "A-D": {
+          "broadband": {
+            "delay_days": -168.48695575324177,
+            "correlation": 0.40938327043978784,
+            "uncertainty_days": 44.680851063829785
+          },
+          "multiscale": {
+            "10.0": {
+              "delay_days": -135.37403309888478,
+              "correlation": 0.4193276867161333,
+              "uncertainty_days": 6.808510638297872
+            },
+            "20.0": {
+              "delay_days": -148.98228649995107,
+              "correlation": 0.7710696273047888,
+              "uncertainty_days": 8.936170212765957
+            },
+            "40.0": {
+              "delay_days": -149.0297987291016,
+              "correlation": 0.4674624472549154,
+              "uncertainty_days": 3.404255319148936
+            },
+            "80.0": {
+              "delay_days": NaN,
+              "correlation": 0.002093132885764834,
+              "uncertainty_days": NaN
+            },
+            "160.0": {
+              "delay_days": NaN,
+              "correlation": 0.12427996059879728,
+              "uncertainty_days": NaN
+            }
+          },
+          "gamma": {
+            "value": -21.209083177569052,
+            "uncertainty": 64.495714119453,
+            "sigma": 0.3288448460046128,
+            "p_value": 0.742272964230456,
+            "intercept": -118.70388381253352,
+            "r_squared": 0.5965042208061742,
+            "passes_practical_cuts": true,
+            "uncertainty_method": "bootstrap"
+          },
+          "n_valid_scales": 3,
+          "max_delay_jump_days": 13.608253401066293,
+          "mode_stable": true
+        },
+        "B-C": {
+          "broadband": {
+            "delay_days": 0.016450026087661922,
+            "correlation": 0.4699923708105713,
+            "uncertainty_days": 25.53191489361702
+          },
+          "multiscale": {
+            "10.0": {
+              "delay_days": -2.5362305816456354,
+              "correlation": 0.484201334919441,
+              "uncertainty_days": 6.382978723404255
+            },
+            "20.0": {
+              "delay_days": -0.03658217816857024,
+              "correlation": 0.6184422385523209,
+              "uncertainty_days": 17.02127659574468
+            },
+            "40.0": {
+              "delay_days": -2.4075493699755746,
+              "correlation": 0.7695862443554319,
+              "uncertainty_days": 34.46808510638298
+            },
+            "80.0": {
+              "delay_days": -6.372701289383875,
+              "correlation": 0.9111330098064552,
+              "uncertainty_days": 42.97872340425532
+            },
+            "160.0": {
+              "delay_days": -0.18711299180126384,
+              "correlation": 0.7492682384476087,
+              "uncertainty_days": 42.97872340425532
+            }
+          },
+          "gamma": {
+            "value": -0.9723276436938983,
+            "uncertainty": 7.4871472345553975,
+            "sigma": 0.12986623786511356,
+            "p_value": 0.8966722563115417,
+            "intercept": -1.1751401476615513,
+            "r_squared": 0.019293244756175998,
+            "passes_practical_cuts": false,
+            "uncertainty_method": "bootstrap"
+          },
+          "n_valid_scales": 5,
+          "max_delay_jump_days": 6.185588297582611,
+          "mode_stable": true
+        },
+        "B-D": {
+          "broadband": {
+            "delay_days": -10.058749139030422,
+            "correlation": 0.44218899737796347,
+            "uncertainty_days": 51.48936170212766
+          },
+          "multiscale": {
+            "10.0": {
+              "delay_days": 6.875545422280861,
+              "correlation": 0.23433250281156245,
+              "uncertainty_days": 10.212765957446807
+            },
+            "20.0": {
+              "delay_days": -0.973578577255916,
+              "correlation": 0.46010145452652723,
+              "uncertainty_days": 14.468085106382977
+            },
+            "40.0": {
+              "delay_days": -5.200536658116808,
+              "correlation": 0.3844802646100985,
+              "uncertainty_days": 25.106382978723403
+            },
+            "80.0": {
+              "delay_days": 10.241146870133447,
+              "correlation": 0.5308818524957255,
+              "uncertainty_days": 34.46808510638298
+            },
+            "160.0": {
+              "delay_days": -8.35771198773136,
+              "correlation": 0.6912683375922891,
+              "uncertainty_days": 42.97872340425532
+            }
+          },
+          "gamma": {
+            "value": -7.809255803817925,
+            "uncertainty": 70.93211438474825,
+            "sigma": 0.11009478388673359,
+            "p_value": 0.9123342048671668,
+            "intercept": 12.945009052168679,
+            "r_squared": 0.17251160204991223,
+            "passes_practical_cuts": false,
+            "uncertainty_method": "bootstrap"
+          },
+          "n_valid_scales": 5,
+          "max_delay_jump_days": 18.598858857864805,
+          "mode_stable": true
+        },
+        "C-D": {
+          "broadband": {
+            "delay_days": 178.0,
+            "correlation": 0.7879344761081819,
+            "uncertainty_days": 6.382978723404255
+          },
+          "multiscale": {
+            "10.0": {
+              "delay_days": 137.14232388077843,
+              "correlation": 0.5272234177238966,
+              "uncertainty_days": 8.085106382978724
+            },
+            "20.0": {
+              "delay_days": 136.31275155907122,
+              "correlation": 0.7438315311362058,
+              "uncertainty_days": 8.085106382978724
+            },
+            "40.0": {
+              "delay_days": 137.47628553363708,
+              "correlation": 0.4971331811646411,
+              "uncertainty_days": 9.787234042553191
+            },
+            "80.0": {
+              "delay_days": 140.86332906464105,
+              "correlation": 0.4213128034770211,
+              "uncertainty_days": 9.787234042553191
+            },
+            "160.0": {
+              "delay_days": NaN,
+              "correlation": 0.1602087467574566,
+              "uncertainty_days": NaN
+            }
+          },
+          "gamma": {
+            "value": 3.837667601839967,
+            "uncertainty": 103.24500647492593,
+            "sigma": 0.037170491173071724,
+            "p_value": 0.9703490669786563,
+            "intercept": 132.07736217364354,
+            "r_squared": 0.5484787151754154,
+            "passes_practical_cuts": false,
+            "uncertainty_method": "bootstrap"
+          },
+          "n_valid_scales": 4,
+          "max_delay_jump_days": 3.387043531003968,
+          "mode_stable": true
+        }
+      },
+      "bootstrap": {
+        "A-B": {
+          "gamma_mean": -1.9848773713418402,
+          "gamma_std": 30.691102055057033,
+          "gamma_std_phot": 8.338188565563527,
+          "gamma_std_jackknife": 29.53672894548467,
+          "n_valid": 120,
+          "n_valid_jackknife": 12,
+          "n_seasons": 12,
+          "sigma_floor": 2.0
+        },
+        "A-C": {
+          "gamma_mean": 3.298885703838876,
+          "gamma_std": 25.75510683694804,
+          "gamma_std_phot": 25.359484235060464,
+          "gamma_std_jackknife": 4.496897543232176,
+          "n_valid": 119,
+          "n_valid_jackknife": 12,
+          "n_seasons": 12,
+          "sigma_floor": 2.0
+        },
+        "A-D": {
+          "gamma_mean": -25.160484692819512,
+          "gamma_std": 64.495714119453,
+          "gamma_std_phot": 41.6135419335908,
+          "gamma_std_jackknife": 49.27484416534962,
+          "n_valid": 120,
+          "n_valid_jackknife": 10,
+          "n_seasons": 12,
+          "sigma_floor": 2.0
+        },
+        "B-C": {
+          "gamma_mean": 1.502649950837905,
+          "gamma_std": 7.4871472345553975,
+          "gamma_std_phot": 6.667672380686937,
+          "gamma_std_jackknife": 3.4058066204256425,
+          "n_valid": 120,
+          "n_valid_jackknife": 11,
+          "n_seasons": 12,
+          "sigma_floor": 2.0
+        },
+        "B-D": {
+          "gamma_mean": -2.7921651941662504,
+          "gamma_std": 70.93211438474825,
+          "gamma_std_phot": 11.176881878595264,
+          "gamma_std_jackknife": 70.04600033237399,
+          "n_valid": 117,
+          "n_valid_jackknife": 11,
+          "n_seasons": 12,
+          "sigma_floor": 2.0
+        },
+        "C-D": {
+          "gamma_mean": -0.022396860868882228,
+          "gamma_std": 103.24500647492593,
+          "gamma_std_phot": 14.986948771116605,
+          "gamma_std_jackknife": 102.15146953685701,
+          "n_valid": 117,
+          "n_valid_jackknife": 10,
+          "n_seasons": 12,
+          "sigma_floor": 2.0
+        }
+      }
+    },
+    "Q2237_R": {
+      "system_id": "Q2237_R",
+      "band": "R",
+      "n_images": 4,
+      "image_labels": [
+        "A",
+        "B",
+        "C",
+        "D"
+      ],
+      "tau_values": [
+        10.0,
+        20.0,
+        40.0,
+        80.0,
+        160.0
+      ],
+      "detrend_window_days": 200.0,
+      "mode_lock_window_days": 50.0,
+      "min_variance_fraction": 0.01,
+      "pairs": {
+        "A-B": {
+          "broadband": {
+            "delay_days": -3.3362981292524587,
+            "correlation": 0.5656289534259267,
+            "uncertainty_days": 34.04255319148936
+          },
+          "multiscale": {
+            "10.0": {
+              "delay_days": 0.2071334486617416,
+              "correlation": 0.5460035966124471,
+              "uncertainty_days": 3.404255319148936
+            },
+            "20.0": {
+              "delay_days": 9.491453165164891,
+              "correlation": 0.5075207560556272,
+              "uncertainty_days": 16.595744680851062
+            },
+            "40.0": {
+              "delay_days": 2.523381125737181,
+              "correlation": 0.808878057150662,
+              "uncertainty_days": 31.48936170212766
+            },
+            "80.0": {
+              "delay_days": -1.9194954614356101,
+              "correlation": 0.9679405195451889,
+              "uncertainty_days": 42.97872340425532
+            },
+            "160.0": {
+              "delay_days": -2.9249149717787644,
+              "correlation": 0.9233405997601782,
+              "uncertainty_days": 42.97872340425532
+            }
+          },
+          "gamma": {
+            "value": -6.511565514143215,
+            "uncertainty": 64.96764751230495,
+            "sigma": 0.10022781743651588,
+            "p_value": 0.9201634620841364,
+            "intercept": 11.555689315480182,
+            "r_squared": 0.4768305060680441,
+            "passes_practical_cuts": true,
+            "uncertainty_method": "bootstrap"
+          },
+          "n_valid_scales": 5,
+          "max_delay_jump_days": 9.28431971650315,
+          "mode_stable": true
+        },
+        "A-C": {
+          "broadband": {
+            "delay_days": -174.49093064227526,
+            "correlation": 0.8760687455857754,
+            "uncertainty_days": 1.702127659574468
+          },
+          "multiscale": {
+            "10.0": {
+              "delay_days": -132.43248233151445,
+              "correlation": 0.4160432432025878,
+              "uncertainty_days": 9.787234042553191
+            },
+            "20.0": {
+              "delay_days": -188.48049696279338,
+              "correlation": 0.46092737557581176,
+              "uncertainty_days": 11.914893617021276
+            },
+            "40.0": {
+              "delay_days": NaN,
+              "correlation": -0.03653895418394394,
+              "uncertainty_days": NaN
+            },
+            "80.0": {
+              "delay_days": NaN,
+              "correlation": -0.1073863391278163,
+              "uncertainty_days": NaN
+            },
+            "160.0": {
+              "delay_days": -222.48317523862747,
+              "correlation": 0.8469348007193043,
+              "uncertainty_days": 2.127659574468085
+            }
+          },
+          "gamma": {
+            "value": -60.98989354171735,
+            "uncertainty": 116.84171621489341,
+            "sigma": 0.5219873134142066,
+            "p_value": 0.6016791637653207,
+            "intercept": -89.50719438906222,
+            "r_squared": 0.8812569941082963,
+            "passes_practical_cuts": true,
+            "uncertainty_method": "bootstrap"
+          },
+          "n_valid_scales": 3,
+          "max_delay_jump_days": 56.04801463127893,
+          "mode_stable": true
+        },
+        "A-D": {
+          "broadband": {
+            "delay_days": -174.31414712006134,
+            "correlation": 0.46599889298421604,
+            "uncertainty_days": 20.0
+          },
+          "multiscale": {
+            "10.0": {
+              "delay_days": -150.80341749307567,
+              "correlation": 0.5821462921815912,
+              "uncertainty_days": 1.276595744680851
+            },
+            "20.0": {
+              "delay_days": -149.34894534974637,
+              "correlation": 0.7452355176001395,
+              "uncertainty_days": 2.978723404255319
+            },
+            "40.0": {
+              "delay_days": -148.84722698222822,
+              "correlation": 0.21803343552807425,
+              "uncertainty_days": 2.127659574468085
+            },
+            "80.0": {
+              "delay_days": NaN,
+              "correlation": -0.0769278906621054,
+              "uncertainty_days": NaN
+            },
+            "160.0": {
+              "delay_days": -222.3009804534743,
+              "correlation": 0.6844129251242106,
+              "uncertainty_days": 2.127659574468085
+            }
+          },
+          "gamma": {
+            "value": -66.3821040440632,
+            "uncertainty": 126.0900172653354,
+            "sigma": 0.5264659763220837,
+            "p_value": 0.5985644856987296,
+            "intercept": -70.90864678306893,
+            "r_squared": 0.8912412815764155,
+            "passes_practical_cuts": true,
+            "uncertainty_method": "bootstrap"
+          },
+          "n_valid_scales": 4,
+          "max_delay_jump_days": 73.45375347124607,
+          "mode_stable": true
+        },
+        "B-C": {
+          "broadband": {
+            "delay_days": 174.1302408560221,
+            "correlation": 0.5760411803698502,
+            "uncertainty_days": 25.53191489361702
+          },
+          "multiscale": {
+            "10.0": {
+              "delay_days": 146.65078348324826,
+              "correlation": 0.6935572464371146,
+              "uncertainty_days": 4.680851063829787
+            },
+            "20.0": {
+              "delay_days": 149.70545787328197,
+              "correlation": 0.6357432544907518,
+              "uncertainty_days": 3.829787234042553
+            },
+            "40.0": {
+              "delay_days": 150.1062568757956,
+              "correlation": 0.5099800599970776,
+              "uncertainty_days": 3.829787234042553
+            },
+            "80.0": {
+              "delay_days": NaN,
+              "correlation": 0.01039033993459959,
+              "uncertainty_days": NaN
+            },
+            "160.0": {
+              "delay_days": 222.0324395842946,
+              "correlation": 0.8813530516316881,
+              "uncertainty_days": 2.127659574468085
+            }
+          },
+          "gamma": {
+            "value": 67.43052774541259,
+            "uncertainty": 136.97651018526636,
+            "sigma": 0.49227803843308626,
+            "p_value": 0.6225228032234578,
+            "intercept": 68.21923064945413,
+            "r_squared": 0.8911626353653156,
+            "passes_practical_cuts": true,
+            "uncertainty_method": "bootstrap"
+          },
+          "n_valid_scales": 4,
+          "max_delay_jump_days": 71.926182708499,
+          "mode_stable": true
+        },
+        "B-D": {
+          "broadband": {
+            "delay_days": -78.56551008705087,
+            "correlation": 0.4494499364455709,
+            "uncertainty_days": 58.723404255319146
+          },
+          "multiscale": {
+            "10.0": {
+              "delay_days": NaN,
+              "correlation": 0.16236521735003373,
+              "uncertainty_days": NaN
+            },
+            "20.0": {
+              "delay_days": -28.548209283438393,
+              "correlation": 0.2320571753075253,
+              "uncertainty_days": 4.680851063829787
+            },
+            "40.0": {
+              "delay_days": -30.949255425600796,
+              "correlation": 0.3435505164061198,
+              "uncertainty_days": 5.957446808510638
+            },
+            "80.0": {
+              "delay_days": -34.79951375350116,
+              "correlation": 0.6125762261263157,
+              "uncertainty_days": 17.872340425531913
+            },
+            "160.0": {
+              "delay_days": -61.4178391565762,
+              "correlation": 0.6719305836209115,
+              "uncertainty_days": 34.46808510638298
+            }
+          },
+          "gamma": {
+            "value": -43.8380203892369,
+            "uncertainty": 128.9144567075053,
+            "sigma": 0.34005511491004625,
+            "p_value": 0.7338150226932438,
+            "intercept": 39.95407767936987,
+            "r_squared": 0.7584196360963005,
+            "passes_practical_cuts": true,
+            "uncertainty_method": "bootstrap"
+          },
+          "n_valid_scales": 4,
+          "max_delay_jump_days": 26.61832540307504,
+          "mode_stable": true
+        },
+        "C-D": {
+          "broadband": {
+            "delay_days": -171.68522737574037,
+            "correlation": 0.4102246849536339,
+            "uncertainty_days": 22.97872340425532
+          },
+          "multiscale": {
+            "10.0": {
+              "delay_days": -126.79207003134994,
+              "correlation": 0.3598080617267707,
+              "uncertainty_days": 3.829787234042553
+            },
+            "20.0": {
+              "delay_days": -150.6610954316206,
+              "correlation": 0.5548684227292512,
+              "uncertainty_days": 11.914893617021276
+            },
+            "40.0": {
+              "delay_days": -150.1508701791051,
+              "correlation": 0.2316384222720632,
+              "uncertainty_days": 2.127659574468085
+            },
+            "80.0": {
+              "delay_days": NaN,
+              "correlation": -0.03921625854109321,
+              "uncertainty_days": NaN
+            },
+            "160.0": {
+              "delay_days": -221.18480268495205,
+              "correlation": 0.6825039192383532,
+              "uncertainty_days": 1.0
+            }
+          },
+          "gamma": {
+            "value": -79.26786927691371,
+            "uncertainty": 99.73918221184505,
+            "sigma": 0.7947515461731933,
+            "p_value": 0.42675804152052077,
+            "intercept": -44.82343128415948,
+            "r_squared": 0.9688946553649829,
+            "passes_practical_cuts": true,
+            "uncertainty_method": "bootstrap"
+          },
+          "n_valid_scales": 4,
+          "max_delay_jump_days": 71.03393250584693,
+          "mode_stable": true
+        }
+      },
+      "bootstrap": {
+        "A-B": {
+          "gamma_mean": -26.27811398365236,
+          "gamma_std": 64.96764751230495,
+          "gamma_std_phot": 36.04176734666778,
+          "gamma_std_jackknife": 54.05354965043253,
+          "n_valid": 115,
+          "n_valid_jackknife": 15,
+          "n_seasons": 15,
+          "sigma_floor": 2.0
+        },
+        "A-C": {
+          "gamma_mean": -16.336190059119236,
+          "gamma_std": 116.84171621489341,
+          "gamma_std_phot": 58.76094930843203,
+          "gamma_std_jackknife": 100.99077920490349,
+          "n_valid": 115,
+          "n_valid_jackknife": 14,
+          "n_seasons": 15,
+          "sigma_floor": 2.0
+        },
+        "A-D": {
+          "gamma_mean": -47.604159119639775,
+          "gamma_std": 126.0900172653354,
+          "gamma_std_phot": 40.653591774596386,
+          "gamma_std_jackknife": 119.35651607598577,
+          "n_valid": 89,
+          "n_valid_jackknife": 13,
+          "n_seasons": 15,
+          "sigma_floor": 2.0
+        },
+        "B-C": {
+          "gamma_mean": 38.85120732887157,
+          "gamma_std": 136.97651018526636,
+          "gamma_std_phot": 50.309419095776605,
+          "gamma_std_jackknife": 127.403008962818,
+          "n_valid": 96,
+          "n_valid_jackknife": 13,
+          "n_seasons": 15,
+          "sigma_floor": 2.0
+        },
+        "B-D": {
+          "gamma_mean": 7.0792624981088235,
+          "gamma_std": 128.9144567075053,
+          "gamma_std_phot": 23.169925874587072,
+          "gamma_std_jackknife": 126.81518711557146,
+          "n_valid": 105,
+          "n_valid_jackknife": 15,
+          "n_seasons": 15,
+          "sigma_floor": 2.0
+        },
+        "C-D": {
+          "gamma_mean": -47.79595247071365,
+          "gamma_std": 99.73918221184505,
+          "gamma_std_phot": 42.13409840493939,
+          "gamma_std_jackknife": 90.40255648979465,
+          "n_valid": 92,
+          "n_valid_jackknife": 12,
+          "n_seasons": 15,
+          "sigma_floor": 2.0
+        }
+      }
+    }
+  },
+  "summary": {
+    "n_systems": 18,
+    "n_pairs_analyzed": 64,
+    "n_pairs_valid": 53,
+    "gamma_mean": -4.325577167418841,
+    "gamma_std": 23.598197674450436,
+    "gamma_median": -0.6239180729243219,
+    "max_gamma_sigma": 2.628969161023435,
+    "n_significant_2sigma_raw": 1,
+    "n_significant_3sigma_raw": 0,
+    "n_significant_2sigma": 1,
+    "n_significant_3sigma": 0,
+    "interpretation": "MARGINAL: One pair shows >2\u03c3 temporal shear. Could be statistical fluctuation or systematics."
+  }
+}

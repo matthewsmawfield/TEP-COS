@@ -1,0 +1,17 @@
+{
+  "n_pairs": 97595,
+  "mean_delta_log_age": 0.009101224682840685,
+  "median_delta_log_age": 0.02295490283138238,
+  "se_delta_log_age": 0.0006757622637641495,
+  "n_delta_neg": 43723,
+  "n_delta_pos": 53872,
+  "p_sign_test_neg": 1.0,
+  "t_stat": 13.468086590311794,
+  "p_ttest_less": 1.0,
+  "match_config": {
+    "min_delta_log_sigma": 0.12,
+    "max_feature_distance": 0.35,
+    "include_log_mass": false,
+    "include_log_size": true
+  }
+}

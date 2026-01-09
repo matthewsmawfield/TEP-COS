@@ -1,0 +1,10 @@
+[23:04:56] [PROCESS] Loading datasets...
+[23:04:56] [PROCESS] Analyzing Axis Stability (Stellar)...
+[23:04:57] [INFO] Bin 0: z=0.021, Axis=(72.5, 59.2), Strength=3.42
+[23:04:57] [INFO] Bin 1: z=0.028, Axis=(292.4, -69.9), Strength=2.79
+[23:04:58] [INFO] Bin 2: z=0.038, Axis=(39.9, 65.8), Strength=20.24
+[23:04:58] [INFO] Bin 3: z=0.052, Axis=(189.8, -66.5), Strength=4.53
+[23:04:59] [INFO] Bin 4: z=0.094, Axis=(206.1, -45.2), Strength=5.32
+[23:04:59] [PROCESS] Performing Paired Star-Gas Analysis...
+[23:04:59] [INFO] Paired Difference (Gas-Star): N=1409
+[23:04:59] [SUCCESS] Difference Slope: a = 4.3148 km/s

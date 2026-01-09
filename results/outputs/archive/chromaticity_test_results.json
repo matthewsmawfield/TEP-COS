@@ -1,0 +1,130 @@
+{
+  "all_results": {
+    "Q2237": {
+      "g_AB": {
+        "gamma": 0.0,
+        "sigma": 0.0
+      },
+      "r_AB": {
+        "gamma": 0.0,
+        "sigma": 0.0
+      },
+      "V_AB": {
+        "gamma": 0.0,
+        "sigma": 0.0
+      },
+      "I_AB": {
+        "gamma": 0.0,
+        "sigma": 0.0
+      },
+      "chromaticity_gr": {
+        "delta_gamma": 0.0,
+        "sigma": 0.0
+      },
+      "chromaticity_VI": {
+        "delta_gamma": 0.0,
+        "sigma": 0.0
+      }
+    },
+    "HE1104": {
+      "B_AB": {
+        "gamma": NaN,
+        "sigma": NaN
+      },
+      "R_AB": {
+        "gamma": NaN,
+        "sigma": NaN
+      },
+      "I_AB": {
+        "gamma": NaN,
+        "sigma": NaN
+      },
+      "J_AB": {
+        "gamma": NaN,
+        "sigma": NaN
+      },
+      "chromaticity_BR": {
+        "delta_gamma": NaN,
+        "sigma": NaN
+      },
+      "chromaticity_IR": {
+        "delta_gamma": NaN,
+        "sigma": NaN
+      },
+      "chromaticity_JR": {
+        "delta_gamma": NaN,
+        "sigma": NaN
+      }
+    },
+    "HE0435": {
+      "V_AB": {
+        "gamma": -3.3219280948873617,
+        "sigma": 3.1401849173675503e-16
+      },
+      "R_AB": {
+        "gamma": 0.0,
+        "sigma": 0.0
+      },
+      "chromaticity_VR": {
+        "delta_gamma": -3.3219280948873617,
+        "sigma": 3.1401849173675503e-16
+      }
+    },
+    "Q2237_Vakulik": {}
+  },
+  "chromaticity_tests": [
+    {
+      "system": "Q2237",
+      "test": "chromaticity_gr",
+      "delta_gamma": 0.0,
+      "sigma": 0.0,
+      "significance": 0,
+      "status": "ACHROMATIC"
+    },
+    {
+      "system": "Q2237",
+      "test": "chromaticity_VI",
+      "delta_gamma": 0.0,
+      "sigma": 0.0,
+      "significance": 0,
+      "status": "ACHROMATIC"
+    },
+    {
+      "system": "HE1104",
+      "test": "chromaticity_BR",
+      "delta_gamma": NaN,
+      "sigma": NaN,
+      "significance": 0,
+      "status": "ACHROMATIC"
+    },
+    {
+      "system": "HE1104",
+      "test": "chromaticity_IR",
+      "delta_gamma": NaN,
+      "sigma": NaN,
+      "significance": 0,
+      "status": "ACHROMATIC"
+    },
+    {
+      "system": "HE1104",
+      "test": "chromaticity_JR",
+      "delta_gamma": NaN,
+      "sigma": NaN,
+      "significance": 0,
+      "status": "ACHROMATIC"
+    },
+    {
+      "system": "HE0435",
+      "test": "chromaticity_VR",
+      "delta_gamma": -3.3219280948873617,
+      "sigma": 3.1401849173675503e-16,
+      "significance": 1.0578765844376352e+16,
+      "status": "CHROMATIC"
+    }
+  ],
+  "summary": {
+    "n_tests": 6,
+    "n_achromatic": 5,
+    "n_chromatic": 1
+  }
+}

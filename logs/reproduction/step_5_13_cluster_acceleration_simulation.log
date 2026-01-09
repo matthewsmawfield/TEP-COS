@@ -1,0 +1,12 @@
+--- Step 5.13: Cluster Acceleration Monte Carlo Simulation ---
+Cluster Model: M=1.0e+06 M_sun, Rc=0.5 pc
+Simulating 10000 pulsars...
+----------------------------------------
+Results (N=10000):
+Mean log|Pdot| (Intrinsic): -19.756
+Mean log|Pdot| (Observed):  -18.145
+Shift (Obs - Int):          1.611 dex
+Fraction Negative Pdot:     48.03%
+Observed Shift in Paper:    +0.65 dex (Raw), +0.13 dex (Controlled)
+----------------------------------------
+Results saved to results/outputs/step_5_13_acceleration_sim.json

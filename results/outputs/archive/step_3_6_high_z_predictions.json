@@ -1,0 +1,7 @@
+{
+  "scaling_model": "|\u0393| ~ (1 + z_s)^2.5",
+  "calibration": "DESJ0408 (z_s=2.375, \u0393=333)",
+  "prediction_z2.5": 364.69507752888615,
+  "prediction_z3.0": 509.2250610401594,
+  "threshold_met": true
+}

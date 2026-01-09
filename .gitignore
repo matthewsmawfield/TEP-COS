@@ -1,0 +1,57 @@
+# Python
+__pycache__/
+*.py[cod]
+*.pyc
+*.pyo
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Env / secrets
+.env*
+.env.local
+*.pem
+*.key
+credentials.json
+*secret*.json
+
+# Large binaries and archives
+*.tar
+*.tar.gz
+*.npz
+*.zip
+*.7z
+
+# Build artifacts
+site/node_modules/
+site/dist/
+
+# Editor files
+*.swp
+*.swo
+*~
+.vscode/
+.idea/
+.DS_Store
+
+# Temporary files
+*.tmp
+*.temp
+
+tmp/
+
+# Data & Large Results
+# data/  # Keep data visible for reproduction if small enough
+# results/
+# logs/
+
+# Ignore massive data files if any (e.g. large fits)
+results/**/*.fits
+results/**/*.hdf5
+
+# Private research notes
+research
+.windsurf
+# IDE files
+*.code-workspace

@@ -1,0 +1,26 @@
+This directory contains OGLE-III photometry of QSO 2237+0305 (Huchra's lens).
+
+README         -  this file
+
+A.dat          -  photometry file of component 'A' of quasar image. 
+
+B.dat          -  photometry file of component 'B' of quasar image. 
+
+C.dat          -  photometry file of component 'C' of quasar image. 
+
+D.dat          -  photometry file of component 'D' of quasar image. 
+
+5.dat          -  photometry of comparison star '5'.
+
+6.dat          -  photometry of comparison star '6'.
+
+lcurve.ps.gz   -  most recent OGLE-III light curve of QSO 2237+0305 
+                  (gzipped Postscript).
+
+All photometry files contain  three columns: HJD-2450000, V (mag) V_error.
+
+Please note that after the 2006 season the OGLE-III photometry of QSO
+2237+0305 was calibrated and tied to the OGLE-II scale. Thus, OGLE-II
+and OGLE-III photometry constitue now a homogeneous data set starting in
+1997.
+

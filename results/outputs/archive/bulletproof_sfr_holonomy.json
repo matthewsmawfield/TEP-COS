@@ -1,0 +1,77 @@
+{
+  "test": "SFR_Holonomy",
+  "n_total": 219008,
+  "raw": {
+    "r": -0.6053954017867955,
+    "p": 0.0
+  },
+  "partial_correlations": [
+    {
+      "controls": "Mass",
+      "r": -0.5132801185036648,
+      "p": 0.0
+    },
+    {
+      "controls": "Mass + [Mg/Fe]",
+      "r": -0.47442226000083704,
+      "p": 0.0
+    },
+    {
+      "controls": "Mass + [Mg/Fe] + z",
+      "r": -0.47393708734232287,
+      "p": 0.0
+    }
+  ],
+  "bootstrap_ci": {
+    "lower": -0.607839693222763,
+    "median": -0.6053383949724229,
+    "upper": -0.6028947830331746
+  },
+  "matched_pairs": {
+    "weighted_r": -0.4962751595823367,
+    "sign_fraction": 1.0,
+    "n_bins": 25
+  },
+  "binned": [
+    {
+      "range": "50-100",
+      "mean": -1.5602721993996265,
+      "sem": 0.0008550562564669343,
+      "n": 42307
+    },
+    {
+      "range": "100-150",
+      "mean": -1.7171609411744135,
+      "sem": 0.0005873274150554843,
+      "n": 85779
+    },
+    {
+      "range": "150-200",
+      "mean": -1.83592429527615,
+      "sem": 0.0005493717715473488,
+      "n": 63317
+    },
+    {
+      "range": "200-300",
+      "mean": -1.9213147891903848,
+      "sem": 0.0006040104635020636,
+      "n": 27124
+    },
+    {
+      "range": "300-400",
+      "mean": -1.9773168503118501,
+      "sem": 0.004040931160361528,
+      "n": 481
+    }
+  ],
+  "mgfe_control": {
+    "r": -0.5494867671951776,
+    "p": 0.0
+  },
+  "hbeta_test": {
+    "raw_r": 0.04989604565070559,
+    "controlled_r": -0.08860973566608929
+  },
+  "verdict": "BULLETPROOF_BUT_DEGENERATE",
+  "interpretation": "The sSFR-\u03c3 correlation is statistically robust but does not discriminate TEP from standard downsizing. Both predict lower sSFR at higher \u03c3. This test confirms consistency but cannot provide unique TEP evidence."
+}

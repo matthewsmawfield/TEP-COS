@@ -1,0 +1,31 @@
+{
+  "n_galaxies": 361532,
+  "fit": {
+    "slope": -26580.706950028933,
+    "slope_err": 2334.709502991853,
+    "intercept": 0.008153607261044154,
+    "intercept_err": 0.0008607681054924452,
+    "alpha": -61204.33958437985,
+    "alpha_err": 5375.867298060578
+  },
+  "analysis": {
+    "age_slope": -0.03684322422435216,
+    "age_intercept": -8.669984453214083e-08,
+    "age_corr": -0.2844828631436651,
+    "mgfe_slope": 0.31460903929878875,
+    "mgfe_corr": 0.9690553208664099,
+    "delta_log_sigma_test": 0.1,
+    "delta_log_age": -0.0036843224224352164,
+    "delta_age_percent": -0.8447582833532752
+  },
+  "tep_prediction": {
+    "sigma_low": 200,
+    "sigma_high": 252,
+    "phi_c2_low": 4.4503763015681793e-07,
+    "phi_c2_high": 7.065417416369642e-07,
+    "delta_phi_c2": 2.6150411148014623e-07,
+    "delta_log_age_observed": -0.02,
+    "alpha_implied": -176103.1656413449
+  },
+  "timestamp": "2026-01-05T02:16:56.210114"
+}

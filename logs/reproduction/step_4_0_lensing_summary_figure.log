@@ -1,0 +1,9 @@
+/Users/matthewsmawfield/www/TEP-COS/scripts/steps/step_4_0_lensing_summary_figure.py:349: UserWarning: Glyph 8321 (\N{SUBSCRIPT ONE}) missing from font(s) Times New Roman.
+  fig.savefig(output_dir / 'cosmograil_comprehensive.png', bbox_inches='tight')
+/Users/matthewsmawfield/www/TEP-COS/scripts/steps/step_4_0_lensing_summary_figure.py:349: UserWarning: Glyph 8320 (\N{SUBSCRIPT ZERO}) missing from font(s) Times New Roman.
+  fig.savefig(output_dir / 'cosmograil_comprehensive.png', bbox_inches='tight')
+/Users/matthewsmawfield/www/TEP-COS/scripts/steps/step_4_0_lensing_summary_figure.py:350: UserWarning: Glyph 8321 (\N{SUBSCRIPT ONE}) missing from font(s) Times New Roman.
+  fig.savefig(output_dir / 'cosmograil_comprehensive.pdf', bbox_inches='tight')
+/Users/matthewsmawfield/www/TEP-COS/scripts/steps/step_4_0_lensing_summary_figure.py:350: UserWarning: Glyph 8320 (\N{SUBSCRIPT ZERO}) missing from font(s) Times New Roman.
+  fig.savefig(output_dir / 'cosmograil_comprehensive.pdf', bbox_inches='tight')
+Saved: cosmograil_comprehensive.png/pdf

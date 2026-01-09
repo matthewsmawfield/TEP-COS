@@ -1,0 +1,53 @@
+{
+  "meta": {
+    "timestamp_utc": "2026-01-08T22:54:18.020298+00:00",
+    "sources": {
+      "freire_gcpsr": {
+        "url": "https://www3.mpifr-bonn.mpg.de/staff/pfreire/GCpsr.txt",
+        "sha256": "ad6a26cc3270d51840528bb59d1ef1c1310e5b20bf4cbb147e0659d7e75c2552",
+        "bytes": 21966
+      },
+      "atnf_psrcat_pkg": {
+        "url": "https://www.atnf.csiro.au/research/pulsar/psrcat/downloads/psrcat_pkg.tar.gz",
+        "sha256": "c4330ee179cbec1e65c2d6e82c4890da107cd0f403ea488746a8a188220382f3",
+        "bytes": 1210873
+      }
+    },
+    "selection": {
+      "msp_cut": "P0 < 0.03 s",
+      "field_exclusion": "Exclude ATNF rows with ASSOC containing 'GC' or tokens matching Freire cluster headers",
+      "note": "GC observed Pdot can be contaminated by line-of-sight acceleration; tau_c and B proxies are treated as proxies, not intrinsic ages/fields."
+    },
+    "counts": {
+      "gc_msp": 181,
+      "field_msp": 198
+    }
+  },
+  "base_log10_abs_pdot": {
+    "gc_mean": -19.106160404564385,
+    "field_mean": -19.75815149669137,
+    "diff_dex": 0.651991092126984,
+    "t_stat": 8.249881585426676,
+    "t_p": 2.9187951825884405e-15,
+    "mw_u": 26899.5,
+    "mw_p": 3.470527400358744e-17,
+    "gc_n": 181,
+    "field_n": 198
+  },
+  "controls": {
+    "period_matched": {
+      "n_boot": 2000,
+      "diff_mean": 0.8579274322624323,
+      "diff_ci16": 0.7958701866331594,
+      "diff_ci84": 0.9188382973869825,
+      "p_two_sided": 0.0
+    },
+    "period_and_bproxy_matched": {
+      "n_boot": 2000,
+      "diff_mean": 0.12783377048691513,
+      "diff_ci16": 0.11129721297804424,
+      "diff_ci84": 0.14470002586902353,
+      "p_two_sided": 0.0
+    }
+  }
+}

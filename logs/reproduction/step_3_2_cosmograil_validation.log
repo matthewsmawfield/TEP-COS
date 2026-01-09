@@ -1,0 +1,167 @@
+======================================================================
+COSMOGRAIL TEMPORAL SHEAR VALIDATION SUITE
+======================================================================
+
+Loaded 42 image pairs from 18 systems
+
+======================================================================
+1. MULTI-BAND ANALYSIS (Achromaticity Test)
+======================================================================
+
+LIMITATION (PRIMARY SYSTEMS): The highest-significance detection systems in this work
+(DESJ0408, PG1115, J1206) are currently supported by single-band monitoring in the
+public COSMOGRAIL releases.
+
+WHAT ACHROMATICITY WOULD TEST:
+- TEP-GL predicts Γ should be ACHROMATIC (same in all optical bands)
+- Microlensing would produce CHROMATIC effects (different Γ per band)
+
+AVAILABLE PARTIAL TEST:
+We can test the estimator on public multi-band, image-resolved monitoring in other
+lensed quasars, and measure ΔΓ between bands for matched image pairs.
+
+
+Result: PARTIAL
+Primary systems: Single-band monitoring only (COSMOGRAIL public releases)
+Multi-band auxiliary A-B ΔΓ summaries loaded from results/outputs.
+
+======================================================================
+2. GEOMETRIC CORRELATION ANALYSIS
+======================================================================
+
+Correlation of |Γ| with geometric parameters:
+------------------------------------------------------------
+Parameter                   r      p-value Interpretation      
+------------------------------------------------------------
+Einstein Radius        -0.440       0.0459 SIGNIFICANT         
+Image Separation       -0.458       0.0369 SIGNIFICANT         
+Lens Ellipticity       -0.029       0.9011 NULL                
+Lens Redshift           0.401       0.0713 MARGINAL            
+Source Redshift         0.401       0.0714 MARGINAL            
+
+------------------------------------------------------------
+Comparison: Systems with detections vs null systems
+------------------------------------------------------------
+einstein_radius_arcsec   : Sig=1.11, Null=1.23, p=0.585 → SIMILAR
+image_separation_arcsec  : Sig=2.24, Null=2.55, p=0.516 → SIMILAR
+lens_ellipticity         : Sig=0.16, Null=0.15, p=0.919 → SIMILAR
+z_lens                   : Sig=0.55, Null=0.42, p=0.358 → SIMILAR
+z_source                 : Sig=1.96, Null=1.38, p=0.135 → SIMILAR
+
+======================================================================
+3. INJECTION-RECOVERY ANALYSIS
+======================================================================
+
+Running 30 trials for each of 5 true delays...
+
+------------------------------------------------------------
+  True Delay    Recovered       Bias    Scatter      N
+------------------------------------------------------------
+        -100       -101.4       -1.4        2.1     30
+         -50        -50.4       -0.4        0.8     30
+           0          0.0        0.0        0.0     30
+          50         50.3        0.3        1.1     30
+         100        103.0        3.0        3.7     30
+------------------------------------------------------------
+     AVERAGE            -        0.3        1.5
+
+------------------------------------------------------------
+INTERPRETATION:
+  Bias: 0.3 days → UNBIASED (|bias| < 5 days)
+  Scatter: 1.5 days → PRECISE (σ < 20 days)
+
+======================================================================
+4. ROBUSTNESS AND SUMMARY STATISTICS
+======================================================================
+
+4.1 Detection Statistics
+----------------------------------------
+Total pairs: 42
+Significant (>3σ): 0 (0.0%)
+Null (<1σ): 39 (92.9%)
+
+4.2 Sign Consistency Within Systems
+----------------------------------------
+
+4.3 Fit Quality (R²)
+----------------------------------------
+Significant detections: R² = nan ± nan
+Null detections: R² = 0.49 ± 0.36
+
+4.4 Combined Significance
+----------------------------------------
+
+  Conservative Fisher (Independent systems only):
+
+4.5 Bootstrap Stability
+----------------------------------------
+
+======================================================================
+5. SCRAMBLED RESIDUALS TEST (Time-Reversal)
+======================================================================
+Loading data from DESJ0408_Courbin2017.rdb...
+System DESJ0408: 3 images
+[02:10:20] [PROCESS]   Analyzing pair A-B
+[02:10:21] [PROCESS]   Analyzing pair A-D
+[02:10:21] [PROCESS]   Analyzing pair B-D
+[02:11:29] [PROCESS]   Analyzing pair A-B
+[02:11:29] [PROCESS]   Analyzing pair A-D
+[02:11:29] [PROCESS]   Analyzing pair B-D
+[02:12:38] [PROCESS]   Analyzing pair A-B
+[02:12:38] [PROCESS]   Analyzing pair A-D
+[02:12:38] [PROCESS]   Analyzing pair B-D
+Best pair: B-D
+Original Gamma: 34.5 (σ=17.4, z=1.98, n_boot=200)
+
+Analyzing TIME-REVERSED data (B-D)...
+[02:13:47] [PROCESS]   Analyzing pair B-D
+Time-reversed Gamma: -61.1 (σ=16.1, z=3.80, n_boot=200)
+
+Signal Reduction (z): -91.6%
+Test Status: FAILED
+Interpretation: under the null, z should drop substantially if the signal is time-directional.
+[02:14:12] [PROCESS]   Analyzing pair A-B
+[02:14:12] [PROCESS]   Analyzing pair A-D
+[02:14:13] [PROCESS]   Analyzing pair B-D
+[02:15:21] [PROCESS]   Analyzing pair A-B
+[02:15:22] [PROCESS]   Analyzing pair A-D
+[02:15:22] [PROCESS]   Analyzing pair B-D
+[02:16:31] [PROCESS]   Analyzing pair A-B
+[02:16:31] [PROCESS]   Analyzing pair A-D
+[02:16:31] [PROCESS]   Analyzing pair B-D
+[02:17:41] [PROCESS]   Analyzing pair A-B
+[02:17:41] [PROCESS]   Analyzing pair A-D
+[02:17:41] [PROCESS]   Analyzing pair B-D
+[02:18:52] [PROCESS]   Analyzing pair B-D
+
+======================================================================
+6. MICROLENSING INJECTION TEST
+======================================================================
+Creating Synthetic Null Pair from Image A...
+[02:19:11] [PROCESS]   Analyzing pair A-B
+Baseline Null Gamma: 0.0 (Should be ~0)
+
+Injecting Microlensing (Amp=0.3 mag, Period=2000d)...
+[02:19:11] [PROCESS]   Analyzing pair A-B
+Microlensed Gamma: 18.7 (σ=3.6)
+
+Comparison:
+Observed Gamma (Real Data): ~ -333
+Simulated Microlensing Gamma: 18.7
+Test Status: PASSED (Standard ML does not reproduce large negative shear)
+
+======================================================================
+Results saved to: /Users/matthewsmawfield/www/TEP-COS/results/outputs/step_3_2_validation_results.json
+======================================================================
+
+======================================================================
+VALIDATION SUMMARY
+======================================================================
+
+1. ACHROMATICITY: See output
+2. GEOMETRIC CORRELATIONS: See above
+3. INJECTION-RECOVERY: See above
+4. ROBUSTNESS: See above
+5. SCRAMBLED RESIDUALS: See output
+6. MICROLENSING INJECTION: See output
+

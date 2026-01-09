@@ -1,0 +1,66 @@
+======================================================================
+HYBRID MAXIMUM PULSAR ANALYSIS
+======================================================================
+
+Loading step_5_10 robust data...
+  Base GC MSPs:    181
+  Base Field MSPs: 198
+
+Finding Freire MSPs without P-dot in Freire...
+  Freire MSPs missing P-dot: 132
+
+Parsing ATNF catalog...
+  ATNF entries with P-dot: 2874
+
+Cross-matching to find P-dot from ATNF...
+  Additional GC MSPs from cross-match: 1
+
+Finding additional field MSPs...
+  Additional Field MSPs: 148
+
+======================================================================
+MAXIMUM SAMPLE
+======================================================================
+  GC MSPs:    182 (base 181 + additional 1)
+  Field MSPs: 346 (base 198 + additional 148)
+  TOTAL:      528
+
+Computing statistics...
+
+--- RAW COMPARISON ---
+  GC mean log|Ṗ|:    -19.101
+  Field mean log|Ṗ|: -19.793
+  Difference:        0.692 dex
+  95% CI:            [0.545, 0.834]
+  p-value:           3.99e-19
+
+Running population-controlled bootstrap...
+
+--- CONTROLLED RESIDUAL ---
+  Residual:          0.086 dex
+  95% CI:            [0.060, 0.114]
+  p-value:           0.00e+00
+
+======================================================================
+FINAL MAXIMUM SAMPLE
+======================================================================
+
+    ┌─────────────────────────────────────────────────────────────────────┐
+    │  MAXIMUM PULSAR SAMPLE (Hybrid Approach)                            │
+    ├─────────────────────────────────────────────────────────────────────┤
+    │                                                                     │
+    │  GC MSPs:              182  (181 base + 1 ATNF cross-match)     │
+    │  Field MSPs:           346  (198 base + 148 additional)        │
+    │  ─────────────────────────────                                      │
+    │  TOTAL:                528                                            │
+    │                                                                     │
+    │  Raw difference:      +0.69 dex                                      │
+    │  Controlled residual: +0.09 dex (95% CI: 0.06–0.11)       │
+    │  p-value:             0.0e+00                                      │
+    │                                                                     │
+    └─────────────────────────────────────────────────────────────────────┘
+    
+
+Results saved to:
+  /Users/matthewsmawfield/www/TEP-COS/results/outputs/step_5_27_hybrid_maximum_analysis.json
+  /Users/matthewsmawfield/www/TEP-COS/results/outputs/step_5_27_hybrid_pulsar_sample.csv

@@ -1,0 +1,75 @@
+{
+  "n_galaxies": 216034,
+  "raw_correlation": {
+    "r": 0.5674171565920869,
+    "p": 0.0,
+    "interpretation": "Standard"
+  },
+  "partial_correlation_MgFe": {
+    "r": 0.5342826791397377,
+    "p": 0.0,
+    "controlled_for": "[Mg/Fe]"
+  },
+  "partial_correlation_full": {
+    "r": 0.4920698838249409,
+    "p": 0.0,
+    "controlled_for": "[Mg/Fe], logMass"
+  },
+  "binned_by_MgFe": [
+    {
+      "bin": "Low [Mg/Fe]",
+      "r": 0.5277871481821397,
+      "p": 0.0,
+      "n": 71290
+    },
+    {
+      "bin": "Mid [Mg/Fe]",
+      "r": 0.49956998851581863,
+      "p": 0.0,
+      "n": 73452
+    },
+    {
+      "bin": "High [Mg/Fe]",
+      "r": 0.5710786465433441,
+      "p": 0.0,
+      "n": 71291
+    }
+  ],
+  "compact_vs_extended": {
+    "delta_D4000": 0.14497101583265137,
+    "t_stat": 144.60912685595366,
+    "p_value": 0.0,
+    "n_compact": 54009,
+    "n_extended": 39247,
+    "interpretation": "Standard"
+  },
+  "by_sigma": [
+    {
+      "sigma_range": "80-150",
+      "mean_D4000_resid": -0.04667109741531653,
+      "stderr": 0.0005292311506350649,
+      "n": 108931
+    },
+    {
+      "sigma_range": "150-200",
+      "mean_D4000_resid": 0.06874823867380765,
+      "stderr": 0.0005352451213644571,
+      "n": 63189
+    },
+    {
+      "sigma_range": "200-250",
+      "mean_D4000_resid": 0.12555595901995112,
+      "stderr": 0.0006576781068485014,
+      "n": 22575
+    },
+    {
+      "sigma_range": "250-400",
+      "mean_D4000_resid": 0.15443689059733137,
+      "stderr": 0.0012415217888247297,
+      "n": 4992
+    }
+  ],
+  "verdict": "Contradicted",
+  "interpretation": "Compact galaxies appear OLDER at fixed [Mg/Fe]. This follows standard expectation, contradicting TEP.",
+  "figure_path": "/Users/matthewsmawfield/www/TEP-COS/results/figures/test_k_size_age_degeneracy.png"
+}

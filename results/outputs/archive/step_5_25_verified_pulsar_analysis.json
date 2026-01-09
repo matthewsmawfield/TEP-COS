@@ -1,0 +1,55 @@
+{
+  "timestamp_utc": "2026-01-08T06:37:52.228367+00:00",
+  "sample_sizes": {
+    "gc_msps": 181,
+    "field_msps": 198,
+    "total": 379
+  },
+  "base_comparison": {
+    "gc_mean": -19.106160408839777,
+    "gc_std": 0.7997265250461605,
+    "field_mean": -19.7581515,
+    "field_std": 0.7283244300189939,
+    "diff_dex": 0.6519910911602231,
+    "diff_ci_95": [
+      0.4988981489989695,
+      0.8035509267823226
+    ],
+    "t_stat": 8.24988149478547,
+    "t_p": 2.918797015274371e-15,
+    "mw_u": 26899.5,
+    "mw_p": 3.470527400358744e-17,
+    "gc_n": 181,
+    "field_n": 198
+  },
+  "period_matched_control": {
+    "n_boot": 5000,
+    "diff_mean": 0.8574757440364643,
+    "diff_std": 0.06023339310391184,
+    "diff_ci_2_5": 0.7402595730662977,
+    "diff_ci_97_5": 0.9716858457182304,
+    "diff_ci_16": 0.7965525370165778,
+    "diff_ci_84": 0.9175031787845279,
+    "p_two_sided": 0.0
+  },
+  "period_bproxy_matched_control": {
+    "n_boot": 5000,
+    "diff_mean": 0.12732621129834168,
+    "diff_std": 0.017051161411087055,
+    "diff_ci_2_5": 0.09360862251381015,
+    "diff_ci_97_5": 0.16168972817679225,
+    "diff_ci_16": 0.11045808729281902,
+    "diff_ci_84": 0.1438155217679541,
+    "p_two_sided": 0.0
+  },
+  "manuscript_values": {
+    "raw_difference_dex": 0.65,
+    "controlled_residual_dex": 0.13,
+    "controlled_ci_95": [
+      0.09,
+      0.16
+    ],
+    "controlled_p_value": 0.0,
+    "base_p_value": 2.918797015274371e-15
+  }
+}

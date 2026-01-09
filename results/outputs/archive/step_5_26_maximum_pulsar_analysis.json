@@ -1,0 +1,50 @@
+{
+  "timestamp_utc": "2026-01-08T06:53:58.485331+00:00",
+  "sample_sizes": {
+    "gc_msps": 332,
+    "gc_from_freire": 331,
+    "gc_from_atnf": 1,
+    "field_msps": 327,
+    "total": 659
+  },
+  "base_comparison": {
+    "gc_mean": -18.66609533739422,
+    "gc_std": 0.7515872382443008,
+    "field_mean": -19.783388072915514,
+    "field_std": 0.7760367952460436,
+    "diff_dex": 1.1172927355212927,
+    "diff_ci_95": [
+      1.0006850823415254,
+      1.2314037372982893
+    ],
+    "t_stat": 18.741834778830782,
+    "t_p": 4.4001694468303327e-63,
+    "mw_u": 96081.0,
+    "mw_p": 1.3493321114568425e-65,
+    "gc_n": 332,
+    "field_n": 327
+  },
+  "controlled_residual": {
+    "n_boot": 5000,
+    "diff_mean": 0.2649968148871934,
+    "diff_std": 0.01743419971193232,
+    "diff_ci_2_5": 0.2318745997235922,
+    "diff_ci_97_5": 0.30032345730616566,
+    "diff_ci_16": 0.24801027379595098,
+    "diff_ci_84": 0.2817937533389349,
+    "p_two_sided": 0.0
+  },
+  "manuscript_values": {
+    "gc_count": 332,
+    "field_count": 327,
+    "total_count": 659,
+    "raw_difference_dex": 1.12,
+    "controlled_residual_dex": 0.26,
+    "controlled_ci_95": [
+      0.23,
+      0.3
+    ],
+    "controlled_p_value": 0.0,
+    "base_p_value": 4.4001694468303327e-63
+  }
+}

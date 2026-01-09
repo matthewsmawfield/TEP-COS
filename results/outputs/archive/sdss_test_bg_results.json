@@ -1,0 +1,17 @@
+{
+  "slope_msigma": 0.0,
+  "r_msigma": NaN,
+  "r_resid_mass": NaN,
+  "p_resid_mass": NaN,
+  "binned_means": [
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0
+  ],
+  "n_sample": 26
+}

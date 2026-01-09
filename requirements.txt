@@ -1,0 +1,15 @@
+# TEP-COS: Suppressed Density Scaling in Globular Cluster Pulsars
+# Minimal scientific Python stack for data analysis and plotting
+
+# Astronomical computing
+astropy>=5.0.0
+astroquery>=0.4.6
+photutils>=1.9.0
+
+# Scientific computing
+numpy>=1.24.0
+scipy>=1.10.0
+pandas>=2.0.0
+
+# Visualization
+matplotlib>=3.7.0

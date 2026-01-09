@@ -1,0 +1,19 @@
+{
+  "timestamp": "2026-01-08T22:31:28.890274+00:00",
+  "clusters": {
+    "Terzan_5": {
+      "cluster": "Terzan_5",
+      "shift_dex": 2.9868460780248576,
+      "frac_negative": 0.501,
+      "n_pulsars": 2000,
+      "mode": "SYNTHETIC"
+    },
+    "47_Tuc": {
+      "cluster": "47_Tuc",
+      "shift_dex": 1.9974929886245363,
+      "frac_negative": 0.49,
+      "n_pulsars": 2000,
+      "mode": "SYNTHETIC"
+    }
+  }
+}

@@ -1,0 +1,15 @@
+{
+    "model": "King/Plummer Mean Field + Holtsmark Stochastic",
+    "parameters": {
+        "M_cluster_Msun": 1000000.0,
+        "R_core_pc": 0.5,
+        "N_pulsars": 10000
+    },
+    "results": {
+        "mean_log_pdot_int": -19.75582631322837,
+        "mean_log_pdot_obs": -18.145049880148203,
+        "shift_dex": 1.610776433080165,
+        "frac_negative": 0.4803
+    },
+    "conclusion": "Newtonian dynamics produces large shifts in dense clusters. The key discriminator is not the existence of a shift, but its scaling with cluster density."
+}
