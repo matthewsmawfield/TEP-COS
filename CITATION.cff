@@ -28,7 +28,7 @@ keywords:
   - COSMOGRAIL
 repository-code: "https://github.com/matthewsmawfield/TEP-COS"
 url: "https://github.com/matthewsmawfield/TEP-COS"
-doi: 10.5281/zenodo.18165799
+doi: 10.5281/zenodo.18165798
 
 preferred-citation:
   type: article
@@ -39,10 +39,10 @@ preferred-citation:
       orcid: "https://orcid.org/0009-0003-8219-3159"
   year: 2026
   journal: Zenodo
-  doi: 10.5281/zenodo.18165799
+  doi: 10.5281/zenodo.18165798
   identifiers:
   - type: doi
-    value: 10.5281/zenodo.18165799
+    value: 10.5281/zenodo.18165798
     description: Pre-print DOI
-  url: "https://doi.org/10.5281/zenodo.18165799"
+  url: "https://doi.org/10.5281/zenodo.18165798"
   notes: "Preprint"

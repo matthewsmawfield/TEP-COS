@@ -1,6 +1,6 @@
 # The Temporal Equivalence Principle: Suppressed Density Scaling in Globular Cluster Pulsars
 
-[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.18165799.svg)](https://doi.org/10.5281/zenodo.18165799)
+[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.18165798.svg)](https://doi.org/10.5281/zenodo.18165798)
 [![License: CC BY 4.0](https://img.shields.io/badge/License-CC%20BY%204.0-lightgrey.svg)](https://creativecommons.org/licenses/by/4.0/)
 
 ![TEP-COS: Suppressed Density Scaling](site/public/header-image.webp)
@@ -9,7 +9,7 @@
 **Version:** v0.2 (Caracas)  
 **Date:** 9 January 2026  
 **Status:** Preprint  
-**DOI:** [10.5281/zenodo.18165799](https://doi.org/10.5281/zenodo.18165799)  
+**DOI:** [10.5281/zenodo.18165798](https://doi.org/10.5281/zenodo.18165798)  
 **Website:** [https://mlsmawfield.com/tep/cos/](https://mlsmawfield.com/tep/cos/)  
 **Paper Series:** TEP Series: Paper 11 (Experimental Foundations)
 
@@ -37,7 +37,7 @@ The convergence of time-domain evidence (pulsars) with geometric constraints (le
 | **Paper 8** | [TEP-RBH](https://github.com/matthewsmawfield/TEP-RBH) | The Soliton Wake | [10.5281/zenodo.18059251](https://doi.org/10.5281/zenodo.18059251) |
 | **Paper 9** | [TEP-SLR](https://github.com/matthewsmawfield/TEP-SLR) | Satellite Laser Ranging Validation | [10.5281/zenodo.18064582](https://doi.org/10.5281/zenodo.18064582) |
 | **Paper 10** | [TEP-EXP](https://github.com/matthewsmawfield/TEP-EXP) | What Do Precision Tests of General Relativity Actually Measure? | [10.5281/zenodo.18109761](https://doi.org/10.5281/zenodo.18109761) |
-| **Paper 11** | **TEP-COS** (This repo) | Suppressed Density Scaling in Globular Cluster Pulsars | [10.5281/zenodo.18165799](https://doi.org/10.5281/zenodo.18165799) |
+| **Paper 11** | **TEP-COS** (This repo) | Suppressed Density Scaling in Globular Cluster Pulsars | [10.5281/zenodo.18165798](https://doi.org/10.5281/zenodo.18165798) |
 
 ## Key Results
 
@@ -157,8 +157,8 @@ python3 reproduce_manuscript.py
   title={The Temporal Equivalence Principle: Suppressed Density Scaling in Globular Cluster Pulsars},
   author={Smawfield, Matthew Lukin},
   year={2026},
-  doi={10.5281/zenodo.18165799},
-  url={https://doi.org/10.5281/zenodo.18165799},
+  doi={10.5281/zenodo.18165798},
+  url={https://doi.org/10.5281/zenodo.18165798},
   note={Preprint v0.2 (Caracas)}
 }
 ```

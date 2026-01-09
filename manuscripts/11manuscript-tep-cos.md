@@ -3,7 +3,7 @@
 **Author:** Matthew Lukin Smawfield  
 **Version:** v0.2 (Caracas)  
 **Date:** First published: 9 January 2026  
-**DOI:** 10.5281/zenodo.18165799  
+**DOI:** 10.5281/zenodo.18165798  
 **Generated:** 2026-01-09  
 **Paper Series:** TEP Series: Paper 11 (Experimental Foundations)
 

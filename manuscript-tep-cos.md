@@ -3,7 +3,7 @@
 **Author:** Matthew Lukin Smawfield  
 **Version:** v0.2 (Caracas)  
 **Date:** First published: 9 January 2026  
-**DOI:** 10.5281/zenodo.18165799  
+**DOI:** 10.5281/zenodo.18165798  
 **Generated:** 2026-01-09  
 **Paper Series:** TEP Series: Paper 11 (Experimental Foundations)
 
@@ -786,7 +786,7 @@ Using the ICCF estimator with $\tau_w \geq 20$ days (excluding noise-dominated b
 
 The individual measurements for DESJ0408 (2.2σ and 2.1σ) show significant temporal shear, but with mixed signs (A-B negative, B-D positive). This lacks the internal consistency required for a definitive TEP detection (which predicts $\Gamma > 0$ for images in deeper potentials). The RXJ1131 results also show mixed signs. This likely reflects complex local potential gradients (e.g., microlensing or substructure) or unresolved systematics that dominate the subtle TEP signal.
 
-Meta-Analysis Conclusion: Evidence for temporal shear in the DESJ0408 system is reported. The magnitude ($|\Gamma| \approx 33$ days/decade) is consistent across pairs, and the sign inversion is explained by the lens topology. However, given the complexity in RXJ1131, these results are conservatively framed as a geometric constraint: the data place an upper limit of $|\Gamma| \le 60$ days/decade on cosmological temporal shear. This rules out runaway modifications but remains consistent with the screened parameters suggested by the pulsar anomaly.
+Meta-Analysis Conclusion: Evidence for temporal shear in the DESJ0408 system is reported. The magnitude ($|\Gamma| \approx 36$ days/decade for the B-D pair) shows geometric consistency, and the sign inversion is explained by the lens topology. However, given the complexity in RXJ1131, these results are conservatively framed as a *geometric constraint*: the data place an upper limit of $|\Gamma| \le 60$ days/decade on cosmological temporal shear. This rules out runaway modifications but remains consistent with the screened parameters suggested by the pulsar anomaly.
 
 Clarification: The parameter $\tau_w$ is a measurement window—the timescale used to bandpass-filter the light curves before cross-correlation. It is not a physical frequency of the source. The claim is empirical: when the same image pair is analyzed at different smoothing scales, the inferred time delay shifts systematically. This scale dependence is absent in GR but arises naturally if gravitational temporal transport is scale-dependent. The physical interpretation—whether this reflects modified dispersion, non-local transport, or emergent light-speed structure—is explored in Smawfield (2025a).
 
@@ -866,13 +866,13 @@ Critique: The optical depth for microlensing ($\tau$) also scales with source re
 
 Analysis: The microlensing efficiency proxy $\kappa_{eff} \propto D_d D_{ds} / D_s$ was calculated for the sample. This proxy shows a positive correlation with source redshift ($r \approx 0.51$, though not statistically significant in this small sample, $p=0.13$). Thus, redshift scaling alone may not cleanly distinguish between TEP and standard microlensing optical depth effects.
 
-Resolution (Magnitude): The discriminator is magnitude. While microlensing probability increases with $z_s$, standard stellar populations produce temporal shear of order $|\Gamma| &lt; 5$ days/decade (see Injection tests). The observed signal in DESJ0408 ($|\Gamma| \approx 33$) is ~6x larger. Explaining this magnitude via microlensing would require an astrophysically excluded bottom-heavy IMF or unphysically high transverse velocities (>15,000 km/s).
+Resolution (Magnitude): The discriminator is magnitude. While microlensing probability increases with $z_s$, standard stellar populations produce temporal shear of order $|\Gamma| &lt; 5$ days/decade (see Injection tests). The observed signal in DESJ0408 ($|\Gamma| \approx 36$) is ~7x larger. Explaining this magnitude via microlensing would require an astrophysically excluded bottom-heavy IMF or unphysically high transverse velocities (>15,000 km/s).
 
 ### 4.6.2 Quantitative Microlensing Exclusion
 
 Beyond the redshift argument, the microlensing parameters required to mimic the observed signal can be quantified:
 
-| Parameter | Standard Value | Required to Mimic Γ = +33 days/decade | Exclusion |
+| Parameter | Standard Value | Required to Mimic Γ = +36 days/decade | Exclusion |
 | --- | --- | --- | --- |
 | Effective transverse velocity | ~600 km/s | >15,000 km/s | >4σ (astrophysically excluded) |
 | Stellar mass function | Chabrier IMF | Bottom-heavy by factor ~50 | >4σ (contradicts lens dynamics) |
@@ -912,7 +912,7 @@ TEP predicts that |Γ| should scale with the geometric factor (1+zS)/(1+zL). Ext
 | 3.5 | 2.77 | ~197 days/decade | No |
 | 4.0 | 3.00 | ~227 days/decade | No |
 
-The current highest-redshift detection (DESJ0408, zS = 2.375) shows Γ = +33 days/decade, consistent with the linear extrapolation. RXJ1131 (zS = 0.658) shows smaller but consistently positive values (Γ ~ +2 days/decade), suggesting the scaling includes both geometric and system-specific factors (lens mass, Einstein radius, image geometry).
+The current highest-redshift signal (DESJ0408, zS = 2.375) shows Γ ≈ +36 days/decade (2.0σ), consistent with the linear extrapolation. RXJ1131 (zS = 0.658) shows smaller but consistently positive values (Γ ~ +2 days/decade), suggesting the scaling includes both geometric and system-specific factors (lens mass, Einstein radius, image geometry).
 
 #### Testable Expectations
 
@@ -979,7 +979,7 @@ Why a "Ladder"? In experimental physics, novel claims require isolating the sign
 | Spatial Stratification | Core vs Outskirts | −0.33 dex (core, p=0.054) vs −0.09 dex (outskirts, p=0.63) | Suggestive |
 | Field Binary Control | Binary vs Isolated (Field) | p = 0.70 (null) | Null Control |
 | Suppressed Density Scaling | Residual vs Cluster Density | Observed slope = 0.35 vs Newtonian slope = 0.82 (>4σ rejection) | Quantitative exclusion |
-| Gravitational Lensing | Temporal Shear Γ | Consistent |Γ| ≈ 33 days/dec | Geometric Evidence |
+| Gravitational Lensing | Temporal Shear Γ | Marginal |Γ| ≈ 36 days/dec (2.0σ) | Geometric Evidence |
 
 The identifiability of the pulsar signal is established not just by the detection of a residual, but by the quantitative exclusion of Newtonian systematics via the "Systematics Exclusion Matrix" (Section 3.6.3). Specifically, the observation of suppressed density scaling (slope 0.35) and the binary inversion (-0.31 dex) directly contradicts the predictions of standard mass segregation (slope > 0.8, positive binary residual).
 
@@ -1141,6 +1141,7 @@ Pulsar Timing Arrays (PTAs) such as NANOGrav, EPTA, and the Fermi-LAT PTA (Xia e
 - Screened Earth Term: PTA searches for correlated signals rely on the "Earth term"—the component of the signal common to all pulsars due to the detector's (Earth's) motion or potential. However, the Solar System density ($\rho \gg \rho_c$) ensures the Earth is locally screened. Consequently, the "Earth term" for TEP is standard GR, eliminating the monopole/dipole correlations that would otherwise make the signal detectable against noise.
 
 - Signal Magnitude in Residuals: The time-varying component of the TEP signal arises from the pulsar's motion through the galactic potential gradient. The leading order effect (linear change in potential) is absorbed into $\dot{P}$. The first non-absorbed term is the "jerk" ($\ddot{\nu}$), driven by the curvature of the galactic potential. 
+
 Explicit calculation for a pulsar moving at $v \sim 220$ km/s through the Galactic potential:  $\Delta t_{\text{TEP}} \approx \frac{1}{6} \frac{\alpha \ddot{\Phi}}{c^2} T_{\text{obs}}^3 \sim 1 \mu\text{s} \quad (\text{over 10 years})$  This drift (~1 $\mu$s) is comparable to or smaller than the intrinsic "red noise" often observed in millisecond pulsars over decadal baselines and is far below the deterministic shifts absorbed into $\dot{P}$. Thus, TEP does not violate current PTA constraints.
 
 ## 5.8 Key Discriminating Tests
@@ -1236,9 +1237,9 @@ Analysis of 380 MSPs with measured spin-down rates (Freire GCpsr + ATNF cross-ma
 
 ## 6.3 The Geometric Evidence: Gravitational Lensing
 
-Analysis of the COSMOGRAIL dataset provides the first geometric evidence for temporal shear at halo scales:
+Analysis of the COSMOGRAIL dataset provides marginal geometric evidence for temporal shear at halo scales:
 
-- Detection in DESJ0408: Temporal shear is detected of $|\Gamma| \approx 33$ days/decade (combined significance >2.2σ).
+- Marginal Signal in DESJ0408: The B-D image pair shows temporal shear of $|\Gamma| \approx 36$ days/decade (2.0σ), with geometric sign inversion consistent with saddle-point topology.
 
 - Geometric Verification: The sign inversion between A-B and B-D pairs is explained by the saddle-point topology of Image B, ruling out simple systematics.
 
@@ -1254,7 +1255,7 @@ The convergence of time-domain evidence across scales is noteworthy:
 | --- | --- | --- |
 | Earth (GNSS) | Clock correlations | Lc ≈ 4,200 km → ρc ≈ 20 g/cm³ |
 | Globular Clusters | Pulsar spin-down | 0.13 dex residual (this work) |
-| Galaxy Halos | Lensing temporal shear | Consistent |Γ| ≈ 33 days/dec (Geometrically verified) |
+| Galaxy Halos | Lensing temporal shear | Marginal |Γ| ≈ 36 days/dec (2.0σ, geometrically consistent) |
 
 The single parameter ρc defines a consistent screening threshold across all scales: systems with ρ ≪ ρc (all astrophysical environments) show saturation behavior, while Earth (ρ ~ ρc) shows a transition. This cross-scale consistency is not expected from systematic artifacts, which should vary with methodology and environment.
 
