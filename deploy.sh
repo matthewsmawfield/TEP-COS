@@ -36,7 +36,7 @@ else
     git clone --depth 1 "$(git remote get-url origin)" "$TEMP_DIR"
     cd "$TEMP_DIR"
     git checkout --orphan gh-pages
-    git rm -rf .
+    git rm -rf . || true
     cd - >/dev/null
 fi
 
