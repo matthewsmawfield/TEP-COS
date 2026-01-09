@@ -1,0 +1,44 @@
+cff-version: 1.2.0
+title: "The Temporal Equivalence Principle: Suppressed Density Scaling in Globular Cluster Pulsars"
+doi: 10.5281/zenodo.18165799
+message: "If you use this work, please cite it as below."
+type: article
+authors:
+  - family-names: "Smawfield"
+    given-names: "Matthew Lukin"
+    orcid: "https://orcid.org/0009-0003-8219-3159"
+abstract: >
+  Gravitational time dilation in General Relativity is verified to 10⁻⁵ precision in the Solar System. At intermediate astrophysical scales, however, persistent anomalies emerge—rotation curves, cluster dynamics, cosmic acceleration—that conventionally require invisible matter or exotic energy. The Temporal Equivalence Principle (TEP) formalizes an alternative: that time dilation is scale-dependent, enhanced in extended gravitational configurations while screened in dense, well-tested regimes.
+
+  This work reports an 8.7σ dynamical anomaly in globular cluster pulsar timing that challenges standard density scaling (4.0σ tension). Pulsar timing provides a spatially-resolved probe of time-dilation effects at the 10⁵–10⁶ M☉ scale. Analysis of 380 millisecond pulsars (182 GC, 198 field) reveals a 0.13 dex excess in spin-down magnitude—cluster pulsars spin down faster than field controls (95% CI: 0.10–0.16 dex).
+
+  We detect a spatially-stratified spin-down anomaly in 182 globular cluster pulsars compared to 198 field controls (p=1.7×10⁻¹⁵). The signal exhibits "Suppressed Density Scaling" (Slope 0.35 vs Newtonian 0.82 fiducial; ~0.72 with exact structures + segregation), saturating in dense cores in a manner consistent with TEP screening but in tension with standard dynamics (4.0σ rejection). Furthermore, we observe a "Mass Segregation Inversion" where binaries—predicted to be dynamically hotter—exhibit significantly lower residuals (-0.31 dex, p=0.01) than isolated pulsars. Complementary analysis of gravitational lensing (COSMOGRAIL) reveals temporal shear of |Γ| ≈ 33 days/decade (2.2σ) in DESJ0408, where the sign inversion between pairs is geometrically consistent with TEP.
+
+  The convergence of time-domain evidence (pulsars) with geometric constraints (lensing) presents a coherent "Ladder of Evidence" for potential-dependent modifications to gravitational time flow. The pulsar signal is spatially resolved, field-controlled, and shows suppressed density scaling consistent with the saturation of a gravitational soliton at the screening transition scale predicted by the universal critical density ρc ≈ 20 g/cm³.
+license: CC-BY-4.0
+version: 0.1
+date-released: 2026-01-09
+keywords:
+  - gravitational lensing
+  - time delays
+  - temporal shear
+  - pulsar timing
+  - globular clusters
+  - supernovae
+  - quasars
+  - General Relativity
+  - COSMOGRAIL
+repository-code: "https://github.com/matthewsmawfield/TEP-COS"
+url: "https://mlsmawfield.com/tep/cos/"
+
+preferred-citation:
+  type: article
+  title: "The Temporal Equivalence Principle: Suppressed Density Scaling in Globular Cluster Pulsars (Caracas v0.1)"
+  authors:
+    - family-names: Smawfield
+      given-names: Matthew Lukin
+      orcid: "https://orcid.org/0009-0003-8219-3159"
+  year: 2026
+  journal: Preprint
+  url: "https://mlsmawfield.com/tep/cos/"
+  notes: "Preprint"
