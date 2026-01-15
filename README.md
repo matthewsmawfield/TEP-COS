@@ -23,6 +23,12 @@ A spatially-stratified spin-down anomaly is detected in 182 globular cluster pul
 
 The convergence of time-domain evidence (pulsars) with geometric constraints (lensing) presents a coherent "Ladder of Evidence" for potential-dependent modifications to gravitational time flow. The pulsar signal is spatially resolved, field-controlled, and shows suppressed density scaling consistent with the saturation of a gravitational soliton at the screening transition scale predicted by the universal critical density ρc ≈ 20 g/cm³.
 
+## Key Findings
+
+Analysis of 380 millisecond pulsars reveals an 8.7σ dynamical anomaly: globular cluster pulsars spin down 0.13 dex faster than field controls (p = 1.7×10⁻¹⁵). The density scaling is suppressed (slope 0.35 vs 0.82 Newtonian prediction, 4.0σ tension), and binary pulsars in clusters are unexpectedly *quieter* than isolated pulsars (−0.31 dex, p = 0.01)—directly contradicting dynamical heating models. Complementary gravitational lensing analysis places upper limits on temporal shear (|Γ| ≤ 60 days/decade), geometrically bounding the effect.
+
+---
+
 ## The TEP Research Program
 
 | Paper | Repository | Title | DOI |
@@ -38,55 +44,6 @@ The convergence of time-domain evidence (pulsars) with geometric constraints (le
 | **Paper 9** | [TEP-SLR](https://github.com/matthewsmawfield/TEP-SLR) | Satellite Laser Ranging Validation | [10.5281/zenodo.18064582](https://doi.org/10.5281/zenodo.18064582) |
 | **Paper 10** | [TEP-EXP](https://github.com/matthewsmawfield/TEP-EXP) | What Do Precision Tests of General Relativity Actually Measure? | [10.5281/zenodo.18109761](https://doi.org/10.5281/zenodo.18109761) |
 | **Paper 11** | **TEP-COS** (This repo) | Suppressed Density Scaling in Globular Cluster Pulsars | [10.5281/zenodo.18165798](https://doi.org/10.5281/zenodo.18165798) |
-
-## Summary of Key Results and Findings
-
-### Primary Results Table
-
-| Metric | Value | Uncertainty | Significance |
-|--------|-------|-------------|--------------|
-| **Total Pulsars Analyzed** | 380 MSPs | 182 GC + 198 Field | Population-controlled |
-| **Cluster Spin-down Excess** | 0.13 dex | 95% CI: 0.10–0.16 dex | p = 1.7×10⁻¹⁵ |
-| **Density Scaling Anomaly** | 4.0σ tension | Observed vs Newtonian | >8.7σ dynamical anomaly |
-
-### Pulsar Timing Results
-
-| Observable | Value | Expected (Newtonian) | Significance |
-|------------|-------|---------------------|--------------|
-| **Spin-down Residual** | +0.13 dex | 0 dex | GC pulsars spin down faster |
-| **Density Scaling Slope** | 0.35 | 0.82 (fiducial) | Suppressed by 57% |
-| **N-body Prediction** | — | 0.72–0.77 | Still 4.0σ tension |
-
-### Environmental Controls
-
-| Test | Result | p-value | Interpretation |
-|------|--------|---------|----------------|
-| **Field Binary Control** | Δ = 0 dex | p = 0.70 | No intrinsic binary clock errors |
-| **Binary Inversion (GC)** | −0.31 dex | p = 0.01 | Binaries *quieter* than isolated |
-| **Population Matching** | Period + B-field | — | Isolated environmental signal |
-
-### Gravitational Lensing Constraints
-
-| System | Temporal Shear (Γ) | p-value | Notes |
-|--------|-------------------|---------|-------|
-| **DESJ0408 A-B** | +32.4 ± 8.2 days/dec | p = 0.015 | Positive (TEP-consistent) |
-| **DESJ0408 B-D** | +34.6 ± 16.7 days/dec | p = 0.042 | Positive (TEP-consistent) |
-| **Combined Fisher** | — | p = 0.014 (~2.2σ) | Sign geometrically verified |
-| **Upper Limit** | \|Γ\| ≤ 60 days/dec | — | Rules out runaway modifications |
-
-### Systematics Exclusion Matrix
-
-| Alternative Explanation | Predicted | Observed | Status |
-|------------------------|-----------|----------|--------|
-| **Newtonian Mass Segregation** | Slope > 0.8 | 0.35 | Excluded |
-| **Binary Heating** | Positive residuals | −0.31 dex | Excluded |
-| **Intrinsic Binary Effects** | Field difference | None (p=0.70) | Excluded |
-
-### Key Interpretation
-
-Globular cluster pulsars provide a unique probe of gravitational time dilation at the 10⁵–10⁶ M☉ scale. The 0.13 dex spin-down excess in cluster pulsars—after controlling for period and magnetic field—indicates an environmental effect absent in field pulsars. The suppressed density scaling (0.35 vs 0.82 predicted) suggests the acceleration mechanism saturates at high densities, consistent with TEP's screening transition. The "binary inversion" (binaries quieter than isolated pulsars in clusters) directly contradicts dynamical heating predictions, providing a strong discriminant against standard explanations. Gravitational lensing constraints (|Γ| ≤ 60 days/decade) geometrically bound the effect, confirming screened parameters.
-
----
 
 ## Directory Structure
 
