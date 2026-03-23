@@ -72,6 +72,12 @@
       "title": "Appendix A: Astrophysical Systematics in Fossil Probes",
       "file": "10_appendix.html",
       "order": 9
+    },
+    {
+      "id": "section-reproducibility",
+      "title": "Data Availability & Reproducibility",
+      "file": "10_reproducibility.html",
+      "order": 10
     }
   ]
 }
