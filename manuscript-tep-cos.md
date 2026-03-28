@@ -4,7 +4,7 @@
 **Version:** v0.2 (Caracas)  
 **Date:** First published: 9 January 2026  
 **DOI:** 10.5281/zenodo.18165798  
-**Generated:** 2026-03-23  
+**Generated:** 2026-03-28  
 **Paper Series:** TEP Series: Paper 11 (Experimental Foundations)
 
 ---
