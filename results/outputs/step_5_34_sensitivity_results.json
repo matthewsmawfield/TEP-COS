@@ -1,9 +1,9 @@
 {
     "acc_slope": 0.82,
-    "observed_slope": 0.35,
+    "observed_slope": 0.39,
     "base_shk_fraction": 0.15,
-    "required_amplification_factor": 3.8383838383838382,
-    "required_distance_error_factor": 3.8383838383838382,
-    "required_pm_error_factor": 1.959179378817529,
-    "conclusion": "Physically excluded. Requires distances to be off by factor 3.8x or proper motions by 2.0x."
+    "required_amplification_factor": 3.5353535353535355,
+    "required_distance_error_factor": 3.5353535353535355,
+    "required_pm_error_factor": 1.8802535827258875,
+    "conclusion": "Physically excluded. Requires distances to be off by factor 3.5x or proper motions by 1.9x."
 }

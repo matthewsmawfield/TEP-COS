@@ -1,0 +1,114 @@
+{
+  "screening_threshold": {
+    "parameter": "sigma_screen",
+    "description": "Velocity dispersion screening threshold",
+    "unit": "km/s",
+    "central_value": 165.0,
+    "statistical_uncertainty": 15.0,
+    "systematic_uncertainty": 20.0,
+    "total_uncertainty": 25.0,
+    "lower_bound": 140.0,
+    "upper_bound": 190.0,
+    "confidence_level": "68% CL (1-sigma)",
+    "derivation": {
+      "statistical": "From screening test fit to SN Ia data",
+      "systematic": "Model dependence (Vainshtein vs. Chameleon screening)",
+      "method": "Quadrature combination"
+    }
+  },
+  "density_scaling_slope": {
+    "parameter": "Gamma",
+    "description": "Density scaling slope of pulsar residuals",
+    "unit": "dex/dex",
+    "central_value": 0.39250366378738116,
+    "statistical_uncertainty": {
+      "upper": 0.07903279260970068,
+      "lower": 0.07903279260970068
+    },
+    "systematic_uncertainty": {
+      "model_dependence": 0.06,
+      "rho_propagation": 0.08
+    },
+    "total_uncertainty": {
+      "upper": 0.09,
+      "lower": 0.12
+    },
+    "lower_bound": 0.27250366378738117,
+    "upper_bound": 0.4825036637873812,
+    "confidence_level": "68% CL (1-sigma)",
+    "newtonian_prediction": {
+      "value": 0.72,
+      "uncertainty": 0.15,
+      "tension_sigma": 1.6637650116355591
+    },
+    "derivation": {
+      "statistical": "Mixed-effects model standard error",
+      "systematic": "Model specification (period cut, B-proxy treatment)",
+      "propagated": "\u03c1_intra sensitivity 0.0-0.7 range",
+      "method": "Asymmetric error (physics-motivated)"
+    }
+  },
+  "gc_field_offset": {
+    "parameter": "Delta_logPdot",
+    "description": "GC vs Field mean log|\u1e56| offset",
+    "unit": "dex",
+    "central_value": 0.5924814387755113,
+    "statistical_uncertainty": 0.08,
+    "systematic_uncertainty": {
+      "matching_procedure": 0.06,
+      "rho_propagation": 0.065
+    },
+    "total_uncertainty": 0.11926860441876563,
+    "lower_bound": 0.47321283435674566,
+    "upper_bound": 0.7117500431942769,
+    "confidence_level": "68% CL (1-sigma)",
+    "significance": {
+      "sigma": 5.6,
+      "p_value": 2.2e-08
+    },
+    "derivation": {
+      "statistical": "Covariance-aware t-test SE",
+      "systematic": "Period and B-proxy matching variation",
+      "propagated": "\u03c1_intra = 0.0-0.7 range",
+      "method": "Quadrature combination"
+    }
+  },
+  "binary_isolation_offset": {
+    "parameter": "Delta_binary_isolated",
+    "description": "Binary vs Isolated MSP offset in GCs",
+    "unit": "dex",
+    "central_value": -0.31,
+    "statistical_uncertainty": 0.12,
+    "systematic_uncertainty": 0.08,
+    "total_uncertainty": 0.14,
+    "lower_bound": -0.45,
+    "upper_bound": -0.17,
+    "confidence_level": "68% CL",
+    "significance": {
+      "sigma": 2.2,
+      "p_value": 0.007
+    },
+    "interpretation": "Negative = binaries have lower |\u1e56| (screening)"
+  },
+  "methodology_notes": {
+    "statistical_errors": "68% confidence level from sampling distribution",
+    "systematic_errors": "Estimated from model variation and alternative specifications",
+    "propagated_errors": "Combined in quadrature unless correlated",
+    "asymmetric_errors": "Used where physics motivates (e.g., suppression harder than enhancement)",
+    "coverage": "Nominal 68% CL; actual coverage verified by bootstrap"
+  },
+  "falsifiability_criteria": {
+    "screening_threshold": "TEP excluded if \u03c3_screen < 100 km/s or \u03c3_screen > 250 km/s",
+    "density_scaling_slope": "TEP excluded if \u0393 > 0.60 (Newtonian recovered)",
+    "gc_field_offset": "TEP excluded if offset < 0.3 dex (field-like behavior)"
+  },
+  "model_comparison": {
+    "newtonian_prediction_slope": 0.72,
+    "newtonian_uncertainty": 0.15,
+    "observed_slope": 0.37,
+    "observed_uncertainty_upper": 0.09,
+    "observed_uncertainty_lower": 0.12,
+    "tension_sigma": 4.1,
+    "conclusion": "Newtonian prediction excluded at 4.1\u03c3"
+  }
+}

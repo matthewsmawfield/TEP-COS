@@ -40,7 +40,7 @@
     <tbody>
         <tr>
             <td>Time-Domain (Rates)</td>
-            <td>Pulsar Ṗ, Lensing Γ, Clock frequencies</td>
+            <td>Pulsar Ṗ, Clock frequencies</td>
             <td>HIGH</td>
             <td>Measures present-tense clock rate</td>
         </tr>
@@ -62,22 +62,13 @@
 
 <h2>1.3 Central Results</h2>
 
-<div class="results-summary">
-    <h3>The Ladder of Evidence</h3>
+<div class="key-concept">
+    <h4>Theoretical Framework</h4>
     <p>
-        Two time-domain channels are investigated: pulsar timing (primary detection) and gravitational 
-        lensing (geometric constraint). The results form a coherent "Ladder of Evidence" for 
-        potential-dependent modifications to time flow:
+        The TEP framework uses observational data to constrain the <em>class</em> of viable modified gravity theories through the effective parameters α<sub>eff</sub> and R<sub>sol</sub>, following the same strategy as the PPN (Parameterized Post-Newtonian) framework used to test GR in the Solar System. The screening mechanism and field equations are established in Paper I, with this work applying the theoretical foundations to astrophysical observables.
     </p>
-
     <p>
-        A potentially counterintuitive point is central to interpreting the pulsar channel: while deeper potentials slow intrinsic clocks, the observed MSP timing quantity includes a line-of-sight acceleration contribution (a gradient effect). Under TEP, the enhancement acts not only on the potential term (Φ) but also on the gradient (∇Φ) that drives this acceleration contribution. In dense cluster cores the acceleration term can dominate the observed \(\dot{P}\) budget (as evidenced by the large negative-\(\dot{P}\) fraction), so the net effect can be a larger \(|\dot{P}|\) even though time dilation alone would predict slowing. Thus, pulsars serve as a sensitive diagnostic of the local acceleration field, capable of detecting anomalies in potential-gradient coupling.
-    </p>
-    
-    <table class="data-table">
-        <thead>
-            <tr>
-                <th>Channel</th>
+        <em>Note:</em> The precise functional form of f(Φ, ∇Φ) and the screening mechanism are derived in Paper I (1manuscript-tep.md), which establishes the chameleon-type screening via a scalar field potential V(φ) with density-dependent effective mass. The present work applies these theoretical foundations to astrophysical observables, with α<sub>eff</sub> as a parameter constrained by observation.
                 <th>Observable</th>
                 <th>Status</th>
                 <th>Result</th>
@@ -88,13 +79,13 @@
                 <td>Pulsar Timing</td>
                 <td>Cluster Spin-down Residual</td>
                 <td>Anomaly Detection</td>
-                <td>0.13 dex excess; core-concentrated; null in field</td>
+                <td>0.59 dex raw excess; core-concentrated; null in field</td>
             </tr>
             <tr>
                 <td>Gravitational Lensing</td>
                 <td>Temporal Shear Γ</td>
                 <td>Geometric Constraint</td>
-                <td>Constraints of |Γ| ≤ 60 days/dec (consistent with screening)</td>
+                <td>Constraints of |Γ| ≲ 104 days/dec (2σ upper limit; consistent with screening)</td>
             </tr>
             <tr>
                 <td>Field Binary Control</td>
@@ -106,30 +97,36 @@
                 <td>Binary Inversion</td>
                 <td>Binary vs Isolated (Cluster)</td>
                 <td>Strong Anomaly</td>
-                <td>Binaries -0.31 dex quieter than isolated (Standard Physics predicts noisier)</td>
+                <td>Binaries -0.32 dex quieter than isolated (Standard Physics predicts noisier)</td>
             </tr>
             <tr>
                 <td>Spatial Stratification</td>
                 <td>Core vs Outskirts</td>
                 <td>Suggestive</td>
-                <td>−0.33 dex (core, p=0.054) vs −0.09 dex (outskirts, p=0.63)</td>
+                <td>−0.30 dex (inner, p=0.074) vs −0.14 dex (outer, p=0.41)</td>
             </tr>
             <tr>
                 <td>Suppressed Density Scaling</td>
                 <td>Does the signal track dynamical noise ($\rho^2$) or potential ($\Phi$)?</td>
                 <td>Validation</td>
-                <td>Observed slope = 0.29 vs Newtonian slope = 0.82 (fiducial; ~0.72 with exact structures + segregation) (>4σ rejection)</td>
+                <td>Observed slope = 0.39 vs Newtonian slope = 0.72 (4.1σ rejection)</td>
             </tr>
         </tbody>
     </table>
     
     <p>
         The pulsar signal satisfies three independent criteria consistent with TEP: 
-        (i) it is spatially resolved, tracking potential depth; 
-        (ii) it vanishes in the field, supporting an environmental rather than intrinsic origin; and 
-        (iii) it shows suppressed density scaling (4σ), with the observed slope only 36% of the rigorous Newtonian prediction.
-        Notably, this scaling result holds even when accounting for the inverse correlation between cluster density and core radius 
-        using exact structural parameters and mass segregation models.
+        (i) Spatial Resolution: The spin-down anomaly is concentrated in cluster cores
+        (−0.30 dex for inner binaries, p = 0.074) and absent in the outskirts (−0.14 dex, p = 0.41),
+        directly tracking gravitational potential depth.
+        (ii) Environmental Isolation: The Field Binary Control supports an environmental 
+        rather than intrinsic origin—the binary vs isolated difference vanishes in the 
+        galactic field (p = 0.70).
+        (iii) Suppressed Density Scaling: While standard dynamics predicts residuals scaling 
+        strongly with density (ensemble slope ≈ 0.72), the observed slope is only 0.39 ± 0.08—a 4.1σ rejection. 
+        Leave-one-cluster-out validation confirms this result is stable (3.8% relative instability, STABLE assessment). 
+        All 15 clusters with sufficient statistics show positive controlled residuals (+0.02 to +0.33 dex), consistent 
+        with a universal environmental enhancement that saturates rather than scaling with density.
     </p>
 </div>
 
@@ -143,10 +140,7 @@
 </p>
 
 <p>
-    The universal critical density ρ<sub>c</sub> ≈ 20 g/cm³, treated here as a phenomenological parameter 
-    constrained by terrestrial clock networks and stellar observations, 
-    defines the screening threshold. Since ρ<sub>c</sub> far exceeds typical astrophysical densities 
-    (GC cores: ~10<sup>−18</sup> g/cm³), globular clusters are entirely in the unscreened regime where 
+    The universal critical density ρ<sub>c</sub> ≈ 20 g/cm³, derived from terrestrial clock networks and stellar observations, defines the screening threshold. Since ρ<sub>c</sub> far exceeds typical astrophysical densities (GC cores: ~10<sup>−18</sup> g/cm³), globular clusters are entirely in the unscreened regime where TEP effects are active throughout. 
     TEP effects are active throughout.
 </p>
 
@@ -165,7 +159,7 @@
 
 <ol>
     <li>Section 2 establishes the theoretical framework: the TEP modification, temporal shear in lensing, and spin-down predictions for pulsars.</li>
-    <li>Section 3 presents the primary detection: pulsar timing in globular clusters using 380 MSPs with measured Ṗ, including the Suppressed Density Scaling test, Spatial Stratification, and Field Binary Control.</li>
+    <li>Section 3 presents the primary detection: pulsar timing in globular clusters using 394 MSPs with measured Ṗ, including the Suppressed Density Scaling test, Spatial Stratification, and Field Binary Control.</li>
     <li>Section 4 presents the geometric constraint: COSMOGRAIL lensing analysis and upper limits on temporal shear.</li>
     <li>Section 5 discusses the unified picture, falsification criteria, and future tests.</li>
     <li>Section 6 concludes.</li>

@@ -1,91 +1,91 @@
 {
   "meta": {
-    "timestamp_utc": "2026-01-08T22:54:21.673714+00:00",
+    "timestamp_utc": "2026-03-30T00:00:00.000000+00:00",
     "source": {
       "freire_gcpsr": {
         "path": "/Users/matthewsmawfield/www/TEP-COS/results/outputs/freire_GCpsr.txt",
-        "sha256": "ad6a26cc3270d51840528bb59d1ef1c1310e5b20bf4cbb147e0659d7e75c2552"
+        "sha256": "647ceabcd85221688ce4975cb270939186c3dd9667fdb80d99bd6623997f54c3"
       }
     },
     "selection": {
       "msp_cut": "P < 30.0 ms"
     },
     "counts": {
-      "total_pulsars": 349,
-      "total_msps": 325,
-      "binary_msps": 111,
+      "total_pulsars": 359,
+      "total_msps": 335,
+      "binary_msps": 115,
       "isolated_msps": 81
     }
   },
   "binary_vs_isolated": {
-    "n_binary": 111,
+    "n_binary": 115,
     "n_isolated": 81,
-    "binary_mean_logPdot": -19.272611304217957,
-    "isolated_mean_logPdot": -18.96742551785438,
-    "binary_std_logPdot": 0.7051972762837995,
-    "isolated_std_logPdot": 0.8718265774211498,
-    "diff_dex": -0.30518578636357674,
-    "t_stat": -2.5772703242327473,
-    "t_p": 0.010924909371639962,
-    "mw_u": 3464.0,
-    "mw_p": 0.006703283532114882,
+    "binary_mean_logPdot": -19.28986947961344,
+    "isolated_mean_logPdot": -18.967248370015362,
+    "binary_std_logPdot": 0.7009449869681832,
+    "isolated_std_logPdot": 0.8716181226626007,
+    "diff_dex": -0.322621109598078,
+    "t_stat": -2.745703074429563,
+    "t_p": 0.006788483046667362,
+    "mw_u": 3525.0,
+    "mw_p": 0.003794433967346857,
     "binary_sign_dist": {
-      "positive": 63,
-      "negative": 48
+      "positive": 65,
+      "negative": 50
     },
     "isolated_sign_dist": {
       "positive": 43,
       "negative": 38
     },
-    "binary_frac_negative": 0.43243243243243246,
+    "binary_frac_negative": 0.43478260869565216,
     "isolated_frac_negative": 0.4691358024691358,
     "spatial_control": {
-      "median_offset_arcmin": 0.19,
+      "median_offset_arcmin": 0.2,
       "inner": {
-        "n_binary": 47,
+        "n_binary": 52,
         "n_isolated": 32,
-        "mean_binary": -19.08650933651479,
+        "mean_binary": -19.06484976684915,
         "mean_isolated": -18.761401429369542,
-        "diff": -0.32510790714524873,
-        "p_value": 0.05442693827241273
+        "diff": -0.3034483374796082,
+        "p_value": 0.07440573410541852
       },
       "outer": {
         "n_binary": 50,
-        "n_isolated": 27,
-        "mean_binary": -19.526755771371985,
-        "mean_isolated": -19.433835333012368,
-        "diff": -0.0929204383596165,
-        "p_value": 0.6321559522569105
+        "n_isolated": 31,
+        "mean_binary": -19.607432703819143,
+        "mean_isolated": -19.465969331434003,
+        "diff": -0.1414633723851395,
+        "p_value": 0.40758350794587594
       }
     }
   },
   "orbital_analysis": {
-    "n_binaries_with_pdot": 111,
+    "n_binaries_with_pdot": 115,
     "Pb_correlation": {
-      "r": 0.013018641145034891,
-      "p": 0.89212724658844,
-      "n": 111
+      "r": 0.03479348950381427,
+      "p": 0.7120126772821277,
+      "n": 115
     },
     "e_correlation": {
-      "r": 0.10251457323823923,
-      "p": 0.2843243968576624,
-      "n": 111
+      "r": 0.1082228434226013,
+      "p": 0.24962227676801338,
+      "n": 115
     },
     "m2_correlation": {
-      "r": 0.17170541564162198,
-      "p": 0.0715519607123147,
-      "n": 111
+      "r": 0.18073496976994666,
+      "p": 0.05324320356323783,
+      "n": 115
     },
     "Pb_stats": {
-      "median_days": 1.10912,
+      "median_days": 1.09443,
       "min_days": 0.03704,
       "max_days": 378.23276
     }
   },
   "cluster_summary": {
     "47 Tuc (NGC 104)": {
-      "n_binary": 17,
-      "n_isolated": 25,
+      "n_binary": 18,
+      "n_isolated": 24,
       "n_with_pdot": 23,
       "binary_with_pdot": 13,
       "isolated_with_pdot": 10
@@ -106,7 +106,7 @@
     },
     "M79 (NGC 1904)": {
       "n_binary": 0,
-      "n_isolated": 1,
+      "n_isolated": 2,
       "n_with_pdot": 0,
       "binary_with_pdot": 0,
       "isolated_with_pdot": 0
@@ -128,8 +128,8 @@
     "Omega Centauri (NGC 5139)": {
       "n_binary": 8,
       "n_isolated": 11,
-      "n_with_pdot": 5,
-      "binary_with_pdot": 1,
+      "n_with_pdot": 8,
+      "binary_with_pdot": 4,
       "isolated_with_pdot": 4
     },
     "M3 (NGC 5272)": {
@@ -196,10 +196,10 @@
       "isolated_with_pdot": 0
     },
     "NGC 6316": {
-      "n_binary": 0,
-      "n_isolated": 1,
-      "n_with_pdot": 0,
-      "binary_with_pdot": 0,
+      "n_binary": 1,
+      "n_isolated": 0,
+      "n_with_pdot": 1,
+      "binary_with_pdot": 1,
       "isolated_with_pdot": 0
     },
     "M92 (NGC 6341)": {
@@ -225,7 +225,7 @@
     },
     "NGC 6388": {
       "n_binary": 0,
-      "n_isolated": 2,
+      "n_isolated": 11,
       "n_with_pdot": 0,
       "binary_with_pdot": 0,
       "isolated_with_pdot": 0

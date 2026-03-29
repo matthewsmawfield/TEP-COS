@@ -1,0 +1,45 @@
+{
+  "timestamp": "2026-03-29T23:29:39.218247",
+  "method": "Spatial gradient analysis: testing correlation between projected radius and log|\u1e56|",
+  "field_mean_logpdot": -19.75815149669137,
+  "cluster_results": [
+    {
+      "cluster": "Terzan 5",
+      "n_pulsars": 12,
+      "n_inner": 12,
+      "n_outer": 0,
+      "r_half_arcmin": 1.2,
+      "pearson_r": -0.29943190434111927,
+      "pearson_p": 0.34439799988530084,
+      "spearman_rho": -0.4070200493770522,
+      "spearman_p": 0.1891310499791825,
+      "inner_mean_logpdot": -18.70433630888112,
+      "outer_mean_logpdot": null,
+      "inner_shift_from_field": 1.0538151878102475,
+      "outer_shift_from_field": null,
+      "inner_std": 0.5478142123134833,
+      "outer_std": 0.0,
+      "inner_outer_t_stat": null,
+      "inner_outer_p": null
+    }
+  ],
+  "prediction_test": {
+    "total_clusters_analyzed": 1,
+    "nbody_consistent_clusters": 0,
+    "tep_consistent_clusters": 0,
+    "ambiguous_clusters": 1,
+    "nbody_fraction": 0.0,
+    "tep_fraction": 0.0,
+    "interpretation": "Inconclusive / mixed evidence"
+  },
+  "statistical_summary": {
+    "mean_correlation": -0.29943190434111927,
+    "t_statistic_vs_zero": null,
+    "p_value_vs_zero": null,
+    "n_positive_corr": 0,
+    "n_negative_corr": 1
+  },
+  "nbody_prediction": "Mass segregation: inner pulsars show MORE acceleration (higher \u1e56)",
+  "tep_prediction": "Uniform suppression: no radial gradient in \u1e56",
+  "conclusion": "Inconclusive / mixed evidence"
+}

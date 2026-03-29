@@ -1,0 +1,38 @@
+[23:29:20] [INFO] STEP 5.41b: SENSITIVITY ANALYSIS FOR DYNAMICAL CALIBRATION
+[23:29:20] [INFO] ======================================================================
+[23:29:20] [INFO] 
+[23:29:20] [INFO] Purpose: Test robustness of 311σ tension claim to cluster parameter uncertainties
+[23:29:20] [INFO] 
+[23:29:20] [INFO] ======================================================================
+[23:29:20] [INFO] CLUSTER PARAMETER SENSITIVITY ANALYSIS
+[23:29:20] [INFO] ======================================================================
+[23:29:36] [INFO] 
+[23:29:36] [INFO] Sensitivity Analysis Results (1000 iterations):
+[23:29:36] [INFO]   Mean prediction: 17.11 dex
+[23:29:36] [INFO]   Standard deviation: 0.17 dex
+[23:29:36] [INFO]   68% CI: [16.95, 17.28] dex
+[23:29:36] [INFO]   95% CI: [16.77, 17.47] dex
+[23:29:36] [INFO] 
+[23:29:36] [INFO] Robustness Test:
+[23:29:36] [INFO]   Observed residual: 0.59 ± 0.05 dex
+[23:29:36] [INFO]   Minimum Newtonian prediction (95% CI lower): 16.77 dex
+[23:29:36] [INFO]   Maximum difference: -16.18 dex
+[23:29:36] [INFO]   Significance (conservative): 305.3σ
+[23:29:36] [INFO]   Conclusion: Tension persists at >2σ even with conservative parameter bounds
+[23:29:36] [INFO] 
+[23:29:36] [INFO] ======================================================================
+[23:29:36] [INFO] INDIVIDUAL PARAMETER SENSITIVITY
+[23:29:36] [INFO] ======================================================================
+[23:29:36] [INFO] 
+[23:29:36] [INFO] Terzan_5 parameter sensitivities:
+[23:29:36] [INFO]   d(shift)/dM: 2.31e-07 dex/(M_sun)
+[23:29:36] [INFO]   d(shift)/d(rc): -4.00 dex/parsec
+[23:29:36] [INFO] 
+[23:29:36] [INFO] Uncertainty propagation:
+[23:29:36] [INFO]   Mass uncertainty contribution: ±0.12 dex
+[23:29:36] [INFO]   Core radius uncertainty contribution: ±0.12 dex
+[23:29:36] [INFO]   Combined (quadrature): ±0.17 dex
+[23:29:36] [INFO] 
+[23:29:36] [INFO] ======================================================================
+[23:29:36] [INFO] Results saved to: /Users/matthewsmawfield/www/TEP-COS/results/outputs/step_5_41b_sensitivity_analysis.json
+[23:29:36] [INFO] ======================================================================

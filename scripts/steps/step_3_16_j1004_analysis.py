@@ -24,8 +24,11 @@ from pathlib import Path
 import warnings
 warnings.filterwarnings('ignore')
 
-DATA_DIR = Path("/Users/matthewsmawfield/www/TEP-COS/data/cosmograil")
-OUTPUT_DIR = Path("/Users/matthewsmawfield/www/TEP-COS/results/outputs")
+# Determine project root from script location
+PROJECT_ROOT = Path(__file__).resolve().parents[2]
+
+DATA_DIR = PROJECT_ROOT / "data" / "cosmograil"
+OUTPUT_DIR = PROJECT_ROOT / "results" / "outputs"
 
 def load_j1004_data():
     """Load J1004+4112 light curve data."""
@@ -42,29 +45,72 @@ def load_j1004_data():
     return df
 
 def gaussian_smooth(t, y, sigma):
-    """Apply Gaussian smoothing."""
+    """Apply Gaussian smoothing with robust array handling."""
+    # Validate inputs
+    t = np.asarray(t)
+    y = np.asarray(y)
+    
+    if len(t) != len(y):
+        print(f"  Gaussian smoothing: length mismatch (t={len(t)}, y={len(y)}), returning zeros")
+        return np.zeros_like(y)
+    
     if len(t) < 10:
         return np.zeros_like(y)
     
-    t_min, t_max = t.min(), t.max()
-    t_grid = np.linspace(t_min, t_max, 1000)
+    # Remove any NaN values
+    valid = ~(np.isnan(t) | np.isnan(y))
+    if valid.sum() < 10:
+        return np.zeros_like(y)
+    
+    t_clean = t[valid]
+    y_clean = y[valid]
+    
+    t_min, t_max = t_clean.min(), t_clean.max()
+    if t_max <= t_min:
+        return np.zeros_like(y)
+    
+    # Create uniform grid
+    t_grid = np.linspace(t_min, t_max, max(100, len(t_clean)))
     
     try:
-        f = interp1d(t, y, kind='linear', fill_value='extrapolate')
+        # Interpolate to uniform grid
+        f = interp1d(t_clean, y_clean, kind='linear', bounds_error=False, fill_value='extrapolate')
         y_grid = f(t_grid)
         
+        # Ensure y_grid is valid
+        if len(y_grid) != len(t_grid):
+            print(f"  Gaussian smoothing: grid length mismatch, returning zeros")
+            return np.zeros_like(y)
+        
         dt = t_grid[1] - t_grid[0]
+        if dt <= 0:
+            return np.zeros_like(y)
+        
         kernel_size = int(3 * sigma / dt)
         if kernel_size < 3:
             kernel_size = 3
+        max_kernel_size = max(3, (len(t_grid) - 1) // 2)
+        if kernel_size > max_kernel_size:
+            kernel_size = max_kernel_size
+        
         kernel = signal.windows.gaussian(kernel_size * 2 + 1, sigma / dt)
         kernel /= kernel.sum()
         
         y_smooth = np.convolve(y_grid, kernel, mode='same')
         
-        f_smooth = interp1d(t_grid, y_smooth, kind='linear', fill_value='extrapolate')
-        return f_smooth(t)
-    except:
+        # Interpolate back to original points
+        f_smooth = interp1d(t_grid, y_smooth, kind='linear', bounds_error=False, fill_value='extrapolate')
+        result = f_smooth(t)
+        
+        # Ensure result matches input length
+        if len(result) != len(y):
+            print(f"  Gaussian smoothing: output length mismatch, returning zeros")
+            return np.zeros_like(y)
+        
+        return result
+        
+    except (ValueError, TypeError) as e:
+        print(f"  Gaussian smoothing failed ({type(e).__name__}: {e}), returning zeros")
         return np.zeros_like(y)
 
 def bandpass_filter(t, y, tau):
@@ -92,7 +138,8 @@ def estimate_delay_iccf(t1, y1, t2, y2, search_center, search_width=100):
     try:
         f1 = interp1d(t1, y1, kind='linear', bounds_error=False, fill_value=np.nan)
         f2 = interp1d(t2, y2, kind='linear', bounds_error=False, fill_value=np.nan)
-    except:
+    except (ValueError, TypeError) as e:
+        print(f"  Interpolation failed ({type(e).__name__}: {e})")
         return np.nan, np.nan
     
     y1_interp = f1(t_common)
@@ -123,7 +170,7 @@ def estimate_delay_iccf(t1, y1, t2, y2, search_center, search_width=100):
                 continue
             r, _ = pearsonr(y1_norm[valid_shift], y2_shifted[valid_shift])
             correlations.append(r if not np.isnan(r) else -1)
-        except:
+        except (ValueError, TypeError):
             correlations.append(-1)
     
     correlations = np.array(correlations)
@@ -146,6 +193,7 @@ def compute_temporal_shear(t1, y1, t2, y2, broadband_delay, tau_values=[20, 40, 
     delays = []
     log_taus = []
     correlations = []
+    used_taus = []
     
     for tau in tau_values:
         y1_filt = bandpass_filter(t1, y1_detrend, tau)
@@ -159,6 +207,7 @@ def compute_temporal_shear(t1, y1, t2, y2, broadband_delay, tau_values=[20, 40, 
             delays.append(delay)
             log_taus.append(np.log10(tau))
             correlations.append(corr)
+            used_taus.append(tau)
     
     if len(delays) < 3:
         return np.nan, np.nan, []
@@ -169,9 +218,14 @@ def compute_temporal_shear(t1, y1, t2, y2, broadband_delay, tau_values=[20, 40, 
     # Linear fit
     slope, intercept, r_value, p_value, std_err = linregress(log_taus, delays)
     
-    return slope, std_err, list(zip(tau_values[:len(delays)], delays, correlations))
+    return slope, std_err, list(zip(used_taus, delays, correlations))
 
 def main():
+    """Run temporal shear analysis for SDSS J1004+4112 lens system.
+    
+    Analyzes 14.5-year r-band monitoring data to compute scale-dependent
+    time delays and temporal shear for each image pair.
+    """
     print("="*70)
     print("SDSS J1004+4112 TEMPORAL SHEAR ANALYSIS")
     print("14.5-year r-band monitoring (Munoz et al. 2022)")

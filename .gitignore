@@ -42,11 +42,11 @@ site/dist/
 tmp/
 
 # Data & Large Results
-# data/  # Keep data visible for reproduction if small enough
-# results/
-# logs/
-
-# Ignore massive data files if any (e.g. large fits)
+data/cache/
+data/maps/
+data/archive/*.tmp
+data/**/*.fits
+data/**/*.fits.gz
 results/**/*.fits
 results/**/*.hdf5
 

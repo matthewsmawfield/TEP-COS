@@ -9,34 +9,8 @@
     ],
     "recommendation": "Obtain multi-band, image-resolved monitoring light curves for DESJ0408, PG1115, J1206.",
     "multiband_auxiliary": {
-      "available": [
-        "HE0435_Sorgenfrei2025_JAA703A250",
-        "HE1104_Blackburne2015_JApJ798_95",
-        "Q2237_Goicoechea2020_JAA637A89",
-        "Q2237_Vakulik2004_JAA420_447"
-      ],
-      "A-B_summary": {
-        "Q2237_Goicoechea2020_JAA637A89": {
-          "delta_gamma": 45.31604987076453,
-          "delta_uncertainty": 40.871565582132966,
-          "delta_sigma": 1.108742697406592
-        },
-        "HE0435_Sorgenfrei2025_JAA703A250": {
-          "delta_gamma": 25.201247250840503,
-          "delta_uncertainty": 17.136317382033347,
-          "delta_sigma": 1.4706337825688773
-        },
-        "HE1104_Blackburne2015_JApJ798_95": {
-          "delta_gamma": 2.295017336603447,
-          "delta_uncertainty": 160.9791851777909,
-          "delta_sigma": 0.014256609226023549
-        },
-        "Q2237_Vakulik2004_JAA420_447": {
-          "delta_gamma": 7.33594784404158e-15,
-          "delta_uncertainty": 16.246699889421993,
-          "delta_sigma": 4.515346435873981e-16
-        }
-      },
+      "available": [],
+      "A-B_summary": {},
       "outputs_dir": "/Users/matthewsmawfield/www/TEP-COS/results/outputs"
     },
     "tdcosmo_public_repo": {
@@ -46,29 +20,29 @@
   },
   "geometric": {
     "Einstein Radius": {
-      "r": -0.439967749382445,
-      "p": 0.04594884423424891,
+      "r": -0.4681606182644377,
+      "p": 0.03736127331107085,
       "status": "SIGNIFICANT"
     },
     "Image Separation": {
-      "r": -0.4578846476706736,
-      "p": 0.0368625135825555,
+      "r": -0.4898931051473848,
+      "p": 0.028334136301867912,
       "status": "SIGNIFICANT"
     },
     "Lens Ellipticity": {
-      "r": -0.028879860227624593,
-      "p": 0.9011049405147481,
+      "r": -0.15323415406776342,
+      "p": 0.5189365383305673,
       "status": "NULL"
     },
     "Lens Redshift": {
-      "r": 0.40146461363195174,
-      "p": 0.07125468633598551,
-      "status": "MARGINAL"
+      "r": 0.6036258635926615,
+      "p": 0.0048313428329181925,
+      "status": "SIGNIFICANT"
     },
     "Source Redshift": {
-      "r": 0.40130746004741563,
-      "p": 0.07137586293072758,
-      "status": "MARGINAL"
+      "r": 0.6646695794568145,
+      "p": 0.0013885453224241509,
+      "status": "SIGNIFICANT"
     }
   },
   "injection_recovery": {
@@ -276,36 +250,131 @@
   },
   "robustness": {
     "detection_rate": 0.0,
-    "null_rate": 0.9285714285714286,
-    "r2_significant": NaN,
-    "r2_null": 0.48527597577309617
+    "null_rate": 0.9166666666666666,
+    "r2_significant": null,
+    "r2_null": -17.862760986604215
   },
   "scrambled_residuals": {
     "system": "DESJ0408",
-    "pair": "B-D",
-    "gamma_orig": 34.537011500052735,
-    "sigma_orig": 17.426360693848036,
-    "z_orig": 1.981883200216624,
+    "pair": "A-B",
+    "gamma_orig": -29.9372349442612,
+    "sigma_orig": 18.59740586822666,
+    "z_orig": 1.6097532718479,
     "n_boot_orig": 200,
-    "gamma_scrambled": -61.054259975901736,
-    "sigma_scrambled": 16.074748732096594,
-    "z_scrambled": 3.798147081079666,
+    "gamma_scrambled": 17.145050953058814,
+    "sigma_scrambled": 10.590920292165604,
+    "z_scrambled": 1.6188443005978885,
     "n_boot_scrambled": 200,
-    "status": "FAILED"
+    "status": "PASSED"
   },
   "season_shuffle_null": {
     "target_system": "DESJ0408",
-    "pair": "B-D",
-    "z_orig": 1.9376106365275438,
-    "z_shuffle": 1.1296610991688008,
-    "gamma_orig": 34.537011500052735,
-    "gamma_shuffle": 42.33242739605819,
-    "status": "FAILED"
+    "pair": "A-B",
+    "z_orig": 1.6097532718479,
+    "z_shuffle": 2.351132409385826,
+    "gamma_orig": -29.9372349442612,
+    "gamma_shuffle": -42.56853357961396,
+    "single_shuffle_outcome": "INCREASED",
+    "interpretation": "Single-shuffle draw strengthened the signal, but one draw is not inferential; empirical null shows baseline is consistent with shuffle variability (p=0.267).",
+    "status": "EXPLORATORY",
+    "note": "Use empirical_season_shuffle_null for formal inference"
+  },
+  "empirical_season_shuffle_null": {
+    "status": "OK",
+    "target_system": "DESJ0408",
+    "pair": "A-B",
+    "operating_point": {
+      "n_bootstrap": 200,
+      "bootstrap_mode": "fr",
+      "detrend_window": 200.0,
+      "tau_values": [
+        10.0,
+        20.0,
+        40.0,
+        80.0,
+        160.0
+      ],
+      "estimator": "iccf",
+      "broadband_estimator": "interp",
+      "min_variance_fraction": 0.01,
+      "min_correlation": 0.2,
+      "lag_step": 1.0,
+      "mode_lock_window": 50.0,
+      "season_gap_days": 30.0
+    },
+    "baseline": {
+      "gamma": -29.9372349442612,
+      "gamma_sigma": 18.59740586822666,
+      "z": 1.6097532718479,
+      "n_valid_bootstrap": 200
+    },
+    "null": {
+      "n_shuffles": 50,
+      "n_effective": 29,
+      "z_null": [
+        1.0466700143778327,
+        2.4967881190713705,
+        null,
+        null,
+        4.7889334900958955,
+        0.482691464851417,
+        1.6211888000767891,
+        null,
+        null,
+        null,
+        0.37590895877713093,
+        null,
+        null,
+        null,
+        1.0096408398202994,
+        null,
+        0.9077488528052499,
+        2.8556476810497062,
+        1.173544426273383,
+        0.4661484825507852,
+        2.1799291302432553,
+        null,
+        null,
+        null,
+        null,
+        1.1482162138914878,
+        0.906734251582322,
+        0.702869673424564,
+        1.7173432230720511,
+        1.024566420620374,
+        null,
+        null,
+        1.5154657235067426,
+        null,
+        0.8498686814514762,
+        0.7865581688618665,
+        2.4261852319384287,
+        null,
+        null,
+        0.9562093542449294,
+        1.264132739133071,
+        null,
+        null,
+        1.4717357792527346,
+        0.25186769366500805,
+        0.15307635248838955,
+        0.17583980762770146,
+        0.7045594067929261,
+        null,
+        0.7998221816064028
+      ],
+      "z_null_median": 1.0096408398202994,
+      "z_null_q95": 2.7121038562583712,
+      "z_null_max": 4.7889334900958955,
+      "p_empirical": 0.26666666666666666,
+      "assessment": "BASELINE_CONSISTENT_WITH_EMPIRICAL_NULL",
+      "interpretation": "Baseline z=1.61\u03c3 is not unusual under the shuffle null (empirical p=0.267)."
+    }
   },
   "microlensing_injection": {
     "scenario": "Null + Microlensing",
-    "gamma_ml": 18.673026496834183,
-    "sigma_ml": 3.5688489208215044,
+    "gamma_ml": 17.455766411022395,
+    "sigma_ml": 3.1456179197999443,
     "status": "PASSED"
   }
 }

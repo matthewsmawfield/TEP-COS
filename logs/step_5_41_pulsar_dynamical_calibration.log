@@ -1,0 +1,45 @@
+[23:29:20] [INFO] ======================================================================
+[23:29:20] [INFO] STEP 5.41: PULSAR DYNAMICAL CALIBRATION
+[23:29:20] [INFO] ======================================================================
+[23:29:20] [INFO] 
+[23:29:20] [INFO] Testing: Do observed residuals exceed Newtonian predictions?
+[23:29:20] [INFO] This addresses the TEP vs GR ambiguity directly.
+[23:29:20] [INFO] 
+[23:29:20] [INFO] Generating Newtonian predictions...
+[23:29:20] [INFO]   47_Tuc: predicted shift = 17.21 dex
+[23:29:20] [INFO]   M15: predicted shift = 17.80 dex
+[23:29:20] [INFO]   M13: predicted shift = 16.61 dex
+[23:29:20] [INFO]   Terzan_5: predicted shift = 18.23 dex
+[23:29:20] [INFO]   M28: predicted shift = 17.26 dex
+[23:29:20] [INFO]   M62: predicted shift = 17.83 dex
+[23:29:20] [INFO]   M5: predicted shift = 16.82 dex
+[23:29:20] [INFO]   M3: predicted shift = 16.45 dex
+[23:29:20] [INFO]   M53: predicted shift = 16.17 dex
+[23:29:20] [INFO]   Omega_Cen: predicted shift = 17.37 dex
+[23:29:20] [INFO]   M2: predicted shift = 16.88 dex
+[23:29:20] [INFO]   NGC_6440: predicted shift = 18.14 dex
+[23:29:20] [INFO]   NGC_6544: predicted shift = 16.73 dex
+[23:29:20] [INFO]   M30: predicted shift = 16.54 dex
+[23:29:20] [INFO]   NGC_6752: predicted shift = 16.68 dex
+[23:29:20] [INFO]   Loaded from step_5_10: residual = 0.592 ± 0.053 dex
+[23:29:20] [INFO] 
+[23:29:20] [INFO] ======================================================================
+[23:29:20] [INFO] COMPARISON TO OBSERVED RESIDUALS
+[23:29:20] [INFO] ======================================================================
+[23:29:20] [INFO] 
+[23:29:20] [INFO] Newtonian Prediction (raw, no controls): 17.12 ± 0.62 dex
+[23:29:20] [INFO] Observed Residual (after population controls): 0.59 ± 0.05 dex
+[23:29:20] [INFO] 
+[23:29:20] [INFO] Note: The Newtonian prediction is a raw shift; the observed is after
+[23:29:20] [INFO] period+B-proxy matching. Even the minimum controlled residual is
+[23:29:20] [INFO] far below the Newtonian expectation.
+[23:29:20] [INFO] 
+[23:29:20] [INFO] Difference (Observed - Predicted): -16.52 dex
+[23:29:20] [INFO] Significance: -311.4σ
+[23:29:20] [INFO] 
+[23:29:20] [INFO] Interpretation: OBSERVED_MUCH_LESS_THAN_NEWTONIAN
+[23:29:20] [INFO] Verdict: TEP_SUPPORTED
+[23:29:20] [INFO] 
+[23:29:20] [INFO] ======================================================================
+[23:29:20] [INFO] Results saved to: /Users/matthewsmawfield/www/TEP-COS/results/outputs/step_5_41_dynamical_calibration.json
+[23:29:20] [INFO] ======================================================================

@@ -1,0 +1,11 @@
+TEP-COS: Recent Changes Log
+====================================================
+Date: 30 March 2026
+Version: v0.4 (Caracas)
+
+This document tracks corrections and improvements to the TEP-COS analysis
+pipeline and manuscript components.
+
+================================================================================
+VERSION HISTORY: v0.3 (March 2026) → v0.4 (March 2026, Caracas)
+================================================================================

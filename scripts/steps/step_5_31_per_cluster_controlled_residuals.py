@@ -5,7 +5,7 @@ Step 5.31: Per-Cluster Controlled Residuals
 For each cluster, compute the CONTROLLED residual by matching
 GC pulsars to field pulsars with similar period and B-proxy.
 
-This tests whether the 0.13 dex residual is truly constant across clusters.
+This tests whether the ~0.58 dex controlled residual is truly constant across clusters.
 """
 
 import numpy as np
@@ -153,7 +153,7 @@ def main():
         print(f"  p-value   = {p_ctrl:.4f}")
         
         if abs(r_ctrl) < 0.3 and p_ctrl > 0.05:
-            print(f"\n✓ CONTROLLED residuals do NOT correlate with density!")
+            print(f"\nResult: Controlled residuals do not correlate with density.")
             print(f"  This confirms the Universality Constraint.")
         else:
             print(f"\n⚠️ CONTROLLED residuals still show density correlation")

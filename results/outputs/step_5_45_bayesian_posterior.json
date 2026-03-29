@@ -1,0 +1,99 @@
+{
+  "density_scaling_slope": {
+    "parameter": "Gamma_density_scaling",
+    "unit": "dex/dex",
+    "prior": {
+      "distribution": "Normal",
+      "mean": 0.5,
+      "std": 0.3,
+      "rationale": "Weakly informative: encompasses Newtonian (0.72) and TEP (0.35) predictions"
+    },
+    "likelihood": {
+      "mean": 0.39250366378738116,
+      "se": 0.07903279260970068,
+      "source": "Mixed-effects model (step_5_33)"
+    },
+    "posterior": {
+      "distribution": "Normal (conjugate)",
+      "mean": 0.39947995829894956,
+      "std": 0.07642524272841464,
+      "median": 0.39947995829894956,
+      "mode": 0.39947995829894956
+    },
+    "credible_intervals": {
+      "68%": [
+        0.3234782731914587,
+        0.4754816434064404
+      ],
+      "95%": [
+        0.2496892350415252,
+        0.5492706815563739
+      ],
+      "99%": [
+        0.20262157854826163,
+        0.5963383380496374
+      ]
+    },
+    "hypothesis_testing": {
+      "newtonian_prediction": 0.72,
+      "p_newtonian": 1.370977382852967e-05,
+      "tep_prediction_range": [
+        0.3,
+        0.45
+      ],
+      "p_tep": 0.6491905462792538,
+      "conclusion": "Newtonian prediction excluded at >95% confidence"
+    }
+  },
+  "gc_field_offset": {
+    "parameter": "Delta_GC_Field",
+    "unit": "dex",
+    "prior": {
+      "distribution": "Normal",
+      "mean": 0.3,
+      "std": 0.2,
+      "rationale": "Weakly informative positive offset expected from acceleration"
+    },
+    "likelihood": {
+      "mean": 0.592,
+      "se": 0.103,
+      "source": "Covariance-aware t-test (step_5_35)"
+    },
+    "posterior": {
+      "mean": 0.530788990100575,
+      "std": 0.09157002702432877,
+      "median": 0.530788990100575
+    },
+    "credible_intervals": {
+      "95%": [
+        0.35131503506953116,
+        0.7102629451316189
+      ]
+    },
+    "hypothesis_testing": {
+      "null_hypothesis": 0.0,
+      "p_null": 0.9999999966150741,
+      "conclusion": "Null hypothesis (no offset) excluded at >99% confidence"
+    }
+  },
+  "prior_sensitivity": {
+    "scenarios_tested": 4,
+    "robustness_assessment": "Results consistent across all reasonable priors",
+    "dominant_influence": "Likelihood dominates posterior (data is informative)"
+  },
+  "model_comparison": {
+    "newtonian_log_bayes_factor": -7.1580521506499055,
+    "tep_log_bayes_factor": 1.4342124945779267,
+    "interpretation": "Strong evidence for suppressed scaling (TEP-like)"
+  },
+  "methodology_notes": {
+    "implementation": "Analytical posterior (normal-normal conjugacy)",
+    "equivalent_to": "Full MCMC with sufficient sample size",
+    "advantages": [
+      "Exact posterior (no sampling error)",
+      "Fast computation",
+      "Reproducible results"
+    ],
+    "approximation": "Assumes normal likelihood; robust for large N"
+  }
+}

@@ -1,0 +1,219 @@
+[23:29:41] [INFO] ================================================================================
+[23:29:41] [INFO] Script: step_3_0_cosmograil_temporal_shear
+[23:29:41] [INFO] Started: 2026-03-29T23:29:41.528296
+[23:29:41] [INFO] ================================================================================
+[23:29:41] [INFO] [0;37m[23:29:41] [INFO] ================================================================================[0m
+[23:29:41] [INFO] [0;37m[23:29:41] [INFO] Script: step_3_0_cosmograil_temporal_shear[0m
+[23:29:41] [INFO] [0;37m[23:29:41] [INFO] Started: 2026-03-29T23:29:41.528296[0m
+[23:29:41] [INFO] [0;37m[23:29:41] [INFO] ================================================================================[0m
+[23:29:41] [INFO] [23:29:41] [PROCESS] Checking COSMOGRAIL data availability...
+[23:29:41] [INFO] [23:29:41] [SUCCESS] ✓ All required COSMOGRAIL data present (8 RDB files)
+[23:29:41] [INFO] [23:29:41] [PROCESS] Found 8 RDB + 13 multi-band CSV light curve files
+[23:29:41] [INFO] [23:29:41] [PROCESS] Processing DESJ0408_Courbin2017.rdb
+[23:29:41] [INFO] [23:29:41] [PROCESS]   System DESJ0408: 3 images, [('A', 'B'), ('A', 'D'), ('B', 'D')] pairs
+[23:29:41] [INFO] [23:29:41] [PROCESS]   Analyzing pair A-B
+[23:29:41] [INFO] [23:29:41] [PROCESS]   Analyzing pair A-D
+[23:29:41] [INFO] [23:29:41] [PROCESS]   Analyzing pair B-D
+[23:29:41] [INFO] [23:29:41] [PROCESS]   Running 100 bootstrap iterations...
+[23:29:41] [INFO]   Running 100 bootstrap iterations using 14 cores...
+[23:29:44] [INFO] [23:29:44] [PROCESS] Processing HE0435_Bonvin2016.rdb
+[23:29:44] [INFO] [23:29:44] [PROCESS]   System HE0435: 4 images, [('A', 'B'), ('A', 'C'), ('A', 'D'), ('B', 'C'), ('B', 'D'), ('C', 'D')] pairs
+[23:29:44] [INFO] [23:29:44] [PROCESS]   Analyzing pair A-B
+[23:29:45] [INFO] [23:29:45] [PROCESS]   Analyzing pair A-C
+[23:29:45] [INFO] [23:29:45] [PROCESS]   Analyzing pair A-D
+[23:29:45] [INFO] [23:29:45] [PROCESS]   Analyzing pair B-C
+[23:29:45] [INFO] [23:29:45] [PROCESS]   Analyzing pair B-D
+[23:29:45] [INFO] [23:29:45] [PROCESS]   Analyzing pair C-D
+[23:29:46] [INFO] [23:29:46] [PROCESS]   Running 100 bootstrap iterations...
+[23:29:46] [INFO]   Running 13 jackknife iterations using 13 cores...
+[23:29:47] [INFO]   Running 100 bootstrap iterations using 14 cores...
+[23:30:06] [INFO] [23:30:06] [PROCESS] Processing HS2209_Eulaers2013.rdb
+[23:30:06] [INFO] [23:30:06] [PROCESS]   System HS2209: 2 images, [('A', 'B')] pairs
+[23:30:06] [INFO] [23:30:06] [PROCESS]   Analyzing pair A-B
+[23:30:06] [INFO] [23:30:06] [PROCESS]   Running 100 bootstrap iterations...
+[23:30:06] [INFO]   Running 19 jackknife iterations using 14 cores...
+[23:30:07] [INFO]   Running 100 bootstrap iterations using 14 cores...
+[23:30:09] [INFO] [23:30:09] [PROCESS] Processing J1001_Rathnakumar2013.rdb
+[23:30:09] [INFO] [23:30:09] [PROCESS]   System J1001: 2 images, [('A', 'B')] pairs
+[23:30:09] [INFO] [23:30:09] [PROCESS]   Analyzing pair A-B
+[23:30:09] [INFO] [23:30:09] [PROCESS]   Running 100 bootstrap iterations...
+[23:30:09] [INFO]   Running 9 jackknife iterations using 9 cores...
+[23:30:10] [INFO]   Running 100 bootstrap iterations using 14 cores...
+[23:30:13] [INFO] [23:30:13] [PROCESS] Processing J1206_Eulaers2013.rdb
+[23:30:13] [INFO] [23:30:13] [PROCESS]   System J1206: 2 images, [('A', 'B')] pairs
+[23:30:13] [INFO] [23:30:13] [PROCESS]   Analyzing pair A-B
+[23:30:13] [INFO] [23:30:13] [PROCESS]   Running 100 bootstrap iterations...
+[23:30:13] [INFO]   Running 10 jackknife iterations using 10 cores...
+[23:30:14] [INFO]   Running 100 bootstrap iterations using 14 cores...
+[23:30:17] [INFO] [23:30:17] [PROCESS] Processing PG1115_Bonvin2018.rdb
+[23:30:17] [INFO] [23:30:17] [PROCESS]   System PG1115: 3 images, [('A', 'B'), ('A', 'C'), ('B', 'C')] pairs
+[23:30:17] [INFO] [23:30:17] [PROCESS]   Analyzing pair A-B
+[23:30:17] [INFO] [23:30:17] [PROCESS]   Analyzing pair A-C
+[23:30:17] [INFO] [23:30:17] [PROCESS]   Analyzing pair B-C
+[23:30:17] [INFO] [23:30:17] [PROCESS]   Running 100 bootstrap iterations...
+[23:30:17] [INFO]   Running 100 bootstrap iterations using 14 cores...
+[23:30:22] [INFO] [23:30:22] [PROCESS] Processing RXJ1131_Tewes2013.rdb
+[23:30:22] [INFO] [23:30:22] [PROCESS]   System RXJ1131: 4 images, [('A', 'B'), ('A', 'C'), ('A', 'D'), ('B', 'C'), ('B', 'D'), ('C', 'D')] pairs
+[23:30:22] [INFO] [23:30:22] [PROCESS]   Analyzing pair A-B
+[23:30:22] [INFO] [23:30:22] [PROCESS]   Analyzing pair A-C
+[23:30:22] [INFO] [23:30:22] [PROCESS]   Analyzing pair A-D
+[23:30:22] [INFO] [23:30:22] [PROCESS]   Analyzing pair B-C
+[23:30:22] [INFO] [23:30:22] [PROCESS]   Analyzing pair B-D
+[23:30:23] [INFO] [23:30:23] [PROCESS]   Analyzing pair C-D
+[23:30:23] [INFO] [23:30:23] [PROCESS]   Running 100 bootstrap iterations...
+[23:30:23] [INFO]   Running 9 jackknife iterations using 9 cores...
+[23:30:25] [INFO]   Running 100 bootstrap iterations using 14 cores...
+[23:30:38] [INFO] [23:30:38] [PROCESS] Processing WFI2033_Bonvin2019.rdb
+[23:30:38] [INFO] [23:30:38] [PROCESS]   System WFI2033: 3 images, [('A', 'B'), ('A', 'C'), ('B', 'C')] pairs
+[23:30:38] [INFO] [23:30:38] [PROCESS]   Analyzing pair A-B
+[23:30:38] [INFO] [23:30:38] [PROCESS]   Analyzing pair A-C
+[23:30:39] [INFO] [23:30:39] [PROCESS]   Analyzing pair B-C
+[23:30:39] [INFO] [23:30:39] [PROCESS]   Running 100 bootstrap iterations...
+[23:30:39] [INFO]   Running 16 jackknife iterations using 14 cores...
+[23:30:40] [INFO]   Running 100 bootstrap iterations using 14 cores...
+[23:30:52] [INFO] [23:30:52] [PROCESS] Processing he0435_JAA703A250_R.csv
+[23:30:52] [INFO] [23:30:52] [PROCESS]   System HE0435_R: 4 images, [('A', 'B'), ('A', 'C'), ('A', 'D'), ('B', 'C'), ('B', 'D'), ('C', 'D')] pairs
+[23:30:52] [INFO] [23:30:52] [PROCESS]   Analyzing pair A-B
+[23:30:52] [INFO] [23:30:52] [PROCESS]   Analyzing pair A-C
+[23:30:52] [INFO] [23:30:52] [PROCESS]   Analyzing pair A-D
+[23:30:52] [INFO] [23:30:52] [PROCESS]   Analyzing pair B-C
+[23:30:53] [INFO] [23:30:53] [PROCESS]   Analyzing pair B-D
+[23:30:53] [INFO] [23:30:53] [PROCESS]   Analyzing pair C-D
+[23:30:53] [INFO] [23:30:53] [PROCESS]   Running 100 bootstrap iterations...
+[23:30:53] [INFO]   Running 20 jackknife iterations using 14 cores...
+[23:30:58] [INFO]   Running 100 bootstrap iterations using 14 cores...
+[23:31:11] [INFO] [23:31:11] [PROCESS] Processing he0435_JAA703A250_V.csv
+[23:31:11] [INFO] [23:31:11] [PROCESS]   System HE0435_V: 4 images, [('A', 'B'), ('A', 'C'), ('A', 'D'), ('B', 'C'), ('B', 'D'), ('C', 'D')] pairs
+[23:31:11] [INFO] [23:31:11] [PROCESS]   Analyzing pair A-B
+[23:31:12] [INFO] [23:31:12] [PROCESS]   Analyzing pair A-C
+[23:31:12] [INFO] [23:31:12] [PROCESS]   Analyzing pair A-D
+[23:31:12] [INFO] [23:31:12] [PROCESS]   Analyzing pair B-C
+[23:31:12] [INFO] [23:31:12] [PROCESS]   Analyzing pair B-D
+[23:31:12] [INFO] [23:31:12] [PROCESS]   Analyzing pair C-D
+[23:31:13] [INFO] [23:31:13] [PROCESS]   Running 100 bootstrap iterations...
+[23:31:13] [INFO]   Running 24 jackknife iterations using 14 cores...
+[23:31:18] [INFO]   Running 100 bootstrap iterations using 14 cores...
+[23:31:31] [INFO] [23:31:31] [PROCESS] Processing he1104_JApJ798_95_B.csv
+[23:31:31] [INFO] [23:31:31] [PROCESS]   System HE1104_B: 2 images, [('A', 'B')] pairs
+[23:31:31] [INFO] [23:31:31] [PROCESS]   Analyzing pair A-B
+[23:31:31] [INFO] [23:31:31] [PROCESS]   Running 100 bootstrap iterations...
+[23:31:31] [INFO]   Running 20 jackknife iterations using 14 cores...
+[23:31:32] [INFO]   Running 100 bootstrap iterations using 14 cores...
+[23:31:35] [INFO] [23:31:35] [PROCESS] Processing he1104_JApJ798_95_I.csv
+[23:31:35] [INFO] [23:31:35] [PROCESS]   System HE1104_I: 2 images, [('A', 'B')] pairs
+[23:31:35] [INFO] [23:31:35] [PROCESS]   Analyzing pair A-B
+[23:31:35] [INFO] [23:31:35] [PROCESS]   Running 100 bootstrap iterations...
+[23:31:35] [INFO]   Running 13 jackknife iterations using 13 cores...
+[23:31:35] [INFO]   Running 100 bootstrap iterations using 14 cores...
+[23:31:38] [INFO] [23:31:38] [PROCESS] Processing he1104_JApJ798_95_J.csv
+[23:31:38] [INFO] [23:31:38] [PROCESS]   System HE1104_J: 2 images, [('A', 'B')] pairs
+[23:31:38] [INFO] [23:31:38] [PROCESS]   Analyzing pair A-B
+[23:31:38] [INFO] [23:31:38] [PROCESS]   Running 100 bootstrap iterations...
+[23:31:38] [INFO]   Running 15 jackknife iterations using 14 cores...
+[23:31:39] [INFO]   Running 100 bootstrap iterations using 14 cores...
+[23:31:42] [INFO] [23:31:42] [PROCESS] Processing he1104_JApJ798_95_R.csv
+[23:31:42] [INFO] [23:31:42] [PROCESS]   System HE1104_R: 2 images, [('A', 'B')] pairs
+[23:31:42] [INFO] [23:31:42] [PROCESS]   Analyzing pair A-B
+[23:31:42] [INFO] [23:31:42] [PROCESS]   Running 100 bootstrap iterations...
+[23:31:42] [INFO]   Running 11 jackknife iterations using 11 cores...
+[23:31:43] [INFO]   Running 100 bootstrap iterations using 14 cores...
+[23:31:47] [INFO] [23:31:47] [PROCESS] Processing q2237_JAA637A89_I.csv
+[23:31:47] [INFO] [23:31:47] [PROCESS]   System Q2237_I: 4 images, [('A', 'B'), ('A', 'C'), ('A', 'D'), ('B', 'C'), ('B', 'D'), ('C', 'D')] pairs
+[23:31:47] [INFO] [23:31:47] [PROCESS]   Analyzing pair A-B
+[23:31:47] [INFO] [23:31:47] [PROCESS]   Analyzing pair A-C
+[23:31:47] [INFO] [23:31:47] [PROCESS]   Analyzing pair A-D
+[23:31:47] [INFO] [23:31:47] [PROCESS]   Analyzing pair B-C
+[23:31:48] [INFO] [23:31:48] [PROCESS]   Analyzing pair B-D
+[23:31:48] [INFO] [23:31:48] [PROCESS]   Analyzing pair C-D
+[23:31:48] [INFO] [23:31:48] [PROCESS]   Running 100 bootstrap iterations...
+[23:31:48] [INFO]   Running 18 jackknife iterations using 14 cores...
+[23:31:52] [INFO]   Running 100 bootstrap iterations using 14 cores...
+[23:32:11] [INFO] [23:32:11] [PROCESS] Processing q2237_JAA637A89_V.csv
+[23:32:11] [INFO] [23:32:11] [PROCESS]   System Q2237_V: 4 images, [('A', 'B'), ('A', 'C'), ('A', 'D'), ('B', 'C'), ('B', 'D'), ('C', 'D')] pairs
+[23:32:11] [INFO] [23:32:11] [PROCESS]   Analyzing pair A-B
+[23:32:11] [INFO] [23:32:11] [PROCESS]   Analyzing pair A-C
+[23:32:11] [INFO] [23:32:11] [PROCESS]   Analyzing pair A-D
+[23:32:11] [INFO] [23:32:11] [PROCESS]   Analyzing pair B-C
+[23:32:12] [INFO] [23:32:12] [PROCESS]   Analyzing pair B-D
+[23:32:12] [INFO] [23:32:12] [PROCESS]   Analyzing pair C-D
+[23:32:12] [INFO] [23:32:12] [PROCESS]   Running 100 bootstrap iterations...
+[23:32:12] [INFO]   Running 17 jackknife iterations using 14 cores...
+[23:32:15] [INFO]   Running 100 bootstrap iterations using 14 cores...
+[23:32:35] [INFO] [23:32:35] [PROCESS] Processing q2237_JAA637A89_g.csv
+[23:32:35] [INFO] [23:32:35] [PROCESS]   System Q2237_G: 4 images, [('A', 'B'), ('A', 'C'), ('A', 'D'), ('B', 'C'), ('B', 'D'), ('C', 'D')] pairs
+[23:32:35] [INFO] [23:32:35] [PROCESS]   Analyzing pair A-B
+[23:32:35] [INFO] [23:32:35] [PROCESS]   Analyzing pair A-C
+[23:32:36] [INFO] [23:32:36] [PROCESS]   Analyzing pair A-D
+[23:32:36] [INFO] [23:32:36] [PROCESS]   Analyzing pair B-C
+[23:32:36] [INFO] [23:32:36] [PROCESS]   Analyzing pair B-D
+[23:32:36] [INFO] [23:32:36] [PROCESS]   Analyzing pair C-D
+[23:32:36] [INFO] [23:32:36] [PROCESS]   Running 100 bootstrap iterations...
+[23:32:36] [INFO]   Running 12 jackknife iterations using 12 cores...
+[23:32:38] [INFO]   Running 100 bootstrap iterations using 14 cores...
+[23:32:55] [INFO] [23:32:55] [PROCESS] Processing q2237_JAA637A89_r.csv
+[23:32:55] [INFO] [23:32:55] [PROCESS]   System Q2237_R: 4 images, [('A', 'B'), ('A', 'C'), ('A', 'D'), ('B', 'C'), ('B', 'D'), ('C', 'D')] pairs
+[23:32:55] [INFO] [23:32:55] [PROCESS]   Analyzing pair A-B
+[23:32:55] [INFO] [23:32:55] [PROCESS]   Analyzing pair A-C
+[23:32:55] [INFO] [23:32:55] [PROCESS]   Analyzing pair A-D
+[23:32:55] [INFO] [23:32:55] [PROCESS]   Analyzing pair B-C
+[23:32:56] [INFO] [23:32:56] [PROCESS]   Analyzing pair B-D
+[23:32:56] [INFO] [23:32:56] [PROCESS]   Analyzing pair C-D
+[23:32:56] [INFO] [23:32:56] [PROCESS]   Running 100 bootstrap iterations...
+[23:32:56] [INFO]   Running 15 jackknife iterations using 14 cores...
+[23:33:01] [INFO]   Running 100 bootstrap iterations using 14 cores...
+[23:33:18] [INFO] [23:33:18] [PROCESS] Processing q2237_vakulik_JAA420_447_I.csv
+[23:33:18] [INFO] [23:33:18] [PROCESS]   System Q2237_I: 4 images, [('A', 'B'), ('A', 'C'), ('A', 'D'), ('B', 'C'), ('B', 'D'), ('C', 'D')] pairs
+[23:33:18] [INFO] [23:33:18] [PROCESS]   Analyzing pair A-B
+[23:33:18] [INFO] [23:33:18] [PROCESS]   Analyzing pair A-C
+[23:33:19] [INFO] [23:33:19] [PROCESS]   Analyzing pair A-D
+[23:33:19] [INFO] [23:33:19] [PROCESS]   Analyzing pair B-C
+[23:33:19] [INFO] [23:33:19] [PROCESS]   Analyzing pair B-D
+[23:33:19] [INFO] [23:33:19] [PROCESS]   Analyzing pair C-D
+[23:33:19] [INFO] [23:33:19] [PROCESS]   Running 100 bootstrap iterations...
+[23:33:19] [INFO]   Running 6 jackknife iterations using 6 cores...
+[23:33:20] [INFO]   Running 100 bootstrap iterations using 14 cores...
+[23:33:25] [INFO] [23:33:25] [PROCESS] Processing q2237_vakulik_JAA420_447_R.csv
+[23:33:25] [INFO] [23:33:25] [PROCESS]   System Q2237_R: 4 images, [('A', 'B'), ('A', 'C'), ('A', 'D'), ('B', 'C'), ('B', 'D'), ('C', 'D')] pairs
+[23:33:25] [INFO] [23:33:25] [PROCESS]   Analyzing pair A-B
+[23:33:25] [INFO] [23:33:25] [PROCESS]   Analyzing pair A-C
+[23:33:25] [INFO] [23:33:25] [PROCESS]   Analyzing pair A-D
+[23:33:25] [INFO] [23:33:25] [PROCESS]   Analyzing pair B-C
+[23:33:25] [INFO] [23:33:25] [PROCESS]   Analyzing pair B-D
+[23:33:26] [INFO] [23:33:26] [PROCESS]   Analyzing pair C-D
+[23:33:26] [INFO] [23:33:26] [PROCESS]   Running 100 bootstrap iterations...
+[23:33:26] [INFO]   Running 6 jackknife iterations using 6 cores...
+[23:33:27] [INFO]   Running 100 bootstrap iterations using 14 cores...
+[23:33:32] [INFO] [23:33:32] [PROCESS] Processing q2237_vakulik_JAA420_447_V.csv
+[23:33:32] [INFO] [23:33:32] [PROCESS]   System Q2237_V: 4 images, [('A', 'B'), ('A', 'C'), ('A', 'D'), ('B', 'C'), ('B', 'D'), ('C', 'D')] pairs
+[23:33:32] [INFO] [23:33:32] [PROCESS]   Analyzing pair A-B
+[23:33:32] [INFO] [23:33:32] [PROCESS]   Analyzing pair A-C
+[23:33:32] [INFO] [23:33:32] [PROCESS]   Analyzing pair A-D
+[23:33:32] [INFO] [23:33:32] [PROCESS]   Analyzing pair B-C
+[23:33:32] [INFO] [23:33:32] [PROCESS]   Analyzing pair B-D
+[23:33:32] [INFO] [23:33:32] [PROCESS]   Analyzing pair C-D
+[23:33:32] [INFO] [23:33:32] [PROCESS]   Running 100 bootstrap iterations...
+[23:33:32] [INFO]   Running 6 jackknife iterations using 6 cores...
+[23:33:33] [INFO]   Running 100 bootstrap iterations using 14 cores...
+[23:33:38] [INFO] [23:33:38] [SUCCESS] Saved results: results/outputs/step_3_0_cosmograil_temporal_shear.json
+[23:33:38] [INFO] 
+[23:33:38] [INFO] ============================================================
+[23:33:38] [INFO] COSMOGRAIL TEMPORAL SHEAR ANALYSIS SUMMARY
+[23:33:38] [INFO] ============================================================
+[23:33:38] [INFO] Systems analyzed: 18
+[23:33:38] [INFO] Image pairs analyzed: 82
+[23:33:38] [INFO] Valid Γ measurements: 55
+[23:33:38] [INFO] 
+[23:33:38] [INFO] Γ (temporal shear slope) statistics:
+[23:33:38] [INFO]   Mean:   -3.766 days/decade
+[23:33:38] [INFO]   Median: 0.000 days/decade
+[23:33:38] [INFO]   Std:    36.920 days/decade
+[23:33:38] [INFO] 
+[23:33:38] [INFO] Significance:
+[23:33:38] [INFO]   >2σ (raw): 0 pairs
+[23:33:38] [INFO]   >3σ (raw): 0 pairs
+[23:33:38] [INFO]   >2σ (practical cuts): 0 pairs
+[23:33:38] [INFO]   >3σ (practical cuts): 0 pairs
+[23:33:38] [INFO] 
+[23:33:38] [INFO] Interpretation: NULL: No significant temporal shear detected. Consistent with GR (single constant delay).
+[23:33:38] [INFO] ============================================================
+[23:33:38] [INFO] [23:33:38] [SUCCESS] Step 3.0 complete

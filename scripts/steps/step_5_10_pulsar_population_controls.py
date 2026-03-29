@@ -12,10 +12,17 @@ from collections import defaultdict
 from dataclasses import dataclass
 from datetime import datetime, timezone
 from pathlib import Path
-from urllib.request import urlopen
+import time
+from urllib.request import urlopen, HTTPError, URLError
+from socket import timeout as SocketTimeout
 
 import numpy as np
 from scipy import stats
+
+# Constants
+MSP_P0_CUT_SECONDS = 0.03  # MSP period threshold
+BOOTSTRAP_ITERATIONS = 2000
+RANDOM_SEED = 42
 
 
 FREIRE_GCPSR_URL = "https://www3.mpifr-bonn.mpg.de/staff/pfreire/GCpsr.txt"
@@ -41,9 +48,35 @@ def _sha256_bytes(b: bytes) -> str:
     return hashlib.sha256(b).hexdigest()
 
 
-def _download(url: str) -> tuple[bytes, str]:
-    raw = urlopen(url).read()
-    return raw, _sha256_bytes(raw)
+def _download_with_retry(url: str, max_retries: int = 3, timeout: int = 60) -> tuple[bytes, str]:
+    """Download data with retry logic and error handling."""
+    for attempt in range(max_retries):
+        try:
+            print(f"  Downloading (attempt {attempt + 1}/{max_retries}): {url[:60]}...")
+            raw = urlopen(url, timeout=timeout).read()
+            print(f"  Downloaded {len(raw)} bytes")
+            return raw, _sha256_bytes(raw)
+        except HTTPError as e:
+            print(f"  HTTP Error {e.code}: {e.reason}")
+            if attempt < max_retries - 1:
+                wait_time = 2 ** attempt  # Exponential backoff
+                print(f"  Retrying in {wait_time}s...")
+                time.sleep(wait_time)
+            else:
+                raise RuntimeError(f"Failed to download {url}: HTTP {e.code}") from e
+        except (URLError, SocketTimeout) as e:
+            print(f"  Network error: {e}")
+            if attempt < max_retries - 1:
+                wait_time = 2 ** attempt
+                print(f"  Retrying in {wait_time}s...")
+                time.sleep(wait_time)
+            else:
+                raise RuntimeError(f"Failed to download {url}: Network error") from e
+        except Exception as e:
+            print(f"  Unexpected error: {e}")
+            raise RuntimeError(f"Failed to download {url}: {e}") from e
+    
+    raise RuntimeError(f"Failed to download {url} after {max_retries} attempts")
 
 
 def _parse_freire_gcpsr(text: str) -> list[dict]:
@@ -64,14 +97,18 @@ def _parse_freire_gcpsr(text: str) -> list[dict]:
         if not line.strip():
             continue
 
-        if "\t" not in line and not line.startswith(("J", "B")):
+        # Cluster header lines have no leading whitespace and don't start with pulsar names
+        if not line.startswith((" ", "\t", "J", "B")) and not line.startswith("#"):
             cluster = line.strip()
             continue
 
-        if not line.startswith(("J", "B")):
+        # Pulsar lines start with J or B (after stripping leading whitespace)
+        if not line.lstrip().startswith(("J", "B")):
             continue
-
-        parts = [p for p in line.split("\t") if p != ""]
+        
+        # Use stripped line for parsing
+        line_stripped = line.lstrip()
+        parts = [p for p in line_stripped.split("\t") if p != ""]
         if len(parts) < 4:
             parts = line.split()
         if len(parts) < 4:
@@ -284,10 +321,10 @@ def _ttest_logpdot(gc: np.ndarray, field: np.ndarray) -> dict:
 
 
 def _period_matched_bootstrap(gc_rows: list[dict], field_rows: list[dict], n_boot=2000, seed=42) -> dict:
-    """Bootstrap period-matched comparison.
+    """Bootstrap period-matched comparison WITHOUT replacement.
 
-    For each GC pulsar, select the nearest field pulsar in logP (with replacement) and compute
-    mean difference in log|Pdot|.
+    For each GC pulsar, select the nearest field pulsar in logP.
+    Each field pulsar is used at most once to avoid bias from overmatching.
     """
 
     rng = np.random.default_rng(seed)
@@ -297,15 +334,35 @@ def _period_matched_bootstrap(gc_rows: list[dict], field_rows: list[dict], n_boo
     field_logp = np.array([r["logP"] for r in field_rows])
     field_logpdot = np.array([r["logPdot_abs"] for r in field_rows])
 
+    # Pre-compute all pairwise distances
+    n_gc = len(gc_rows)
+    n_field = len(field_rows)
+    distances = np.zeros((n_gc, n_field))
+    for i in range(n_gc):
+        distances[i, :] = np.abs(field_logp - gc_logp[i])
+
     diffs = []
     for _ in range(n_boot):
-        idx_gc = rng.integers(0, len(gc_rows), size=len(gc_rows))
-        # For each selected GC, pick nearest field
+        # Resample GC pulsars with replacement (bootstrap)
+        idx_gc = rng.integers(0, n_gc, size=n_gc)
+        
+        # Match WITHOUT replacement
+        used_field = set()
         f_sel = []
-        for i in idx_gc:
-            lp = gc_logp[i]
-            j = int(np.argmin(np.abs(field_logp - lp)))
-            f_sel.append(field_logpdot[j])
+        
+        # Randomize order
+        order = rng.permutation(len(idx_gc))
+        
+        for idx in order:
+            i = idx_gc[idx]
+            # Find nearest unused field pulsar
+            sorted_indices = np.argsort(distances[i, :])
+            for j in sorted_indices:
+                if j not in used_field:
+                    used_field.add(j)
+                    f_sel.append(field_logpdot[j])
+                    break
+        
         f_sel = np.array(f_sel)
         diffs.append(float(np.mean(gc_logpdot[idx_gc]) - np.mean(f_sel)))
 
@@ -320,9 +377,11 @@ def _period_matched_bootstrap(gc_rows: list[dict], field_rows: list[dict], n_boo
 
 
 def _two_dim_match_bootstrap(gc_rows: list[dict], field_rows: list[dict], n_boot=2000, seed=42) -> dict:
-    """Bootstrap matching in (logP, log_b_proxy).
+    """Bootstrap matching in (logP, log_b_proxy) WITHOUT replacement.
 
-    For each GC pulsar, select the nearest field pulsar in Euclidean distance in (logP, log_b_proxy).
+    Each GC pulsar is matched to a unique field pulsar (no reuse) to avoid
+    bias from overmatching. Uses greedy nearest neighbor with random order
+    to ensure fair matching.
     """
 
     rng = np.random.default_rng(seed)
@@ -332,14 +391,37 @@ def _two_dim_match_bootstrap(gc_rows: list[dict], field_rows: list[dict], n_boot
     field_x = np.array([[r["logP"], r["log_b_proxy"]] for r in field_rows])
     field_y = np.array([r["logPdot_abs"] for r in field_rows])
 
+    # Pre-compute all pairwise distances
+    n_gc = len(gc_rows)
+    n_field = len(field_rows)
+    distances = np.zeros((n_gc, n_field))
+    for i in range(n_gc):
+        dx = field_x[:, 0] - gc_x[i, 0]
+        dy = field_x[:, 1] - gc_x[i, 1]
+        distances[i, :] = np.sqrt(dx*dx + dy*dy)
+
     diffs = []
     for _ in range(n_boot):
-        idx_gc = rng.integers(0, len(gc_rows), size=len(gc_rows))
+        # Resample GC pulsars with replacement (bootstrap)
+        idx_gc = rng.integers(0, n_gc, size=n_gc)
+        
+        # Match WITHOUT replacement: each field pulsar used at most once
+        used_field = set()
         f_sel = []
-        for i in idx_gc:
-            dx = field_x - gc_x[i]
-            j = int(np.argmin(np.sum(dx * dx, axis=1)))
-            f_sel.append(field_y[j])
+        
+        # Randomize order to avoid systematic bias
+        order = rng.permutation(len(idx_gc))
+        
+        for idx in order:
+            i = idx_gc[idx]
+            # Find nearest unused field pulsar
+            sorted_indices = np.argsort(distances[i, :])
+            for j in sorted_indices:
+                if j not in used_field:
+                    used_field.add(j)
+                    f_sel.append(field_y[j])
+                    break
+        
         f_sel = np.array(f_sel)
         diffs.append(float(np.mean(gc_y[idx_gc]) - np.mean(f_sel)))
 
@@ -357,7 +439,7 @@ def main():
     RESULTS_DIR.mkdir(parents=True, exist_ok=True)
 
     # --- Freire ---
-    freire_raw, freire_sha = _download(FREIRE_GCPSR_URL)
+    freire_raw, freire_sha = _download_with_retry(FREIRE_GCPSR_URL)
     RAW_FREIRE_PATH.write_bytes(freire_raw)
     freire_rows = _parse_freire_gcpsr(freire_raw.decode("utf-8", errors="replace"))
 
@@ -371,7 +453,7 @@ def main():
                     freire_cluster_tokens.add(tok)
 
     # --- ATNF psrcat package ---
-    atnf_tgz_raw, atnf_sha = _download(ATNF_PSRCAT_TGZ_URL)
+    atnf_tgz_raw, atnf_sha = _download_with_retry(ATNF_PSRCAT_TGZ_URL)
     RAW_ATNF_TGZ_PATH.write_bytes(atnf_tgz_raw)
     db_raw = _extract_psrcat_db_from_tgz(atnf_tgz_raw)
     RAW_ATNF_DB_PATH.write_bytes(db_raw)
@@ -522,4 +604,13 @@ def main():
 
 
 if __name__ == "__main__":
+    # Setup file logging when run manually
+    import sys
+    from pathlib import Path
+    # Add repo root and scripts directory to path
+    repo_root = Path(__file__).resolve().parents[2]
+    sys.path.insert(0, str(repo_root))
+    sys.path.insert(0, str(repo_root / "scripts"))
+    from utils.logger import setup_step_logger
+    logger = setup_step_logger("step_5_10_pulsar_population_controls")
     main()

@@ -1,7 +1,0 @@
-{
-  "noise_assumed": 40.0,
-  "ml_chromaticity_factor": 0.7,
-  "tep_consistency_sigma": 54.692065660355176,
-  "ml_separation_sigma": 1.731127033840481,
-  "required_precision": "Gamma error < 40 days/dec needed for >95% rejection"
-}

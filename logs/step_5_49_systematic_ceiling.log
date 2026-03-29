@@ -1,0 +1,64 @@
+[23:29:41] [INFO] ======================================================================
+[23:29:41] [INFO] STEP 5.49: SYSTEMATIC CEILING ANALYSIS
+[23:29:41] [INFO] ======================================================================
+[23:29:41] [INFO] 
+[23:29:41] [INFO] Purpose: Quantify maximum plausible N-body/systematic contribution
+[23:29:41] [INFO] Method: Conservative upper bounds on all known systematic effects
+[23:29:41] [INFO] 
+[23:29:41] [INFO] 
+[23:29:41] [INFO] ======================================================================
+[23:29:41] [INFO] INDIVIDUAL SYSTEMATIC BOUNDS
+[23:29:41] [INFO] ======================================================================
+[23:29:41] [INFO] 
+[23:29:41] [INFO] SHKLOVSKII:
+[23:29:41] [INFO]   Mechanism: Shklovskii effect (transverse kinematic acceleration)
+[23:29:41] [INFO]   Max contribution: 0.000 dex
+[23:29:41] [INFO]   Relevance: OPPOSITE to required direction - EXCLUDED as explanation
+[23:29:41] [INFO] 
+[23:29:41] [INFO] MASS SEGREGATION:
+[23:29:41] [INFO]   Mechanism: Mass segregation (spatial bias in observed population)
+[23:29:41] [INFO]   Max contribution: 0.100 dex
+[23:29:41] [INFO]   Relevance: INSUFFICIENT: Explains at most 22% of observed suppression
+[23:29:41] [INFO] 
+[23:29:41] [INFO] BINARY ACCELERATION:
+[23:29:41] [INFO]   Mechanism: Unmodeled binary orbital acceleration
+[23:29:41] [INFO]   Max contribution: 0.050 dex
+[23:29:41] [INFO]   Relevance: NEGLIGIBLE: Explains at most 11% of observed suppression
+[23:29:41] [INFO] 
+[23:29:41] [INFO] SELECTION EFFECTS:
+[23:29:41] [INFO]   Mechanism: Observational selection (detection bias toward bright/high-Ṗ)
+[23:29:41] [INFO]   Max contribution: 0.000 dex
+[23:29:41] [INFO]   Relevance: OPPOSITE to required direction - EXCLUDED as explanation
+[23:29:41] [INFO] 
+[23:29:41] [INFO] METALLICITY:
+[23:29:41] [INFO]   Mechanism: Metallicity differences (GC vs field)
+[23:29:41] [INFO]   Max contribution: 0.080 dex
+[23:29:41] [INFO]   Relevance: SMALL: Explains at most 18% of observed suppression
+[23:29:41] [INFO] 
+[23:29:41] [INFO] ======================================================================
+[23:29:41] [INFO] COMBINED SYSTEMATIC CEILING
+[23:29:41] [INFO] ======================================================================
+[23:29:41] [INFO] Max helpful systematic: 0.230 dex
+[23:29:41] [INFO] Effects that worsen discrepancy: 0.230 dex
+[23:29:41] [INFO] Net ceiling: 0.000 dex
+[23:29:41] [INFO] Conservative ceiling: 0.230 dex
+[23:29:41] [INFO] 
+[23:29:41] [INFO] ======================================================================
+[23:29:41] [INFO] COMPARISON TO OBSERVED DISCREPANCY
+[23:29:41] [INFO] ======================================================================
+[23:29:41] [INFO] Observed suppression: 0.450 dex
+[23:29:41] [INFO] Systematic ceiling:   0.230 dex
+[23:29:41] [INFO] Explainable:        51.1%
+[23:29:41] [INFO] Unexplained:        0.220 dex (2.8σ)
+[23:29:41] [INFO] 
+[23:29:41] [INFO] ======================================================================
+[23:29:41] [INFO] VERDICT
+[23:29:41] [INFO] ======================================================================
+[23:29:41] [INFO] Maximum systematic (0.23 dex) explains only 51% of observed suppression (0.45 dex). Remaining 0.22 dex (2.8σ) requires non-systematic explanation.
+[23:29:41] [INFO] 
+[23:29:41] [INFO]   → TEP interpretation is REQUIRED to explain remaining discrepancy
+[23:29:41] [INFO] 
+[23:29:41] [INFO] ======================================================================
+[23:29:41] [INFO] Results saved to: /Users/matthewsmawfield/www/TEP-COS/results/outputs/step_5_49_systematic_ceiling.json
+[23:29:41] [INFO] Report saved to: /Users/matthewsmawfield/www/TEP-COS/results/outputs/step_5_49_systematic_ceiling.md
+[23:29:41] [INFO] ======================================================================

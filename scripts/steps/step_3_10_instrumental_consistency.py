@@ -98,7 +98,7 @@ def analyze_gamma(system: LensSystem):
         
         y[mask] = np.interp(np.flatnonzero(mask), np.flatnonzero(~mask), y[~mask])
         
-        s = tau / 2.355 / dt
+        s = tau / 2.35482 / dt  # Precise FWHM to sigma (2*sqrt(2*ln(2)))
         f = gaussian_filter1d(y, s)
         return f
 

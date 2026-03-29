@@ -1,11 +1,11 @@
 {
   "meta": {
-    "timestamp_utc": "2026-01-08T22:54:18.020298+00:00",
+    "timestamp_utc": "2026-03-29T20:28:38.223555+00:00",
     "sources": {
       "freire_gcpsr": {
         "url": "https://www3.mpifr-bonn.mpg.de/staff/pfreire/GCpsr.txt",
-        "sha256": "ad6a26cc3270d51840528bb59d1ef1c1310e5b20bf4cbb147e0659d7e75c2552",
-        "bytes": 21966
+        "sha256": "647ceabcd85221688ce4975cb270939186c3dd9667fdb80d99bd6623997f54c3",
+        "bytes": 47081
       },
       "atnf_psrcat_pkg": {
         "url": "https://www.atnf.csiro.au/research/pulsar/psrcat/downloads/psrcat_pkg.tar.gz",
@@ -19,34 +19,34 @@
       "note": "GC observed Pdot can be contaminated by line-of-sight acceleration; tau_c and B proxies are treated as proxies, not intrinsic ages/fields."
     },
     "counts": {
-      "gc_msp": 181,
+      "gc_msp": 196,
       "field_msp": 198
     }
   },
   "base_log10_abs_pdot": {
-    "gc_mean": -19.106160404564385,
+    "gc_mean": -19.165670063058574,
     "field_mean": -19.75815149669137,
-    "diff_dex": 0.651991092126984,
-    "t_stat": 8.249881585426676,
-    "t_p": 2.9187951825884405e-15,
-    "mw_u": 26899.5,
-    "mw_p": 3.470527400358744e-17,
-    "gc_n": 181,
+    "diff_dex": 0.5924814336327948,
+    "t_stat": 7.734621292982895,
+    "t_p": 8.986644899746344e-14,
+    "mw_u": 28531.5,
+    "mw_p": 6.730113086296262e-16,
+    "gc_n": 196,
     "field_n": 198
   },
   "controls": {
     "period_matched": {
       "n_boot": 2000,
-      "diff_mean": 0.8579274322624323,
-      "diff_ci16": 0.7958701866331594,
-      "diff_ci84": 0.9188382973869825,
+      "diff_mean": 0.605832424887941,
+      "diff_ci16": 0.5514655579036538,
+      "diff_ci84": 0.6631635310313341,
       "p_two_sided": 0.0
     },
     "period_and_bproxy_matched": {
       "n_boot": 2000,
-      "diff_mean": 0.12783377048691513,
-      "diff_ci16": 0.11129721297804424,
-      "diff_ci84": 0.14470002586902353,
+      "diff_mean": 0.5753932146681091,
+      "diff_ci16": 0.5236315298655703,
+      "diff_ci84": 0.6297675187872745,
       "p_two_sided": 0.0
     }
   }

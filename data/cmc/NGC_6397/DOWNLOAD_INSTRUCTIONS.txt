@@ -1,0 +1,57 @@
+
+CMC Data Download Instructions for NGC 6397
+============================================================
+
+Cluster: NGC 6397
+NGC: NGC 6397
+CMC ID: NGC6397
+
+Step 1: Visit the CMC Cluster Catalog
+----------------------------------------
+URL: https://cmc.ciera.northwestern.edu/
+
+Step 2: Select the Cluster
+--------------------------
+1. On the CMC website, find "NGC 6397" in the cluster list
+2. Click on the cluster name to view available models
+
+Step 3: Download Required Files
+-------------------------------
+Download these files to: /Users/matthewsmawfield/www/TEP-COS/data/cmc/NGC_6397
+
+Required:
+- initial.morepulsars.dat    (Neutron star/pulsar properties)
+- output.window.snapshot.h5  (HDF5 snapshot - latest time preferred)
+- initial.dyn.dat            (Dynamical evolution log)
+
+Optional (useful for analysis):
+- initial.bin.dat            (Binary population)
+- initial.core.dat           (Core properties)
+- initial.esc.dat            (Escapers log)
+
+File Descriptions:
+------------------
+initial.morepulsars.dat:
+  Columns: tcount, TotalTime, binflag, id0, m0, B0, P0, startype0,
+           a, ecc, radrol0, dmdt0, r, vr, vt, bacc0, tacc0
+  Contains: All neutron stars with positions, velocities, magnetic fields,
+            spin periods, and binary parameters
+
+output.window.snapshot.h5:
+  Format: HDF5 table
+  Contains: Full stellar population at snapshot times with 6D phase space
+  Key columns: id, m_MSUN, r, vr, vt, binflag, a_AU, e, B0, P0, startype
+
+initial.dyn.dat:
+  Contains: Cluster global properties over time (core radius, mass, etc.)
+
+Reference:
+----------
+Kremer et al. 2020, ApJS, 247, 48
+"Modeling Dense Star Clusters in the Milky Way and Beyond with the 
+ Cluster Monte Carlo Code CMC"
+DOI: 10.3847/1538-4365/ab2a3c
+
+Citation:
+---------
+If you use this data, please cite Kremer et al. 2020.

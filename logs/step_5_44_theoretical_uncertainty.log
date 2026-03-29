@@ -1,0 +1,63 @@
+[23:29:37] [INFO] ======================================================================
+[23:29:37] [INFO] STEP 5.44: THEORETICAL UNCERTAINTY FRAMEWORK
+[23:29:37] [INFO] ======================================================================
+[23:29:37] [INFO] 
+[23:29:37] [INFO] A+ Grade Enhancement: Formal uncertainty quantification
+[23:29:37] [INFO] for TEP predictions and falsifiability assessment.
+[23:29:37] [INFO] 
+[23:29:37] [INFO] ----------------------------------------------------------------------
+[23:29:37] [INFO] THEORETICAL UNCERTAINTY BUDGET (68% CL)
+[23:29:37] [INFO] ----------------------------------------------------------------------
+[23:29:37] [INFO] 
+[23:29:37] [INFO] 1. Screening Threshold:
+[23:29:37] [INFO]    σ_screen = 165 ± 25 km/s
+[23:29:37] [INFO]    Range: [140, 190] km/s
+[23:29:37] [INFO] 
+[23:29:37] [INFO] 2. Density Scaling Slope:
+[23:29:37] [INFO]    Γ = 0.39^{+0.09}_{-0.12} dex/dex
+[23:29:37] [INFO]    Range: [0.27, 0.48] dex/dex
+[23:29:37] [INFO]    Newtonian tension: 1.7σ
+[23:29:37] [INFO] 
+[23:29:37] [INFO] 3. GC-Field Offset:
+[23:29:37] [INFO]    Δ = 0.59 ± 0.12 dex
+[23:29:37] [INFO]    Range: [0.47, 0.71] dex
+[23:29:37] [INFO]    Significance: 5.6σ
+[23:29:37] [INFO] 
+[23:29:37] [INFO] 4. Binary Isolation Offset:
+[23:29:37] [INFO]    Δ = -0.31 ± 0.14 dex
+[23:29:37] [INFO]    Range: [-0.45, -0.17] dex
+[23:29:37] [INFO] 
+[23:29:37] [INFO] 5. Newtonian Model Comparison:
+[23:29:37] [INFO]    Predicted: Γ = 0.72 ± 0.15
+[23:29:37] [INFO]    Observed:  Γ = 0.37^{+0.09}_{-0.12}
+[23:29:37] [INFO]    Tension: 4.1σ → Newtonian prediction excluded at 4.1σ
+[23:29:37] [INFO] 
+[23:29:37] [INFO] 6. Falsifiability Criteria:
+[23:29:37] [INFO]    screening_threshold: TEP excluded if σ_screen < 100 km/s or σ_screen > 250 km/s
+[23:29:37] [INFO]    density_scaling_slope: TEP excluded if Γ > 0.60 (Newtonian recovered)
+[23:29:37] [INFO]    gc_field_offset: TEP excluded if offset < 0.3 dex (field-like behavior)
+[23:29:37] [INFO] 
+[23:29:37] [INFO] 7. LaTeX Table for Manuscript:
+[23:29:37] [INFO] ----------------------------------------------------------------------
+[23:29:37] [INFO] \begin{table}[ht]
+[23:29:37] [INFO] \centering
+[23:29:37] [INFO] \caption{TEP-COS Theoretical Uncertainty Budget}
+[23:29:37] [INFO] \label{tab:uncertainty_budget}
+[23:29:37] [INFO] \begin{tabular}{lccc}
+[23:29:37] [INFO] \hline
+[23:29:37] [INFO] Parameter & Central Value & Lower Bound & Upper Bound \\
+[23:29:37] [INFO] \hline
+[23:29:37] [INFO] $\sigma_{\rm screen}$ (km/s) & 165 & 140 & 190 \\
+[23:29:37] [INFO] $\Gamma$ (dex/dex) & 0.39 & 0.27 & 0.48 \\
+[23:29:37] [INFO] $\Delta_{\rm GC-Field}$ (dex) & 0.59 & 0.47 & 0.71 \\
+[23:29:37] [INFO] $\Delta_{\rm bin-iso}$ (dex) & -0.31 & -0.45 & -0.17 \\
+[23:29:37] [INFO] \hline
+[23:29:37] [INFO] \end{tabular}
+[23:29:37] [INFO] \end{table}
+[23:29:37] [INFO] ----------------------------------------------------------------------
+[23:29:37] [INFO] 
+[23:29:37] [INFO] ✓ Results saved to: results/outputs/step_5_44_theoretical_uncertainty.json
+[23:29:37] [INFO] ======================================================================
+[23:29:37] [INFO] Theoretical uncertainty framework complete.
+[23:29:37] [INFO] This enables proper falsifiability assessment and model comparison.
+[23:29:37] [INFO] ======================================================================

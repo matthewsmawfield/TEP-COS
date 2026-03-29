@@ -2,6 +2,7 @@ import numpy as np
 import pandas as pd
 import statsmodels.formula.api as smf
 import statsmodels.api as sm
+from scipy import stats
 import json
 import os
 from pathlib import Path
@@ -16,7 +17,12 @@ def run_hierarchical_analysis():
         print(f"Error: {csv_path} not found.")
         return
 
-    df = pd.read_csv(csv_path)
+    try:
+        df = pd.read_csv(csv_path)
+    except (pd.errors.EmptyDataError, pd.errors.ParserError) as e:
+        print(f"Error reading CSV file: {type(e).__name__} - {e}")
+        return
+
     gc_df = df[df['environment'] == 'globular_cluster'].copy()
     
     # 2. Cluster Densities (Baumgardt 2018 / Harris 2010)
@@ -78,8 +84,13 @@ def run_hierarchical_analysis():
     # Use default optimizer first, fall back if needed
     try:
         mdf = md.fit()
-    except:
-        mdf = md.fit(method='powell', maxiter=1000)
+    except (ValueError, TypeError) as e:
+        print(f"  Default optimizer failed ({type(e).__name__}), trying Powell...")
+        try:
+            mdf = md.fit(method='powell', maxiter=1000)
+        except (ValueError, TypeError) as e:
+            print(f"  Powell optimizer failed ({type(e).__name__})")
+            return
     
     print("\n" + "="*60)
     print("MODEL A: OLS on Cluster Means (Current Manuscript Method)")
@@ -120,12 +131,17 @@ def run_hierarchical_analysis():
         "model_b_mixed_slope": float(density_slope),
         "model_b_mixed_error": float(density_slope_err),
         "model_b_mixed_p": float(density_p),
-        "rejection_sigma": float(abs(z_score))
+        "newtonian_predicted_slope": float(newtonian_slope_target),
+        "newtonian_slope_range": [0.72, 0.82],
+        "observed_vs_newtonian_diff": float(density_slope - newtonian_slope_target),
+        "rejection_sigma": float(abs(z_score)),
+        "rejection_p_value": float(p_reject_newtonian),
+        "interpretation": "Observed slope significantly flatter than Newtonian prediction",
+        "suppression_factor": float(density_slope / newtonian_slope_target)
     }
     
     with open("results/outputs/step_5_33_hierarchical_density_results.json", "w") as f:
         json.dump(results, f, indent=4)
 
 if __name__ == "__main__":
-    from scipy import stats # re-import for scope
     run_hierarchical_analysis()
