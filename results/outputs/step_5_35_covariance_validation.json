@@ -1,0 +1,505 @@
+{
+  "covariance_aware_ttest": {
+    "mean_gc": -19.16567006122449,
+    "mean_field": -19.7581515,
+    "difference_dex": 0.5924814387755113,
+    "t_statistic": 5.7621322546354214,
+    "p_value": 2.223046946525642e-08,
+    "effective_df": 274.974358974359,
+    "effective_sample_size_gc": 78.97435897435899,
+    "design_effect": 2.4818181818181815,
+    "rho_intra_assumed": 0.3,
+    "se_diff": 0.10282329745189066
+  },
+  "leave_one_cluster_out": {
+    "full_difference": 0.5924814387755113,
+    "n_clusters_tested": 33,
+    "loocv_mean_diff": 0.5919376910223603,
+    "loocv_std_diff": 0.022345856678479173,
+    "min_diff": 0.501782942953021,
+    "max_diff": 0.6346549566473989,
+    "max_abs_change": 0.09069849582249034,
+    "relative_instability": 0.03771570755813318,
+    "cluster_results": [
+      {
+        "removed_cluster": "47 Tuc (NGC 104)",
+        "n_remaining": 173,
+        "mean_without": -19.1234965433526,
+        "diff_without": 0.6346549566473989,
+        "diff_change": 0.04217351787188761,
+        "relative_change": 0.07118116300663889
+      },
+      {
+        "removed_cluster": "NGC 1851",
+        "n_remaining": 194,
+        "mean_without": -19.165615077319586,
+        "diff_without": 0.5925364226804142,
+        "diff_change": 5.4983904902883296e-05,
+        "relative_change": 9.280274672657967e-05
+      },
+      {
+        "removed_cluster": "M53 (NGC 5024)",
+        "n_remaining": 192,
+        "mean_without": -19.154521557291666,
+        "diff_without": 0.6036299427083343,
+        "diff_change": 0.011148503932822962,
+        "relative_change": 0.018816629860783002
+      },
+      {
+        "removed_cluster": "Omega Centauri (NGC 5139)",
+        "n_remaining": 188,
+        "mean_without": -19.146154351063828,
+        "diff_without": 0.6119971489361724,
+        "diff_change": 0.019515710160661115,
+        "relative_change": 0.03293893932102662
+      },
+      {
+        "removed_cluster": "M3 (NGC 5272)",
+        "n_remaining": 191,
+        "mean_without": -19.14441912565445,
+        "diff_without": 0.613732374345549,
+        "diff_change": 0.021250935570037655,
+        "relative_change": 0.035867681549581074
+      },
+      {
+        "removed_cluster": "M5 (NGC 5904)",
+        "n_remaining": 189,
+        "mean_without": -19.14319119047619,
+        "diff_without": 0.6149603095238092,
+        "diff_change": 0.022478870748297908,
+        "relative_change": 0.03794021091151019
+      },
+      {
+        "removed_cluster": "M80 (NGC 6093)",
+        "n_remaining": 195,
+        "mean_without": -19.16541877948718,
+        "diff_without": 0.5927327205128208,
+        "diff_change": 0.00025128173730948333,
+        "relative_change": 0.00042411748430264823
+      },
+      {
+        "removed_cluster": "M4 (NGC 6121)",
+        "n_remaining": 195,
+        "mean_without": -19.165175712820513,
+        "diff_without": 0.592975787179487,
+        "diff_change": 0.000494348403975664,
+        "relative_change": 0.0008343694361081421
+      },
+      {
+        "removed_cluster": "M13 (NGC 6205)",
+        "n_remaining": 188,
+        "mean_without": -19.129593659574468,
+        "diff_without": 0.6285578404255325,
+        "diff_change": 0.03607640165002124,
+        "relative_change": 0.0608903491130132
+      },
+      {
+        "removed_cluster": "M62 (NGC 6266)",
+        "n_remaining": 187,
+        "mean_without": -19.182169647058824,
+        "diff_without": 0.575981852941176,
+        "diff_change": -0.016499585834335306,
+        "relative_change": -0.027848274653861232
+      },
+      {
+        "removed_cluster": "NGC 6316",
+        "n_remaining": 195,
+        "mean_without": -19.160995164102566,
+        "diff_without": 0.5971563358974343,
+        "diff_change": 0.004674897121923038,
+        "relative_change": 0.007890368906044899
+      },
+      {
+        "removed_cluster": "M92 (NGC 6341)",
+        "n_remaining": 195,
+        "mean_without": -19.165425523076923,
+        "diff_without": 0.5927259769230773,
+        "diff_change": 0.0002445381475659758,
+        "relative_change": 0.00041273554167598197
+      },
+      {
+        "removed_cluster": "Terzan 1",
+        "n_remaining": 190,
+        "mean_without": -19.198479389473682,
+        "diff_without": 0.5596721105263178,
+        "diff_change": -0.03280932824919347,
+        "relative_change": -0.05537612843534966
+      },
+      {
+        "removed_cluster": "M14 (NGC 6402)",
+        "n_remaining": 195,
+        "mean_without": -19.166417102564104,
+        "diff_without": 0.5917343974358964,
+        "diff_change": -0.0007470413396148956,
+        "relative_change": -0.0012608687643596316
+      },
+      {
+        "removed_cluster": "NGC 6397",
+        "n_remaining": 194,
+        "mean_without": -19.162241195876287,
+        "diff_without": 0.5959103041237128,
+        "diff_change": 0.0034288653482015263,
+        "relative_change": 0.005787295810123613
+      },
+      {
+        "removed_cluster": "Terzan 5",
+        "n_remaining": 149,
+        "mean_without": -19.25636855704698,
+        "diff_without": 0.501782942953021,
+        "diff_change": -0.09069849582249034,
+        "relative_change": -0.15308242568735664
+      },
+      {
+        "removed_cluster": "NGC 6440",
+        "n_remaining": 189,
+        "mean_without": -19.177426756613755,
+        "diff_without": 0.580724743386245,
+        "diff_change": -0.01175669538926627,
+        "relative_change": -0.01984314548918862
+      },
+      {
+        "removed_cluster": "NGC 6441",
+        "n_remaining": 193,
+        "mean_without": -19.17329307253886,
+        "diff_without": 0.584858427461139,
+        "diff_change": -0.007623011314372263,
+        "relative_change": -0.012866244941152646
+      },
+      {
+        "removed_cluster": "NGC 6517",
+        "n_remaining": 183,
+        "mean_without": -19.198513666666667,
+        "diff_without": 0.5596378333333334,
+        "diff_change": -0.0328436054421779,
+        "relative_change": -0.05543398205023298
+      },
+      {
+        "removed_cluster": "NGC 6522",
+        "n_remaining": 194,
+        "mean_without": -19.169674288659795,
+        "diff_without": 0.588477211340205,
+        "diff_change": -0.004004227435306262,
+        "relative_change": -0.0067584014844108
+      },
+      {
+        "removed_cluster": "NGC 6539",
+        "n_remaining": 195,
+        "mean_without": -19.16996630769231,
+        "diff_without": 0.5881851923076908,
+        "diff_change": -0.004296246467820453,
+        "relative_change": -0.0072512760512794434
+      },
+      {
+        "removed_cluster": "NGC 6544",
+        "n_remaining": 194,
+        "mean_without": -19.15991675257732,
+        "diff_without": 0.5982347474226799,
+        "diff_change": 0.005753308647168609,
+        "relative_change": 0.009710529766230387
+      },
+      {
+        "removed_cluster": "NGC 6624",
+        "n_remaining": 194,
+        "mean_without": -19.171423525773196,
+        "diff_without": 0.5867279742268039,
+        "diff_change": -0.005753464548707399,
+        "relative_change": -0.009710792899433534
+      },
+      {
+        "removed_cluster": "M28 (NGC 6626)",
+        "n_remaining": 187,
+        "mean_without": -19.1734513315508,
+        "diff_without": 0.5847001684491993,
+        "diff_change": -0.00778127032631204,
+        "relative_change": -0.01313335712658558
+      },
+      {
+        "removed_cluster": "NGC 6652",
+        "n_remaining": 195,
+        "mean_without": -19.165611046153845,
+        "diff_without": 0.592540453846155,
+        "diff_change": 5.901507064365319e-05,
+        "relative_change": 9.960661512978426e-05
+      },
+      {
+        "removed_cluster": "M22 (NGC 6656)",
+        "n_remaining": 194,
+        "mean_without": -19.1469983814433,
+        "diff_without": 0.6111531185567003,
+        "diff_change": 0.018671679781189,
+        "relative_change": 0.03151437084641502
+      },
+      {
+        "removed_cluster": "NGC 6712",
+        "n_remaining": 195,
+        "mean_without": -19.1582148974359,
+        "diff_without": 0.5999366025640995,
+        "diff_change": 0.007455163788588237,
+        "relative_change": 0.01258294910300636
+      },
+      {
+        "removed_cluster": "NGC 6752",
+        "n_remaining": 190,
+        "mean_without": -19.172014763157897,
+        "diff_without": 0.5861367368421035,
+        "diff_change": -0.006344701933407748,
+        "relative_change": -0.010708693164330046
+      },
+      {
+        "removed_cluster": "NGC 6760",
+        "n_remaining": 194,
+        "mean_without": -19.152528804123712,
+        "diff_without": 0.6056226958762885,
+        "diff_change": 0.013141257100777182,
+        "relative_change": 0.02218003171194085
+      },
+      {
+        "removed_cluster": "M71 (NGC 6838)",
+        "n_remaining": 193,
+        "mean_without": -19.161187766839376,
+        "diff_without": 0.5969637331606243,
+        "diff_change": 0.00448229438511305,
+        "relative_change": 0.007565290812108247
+      },
+      {
+        "removed_cluster": "M15 (NGC 7078)",
+        "n_remaining": 188,
+        "mean_without": -19.180632058510636,
+        "diff_without": 0.5775194414893647,
+        "diff_change": -0.014961997286146556,
+        "relative_change": -0.025253107197870536
+      },
+      {
+        "removed_cluster": "M2 (NGC 7089)",
+        "n_remaining": 189,
+        "mean_without": -19.15946459259259,
+        "diff_without": 0.5986869074074086,
+        "diff_change": 0.006205468631897304,
+        "relative_change": 0.010473692888543855
+      },
+      {
+        "removed_cluster": "M30 (NGC 7099)",
+        "n_remaining": 195,
+        "mean_without": -19.165055107692307,
+        "diff_without": 0.5930963923076931,
+        "diff_change": 0.0006149535321817723,
+        "relative_change": 0.0010379287720012028
+      }
+    ],
+    "stability_assessment": "STABLE"
+  },
+  "hierarchical_bootstrap": {
+    "n_bootstrap": 1000,
+    "mean_diff": 0.5778749063837126,
+    "std_diff": 0.1352827252622967,
+    "ci_95_lower": 0.3050327549067678,
+    "ci_95_upper": 0.8401358189502598,
+    "ci_99_lower": 0.21836911788539484,
+    "ci_99_upper": 0.9091072613768949,
+    "fraction_positive": 1.0,
+    "fraction_negative": 0.0
+  },
+  "permutation_test": {
+    "observed_difference": 0.5924814387755113,
+    "n_permutations": 10000,
+    "p_value": 0.0001,
+    "tension_sigma": 7.196273530130751,
+    "perm_mean": -0.00042074027490206835,
+    "perm_std": 0.08233170074689286,
+    "perm_min": -0.29503806972789093,
+    "perm_max": 0.308931807616986
+  },
+  "density_scaling_loocv": {
+    "full_slope": 0.38838771146709467,
+    "n_clusters_tested": 29,
+    "loocv_mean_slope": 0.38852272919510034,
+    "loocv_std_slope": 0.01290673228329225,
+    "min_slope": 0.359947456944339,
+    "max_slope": 0.4277193390246576,
+    "max_abs_change": 0.03933162755756292,
+    "relative_instability": 0.033231567071312314,
+    "cluster_results": [
+      {
+        "removed_cluster": "47 Tuc (NGC 104)",
+        "slope_without": 0.3982719393145701,
+        "slope_change": 0.009884227847475446,
+        "n_remaining": 161
+      },
+      {
+        "removed_cluster": "NGC 1851",
+        "slope_without": 0.389045703197544,
+        "slope_change": 0.0006579917304493366,
+        "n_remaining": 182
+      },
+      {
+        "removed_cluster": "M53 (NGC 5024)",
+        "slope_without": 0.3974612953381989,
+        "slope_change": 0.00907358387110424,
+        "n_remaining": 180
+      },
+      {
+        "removed_cluster": "Omega Centauri (NGC 5139)",
+        "slope_without": 0.40803741681189015,
+        "slope_change": 0.019649705344795487,
+        "n_remaining": 176
+      },
+      {
+        "removed_cluster": "M3 (NGC 5272)",
+        "slope_without": 0.3733572247965403,
+        "slope_change": -0.015030486670554344,
+        "n_remaining": 179
+      },
+      {
+        "removed_cluster": "M5 (NGC 5904)",
+        "slope_without": 0.3802001072597204,
+        "slope_change": -0.008187604207374244,
+        "n_remaining": 177
+      },
+      {
+        "removed_cluster": "M80 (NGC 6093)",
+        "slope_without": 0.3884121490366684,
+        "slope_change": 2.4437569573709794e-05,
+        "n_remaining": 183
+      },
+      {
+        "removed_cluster": "M4 (NGC 6121)",
+        "slope_without": 0.39701105047101803,
+        "slope_change": 0.00862333900392337,
+        "n_remaining": 183
+      },
+      {
+        "removed_cluster": "M13 (NGC 6205)",
+        "slope_without": 0.3617438216504258,
+        "slope_change": -0.026643889816668875,
+        "n_remaining": 176
+      },
+      {
+        "removed_cluster": "M62 (NGC 6266)",
+        "slope_without": 0.3830006087768014,
+        "slope_change": -0.005387102690293244,
+        "n_remaining": 175
+      },
+      {
+        "removed_cluster": "M92 (NGC 6341)",
+        "slope_without": 0.3887840266834001,
+        "slope_change": 0.00039631521630545397,
+        "n_remaining": 183
+      },
+      {
+        "removed_cluster": "Terzan 1",
+        "slope_without": 0.3774079598202783,
+        "slope_change": -0.01097975164681636,
+        "n_remaining": 178
+      },
+      {
+        "removed_cluster": "M14 (NGC 6402)",
+        "slope_without": 0.3943427617688579,
+        "slope_change": 0.005955050301763243,
+        "n_remaining": 183
+      },
+      {
+        "removed_cluster": "NGC 6397",
+        "slope_without": 0.3975852901943454,
+        "slope_change": 0.009197578727250744,
+        "n_remaining": 182
+      },
+      {
+        "removed_cluster": "Terzan 5",
+        "slope_without": 0.38720549348342803,
+        "slope_change": -0.0011822179836666336,
+        "n_remaining": 137
+      },
+      {
+        "removed_cluster": "NGC 6517",
+        "slope_without": 0.3813409811933058,
+        "slope_change": -0.0070467302737888815,
+        "n_remaining": 171
+      },
+      {
+        "removed_cluster": "NGC 6522",
+        "slope_without": 0.38726992108263475,
+        "slope_change": -0.0011177903844599157,
+        "n_remaining": 182
+      },
+      {
+        "removed_cluster": "NGC 6539",
+        "slope_without": 0.4024840987898829,
+        "slope_change": 0.014096387322788229,
+        "n_remaining": 183
+      },
+      {
+        "removed_cluster": "NGC 6544",
+        "slope_without": 0.39315498395681636,
+        "slope_change": 0.004767272489721697,
+        "n_remaining": 182
+      },
+      {
+        "removed_cluster": "NGC 6624",
+        "slope_without": 0.3855219826664507,
+        "slope_change": -0.002865728800643952,
+        "n_remaining": 182
+      },
+      {
+        "removed_cluster": "M28 (NGC 6626)",
+        "slope_without": 0.3918990120440443,
+        "slope_change": 0.0035113005769496497,
+        "n_remaining": 175
+      },
+      {
+        "removed_cluster": "NGC 6652",
+        "slope_without": 0.3885334077105401,
+        "slope_change": 0.00014569624344545895,
+        "n_remaining": 183
+      },
+      {
+        "removed_cluster": "M22 (NGC 6656)",
+        "slope_without": 0.359947456944339,
+        "slope_change": -0.02844025452275567,
+        "n_remaining": 182
+      },
+      {
+        "removed_cluster": "NGC 6712",
+        "slope_without": 0.3809405178723984,
+        "slope_change": -0.007447193594696255,
+        "n_remaining": 183
+      },
+      {
+        "removed_cluster": "NGC 6752",
+        "slope_without": 0.3954322182577304,
+        "slope_change": 0.0070445067906357295,
+        "n_remaining": 178
+      },
+      {
+        "removed_cluster": "NGC 6760",
+        "slope_without": 0.3766349678647238,
+        "slope_change": -0.011752743602370885,
+        "n_remaining": 182
+      },
+      {
+        "removed_cluster": "M71 (NGC 6838)",
+        "slope_without": 0.4277193390246576,
+        "slope_change": 0.03933162755756292,
+        "n_remaining": 181
+      },
+      {
+        "removed_cluster": "M15 (NGC 7078)",
+        "slope_without": 0.3839086885908296,
+        "slope_change": -0.00447902287626506,
+        "n_remaining": 176
+      },
+      {
+        "removed_cluster": "M2 (NGC 7089)",
+        "slope_without": 0.39050472205586867,
+        "slope_change": 0.0021170105887740043,
+        "n_remaining": 177
+      }
+    ],
+    "stability_assessment": "STABLE"
+  },
+  "metadata": {
+    "rho_intra_assumed": 0.3,
+    "n_gc_pulsars": 196,
+    "n_field_pulsars": 198,
+    "n_clusters": 33
+  }
+}

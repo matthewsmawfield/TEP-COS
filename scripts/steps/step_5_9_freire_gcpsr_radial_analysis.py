@@ -5,9 +5,11 @@ import hashlib
 import json
 import re
 from collections import defaultdict
-from datetime import datetime
+from datetime import datetime, timezone
 from pathlib import Path
-from urllib.request import urlopen
+import time
+from urllib.request import urlopen, HTTPError, URLError
+from socket import timeout as SocketTimeout
 
 import numpy as np
 from scipy import stats
@@ -35,12 +37,38 @@ def _parse_num(tok: str):
     return float(m.group(1))
 
 
-def download_freire_catalog():
-    raw = urlopen(FREIRE_GCPSR_URL).read()
-    sha256 = hashlib.sha256(raw).hexdigest()
-    RESULTS_DIR.mkdir(parents=True, exist_ok=True)
-    RAW_OUT_PATH.write_bytes(raw)
-    return raw.decode("utf-8", errors="replace"), sha256, len(raw)
+def download_freire_catalog(max_retries: int = 3, timeout: int = 60):
+    """Download Freire GC PSR catalog with retry logic and error handling."""
+    for attempt in range(max_retries):
+        try:
+            print(f"Downloading Freire GC PSR catalog (attempt {attempt + 1}/{max_retries})...")
+            raw = urlopen(FREIRE_GCPSR_URL, timeout=timeout).read()
+            print(f"Downloaded {len(raw)} bytes")
+            sha256 = hashlib.sha256(raw).hexdigest()
+            RESULTS_DIR.mkdir(parents=True, exist_ok=True)
+            RAW_OUT_PATH.write_bytes(raw)
+            return raw.decode("utf-8", errors="replace"), sha256, len(raw)
+        except HTTPError as e:
+            print(f"HTTP Error {e.code}: {e.reason}")
+            if attempt < max_retries - 1:
+                wait_time = 2 ** attempt
+                print(f"Retrying in {wait_time}s...")
+                time.sleep(wait_time)
+            else:
+                raise RuntimeError(f"Failed to download Freire catalog: HTTP {e.code}") from e
+        except (URLError, SocketTimeout) as e:
+            print(f"Network error: {e}")
+            if attempt < max_retries - 1:
+                wait_time = 2 ** attempt
+                print(f"Retrying in {wait_time}s...")
+                time.sleep(wait_time)
+            else:
+                raise RuntimeError(f"Failed to download Freire catalog: Network error") from e
+        except Exception as e:
+            print(f"Unexpected error: {e}")
+            raise RuntimeError(f"Failed to download Freire catalog: {e}") from e
+    
+    raise RuntimeError(f"Failed to download Freire catalog after {max_retries} attempts")
 
 
 def parse_freire_gcpsr(text: str):
@@ -219,13 +247,18 @@ def write_outputs(meta, results):
 
 
 def main():
+    """Download and analyze Freire GC pulsar catalog for radial correlations.
+    
+    Downloads the Freire GCPSR catalog, parses pulsar data, computes
+    radial correlations for each cluster, and writes output files.
+    """
     text, sha256, nbytes = download_freire_catalog()
     rows = parse_freire_gcpsr(text)
     results = compute_cluster_correlations(rows, min_n=5)
 
     meta = {
         "source_url": FREIRE_GCPSR_URL,
-        "downloaded_at": datetime.utcnow().isoformat() + "Z",
+        "downloaded_at": datetime.now(timezone.utc).isoformat() + "Z",
         "sha256": sha256,
         "bytes": nbytes,
         "min_n": 5,

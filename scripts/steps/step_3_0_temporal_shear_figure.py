@@ -33,7 +33,7 @@ COLORS = {
 
 def load_results():
     """Load temporal shear results."""
-    results_path = Path(__file__).parent.parent.parent / 'results' / 'outputs' / 'step_3_0_cosmograil_temporal_shear_opB_modejump.json'
+    results_path = Path(__file__).parent.parent.parent / 'results' / 'outputs' / 'step_3_0_cosmograil_temporal_shear.json'
     with open(results_path) as f:
         return json.load(f)
 

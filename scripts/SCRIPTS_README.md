@@ -1,115 +1,193 @@
 # TEP-COS Scripts Documentation
 
-**Generated:** 2026-01-07  
-**Purpose:** Map manuscript sections to analysis scripts
+**Generated:** 2026-03-30  
+**Purpose:** Map analysis pipeline to manuscript sections
 
 ---
 
-## Manuscript Structure → Script Mapping
+## Pipeline Execution (run_pipeline.py)
 
-### Section 3: Gravitational Lensing
-| Script | Purpose | Output | Manuscript Reference |
-|--------|---------|--------|---------------------|
-| `step_1_0_data_acquisition.py` | Download COSMOGRAIL light curves | `data/cosmograil/*.rdb` | §3.1 Data |
-| `step_3_0_cosmograil_temporal_shear.py` | Core temporal shear analysis | `step_3_0_*.json` | §3.2 Results |
-| `step_3_2_cosmograil_validation.py` | Injection-recovery, achromaticity | `validation_*.json` | §3.4 Validation |
-| `step_3_5_advanced_lensing_analysis.py` | Redshift correlation | `step_3_5_*.json` | §3.6.1 Geometric Fingerprint |
-| `step_3_6_high_z_predictions.py` | High-z predictions | `step_3_6_*.json` | §3.8 High-z Predictions |
-| `step_3_7_chromaticity_simulation.py` | Required precision | `step_3_7_*.json` | §3.6.3 Chromaticity |
-| `step_3_12_q2237_multiband_chromaticity.py` | Q2237 multi-band | `step_3_12_*.json` | §3.6.3 |
-| `step_3_13_he0435_multiband_chromaticity.py` | HE0435 multi-band | `step_3_13_*.json` | §3.6.3 |
-| `step_3_14_he1104_multiband_chromaticity.py` | HE1104 multi-band | `step_3_14_*.json` | §3.6.3 |
-| `step_3_15_q2237_vakulik_multiband_chromaticity.py` | Q2237 Vakulik | `step_3_15_*.json` | §3.6.3 |
+The master pipeline executes scripts in the following phases:
 
-### Section 4: Pulsar Timing
-| Script | Purpose | Output | Manuscript Reference |
-|--------|---------|--------|---------------------|
-| `step_5_9_freire_gcpsr_radial_analysis.py` | Radial analysis | `freire_gcpsr_radial_*.json` | §4.9 Radial Correlation |
-| `step_5_10_pulsar_population_controls.py` | Population controls | `step_5_10_*.json` | §4.3 Results |
-| `step_5_11_binary_pulsar_analysis.py` | Binary vs isolated (GC) | `step_5_11_*.json` | §4.6 Binary vs Isolated |
-| `step_5_12_field_binary_analysis.py` | Field binary control | `step_5_12_*.json` | §4.7 Field Control |
-| `step_5_13_cluster_acceleration_simulation.py` | Monte Carlo sim | `step_5_13_*.json` | §4.5 Simulation |
+| Phase | Scripts | Purpose |
+|-------|---------|---------|
+| **Data Acquisition** | utils/data_acquisition.py | Download Freire GCpsr, ATNF psrcat, COSMOGRAIL |
+| **Population Controls** | step_5_10 | Match GC and Field MSPs by period, magnetic field |
+| **Core Pulsar Analysis** | step_5_27, step_5_31, step_5_32, step_5_33, step_5_35 | Density scaling, hierarchical models, covariance validation |
+| **Binary Analysis** | step_5_11, step_5_12, step_5_36 | Binary vs isolated MSP comparison |
+| **Validation Suite** | step_5_33b, step_5_34, step_5_37-39, step_5_43 | Sensitivity, power analysis, Monte Carlo |
+| **N-Body Pushback** | step_5_46-49 | Spatial gradients, core collapse, systematic ceilings |
+| **Lensing Analysis** | step_3_0, step_3_2, step_3_10, step_3_16 | COSMOGRAIL temporal shear |
+| **Figure Generation** | step_3_0_temporal_shear_figure.py, step_4_0, step_5_13, step_5_32, step_5_40 | Publication figures |
+| **Appendix** | step_7_0, step_7_1, step_7_2 | SN Ia tests, robustness, audit |
 
-### Section 5: Galaxy Kinematics
-| Script | Purpose | Output | Manuscript Reference |
-|--------|---------|--------|---------------------|
-| `step_2_0_cosmic_coriolis_analysis.py` | CMB dipole search | Log files | §5.2-5.4 |
+---
 
-### Section 5B: Stellar Archaeology
-| Script | Purpose | Output | Manuscript Reference |
-|--------|---------|--------|---------------------|
-| `step_6_3_apogee_stellar_archaeology.py` | APOGEE ages | `apogee_*.json` | §5B.3 Results |
-| `step_6_6_sdss_twin_galaxy_matched_pairs.py` | Twin galaxy pairs | `sdss_twin_*.json` | §5B.4 Matched Pairs |
-| `step_6_6_sfr_holonomy.py` | SFR holonomy | `sdss_sfr_holonomy_*.json` | §6.1 SFR Holonomy |
-| `step_6_6b_sfr_validation.py` | SFR validation | `sdss_sfr_holonomy_validation.json` | §6.1 |
+## Section 3: Gravitational Lensing
 
-### Section 6: Discussion (Bulletproof Tests)
-| Script | Purpose | Output | Manuscript Reference |
-|--------|---------|--------|---------------------|
-| `step_6_12_sdss_test_h_chemical_clock.py` | Chemical Clock (H) | `sdss_test_h_*.json` | §5B.4.1, §6.1 |
-| `step_6_94_sdss_test_dx_halpha_uv.py` | Timescale Ratios (DX) | `sdss_test_dx_*.json` | §5.9.1, §6.1 |
-| `step_6_88_sdss_test_dq_satellite_abundance.py` | Satellite Abundance (DQ) | `sdss_test_dq_*.json` | §5.9.2, §6.1 |
-| `step_6_99_sdss_test_l_radial_gradient.py` | LW-MW Age (L) | `sdss_test_l_*.json` | §6.1 |
-| `step_6_101_sdss_test_m_mass_discrepancy.py` | Mass Discrepancy (M) | `sdss_test_m_*.json` | §6.1 |
-| `step_6_96_sdss_test_g_sn_stretch.py` | SN Ia Stretch (G) ❌ | `sdss_test_g_*.json` | §6.1 (Contradiction) |
-| `step_6_98_sdss_test_k_size_age.py` | Size-Age (K) ❌ | `sdss_test_k_*.json` | §6.1 (Contradiction) |
-| `step_6_91_sdss_test_dt_red_clump.py` | Red Clump (DT) ❌ | `sdss_test_dt_*.json` | §5B.5 (Contradiction) |
-| `step_6_95_sdss_test_dy_phase_spirals.py` | Phase Spirals (DY) | `sdss_test_dy_*.json` | §5.9.3 (Null) |
+| Script | Purpose | Output | Manuscript Ref |
+|--------|---------|--------|----------------|
+| `convert_cds_to_rdb.py` | Convert CDS format to RDB for COSMOGRAIL | `data/cosmograil/*.rdb` | §3.1 |
+| `step_3_0_cosmograil_temporal_shear.py` | Core temporal shear analysis | `step_3_0_*.json` | §3.2 |
+| `step_3_2_cosmograil_validation.py` | Injection-recovery validation | `validation_*.json` | §3.4 |
+| `step_3_10_instrumental_consistency.py` | Instrumental consistency checks | `step_3_10_*.json` | §3.5 |
+| `step_3_16_j1004_analysis.py` | High-z cluster lens J1004 | `step_3_16_*.json` | §3.8 |
+| `step_3_20_lensing_chromaticity.py` | Lensing chromaticity simulation | `step_3_20_*.json` | §3.6.3 |
+| `step_3_20_lensing_chromaticity_real.py` | Real chromaticity analysis | `step_3_20b_*.json` | §3.6.3 |
+| `step_3_21_high_z_lensing.py` | High-z lensing predictions | `step_3_21_*.json` | §3.8 |
+| `step_3_21_rxj1131_investigation.py` | RXJ1131 detailed analysis | `step_3_21b_*.json` | §3.2 |
 
-### Bulletproof Pipeline
+---
+
+## Section 4: Pulsar Timing (Core Analysis)
+
+| Script | Purpose | Output | Manuscript Ref |
+|--------|---------|--------|----------------|
+| `step_5_10_pulsar_population_controls.py` | Population controls, data ingestion | `step_5_10_*.json` | §4.3 |
+| `step_5_27_hybrid_maximum_analysis.py` | Hybrid maximum Pdot analysis | `step_5_27_*.json` | §4.4 |
+| `step_5_31_per_cluster_controlled_residuals.py` | Per-cluster controlled residuals | `step_5_31_*.json` | §4.4 |
+| `step_5_32_full_density_scaling.py` | Full density scaling simulation | `step_5_32_*.json` | §4.5 |
+| `step_5_33_hierarchical_density_scaling.py` | Hierarchical mixed-effects models | `step_5_33_*.json` | §4.5 |
+| `step_5_35_covariance_validation.py` | Covariance-aware statistical validation | `step_5_35_*.json` | §4.4 |
+
+### Binary Pulsar Analysis
+
+| Script | Purpose | Output | Manuscript Ref |
+|--------|---------|--------|----------------|
+| `step_5_11_binary_pulsar_analysis.py` | GC binary vs isolated MSPs | `step_5_11_*.json` | §4.6 |
+| `step_5_12_field_binary_analysis.py` | Field binary control sample | `step_5_12_*.json` | §4.7 |
+| `step_5_36_integrated_binary_control.py` | Integrated binary control test | `step_5_36_*.json` | §4.6 |
+
+### Validation & Sensitivity
+
+| Script | Purpose | Output | Manuscript Ref |
+|--------|---------|--------|----------------|
+| `step_5_33b_outlier_exclusion_sensitivity.py` | Outlier exclusion sensitivity | `step_5_33b_*.json` | §4.4 |
+| `step_5_34_shklovskii_sensitivity.py` | Shklovskii effect sensitivity | `step_5_34_*.json` | §4.4.2 |
+| `step_5_37_rho_sensitivity.py` | Rho_intra sensitivity analysis | `step_5_37_*.json` | §4.4 |
+| `step_5_38_power_analysis.py` | Statistical power validation | `step_5_38_*.json` | §4.4 |
+| `step_5_39_monte_carlo_validation.py` | Monte Carlo Type I/II error validation | `step_5_39_*.json` | §4.4 |
+| `step_5_43_sensitivity_cmc_report.py` | Sensitivity & CMC comparison report | `step_5_43_*.json` | §4.5 |
+
+### N-Body Pushback & CMC Comparison
+
+| Script | Purpose | Output | Manuscript Ref |
+|--------|---------|--------|----------------|
+| `step_5_41_pulsar_dynamical_calibration.py` | Pulsar dynamical calibration | `step_5_41_*.json` | §4.8 |
+| `step_5_41b_sensitivity_analysis.py` | Dynamical calibration sensitivity | `step_5_41b_*.json` | §4.8 |
+| `step_5_42_cmc_real_comparison.py` | CMC vs real cluster comparison | `step_5_42_*.json` | §4.5 |
+| `step_5_44_theoretical_uncertainty.py` | Theoretical uncertainty quantification | `step_5_44_*.json` | §4.8 |
+| `step_5_45_bayesian_posterior.py` | Bayesian posterior analysis | `step_5_45_*.json` | §4.4 |
+| `step_5_46_spatial_gradient.py` | Spatial gradient analysis | `step_5_46_*.json` | §4.9 |
+| `step_5_47_core_collapse_test.py` | Core collapse test | `step_5_47_*.json` | §4.9 |
+| `step_5_48_cmc_literature_comparison.py` | CMC literature comparison | `step_5_48_*.json` | §4.5 |
+| `step_5_49_systematic_ceiling.py` | Systematic ceiling analysis | `step_5_49_*.json` | §4.8 |
+
+### Legacy/Comparison Scripts
+
 | Script | Purpose | Output |
 |--------|---------|--------|
-| `step_7_00_bulletproof_tep_signals.py` | Test H, I, L | `bulletproof_tep_signals.json` |
-| `step_7_01_bulletproof_timescale_ratios.py` | Test DX | `bulletproof_test_dx_timescale.json` |
-| `step_7_02_bulletproof_additional_signals.py` | Additional | `bulletproof_additional_signals.json` |
-| `step_7_03_bulletproof_sfr_holonomy.py` | SFR | `bulletproof_sfr_holonomy.json` |
+| `step_5_9_freire_gcpsr_radial_analysis.py` | Freire GCpsr radial analysis (legacy) | `freire_gcpsr_radial_*.json` |
 
-### Utility Scripts
+---
+
+## Section 5: Galaxy Kinematics & Stellar Archaeology
+
+| Script | Purpose | Output | Manuscript Ref |
+|--------|---------|--------|----------------|
+| `step_6_5_manga_spatially_resolved.py` | MaNGA spatially resolved analysis | `step_6_5_*.json` | §5.2 |
+| `step_6_10_manga_test_e_age_discrepancy.py` | MaNGA age discrepancy test | `step_6_10_*.json` | §5.2 |
+| `step_6_57_sdss_test_cc_manganese_clock.py` | Manganese clock test | `step_6_57_*.json` | §5B.3 |
+
+---
+
+## Section 6: Appendix - Supernova Ia Tests
+
+| Script | Purpose | Output | Manuscript Ref |
+|--------|---------|--------|----------------|
+| `step_7_0_sn_ia_stretch_test.py` | SN Ia σ-mB correlation test | `step_7_0_*.json` | §6.1 |
+| `step_7_1_sn_ia_robustness.py` | SN Ia robustness validation | `step_7_1_*.json` | §6.1 |
+| `step_7_1_tep_vs_mass_step.py` | TEP vs mass-step analysis | `step_7_1b_*.json` | §6.1 |
+| `step_7_2_sn_ia_audit.py` | SN Ia deep audit | `step_7_2_*.json` | §6.1 |
+
+---
+
+## Figure Generation Scripts
+
+| Script | Purpose | Output |
+|--------|---------|--------|
+| `step_3_0_temporal_shear_figure.py` | Temporal shear figure | `figures/manuscript/` |
+| `step_3_2_microlensing_figure.py` | Microlensing comparison | `figures/manuscript/` |
+| `step_4_0_lensing_summary_figure.py` | Lensing summary figure | `figures/manuscript/` |
+| `step_5_11_binary_spatial_figure.py` | Binary spatial figure | `figures/manuscript/` |
+| `step_5_13_cluster_acceleration_figure.py` | Cluster acceleration figure | `figures/manuscript/` |
+| `step_5_32_density_scaling_figure.py` | Density scaling figure | `figures/manuscript/` |
+| `step_5_40_tep_summary_figure.py` | TEP summary figure | `figures/manuscript/` |
+
+---
+
+## Utility Scripts
+
 | Script | Purpose |
 |--------|---------|
 | `convert_cds_to_rdb.py` | Convert CDS format to RDB |
-| `__init__.py` | Package init |
+| `__init__.py` | Package initialization |
+
+### Utils (scripts/utils/)
+
+| Script | Purpose |
+|--------|---------|
+| `check_manga_kinematics.py` | MaNGA kinematics utilities |
+| `data_acquisition.py` | Data download and health checking |
 
 ---
 
-## Figure Scripts (scripts/figures/)
-| Script | Purpose | Output |
-|--------|---------|--------|
-| `cosmograil_temporal_shear_figure.py` | Main temporal shear fig | `figures/manuscript/` |
-| `cosmograil_comprehensive_figure.py` | Comprehensive fig | `figures/manuscript/` |
-| `cosmograil_microlensing_figure.py` | Microlensing comparison | `figures/manuscript/` |
+## Usage
+
+### Run Full Pipeline
+```bash
+python scripts/run_pipeline.py
+```
+
+### Run with Options
+```bash
+python scripts/run_pipeline.py --skip-validation    # Skip long validation steps
+python scripts/run_pipeline.py --skip-lensing       # Skip lensing analysis
+python scripts/run_pipeline.py --skip-figures       # Skip figure generation
+python scripts/run_pipeline.py --only-core          # Fast mode: core analysis only
+python scripts/run_pipeline.py --parallel           # Enable parallel processing
+```
+
+### Run Individual Steps
+```bash
+python scripts/steps/step_5_32_full_density_scaling.py
+```
 
 ---
 
-## Archived Scripts (scripts/archive/)
-Scripts moved to archive because they were:
+## Key Outputs (results/outputs/)
+
+### Primary Results
+- `step_3_0_cosmograil_temporal_shear_opB_modejump.json` - Lensing temporal shear
+- `step_5_10_pulsar_population_controls.json` - Population controls
+- `step_5_32_full_density_scaling.json` - Density scaling
+- `step_5_33_hierarchical_density_scaling.json` - Hierarchical models
+- `step_5_35_covariance_validation.json` - Statistical validation
+
+### Validation
+- `step_5_38_power_analysis.json` - Power analysis
+- `step_5_39_monte_carlo_validation.json` - Monte Carlo validation
+
+### Figures
+- `figures/manuscript/` - All publication figures
+
+---
+
+## Archive (scripts/archive/)
+
+Scripts moved to archive include:
 - Debug/diagnostic scripts (not used in final analysis)
-- Experimental parameter sweeps (superseded by final analysis)
-- SDSS tests that showed nulls/contradictions not featured in manuscript
+- Experimental parameter sweeps (superseded)
+- Deprecated SDSS tests (nulls/contradictions not featured)
+- Old step versions (replaced by newer implementations)
 
----
-
-## Key Outputs to Keep (results/outputs/)
-### Lensing
-- `step_3_0_cosmograil_temporal_shear_v3_expanded.json` - Original results
-- `step_3_0_cosmograil_temporal_shear_opB_modejump.json` - Best operating point
-- `validation_DESJ0408_full.json` - Definitive validation
-- `step_3_2_validation_results.json` - Validation suite
-- `step_3_12_*.json` through `step_3_15_*.json` - Chromaticity
-
-### Pulsars
-- `step_5_10_pulsar_population_controls.json`
-- `step_5_11_binary_pulsar_analysis.json`
-- `step_5_12_field_binary_analysis.json`
-- `step_5_13_acceleration_sim.json`
-- `freire_gcpsr_radial_summary.json`
-
-### SDSS/Galaxy
-- `bulletproof_tep_signals.json`
-- `bulletproof_test_dx_timescale.json`
-- `sdss_sfr_holonomy_results.json`
-- `sdss_test_h_results.json`, `sdss_test_dx_results.json`, etc.
-
-### Synthesis
-- `TEP_EVIDENCE_SYNTHESIS_FINAL.md`
-- `BULLETPROOF_TEP_SUMMARY.md`

@@ -1,7 +1,0 @@
-[23:05:22] [PROCESS] Loading metadata from data/dapall/dapall-v3_1_1-3.1.0.fits...
-[23:05:22] [INFO] Loaded 1606 complete galaxy records.
-[23:05:22] [PROCESS] Defining Golden Sample (z<0.04, sigma<160, ba>0.6)...
-[23:05:22] [INFO] Golden Sample Size: N=460
-[23:05:25] [SUCCESS] Golden Slope: a = -3.4142 km/s
-[23:05:25] [SUCCESS] Golden P-value: p = 0.12737
-[23:05:25] [SUCCESS] Report generated: results/outputs/tomography_N2000/step_2_7_master_synthesis_report.md

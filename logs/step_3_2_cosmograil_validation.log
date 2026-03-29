@@ -1,0 +1,292 @@
+[23:33:39] [INFO] ======================================================================
+[23:33:39] [INFO] COSMOGRAIL TEMPORAL SHEAR VALIDATION SUITE
+[23:33:39] [INFO] ======================================================================
+[23:33:39] [INFO] 
+[23:33:39] [INFO] Loaded 48 image pairs from 18 systems
+[23:33:39] [INFO] 
+[23:33:39] [INFO] ======================================================================
+[23:33:39] [INFO] 1. MULTI-BAND ANALYSIS (Achromaticity Test)
+[23:33:39] [INFO] ======================================================================
+[23:33:39] [INFO] 
+[23:33:39] [INFO] LIMITATION (PRIMARY SYSTEMS): The highest-significance detection systems in this work
+[23:33:39] [INFO] (DESJ0408, PG1115, J1206) are currently supported by single-band monitoring in the
+[23:33:39] [INFO] public COSMOGRAIL releases.
+[23:33:39] [INFO] 
+[23:33:39] [INFO] WHAT ACHROMATICITY WOULD TEST:
+[23:33:39] [INFO] - TEP-GL predicts Γ should be ACHROMATIC (same in all optical bands)
+[23:33:39] [INFO] - Microlensing would produce CHROMATIC effects (different Γ per band)
+[23:33:39] [INFO] 
+[23:33:39] [INFO] AVAILABLE PARTIAL TEST:
+[23:33:39] [INFO] We can test the estimator on public multi-band, image-resolved monitoring in other
+[23:33:39] [INFO] lensed quasars, and measure ΔΓ between bands for matched image pairs.
+[23:33:39] [INFO] 
+[23:33:39] [INFO] 
+[23:33:39] [INFO] Result: PARTIAL
+[23:33:39] [INFO] Primary systems: Single-band monitoring only (COSMOGRAIL public releases)
+[23:33:39] [INFO] Multi-band auxiliary ΔΓ summaries not found (expected JSON outputs missing).
+[23:33:39] [INFO] 
+[23:33:39] [INFO] ======================================================================
+[23:33:39] [INFO] 2. GEOMETRIC CORRELATION ANALYSIS
+[23:33:39] [INFO] ======================================================================
+[23:33:39] [INFO] 
+[23:33:39] [INFO] Correlation of |Γ| with geometric parameters:
+[23:33:39] [INFO] ------------------------------------------------------------
+[23:33:39] [INFO] Parameter                   r      p-value Interpretation
+[23:33:39] [INFO] ------------------------------------------------------------
+[23:33:39] [INFO] Einstein Radius        -0.468       0.0374 SIGNIFICANT
+[23:33:39] [INFO] Image Separation       -0.490       0.0283 SIGNIFICANT
+[23:33:39] [INFO] Lens Ellipticity       -0.153       0.5189 NULL
+[23:33:39] [INFO] Lens Redshift           0.604       0.0048 SIGNIFICANT
+[23:33:39] [INFO] Source Redshift         0.665       0.0014 SIGNIFICANT
+[23:33:39] [INFO] 
+[23:33:39] [INFO] ------------------------------------------------------------
+[23:33:39] [INFO] Comparison: Systems with detections vs null systems
+[23:33:39] [INFO] ------------------------------------------------------------
+[23:33:39] [INFO] einstein_radius_arcsec   : Sig=1.11, Null=1.23, p=0.585 → SIMILAR
+[23:33:39] [INFO] image_separation_arcsec  : Sig=2.24, Null=2.55, p=0.516 → SIMILAR
+[23:33:39] [INFO] lens_ellipticity         : Sig=0.16, Null=0.15, p=0.919 → SIMILAR
+[23:33:39] [INFO] z_lens                   : Sig=0.55, Null=0.42, p=0.358 → SIMILAR
+[23:33:39] [INFO] z_source                 : Sig=1.96, Null=1.38, p=0.135 → SIMILAR
+[23:33:39] [INFO] 
+[23:33:39] [INFO] ======================================================================
+[23:33:39] [INFO] 3. INJECTION-RECOVERY ANALYSIS
+[23:33:39] [INFO] ======================================================================
+[23:33:39] [INFO] 
+[23:33:39] [INFO] Running 30 trials for each of 5 true delays...
+[23:33:45] [INFO] 
+[23:33:45] [INFO] ------------------------------------------------------------
+[23:33:45] [INFO]   True Delay    Recovered       Bias    Scatter      N
+[23:33:45] [INFO] ------------------------------------------------------------
+[23:33:45] [INFO]         -100       -101.4       -1.4        2.1     30
+[23:33:45] [INFO]          -50        -50.4       -0.4        0.8     30
+[23:33:45] [INFO]            0          0.0        0.0        0.0     30
+[23:33:45] [INFO]           50         50.3        0.3        1.1     30
+[23:33:45] [INFO]          100        103.0        3.0        3.7     30
+[23:33:45] [INFO] ------------------------------------------------------------
+[23:33:45] [INFO]      AVERAGE            -        0.3        1.5
+[23:33:45] [INFO] 
+[23:33:45] [INFO] ------------------------------------------------------------
+[23:33:45] [INFO] INTERPRETATION:
+[23:33:45] [INFO]   Bias: 0.3 days → UNBIASED (|bias| < 5 days)
+[23:33:45] [INFO]   Scatter: 1.5 days → PRECISE (σ < 20 days)
+[23:33:45] [INFO] 
+[23:33:45] [INFO] ======================================================================
+[23:33:45] [INFO] 4. ROBUSTNESS AND SUMMARY STATISTICS
+[23:33:45] [INFO] ======================================================================
+[23:33:45] [INFO] 
+[23:33:45] [INFO] 4.1 Detection Statistics
+[23:33:45] [INFO] ----------------------------------------
+[23:33:45] [INFO] Total pairs: 48
+[23:33:45] [INFO] Significant (>3σ): 0 (0.0%)
+[23:33:45] [INFO] Null (<1σ): 44 (91.7%)
+[23:33:45] [INFO] 
+[23:33:45] [INFO] 4.2 Sign Consistency Within Systems
+[23:33:45] [INFO] ----------------------------------------
+[23:33:45] [INFO] 
+[23:33:45] [INFO] 4.3 Fit Quality (R²)
+[23:33:45] [INFO] ----------------------------------------
+[23:33:45] [INFO] Significant detections: No significant pairs (R² = N/A)
+[23:33:45] [INFO] Null detections: R² = -17.86 ± 73.51
+[23:33:45] [INFO] 
+[23:33:45] [INFO] 4.4 Combined Significance
+[23:33:45] [INFO] ----------------------------------------
+[23:33:45] [INFO] 
+[23:33:45] [INFO]   Conservative Fisher (Independent systems only):
+[23:33:45] [INFO] 
+[23:33:45] [INFO] 4.5 Bootstrap Stability
+[23:33:45] [INFO] ----------------------------------------
+[23:33:45] [INFO] 
+[23:33:45] [INFO] ======================================================================
+[23:33:45] [INFO] 5. SCRAMBLED RESIDUALS TEST (Time-Reversal)
+[23:33:45] [INFO] ======================================================================
+[23:33:45] [INFO] Loading data from DESJ0408_Courbin2017.rdb...
+[23:33:45] [INFO] System DESJ0408: 3 images
+[23:33:45] [INFO] [23:33:45] [PROCESS]   Analyzing pair A-B
+[23:33:45] [INFO] [23:33:45] [PROCESS]   Analyzing pair A-D
+[23:33:45] [INFO] [23:33:45] [PROCESS]   Analyzing pair B-D
+[23:33:45] [INFO]   Running 200 bootstrap iterations using 14 cores...
+[23:34:07] [INFO] [23:34:07] [PROCESS]   Analyzing pair A-B
+[23:34:07] [INFO] [23:34:07] [PROCESS]   Analyzing pair A-D
+[23:34:08] [INFO] [23:34:08] [PROCESS]   Analyzing pair B-D
+[23:34:08] [INFO]   Running 200 bootstrap iterations using 14 cores...
+[23:34:22] [INFO] [23:34:22] [PROCESS]   Analyzing pair A-B
+[23:34:22] [INFO] [23:34:22] [PROCESS]   Analyzing pair A-D
+[23:34:22] [INFO] [23:34:22] [PROCESS]   Analyzing pair B-D
+[23:34:22] [INFO]   Running 200 bootstrap iterations using 14 cores...
+[23:34:35] [INFO] Best pair: A-B
+[23:34:35] [INFO] Original Gamma: -29.9 (σ=18.6, z=1.61, n_boot=200)
+[23:34:35] [INFO] 
+[23:34:35] [INFO] Analyzing TIME-REVERSED data (A-B)...
+[23:34:35] [INFO] [23:34:35] [PROCESS]   Analyzing pair A-B
+[23:34:35] [INFO]   Running 200 bootstrap iterations using 14 cores...
+[23:34:39] [INFO] Time-reversed Gamma: 17.1 (σ=10.6, z=1.62, n_boot=200)
+[23:34:39] [INFO] 
+[23:34:39] [INFO] Signal Reduction (z): -0.6%
+[23:34:39] [INFO] Test Status: PASSED
+[23:34:39] [INFO]   Gamma sign flipped: -29.9 → +17.1
+[23:34:39] [INFO]   Interpretation: Signal is time-directional (consistent with TEP prediction).
+[23:34:39] [INFO] [23:34:39] [PROCESS]   Analyzing pair A-B
+[23:34:39] [INFO] [23:34:39] [PROCESS]   Analyzing pair A-D
+[23:34:40] [INFO] [23:34:40] [PROCESS]   Analyzing pair B-D
+[23:34:40] [INFO]   Running 200 bootstrap iterations using 14 cores...
+[23:34:59] [INFO] [23:34:59] [PROCESS]   Analyzing pair A-B
+[23:34:59] [INFO] [23:34:59] [PROCESS]   Analyzing pair A-D
+[23:34:59] [INFO] [23:34:59] [PROCESS]   Analyzing pair B-D
+[23:35:00] [INFO]   Running 200 bootstrap iterations using 14 cores...
+[23:35:22] [INFO] [23:35:22] [PROCESS]   Analyzing pair A-B
+[23:35:22] [INFO] [23:35:22] [PROCESS]   Analyzing pair A-D
+[23:35:22] [INFO] [23:35:22] [PROCESS]   Analyzing pair B-D
+[23:35:22] [INFO]   Running 200 bootstrap iterations using 14 cores...
+[23:35:36] [INFO] [23:35:36] [PROCESS]   Analyzing pair A-B
+[23:35:36] [INFO] [23:35:36] [PROCESS]   Analyzing pair A-D
+[23:35:36] [INFO] [23:35:36] [PROCESS]   Analyzing pair B-D
+[23:35:36] [INFO]   Running 200 bootstrap iterations using 14 cores...
+[23:35:55] [INFO] [23:35:55] [PROCESS]   Analyzing pair A-B
+[23:35:56] [INFO]   Running 200 bootstrap iterations using 14 cores...
+[23:36:02] [INFO] 
+[23:36:02] [INFO] Season Shuffle Test:
+[23:36:02] [INFO]   Original: γ = -29.94, z = 1.61σ
+[23:36:02] [INFO]   Shuffled: γ = -42.57, z = 2.35σ
+[23:36:02] [INFO]   Status: EXPLORATORY
+[23:36:02] [INFO]   Interpretation: Single-shuffle draw strengthened the signal, but one draw is not inferential; use the empirical null distribution before claiming suppression.
+[23:36:02] [INFO] 
+[23:36:02] [INFO] ======================================================================
+[23:36:02] [INFO] 6. EMPIRICAL SEASON SHUFFLE NULL
+[23:36:02] [INFO] ======================================================================
+[23:36:02] [INFO] [23:36:02] [PROCESS]   Analyzing pair A-B
+[23:36:02] [INFO] [23:36:02] [PROCESS]   Analyzing pair A-D
+[23:36:02] [INFO] [23:36:02] [PROCESS]   Analyzing pair B-D
+[23:36:03] [INFO]   Running 200 bootstrap iterations using 14 cores...
+[23:36:16] [INFO] [23:36:16] [PROCESS]   Analyzing pair A-B
+[23:36:16] [INFO]   Running 200 bootstrap iterations using 14 cores...
+[23:36:20] [INFO] [23:36:20] [PROCESS]   Analyzing pair A-B
+[23:36:20] [INFO]   Running 200 bootstrap iterations using 14 cores...
+[23:36:23] [INFO] [23:36:23] [PROCESS]   Analyzing pair A-B
+[23:36:23] [INFO]   Running 200 bootstrap iterations using 14 cores...
+[23:36:26] [INFO] [23:36:26] [PROCESS]   Analyzing pair A-B
+[23:36:26] [INFO]   Running 200 bootstrap iterations using 14 cores...
+[23:36:28] [INFO] [23:36:28] [PROCESS]   Analyzing pair A-B
+[23:36:29] [INFO]   Running 200 bootstrap iterations using 14 cores...
+[23:36:33] [INFO] [23:36:33] [PROCESS]   Analyzing pair A-B
+[23:36:33] [INFO]   Running 200 bootstrap iterations using 14 cores...
+[23:36:36] [INFO] [23:36:36] [PROCESS]   Analyzing pair A-B
+[23:36:36] [INFO]   Running 200 bootstrap iterations using 14 cores...
+[23:36:41] [INFO] [23:36:41] [PROCESS]   Analyzing pair A-B
+[23:36:41] [INFO]   Running 200 bootstrap iterations using 14 cores...
+[23:36:46] [INFO] [23:36:46] [PROCESS]   Analyzing pair A-B
+[23:36:46] [INFO]   Running 200 bootstrap iterations using 14 cores...
+[23:36:51] [INFO] [23:36:51] [PROCESS]   Analyzing pair A-B
+[23:36:51] [INFO]   Running 200 bootstrap iterations using 14 cores...
+[23:36:57] [INFO] [23:36:57] [PROCESS]   Analyzing pair A-B
+[23:36:57] [INFO]   Running 200 bootstrap iterations using 14 cores...
+[23:37:01] [INFO] [23:37:01] [PROCESS]   Analyzing pair A-B
+[23:37:01] [INFO]   Running 200 bootstrap iterations using 14 cores...
+[23:37:05] [INFO] [23:37:05] [PROCESS]   Analyzing pair A-B
+[23:37:05] [INFO]   Running 200 bootstrap iterations using 14 cores...
+[23:37:10] [INFO] [23:37:10] [PROCESS]   Analyzing pair A-B
+[23:37:10] [INFO]   Running 200 bootstrap iterations using 14 cores...
+[23:37:15] [INFO] [23:37:15] [PROCESS]   Analyzing pair A-B
+[23:37:15] [INFO]   Running 200 bootstrap iterations using 14 cores...
+[23:37:22] [INFO] [23:37:22] [PROCESS]   Analyzing pair A-B
+[23:37:22] [INFO]   Running 200 bootstrap iterations using 14 cores...
+[23:37:26] [INFO] [23:37:26] [PROCESS]   Analyzing pair A-B
+[23:37:26] [INFO]   Running 200 bootstrap iterations using 14 cores...
+[23:37:32] [INFO] [23:37:32] [PROCESS]   Analyzing pair A-B
+[23:37:32] [INFO]   Running 200 bootstrap iterations using 14 cores...
+[23:37:38] [INFO] [23:37:38] [PROCESS]   Analyzing pair A-B
+[23:37:38] [INFO]   Running 200 bootstrap iterations using 14 cores...
+[23:37:43] [INFO] [23:37:43] [PROCESS]   Analyzing pair A-B
+[23:37:43] [INFO]   Running 200 bootstrap iterations using 14 cores...
+[23:37:50] [INFO] [23:37:50] [PROCESS]   Analyzing pair A-B
+[23:37:50] [INFO]   Running 200 bootstrap iterations using 14 cores...
+[23:37:56] [INFO] [23:37:56] [PROCESS]   Analyzing pair A-B
+[23:37:56] [INFO]   Running 200 bootstrap iterations using 14 cores...
+[23:38:03] [INFO] [23:38:03] [PROCESS]   Analyzing pair A-B
+[23:38:03] [INFO]   Running 200 bootstrap iterations using 14 cores...
+[23:38:08] [INFO] [23:38:08] [PROCESS]   Analyzing pair A-B
+[23:38:08] [INFO]   Running 200 bootstrap iterations using 14 cores...
+[23:38:11] [INFO] [23:38:11] [PROCESS]   Analyzing pair A-B
+[23:38:12] [INFO]   Running 200 bootstrap iterations using 14 cores...
+[23:38:16] [INFO] [23:38:16] [PROCESS]   Analyzing pair A-B
+[23:38:16] [INFO]   Running 200 bootstrap iterations using 14 cores...
+[23:38:22] [INFO] [23:38:22] [PROCESS]   Analyzing pair A-B
+[23:38:22] [INFO]   Running 200 bootstrap iterations using 14 cores...
+[23:38:28] [INFO] [23:38:28] [PROCESS]   Analyzing pair A-B
+[23:38:28] [INFO]   Running 200 bootstrap iterations using 14 cores...
+[23:38:34] [INFO] [23:38:34] [PROCESS]   Analyzing pair A-B
+[23:38:34] [INFO]   Running 200 bootstrap iterations using 14 cores...
+[23:38:39] [INFO] [23:38:39] [PROCESS]   Analyzing pair A-B
+[23:38:39] [INFO]   Running 200 bootstrap iterations using 14 cores...
+[23:38:43] [INFO] [23:38:43] [PROCESS]   Analyzing pair A-B
+[23:38:43] [INFO]   Running 200 bootstrap iterations using 14 cores...
+[23:38:46] [INFO] [23:38:46] [PROCESS]   Analyzing pair A-B
+[23:38:46] [INFO]   Running 200 bootstrap iterations using 14 cores...
+[23:38:49] [INFO] [23:38:49] [PROCESS]   Analyzing pair A-B
+[23:38:49] [INFO]   Running 200 bootstrap iterations using 14 cores...
+[23:38:52] [INFO] [23:38:52] [PROCESS]   Analyzing pair A-B
+[23:38:52] [INFO]   Running 200 bootstrap iterations using 14 cores...
+[23:38:56] [INFO] [23:38:56] [PROCESS]   Analyzing pair A-B
+[23:38:56] [INFO]   Running 200 bootstrap iterations using 14 cores...
+[23:39:03] [INFO] [23:39:03] [PROCESS]   Analyzing pair A-B
+[23:39:03] [INFO]   Running 200 bootstrap iterations using 14 cores...
+[23:39:08] [INFO] [23:39:08] [PROCESS]   Analyzing pair A-B
+[23:39:08] [INFO]   Running 200 bootstrap iterations using 14 cores...
+[23:39:13] [INFO] [23:39:13] [PROCESS]   Analyzing pair A-B
+[23:39:14] [INFO]   Running 200 bootstrap iterations using 14 cores...
+[23:39:18] [INFO] [23:39:18] [PROCESS]   Analyzing pair A-B
+[23:39:18] [INFO]   Running 200 bootstrap iterations using 14 cores...
+[23:39:21] [INFO] [23:39:21] [PROCESS]   Analyzing pair A-B
+[23:39:21] [INFO]   Running 200 bootstrap iterations using 14 cores...
+[23:39:25] [INFO] [23:39:25] [PROCESS]   Analyzing pair A-B
+[23:39:25] [INFO]   Running 200 bootstrap iterations using 14 cores...
+[23:39:32] [INFO] [23:39:32] [PROCESS]   Analyzing pair A-B
+[23:39:32] [INFO]   Running 200 bootstrap iterations using 14 cores...
+[23:39:37] [INFO] [23:39:37] [PROCESS]   Analyzing pair A-B
+[23:39:37] [INFO]   Running 200 bootstrap iterations using 14 cores...
+[23:39:40] [INFO] [23:39:40] [PROCESS]   Analyzing pair A-B
+[23:39:40] [INFO]   Running 200 bootstrap iterations using 14 cores...
+[23:39:45] [INFO] [23:39:45] [PROCESS]   Analyzing pair A-B
+[23:39:45] [INFO]   Running 200 bootstrap iterations using 14 cores...
+[23:39:51] [INFO] [23:39:51] [PROCESS]   Analyzing pair A-B
+[23:39:52] [INFO]   Running 200 bootstrap iterations using 14 cores...
+[23:39:58] [INFO] [23:39:58] [PROCESS]   Analyzing pair A-B
+[23:39:58] [INFO]   Running 200 bootstrap iterations using 14 cores...
+[23:40:06] [INFO] [23:40:06] [PROCESS]   Analyzing pair A-B
+[23:40:06] [INFO]   Running 200 bootstrap iterations using 14 cores...
+[23:40:10] [INFO] [23:40:10] [PROCESS]   Analyzing pair A-B
+[23:40:10] [INFO]   Running 200 bootstrap iterations using 14 cores...
+[23:40:13] [INFO] [23:40:13] [PROCESS]   Analyzing pair A-B
+[23:40:13] [INFO]   Running 200 bootstrap iterations using 14 cores...
+[23:40:17] [INFO] 
+[23:40:17] [INFO] ======================================================================
+[23:40:17] [INFO] 6. MICROLENSING INJECTION TEST
+[23:40:17] [INFO] ======================================================================
+[23:40:17] [INFO] Creating Synthetic Null Pair from Image A...
+[23:40:17] [INFO] [23:40:17] [PROCESS]   Analyzing pair A-B
+[23:40:17] [INFO] Baseline Null Gamma: 0.0 (Should be ~0)
+[23:40:17] [INFO] 
+[23:40:17] [INFO] Injecting Microlensing (Amp=0.3 mag, Period=2000d)...
+[23:40:17] [INFO] [23:40:17] [PROCESS]   Analyzing pair A-B
+[23:40:17] [INFO] Microlensed Gamma: 17.5 (σ=3.1)
+[23:40:17] [INFO] 
+[23:40:17] [INFO] Comparison:
+[23:40:17] [INFO] Observed Gamma (Real Data DESJ0408 A-B): -90.7
+[23:40:17] [INFO] Simulated Microlensing Gamma: 17.5
+[23:40:17] [INFO] Test Status: PASSED (Standard ML does not reproduce large negative shear)
+[23:40:17] [INFO] 
+[23:40:17] [INFO] ======================================================================
+[23:40:17] [INFO] Results saved to: /Users/matthewsmawfield/www/TEP-COS/results/outputs/step_3_2_validation_results.json
+[23:40:17] [INFO] ======================================================================
+[23:40:17] [INFO] 
+[23:40:17] [INFO] ======================================================================
+[23:40:17] [INFO] VALIDATION SUMMARY
+[23:40:17] [INFO] ======================================================================
+[23:40:17] [INFO] 
+[23:40:17] [INFO] 1. ACHROMATICITY: See output
+[23:40:17] [INFO] 2. GEOMETRIC CORRELATIONS: See above
+[23:40:17] [INFO] 3. INJECTION-RECOVERY: See above
+[23:40:17] [INFO] 4. ROBUSTNESS: See above
+[23:40:17] [INFO] 5. SCRAMBLED RESIDUALS: See output
+[23:40:17] [INFO] 6. SEASON SHUFFLE NULL: See output (with empirical null)
+[23:40:17] [INFO] 7. MICROLENSING INJECTION: See output
+[23:40:17] [INFO] 

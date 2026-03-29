@@ -21,11 +21,64 @@ import tempfile
 from typing import Dict, List, Optional
 
 
+def _load_json(path: Path) -> Optional[Dict]:
+    try:
+        return json.loads(path.read_text(encoding="utf-8"))
+    except Exception:
+        return None
+
+
 def _read_text(path: Path) -> Optional[str]:
     try:
         return path.read_text(encoding="utf-8")
     except Exception:
         return None
+
+
+def _load_results_data(project_root: Path) -> Dict[str, object]:
+    """Load key analysis results from output JSON files.
+    
+    Returns a dictionary with key findings for PDF metadata embedding.
+    """
+    results_dir = project_root / "results" / "outputs"
+    data: Dict[str, object] = {}
+    
+    # Load hierarchical density scaling results
+    density_results = _load_json(results_dir / "step_5_33_hierarchical_density_results.json")
+    if density_results:
+        data["density_slope"] = density_results.get("model_b_mixed_slope")
+        data["density_slope_error"] = density_results.get("model_b_mixed_error")
+        data["density_p_value"] = density_results.get("model_b_mixed_p")
+        data["newtonian_predicted"] = density_results.get("newtonian_predicted_slope")
+        data["rejection_sigma"] = density_results.get("rejection_sigma")
+        data["suppression_factor"] = density_results.get("suppression_factor")
+    
+    # Load binary control results
+    binary_results = _load_json(results_dir / "step_5_36_integrated_binary_control.json")
+    if binary_results:
+        gc = binary_results.get("gc_binary_analysis", {})
+        field = binary_results.get("field_binary_control", {})
+        data["gc_binary_n"] = gc.get("n_binary")
+        data["gc_isolated_n"] = gc.get("n_isolated")
+        data["binary_inversion_dex"] = gc.get("diff_dex")
+        data["binary_inversion_p"] = gc.get("mw_p")
+        data["field_binary_n"] = field.get("n_binary")
+        data["field_isolated_n"] = field.get("n_isolated")
+    
+    # Load sample size results
+    sample_results = _load_json(results_dir / "step_5_27_hybrid_maximum_analysis.json")
+    if sample_results:
+        sizes = sample_results.get("sample_sizes", {})
+        data["total_gc_msps"] = sizes.get("gc_total")
+        data["total_field_msps"] = sizes.get("field_total")
+        data["total_msps"] = sizes.get("total")
+    
+    # Load lensing results summary
+    lensing_results = _load_json(results_dir / "step_3_0_cosmograil_temporal_shear.json")
+    if lensing_results:
+        data["lensing_analysis_date"] = lensing_results.get("analysis_date", "")[:10]
+    
+    return data
 
 
 def _parse_citation_cff(cff_text: str) -> Dict[str, object]:
@@ -229,7 +282,32 @@ def _load_default_metadata(project_root: Path) -> Dict[str, str]:
     # Optional-but-useful fields (ExifTool recognizes XMP*: and some PDF keys too, but keep conservative)
     if doi:
         metadata["Identifier"] = doi
-
+    
+    # Load and embed key results data
+    results_data = _load_results_data(project_root)
+    if results_data:
+        # Add sample sizes
+        if results_data.get("total_msps"):
+            metadata["XMP-TEPCOS:TotalMSPs"] = str(results_data["total_msps"])
+        if results_data.get("total_gc_msps"):
+            metadata["XMP-TEPCOS:GCMSPs"] = str(results_data["total_gc_msps"])
+        if results_data.get("total_field_msps"):
+            metadata["XMP-TEPCOS:FieldMSPs"] = str(results_data["total_field_msps"])
+        
+        # Add density scaling results
+        if results_data.get("density_slope"):
+            metadata["XMP-TEPCOS:DensitySlope"] = f"{results_data['density_slope']:.3f}"
+        if results_data.get("rejection_sigma"):
+            metadata["XMP-TEPCOS:RejectionSigma"] = f"{results_data['rejection_sigma']:.2f}"
+        if results_data.get("suppression_factor"):
+            metadata["XMP-TEPCOS:SuppressionFactor"] = f"{results_data['suppression_factor']:.3f}"
+        
+        # Add binary inversion results
+        if results_data.get("binary_inversion_dex"):
+            metadata["XMP-TEPCOS:BinaryInversionDex"] = f"{results_data['binary_inversion_dex']:.3f}"
+        if results_data.get("binary_inversion_p"):
+            metadata["XMP-TEPCOS:BinaryInversionP"] = f"{results_data['binary_inversion_p']:.4f}"
+    
     return metadata
 
 
@@ -360,6 +438,9 @@ def main() -> int:
 
     project_root = Path(__file__).resolve().parents[2]
     metadata = _load_default_metadata(project_root)
+    
+    # Load results data for display
+    results_data = _load_results_data(project_root)
 
     if args.title:
         metadata["Title"] = args.title
@@ -382,6 +463,17 @@ def main() -> int:
     print(f"Processing TEP-COS PDF: {input_path}")
     print(f"Quality: {args.quality}")
     print()
+    
+    # Display key results data if available
+    if results_data:
+        print("Key Results Data:")
+        if results_data.get("total_msps"):
+            print(f"  Sample: {results_data.get('total_gc_msps', 'N/A')} GC + {results_data.get('total_field_msps', 'N/A')} Field = {results_data['total_msps']} MSPs")
+        if results_data.get("rejection_sigma"):
+            print(f"  Density Scaling: {results_data['rejection_sigma']:.2f}σ rejection of Newtonian prediction")
+        if results_data.get("binary_inversion_dex"):
+            print(f"  Binary Inversion: {results_data['binary_inversion_dex']:.3f} dex (p={results_data.get('binary_inversion_p', 'N/A'):.4f})")
+        print()
 
     print("Step 1: Compressing PDF...")
     with tempfile.NamedTemporaryFile(suffix=".pdf", delete=False) as tmp:

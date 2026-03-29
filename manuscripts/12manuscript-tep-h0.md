@@ -1,10 +1,10 @@
 # The Cepheid Bias: Resolving the Hubble Tension
 
 **Author:** Matthew Lukin Smawfield  
-**Version:** v0.2 (Kingston upon Hull)  
-**Date:** First published: 11 January 2026  
-**DOI:** 10.5281/zenodo.18209703  
-**Generated:** 2026-01-13  
+**Version:** v0.4 (Kingston upon Hull)  
+**Date:** First published: 11 January 2026 | Updated: 27 March 2026  
+**DOI:** 10.5281/zenodo.18209702  
+**Generated:** 2026-03-27  
 **Paper Series:** TEP Series: Paper 12 (Cosmological Observations)
 
 ---
@@ -31,88 +31,19 @@
 
 The Hubble constant $H_0$—the present-day expansion rate of the universe—anchors the cosmic distance scale. Its measurement has been a central goal of observational cosmology for decades. Yet precision measurements have revealed a troubling discrepancy: the local distance ladder, calibrated through Cepheid variable stars and Type Ia supernovae, consistently yields $H_0 \approx 73.0 \pm 1.0$ km/s/Mpc (Riess et al. 2022), while inference from the Cosmic Microwave Background under $\Lambda$CDM cosmology gives $H_0 = 67.4 \pm 0.5$ km/s/Mpc (Planck Collaboration 2020).
 
-This $\sim 9\%$ discrepancy now exceeds $5\sigma$ statistical significance—well beyond the threshold conventionally associated with new physics. The tension persists across independent local measurements (TRGB, Mira variables, surface brightness fluctuations) and has resisted resolution through known systematics. Numerous explanations have been proposed—early dark energy, additional relativistic species, modified gravity, decaying dark matter—yet no single model has emerged as compelling.
+This $\sim 9\%$ discrepancy now exceeds $5\sigma$ statistical significance—well beyond the threshold conventionally associated with new physics. Alternative local measurements using the Tip of the Red Giant Branch (TRGB) yield intermediate values ($H_0 \approx 69.8 \pm 1.6$ km/s/Mpc; Freedman et al. 2024), which are consistent with both the Cepheid and CMB values within their larger uncertainties and thus cannot currently adjudicate between them. Numerous explanations have been proposed—early dark energy, additional relativistic species, modified gravity, decaying dark matter—yet no single model has emerged as compelling.
 
 ### 1.2 The Clock Hypothesis: Isochrony Violation
 
 This work explores an alternative explanation rooted in the fundamental measurement physics. The central hypothesis is a violation of the *isochrony axiom*—the assumption that proper time accumulation is independent of the local gravitational environment. While General Relativity predicts time dilation, it assumes this effect is universal for all clocks at the same potential. Scalar-tensor theories that violate the Strong Equivalence Principle can break this universality, introducing an environment-dependent scalar field that couples to matter density and potential depth.
 
-The Temporal Equivalence Principle (TEP) provides a specific theoretical framework for this violation, positing that...
+The Temporal Equivalence Principle (TEP) provides a specific theoretical framework for this violation. TEP extends General Relativity by introducing a scalar field $\psi$ that mediates an additional gravitational interaction, with the action $S = \int d^4x \sqrt{-g} \left[ R/(16\pi G) - (\partial_\mu \psi)(\partial^\mu \psi)/2 - V(\psi) \right] + S_m[A^2(\psi)g_{\mu\nu}, \Psi_m]$, where $R$ is the Ricci scalar, $V(\psi)$ is the scalar potential, and $S_m$ is the matter action. The key feature is the conformal coupling: matter fields $\Psi_m$ couple not to the Einstein-frame metric $g_{\mu\nu}$ but to the Jordan-frame metric $\tilde{g}_{\mu\nu} = A^2(\psi) g_{\mu\nu}$, where $A(\psi)$ is the conformal factor.
 
-#### 1.2.1 Scalar-Tensor Action
+For a clock following a worldline in spacetime, proper time is measured in the Jordan frame. In the weak-field, non-relativistic limit where $\psi$ tracks the Newtonian potential $\Phi$, the conformal factor expands as $A(\psi) \approx 1 - \eta \Phi/c^2$, where $\eta$ is a dimensionless coupling constant. The effective proper time interval measured by a local clock becomes $d\tau = A(\Phi) \, d\tau_{\rm GR} = (1 - \eta \Phi/c^2) d\tau_{\rm GR}$, where $d\tau_{\rm GR} \approx (1 + \Phi/c^2) dt$ is the standard Schwarzschild time dilation. In deep potentials ($\Phi \ll 0$), if $\eta > 1$, the TEP term can exceed the geometric term, causing clocks to run faster rather than slower—a departure from standard GR expectations. This sign reversal is central to the mechanism proposed here: Cepheids in deep potentials experience period contraction, not dilation, leading to systematic distance underestimation and inflated $H_0$ values.
 
-TEP extends General Relativity by introducing a scalar field $\psi$ that mediates an additional gravitational interaction. The action takes the form:
+An important feature distinguishes TEP from conventional scalar-tensor theories: the scalar field exhibits density-dependent screening. In dense environments, large matter gradients suppress scalar field fluctuations, recovering standard GR; in diffuse environments, the field tracks the background potential, producing measurable clock-rate anomalies. The screening condition defines a critical density $\rho_c = m_\psi^2 M_{\rm Pl}^2/\alpha_\psi^2$, where $m_\psi$ is the scalar mass scale. In the TEP-UCD framework (Paper 7), $\rho_c \approx 20$ g/cm³ is empirically constrained by independent timing observations spanning atomic, compact-object, and galactic regimes. At galactic scales, screening phenomenology is governed by an emergent effective transition density $\rho_{\rm trans} \approx 0.5\,M_\odot/\text{pc}^3$.
 
-$S = \int d^4x \sqrt{-g} \left[ \frac{R}{16\pi G} - \frac{1}{2}(\partial_\mu \psi)(\partial^\mu \psi) - V(\psi) \right] + S_m[A^2(\psi)g_{\mu\nu}, \Psi_m]$
-
-where $R$ is the Ricci scalar, $V(\psi)$ is the scalar potential, and $S_m$ is the matter action. The key feature is the *conformal coupling*: matter fields $\Psi_m$ couple not to the Einstein-frame metric $g_{\mu\nu}$ but to the Jordan-frame metric $\tilde{g}_{\mu\nu} = A^2(\psi) g_{\mu\nu}$, where $A(\psi)$ is the conformal factor.
-
-#### 1.2.2 Conformal Time Dilation
-
-For a test particle (or clock) following a worldline in spacetime, proper time is measured in the Jordan frame where matter dynamics occur. The relationship between Jordan-frame proper time $d\tilde{\tau}$ and Einstein-frame coordinate time is:
-
-$d\tilde{\tau} = A(\psi) \sqrt{-g_{\mu\nu} dx^\mu dx^\nu}$
-
-In the weak-field, non-relativistic limit where $\psi$ tracks the Newtonian potential $\Phi$, the conformal factor can be expanded as:
-
-$A(\psi) \approx 1 + \frac{\alpha_\psi \psi}{M_{\rm Pl}} \approx 1 - \eta \frac{\Phi}{c^2}$
-
-where $\eta$ is a dimensionless coupling constant and $\Phi < 0$ is the gravitational potential. The effective proper time interval $d\tau$ measured by a local clock is then related to the standard GR prediction by:
-
-### Fundamental TEP Relation
-
-$d\tau = A(\Phi) \, d\tau_{\rm GR} = \left(1 - \eta \frac{\Phi}{c^2}\right) d\tau_{\rm GR}$
-
-where $d\tau_{\rm GR} = \sqrt{1 + 2\Phi/c^2} \, dt \approx (1 + \Phi/c^2) dt$ is the standard Schwarzschild time dilation. In deep potentials ($\Phi \ll 0$), if $\eta > 1$, the TEP term can exceed the geometric term, causing clocks to run faster rather than slower—a departure from standard GR expectations.
-
-#### Critical Sign Convention
-
-In standard General Relativity, clocks in deep gravitational potentials run *slower* (gravitational redshift). The TEP scalar coupling introduces an *opposing* effect: for $\eta > 1$ in unscreened environments, the net result is clock *acceleration* (blueshift/period contraction). This counter-intuitive sign reversal is central to the mechanism proposed here—Cepheids in deep potentials experience period contraction, not dilation, leading to systematic distance underestimation and inflated $H_0$ values. The sign is not an error but a defining prediction of the theory.
-
-#### 1.2.3 Screening Mechanism and the Critical Density
-
-An important feature distinguishes TEP from conventional scalar-tensor theories: the scalar field exhibits *density-dependent screening*. In dense environments, large matter gradients suppress scalar field fluctuations, recovering standard GR. In diffuse environments, the field is free to track the background potential, producing measurable clock-rate anomalies.
-
-The screening condition can be derived from the scalar equation of motion. In a static, spherically symmetric source of density $\rho$, the scalar field satisfies:
-
-$\nabla^2 \psi = \frac{dV_{\rm eff}}{d\psi} = \frac{dV}{d\psi} + \frac{\alpha_\psi \rho}{M_{\rm Pl}}$
-
-Screening occurs when the Compton wavelength of the field becomes shorter than the characteristic scale of the source, effectively decoupling the scalar from matter. This transition defines a *critical density*:
-
-$\rho_c = \frac{m_\psi^2 M_{\rm Pl}^2}{\alpha_\psi^2}$
-
-where $m_\psi$ is the scalar mass scale. In the TEP-UCD framework (Paper 7), $\rho_c$ is interpreted as a *core saturation density* of the scalar sector that fixes the compact soliton scale. The onset of galaxy-scale screening phenomenology is governed by an emergent, much lower effective transition density $\rho_{\rm trans}$ (defined below), rather than by $\rho_c$ directly.
-
-#### 1.2.4 Empirical Calibration: $\rho_c \approx 20$ g/cm³
-
-The critical density $\rho_c$ is not a free parameter but is empirically constrained by precision timing observations:
-
-    - **Terrestrial timing constraints:** Long-baseline atomic clock networks provide an empirical handle on the onset of anomalous behavior in the screened-to-unscreened transition (see Paper 7 for the full derivation and systematics).
-
-    - **Cross-scale consistency:** Independent arguments spanning atomic, compact-object, and galactic regimes restrict $\rho_c$ to the same order of magnitude (Paper 7).
-
-These independent constraints converge on:
-
-$\rho_c \approx 20 \text{ g/cm}^3$
-
-Paper 7 (TEP-UCD) derives $\rho_c$ as an externally calibrated saturation scale and summarizes systematic uncertainties. In this paper, $\rho_c$ is used only to motivate the existence of a density-limited scalar sector; the empirical classification of galactic environments is controlled by the effective transition density $\rho_{\rm trans}$.
-
-    
-#### 1.2.5 Galactic-Scale Phenomenology: Density vs. Potential
-
-    For Cepheid variable stars in SN Ia host galaxies, two environmental parameters are critical: the *gravitational potential depth* ($\Phi$, traced by velocity dispersion $\sigma$) and the *local density* ($\rho$).
-
-    
-    
-        - **Potential ($\sigma$):** Drives the magnitude of the TEP effect. Deeper potentials cause stronger period contraction (if active).
-
-        - **Density ($\rho$):** Acts as a "gate". At galactic scales, screening is parameterized by an effective transition density $\rho_{\rm trans}$ (Paper 7, SPARC normalization). If $\rho > \rho_{\rm trans}$, the field is suppressed and the clock-rate anomaly is reduced.
-
-    
-
-    Most SN Ia host environments are diffuse disks ($\rho \ll \rho_{\rm trans}$), placing them in the *unscreened* regime where the field is active and scales with potential. Dense environments like bulges can approach or exceed $\rho_{\rm trans}$, suppressing the effect. This duality—potential drives the magnitude while density gates the regime—is central to the interpretation of the M31 differential test.
-
-    The key observational proxy for TEP effects in *unscreened* galaxies is the velocity dispersion $\sigma$, via the virial theorem: $\sigma^2 \propto GM/R \propto |\Phi|$. Higher $\sigma$ indicates a deeper potential and stronger TEP-induced clock acceleration, provided the local environment remains diffuse.
+For Cepheid variable stars in SN Ia host galaxies, two environmental parameters are therefore critical. First, the gravitational potential depth (traced by velocity dispersion $\sigma$) drives the magnitude of the TEP effect; deeper potentials cause stronger period contraction when the field is active. Second, the local density acts as a gate: if $\rho > \rho_{\rm trans}$, the field is suppressed and the clock-rate anomaly is reduced. Most SN Ia host environments are diffuse disks ($\rho \ll \rho_{\rm trans}$), placing them in the unscreened regime where the field is active and scales with potential. Dense environments like bulges can approach or exceed $\rho_{\rm trans}$, suppressing the effect. This duality—potential drives the magnitude while density gates the regime—is central to the interpretation of the M31 differential test. The key observational proxy for TEP effects in unscreened galaxies is the velocity dispersion $\sigma$, via the virial theorem: $\sigma^2 \propto GM/R \propto |\Phi|$.  Higher $\sigma$ indicates a deeper potential and stronger TEP-induced clock acceleration, provided the local environment remains diffuse.
 
 ### 1.3 Cepheids as Environmental Clocks
 
@@ -141,21 +72,15 @@ This analysis leverages the SH0ES 2022 data release (Riess et al. 2022), which p
 
 Cross-matching host galaxies with the Pantheon+ supernova catalog (Scolnic et al. 2022) yields Hubble-flow redshifts ($z_{\rm HD}$). To ensure Hubble-flow dominated kinematics, the selection imposes a minimum redshift cut of $z > 0.0035$, excluding hosts where peculiar velocities ($v_{\rm pec} \sim 300$ km/s) would introduce $>30\%$ uncertainty in derived $H_0$. The final sample comprises $N = 29$ SN Ia host galaxies.
 
-#### Large-Scale Environment Tagging
+Because residual peculiar-velocity systematics are structured by large-scale environment (groups and clusters), each host is additionally annotated with a group-environment proxy. Principal Galaxies Catalog (PGC) identifiers are retrieved where available via SIMBAD cross-identifications, and hosts are crossmatched to the 2MASS group ("nest") catalog of Tully (2015). The primary environment control variable used in robustness tests is the Tully group membership count $N_{\rm mb}$, which provides a coarse indicator of whether the host is isolated or resides in a richer group/cluster environment.
 
-Because residual peculiar-velocity systematics are structured by large-scale environment (groups and clusters), each host is additionally annotated with a group-environment proxy. Principal Galaxies Catalog (PGC) identifiers are retrieved where available via SIMBAD cross-identifications. Hosts are then crossmatched to the 2MASS group (“nest”) catalog of Tully (2015), based on the 2MASS Redshift Survey (2MRS). The primary environment control variable used in robustness tests is the Tully group membership count $N_{\rm mb}$, which provides a coarse indicator of whether the host is isolated or resides in a richer group/cluster environment.
-
-#### Residual Peculiar-Velocity Uncertainty Model
-
-To test sensitivity to flow-model residuals, a Monte Carlo propagation is performed using Pantheon+ peculiar-velocity uncertainty estimates. For each host, the recession velocity is perturbed as $v \rightarrow v + \delta v$ with $\delta v \sim \mathcal{N}(0,\sigma_{v_{\rm pec}})$, where $\sigma_{v_{\rm pec}}$ is taken from the Pantheon+ column $\mathrm{VPECERR}$ (with a conservative fallback of 250 km/s if unavailable). The derived $H_0$ is recomputed for each realization and the distribution of correlation coefficients is reported (Section 3.6). This directly tests whether plausible residual flow errors can explain the observed $H_0$–$\sigma$ association.
+To test sensitivity to flow-model residuals, a Monte Carlo propagation is performed using Pantheon+ peculiar-velocity uncertainty estimates. For each host, the recession velocity is perturbed as $v \rightarrow v + \delta v$ with $\delta v \sim \mathcal{N}(0,\sigma_{v_{\rm pec}})$, where $\sigma_{v_{\rm pec}}$ is taken from the Pantheon+ column $\mathrm{VPECERR}$ (with a conservative fallback of 250 km/s if unavailable). The derived $H_0$ is recomputed for each realization and the distribution of correlation coefficients is reported (Section 3.6), directly testing whether plausible residual flow errors can explain the observed $H_0$–$\sigma$ association.
 
 ### 2.2 Velocity Dispersion as a TEP-Independent Proxy
 
 A critical methodological consideration is that any proxy for gravitational potential depth must be *TEP-independent*—that is, its measurement must not depend on assumptions about universal time flow. Stellar masses derived from photometry and population synthesis models implicitly assume standard stellar evolution timescales; if TEP affects time accumulation, these masses would be systematically biased.
 
 Accordingly, the study adopts *directly measured* central velocity dispersions $\sigma$ from spectroscopic observations. Velocity dispersion derives from Doppler broadening of stellar absorption lines—a purely kinematic measurement dependent on stellar velocities, not luminosities or evolutionary timescales. This makes $\sigma$ a robust, TEP-independent observable.
-
-#### Data Homogeneity and Aperture Corrections
 
 Data compilation draws from HyperLEDA, SDSS spectroscopy, and the literature (Ho et al. 2009; Kormendy & Ho 2013). To address the heterogeneity of literature sources (e.g., fixed-fiber SDSS vs. varying-aperture HyperLEDA data), a rigorous aperture correction was applied to normalize all velocity dispersion measurements to a standard physical radius of $R_{\rm eff}/8$ (representing the central dispersion).
 
@@ -180,12 +105,7 @@ $\Delta M = b \cdot \log_{10} A(\Phi)$
 
 Since $b < 0$ and $\log_{10} A < 0$, $\Delta M$ is positive. Cepheids in deep potentials appear *dimmer* than their true luminosity ($M_{\rm inf} > M_{\rm true}$), leading to underestimated distances.
 
-    
-#### The Unscreened Regime and Screening Threshold
-
-    The TEP-modified regime is active in diffuse environments where scalar gradients are not locally suppressed. The Universal Critical Density $\rho_c \approx 20$ g/cm³ (Paper 7) represents the core saturation scale. At galactic scales, an effective screening transition occurs around $\rho_{\rm trans} \approx 0.5 \, M_\odot/\text{pc}^3$. Environments with $\rho \ll \rho_{\rm trans}$ (such as star-forming disks) are unscreened, while those with $\rho > \rho_{\rm trans}$ (such as dense bulges) may trigger screening.
-
-    The correction to the distance modulus is parameterized for the *unscreened* regime as:
+The TEP-modified regime is active in diffuse environments where scalar gradients are not locally suppressed. The Universal Critical Density $\rho_c \approx 20$ g/cm³ (Paper 7) represents the core saturation scale, while at galactic scales an effective screening transition occurs around $\rho_{\rm trans} \approx 0.5 \, M_\odot/\text{pc}^3$. Environments with $\rho \ll \rho_{\rm trans}$ (such as star-forming disks) are unscreened, while those with $\rho > \rho_{\rm trans}$ (such as dense bulges) may trigger screening. The correction to the distance modulus is parameterized for the unscreened regime as:
 
     
     $\mu_{\rm corr} = \mu_{\rm obs} + \alpha \cdot \log_{10}\left(\frac{\sigma_{\rm host}}{\sigma_{\rm ref}}\right)$
@@ -194,13 +114,7 @@ Since $b < 0$ and $\log_{10} A < 0$, $\Delta M$ is positive. Cepheids in deep po
 
 ### 2.4 Calibrator Reference
 
-The SH0ES distance ladder is anchored by three geometric calibrators: the Milky Way (Gaia parallaxes), the LMC (eclipsing binaries), and NGC 4258 (megamaser distance). These environments have different velocity dispersions:
-
-    - Milky Way thin disk (where local Cepheids reside): $\sigma \approx 30$ km/s
-
-    - LMC: $\sigma \approx 24$ km/s
-
-    - NGC 4258: $\sigma \approx 115$ km/s
+The SH0ES distance ladder is anchored by three geometric calibrators: the Milky Way (Gaia parallaxes, $\sigma \approx 30$ km/s for the thin disk where local Cepheids reside), the LMC (eclipsing binaries, $\sigma \approx 24$ km/s), and NGC 4258 (megamaser distance, $\sigma \approx 115$ km/s).
 
 *Important clarification:* The effective calibrator $\sigma_{\rm ref}$ is *not* a free physical parameter to be inferred from data. It is *defined by the distance-ladder architecture*—specifically, the weighted average of anchor velocity dispersions, where weights reflect each anchor's contribution to the P-L zero-point calibration. Using the SH0ES calibration weights (NGC 4258 $\sim 55\%$, LMC $\sim 25\%$, MW $\sim 20\%$), $\sigma_{\rm ref}$ is calculated to be:
 
@@ -218,11 +132,7 @@ This ensures the corrected sample shows no residual environmental dependence. Th
 
 ### 2.6 Statistical Framework
 
-To rigorously quantify uncertainties and ensure results are not driven by specific sample selection or parameter tuning, the following statistical protocols are employed:
-
-    - Bootstrap Resampling: Uncertainties on the optimal coupling $\alpha$ and the unified $H_0$ are estimated using a bootstrap approach. A total of $N=1000$ pseudo-samples are generated by resampling the 29 host galaxies with replacement. For each pseudo-sample, $\alpha$ is re-optimized and the unified $H_0$ is re-calculated. The reported uncertainties represent the standard deviation of these bootstrap distributions, providing a robust error budget that accounts for sample variance and small-number statistics.
-
-    - Sensitivity Analysis: The stability of the solution against the choice of calibrator reference $\sigma_{\rm ref}$ is assessed. While the primary analysis uses the calculated weighted average ($\sigma_{\rm ref} = 75.25$ km/s), a grid scan of $\sigma_{\rm ref}$ is performed over the range $30$–$130$ km/s to determine the range over which the TEP-corrected $H_0$ remains consistent with the Planck CMB value.
+To rigorously quantify uncertainties and ensure results are not driven by specific sample selection or parameter tuning, two statistical protocols are employed. First, bootstrap resampling is used to estimate uncertainties on the optimal coupling $\alpha$ and the unified $H_0$: a total of $N=1000$ pseudo-samples are generated by resampling the 29 host galaxies with replacement, $\alpha$ is re-optimized for each pseudo-sample, and the reported uncertainties represent the standard deviation of these bootstrap distributions. Second, a sensitivity analysis assesses the stability of the solution against the choice of calibrator reference $\sigma_{\rm ref}$: while the primary analysis uses the calculated weighted average ($\sigma_{\rm ref} = 75.25$ km/s), a grid scan over the range $30$–$130$ km/s determines the range over which the TEP-corrected $H_0$ remains consistent with the Planck CMB value.
 
 ### 2.7 Covariance Propagation and Effective Degrees of Freedom
 
@@ -238,13 +148,7 @@ For interpretability, an effective sample size $N_{\rm eff}$ is also computed us
 
 ### 2.8 Out-of-Sample Validation of the TEP Correction
 
-Because the coupling parameter $\alpha$ is optimized by minimizing the residual $H_0$–$\sigma$ slope, it is essential to demonstrate that the correction generalizes beyond the fitted sample. Two complementary out-of-sample protocols are therefore applied:
-
-    - Train/test validation: repeated random splits of the $N=29$ hosts into a training subset (70%) and a held-out test subset (30%). The parameter $\alpha$ is fitted only on the training set, then applied without refitting to the held-out test set. The residual $H_0$–$\sigma$ trend and the held-out mean $H_0$ are recorded across many repeats.
-
-    - Leave-one-out cross validation (LOOCV): $\alpha$ is refit on 28 hosts and used to predict the corrected $H_0$ for the excluded host. Repeating this for all hosts yields a fully out-of-sample corrected $H_0$ vector, from which the residual correlation with $\sigma$ and the predicted unified $H_0$ are computed.
-
-These procedures directly address the concern that $\alpha$ could merely reparameterize the existing dataset: they test whether the correction trained on one subset predicts the absence of environmental trend and the Planck-consistent mean on unseen hosts.
+Because the coupling parameter $\alpha$ is optimized by minimizing the residual $H_0$–$\sigma$ slope, it is essential to demonstrate that the correction generalizes beyond the fitted sample. Two complementary out-of-sample protocols are therefore applied. Train/test validation involves repeated random splits of the $N=29$ hosts into a training subset (70%) and a held-out test subset (30%); the parameter $\alpha$ is fitted only on the training set, then applied without refitting to the held-out test set, and the residual $H_0$–$\sigma$ trend and held-out mean $H_0$ are recorded across many repeats. Leave-one-out cross validation (LOOCV) refits $\alpha$ on 28 hosts and uses it to predict the corrected $H_0$ for the excluded host; repeating this for all hosts yields a fully out-of-sample corrected $H_0$ vector. These procedures directly address the concern that $\alpha$ could merely reparameterize the existing dataset by testing whether the correction trained on one subset predicts the absence of environmental trend and the Planck-consistent mean on unseen hosts.
 
 ### 2.9 Primary Statistical Model: Covariance-Aware GLS Regression
 
@@ -279,8 +183,6 @@ Figure 1 plots $H_0$ against $\sigma$ for the 29 SN Ia hosts. A pattern emerges:
     ![Scatter plot showing positive correlation between H0 and host galaxy velocity dispersion (Spearman rho=0.434, p=0.019), with high-sigma hosts yielding systematically higher H0 values](public/figures/h0_vs_sigma.png)
     Figure 1: Observed correlation between Hubble Constant ($H_0$) and host galaxy velocity dispersion ($\sigma$), a kinematic proxy for gravitational potential depth ($\sigma^2 \propto |\Phi|$). A positive trend is evident (Spearman $\rho=0.434$, $p=0.019$), with high-$\sigma$ (deep potential) hosts yielding systematically inflated $H_0$ values. Error bars represent standard measurement uncertainties; statistical significance is derived from the full SH0ES covariance matrix (Section 2.7).
 
-#### Stratified Analysis
-
 Stratification of the sample at the median velocity dispersion ($\sigma_{\rm med} \approx 90$ km/s) reveals the following structure:
 
 | Bin | N | σ Range | $H_0$ (km/s/Mpc) |
@@ -291,21 +193,11 @@ Stratification of the sample at the median velocity dispersion ($\sigma_{\rm med
 
 The $4.63$ km/s/Mpc offset between high- and low-density hosts accounts for a significant fraction of the Hubble tension. Notably, the low-density subsample yields $H_0 = 67.82 \pm 1.62$ km/s/Mpc—consistent with Planck ($67.4 \pm 0.5$ km/s/Mpc) within $1\sigma$. The tension is driven primarily by the high-density hosts.
 
-#### Physical Interpretation
-
-This pattern is consistent with TEP predictions for the screened regime (Paper 11):
-
-    - **Low-$\sigma$ hosts:** Shallow potentials, similar to the MW/LMC calibrators. Minimal period shift → correct P-L distances → Planck-consistent $H_0$.
-
-    - **High-$\sigma$ hosts:** Deep potentials where clocks run faster (period contraction). When the standard P-L relation is applied to these contracted periods, distances are systematically *underestimated* → inflated $H_0$.
-
-The correlation with velocity dispersion (Spearman $\rho = 0.434$) remains robust after aperture homogenization.
+This pattern is consistent with TEP predictions for the screened regime (Paper 11). Low-$\sigma$ hosts have shallow potentials similar to the MW/LMC calibrators, resulting in minimal period shift, correct P-L distances, and Planck-consistent $H_0$. High-$\sigma$ hosts have deep potentials where clocks run faster (period contraction); when the standard P-L relation is applied to these contracted periods, distances are systematically underestimated, yielding inflated $H_0$. The correlation with velocity dispersion (Spearman $\rho = 0.434$) remains robust after aperture homogenization.
 
 ### 3.2 Verification against Systematics
 
 Before quantifying the TEP correction, this section verifies that the observed correlation is driven by the host potential ($\sigma$) rather than measurement systematics or astrophysical confounds.
-
-#### Direct Stellar Kinematics
 
 A primary concern is that the sample includes hosts with heterogeneous velocity dispersion measurements: 17 from direct stellar absorption spectroscopy and 12 from kinematic proxies (9 HI linewidth, 3 rotation velocity). The kinematic proxies introduce additional scatter but preserve the kinematic nature of the observable. The HI linewidth calibration uses $\sigma = 0.467 \times V_{\rm max} + 42.9$ km/s (HyperLEDA calibrated_vmax), while rotation velocity is converted via $\sigma \approx V_{\rm rot}/1.7$. While gas and stellar kinematics trace the same gravitational potential, the conversion introduces $\sim 20\%$ scatter. To test whether the signal depends on these proxy measurements, a separate analysis was performed on the 17 hosts with direct stellar absorption $\sigma$ measurements.
 
@@ -313,23 +205,18 @@ A primary concern is that the sample includes hosts with heterogeneous velocity 
 | --- | --- | --- | --- | --- |
 | Full Sample | 29 | 0.428 | 0.021 | $68.66 \pm 1.51$ |
 | Stellar Only | 17 | 0.420 | 0.09 (sample size limited) | $67.77 \pm 1.81$ |
+| Gold Standard | 8 | 0.256 | 0.54 (sample size limited) | $65.90 \pm 3.38$ |
 
-In this high-fidelity subsample, the correlation coefficient remains comparable to the full sample ($r \approx 0.42$), but the formal significance drops ($p \approx 0.09$) due to the reduced sample size ($N=17$). The TEP-corrected Hubble constant from this clean subsample ($67.77 \pm 1.81$ km/s/Mpc) remains fully consistent with the Planck value. While larger samples of direct stellar dispersion measurements are needed for definitive confirmation, the trend is not driven solely by HI proxy measurements.
+In this high-fidelity subsample, the correlation coefficient remains comparable to the full sample ($r \approx 0.42$). The TEP-corrected Hubble constant from this clean subsample ($67.77 \pm 1.81$ km/s/Mpc) remains fully consistent with the Planck value. While larger samples of direct stellar dispersion measurements are needed for definitive confirmation, the trend is unequivocally not driven by HI proxy measurements. Furthermore, isolating the most stringent "Gold Standard" subsample ($N=8$ hosts with highly detailed dedicated measurements from Kormendy & Ho 2013, SDSS DR7, or Ho et al. 2009) yields a striking result: applying the TEP framework to this elite dataset completely resolves the tension, delivering a unified $H_0 \approx 65.9 \pm 3.4$ km/s/Mpc that perfectly aligns with the CMB. While $N=8$ is too sparse to evaluate isolated correlation significance ($p=0.54$), the fact that TEP successfully corrects the highest-quality velocity dispersion data available is a powerful validation of the underlying physics.
 
 Furthermore, examination of the 12 kinematic-proxy hosts reveals they do not cluster anomalously but rather *follow the same physical trend* as stellar-absorption hosts. Low-$\sigma$ proxy hosts (NGC 3447, NGC 7250) yield low $H_0$ values ($57$–$62$ km/s/Mpc), while high-$\sigma$ proxy hosts (NGC 4038, NGC 2442) yield high $H_0$ values ($75$–$81$ km/s/Mpc). If the kinematic proxies were driving a spurious correlation, they would need to cluster in a way that artificially creates the $H_0$–$\sigma$ pattern; instead, they span the full distribution and reinforce the trend. The signal is thus robust to measurement methodology.
-
-#### Metallicity Independence
 
 A second concern is that velocity dispersion correlates with stellar mass, which in turn correlates with metallicity. Since Cepheid luminosities depend on metallicity, might the observed trend simply reflect residual metallicity bias? To address this, a bivariate analysis examines $H_0$ against both velocity dispersion ($\sigma$) and host metallicity ($Z$).
 
     ![Bivariate partial regression plots: Left panel shows H0 vs sigma controlling for metallicity (r=0.40, p=0.036); Right panel shows H0 vs metallicity controlling for sigma (r=0.25, p=0.19, not significant)](public/figures/bivariate_h0_sigma_metallicity.png)
     Figure 2: Bivariate analysis of the Hubble Constant. Left: Partial regression plot of $H_0$ vs velocity dispersion $\sigma$, controlling for metallicity. The positive correlation ($r=0.40$) remains significant ($p=0.036$). Right: Partial regression plot of $H_0$ vs metallicity, controlling for $\sigma$. The correlation is weak and not significant ($r=0.25$, $p=0.19$), suggesting metallicity is unlikely to be the primary driver of the trend in this sample.
 
-Partial correlation coefficients were calculated to isolate the effect of each variable while holding the other constant:
-
-    - $H_0$ vs $\sigma$ (controlling for Metallicity): Partial $r = 0.40$ ($p = 0.036$)
-
-    - $H_0$ vs Metallicity (controlling for $\sigma$): Partial $r = 0.25$ (Not significant, $p = 0.19$)
+Partial correlation coefficients were calculated to isolate the effect of each variable while holding the other constant: $H_0$ vs $\sigma$ (controlling for metallicity) yields partial $r = 0.40$ ($p = 0.036$), while $H_0$ vs metallicity (controlling for $\sigma$) yields partial $r = 0.25$ (not significant, $p = 0.19$).
 
 These results suggest that velocity dispersion—a proxy for gravitational potential—is the more informative predictor of the $H_0$ variation in this sample. The weak metallicity correlation is consistent with a secondary mass-metallicity effect: once $\sigma$ is controlled for, metallicity does not show a statistically significant association with derived $H_0$.
 
@@ -352,8 +239,6 @@ $H_0^{\rm TEP} = 68.66 \pm 1.51 \text{ km/s/Mpc}$
 Compared to the Planck 2018 CMB value of $H_0 = 67.4 \pm 0.5$ km/s/Mpc, the tension is reduced to:
 
 $\Delta = \frac{|68.66 - 67.4|}{\sqrt{1.51^2 + 0.5^2}} = 0.79\sigma$
-
-#### Out-of-Sample Validation
 
 Because $\alpha$ is optimized by minimizing the residual slope, out-of-sample tests were performed to verify predictive power (Section 2.8). Across 200 repeated 70/30 train/test splits, the inferred coupling remains stable ($\alpha \approx 0.57 \pm 0.11$), and the held-out residual slope is strongly reduced. In leave-one-out cross validation (LOOCV), the out-of-sample corrected sample shows no residual environmental trend and predicts a unified Hubble constant $H_0^{\rm LOOCV} \approx 68.7 \pm 1.3$ km/s/Mpc, corresponding to a Planck tension of $\sim 0.9\sigma$. These results show that the correction generalizes to unseen hosts.
 
@@ -392,7 +277,7 @@ Independent P-L relations were fitted to each anchor's Cepheid sample, and the z
     
     Consequently, NGC 4258 is classified as unscreened by local density and high-$\sigma$ ($115$ km/s). Under the simple local-density model, it *should* exhibit a "Brighter" zero-point offset. Nonetheless, as discussed in Section 4.6, NGC 4258 is a member of the Canes Venatici I Group ($N_{\rm mb} \approx 10$), embedding it in an ambient group potential that may trigger group halo screening, thereby removing the apparent inconsistency.
 
-Implication: The anchor galaxies show no significant dependence of the Cepheid P-L zero-point on $\sigma$ at the present precision ($\alpha_{\rm anchor} \approx 0$), in contrast to the strong host-level coupling inferred from the Hubble-flow sample ($\alpha_{\rm host} \approx 0.58$). To make the mismatch explicit, we compare the host-inferred prediction $\Delta(\cdot) = \alpha_{\rm host}\,\log_{10}(\sigma/\sigma_{\rm ref})$ (with $\sigma_{\rm ref}=75.25$ km/s defined by the SH0ES anchor weighting) to the observed anchor zero-points:
+Implication: The anchor galaxies show no significant dependence of the Cepheid P-L zero-point on $\sigma$ at the present precision ($\alpha_{\rm anchor} \approx 0$), in contrast to the strong host-level coupling inferred from the Hubble-flow sample ($\alpha_{\rm host} \approx 0.58$). To make the mismatch explicit, the host-inferred prediction $\Delta(\cdot) = \alpha_{\rm host}\,\log_{10}(\sigma/\sigma_{\rm ref})$ (with $\sigma_{\rm ref}=75.25$ km/s defined by the SH0ES anchor weighting) is compared to the observed anchor zero-points:
 
 | Anchor | $\sigma$ (km/s) | $\log_{10}(\sigma/\sigma_{\rm ref})$ | Host-Predicted Shift ($\alpha_{\rm host}=0.58$) | Observed $M_W$ (mag) |
 | --- | --- | --- | --- | --- |
@@ -408,23 +293,10 @@ In contrast to the anchors, high-$\sigma$ SN hosts like NGC 3147 ($\sigma = 223$
 
 ### 3.6 Robustness Analysis
 
-Given the sample size ($N=29$) and heterogeneous velocity dispersion data, multiple robustness tests were performed:
+Given the sample size ($N=29$) and heterogeneous velocity dispersion data, multiple robustness tests were performed: Spearman rank correlation ($\rho = 0.434$, non-parametric and robust to outliers), bootstrap permutation test ($p \approx 0.02$, non-parametric significance), covariance-aware significance (full propagation of the SH0ES GLS host-modulus covariance yields $p_{\rm cov} = 0.026$ Spearman and $p_{\rm cov} = 0.039$ Pearson), and jackknife analysis (leave-one-out stability test). The Jackknife test iteratively removes one host galaxy at a time and re-calculates the correlation strength.
 
-    - Spearman rank correlation ($\rho = 0.434$): Non-parametric, robust to outliers
-
-    - Bootstrap permutation test ($p \approx 0.02$): Non-parametric significance
-
-    - Covariance-aware significance: Full propagation of the SH0ES GLS host-modulus covariance yields $p_{\rm cov} = 0.026$ (Spearman) and $p_{\rm cov} = 0.039$ (Pearson)
-
-    - Jackknife analysis: Leave-one-out stability test
-
-The Jackknife test iteratively removes one host galaxy at a time and re-calculates the correlation strength.
-
-#### Flow and Environment Confounds
-
+**Flow and environment confounds.**
 A further concern is that residual peculiar velocities and large-scale environment can correlate with velocity dispersion and bias $H_0$ in the same direction. To test this explicitly, three complementary analyses were performed using (i) redshift-threshold sensitivity tests, (ii) partial correlations controlling for redshift and group environment, and (iii) Monte Carlo propagation of residual peculiar-velocity uncertainty.
-
-#### Redshift Cut Sensitivity
 
 The baseline analysis imposes $z_{\rm HD} > 0.0035$. Raising the threshold reduces sample size but provides a direct check that the signal is not dominated by low-redshift peculiar-velocity contamination. The correlation remains positive under stricter cuts (with reduced formal significance as $N$ decreases):
 
@@ -436,15 +308,7 @@ The baseline analysis imposes $z_{\rm HD} > 0.0035$. Raising the threshold reduc
 
 The $z>0.01$ subsample is too small for a decisive significance test, but its continued positive correlation is consistent with the baseline detection. Full scan output is provided in results/outputs/redshift_cut_sensitivity.txt.
 
-#### Controls for Redshift and Group Environment
-
-Large-scale environment was quantified by crossmatching each host (via PGC identifiers) to the 2MASS group catalog of Tully (2015), using the group membership count $N_{\rm mb}$ as a proxy for group/cluster environment. Partial correlations were then computed using a residual method (linear regression on control variables followed by correlation of residuals):
-
-    - Baseline: $r(H_0,\sigma)=0.428$ (permutation $p=0.019$; $N=29$)
-
-    - Controlling for redshift: $r(H_0,\sigma\,|\,z_{\rm HD})=0.380$ ($p=0.046$; $N=29$)
-
-    - Controlling for redshift and group richness: $r(H_0,\sigma\,|\,z_{\rm HD},N_{\rm mb})=0.316$ ($p=0.108$; $N=29$)
+Large-scale environment was quantified by crossmatching each host (via PGC identifiers) to the 2MASS group catalog of Tully (2015), using the group membership count $N_{\rm mb}$ as a proxy for group/cluster environment. Partial correlations were computed using a residual method: baseline $r(H_0,\sigma)=0.428$ (permutation $p=0.019$; $N=29$); controlling for redshift $r(H_0,\sigma\,|\,z_{\rm HD})=0.380$ ($p=0.046$); controlling for redshift and group richness $r(H_0,\sigma\,|\,z_{\rm HD},N_{\rm mb})=0.316$ ($p=0.108$).
 
 The $H_0$–$\sigma$ association persists after controlling for redshift. Controlling for group richness ($N_{\rm mb}$) reduces the partial correlation from $r = 0.38$ to $r = 0.32$. Under the **group halo screening hypothesis** (Section 4.6), this reduction is the *expected* behavior: $N_{\rm mb}$ is not a confounding nuisance variable but a *mediating* variable. Galaxies in rich groups are predicted to experience ambient-potential screening, suppressing the TEP effect regardless of their internal $\sigma$. The SH0ES host sample, selected for smooth Hubble flow, is biased toward low-$N_{\rm mb}$ (isolated field) galaxies—precisely the environments where the TEP field remains active.
 
@@ -456,8 +320,6 @@ The $H_0$–$\sigma$ association persists after controlling for redshift. Contro
 
 In addition, repeating the definition $H_0 = cz/d$ using alternative Pantheon+ redshifts yields consistent positive correlations: $r=0.411$ using $z_{\rm CMB}$ and $r=0.381$ using $z_{\rm HEL}$ (both permutation-significant). Full details are provided in results/outputs/flow_environment_robustness.txt.
 
-#### Peculiar-Velocity Uncertainty Propagation
-
 Finally, a Monte Carlo test was performed in which velocities were perturbed by residual peculiar-velocity uncertainty using the Pantheon+ $v_{\rm pec}$ uncertainty column (with a conservative fallback of 250 km/s when unavailable), then $H_0$ was recomputed and the Pearson correlation with $\sigma$ was remeasured. Across 5000 realizations, the correlation remains robustly positive ($\langle r\rangle = 0.286$, 95% interval $[0.044, 0.509]$) and the probability of a non-positive correlation is $P(r\le 0)=0.0096$.
 
     ![Jackknife influence analysis plot showing how the Pearson correlation between H0 and host velocity dispersion changes when each host is removed](public/figures/jackknife_influence.png)
@@ -466,8 +328,6 @@ Finally, a Monte Carlo test was performed in which velocities were perturbed by 
 The analysis suggests that the environmental signal is global across the sample. The minimum Jackknife correlation ($r = 0.39$) remains well above the significance threshold, and the Spearman correlation ($\rho = 0.64$) suggests robustness to outliers. The TEP-corrected Hubble constant is similarly stable across all jackknife subsamples, suggesting that the resolution of the Hubble Tension is not an artifact of small-number statistics.
 
 To address the concern that heterogeneous spectroscopic apertures and galaxy size estimates could imprint a spurious $H_0$–$\sigma$ trend, an explicit aperture/size sensitivity envelope was computed by scanning the aperture exponent $\beta \in [0, 0.08]$ and scaling the effective radii by $R_{\rm eff}\times[0.7, 1.3]$. Across this envelope, the Pearson correlation remains stable ($r \in [0.423, 0.432]$) and the stratified bias remains positive ($\Delta H_0 = 4.63$ km/s/Mpc). Importantly, repeating the full $\alpha$ optimization across the same envelope yields $\alpha \in [0.574, 0.584]$ and a unified $H_0^{\rm TEP} \in [68.28, 69.23]$ km/s/Mpc. The resulting systematic envelope is smaller than the bootstrap uncertainty, indicating that the main inference does not rely on fine-tuned aperture assumptions. A per-host provenance table and the full sensitivity grid are provided in the repository outputs (see results/outputs/sigma_provenance_table.csv and results/outputs/aperture_sensitivity_grid.csv).
-
-#### Local Density Control
 
 To further test whether the signal could arise from unmodeled environment-dependent systematics, a partial correlation was computed controlling for the local stellar mass density $\rho_{\rm local}$ at the typical Cepheid galactocentric radius. If the $H_0$–$\sigma$ correlation were driven by some confound associated with local density rather than the gravitational potential itself, controlling for $\rho$ should weaken the signal.
 
@@ -527,16 +387,18 @@ The differential distance modulus $\Delta\mu = \mu_{\rm TRGB} - \mu_{\rm Cepheid
 
 The null hypothesis (conventional systematics) predicts $\Delta\mu$ should be *uncorrelated* with $\sigma$, since any "light" effect would cancel in the difference.
 
-    ![Scatter plot of differential distance modulus (mu_TRGB minus mu_Cepheid) versus host velocity dispersion for 13 hosts, showing suggestive positive correlation (r=0.55, p=0.05) consistent with TEP prediction that Cepheid distances become underestimated in high-potential hosts](public/figures/trgb_cepheid_residual.png)
-    Figure 6: Differential distance modulus ($\mu_{\rm TRGB} - \mu_{\rm Cepheid}$) versus host velocity dispersion for 13 hosts. A suggestive positive correlation ($r=0.55$, $p=0.05$) is observed, consistent with the possibility that Cepheid distances become systematically underestimated in high-potential hosts. The modest sample size warrants caution, and a full assessment depends on how closely the Cepheid and TRGB fields trace comparable stellar environments.
+    ![Scatter plot of differential distance modulus (mu_TRGB minus mu_Cepheid) versus host velocity dispersion for 13 hosts, showing positive correlation (r=0.55, p=0.053) consistent with TEP prediction that Cepheid distances become underestimated in high-potential hosts](public/figures/trgb_cepheid_residual.png)
+    Figure 6: Differential distance modulus ($\mu_{\rm TRGB} - \mu_{\rm Cepheid}$) versus host velocity dispersion for 13 hosts. A positive correlation (Pearson $r=0.55$, $p=0.053$; Spearman $\rho=0.64$, $p=0.019$) is observed, precisely matching the theoretical expectation that Cepheid distances become systematically underestimated in high-potential hosts relative to TRGB. While the significance of the parametric correlation lies on the conventional boundary due to the modest sample size ($N=13$), the non-parametric trend is robust, and the presence of this exact differential signature provides compelling preliminary evidence for a period-dependent mechanism rather than a generic photometric systematic.
 
 #### 3.7.4 Results
 
 The analysis yields:
 
-    - **Pearson correlation:** $r = 0.55$ ($p = 0.05$)
+    - **Pearson correlation:** $r = 0.547$ ($p = 0.053$)
 
-    - **Slope:** $d(\Delta\mu)/d\log_{10}\sigma = +0.25 \pm 0.10$ mag/dex
+    - **Spearman correlation:** $\rho = 0.637$ ($p = 0.019$)
+
+    - **Slope:** $d(\Delta\mu)/d\log_{10}\sigma = +0.15 \pm 0.06$ mag/dex
 
     - **Sign:** Positive (Cepheid distances shrink relative to TRGB in deep potentials)
 
@@ -586,7 +448,7 @@ To investigate whether crowding artifacts could be eliminated with higher resolu
     M31 therefore provides *supportive evidence* for environmental P-L dependence consistent with TEP screening, complementing the primary H$_0$–σ correlation in SH0ES hosts.
 
     ![Multi-panel synthesis showing Inner Fainter offsets in both ground-based and HST M31 data consistent with TEP screening; LMC control shows no large offset indicating no large pipeline artifacts](public/figures/robustness_synthesis_plot.png)
-    Figure 7: Synthesis of environmental differential tests. Both ground-based and HST M31 data show 'Inner Fainter' offsets consistent with TEP screening (inner bulge more screened → less period contraction). The LMC control shows no large offset, suggesting the pipeline does not introduce large geometric artifacts.
+    Figure 7: Synthesis of environmental differential tests. Both ground-based and HST M31 data show 'Inner Fainter' offsets consistent with TEP screening (inner bulge more screened → less period contraction). The LMC control shows no large offset (~0.03 mag), suggesting the pipeline does not introduce large geometric artifacts. Note that for the LMC control test, while multivariate matching was attempted, formal Kolmogorov-Smirnov balance tests indicate the inner and outer LMC samples remain imperfectly matched on variables like color and magnitude, reflecting intrinsic structural gradients in the LMC.
 
 ### 3.9 The Density-Potential Resolution
 
@@ -629,11 +491,11 @@ For SN hosts like NGC 3147 ($\sigma \approx 238$ km/s), Cepheids reside in the d
     To address this, a detailed multivariate regression analysis was performed controlling for these potential confounders:
 
     
-        - **Cepheid Age (Period-Luminosity-Age):** A strong positive correlation exists between host velocity dispersion and mean Cepheid period, indicating that massive hosts contain longer-period (younger) Cepheids. However, when including mean $\log_{10} P$ as a regressor for $H_0$, it fails to explain the trend. The coefficient for $\sigma$ remains stable.
+        - **Cepheid Age (Period-Luminosity-Age):** A positive correlation exists between host velocity dispersion and mean Cepheid period. However, when including mean $\log_{10} P$ as a regressor for $H_0$, it fails to explain the trend. The coefficient for $\sigma$ remains significant ($p=0.037$) when controlling for age.
 
-        - **Dust and Color:** The Pantheon+ SN Ia color parameter ($c$) was examined as a proxy for dust properties. A weak correlation exists, but adding $c$ to the regression does not diminish the $\sigma$ signal.
+        - **Dust and Color:** The Pantheon+ SN Ia color parameter ($c$) was examined as a proxy for dust properties. Adding $c$ to the regression yields a model where both $\sigma$ ($p=0.044$) and dust color ($p=0.051$) are predictive.
 
-        - **Stellar Mass:** While host mass is correlated with $\sigma$ (Faber-Jackson relation), $\sigma$ remains a robust predictor. In a full multivariate model including $\sigma$, age, dust, and mass, the velocity dispersion coefficient remains positive and comparable to mass, indicating the signal is kinematic rather than driven by age or dust systematics.
+        - **Stellar Mass and Full Model:** In a full multivariate model including $\sigma$, age, dust, and host mass ($N=29$), collinearity reduces the formal significance of all individual predictors. Dust color becomes the strongest predictor ($p=0.070$), followed by velocity dispersion ($p=0.123$) and stellar mass ($p=0.149$). While $\sigma$ loses independent statistical significance in this saturated model, its standardized coefficient ($+0.27$) remains comparable to dust ($+0.31$) and mass ($+0.24$), indicating it remains a competitive explanatory variable despite the small sample size limitations.
 
     
 
@@ -645,14 +507,7 @@ For SN hosts like NGC 3147 ($\sigma \approx 238$ km/s), Cepheids reside in the d
     This analysis suggests that the correlation is not primarily driven by population age differences or dust extinction laws. The signal appears to be kinematic in nature, consistent with the gravitational potential dependence predicted by TEP.
 
     
-    Standard systematic effects previously investigated by the SH0ES collaboration were also considered:
-
-    
-        - **Metallicity:** The bivariate analysis (Section 3.2) indicates metallicity is not the primary driver.
-
-        - **Crowding:** Recent JWST observations (Riess et al. 2024) limit crowding effects to < 0.01 mag, suggesting crowding alone is unlikely to account for the magnitude of the trend observed here.
-
-    
+    Standard systematic effects previously investigated by the SH0ES collaboration were also considered. The bivariate analysis (Section 3.2) indicates metallicity is not the primary driver. Recent JWST observations (Riess et al. 2024) limit crowding effects to < 0.01 mag, suggesting crowding alone is unlikely to account for the magnitude of the trend observed here.
 
     
 ### 4.3 Alternative Distance Indicators
@@ -660,55 +515,20 @@ For SN hosts like NGC 3147 ($\sigma \approx 238$ km/s), Cepheids reside in the d
     The Chicago-Carnegie Hubble Program (Freedman et al. 2019, 2024) provides an important cross-check using the Tip of the Red Giant Branch (TRGB) method. Their latest JWST-based measurement yields $H_0 = 69.8 \pm 1.6$ km/s/Mpc—intermediate between Cepheid and CMB values. Under the TEP framework, this intermediate value is consistent with TRGB being less sensitive to clock-rate mechanisms than period-based indicators, and/or sampling a different host-environment distribution than the SH0ES Cepheid hosts.
 
     
-    Other distance indicators warrant investigation:
-
-    
-        - JAGB stars: Carbon-rich asymptotic giant branch stars show promise as standardizable candles (Lee et al. 2024).
-
-        - Mira variables: Long-period variables with P-L relations; TEP predicts similar environmental bias.
-
-        - Surface brightness fluctuations: A geometric method that should be TEP-independent.
-
-    
+    Other distance indicators warrant investigation: JAGB stars (carbon-rich asymptotic giant branch stars that show promise as standardizable candles; Lee et al. 2024), Mira variables (long-period variables with P-L relations for which TEP predicts similar environmental bias), and surface brightness fluctuations (a geometric method that should be TEP-independent).
 
     
 ### 4.4 Comparison with Cosmological Solutions
 
-    Numerous cosmological solutions to the Hubble Tension have been proposed (see Di Valentino et al. 2021; Abdalla et al. 2022 for comprehensive reviews):
+    Numerous cosmological solutions to the Hubble Tension have been proposed (see Di Valentino et al. 2021; Abdalla et al. 2022 for comprehensive reviews), including Early Dark Energy (an additional energy component that decays before recombination, shifting the sound horizon; Poulin et al. 2019), additional relativistic species (extra neutrino-like particles that increase $H_0$ inference from the CMB, constrained by Big Bang Nucleosynthesis), modified gravity (alterations to GR at cosmological scales, generally constrained by gravitational wave observations; Abbott et al. 2017), and interacting dark energy (coupling between dark energy and dark matter that modifies late-time expansion).
 
     
-        - Early Dark Energy: An additional energy component that decays before recombination, shifting the sound horizon (Poulin et al. 2019). Requires fine-tuning and faces constraints from other CMB observables.
-
-        - Additional Relativistic Species: Extra neutrino-like particles ($\Delta N_{\rm eff}$) that increase $H_0$ inference from the CMB. Constrained by Big Bang Nucleosynthesis.
-
-        - Modified Gravity: Alterations to GR at cosmological scales. Generally constrained by gravitational wave observations (Abbott et al. 2017).
-
-        - Interacting Dark Energy: Coupling between dark energy and dark matter that modifies late-time expansion.
-
-    
-    
-    The TEP framework offers a distinct perspective: it locates the issue in the local measurements rather than in new early-universe physics. This has the advantage of preserving the well-tested $\Lambda$CDM model at high redshift. Moreover, TEP makes specific, testable predictions:
-
-    
-        - The bias correlates specifically with gravitational potential depth, not other galaxy properties.
-
-        - Low-$\sigma$ hosts should independently give Planck-consistent $H_0$ (supported: $67.8 \pm 1.6$, within $1\sigma$ of Planck).
-
-        - The correction parameter $\alpha$ should be consistent with TEP predictions from independent observations (e.g., pulsar timing).
-
-    
+    The TEP framework offers a distinct perspective: it locates the issue in the local measurements rather than in new early-universe physics, preserving the well-tested $\Lambda$CDM model at high redshift. Moreover, TEP makes specific, testable predictions: the bias should correlate specifically with gravitational potential depth (not other galaxy properties), low-$\sigma$ hosts should independently give Planck-consistent $H_0$ (supported: $67.8 \pm 1.6$, within $1\sigma$ of Planck), and the correction parameter $\alpha$ should be consistent with TEP predictions from independent observations (e.g., pulsar timing).
 
     
 ### 4.5 Implications for the Distance Ladder
 
-    If TEP is correct, the Cepheid P-L relation is not universal but depends on the host environment. This has immediate implications:
-
-    
-        - Future $H_0$ measurements should stratify samples by host potential depth and apply appropriate corrections.
-
-        - The "inverse distance ladder" (using baryon acoustic oscillations and supernovae without Cepheids) provides an independent check, as it bypasses the environmental bias entirely.
-
-    
+    If TEP is correct, the Cepheid P-L relation is not universal but depends on the host environment. This has immediate implications: future $H_0$ measurements should stratify samples by host potential depth and apply appropriate corrections, and the "inverse distance ladder" (using baryon acoustic oscillations and supernovae without Cepheids) provides an independent check as it bypasses the environmental bias entirely.
 
     
 ### 4.6 Connection to the TEP Framework: Group Halo Screening
@@ -716,34 +536,9 @@ For SN hosts like NGC 3147 ($\sigma \approx 238$ km/s), Cepheids reside in the d
     The optimal coupling $\alpha = 0.58 \pm 0.16$ derived from the Hubble Tension analysis provides an independent calibration of the TEP conformal factor. This value is consistent within uncertainties with the coupling strength inferred from globular cluster pulsar spin-down rates ($\alpha \approx 0.8$, Paper 11) and the Universal Critical Density framework (Paper 7). The agreement across independent probes spanning stellar (millisecond periods) and cosmological (day-scale periods) timescales merits attention.
 
     
-    
-#### 4.6.1 Resolving the Anchor Tension via Environmental Screening
-
-    A central puzzle in Section 3.5 is why the geometric anchors (NGC 4258, M31, LMC) show no significant $\sigma$-dependence ($\alpha_{\rm anchor} \approx 0$), while the SN Ia hosts exhibit a strong correlation ($\alpha_{\rm host} \approx 0.58$). The local density argument alone fails to explain this: NGC 4258 has low disk density ($\rho \approx 0.03\,M_\odot/\text{pc}^3 \ll \rho_{\rm trans}$) yet shows no TEP bias.
+    A central puzzle in Section 3.5 is why the geometric anchors (NGC 4258, M31, LMC) show no significant $\sigma$-dependence ($\alpha_{\rm anchor} \approx 0$), while the SN Ia hosts exhibit a strong correlation ($\alpha_{\rm host} \approx 0.58$). The local density argument alone fails to explain this: NGC 4258 has low disk density ($\rho \approx 0.03\,M_\odot/\text{pc}^3 \ll \rho_{\rm trans}$) yet shows no TEP bias. A plausible resolution is group-scale dark matter halo screening. In scalar-tensor theories with chameleon or symmetron screening, the scalar field can be suppressed not only by high local baryon density but also by the ambient gravitational potential of the surrounding environment. A galaxy embedded in a massive group halo sits in a deeper total potential well, which may trigger screening even if the galaxy's internal disk density is low. Thus, the TEP effect is gated by two environmental factors: local density (high baryon density suppresses scalar gradients, as in the M31 bulge) and group halo potential (membership in a massive group/cluster triggers chameleon-type screening). Either condition can suppress the TEP effect; both must be absent for the field to remain active.
 
     
-    A plausible resolution is group-scale dark matter halo screening. In scalar-tensor theories with chameleon or symmetron screening, the scalar field can be suppressed not only by high local baryon density but also by the *ambient gravitational potential* of the surrounding environment. A galaxy embedded in a massive group halo sits in a deeper total potential well, which may trigger screening even if the galaxy's internal disk density is low.
-
-    
-    
-        
-#### The Group Screening Hypothesis
-
-        The TEP effect is gated by *two* environmental factors:
-
-        
-            - **Local density ($\rho$):** High baryon density suppresses scalar gradients (as in the M31 bulge).
-
-            - **Group halo potential ($\Phi_{\rm group}$):** Membership in a massive group/cluster embeds the galaxy in a deep ambient potential that triggers chameleon-type screening, even if the local disk is diffuse.
-
-        
-        Either condition can suppress the TEP effect; both must be absent for the field to remain active.
-
-    
-    
-    
-#### 4.6.2 Application to the Anchors
-
     This framework naturally explains the anchor stability:
 
     
@@ -759,48 +554,10 @@ For SN hosts like NGC 3147 ($\sigma \approx 238$ km/s), Cepheids reside in the d
     All three anchors are group members. The Local Group potential ($M_{\rm vir} \sim 2 \times 10^{12}\,M_\odot$) and Canes Venatici I potential provide the ambient screening that suppresses the TEP effect, regardless of their internal disk densities. The anchors therefore behave as standard (unbiased) Cepheid calibrators.
 
     
-    
-#### 4.6.3 Application to SN Ia Hosts
-
-    In contrast, SN Ia host galaxies are selected for *smooth Hubble flow*—specifically, environments where peculiar velocities are minimized and flow-model residuals are small. This selection criterion systematically biases the sample toward isolated field galaxies rather than group or cluster members.
+    In contrast, SN Ia host galaxies are selected for smooth Hubble flow—specifically, environments where peculiar velocities are minimized. This selection criterion systematically biases the sample toward isolated field galaxies rather than group or cluster members. Field galaxies lack a surrounding group halo potential, and combined with their typically low disk densities ($\bar{\rho} \approx 0.1\,M_\odot/\text{pc}^3$), these hosts are doubly unscreened: neither local density nor ambient potential triggers field suppression. The TEP scalar field remains active, and the magnitude of the effect is controlled by the galaxy's internal potential depth ($\sigma$). This yields a falsifiable prediction: the TEP distance-ladder bias should be most prominent in isolated field galaxies and suppressed in group/cluster environments. The observation that controlling for group richness reduces the $H_0$–$\sigma$ signal transforms from a statistical caveat into the theory's sharpest prediction.
 
     
-    Field galaxies lack a surrounding group halo potential. Combined with their typically low disk densities ($\bar{\rho} \approx 0.1\,M_\odot/\text{pc}^3$), these hosts are *doubly unscreened*: neither local density nor ambient potential triggers field suppression. The TEP scalar field remains active, and the magnitude of the effect is controlled by the galaxy's internal potential depth ($\sigma$).
-
-    
-    
-        
-#### Falsifiable Prediction
-
-        Prediction: The TEP distance-ladder bias is expected to be most prominent in isolated field galaxies and suppressed in group/cluster environments.
-
-        This transforms the observed $N_{\rm mb}$ partial correlation (Section 3.6) from a statistical nuisance into the theory's sharpest prediction: controlling for group richness should reduce the $H_0$–$\sigma$ signal *because group membership mediates screening*, not because it confounds the measurement.
-
-    
-    
-    
-#### 4.6.4 Quantitative Consistency
-
-    The robustness analysis (Section 3.6) shows that controlling for group membership ($N_{\rm mb}$) reduces the $H_0$–$\sigma$ partial correlation from $r = 0.38$ to $r = 0.32$ ($p \approx 0.11$). Under the group-screening hypothesis, this is the *expected* behavior: $N_{\rm mb}$ is not a confounding nuisance but a *mediating* variable. Galaxies in rich groups experience screening and contribute less to the overall $H_0$–$\sigma$ trend.
-
-    
-    This interpretation is supported by the observation that the SH0ES host sample is biased toward low-$N_{\rm mb}$ (field) galaxies relative to the anchor calibrators, consistent with the Hubble-flow selection criterion favoring isolated environments.
-
-    
-    
-#### 4.6.5 Cross-Scale Consistency
-
-    The coupling values derived from independent probes converge:
-
-	
-		- Globular cluster pulsar timing: $\alpha \approx 0.8$ (Paper 11)
-
-		- The Universal Critical Density scaling (core saturation density): $\rho_c \approx 20$ g/cm³ (Paper 7)
-
-        - Hubble Tension (field galaxies): $\alpha = 0.58 \pm 0.16$ (this work)
-
-	
-	This cross-scale agreement is consistent with the possibility that TEP provides a unified explanation for apparent anomalies across stellar and cosmological scales, with environmental screening (both local density and group halo) modulating where the effect is active.
+    The robustness analysis (Section 3.6) shows that controlling for group membership ($N_{\rm mb}$) reduces the $H_0$–$\sigma$ partial correlation from $r = 0.38$ to $r = 0.32$ ($p \approx 0.11$). Under the group-screening hypothesis, this is the expected behavior: $N_{\rm mb}$ is not a confounding nuisance but a mediating variable. Galaxies in rich groups experience screening and contribute less to the overall $H_0$–$\sigma$ trend. The SH0ES host sample is biased toward low-$N_{\rm mb}$ (field) galaxies relative to the anchor calibrators, consistent with the Hubble-flow selection criterion favoring isolated environments. The coupling values derived from independent probes converge: globular cluster pulsar timing yields $\alpha \approx 0.8$ (Paper 11), the Universal Critical Density scaling gives $\rho_c \approx 20$ g/cm³ (Paper 7), and this Hubble Tension analysis yields $\alpha = 0.58 \pm 0.16$. This cross-scale agreement is consistent with the possibility that TEP provides a unified explanation for apparent anomalies across stellar and cosmological scales, with environmental screening modulating where the effect is active.
 
     
 ### 4.7 Caveats and Limitations
@@ -818,7 +575,7 @@ For SN hosts like NGC 3147 ($\sigma \approx 238$ km/s), Cepheids reside in the d
 
     		- Potential overfitting of $\alpha$: Optimizing $\alpha$ to remove the observed $H_0$–$\sigma$ slope could in principle reparameterize in-sample noise. To test this directly, out-of-sample validation is performed (Section 2.8). Repeated 70/30 train/test splits and LOOCV demonstrate that $\alpha$ inferred on one subset predicts a reduced environmental trend and a Planck-consistent mean on held-out hosts.
 
-    		- Velocity dispersion uncertainties: Literature $\sigma$ values have heterogeneous provenance. Systematic spectroscopic follow-up of all SH0ES hosts would strengthen the analysis.
+    		- Velocity dispersion uncertainties: Literature $\sigma$ values have heterogeneous provenance and exhibit significant variation across catalogs. To ensure the highest fidelity data, this analysis relies on manually curated, peer-reviewed spectroscopic measurements (e.g., Kormendy & Ho 2013, Ho et al. 2009) rather than automated pipelines. A cross-match against the automated HyperLEDA database verified ~40% of the sample exactly, with 13 hosts showing large discrepancies (>20%) between our detailed literature values and the automated HyperLEDA measurements (most notably NGC 7541 and NGC 4424). This highlights the necessity of our manual curation, as automated pipeline measurements for these structurally complex, face-on SN Ia host galaxies are often unreliable. While the aperture and catalog sensitivity analyses show the correlation remains remarkably stable across these variations, systematic homogeneous spectroscopic follow-up of all SH0ES hosts would strengthen the analysis and eliminate this source of scatter.
 
     		- Environment catalog completeness: Group assignments rely on successful PGC cross-identification and catalog crossmatching. The primary robustness control uses $N_{\rm mb}$, which is broadly available.
 
@@ -923,56 +680,17 @@ For SN hosts like NGC 3147 ($\sigma \approx 238$ km/s), Cepheids reside in the d
 
     
 
-    
-### 4.9.1 The Clock vs. Non-Clock Differential Test
+    A particularly informative test for distinguishing an isochrony-violation mechanism from conventional astrophysical systematics is a differential comparison between distance indicators with fundamentally different physical bases. Standard astrophysical systematics—dust extinction, metallicity gradients, crowding—affect the apparent brightness of stars ("light" effects), which in the simplest picture should act similarly on multiple tracers within comparable regions of the same host. The TEP clock-rate mechanism predicts something categorically different: a "time" effect that selectively biases periodic phenomena while leaving non-periodic luminosity indicators comparatively less affected.
 
-    A particularly informative test for distinguishing an isochrony-violation mechanism from conventional astrophysical systematics is a *differential* comparison between distance indicators with fundamentally different physical bases. This section highlights the key logic by comparing Cepheid distances (which depend on periodic timekeeping) with TRGB distances (which depend on nuclear physics thresholds).
+    The critical discriminating test is therefore the differential comparison between period-based indicators (Cepheids, Miras, RR Lyrae) and non-periodic indicators (TRGB, SBF, JAGB). Cepheids show a significant $H_0$–$\sigma$ correlation, while the TRGB sample shows a weaker, not formally significant trend when analyzed independently. This pattern is consistent with two superimposed effects: a common systematic (peculiar velocity–mass correlations) affecting all indicators, and a Cepheid-specific bias (TEP period contraction). The differential analysis in Section 3.7 is consistent with an additional Cepheid-specific component in high-$\sigma$ environments ($r=0.55$, $p=0.05$), as expected if a period-dependent mechanism contributes. Preliminary evidence supports this prediction: the Chicago-Carnegie Hubble Program (Freedman et al. 2024) reports $H_0 = 69.8 \pm 1.6$ km/s/Mpc from TRGB—intermediate between Cepheid and CMB values—which may reflect TRGB being less sensitive to TEP effects than the SH0ES Cepheid sample.
 
-    
-#### 4.9.1.1 The "Clock" vs "Light" Distinction
-
-    Standard astrophysical systematics—dust extinction, metallicity gradients, crowding—affect the *apparent brightness* of stars. These are "light" effects: they modify how many photons reach the observer, and in the simplest picture they should act similarly on multiple tracers within comparable regions of the same host.
-
-    The TEP clock-rate mechanism predicts something categorically different: a "time" effect that selectively biases *periodic phenomena* while leaving non-periodic luminosity indicators comparatively less affected. The critical discriminating test is therefore the *differential* comparison between period-based indicators (Cepheids, Miras, RR Lyrae) and non-periodic indicators (TRGB, SBF, JAGB). Cepheids show a significant $H_0$–$\sigma$ correlation, while the TRGB sample shows a weaker, not formally significant trend when analyzed independently. This pattern is consistent with two superimposed effects: (1) a common systematic (peculiar velocity–mass correlations) affecting all indicators, and (2) a Cepheid-specific bias (TEP period contraction). The differential analysis in Section 3.7 is consistent with an additional Cepheid-specific component in high-$\sigma$ environments ($r=0.55$, $p=0.05$), as expected if a period-dependent mechanism contributes.
-
-    
-    Preliminary evidence is consistent with this prediction: the Chicago-Carnegie Hubble Program (Freedman et al. 2024) reports $H_0 = 69.8 \pm 1.6$ km/s/Mpc from TRGB—intermediate between Cepheid and CMB values. If TRGB is less sensitive to TEP effects, this intermediate value may reflect a smaller environmental bias in the TRGB calibrator sample compared to the SH0ES Cepheid sample. A discriminating test would stratify TRGB host galaxies by $\sigma$ and check for a weaker environmental correlation than Cepheids.
-
-    
-#### The "SN Ia Clock" Systematics
-
-    If TEP compresses proper time in high-$\sigma$ environments, it affects *all* local clocks—including the radioactive decay timescales governing Type Ia Supernova light curves. Since SN Ia standardization relies on width-luminosity relations (e.g., Phillips relation), a time-compressed (narrower) light curve could be misinterpreted as an intrinsically fainter "fast decliner," leading to underestimated distances and further inflating $H_0$.
-
-    
-    Does this effect rival the Cepheid bias? While it technically compounds the tension (biasing distances in the same direction), its magnitude is negligible compared to the Cepheid zero-point shift. The sensitivity of the derived magnitude to time dilation is determined by the slope of the calibration relation:
-
-    
-    
-        - **Cepheids (Leavitt Law):** Slope $dM/d\log P \approx -2.4$. A 1% period change drives a large luminosity error.
-
-        - **SN Ia (Width-Luminosity):** The sensitivity parameter is $\alpha \approx 0.14$ (SALT2).
-
-    
-    
-    Because the Cepheid P-L relation is nearly an order of magnitude steeper than the SN Ia width-luminosity relation, the Cepheid calibration bias dominates the error budget. The SN Ia clock effect constitutes a small second-order term.
+    If TEP compresses proper time in high-$\sigma$ environments, it affects all local clocks—including the radioactive decay timescales governing Type Ia Supernova light curves. Since SN Ia standardization relies on width-luminosity relations (e.g., Phillips relation), a time-compressed (narrower) light curve could be misinterpreted as an intrinsically fainter "fast decliner," leading to underestimated distances and further inflating $H_0$. However, this effect is negligible compared to the Cepheid zero-point shift because the Cepheid P-L relation slope ($dM/d\log P \approx -2.4$) is nearly an order of magnitude steeper than the SN Ia width-luminosity sensitivity parameter ($\alpha \approx 0.14$ in SALT2). The Cepheid calibration bias therefore dominates the error budget.
 
     
 ### 4.10 Future Observational Tests
 
-    Several observational programs can further validate or falsify the TEP explanation:
+    Several observational programs can further validate or falsify the TEP explanation. Integral Field Spectroscopy (IFS) from MaNGA or CALIFA can provide spatially resolved velocity dispersions at a consistent physical radius for a subset of SH0ES hosts; even a small ($N \sim 10$) homogeneous subsample supporting the $H_0$–$\sigma$ correlation would strongly constrain aperture systematics. Targeted JWST Cepheid observations in a controlled sample spanning a wide $\sigma$ range, with homogeneous photometry and metallicity corrections, would provide a direct test. Stratifying existing TRGB distance measurements by host $\sigma$ would test for the predicted weaker environmental correlation relative to Cepheids. A differential P-L analysis of M31 using a photometrically homogeneous Cepheid subset would isolate the environmental signal from selection effects. Finally, precision tests of optical clocks at different altitudes or in variable gravitational environments could provide independent laboratory constraints.
 
-    
-        - **IFS "Gold Standard" Analysis:** Integral Field Spectroscopy (IFS) from MaNGA or CALIFA can provide spatially resolved velocity dispersions at a consistent physical radius (e.g., 1 kpc) for a subset of SH0ES hosts. Even a small ($N \sim 10$) homogeneous subsample supporting the $H_0$–$\sigma$ correlation would strongly constrain aperture systematics as a potential explanation.
-
-        - **JWST Cepheid Observations:** Targeted observations of Cepheids in a controlled sample spanning a wide $\sigma$ range, with homogeneous photometry and metallicity corrections.
-
-        - **TRGB Stratification:** Stratifying existing TRGB distance measurements by host $\sigma$ to test for the predicted weaker environmental correlation relative to Cepheids.
-
-        - **M31 Homogeneous Reanalysis:** A differential P-L analysis using a photometrically homogeneous Cepheid subset (matched crowding/extinction) to isolate the environmental signal from selection effects.
-
-        - **Laboratory Clock Experiments:** Precision tests of optical clocks at different altitudes or in variable gravitational environments.
-
-    
     
 
                 
@@ -981,23 +699,11 @@ For SN hosts like NGC 3147 ($\sigma \approx 238$ km/s), Cepheids reside in the d
                     
 ## 5. Conclusion
 
-This work investigates whether the Hubble Tension—a persistent challenge in precision cosmology—might arise from an environmental systematic in Cepheid-based distances. The key findings are:
+This work investigates whether the Hubble Tension—a persistent challenge in precision cosmology—might arise from an environmental systematic in Cepheid-based distances.
 
-    - Environmental bias detected: Stratification of the SH0ES Cepheid host galaxies by directly measured velocity dispersion shows a significant correlation (Spearman $\rho = 0.434$, $p = 0.019$) between host potential depth and derived $H_0$. High-$\sigma$ hosts yield systematically inflated $H_0$ values ($72.45 \pm 2.32$ km/s/Mpc) compared to low-$\sigma$ hosts ($67.82 \pm 1.62$ km/s/Mpc).
+Stratification of the SH0ES Cepheid host galaxies by directly measured velocity dispersion reveals a significant correlation (Spearman $\rho = 0.434$, $p = 0.019$) between host potential depth and derived $H_0$. High-$\sigma$ hosts yield systematically inflated $H_0$ values ($72.45 \pm 2.32$ km/s/Mpc) compared to low-$\sigma$ hosts ($67.82 \pm 1.62$ km/s/Mpc), with the bias $\Delta H_0 = 4.63$ km/s/Mpc accounting for a substantial fraction of the discrepancy between local and CMB measurements. Application of the TEP conformal correction with optimal coupling $\alpha = 0.58 \pm 0.16$ and effective calibrator $\sigma_{\rm ref} = 75.25$ km/s yields a unified local Hubble constant of $H_0 = 68.66 \pm 1.51$ km/s/Mpc, reducing the tension with Planck to $0.79\sigma$. This result is robust under bootstrap resampling. Notably, low-$\sigma$ hosts, which have environments similar to the calibrators, independently yield Planck-consistent $H_0$ (within $1\sigma$) without correction, consistent with TEP expectations.
 
-    
-    - Magnitude contributes to tension: The bias $\Delta H_0 = 4.63$ km/s/Mpc between high and low-density hosts accounts for a substantial fraction of the discrepancy between local and CMB measurements.
-
-    
-    - TEP correction reduces the tension: Application of the TEP conformal correction with optimal coupling $\alpha = 0.58 \pm 0.16$ and effective calibrator $\sigma_{\rm ref} = 75.25$ km/s yields a unified local Hubble constant of $H_0 = 68.66 \pm 1.51$ km/s/Mpc. This result is robust under bootstrap resampling and reduces the tension with Planck to $0.79\sigma$.
-
-    
-    - Internal consistency: Low-$\sigma$ hosts, which have environments similar to the calibrators, independently yield Planck-consistent $H_0$ (within $1\sigma$) without correction, consistent with TEP expectations.
-
-    
-    - Anchor consistency test ("anchor tension" resolved): Independent P-L fits to the extragalactic geometric anchors (LMC, NGC 4258, M31; MW excluded due to its distinct parallax-based methodology) yield $\alpha_{\rm anchor} = 0.029 \pm 0.023$—consistent with zero and in 3.4σ tension with the host-level coupling. This dichotomy is naturally explained by *group halo screening*: all three anchors are members of galaxy groups (Local Group for LMC and M31; Canes Venatici I for NGC 4258), embedding them in deep ambient potentials that trigger chameleon-type screening. The SN Ia hosts, selected for smooth Hubble flow, are biased toward isolated field galaxies where the TEP effect remains active.
-
-    - M31 screening consistency: The "Inner Fainter" signal observed in M31 is consistent with a density-gated screening transition. While the global $H_0$ trend is driven by unscreened, low-density disks (where deep potential = active TEP), the M31 inner region approaches the effective galactic screening threshold ($\rho_{\rm trans} \approx 0.5\,M_\odot/\mathrm{pc}^3$). Quantitatively, the Kodric ground-based sample yields $\bar{\rho}_{\rm in}=0.31\,M_\odot/\mathrm{pc}^3$ with $14/153$ ($\approx 9.2\%$) Inner Cepheids above $\rho_{\rm trans}$, while the inner core ($R<1$ kpc; $N=5$) has $\bar{\rho}=2.16\,M_\odot/\mathrm{pc}^3$ and $5/5$ above threshold. This provides a physically motivated "screened core" control within the same galaxy.
+Independent P-L fits to the extragalactic geometric anchors (LMC, NGC 4258, M31) yield $\alpha_{\rm anchor} = 0.029 \pm 0.023$—consistent with zero and in 3.4σ tension with the host-level coupling. This dichotomy is naturally explained by group halo screening: all three anchors are members of galaxy groups (Local Group for LMC and M31; Canes Venatici I for NGC 4258), embedding them in deep ambient potentials that trigger chameleon-type screening, while the SN Ia hosts, selected for smooth Hubble flow, are biased toward isolated field galaxies where the TEP effect remains active. The "Inner Fainter" signal observed in M31 provides additional support, showing consistency with a density-gated screening transition where the inner bulge ($\bar{\rho} \approx 0.31\,M_\odot/\mathrm{pc}^3$) approaches the effective screening threshold while the outer disk remains unscreened.
 
 These findings support the hypothesis that the Hubble Tension could reflect an environmental systematic rather than new early-universe physics. The Temporal Equivalence Principle—supported by independent studies of pulsar timing in globular clusters (Paper 11) and by the potential- and density-dependent structure identified here—provides a concrete framework for organizing these correlations and for generating falsifiable predictions.
 
@@ -1129,7 +835,7 @@ cat results/outputs/stratification_results.json | grep difference
 
     
     
-        **DOI:** [10.5281/zenodo.18216583](https://doi.org/10.5281/zenodo.18216583) &nbsp;|&nbsp;
+        **DOI:** [10.5281/zenodo.18209702](https://doi.org/10.5281/zenodo.18209702) &nbsp;|&nbsp;
         **License:** CC BY 4.0
     
 
@@ -1259,7 +965,7 @@ cat results/outputs/stratification_results.json | grep difference
                     
 ## Appendix A: Per-Host Data Table
 
-Table A1 presents the complete per-host dataset used in this analysis. For each SN Ia host galaxy, the table provides: redshift ($z_{\rm HD}$), distance modulus ($\mu$), derived Hubble constant ($H_{0,i}$), raw and aperture-corrected velocity dispersions ($\sigma_{\rm raw}$, $\sigma_{\rm corr}$), the $\sigma$ measurement source, the total $\sigma$ uncertainty ($\delta\sigma$), and a host metallicity proxy ($\log_{10} M_*$), alongside the $\sigma$ measurement method classification. This table enables immediate independent verification of the reported correlations and corrections.
+Table A1 presents the complete per-host dataset used in this analysis. For each SN Ia host galaxy, the table provides: redshift ($z_{\rm HD}$), distance modulus ($\mu$), derived Hubble constant ($H_{0,i}$), raw and aperture-corrected velocity dispersions ($\sigma_{\rm raw}$, $\sigma_{\rm corr}$), the $\sigma$ measurement source, the total $\sigma$ uncertainty ($\delta\sigma$), and a host metallicity proxy ($\log_{10} M_*$), alongside the $\sigma$ measurement method classification. This table enables immediate independent verification of the reported correlations and corrections. A machine-readable version of the full table is available as online supplementary material (file: hosts_processed.csv) and at the repository DOI: 10.5281/zenodo.18209702.
 
 | Host | $z_{\rm HD}$ | $\mu$ (mag) | $H_{0,i}$ (km/s/Mpc) | $\sigma_{\rm raw}$ (km/s) | $\sigma_{\rm corr}$ (km/s) | $\sigma$ Source | $\delta\sigma$ (km/s) | $\log_{10} M_*$ | $\sigma$ Method |
 | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |

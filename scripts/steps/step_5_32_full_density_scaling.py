@@ -17,8 +17,9 @@ import json
 import os
 from pathlib import Path
 
-def run_full_density_scaling():
+def run_full_density_scaling(n_ensemble=100):
     print("--- Step 5.32: Full Density Scaling Simulation ---")
+    print(f"Running {n_ensemble} ensemble realizations for uncertainty quantification...")
     
     # 1. Cluster Parameters (Harris 2010 / Baumgardt 2018)
     # M: Mass (M_sun), Rc: Core Radius (pc), Rt: Tidal Radius (pc)
@@ -53,6 +54,11 @@ def run_full_density_scaling():
         "M14 (NGC 6402)":   {"M": 1.0e6, "Rc": 0.78, "Rt": 18.0, "rho_c": 3.44},
         "NGC 6539":         {"M": 3.0e5, "Rc": 0.60, "Rt": 10.0, "rho_c": 3.30},
         "M4 (NGC 6121)":    {"M": 1.0e5, "Rc": 0.83, "Rt": 33.0, "rho_c": 2.85},
+        # Additional clusters from pulsar data
+        "NGC 6440":         {"M": 1.5e5, "Rc": 0.12, "Rt": 5.5,  "rho_c": 5.10},
+        "NGC 6441":         {"M": 8.0e5, "Rc": 0.20, "Rt": 12.0, "rho_c": 5.00},
+        "NGC 6316":         {"M": 1.2e5, "Rc": 0.15, "Rt": 5.0,  "rho_c": 4.80},
+        "M30 (NGC 7099)":   {"M": 2.5e5, "Rc": 0.25, "Rt": 18.0, "rho_c": 4.20},
     }
 
     # 2. Load Pulsar Data to identify which clusters to simulate
@@ -65,7 +71,7 @@ def run_full_density_scaling():
         return
 
     # 3. Simulation Constants
-    np.random.seed(42) # Ensure reproducibility for manuscript values
+    # REMOVED: np.random.seed(42) - using ensemble approach instead
     n_stars_per_cluster = 2000 # Enough for stable stats
     G_si = 6.674e-11
     M_sun_kg = 1.989e30
@@ -76,96 +82,114 @@ def run_full_density_scaling():
     mu_field = -19.76
     sigma_field = 0.64
     
-    results = []
+    # --- ENSEMBLE SIMULATION ---
+    ensemble_slopes = []
+    ensemble_intercepts = []
+    final_results = None  # Store last ensemble's results for plotting
     
     print(f"Simulating {len(cluster_counts)} clusters with exact parameters...")
     
-    for cluster_name in sorted(cluster_counts.index):
-        if cluster_name not in CLUSTER_PARAMS:
-            print(f"  Warning: No parameters for {cluster_name}, skipping.")
-            continue
+    for ensemble_idx in range(n_ensemble):
+        if (ensemble_idx + 1) % 10 == 0 or ensemble_idx == 0:
+            print(f"  Ensemble realization {ensemble_idx + 1}/{n_ensemble}...")
+        
+        # Set seed for this realization (deterministic but different for each)
+        np.random.seed(42 + ensemble_idx)
+        
+        results = []
+        
+        for cluster_name in sorted(cluster_counts.index):
+            if cluster_name not in CLUSTER_PARAMS:
+                continue
+                
+            params = CLUSTER_PARAMS[cluster_name]
+            M = params["M"]
+            Rc = params["Rc"]
             
-        params = CLUSTER_PARAMS[cluster_name]
-        M = params["M"]
-        Rc = params["Rc"]
+            # --- N-BODY / CMC SIMULATION ---
+            # 1. Mass Segregation
+            sigma_r_pc = 0.5 * Rc
+            r_pulsar_pc = np.abs(np.random.normal(0, sigma_r_pc, n_stars_per_cluster))
+            r_pulsar_m = r_pulsar_pc * pc_m
+            
+            cos_theta = np.random.uniform(-1, 1, n_stars_per_cluster)
+            
+            # 2. Mean Field Acceleration (Newtonian)
+            m_cl_kg = M * M_sun_kg
+            r_core_m = Rc * pc_m
+            
+            a_mean_si = np.zeros(n_stars_per_cluster)
+            mask_core = r_pulsar_m < r_core_m
+            
+            # Harmonic core: a = (GM/Rc^3) * r
+            g_max = G_si * m_cl_kg / (r_core_m**2)
+            a_mean_si[mask_core] = g_max * (r_pulsar_m[mask_core] / r_core_m)
+            
+            # Envelope: a = GM/r^2
+            a_mean_si[~mask_core] = G_si * m_cl_kg / (r_pulsar_m[~mask_core]**2)
+            
+            a_los_mean_si = a_mean_si * cos_theta
+            
+            # 3. Binary Hardening (Velocity Kicks)
+            sigma_v = np.sqrt(G_si * m_cl_kg / r_core_m)
+            v_thermal = np.random.normal(0, sigma_v, n_stars_per_cluster)
+            v_kick = stats.cauchy.rvs(loc=0, scale=2*sigma_v, size=n_stars_per_cluster)
+            v_tot = v_thermal + 0.2 * v_kick
+            
+            # Total Acceleration Term (LOS Gravity + Shklovskii)
+            term_acc = a_los_mean_si / c_si
+            term_shk = (v_tot**2) / (c_si * r_pulsar_m)
+            
+            # Pdot Obs
+            log_P_s = np.random.normal(np.log10(0.005), 0.3, n_stars_per_cluster)
+            P_s = 10**log_P_s
+            
+            log_pdot_int = np.random.normal(mu_field, sigma_field, n_stars_per_cluster)
+            pdot_int = 10**log_pdot_int
+            
+            pdot_obs = pdot_int + P_s * (term_acc + term_shk)
+            log_pdot_obs = np.log10(np.abs(pdot_obs))
+            
+            # Calculate Shift
+            shift = np.mean(log_pdot_obs) - mu_field
+            
+            results.append({
+                "name": cluster_name,
+                "rho_c_log": float(params["rho_c"]),
+                "shift": float(shift),
+                "n_pulsars_real": int(cluster_counts[cluster_name])
+            })
         
-        # --- N-BODY / CMC UPGRADE ---
-        # 1. Mass Segregation
-        # MSPs are heavier (1.4 Msun) than average stars (0.4 Msun)
-        # They sink to the core. Scale radius ~ 0.5 * Rc
-        sigma_r_pc = 0.5 * Rc
-        r_pulsar_pc = np.abs(np.random.normal(0, sigma_r_pc, n_stars_per_cluster))
-        r_pulsar_m = r_pulsar_pc * pc_m
+        # Analysis for this ensemble realization
+        shifts_sim = [r['shift'] for r in results]
+        densities = [r['rho_c_log'] for r in results]
         
-        cos_theta = np.random.uniform(-1, 1, n_stars_per_cluster)
+        slope_sim, intercept_sim, r_value_sim, p_value_sim, std_err_sim = stats.linregress(densities, shifts_sim)
         
-        # 2. Mean Field Acceleration (Newtonian)
-        # Core: Harmonic (Linear with r) - accurate for r < Rc
-        # Envelope: Keplerian (1/r^2) - accurate for r > Rc
-        m_cl_kg = M * M_sun_kg
-        r_core_m = Rc * pc_m
+        ensemble_slopes.append(slope_sim)
+        ensemble_intercepts.append(intercept_sim)
         
-        a_mean_si = np.zeros(n_stars_per_cluster)
-        mask_core = r_pulsar_m < r_core_m
-        
-        # Harmonic core: a = (GM/Rc^3) * r
-        # Note: At r=Rc, a = GM/Rc^2. Linear interpolation to center.
-        g_max = G_si * m_cl_kg / (r_core_m**2)
-        a_mean_si[mask_core] = g_max * (r_pulsar_m[mask_core] / r_core_m)
-        
-        # Envelope: a = GM/r^2
-        a_mean_si[~mask_core] = G_si * m_cl_kg / (r_pulsar_m[~mask_core]**2)
-        
-        a_los_mean_si = a_mean_si * cos_theta
-        
-        # 3. Binary Hardening (Velocity Kicks)
-        # Standard thermal dispersion sigma_v ~ sqrt(GM/Rc)
-        sigma_v = np.sqrt(G_si * m_cl_kg / r_core_m)
-        v_thermal = np.random.normal(0, sigma_v, n_stars_per_cluster)
-        
-        # Hardening kicks (10% of population, Cauchy tail)
-        # Representing 3-body interactions in dense core
-        v_kick = stats.cauchy.rvs(loc=0, scale=2*sigma_v, size=n_stars_per_cluster)
-        
-        # Total velocity (Thermal + 20% of Kick component mixed in for 10% of stars? 
-        # Simpler: Just add the kick component to everyone with a small weight, or 
-        # replace 10% with pure kicked population. Let's do the weighted mix to keep it smooth.)
-        v_tot = v_thermal + 0.2 * v_kick
-        
-        # Total Acceleration Term (LOS Gravity + Shklovskii)
-        # Pdot_obs = Pdot_int + P * (a_los/c + v^2/cr)
-        
-        term_acc = a_los_mean_si / c_si
-        term_shk = (v_tot**2) / (c_si * r_pulsar_m)
-        
-        # Pdot Obs
-        # Random P from lognormal
-        log_P_s = np.random.normal(np.log10(0.005), 0.3, n_stars_per_cluster)
-        P_s = 10**log_P_s
-        
-        log_pdot_int = np.random.normal(mu_field, sigma_field, n_stars_per_cluster)
-        pdot_int = 10**log_pdot_int
-        
-        pdot_obs = pdot_int + P_s * (term_acc + term_shk)
-        log_pdot_obs = np.log10(np.abs(pdot_obs))
-        
-        # Calculate Shift
-        shift = np.mean(log_pdot_obs) - mu_field
-        
-        results.append({
-            "name": cluster_name,
-            "rho_c_log": float(params["rho_c"]),
-            "shift": float(shift),
-            "n_pulsars_real": int(cluster_counts[cluster_name])
-        })
-        
-        print(f"  {cluster_name:<20} | rho={params['rho_c']:.2f} | Shift={shift:+.3f} dex")
-
-    # 4. Analysis
-    shifts_sim = [r['shift'] for r in results]
-    densities = [r['rho_c_log'] for r in results]
+        # Store final ensemble results for plotting
+        final_results = results
     
-    slope_sim, intercept_sim, r_value_sim, p_value_sim, std_err_sim = stats.linregress(densities, shifts_sim)
+    # End of ensemble loop
+    
+    # Extract plotting data from final ensemble realization
+    if final_results:
+        shifts_sim = [r['shift'] for r in final_results]
+        densities = [r['rho_c_log'] for r in final_results]
+    else:
+        shifts_sim = []
+        densities = []
+    
+    # Compute ensemble statistics
+    slope_sim_mean = np.mean(ensemble_slopes)
+    slope_sim_std = np.std(ensemble_slopes)
+    slope_sim_se = slope_sim_std / np.sqrt(n_ensemble)
+    intercept_sim_mean = np.mean(ensemble_intercepts)
+    
+    print(f"\nNewtonian Slope (Ensemble): {slope_sim_mean:.3f} ± {slope_sim_std:.3f} (std) ± {slope_sim_se:.3f} (se) dex/dex")
+    print(f"  95% Confidence Interval: [{slope_sim_mean - 1.96*slope_sim_se:.3f}, {slope_sim_mean + 1.96*slope_sim_se:.3f}]")
     
     # --- CALCULATE OBSERVED SHIFTS ---
     # We need to calculate the actual observed shift for each cluster
@@ -201,28 +225,48 @@ def run_full_density_scaling():
     if len(densities_obs) > 0:
         slope_obs, intercept_obs, r_value_obs, p_value_obs, std_err_obs = stats.linregress(densities_obs, shifts_obs)
     else:
-        slope_obs, intercept_obs, r_value_obs, p_value_obs = 0.33, 0.0, 0.0, 0.0 # Fallback
+        raise ValueError("No observed data available for regression. Check that pulsar data file exists and contains valid cluster data.")
     
     print("-" * 50)
-    print(f"FULL DENSITY SCALING RESULTS (N={len(results)})")
-    print(f"Newtonian Slope: {slope_sim:.3f} dex / dex (R={r_value_sim:.3f})")
-    print(f"Observed Slope:  {slope_obs:.3f} dex / dex (R={r_value_obs:.3f})")
-    print(f"Suppression:     {slope_obs/slope_sim:.1%} of expected scaling")
+    print(f"FULL DENSITY SCALING RESULTS (N={len(results)} clusters, {n_ensemble} ensemble realizations)")
+    print(f"Newtonian Slope: {slope_sim_mean:.3f} ± {slope_sim_se:.3f} dex / dex (ensemble)")
+    print(f"Observed Slope:  {slope_obs:.3f} ± {std_err_obs:.3f} dex / dex")
+    print(f"Suppression:     {slope_obs/slope_sim_mean:.1%} of expected scaling")
+    
+    # Statistical test: Is observed slope consistent with Newtonian?
+    z_score = (slope_obs - slope_sim_mean) / np.sqrt(std_err_obs**2 + slope_sim_se**2)
+    p_value = 2 * (1 - stats.norm.cdf(abs(z_score)))
+    print(f"Tension with Newtonian: {z_score:.1f}σ (p={p_value:.3f})")
     print("-" * 50)
     
     # Save Results
     os.makedirs("results/outputs", exist_ok=True)
     out_data = {
-        "simulation_type": "N-Body/CMC Synthetic (Mass Segregation + Binary Hardening)",
+        "simulation_type": "N-Body/CMC Synthetic with Ensemble Uncertainty",
+        "ensemble_parameters": {
+            "n_ensemble": n_ensemble,
+            "n_stars_per_cluster": n_stars_per_cluster
+        },
         "newtonian": {
-            "slope": float(slope_sim),
-            "r_value": float(r_value_sim),
-            "p_value": float(p_value_sim)
+            "slope_mean": float(slope_sim_mean),
+            "slope_std": float(slope_sim_std),
+            "slope_se": float(slope_sim_se),
+            "slope_95ci_lower": float(slope_sim_mean - 1.96*slope_sim_se),
+            "slope_95ci_upper": float(slope_sim_mean + 1.96*slope_sim_se),
+            "intercept_mean": float(intercept_sim_mean),
+            "ensemble_slopes": [float(s) for s in ensemble_slopes]
         },
         "observed": {
             "slope": float(slope_obs),
+            "slope_error": float(std_err_obs),
             "r_value": float(r_value_obs),
             "p_value": float(p_value_obs)
+        },
+        "statistical_test": {
+            "z_score": float(z_score),
+            "p_value": float(p_value),
+            "tension_sigma": float(abs(z_score)),
+            "suppression_factor": float(slope_obs / slope_sim_mean)
         },
         "clusters": results
     }
@@ -265,8 +309,13 @@ def run_full_density_scaling():
     # Plot Regression Lines
     x_range = np.linspace(min(densities), max(densities), 100)
     
-    y_pred_sim = slope_sim * x_range + intercept_sim
-    ax.plot(x_range, y_pred_sim, COLOR_NEWTONIAN, linestyle='-', linewidth=2, label=f'Newtonian Trend (Slope={slope_sim:.2f})')
+    # Newtonian prediction with uncertainty band
+    y_pred_sim = slope_sim_mean * x_range + intercept_sim_mean
+    y_pred_sim_upper = (slope_sim_mean + 1.96*slope_sim_se) * x_range + intercept_sim_mean
+    y_pred_sim_lower = (slope_sim_mean - 1.96*slope_sim_se) * x_range + intercept_sim_mean
+    
+    ax.fill_between(x_range, y_pred_sim_lower, y_pred_sim_upper, alpha=0.2, color=COLOR_NEWTONIAN, label='Newtonian 95% CI')
+    ax.plot(x_range, y_pred_sim, COLOR_NEWTONIAN, linestyle='-', linewidth=2, label=f'Newtonian Trend (Slope={slope_sim_mean:.2f}±{slope_sim_se:.2f})')
     
     if len(densities_obs) > 0:
         y_pred_obs = slope_obs * x_range + intercept_obs

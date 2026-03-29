@@ -1,0 +1,55 @@
+[23:28:49] [INFO] ======================================================================
+[23:28:49] [INFO] PER-CLUSTER CONTROLLED RESIDUALS
+[23:28:49] [INFO] ======================================================================
+[23:28:49] [INFO] 
+[23:28:49] [INFO] Field MSPs: 198
+[23:28:49] [INFO] GC MSPs: 196
+[23:28:49] [INFO] 
+[23:28:49] [INFO] Cluster                           N  Controlled Residual        SEM
+[23:28:49] [INFO] ----------------------------------------------------------------------
+[23:28:49] [INFO] Terzan 5                         47             +0.291 dex    0.031
+[23:28:49] [INFO] 47 Tuc (NGC 104)                 23             +0.104 dex    0.024
+[23:28:49] [INFO] NGC 6517                         13             +0.258 dex    0.068
+[23:28:49] [INFO] M62 (NGC 6266)                    9             +0.330 dex    0.075
+[23:28:49] [INFO] M28 (NGC 6626)                    9             +0.185 dex    0.036
+[23:28:49] [INFO] Omega Centauri (NGC 5139)         8             +0.068 dex    0.034
+[23:28:49] [INFO] M15 (NGC 7078)                    8             +0.347 dex    0.106
+[23:28:49] [INFO] M13 (NGC 6205)                    8             +0.017 dex    0.136
+[23:28:49] [INFO] M2 (NGC 7089)                     7             +0.099 dex    0.013
+[23:28:49] [INFO] NGC 6440                          7             +0.183 dex    0.059
+[23:28:49] [INFO] M5 (NGC 5904)                     7             +0.023 dex    0.044
+[23:28:49] [INFO] Terzan 1                          6             +0.625 dex    0.143
+[23:28:49] [INFO] NGC 6752                          6             +0.337 dex    0.137
+[23:28:49] [INFO] M3 (NGC 5272)                     5             +0.019 dex    0.047
+[23:28:49] [INFO] M53 (NGC 5024)                    4             +0.017 dex    0.012
+[23:28:49] [INFO] NGC 6441                          3             +0.190 dex    0.166
+[23:28:49] [INFO] M71 (NGC 6838)                    3             +0.045 dex    0.015
+[23:28:49] [INFO] NGC 6544                          2             +0.029 dex    0.018
+[23:28:49] [INFO] M22 (NGC 6656)                    2             -0.041 dex    0.024
+[23:28:49] [INFO] NGC 6397                          2             +0.138 dex    0.112
+[23:28:49] [INFO] NGC 1851                          2             +0.176 dex    0.071
+[23:28:49] [INFO] NGC 6522                          2             +0.361 dex    0.182
+[23:28:49] [INFO] NGC 6760                          2             -0.027 dex    0.007
+[23:28:49] [INFO] NGC 6624                          2             +0.551 dex    0.375
+[23:28:49] [INFO] 
+[23:28:49] [INFO] ======================================================================
+[23:28:49] [INFO] SUMMARY
+[23:28:49] [INFO] ======================================================================
+[23:28:49] [INFO] 
+[23:28:49] [INFO] Number of clusters: 24
+[23:28:49] [INFO] Mean controlled residual: +0.180 dex
+[23:28:49] [INFO] Weighted mean: +0.207 dex
+[23:28:49] [INFO] Std across clusters: 0.174 dex
+[23:28:49] [INFO] Range: -0.041 to +0.625 dex
+[23:28:49] [INFO] 
+[23:28:49] [INFO] --- DENSITY CORRELATION TEST ---
+[23:28:49] [INFO] Controlled residual vs log(ρc):
+[23:28:49] [INFO]   Pearson r = 0.648
+[23:28:49] [INFO]   p-value   = 0.0011
+[23:28:49] [INFO] 
+[23:28:49] [INFO] ⚠️ CONTROLLED residuals still show density correlation
+[23:28:49] [INFO]   The Universality Constraint may not hold.
+[23:28:49] [INFO] 
+[23:28:49] [INFO] Results saved to:
+[23:28:49] [INFO]   /Users/matthewsmawfield/www/TEP-COS/results/outputs/step_5_31_per_cluster_controlled_residuals.json
+[23:28:49] [INFO]   /Users/matthewsmawfield/www/TEP-COS/results/outputs/step_5_31_per_cluster_controlled_residuals.md

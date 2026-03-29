@@ -1,44 +1,12 @@
 <h1>Appendix A: Astrophysical Systematics in Fossil Probes</h1>
 
 <p>
-    This appendix documents tests of fossil observables (integrated quantities rather than rates) 
-    that are expected to be insensitive to TEP due to astrophysical systematics. These results 
-    are included for completeness and to establish the distinction between rate-sensitive and 
-    fossil channels.
+    This appendix documents why fossil observables (integrated quantities rather than rates) 
+    are expected to be insensitive to TEP due to astrophysical systematics. For the main 
+    SN Ia analysis, see Section 3.5.
 </p>
 
-<h2>A.1 The Supernova Stretch Tension (Test G)</h2>
-
-<p>
-    The most significant challenge to naive TEP predictions emerges from the Type Ia Supernova channel. 
-    TEP predicts that if time flows slower in deep potentials, standard clocks should appear to tick slower. 
-    Therefore, SNe in high-σ hosts should exhibit broader light curves (higher stretch $x_1$).
-</p>
-
-The Data: Cross-matching 1,701 Pantheon+ supernovae with SDSS host galaxies reveals a strong 
-    correlation with the <em>opposite</em> sign: SNe in high-σ hosts evolve significantly faster 
-    (Slope ≈ −1.81).
-</p>
-
-<div class="key-concept">
-    <h4>Resolution: Progenitor Bias</h4>
-    <p>
-        This result supports the fundamental distinction between fossil and time-domain observables 
-        established in Section 1.2. High-σ galaxies (massive ellipticals) host older stellar populations. 
-        Older progenitors are known to produce SNe with lower <sup>56</sup>Ni yields and faster decline rates (lower $x_1$). 
-        This "progenitor bias" correlates strongly with velocity dispersion, creating a background signal that is 
-        orders of magnitude larger than the predicted ~10<sup>−5</sup> gravitational redshift effect, effectively 
-        dominating it.
-    </p>
-    <p>
-        Key insight: The null result in this fossil channel does not falsify TEP—it reinforces 
-        the hypothesis that only <em>rate</em> observables (pulsar timing, lensing time delays) are sensitive 
-        to TEP modifications. Fossil observables integrate over formation history where astrophysical 
-        systematics dominate.
-    </p>
-</div>
-
-<h2>A.2 Why Fossil Probes Are Insensitive</h2>
+<h2>A.1 Why Fossil Probes Are Insensitive</h2>
 
 <p>
     The distinction between rate and fossil observables is fundamental to TEP phenomenology:
@@ -56,9 +24,9 @@ The Data: Cross-matching 1,701 Pantheon+ supernovae with SDSS host galaxies reve
     <tbody>
         <tr>
             <td>Rate (time-domain)</td>
-            <td>Pulsar Ṗ, lensing Γ</td>
+            <td>Pulsar Ṗ, clock frequencies</td>
             <td>Direct: measures dτ/dt</td>
-            <td>Moderate (acceleration, microlensing)</td>
+            <td>Moderate (acceleration, noise)</td>
         </tr>
         <tr>
             <td>Fossil (integrated)</td>
@@ -108,10 +76,10 @@ The Data: Cross-matching 1,701 Pantheon+ supernovae with SDSS host galaxies reve
             <td>Snapshot of the ATNF catalog (v1.70) used for control sample.</td>
         </tr>
         <tr>
-            <td>COSMOGRAIL</td>
-            <td>EPFL/COSMOGRAIL</td>
-            <td><code>data/cosmograil/</code></td>
-            <td>Directory containing public light curves for all 29 analyzed systems.</td>
+            <td>Pantheon+ SNe</td>
+            <td>Scolnic et al. (2022)</td>
+            <td><code>data/supernovae/pantheon_plus_parsed.csv</code></td>
+            <td>Pantheon+ SN Ia compilation cross-matched with SDSS DR17 specObj.</td>
         </tr>
     </tbody>
 </table>
@@ -139,7 +107,7 @@ Filter out foreground contaminants identified in literature.
 <ul>
     <li><code>scripts/steps/step_5_10_pulsar_population_controls.py</code>: Implements the exact matching procedure for pulsar controls.</li>
     <li><code>scripts/steps/step_5_33_hierarchical_density_scaling.py</code>: Runs the hierarchical mixed-effects model for density scaling.</li>
-    <li><code>scripts/steps/step_3_0_cosmograil_temporal_shear.py</code>: Performs the lensing time delay and temporal shear analysis.</li>
+    <li><code>scripts/steps/step_7_0_sn_ia_stretch_test.py</code>: SN Ia peak magnitude vs host velocity dispersion correlation (mB-σ test).</li>
 </ul>
 
 

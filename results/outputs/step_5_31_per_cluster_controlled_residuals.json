@@ -1,20 +1,20 @@
 {
-  "timestamp_utc": "2026-01-08T22:54:19.114201+00:00",
+  "timestamp_utc": "2026-03-30T00:00:00.000000+00:00",
   "method": "Period + B-proxy matching (5 nearest neighbors)",
   "clusters": {
     "Terzan 5": {
       "cluster": "Terzan 5",
-      "n_pulsars": 51,
-      "controlled_residual": 0.2811116823529415,
-      "residual_std": 0.2183528708414211,
-      "residual_sem": 0.03057551763295823
+      "n_pulsars": 47,
+      "controlled_residual": 0.29143302127659604,
+      "residual_std": 0.21182264707981077,
+      "residual_sem": 0.03089750861535812
     },
     "47 Tuc (NGC 104)": {
       "cluster": "47 Tuc (NGC 104)",
-      "n_pulsars": 22,
-      "controlled_residual": 0.1157719545454554,
-      "residual_std": 0.1381127003002321,
-      "residual_sem": 0.029445726641817212
+      "n_pulsars": 23,
+      "controlled_residual": 0.10407086086956581,
+      "residual_std": 0.1150731325104844,
+      "residual_sem": 0.023994406799135778
     },
     "NGC 6517": {
       "cluster": "NGC 6517",
@@ -23,19 +23,33 @@
       "residual_std": 0.24351094307943708,
       "residual_sem": 0.06753778395457717
     },
-    "M28 (NGC 6626)": {
-      "cluster": "M28 (NGC 6626)",
-      "n_pulsars": 10,
-      "controlled_residual": 0.27559185999999974,
-      "residual_std": 0.2897354967074217,
-      "residual_sem": 0.09162240885956686
-    },
     "M62 (NGC 6266)": {
       "cluster": "M62 (NGC 6266)",
       "n_pulsars": 9,
       "controlled_residual": 0.3295322666666654,
       "residual_std": 0.22568436430765648,
       "residual_sem": 0.07522812143588549
+    },
+    "M28 (NGC 6626)": {
+      "cluster": "M28 (NGC 6626)",
+      "n_pulsars": 9,
+      "controlled_residual": 0.18524339999999975,
+      "residual_std": 0.10791488432480269,
+      "residual_sem": 0.03597162810826756
+    },
+    "Omega Centauri (NGC 5139)": {
+      "cluster": "Omega Centauri (NGC 5139)",
+      "n_pulsars": 8,
+      "controlled_residual": 0.06806102500000089,
+      "residual_std": 0.09632562979059249,
+      "residual_sem": 0.034056253013496435
+    },
+    "M15 (NGC 7078)": {
+      "cluster": "M15 (NGC 7078)",
+      "n_pulsars": 8,
+      "controlled_residual": 0.34744140000000057,
+      "residual_std": 0.300530959597226,
+      "residual_sem": 0.1062537397438494
     },
     "M13 (NGC 6205)": {
       "cluster": "M13 (NGC 6205)",
@@ -44,12 +58,19 @@
       "residual_std": 0.3856703646541055,
       "residual_sem": 0.13635506507480327
     },
-    "M15 (NGC 7078)": {
-      "cluster": "M15 (NGC 7078)",
+    "M2 (NGC 7089)": {
+      "cluster": "M2 (NGC 7089)",
       "n_pulsars": 7,
-      "controlled_residual": 0.28473974285714376,
-      "residual_std": 0.2678984306832016,
-      "residual_sem": 0.10125608917317529
+      "controlled_residual": 0.09928725714285694,
+      "residual_std": 0.035183115329895716,
+      "residual_sem": 0.013297967644486897
+    },
+    "NGC 6440": {
+      "cluster": "NGC 6440",
+      "n_pulsars": 7,
+      "controlled_residual": 0.18323959999999978,
+      "residual_std": 0.15542411718093965,
+      "residual_sem": 0.05874479454321823
     },
     "M5 (NGC 5904)": {
       "cluster": "M5 (NGC 5904)",
@@ -72,19 +93,12 @@
       "residual_std": 0.3356497547418873,
       "residual_sem": 0.1370284385679904
     },
-    "M2 (NGC 7089)": {
-      "cluster": "M2 (NGC 7089)",
-      "n_pulsars": 6,
-      "controlled_residual": 0.08998496666666671,
-      "residual_std": 0.02895568939452595,
-      "residual_sem": 0.01182111069451783
-    },
-    "Omega Centauri (NGC 5139)": {
-      "cluster": "Omega Centauri (NGC 5139)",
+    "M3 (NGC 5272)": {
+      "cluster": "M3 (NGC 5272)",
       "n_pulsars": 5,
-      "controlled_residual": 0.027245480000002688,
-      "residual_std": 0.05849550818606217,
-      "residual_sem": 0.026159986536486084
+      "controlled_residual": 0.019098720000000215,
+      "residual_std": 0.10535750669301903,
+      "residual_sem": 0.04711730938109592
     },
     "M53 (NGC 5024)": {
       "cluster": "M53 (NGC 5024)",
@@ -93,12 +107,12 @@
       "residual_std": 0.023714828271094907,
       "residual_sem": 0.011857414135547454
     },
-    "M3 (NGC 5272)": {
-      "cluster": "M3 (NGC 5272)",
+    "NGC 6441": {
+      "cluster": "NGC 6441",
       "n_pulsars": 3,
-      "controlled_residual": 0.5390533999999979,
-      "residual_std": 0.034033529683532876,
-      "residual_sem": 0.019649267524260827
+      "controlled_residual": 0.19020213333333422,
+      "residual_std": 0.2874243153892332,
+      "residual_sem": 0.16594450586161769
     },
     "M71 (NGC 6838)": {
       "cluster": "M71 (NGC 6838)",
@@ -106,6 +120,20 @@
       "controlled_residual": 0.04500053333333417,
       "residual_std": 0.025284523081828797,
       "residual_sem": 0.014598026207625164
+    },
+    "NGC 6544": {
+      "cluster": "NGC 6544",
+      "n_pulsars": 2,
+      "controlled_residual": 0.02920279999999842,
+      "residual_std": 0.025354800000000566,
+      "residual_sem": 0.017928551015629075
+    },
+    "M22 (NGC 6656)": {
+      "cluster": "M22 (NGC 6656)",
+      "n_pulsars": 2,
+      "controlled_residual": -0.040681499999999815,
+      "residual_std": 0.03341810000000045,
+      "residual_sem": 0.02363016512437048
     },
     "NGC 6397": {
       "cluster": "NGC 6397",
@@ -128,20 +156,6 @@
       "residual_std": 0.256703899999998,
       "residual_sem": 0.18151706844703194
     },
-    "NGC 6544": {
-      "cluster": "NGC 6544",
-      "n_pulsars": 2,
-      "controlled_residual": 0.02920279999999842,
-      "residual_std": 0.025354800000000566,
-      "residual_sem": 0.017928551015629075
-    },
-    "NGC 6624": {
-      "cluster": "NGC 6624",
-      "n_pulsars": 2,
-      "controlled_residual": 0.5508730999999987,
-      "residual_std": 0.530825100000003,
-      "residual_sem": 0.3753500278340293
-    },
     "NGC 6760": {
       "cluster": "NGC 6760",
       "n_pulsars": 2,
@@ -149,20 +163,20 @@
       "residual_std": 0.009587500000000304,
       "residual_sem": 0.0067793862646262385
     },
-    "M22 (NGC 6656)": {
-      "cluster": "M22 (NGC 6656)",
+    "NGC 6624": {
+      "cluster": "NGC 6624",
       "n_pulsars": 2,
-      "controlled_residual": -0.040681499999999815,
-      "residual_std": 0.03341810000000045,
-      "residual_sem": 0.02363016512437048
+      "controlled_residual": 0.5508730999999987,
+      "residual_std": 0.530825100000003,
+      "residual_sem": 0.3753500278340293
     }
   },
   "summary": {
-    "n_clusters": 22,
-    "mean_controlled_residual": 0.20241752043677363,
-    "weighted_mean": 0.2235314321839083,
-    "std_across_clusters": 0.19270235441020633,
-    "density_correlation_r": 0.5228348545875064,
-    "density_correlation_p": 0.012539109726707711
+    "n_clusters": 24,
+    "mean_controlled_residual": 0.18032349086704857,
+    "weighted_mean": 0.20692179679144404,
+    "std_across_clusters": 0.17374408267584887,
+    "density_correlation_r": 0.6477311885847845,
+    "density_correlation_p": 0.0011169003357625938
   }
 }

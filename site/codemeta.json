@@ -4,7 +4,7 @@
   "identifier": "https://doi.org/10.5281/zenodo.18165798",
   "doi": "10.5281/zenodo.18165798",
   "name": "The Temporal Equivalence Principle: Suppressed Density Scaling in Globular Cluster Pulsars",
-  "description": "Gravitational time dilation in General Relativity is confirmed to 10⁻⁵ precision in the Solar System. At intermediate astrophysical scales, however, persistent anomalies emerge. The Temporal Equivalence Principle (TEP) formalizes an alternative: that time dilation is scale-dependent. This work reports an 8.7σ dynamical anomaly in globular cluster pulsar timing that challenges standard density scaling (4.0σ tension). Analysis of 380 millisecond pulsars reveals a 0.13 dex excess in spin-down magnitude—cluster pulsars spin down faster than field controls. The signal exhibits Suppressed Density Scaling (Slope 0.35 vs Newtonian 0.82), saturating in dense cores. Complementary analysis of gravitational lensing places upper limits on cosmological temporal shear (|Γ| ≤ 60 days/decade), which rules out runaway modifications but remains consistent with the screened parameters suggested by pulsars.",
+  "description": "Gravitational time dilation in General Relativity is confirmed to 10⁻⁵ precision in the Solar System. At intermediate astrophysical scales, however, persistent anomalies emerge. The Temporal Equivalence Principle (TEP) formalizes an alternative: that time dilation is scale-dependent. This work reports a 5.8σ–7.7σ dynamical anomaly in globular cluster pulsar timing that challenges standard density scaling (4.1σ tension). Analysis of 394 millisecond pulsars (196 GC, 198 field) reveals a 0.59 dex excess in spin-down magnitude—cluster pulsars spin down faster than field controls. The signal exhibits Suppressed Density Scaling (Slope 0.39 ± 0.08 vs Newtonian ~0.72), saturating in dense cores. Complementary analysis of gravitational lensing places upper limits on cosmological temporal shear (|Γ| ≤ 104 days/decade), which rules out runaway modifications but remains consistent with the screened parameters suggested by pulsars.",
   "author": [
     {
       "@type": "Person",
@@ -14,8 +14,8 @@
     }
   ],
   "datePublished": "2026-01-09",
-  "dateModified": "2026-01-09",
-  "version": "0.2",
+  "dateModified": "2026-03-30",
+  "version": "0.4",
   "license": "https://creativecommons.org/licenses/by/4.0/",
   "codeRepository": "https://github.com/matthewsmawfield/TEP-COS",
   "url": "https://mlsmawfield.com/tep/cos/",

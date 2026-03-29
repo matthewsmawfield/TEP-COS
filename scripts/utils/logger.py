@@ -33,6 +33,7 @@ import logging
 import sys
 from pathlib import Path
 import os
+from datetime import datetime
 from typing import Optional
 
 # Project root for relative path calculations
@@ -253,6 +254,56 @@ def print_status(message: str, level: str = "INFO") -> None:
     # Force flush stdout to ensure real-time output
     sys.stdout.flush()
 
+def print_table(headers: list, rows: list, title: str = None):
+    """
+    Prints a formatted table to the log/console.
+    
+    Args:
+        headers: List of column names
+        rows: List of lists/tuples containing data
+        title: Optional title for the table
+    """
+    if not rows:
+        return
+
+    # Calculate column widths
+    col_widths = [len(str(h)) for h in headers]
+    for row in rows:
+        for i, cell in enumerate(row):
+            col_widths[i] = max(col_widths[i], len(str(cell)))
+    
+    # Add padding
+    col_widths = [w + 2 for w in col_widths]
+    
+    # Create separator
+    separator = "+" + "+".join(["-" * w for w in col_widths]) + "+"
+    
+    # Print Title
+    if title:
+        print_status(title, "TITLE")
+    
+    # Print Table
+    if _current_step_logger:
+        _current_step_logger.info(separator)
+        # Header
+        header_str = "|" + "|".join([f" {str(h):<{w-2}} " for h, w in zip(headers, col_widths)]) + "|"
+        _current_step_logger.info(header_str)
+        _current_step_logger.info(separator)
+        # Rows
+        for row in rows:
+            row_str = "|" + "|".join([f" {str(cell):<{w-2}} " for cell, w in zip(row, col_widths)]) + "|"
+            _current_step_logger.info(row_str)
+        _current_step_logger.info(separator)
+    else:
+        print(separator)
+        header_str = "|" + "|".join([f" {str(h):<{w-2}} " for h, w in zip(headers, col_widths)]) + "|"
+        print(header_str)
+        print(separator)
+        for row in rows:
+            row_str = "|" + "|".join([f" {str(cell):<{w-2}} " for cell, w in zip(row, col_widths)]) + "|"
+            print(row_str)
+        print(separator)
+
 def reset_master_log() -> None:
     """Legacy function retained for backward compatibility. No-op."""
     pass
@@ -275,3 +326,40 @@ def check_memory_usage(context: str = "Unknown") -> None:
     else:
         print(f"[DEBUG] Memory usage in {context}: RSS={rss_mb:.2f} MB, VMS={vms_mb:.2f} MB")
     gc.collect()
+
+
+def setup_step_logger(script_name: str, logs_dir: Optional[Path] = None) -> TEPLogger:
+    """
+    Setup file logging for a step script when run manually.
+    
+    Usage in scripts:
+        if __name__ == "__main__":
+            logger = setup_step_logger("step_5_10")
+            main()
+    
+    Parameters:
+    -----------
+    script_name : str
+        Name of the script (e.g., "step_5_10_pulsar_population_controls")
+    logs_dir : Path, optional
+        Directory for log files. Defaults to PROJECT_ROOT/logs
+    
+    Returns:
+    --------
+    TEPLogger instance configured for the step
+    """
+    if logs_dir is None:
+        logs_dir = PACKAGE_ROOT / "logs"
+    logs_dir.mkdir(parents=True, exist_ok=True)
+    
+    log_path = logs_dir / f"{script_name}.log"
+    logger = TEPLogger(script_name, log_file_path=log_path)
+    set_step_logger(logger)
+    
+    # Log startup message
+    logger.info(f"=" * 80)
+    logger.info(f"Script: {script_name}")
+    logger.info(f"Started: {datetime.now().isoformat()}")
+    logger.info(f"=" * 80)
+    
+    return logger

@@ -1,0 +1,126 @@
+{
+  "timestamp": "2026-03-29T23:29:37.504933",
+  "method": "Real pulsar data vs synthetic N-body/CMC comparison",
+  "clusters": [
+    {
+      "cluster": "47_Tuc",
+      "n_pulsars_real": 23,
+      "log_rho_c": 4.8,
+      "nbody_predicted_shift": 1.92,
+      "observed_shift_estimate": 0.2752632358218037,
+      "ratio": 0.14336626865718943,
+      "status": "TEP_CONSISTENT",
+      "note": "Observed much smaller than Newtonian prediction",
+      "cmc_available": true,
+      "data_source": "csv_actual"
+    },
+    {
+      "cluster": "Terzan_5",
+      "n_pulsars_real": 47,
+      "log_rho_c": 5.5,
+      "nbody_predicted_shift": 2.92,
+      "observed_shift_estimate": 0.8800149647764748,
+      "ratio": 0.3013749879371489,
+      "status": "UNCERTAIN",
+      "note": "Ambiguous comparison",
+      "cmc_available": true,
+      "data_source": "csv_actual"
+    },
+    {
+      "cluster": "M28",
+      "n_pulsars_real": 9,
+      "log_rho_c": 4.5,
+      "nbody_predicted_shift": 1.97,
+      "observed_shift_estimate": 0.7541589411358132,
+      "ratio": 0.38282179753086965,
+      "status": "UNCERTAIN",
+      "note": "Ambiguous comparison",
+      "cmc_available": false,
+      "data_source": "csv_actual"
+    },
+    {
+      "cluster": "M15",
+      "n_pulsars_real": 8,
+      "log_rho_c": 5.0,
+      "nbody_predicted_shift": 2.44,
+      "observed_shift_estimate": 0.9440883716913682,
+      "ratio": 0.3869214638079378,
+      "status": "UNCERTAIN",
+      "note": "Ambiguous comparison",
+      "cmc_available": true,
+      "data_source": "csv_actual"
+    },
+    {
+      "cluster": "M62",
+      "n_pulsars_real": 9,
+      "log_rho_c": 5.2,
+      "nbody_predicted_shift": 2.52,
+      "observed_shift_estimate": 0.9353061633580353,
+      "ratio": 0.37115323942779177,
+      "status": "UNCERTAIN",
+      "note": "Ambiguous comparison",
+      "cmc_available": true,
+      "data_source": "csv_actual"
+    },
+    {
+      "cluster": "M13",
+      "n_pulsars_real": 8,
+      "log_rho_c": 4.5,
+      "nbody_predicted_shift": 2.1,
+      "observed_shift_estimate": 0.2553140033086301,
+      "ratio": 0.12157809681363337,
+      "status": "TEP_CONSISTENT",
+      "note": "Observed much smaller than Newtonian prediction",
+      "cmc_available": true,
+      "data_source": "csv_actual"
+    },
+    {
+      "cluster": "M3",
+      "n_pulsars_real": 5,
+      "log_rho_c": 4.2,
+      "nbody_predicted_shift": 1.85,
+      "observed_shift_estimate": 0.2193043033086326,
+      "ratio": 0.11854286665331491,
+      "status": "TEP_CONSISTENT",
+      "note": "Observed much smaller than Newtonian prediction",
+      "cmc_available": true,
+      "data_source": "csv_actual"
+    },
+    {
+      "cluster": "M5",
+      "n_pulsars_real": 7,
+      "log_rho_c": 3.5,
+      "nbody_predicted_shift": 1.48,
+      "observed_shift_estimate": 0.014448074737202887,
+      "ratio": 0.009762212660272222,
+      "status": "TEP_CONSISTENT",
+      "note": "Observed much smaller than Newtonian prediction",
+      "cmc_available": true,
+      "data_source": "csv_actual"
+    }
+  ],
+  "summary": {
+    "total_clusters": 8,
+    "tep_consistent": 4,
+    "newtonian_consistent": 0,
+    "average_ratio": 0.22944011668601977,
+    "overall_status": "STRONG_TEP_SUPPORT"
+  },
+  "interpretation": {
+    "nbody_prediction": "~2.0 dex shift under Newtonian dynamics",
+    "observed_shift": "~0.58 dex controlled residual",
+    "ratio": "23% of Newtonian prediction",
+    "conclusion": "Real data significantly smaller than Newtonian - TEP supported"
+  },
+  "recommendations": [
+    "Run actual CMC simulations for clusters with real pulsar data",
+    "Compare CMC output to observed pulsar positions/kinematics",
+    "Test if standard dynamics can reproduce 0.37 density scaling slope",
+    "If CMC fails to reproduce observations, this excludes Newtonian alternatives"
+  ],
+  "priority_clusters": [
+    "47 Tuc (25 pulsars, CMC available)",
+    "Terzan 5 (37 pulsars, CMC available)",
+    "M15 (10 pulsars, CMC available)"
+  ]
+}

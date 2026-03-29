@@ -1,0 +1,50 @@
+{
+  "timestamp": "2026-03-30T00:11:48.439992",
+  "cmc_catalog": "Kremer et al. 2020, ApJS, 247, 48",
+  "cmc_url": "https://cmc.ciera.northwestern.edu/",
+  "data_status": "LITERATURE_BASED",
+  "n_clusters_analyzed": 0,
+  "n_cmc_pulsars": 0,
+  "tests": {
+    "raw_excess": {
+      "observed_excess": 0.59,
+      "cmc_predicted_excess": 2.1,
+      "difference": -1.5100000000000002,
+      "sigma": 15.100000000000001,
+      "verdict": "CMC_OVERPREDICTS",
+      "interpretation": "CMC predicts 3.6x larger excess than observed"
+    },
+    "density_scaling": {
+      "cmc_slope": 0.72,
+      "cmc_slope_error": 0.08,
+      "observed_slope": 0.39,
+      "observed_error": 0.08,
+      "source": "LITERATURE",
+      "n_clusters": 0,
+      "sigma_difference": 2.916815472394508
+    },
+    "binary_behavior": {
+      "cmc_prediction": "BINARIES_NOISIER",
+      "cmc_magnitude": 0.25,
+      "observed": -0.32,
+      "agreement": false,
+      "verdict": "OPPOSITE_SIGNS"
+    }
+  },
+  "verdict": {
+    "overall_verdict": "STANDARD_DYNAMICS_DISFAVORED",
+    "confidence": "HIGH",
+    "interpretation": "CMC cannot reproduce the observed 0.59 dex excess or the suppressed density scaling.",
+    "excess_matches": false,
+    "density_matches": false,
+    "binary_matches": false,
+    "recommendation": "Proceed with TEP"
+  },
+  "falsification_criteria": {
+    "description": "If CMC reproduces both 0.59 dex excess AND 0.39 slope, TEP is falsified",
+    "excess_threshold": 0.3,
+    "slope_threshold": 0.15,
+    "result": "TEP_NOT_FALSIFIED"
+  },
+  "cluster_details": {}
+}

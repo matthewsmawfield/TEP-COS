@@ -61,6 +61,7 @@ from typing import Dict, List, Optional, Tuple
 import numpy as np
 from scipy import interpolate, signal, stats
 from scipy.ndimage import gaussian_filter1d
+from joblib import Parallel, delayed, cpu_count
 
 # Configure logging
 logging.basicConfig(
@@ -304,7 +305,7 @@ def parse_multiband_csv(filepath: Path) -> Optional[LensSystem]:
     except Exception:
         return None
     
-    if len(rows) < 20:
+    if len(rows) < 15:
         return None
     
     # Normalize header to lowercase for matching
@@ -312,9 +313,15 @@ def parse_multiband_csv(filepath: Path) -> Optional[LensSystem]:
     
     # Find time column
     time_col = None
+    time_format = None
     for i, h in enumerate(header_lower):
         if h in ("mjd", "mhjd", "hjd", "jd"):
             time_col = i
+            time_format = "mjd"
+            break
+        if h in ("obs.date", "date", "obs_date", "date_obs"):
+            time_col = i
+            time_format = "calendar"
             break
     
     if time_col is None:
@@ -381,12 +388,29 @@ def parse_multiband_csv(filepath: Path) -> Optional[LensSystem]:
     # Parse data
     data = {label: {"t": [], "mag": [], "err": []} for label in image_cols}
     
+    from datetime import datetime
+    
     for row in rows:
         if len(row) <= max(max(v) for v in image_cols.values()):
             continue
         
         try:
-            t = float(row[time_col])
+            if time_format == "calendar":
+                # Parse calendar date (e.g., "1995-09-17")
+                date_str = row[time_col]
+                # Handle various date formats
+                for fmt in ("%Y-%m-%d", "%Y/%m/%d", "%d-%m-%Y", "%d/%m/%Y"):
+                    try:
+                        dt = datetime.strptime(date_str, fmt)
+                        # Convert to MJD (approximate: days since 1858-11-17)
+                        t = (dt - datetime(1858, 11, 17)).days
+                        break
+                    except ValueError:
+                        continue
+                else:
+                    continue
+            else:
+                t = float(row[time_col])
         except (ValueError, IndexError):
             continue
         
@@ -404,7 +428,14 @@ def parse_multiband_csv(filepath: Path) -> Optional[LensSystem]:
     # Build LightCurve objects
     light_curves = {}
     for label in image_cols:
-        if len(data[label]["t"]) >= 20:
+        # Minimum epochs threshold: adaptive based on data quality
+        # Historical datasets (Vakulik et al.) have fewer epochs but longer baselines
+        # Modern datasets (COSMOGRAIL) have more epochs with denser sampling
+        # Threshold ensures sufficient data for reliable delay measurement
+        # - 15 epochs: minimum for historical data (e.g., Q2237 Vakulik has 17 epochs)
+        # - 20 epochs: standard for modern light curves with seasonal gaps
+        min_epochs = 15 if time_format == "calendar" else 20
+        if len(data[label]["t"]) >= min_epochs:
             light_curves[label] = LightCurve(
                 label=label,
                 t=np.array(data[label]["t"]),
@@ -628,7 +659,14 @@ def estimate_delay_correlation(
             correlations.append(np.nan)
             continue
         
-        r, _ = stats.pearsonr(y1[valid], y2_shifted[valid])
+        # Check for constant input to avoid ConstantInputWarning
+        y1_valid = y1[valid]
+        y2_valid = y2_shifted[valid]
+        if np.std(y1_valid) < 1e-10 or np.std(y2_valid) < 1e-10:
+            correlations.append(np.nan)
+            continue
+        
+        r, _ = stats.pearsonr(y1_valid, y2_valid)
         correlations.append(r)
     
     correlations = np.array(correlations)
@@ -658,7 +696,7 @@ def estimate_delay_correlation(
     above_half = correlations > half_max
     if np.any(above_half):
         fwhm = np.sum(above_half) * lag_step
-        delay_err = fwhm / 2.35  # FWHM to sigma
+        delay_err = fwhm / 2.35482  # FWHM to sigma (precise: 2*sqrt(2*ln(2)))
     else:
         delay_err = 10.0  # Default fallback
     
@@ -712,7 +750,7 @@ def estimate_delay_dcf(
     above_half = dcf > half_max
     if np.any(above_half):
         fwhm = float(np.sum(above_half) * lag_step)
-        delay_err = float(max(1.0, fwhm / 2.35))
+        delay_err = float(max(1.0, fwhm / 2.35482))  # Precise FWHM to sigma (2*sqrt(2*ln(2)))
     else:
         delay_err = 10.0
 
@@ -802,11 +840,15 @@ def estimate_delay_iccf(
 
         rvals = []
         if int(np.sum(m12)) >= min_overlap:
-            r, _ = stats.pearsonr(y1[m12], y2_on_1[m12])
-            rvals.append(r)
+            # Check for variance before correlation
+            if np.std(y1[m12]) > 1e-10 and np.std(y2_on_1[m12]) > 1e-10:
+                r, _ = stats.pearsonr(y1[m12], y2_on_1[m12])
+                rvals.append(r)
         if int(np.sum(m21)) >= min_overlap:
-            r, _ = stats.pearsonr(y2[m21], y1_on_2[m21])
-            rvals.append(r)
+            # Check for variance before correlation
+            if np.std(y2[m21]) > 1e-10 and np.std(y1_on_2[m21]) > 1e-10:
+                r, _ = stats.pearsonr(y2[m21], y1_on_2[m21])
+                rvals.append(r)
 
         if rvals:
             corrs[k] = float(np.mean(rvals))
@@ -847,7 +889,7 @@ def estimate_delay_iccf(
     above_half = corrs > half_max
     if np.any(above_half):
         fwhm = float(np.sum(above_half) * lag_step)
-        delay_err = float(max(1.0, fwhm / 2.35))
+        delay_err = float(max(1.0, fwhm / 2.35482))  # Precise FWHM to sigma (2*sqrt(2*ln(2)))
     else:
         delay_err = 10.0
 
@@ -1079,18 +1121,20 @@ def fit_gamma(
 
         Δt(τ) = Γ · log10(τ) + intercept,
 
-    where the weights are derived from the multiscale correlation coefficients
-    if provided. This allows high-correlation (better-constrained) multiscale
-    delay estimates to contribute more strongly to the Γ fit.
+    where the weights are derived from delay uncertainties (inverse variance).
+    This is the proper statistical approach: weight by precision, not correlation.
+    High correlation does NOT imply high precision (correlation can be high at 
+    wrong lags due to aliasing). Only delay uncertainty reflects true precision.
 
-    If correlations are not provided, the fit reduces to an unweighted OLS
-    solution written in the same linear-algebra form.
+    If correlations are provided, they are used only for quality cuts (rejecting
+    low-correlation points) but NOT for weighting. This prevents correlation-based
+    bias while still filtering out poor measurements.
     
     Args:
         tau_values: Timescales analyzed (days)
         delays: Measured delays at each τ (days)
-        delay_errors: Delay uncertainties (not used for weighting, kept for API)
-        correlations: Correlation coefficients at each τ (optional; used as WLS weights)
+        delay_errors: Delay uncertainties (used for inverse-variance weighting)
+        correlations: Correlation coefficients at each τ (optional; used for quality cuts only)
         min_valid_points: Minimum number of valid delays required (default 3)
     
     Returns:
@@ -1105,19 +1149,30 @@ def fit_gamma(
         - |Γ| / γ_err > 3: Significant temporal shear detection
         - GR predicts Γ = 0 (no scale dependence)
     """
-    valid = [i for i in range(len(tau_values)) if np.isfinite(delays[i])]
+    valid = [i for i in range(len(tau_values)) if np.isfinite(delays[i]) and np.isfinite(delay_errors[i]) and delay_errors[i] > 0]
 
     if len(valid) < min_valid_points:
         return np.nan, np.nan, np.nan, np.nan
 
     log_tau = np.log10([tau_values[i] for i in valid])
     dt = np.array([delays[i] for i in valid])
-
+    dt_err = np.array([delay_errors[i] for i in valid])
+    
+    # Quality cut: reject points with very low correlation if correlations provided
     if correlations is not None:
         corr_arr = np.array([correlations[i] for i in valid])
-        w = np.maximum(corr_arr, 0.3) ** 2
-    else:
-        w = np.ones(len(valid))
+        # Require minimum correlation for reliability (not for weighting)
+        good_quality = corr_arr >= 0.3  # Minimum quality threshold
+        if np.sum(good_quality) >= min_valid_points:
+            log_tau = log_tau[good_quality]
+            dt = dt[good_quality]
+            dt_err = dt_err[good_quality]
+        # If too few points pass quality cut, use all valid points with warning
+    
+    # PROPER WEIGHTING: Inverse variance from delay uncertainties
+    # This is the correct statistical approach - weight by precision
+    w = 1.0 / (dt_err ** 2)
+    w = w / np.sum(w)  # Normalize weights
 
     X = np.column_stack([log_tau, np.ones_like(log_tau)])
     W = np.diag(w)
@@ -1133,10 +1188,12 @@ def fit_gamma(
         resid = dt - dt_pred
 
         dof = max(1, len(dt) - 2)
+        # Weighted residual variance
         s2 = float((resid.T @ W @ resid) / dof)
         cov = np.linalg.inv(XtWX) * s2
         gamma_err = float(np.sqrt(cov[0, 0]))
 
+        # R-squared (weighted)
         dt_mean = float(np.average(dt, weights=w))
         ss_res = float(np.sum(w * (dt - dt_pred) ** 2))
         ss_tot = float(np.sum(w * (dt - dt_mean) ** 2))
@@ -1315,6 +1372,172 @@ def analyze_system(
     return results
 
 
+def _bootstrap_single_iteration(
+    b: int,
+    system_data: Dict,
+    detrend_window: float,
+    tau_values: List[float],
+    lag_range: Tuple[float, float],
+    lag_step: float,
+    mode_lock_window: float,
+    min_variance_fraction: float,
+    min_correlation: float,
+    estimator: str,
+    broadband_estimator: Optional[str],
+    bootstrap_mode: str,
+    no_bandpass: bool,
+) -> Dict[str, Optional[float]]:
+    """
+    Single bootstrap iteration - designed for parallel execution.
+    
+    Returns dict mapping pair_key -> gamma value (or None if failed)
+    """
+    rng = np.random.default_rng(b)  # Unique seed per iteration
+    
+    # Reconstruct light curves from serialized data
+    perturbed_lcs = {}
+    for label, lc_data in system_data.items():
+        n = int(len(lc_data['t']))
+        if n < 5:
+            perturbed_lcs[label] = LightCurve(
+                label=label,
+                t=np.array(lc_data['t']),
+                mag=np.array(lc_data['mag']),
+                magerr=np.array(lc_data['magerr']),
+            )
+            continue
+        
+        if bootstrap_mode == "fr":
+            t_bs = np.array(lc_data['t'])
+            mag_bs = np.array(lc_data['mag'])
+            err_bs = np.array(lc_data['magerr'])
+        else:
+            idx = rng.integers(0, n, size=n)
+            uniq, counts = np.unique(idx, return_counts=True)
+            t_bs = np.array(lc_data['t'])[uniq]
+            mag_bs = np.array(lc_data['mag'])[uniq]
+            err_bs = np.array(lc_data['magerr'])[uniq] / np.sqrt(counts.astype(float))
+        
+        order = np.argsort(t_bs)
+        t_bs = t_bs[order]
+        mag_bs = mag_bs[order]
+        err_bs = err_bs[order]
+        
+        noise = rng.standard_normal(len(t_bs)) * err_bs
+        perturbed_lcs[label] = LightCurve(
+            label=label,
+            t=t_bs.copy(),
+            mag=(mag_bs + noise).copy(),
+            magerr=err_bs.copy(),
+        )
+    
+    # Analyze each pair
+    results = {}
+    pair_keys = list(perturbed_lcs.keys())
+    
+    for i, l1 in enumerate(pair_keys):
+        for l2 in pair_keys[i+1:]:
+            pair_key = f"{l1}-{l2}"
+            lc1 = detrend_lightcurve(perturbed_lcs[l1], detrend_window)
+            lc2 = detrend_lightcurve(perturbed_lcs[l2], detrend_window)
+            
+            if broadband_estimator == "dcf":
+                delay_bb, corr_bb, err_bb = estimate_delay_dcf(lc1, lc2, lag_range, lag_step=lag_step)
+            elif broadband_estimator == "iccf":
+                delay_bb, corr_bb, err_bb = estimate_delay_iccf(lc1, lc2, lag_range, lag_step=lag_step)
+            else:
+                delay_bb, corr_bb, err_bb = estimate_delay_correlation(lc1, lc2, lag_range, lag_step=lag_step)
+            
+            multiscale = compute_multiscale_delays(
+                lc1, lc2, tau_values, lag_range,
+                lag_step=lag_step,
+                min_correlation=min_correlation,
+                min_variance_fraction=min_variance_fraction,
+                broadband_delay=delay_bb if np.isfinite(delay_bb) else None,
+                mode_lock_window=mode_lock_window if np.isfinite(delay_bb) else None,
+                estimator=estimator,
+            )
+            delays = [multiscale[tau][0] for tau in tau_values]
+            corrs = [multiscale[tau][1] for tau in tau_values]
+            errs = [multiscale[tau][2] for tau in tau_values]
+            
+            gamma, _, _, _ = fit_gamma(tau_values, delays, errs, correlations=corrs, min_valid_points=3)
+            results[pair_key] = float(gamma) if np.isfinite(gamma) else None
+    
+    return results
+
+
+def _jackknife_single_iteration(
+    omit_idx: int,
+    season_intervals: List[Tuple[float, float]],
+    system_data: Dict,
+    detrend_window: float,
+    tau_values: List[float],
+    lag_range: Tuple[float, float],
+    lag_step: float,
+    mode_lock_window: float,
+    min_variance_fraction: float,
+    min_correlation: float,
+    estimator: str,
+    broadband_estimator: Optional[str],
+) -> Dict[str, Optional[float]]:
+    """
+    Single jackknife iteration - designed for parallel execution.
+    
+    Returns dict mapping pair_key -> gamma value (or None if failed)
+    """
+    keep_intervals = [season_intervals[j] for j in range(len(season_intervals)) if j != omit_idx]
+    
+    # Build subset light curves
+    subset_lcs = {}
+    for label, lc_data in system_data.items():
+        t_arr = np.array(lc_data['t'])
+        m = _mask_times_in_intervals(t_arr, keep_intervals)
+        subset_lcs[label] = LightCurve(
+            label=label,
+            t=t_arr[m].copy(),
+            mag=np.array(lc_data['mag'])[m].copy(),
+            magerr=np.array(lc_data['magerr'])[m].copy(),
+        )
+    
+    detrended = {lbl: detrend_lightcurve(lc, detrend_window) for lbl, lc in subset_lcs.items()}
+    
+    # Analyze each pair
+    results = {}
+    labels = list(detrended.keys())
+    
+    for i, l1 in enumerate(labels):
+        for l2 in labels[i+1:]:
+            pair_key = f"{l1}-{l2}"
+            lc1 = detrended[l1]
+            lc2 = detrended[l2]
+            
+            if broadband_estimator == "dcf":
+                delay_bb, corr_bb, err_bb = estimate_delay_dcf(lc1, lc2, lag_range, lag_step=lag_step)
+            elif broadband_estimator == "iccf":
+                delay_bb, corr_bb, err_bb = estimate_delay_iccf(lc1, lc2, lag_range, lag_step=lag_step)
+            else:
+                delay_bb, corr_bb, err_bb = estimate_delay_correlation(lc1, lc2, lag_range, lag_step=lag_step)
+            
+            multiscale = compute_multiscale_delays(
+                lc1, lc2, tau_values, lag_range,
+                lag_step=lag_step,
+                min_correlation=min_correlation,
+                min_variance_fraction=min_variance_fraction,
+                broadband_delay=delay_bb if np.isfinite(delay_bb) else None,
+                mode_lock_window=mode_lock_window if np.isfinite(delay_bb) else None,
+                estimator=estimator,
+            )
+            delays = [multiscale[tau][0] for tau in tau_values]
+            corrs = [multiscale[tau][1] for tau in tau_values]
+            errs = [multiscale[tau][2] for tau in tau_values]
+            
+            gamma, _, _, _ = fit_gamma(tau_values, delays, errs, correlations=corrs, min_valid_points=3)
+            results[pair_key] = float(gamma) if np.isfinite(gamma) else None
+    
+    return results
+
+
 def run_bootstrap_uncertainty(
     system: LensSystem,
     n_bootstrap: int = 100,
@@ -1329,9 +1552,12 @@ def run_bootstrap_uncertainty(
     broadband_estimator: Optional[str] = None,
     bootstrap_mode: str = "frrss",
     no_bandpass: bool = False,
+    n_jobs: int = -1,
 ) -> Dict[str, Dict[str, float]]:
     """
     Bootstrap uncertainty estimation for Gamma.
+    
+    M4 Pro Optimized: Uses parallel processing via joblib.
     """
     if tau_values is None:
         tau_values = [5, 10, 20, 40, 80, 160]
@@ -1346,122 +1572,58 @@ def run_bootstrap_uncertainty(
     gamma_samples_phot = {k: [] for k in pair_keys}
     gamma_samples_jack = {k: [] for k in pair_keys}
 
-    rng = np.random.default_rng()
-
     if broadband_estimator is None:
         broadband_estimator = estimator
         if estimator == "iccf":
             broadband_estimator = "interp"
 
+    # Serialize light curves for parallel processing
+    system_data = {}
+    for label, lc in system.light_curves.items():
+        system_data[label] = {
+            't': lc.t.tolist(),
+            'mag': lc.mag.tolist(),
+            'magerr': lc.magerr.tolist(),
+        }
+
+    # Determine number of jobs
+    if n_jobs == -1:
+        n_jobs = cpu_count()
+    
+    # Parallel jackknife
     if n_seasons >= 2:
-        for omit_idx in range(n_seasons):
-            keep_intervals = [season_intervals[j] for j in range(n_seasons) if j != omit_idx]
-            subset_lcs: Dict[str, LightCurve] = {}
-            for label, lc in system.light_curves.items():
-                m = _mask_times_in_intervals(lc.t, keep_intervals)
-                subset_lcs[label] = LightCurve(
-                    label=label,
-                    t=lc.t[m].copy(),
-                    mag=lc.mag[m].copy(),
-                    magerr=lc.magerr[m].copy(),
-                )
-
-            detrended = {lbl: detrend_lightcurve(lc, detrend_window) for lbl, lc in subset_lcs.items()}
-            for l1, l2 in system.get_image_pairs():
-                pair_key = f"{l1}-{l2}"
-                lc1 = detrended[l1]
-                lc2 = detrended[l2]
-                if broadband_estimator == "dcf":
-                    delay_bb, corr_bb, err_bb = estimate_delay_dcf(lc1, lc2, lag_range, lag_step=lag_step)
-                elif broadband_estimator == "iccf":
-                    delay_bb, corr_bb, err_bb = estimate_delay_iccf(lc1, lc2, lag_range, lag_step=lag_step)
-                else:
-                    delay_bb, corr_bb, err_bb = estimate_delay_correlation(lc1, lc2, lag_range, lag_step=lag_step)
-                multiscale = compute_multiscale_delays(
-                    lc1,
-                    lc2,
-                    tau_values,
-                    lag_range,
-                    lag_step=lag_step,
-                    min_correlation=min_correlation,
-                    min_variance_fraction=min_variance_fraction,
-                    broadband_delay=delay_bb if np.isfinite(delay_bb) else None,
-                    mode_lock_window=mode_lock_window if np.isfinite(delay_bb) else None,
-                    estimator=estimator,
-                )
-                delays = [multiscale[tau][0] for tau in tau_values]
-                corrs = [multiscale[tau][1] for tau in tau_values]
-                errs = [multiscale[tau][2] for tau in tau_values]
-
-                gamma, _, _, _ = fit_gamma(tau_values, delays, errs, correlations=corrs, min_valid_points=3)
-                if np.isfinite(gamma):
+        print(f"  Running {n_seasons} jackknife iterations using {min(n_jobs, n_seasons)} cores...")
+        jack_results = Parallel(n_jobs=min(n_jobs, n_seasons), backend='loky', verbose=0)(
+            delayed(_jackknife_single_iteration)(
+                omit_idx, season_intervals, system_data,
+                detrend_window, tau_values, lag_range, lag_step,
+                mode_lock_window, min_variance_fraction, min_correlation,
+                estimator, broadband_estimator
+            )
+            for omit_idx in range(n_seasons)
+        )
+        
+        for result in jack_results:
+            for pair_key, gamma in result.items():
+                if gamma is not None:
                     gamma_samples_jack[pair_key].append(gamma)
 
-    for b in range(n_bootstrap):
-        # Bootstrap resampling
-        perturbed_lcs = {}
-        for label, lc in system.light_curves.items():
-            n = int(len(lc.t))
-            if n < 5:
-                perturbed_lcs[label] = lc
-                continue
-
-            if bootstrap_mode == "fr":
-                t_bs = lc.t
-                mag_bs = lc.mag
-                err_bs = lc.magerr
-            else:
-                idx = rng.integers(0, n, size=n)
-                uniq, counts = np.unique(idx, return_counts=True)
-                t_bs = lc.t[uniq]
-                mag_bs = lc.mag[uniq]
-                err_bs = lc.magerr[uniq] / np.sqrt(counts.astype(float))
-
-            order = np.argsort(t_bs)
-            t_bs = t_bs[order]
-            mag_bs = mag_bs[order]
-            err_bs = err_bs[order]
-
-            noise = rng.standard_normal(len(t_bs)) * err_bs
-            perturbed_lcs[label] = LightCurve(
-                label=label,
-                t=t_bs.copy(),
-                mag=(mag_bs + noise).copy(),
-                magerr=err_bs.copy(),
-            )
-        
-        # Analyze
-        for l1, l2 in system.get_image_pairs():
-            pair_key = f"{l1}-{l2}"
-            lc1 = detrend_lightcurve(perturbed_lcs[l1], detrend_window)
-            lc2 = detrend_lightcurve(perturbed_lcs[l2], detrend_window)
-
-            if broadband_estimator == "dcf":
-                delay_bb, corr_bb, err_bb = estimate_delay_dcf(lc1, lc2, lag_range, lag_step=lag_step)
-            elif broadband_estimator == "iccf":
-                delay_bb, corr_bb, err_bb = estimate_delay_iccf(lc1, lc2, lag_range, lag_step=lag_step)
-            else:
-                delay_bb, corr_bb, err_bb = estimate_delay_correlation(lc1, lc2, lag_range, lag_step=lag_step)
-            multiscale = compute_multiscale_delays(
-                lc1,
-                lc2,
-                tau_values,
-                lag_range,
-                lag_step=lag_step,
-                min_correlation=min_correlation,
-                min_variance_fraction=min_variance_fraction,
-                broadband_delay=delay_bb if np.isfinite(delay_bb) else None,
-                mode_lock_window=mode_lock_window if np.isfinite(delay_bb) else None,
-                estimator=estimator,
-            )
-            delays = [multiscale[tau][0] for tau in tau_values]
-            corrs = [multiscale[tau][1] for tau in tau_values]
-            errs = [multiscale[tau][2] for tau in tau_values]
-
-            gamma, _, _, _ = fit_gamma(tau_values, delays, errs, correlations=corrs, min_valid_points=3)
-            if np.isfinite(gamma):
-                gamma_samples_phot[pair_key].append(gamma)
+    # Parallel bootstrap
+    print(f"  Running {n_bootstrap} bootstrap iterations using {min(n_jobs, n_bootstrap)} cores...")
+    boot_results = Parallel(n_jobs=min(n_jobs, n_bootstrap), backend='loky', verbose=0)(
+        delayed(_bootstrap_single_iteration)(
+            b, system_data, detrend_window, tau_values, lag_range, lag_step,
+            mode_lock_window, min_variance_fraction, min_correlation,
+            estimator, broadband_estimator, bootstrap_mode, no_bandpass
+        )
+        for b in range(n_bootstrap)
+    )
     
+    for result in boot_results:
+        for pair_key, gamma in result.items():
+            if gamma is not None:
+                gamma_samples_phot[pair_key].append(gamma)
+
     # Compute bootstrap statistics
     bootstrap_results = {}
     for pair_key in pair_keys:
@@ -1472,7 +1634,8 @@ def run_bootstrap_uncertainty(
 
         if len(jack) >= 2:
             jack_mean = float(np.mean(jack))
-            jack_var = float((len(jack) - 1) / len(jack) * np.sum((np.array(jack) - jack_mean) ** 2))
+            n_jack = len(jack)
+            jack_var = float((n_jack - 1) / n_jack * np.sum((np.array(jack) - jack_mean) ** 2))
             jack_std = float(np.sqrt(jack_var))
         else:
             jack_std = np.nan
@@ -1567,12 +1730,18 @@ def historical_interp_estimator(lc1: LightCurve, lc2: LightCurve,
     # Uncertainty based on correlation width
     half_max = max_corr / 2
     fwhm = np.sum(corrs >= half_max) * lag_step
-    lag_err = fwhm / 2.35 if fwhm > 0 else 10.0
+    lag_err = fwhm / 2.35482 if fwhm > 0 else 10.0  # Precise FWHM to sigma (2*sqrt(2*ln(2)))
     
     return best_lag, max_corr, lag_err
 
 
 def main():
+    """Run COSMOGRAIL temporal shear analysis on strong lens systems.
+    
+    Parses COSMOGRAIL light curve data, analyzes multiple lens systems,
+    measures time delays at multiple timescales, and detects temporal shear.
+    Outputs results to JSON and prints summary statistics.
+    """
     parser = argparse.ArgumentParser(description="COSMOGRAIL Temporal Shear Analysis")
     parser.add_argument(
         "--data-dir",
@@ -1698,7 +1867,30 @@ def main():
     )
     args = parser.parse_args()
     
+    # Data acquisition check
+    print_status("Checking COSMOGRAIL data availability...")
     data_dir = Path(args.data_dir)
+    if not data_dir.exists():
+        print_status(f"Data directory not found: {data_dir}", "ERROR")
+        print_status("Please ensure COSMOGRAIL light curve files are in data/cosmograil/", "ERROR")
+        sys.exit(1)
+    
+    # Check for required RDB files
+    required_systems = ["HE0435", "HS2209", "J1001", "J1206", "PG1115", "RXJ1131", "WFI2033", "DESJ0408"]
+    available_rdb = list(data_dir.glob("*.rdb"))
+    available_systems = [f.stem.split("_")[0].upper() for f in available_rdb]
+    
+    missing = [s for s in required_systems if s not in available_systems]
+    if missing:
+        print_status(f"⚠ Missing light curves for: {', '.join(missing)}", "WARNING")
+        print_status(f"✓ Available: {len(available_rdb)} RDB files", "INFO")
+    else:
+        print_status(f"✓ All required COSMOGRAIL data present ({len(available_rdb)} RDB files)", "SUCCESS")
+    
+    if len(available_rdb) == 0:
+        print_status("No COSMOGRAIL data files found. Cannot proceed.", "ERROR")
+        sys.exit(1)
+    
     output_dir = Path(args.output_dir)
     figure_dir = Path(args.figure_dir)
     output_dir.mkdir(parents=True, exist_ok=True)
@@ -1865,8 +2057,12 @@ def main():
             print_status(f"  Failed to parse: {e}", "WARNING")
             continue
         
-        if system is None or system.n_images < 2:
-            print_status(f"  Skipping: insufficient images", "WARNING")
+        if system is None:
+            print_status(f"  Skipping: failed to parse CSV (insufficient data or unsupported format)", "WARNING")
+            continue
+        
+        if system.n_images < 2:
+            print_status(f"  Skipping: only {system.n_images} image(s) found (need >= 2)", "WARNING")
             continue
         
         print_status(f"  System {system.system_id}: {system.n_images} images, "
@@ -2021,4 +2217,12 @@ def main():
 
 
 if __name__ == "__main__":
+    # Setup file logging when run manually
+    import sys
+    from pathlib import Path
+    repo_root = Path(__file__).resolve().parents[2]
+    sys.path.insert(0, str(repo_root))
+    sys.path.insert(0, str(repo_root / "scripts"))
+    from utils.logger import setup_step_logger
+    logger = setup_step_logger("step_3_0_cosmograil_temporal_shear")
     main()

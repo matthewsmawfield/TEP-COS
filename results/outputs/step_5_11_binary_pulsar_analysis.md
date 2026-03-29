@@ -1,26 +1,26 @@
 # Binary Pulsar Analysis (Freire GCpsr)
 **Source:** /Users/matthewsmawfield/www/TEP-COS/results/outputs/freire_GCpsr.txt
-**SHA256:** `ad6a26cc3270d518...`
+**SHA256:** `647ceabcd8522168...`
 
 ## Sample Sizes
-- **Total GC pulsars parsed:** 349
-- **GC MSPs (P < 30 ms):** 325
-- **Binary MSPs:** 111
+- **Total GC pulsars parsed:** 359
+- **GC MSPs (P < 30 ms):** 335
+- **Binary MSPs:** 115
 - **Isolated MSPs:** 81
 
 ## Binary vs Isolated Comparison
 
 | Metric | Binary MSPs | Isolated MSPs |
 | --- | --- | --- |
-| N | 111 | 81 |
-| Mean log|Ṗ| | -19.273 | -18.967 |
-| Std log|Ṗ| | 0.705 | 0.872 |
-| Fraction negative Ṗ | 43.2% | 46.9% |
+| N | 115 | 81 |
+| Mean log|Ṗ| | -19.290 | -18.967 |
+| Std log|Ṗ| | 0.701 | 0.872 |
+| Fraction negative Ṗ | 43.5% | 46.9% |
 
 ### Statistical Tests
-- **Difference (binary - isolated):** -0.305 dex
-- **Welch t-test p:** 0.01092
-- **Mann-Whitney p:** 0.006703
+- **Difference (binary - isolated):** -0.323 dex
+- **Welch t-test p:** 0.006788
+- **Mann-Whitney p:** 0.003794
 
 ## Interpretation
 
@@ -32,4 +32,4 @@ Any significant difference would suggest:
 - Population/selection effects (binary MSPs may have different intrinsic properties)
 - Or a TEP-like effect that couples differently to binary vs isolated systems
 
-**Result:** Significant difference detected (p = 0.01092). This warrants further investigation.
+**Result:** Significant difference detected (p = 0.006788). This warrants further investigation.

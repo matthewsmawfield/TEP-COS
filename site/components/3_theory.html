@@ -3,12 +3,10 @@
 <p>
     The Temporal Equivalence Principle predicts that gravitational time dilation is enhanced at 
     intermediate astrophysical scales while remaining consistent with precision tests in the 
-    screened Solar System regime. This section establishes the theoretical basis for the two 
-    time-domain probes examined in this work: pulsar spin-down and gravitational lensing. 
-    Both observables respond to the same underlying physics—modified proper time accumulation 
-    in deep gravitational potentials—but probe complementary regimes of the screening hierarchy.
+    screened Solar System regime. This section establishes the theoretical basis for the 
+    time-domain probe examined in this work: pulsar spin-down in globular clusters. 
     This theoretical foundation is necessary to derive the specific quantitative predictions 
-    (Pulsar Ṗ drift and Lensing Γ) tested in the subsequent sections.
+    (Pulsar Ṗ drift) tested in the subsequent sections.
 </p>
 
 <h2>2.1 The TEP Modification</h2>
@@ -31,20 +29,18 @@
 </p>
 
 <div class="equation">
-    $$\frac{d\tau}{dt} = 1 + \frac{\Phi}{c^2} + \alpha_{\text{TEP}} \cdot f(\Phi, \nabla\Phi)$$
+    $$\frac{d\tau}{dt} = 1 + \frac{\Phi}{c^2} + \alpha_{\text{eff}} \cdot f(\Phi, \nabla\Phi)$$
 </div>
 
 <p>
-    where Φ is the gravitational potential, and α<sub>TEP</sub> is the enhancement factor. Standard GR 
-    corresponds to α<sub>TEP</sub> = 0. The function f(Φ, ∇Φ) encodes the scale-dependent modification.
+    where Φ is the gravitational potential, and α<sub>eff</sub> is the enhancement factor. Standard GR 
+    corresponds to α<sub>eff</sub> = 0. The function f(Φ, ∇Φ) encodes the scale-dependent modification.
 </p>
 
 <div class="key-concept">
-    <h4>Methodological Approach: Phenomenological vs. Fundamental</h4>
+    <h4>Theoretical Framework</h4>
     <p>
-        Phenomenological Parameterization:
-        At this stage, a phenomenological approach is adopted (parameterizing the effect via $\alpha_{\text{eff}}$ and $R_{\text{sol}}$) rather than asserting a specific Lagrangian. 
-        This "Effective Field Theory" strategy uses observational data to constrain the <em>class</em> of viable modified gravity theories without committing to a specific high-energy completion, mirroring the PPN (Parameterized Post-Newtonian) framework used to test GR in the Solar System.
+        The TEP framework uses observational data to constrain the <em>class</em> of viable modified gravity theories through effective parameters α<sub>eff</sub> and R<sub>sol</sub>, following the same strategy as the PPN (Parameterized Post-Newtonian) framework used to test GR in the Solar System. The screening mechanism and field equations are established in Paper I.
     </p>
 </div>
 
@@ -120,7 +116,7 @@
                 <td>10<sup>12</sup> M<sub>☉</sub></td>
                 <td>~10<sup>−24</sup> g/cm³</td>
                 <td>Unscreened (ρ ≪ ρ<sub>c</sub>)</td>
-                <td>Lensing constraint (this work)</td>
+                <td>Lensing constraint (TEP-LENS Paper 14)</td>
             </tr>
         </tbody>
     </table>
@@ -133,73 +129,10 @@
 </div>
 
 <p>
-    <em>Note:</em> The precise functional form of f(Φ, ∇Φ) and the screening mechanism remain to be derived from first principles. 
-    The present work treats α<sub>eff</sub> as a phenomenological parameter constrained by observation.
+    <em>Note:</em> The precise functional form of f(Φ, ∇Φ) and the screening mechanism are derived in Paper I (1manuscript-tep.md), which establishes the chameleon-type screening via a scalar field potential V(φ) with density-dependent effective mass. The present work applies these theoretical foundations to astrophysical observables, with α<sub>eff</sub> as a parameter constrained by observation.
 </p>
 
-<h2>2.2 Temporal Shear in Gravitational Lensing</h2>
-
-<p>
-    When a distant quasar lies behind a massive galaxy, its light bends around the foreground mass, 
-    creating multiple images that arrive at Earth via different paths. Because these paths have 
-    different lengths and traverse different gravitational potentials, the images arrive at 
-    slightly different times. Under General Relativity, this time delay is fixed (Refsdal 1964):
-</p>
-
-<div class="equation">
-    $$\Delta t_{\text{GR}} = \frac{1+z_L}{c} \frac{D_L D_S}{D_{LS}} \left[ \frac{(\theta - \beta)^2}{2} - \psi(\theta) \right]$$
-</div>
-
-<p>
-    This delay is constant and independent of the variability timescale τ of the source.
-</p>
-
-<p>
-    TEP predicts something different. If gravitational time dilation is enhanced, then the time delay 
-    should depend on how it is measured—specifically, on the timescale of the quasar's variability 
-    used to cross-correlate the images:
-</p>
-
-<div class="equation">
-    $$\Delta t_{\text{TEP}}(\tau) = \Delta t_{\text{GR}} + \Gamma \cdot \log_{10}(\tau)$$
-</div>
-
-<p>
-    The quantity Γ—here termed "temporal shear"—measures how much the apparent time delay 
-    changes across different variability timescales. Under GR, Γ = 0. Under TEP, Γ ≠ 0.
-</p>
-
-<div class="key-concept">
-    <h4>Definition: Temporal Shear</h4>
-    <p>
-        $$\Gamma \equiv \frac{d(\Delta t)}{d(\log \tau)}$$
-    </p>
-    <p>
-        Under GR, Γ = 0 (a single constant delay), whereas under TEP, Γ ≠ 0 (scale-dependent delay).
-    </p>
-    <p>
-        The parameter τ acts as a measurement window—the timescale used to bandpass-filter 
-        the light curves before cross-correlation—rather than a physical frequency of the source. Empirically, 
-        when the same image pair is analyzed at different smoothing scales, the inferred time delay shifts systematically. 
-        This scale dependence is absent in GR but arises naturally if gravitational temporal transport is scale-dependent. 
-        The physical interpretation—whether this reflects modified dispersion, non-local transport, or emergent light-speed structure—is explored in the foundational theoretical framework.
-    </p>
-</div>
-
-<p>
-    The TEP path integral predicts:
-</p>
-
-<div class="equation">
-    $$\Gamma \propto \int \nabla\Phi \cdot dl \propto \frac{1+z_S}{1+z_L} \times D_{LS} \times \theta_E^2$$
-</div>
-
-<p>
-    This predicts that higher source redshift leads to larger |Γ|, because the light path 
-    traverses more gravitational potential.
-</p>
-
-<h2>2.3 Pulsar Spin-Down Drift</h2>
+<h2>2.2 Pulsar Spin-Down Drift</h2>
 
 <p>
     Pulsars are nature's most precise clocks. These rapidly rotating neutron stars emit beams of 
@@ -318,13 +251,13 @@
     </p>
 </div>
 
-<h2>2.4 The Unified Prediction</h2>
+<h2>2.3 The Unified Prediction</h2>
 
 <div class="key-concept">
     <h3>The Rosetta Stone</h3>
     <p>
-        Both observables—lensing temporal shear Γ and pulsar |Ṗ| excess—are manifestations of 
-        enhanced gravitational effects in deep potentials:
+        The TEP prediction for pulsar spin-down anomalies is a manifestation of 
+        enhanced gravitational time dilation effects in deep potentials:
     </p>
     
     <table class="data-table">
@@ -333,59 +266,50 @@
                 <th>Observable</th>
                 <th>GR Prediction</th>
                 <th>TEP Prediction</th>
-                <th>Enhancement</th>
+                <th>Status</th>
             </tr>
         </thead>
         <tbody>
             <tr>
-                <td>Lensing Γ</td>
-                <td>0</td>
-                <td>~100–300 days/decade</td>
-                <td>Upper Limit (|Γ| < 60)</td>
-            </tr>
-            <tr>
                 <td>Pulsar population controls</td>
                 <td>0.000005%</td>
-                <td>Environment dependence in observed log|Ṗ| with residual ≈ 0.13 dex after period + B-proxy controls</td>
-                <td>Robust Anomaly</td>
+                <td>Environment dependence in observed log|Ṗ| with 0.59 dex raw excess and 0.58 dex controlled residual after population controls</td>
+                <td><strong>Robust Anomaly (5.8σ)</strong></td>
             </tr>
         </tbody>
     </table>
     
     <p>
-        The pulsar channel provides the primary, spatially-resolved evidence for potential-dependent anomalies in this work, bolstered by robust field controls.
-        The lensing channel serves as a clean geometric constraint, bounding the magnitude of the effect at cosmological scales.
+        The pulsar channel provides the primary, spatially-resolved evidence for potential-dependent anomalies in this work, 
+        bolstered by robust field controls. Independent geometric constraints from gravitational lensing are reported in 
+        companion Paper 14 (TEP-LENS).
     </p>
 </div>
 
-<h2>2.5 Empirical Tests and Key Constraints</h2>
+<h2>2.4 Empirical Tests and Key Constraints</h2>
 
 <p>
-    TEP makes empirical claims that can be tested. In this work, the lensing temporal shear signal and its geometric specificity are tested directly;
-    other items below are framed as follow-up tests that either <em>constrain</em> the gravitational interpretation or <em>refine</em> particular
-    parameterizations of the scale dependence.
+    TEP makes empirical claims that can be tested. The following tests either <em>constrain</em> the gravitational 
+    interpretation or <em>refine</em> particular parameterizations of the scale dependence.
 </p>
 
 <div class="key-concept">
     <h4>Key discriminating tests</h4>
     <ol>
-        <li>Achromaticity: If Γ measured independently in multiple optical bands shows robust chromatic structure (ΔΓ ≠ 0 beyond uncertainties),
-            this would require careful interpretation—microlensing is one possibility, but wavelength-dependent source structure could also contribute.</li>
-        <li>Geometric specificity: If, in an expanded lens sample with validated null controls and comparable cadence, |Γ| shows no association 
-            with path-length proxies, this would constrain the lensing interpretation and motivate alternative explanations.</li>
+        <li><strong>N-body Dynamics (Pulsar Falsifier):</strong> If rigorous analysis using the full CMC catalogs for 
+            Terzan 5 and 47 Tuc can reproduce the 0.59 dex raw excess <em>and</em> the suppressed density scaling 
+            (slope 0.39) without modified gravity, the pulsar signal is claimed by standard physics.</li>
     </ol>
 </div>
 
 <div class="key-concept">
     <h4>Model-dependent expectations (parameterization-level constraints)</h4>
     <ul>
-        <li>High-z scaling: Under simple extrapolations from the present sample, higher-z sources should on average exhibit larger |Γ|. The
-            numerical thresholds (e.g., |Γ| ≳ O(10<sup>2</sup>) days/decade for z<sub>S</sub> ≳ 3; and |Γ| ≳ 300 days/decade for systems similar to DESJ0408)
-            are therefore treated as <em>testable expectations</em> that constrain the scaling rather than as unconditional falsifiers.</li>
-        <li>Pulsar residuals: After stronger population controls and (where feasible) dynamical corrections, any remaining environment dependence in
-            observed |Ṗ| should be reassessed; a vanishing residual would constrain the pulsar interpretation without impacting the lensing detection.</li>
-        <li>Cross-channel consistency: Agreement of the inferred enhancement scale across systems is a consistency check; discrepancies would guide refinement
-            of screening/scale-transition modeling.</li>
+        <li>High-z scaling: Under simple extrapolations, higher-z sources are expected to exhibit larger effects on average, 
+            but the quantitative threshold depends on system geometry.</li>
+        <li>Cross-channel consistency: Agreement of the inferred enhancement scale across different observables (pulsars, lensing) 
+            is a consistency check; discrepancies would guide refinement of screening/scale-transition modeling. 
+            Independent lensing constraints are reported in TEP-LENS (Paper 14).</li>
     </ul>
 </div>
 

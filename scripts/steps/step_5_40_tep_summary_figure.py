@@ -104,7 +104,7 @@ ax.text(5, 0.3, explanation, ha='center', va='bottom', fontsize=9,
 plt.tight_layout()
 
 # Save
-fig_path = '/Users/matthewsmawfield/www/TEP-COS/results/figures/tep_cosmology_summary.png'
+fig_path = 'results/figures/tep_cosmology_summary.png'
 plt.savefig(fig_path, dpi=150, bbox_inches='tight', facecolor='white')
 plt.savefig(fig_path.replace('.png', '.pdf'), bbox_inches='tight')
 print(f'Figure saved: {fig_path}')

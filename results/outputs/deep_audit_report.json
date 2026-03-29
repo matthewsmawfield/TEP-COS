@@ -1,0 +1,16 @@
+{
+  "timestamp": "2026-03-29T23:40:29.991822",
+  "sample_size": 218,
+  "calculated_r": 0.21780141521973087,
+  "calculated_p": 0.0012111078419130756,
+  "significance_sigma": 3.236251126988192,
+  "issues": [
+    "JSON values do not match calculated values"
+  ],
+  "warnings": [
+    "Log(\u03c3) distribution may be non-normal",
+    "mB distribution may be non-normal",
+    "3 \u03c3 outliers detected (z > 3)"
+  ],
+  "verdict": "FAIL"
+}

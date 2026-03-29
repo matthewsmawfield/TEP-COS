@@ -117,7 +117,7 @@ def parse_freire_names_without_pdot():
                     if i + 1 < len(parts):
                         pdot_col = parts[i + 1].strip() if i + 1 < len(parts) else None
                     break
-            except:
+            except (ValueError, TypeError):
                 pass
         
         # Check if P-dot is missing (marked with * or i)
@@ -185,7 +185,7 @@ def parse_atnf_db():
             elif key in ('P0', 'P1', 'F0', 'F1'):
                 try:
                     current[key] = float(val)
-                except:
+                except (ValueError, TypeError):
                     pass
     
     return atnf
@@ -318,35 +318,74 @@ def ttest_logpdot(gc: np.ndarray, field: np.ndarray) -> dict:
 
 
 def two_dim_match_bootstrap(gc_rows: list, field_rows: list, n_boot=5000, seed=42) -> dict:
-    """Bootstrap matching in (logP, log_b_proxy)."""
+    """Bootstrap matching in (logP, log_b_proxy) WITHOUT replacement.
+    
+    Each GC pulsar is matched to a unique field pulsar to avoid bias from overmatching.
+    """
     rng = np.random.default_rng(seed)
     gc_x = np.array([[r["logP"], r["log_b_proxy"]] for r in gc_rows])
     gc_y = np.array([r["logPdot_abs"] for r in gc_rows])
     field_x = np.array([[r["logP"], r["log_b_proxy"]] for r in field_rows])
     field_y = np.array([r["logPdot_abs"] for r in field_rows])
 
+    # Pre-compute all pairwise distances
+    n_gc = len(gc_rows)
+    n_field = len(field_rows)
+    distances = np.zeros((n_gc, n_field))
+    for i in range(n_gc):
+        dx = field_x[:, 0] - gc_x[i, 0]
+        dy = field_x[:, 1] - gc_x[i, 1]
+        distances[i, :] = np.sqrt(dx*dx + dy*dy)
+
     diffs = []
     for _ in range(n_boot):
-        idx_gc = rng.integers(0, len(gc_rows), size=len(gc_rows))
+        # Resample GC pulsars with replacement (bootstrap)
+        idx_gc = rng.integers(0, n_gc, size=n_gc)
+        
+        # Match WITHOUT replacement
+        used_field = set()
         f_sel = []
-        for i in idx_gc:
-            dx = field_x - gc_x[i]
-            j = int(np.argmin(np.sum(dx * dx, axis=1)))
-            f_sel.append(field_y[j])
+        
+        # Randomize order to avoid systematic bias
+        order = rng.permutation(len(idx_gc))
+        
+        for idx in order:
+            i = idx_gc[idx]
+            # Find nearest unused field pulsar
+            sorted_indices = np.argsort(distances[i, :])
+            for j in sorted_indices:
+                if j not in used_field:
+                    used_field.add(j)
+                    f_sel.append(field_y[j])
+                    break
+        
         f_sel = np.array(f_sel)
         diffs.append(float(np.mean(gc_y[idx_gc]) - np.mean(f_sel)))
 
     diffs = np.array(diffs)
+    # Compute p-value with floor at 1/n_boot (minimum resolvable for bootstrap)
+    p_left = np.mean(diffs <= 0)
+    p_right = np.mean(diffs >= 0)
+    p_two_sided_raw = 2 * min(p_left, p_right)
+    p_floor = 1.0 / n_boot  # Minimum resolvable p-value
+    p_two_sided = max(p_two_sided_raw, p_floor)  # Ensure we don't report p=0.0
+    
     return {
         "n_boot": int(n_boot),
         "diff_mean": float(np.mean(diffs)),
         "diff_ci_2_5": float(np.percentile(diffs, 2.5)),
         "diff_ci_97_5": float(np.percentile(diffs, 97.5)),
-        "p_two_sided": float(2 * min(np.mean(diffs <= 0), np.mean(diffs >= 0))),
+        "p_two_sided": float(p_two_sided),
+        "p_two_sided_note": f"min_resolvable={p_floor:.1e}" if p_two_sided_raw < p_floor else None,
     }
 
 
 def main():
+    """Run hybrid maximum pulsar analysis combining base and cross-matched samples.
+    
+    Loads robust base data, cross-matches with ATNF for additional pulsars,
+    and computes both raw and population-controlled statistics.
+    """
     print("="*70)
     print("HYBRID MAXIMUM PULSAR ANALYSIS")
     print("="*70)

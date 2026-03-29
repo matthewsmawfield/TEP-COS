@@ -1,603 +1,95 @@
-<h1>4. Cosmological Consistency Checks</h1>
+<h1>4. Discussion</h1>
 
 <p>
-    Gravitational lensing time delays provide a geometric probe of TEP at cosmological scales. 
-    Under TEP, the time delay between multiply-imaged quasars should exhibit scale-dependent 
-    structure—"temporal shear"—that varies with the measurement timescale. Analysis of the 
-    COSMOGRAIL dataset reveals evidence for this effect in the lens system DESJ0408, 
-    where scale-dependent delays are detected consistent with the screened soliton 
-    framework established in Section 2. These results are presented as a complementary time-domain constraint alongside the pulsar signal.
+    This section synthesizes the evidence from pulsar timing analysis and discusses
+    the implications for the Temporal Equivalence Principle. Independent geometric
+    constraints from gravitational lensing are reported in companion Paper 14 (TEP-LENS).
+</p>
+
+<h2>4.1 The Ladder of Evidence</h2>
+
+<p>
+    The Temporal Equivalence Principle has been tested using time-domain astrophysical
+    probes that directly measure the rate of proper time accumulation. The results
+    form a coherent "Ladder of Evidence" for potential-dependent modifications to
+    gravitational time flow.
 </p>
 
 <div class="methodology-box">
-    <h4>Pre-Registered Expectations & Decision Criteria</h4>
+    <h4>Methodological Structure: The Ladder</h4>
     <p>
-        To avoid "post-hoc sign matching," the TEP signature is defined a priori:
+        Why a "Ladder"? In experimental physics, novel claims require isolating the signal
+        from all possible confounding backgrounds. The evidence is structured as a hierarchy
+        of controls, where each "rung" eliminates a specific class of systematic error:
     </p>
     <ul>
-        <li>Sign: TEP predicts that images in deeper potentials (saddle points, typically) experience greater time dilation. If the scalar field coupling is scale-dependent, this slowing should be more pronounced at larger smoothing scales ($\tau$), implying $\Gamma > 0$ (Delay increases with timescale).</li>
-        <li>Magnitude: Based on the pulsar coupling $\alpha \sim 10^6$, temporal shear of order $|\Gamma| \sim 10\text{--}100$ days/decade is expected for typical lens potentials.</li>
-        <li>Decision Rule: 
-            <ul>
-                <li>$\Gamma \approx 0$ (within errors): Null/Falsification of strong TEP effects.</li>
-                <li>$\Gamma < 0$ (significant): Contradiction (unless potential model is inverted).</li>
-                <li>$\Gamma > 0$ (significant): Supportive/Consistent with TEP.</li>
-                <li><strong>Constraint Mode:</strong> If signals are mixed/complex, an upper limit ($|\Gamma| \le \Gamma_{lim}$) is placed to bound the modification.</li>
-            </ul>
-        </li>
+        <li><strong>Rung 1 (Field Control):</strong> Eliminates intrinsic population differences (e.g., "are cluster pulsars just born different?").</li>
+        <li><strong>Rung 2 (Spatial Stratification):</strong> Eliminates global systematics, linking the signal to the local potential depth.</li>
+        <li><strong>Rung 3 (Density Scaling):</strong> Eliminates standard dynamical noise, which must scale as ρ².</li>
+        <li><strong>Rung 4 (External Replication):</strong> Independent confirmation via complementary methods (see TEP-LENS Paper 14 for lensing constraints).</li>
     </ul>
 </div>
 
-<h3>4.1 Data and Methods</h3>
-
-<p>
-    The analysis uses publicly available light curves from the COSMOGRAIL collaboration, which 
-    has monitored gravitationally lensed quasars for over a decade. The sample includes:
-</p>
-
 <table class="data-table">
     <thead>
         <tr>
-            <th>System</th>
-            <th>z<sub>lens</sub></th>
-            <th>z<sub>source</sub></th>
-            <th>θ<sub>E</sub> (″)</th>
-            <th>N<sub>images</sub></th>
-            <th>Bands</th>
-        </tr>
-    </thead>
-    <tbody>
-        <tr><td>DESJ0408</td><td>0.597</td><td>2.375</td><td>1.18</td><td>3</td><td>R</td></tr>
-        <tr><td>HE0435</td><td>0.454</td><td>1.693</td><td>1.18</td><td>4</td><td>R</td></tr>
-        <tr><td>HE1104</td><td>0.729</td><td>2.319</td><td>1.58</td><td>2</td><td>B,R,I,J</td></tr>
-        <tr><td>HS2209</td><td>0.280</td><td>1.070</td><td>0.95</td><td>2</td><td>R</td></tr>
-        <tr><td>J1001</td><td>0.415</td><td>1.838</td><td>1.05</td><td>2</td><td>R</td></tr>
-        <tr><td>J1206</td><td>0.745</td><td>1.789</td><td>1.02</td><td>2</td><td>R</td></tr>
-        <tr><td>PG1115</td><td>0.311</td><td>1.722</td><td>1.14</td><td>3</td><td>R</td></tr>
-        <tr><td>Q2237</td><td>0.039</td><td>1.695</td><td>0.89</td><td>4</td><td>g,r,V,I</td></tr>
-        <tr><td>RXJ1131</td><td>0.295</td><td>0.658</td><td>1.83</td><td>4</td><td>R</td></tr>
-        <tr><td>WFI2033</td><td>0.661</td><td>1.662</td><td>1.16</td><td>3</td><td>R</td></tr>
-        <tr><td>J1004+4112</td><td>0.68</td><td>1.734</td><td>14.62</td><td>4</td><td>r</td></tr>
-    </tbody>
-</table>
-
-<div class="key-insight">
-    <h4>New: SDSS J1004+4112 (Cluster Lens)</h4>
-    <p>
-        The cluster-lensed quasar SDSS J1004+4112 provides a unique high-z test with exceptional baseline. 
-        Data: 14.5-year r-band monitoring (1018 epochs) from Muñoz et al. (2022). 
-        This system has the largest known Einstein radius (14.62″) and very long time delays 
-        (Δt<sub>DC</sub> = 2458 days).
-    </p>
-</div>
-
-<h3>4.1.1 Multi-Scale Delay Estimation</h3>
-
-<p>
-    For each image pair, time delays are estimated at multiple variability timescales 
-    $\tau_w \in \{20, 40, 80, 160\}$ days. The analysis pipeline makes three critical methodological 
-    choices to ensure robustness against common lensing artifacts:
-</p>
-
-<div class="key-concept">
-    <h4>Methodological Choices & Justifications</h4>
-    
-    <p>1. Estimator: ICCF vs Interpolation<br>
-    <em>Choice:</em> The Interpolated Cross-Correlation Function (ICCF) is employed.<br>
-    <em>Justification:</em> Quasar light curves are irregularly sampled with significant seasonal gaps. 
-    Linear interpolation (used in some standard pipelines) effectively fabricates data across these gaps, 
-    introducing artificial correlations. ICCF computes correlations using only observed data points, 
-    making it more robust to gap-induced artifacts.</p>
-
-    <p>2. Mode-Jump Veto (The "Locking" Constraint)<br>
-    <em>Choice:</em> The delay search is restricted to a ±50 day window around the broadband (global) delay.<br>
-    <em>Justification:</em> The cross-correlation function often contains multiple local maxima ("aliases") separated by 
-    ~1 year due to seasonal sampling. As the smoothing scale $\tau_w$ increases, the dominant power can shift 
-    discontinuously from one alias to another ("mode jumping"). This would register as a massive, spurious 
-    temporal shear of hundreds of days. By locking the search window, the estimator is forced to track 
-    the <em>drift of the physical peak</em> rather than the hopping between aliases.</p>
-
-    <p>3. Minimum Scale Cutoff<br>
-    <em>Choice:</em> Timescales where $\tau_w$ &lt; 20 days are excluded.<br>
-    <em>Justification:</em> Quasars exhibit "red noise" variability (power increases at long timescales). 
-    At short timescales ($\tau_w$ &lt; 20 days), the signal-to-noise ratio of intrinsic variability is low, 
-    and the delay estimate becomes dominated by photometric noise. Including these bins leads to random 
-    scatter that dilutes the signal.</p>
-</div>
-
-<p>
-    The pipeline implementation follows these steps:
-</p>
-
-<ol>
-    <li>Microlensing Detrending: Gaussian smoothing (σ = 200 days) removes slow trends uncorrelated between images.</li>
-    <li>Broadband Anchor: Cross-correlation of detrended light curves establishes the reference delay ($\Delta t_0$).</li>
-    <li>Bandpass Filtering: Difference-of-Gaussians isolates variability at each specific timescale $\tau_w$.</li>
-    <li>Constrained Search: The delay $\Delta t(\tau_w)$ is found by maximizing the CCF within $\Delta t_0 \pm 50$ days.</li>
-</ol>
-
-<h3>4.1.2 Temporal Shear Fitting</h3>
-
-<p>
-    TEP predicts that enhanced gravitational time dilation induces a scale-dependent time delay, 
-    varying with the quasar variability timescale used for cross-correlation:
-</p>
-
-<div class="equation">
-    $$\Delta t_{\text{TEP}}(\tau_w) = \Delta t_{\text{GR}} + \Gamma \cdot \log_{10}(\tau_w)$$
-</div>
-
-<p>
-    The quantity Γ—here termed "temporal shear"—measures the change in apparent time delay 
-    per decade of variability timescale. Under GR, Γ = 0. Under TEP, Γ ≠ 0.
-</p>
-
-<p>
-    Significance is assessed via σ = |Γ|/σ<sub>Γ</sub>, where σ<sub>Γ</sub> is the residual-based 
-    standard error. This empirical error estimate accounts for the correlated nature of the delay 
-    measurements across timescales.
-</p>
-
-<p>
-    With the estimator and error model defined, this pipeline is now applied to the COSMOGRAIL sample 
-    to search for the predicted temporal shear signature.
-</p>
-
-<h2>4.2 Results: Temporal Shear Measurements</h2>
-
-<div class="results-box">
-    <h3>DESJ0408 Results (ICCF with Mode-Jump Veto)</h3>
-    <p>
-        Using the ICCF estimator with $\tau_w \geq 20$ days (excluding noise-dominated bins) and
-        mode-lock window of ±50 days, the following temporal shear measurements are obtained:
-    </p>
-    
-    <table class="data-table">
-        <thead>
-            <tr>
-                <th>System</th>
-                <th>Pair</th>
-                <th>Γ (days/decade)</th>
-                <th>Uncertainty</th>
-                <th>Significance</th>
-                <th>Status</th>
-            </tr>
-        </thead>
-        <tbody>
-            <tr>
-                <td>DESJ0408</td>
-                <td>A-B</td>
-                <td>−32.4</td>
-                <td>± 14.8</td>
-                <td>2.2σ</td>
-                <td>Mixed/Complex</td>
-            </tr>
-            <tr>
-                <td>DESJ0408</td>
-                <td>B-D</td>
-                <td>+34.5</td>
-                <td>± 16.3</td>
-                <td>2.1σ</td>
-                <td>Mixed/Complex</td>
-            </tr>
-            <tr>
-                <td>RXJ1131</td>
-                <td>A-B</td>
-                <td>+2.5</td>
-                <td>± 0.6</td>
-                <td>4.4σ</td>
-                <td>Complex/Mixed</td>
-            </tr>
-            <tr>
-                <td>RXJ1131</td>
-                <td>A-C</td>
-                <td>−4.9</td>
-                <td>± 1.0</td>
-                <td>4.7σ</td>
-                <td>Contradictory</td>
-            </tr>
-            <tr>
-                <td>RXJ1131</td>
-                <td>B-C</td>
-                <td>−8.0</td>
-                <td>± 1.6</td>
-                <td>4.9σ</td>
-                <td>Contradictory</td>
-            </tr>
-        </tbody>
-    </table>
-    
-    <h4>Interpretation: Constraints from the Meta-Analysis</h4>
-    <p>
-        The individual measurements for DESJ0408 (2.2σ and 2.1σ) show significant temporal shear, but with mixed signs 
-        (A-B negative, B-D positive). This lacks the internal consistency required for a definitive TEP detection (which predicts $\Gamma > 0$ 
-        for images in deeper potentials). The RXJ1131 results also show mixed signs. This likely reflects complex local potential gradients 
-        (e.g., microlensing or substructure) or unresolved systematics that dominate the subtle TEP signal.
-    </p>
-    <p>
-        Meta-Analysis Conclusion: Evidence for temporal shear in the DESJ0408 system is reported. 
-        The magnitude ($|\Gamma| \approx 36$ days/decade for the B-D pair) shows geometric consistency, and the sign inversion is explained by the lens topology. 
-        However, given the complexity in RXJ1131, these results are conservatively framed as a <em>geometric constraint</em>: 
-        the data place an upper limit of $|\Gamma| \le 60$ days/decade on cosmological temporal shear. 
-        This rules out runaway modifications but remains consistent with the screened parameters suggested by the pulsar anomaly.
-    </p>
-     
-    <p>
-        Clarification: The parameter $\tau_w$ is a measurement window—the timescale used to bandpass-filter 
-        the light curves before cross-correlation. It is not a physical frequency of the source. The claim is empirical: 
-        when the same image pair is analyzed at different smoothing scales, the inferred time delay shifts systematically. 
-        This scale dependence is absent in GR but arises naturally if gravitational temporal transport is scale-dependent. 
-        The physical interpretation—whether this reflects modified dispersion, non-local transport, or emergent light-speed structure—is explored in Smawfield (2025a).
-    </p>
-    <p>
-        Key validation: Injection-recovery tests indicate the estimator is unbiased 
-        (mean bias 0.29 days, scatter 1.5 days). Achromaticity tests pass in four auxiliary systems 
-        (ΔΓ < 0.4σ). These validations suggest the methodology is robust against common artifacts.
-    </p>
-</div>
-
-<h2>4.3 Validation: Broadband Delays Match Literature</h2>
-
-<p>
-    A critical validation is that the broadband (unfiltered) delay estimates match published 
-    literature values, indicating that the cross-correlation methodology is sound:
-</p>
-
-<table class="data-table">
-    <thead>
-        <tr>
-            <th>System</th>
-            <th>Pair</th>
-            <th>This Work (days)</th>
-            <th>Literature (days)</th>
-            <th>Difference</th>
-        </tr>
-    </thead>
-    <tbody>
-        <tr>
-            <td>DESJ0408</td>
-            <td>A-B</td>
-            <td>−114</td>
-            <td>−112.1 ± 2.1</td>
-            <td>−1.9</td>
-        </tr>
-        <tr>
-            <td>DESJ0408</td>
-            <td>A-D</td>
-            <td>−152</td>
-            <td>−155.5 ± 12.8</td>
-            <td>+3.5</td>
-        </tr>
-        <tr>
-            <td>DESJ0408</td>
-            <td>B-D</td>
-            <td>−45</td>
-            <td>−42.4 ± 17.6</td>
-            <td>−2.6</td>
-        </tr>
-    </tbody>
-</table>
-
-<p>
-    All broadband delays agree with Courbin et al. (2017) within 1σ. This consistency suggests that the 
-    temporal shear signal represents a real scale-dependent variation around the correct 
-    mean delay, rather than a systematic bias in the delay estimation.
-</p>
-
-<h2>4.4 Methodological Validation</h2>
-
-<h3>4.4.1 Estimator Independence: ICCF vs Interpolation</h3>
-
-<p>
-    A critical test of robustness is whether results depend on the choice of delay estimator. 
-    Two distinct estimator families commonly used in time-delay cosmography were compared:
-</p>
-<ul>
-    <li>ICCF (Interpolated Cross-Correlation Function): Evaluates correlation on observed data points only. Robust to gaps.</li>
-    <li>Linear Interpolation (Python <code>numpy.interp</code>): Linearly interpolates light curves onto a regular grid before correlation. Prone to gap artifacts.</li>
-</ul>
-
-<table class="data-table">
-    <thead>
-        <tr>
-            <th>Metric</th>
-            <th>Value</th>
-        </tr>
-    </thead>
-    <tbody>
-        <tr><td>ICCF meta-analysis</td><td>Γ = +0.5 ± 0.9 days/decade</td></tr>
-        <tr><td>INTERP meta-analysis</td><td>Γ = +5.5 ± 4.6 days/decade</td></tr>
-        <tr><td>Estimator difference</td><td>ΔΓ = −5.0 ± 4.7 (z = 1.06)</td></tr>
-        <tr><td>Pearson correlation</td><td>r = 0.67 (p < 0.0001)</td></tr>
-        <tr><td>Sign agreement</td><td>77% (40/52 pairs)</td></tr>
-    </tbody>
-</table>
-
-<p>
-    The estimators agree within 1.1σ at the meta-analysis level. The high correlation (r=0.67) and sign agreement (77%) 
-    indicate that the measured temporal shear is not an artifact of a specific algorithm. 
-    ICCF is prioritized for the primary analysis due to its robust handling of seasonal gaps (see §4.1.1).
-</p>
-
-<h3>4.4.2 Gap Handling</h3>
-
-<p>
-    Seasonal observing gaps (typically 3-6 months) can introduce spurious correlations if 
-    not handled correctly. The pipeline implements NaN-aware Gaussian smoothing and forbids 
-    interpolation across gaps exceeding 30 days, ensuring that no artificial structure is 
-    fabricated in the gaps.
-</p>
-
-<h2>4.5 Detection Summary and Future Prospects</h2>
-
-<p>
-    The current analysis provides constraints on temporal shear signals with complex sign structure:
-</p>
-
-<ul>
-    <li>DESJ0408: Γ = +32 ± 15 (A-B) and Γ = +35 ± 16 (B-D) days/decade</li>
-    <li>RXJ1131: Statistically significant at 4–5σ but with mixed signs across pairs (see §4.2 for interpretation)</li>
-    <li>J1004+4112: Γ = +4.9 ± 1.7 (A-B) days/decade (2.9σ) — cluster lens, smaller than TEP scaling predicts</li>
-</ul>
-
-<div class="results-box">
-    <h4>J1004+4112: High-z Cluster Lens Test</h4>
-    <p>
-        Analysis of the 14.5-year baseline (1018 epochs) yields Γ = +4.9 ± 1.7 days/decade for the A-B pair (2.9σ).
-        TEP scaling from DESJ0408 predicts |Γ| ~ 25 days/decade for this system, but only ~5 days/decade is observed.
-    </p>
-    <p>
-        Interpretation: The A-B pair has minimal path-length difference (Δt ~ 43 days), 
-        which may explain the reduced signal. Pairs with longer delays (B-C: 782d, D-C: 2458d) did not yield 
-        robust fits due to sparse overlap after time-shifting. Alternatively, cluster lenses may exhibit 
-        different screening behavior than galaxy-scale lenses (e.g., shape dependence; Tamosiunas et al. 2022).
-    </p>
-</div>
-
-<p>
-    The consistent positive signs for DESJ0408 are TEP-consistent (images in deeper potential 
-    show slower time flow). RXJ1131 shows mixed signs that may reflect different image 
-    configurations. The LSST era, with its deep
-    multi-band monitoring of thousands of lensed quasars, will provide the statistical power
-    needed to characterize these patterns.
-</p>
-
-<h3>4.5.1 TEP Predictions for Future Surveys</h3>
-
-<p>
-    If TEP is real, the geometric scaling predicts that high-redshift systems should show 
-    larger temporal shear. Current data cannot test this prediction due to insufficient 
-    precision, but future surveys targeting z<sub>source</sub> > 3 systems with 
-    θ<sub>E</sub> > 1.5″ would provide the most sensitive probe.
-</p>
-
-<h2>4.6 Systematic Considerations</h2>
-
-<p>
-    Having established the presence of marginal signals, it is necessary to rigorously test whether they could arise from known astrophysical or instrumental systematics.
-    The null result obtained in controls demonstrates that the pipeline does not generate false 
-    positives, but specific physical confounds like microlensing require detailed exclusion.
-</p>
-
-<h3>4.6.1 The Geometric Fingerprint: Excluding Local Systematics</h3>
-
-<p>
-    A robust correlation is observed between the magnitude of the shear (|Γ|) and the source redshift ($r = 0.504$, $p = 0.014$).
-    This supports a cosmological origin for the signal.
-</p>
-
-<div class="critical-analysis">
-    <h4>Counter-Argument: Microlensing Optical Depth</h4>
-    <p>
-        Critique: The optical depth for microlensing ($\tau$) also scales with source redshift (longer path length 
-        through the halo). Could the redshift correlation reflect increased microlensing probability?
-    </p>
-    <p>
-        Analysis: The microlensing efficiency proxy $\kappa_{eff} \propto D_d D_{ds} / D_s$ was calculated for the sample. 
-        This proxy shows a positive correlation with source redshift ($r \approx 0.51$, though not statistically significant in this small sample, $p=0.13$). 
-        Thus, redshift scaling alone may not cleanly distinguish between TEP and standard microlensing optical depth effects.
-    </p>
-    <p>
-        Resolution (Magnitude): The discriminator is magnitude. While microlensing probability increases with $z_s$, 
-        standard stellar populations produce temporal shear of order $|\Gamma| < 5$ days/decade (see Injection tests). 
-        The observed signal in DESJ0408 ($|\Gamma| \approx 36$) is ~7x larger. 
-        Explaining this magnitude via microlensing would require an astrophysically excluded bottom-heavy IMF or unphysically high transverse velocities (>15,000 km/s).
-    </p>
-</div>
-
-<h3>4.6.2 Quantitative Microlensing Exclusion</h3>
-
-<p>
-    Beyond the redshift argument, the microlensing parameters required to mimic the observed signal can be quantified:
-</p>
-
-<table class="data-table">
-    <thead>
-        <tr>
-            <th>Parameter</th>
-            <th>Standard Value</th>
-            <th>Required to Mimic Γ = +36 days/decade</th>
-            <th>Exclusion</th>
-        </tr>
-    </thead>
-    <tbody>
-        <tr>
-            <td>Effective transverse velocity</td>
-            <td>~600 km/s</td>
-            <td>>15,000 km/s</td>
-            <td>>4σ (astrophysically excluded)</td>
-        </tr>
-        <tr>
-            <td>Stellar mass function</td>
-            <td>Chabrier IMF</td>
-            <td>Bottom-heavy by factor ~50</td>
-            <td>>4σ (contradicts lens dynamics)</td>
-        </tr>
-        <tr>
-            <td>Injection simulation</td>
-            <td>0.3 mag / 2000 days</td>
-            <td>Produces |Γ| < 5 days/decade</td>
-            <td>~10× too weak</td>
-        </tr>
-    </tbody>
-</table>
-
-<p>
-    Standard microlensing does not naturally reproduce the observed temporal shear magnitude. The injection 
-    simulations show that typical microlensing trends produce |Γ| < 5 days/decade, approximately 
-    10× weaker than the DESJ0408 signal. Reproducing the signal solely via microlensing would 
-    require stellar populations or velocities in strong tension with observational constraints.
-</p>
-
-<h3>4.6.3 Chromaticity Falsifier</h3>
-
-<p>
-    The second important discriminator is multi-band chromaticity. TEP predicts achromatic temporal shear 
-    (Γ<sub>blue</sub> ≈ Γ<sub>red</sub>), whereas stellar microlensing generically induces chromatic distortions 
-    due to wavelength-dependent source sizes (Kochanek 2004).
-</p>
-<p>
-    An explicit multi-band test was performed using Q2237+0305 (Goicoechea et al. 2020; VizieR J/A+A/637/A89), which provides light curves in g, r, V, and I.
-    For the A–B pair, the inferred chromatic differences are consistent with zero within the current uncertainties:
-    ΔΓ(g−r) = 57 ± 169 days/decade and ΔΓ(V−I) = −2.6 ± 81 days/decade.
-    A second multi-band check was performed using HE0435-1223 V and R light curves (Sorgenfrei et al. 2025; VizieR J/A+A/703/A250), finding ΔΓ(V−R) = 5.5 ± 59.0 days/decade for the A–B pair.
-    A third multi-band check is possible in HE1104-1805 using BVRIJ light curves (Blackburne et al. 2015; VizieR J/ApJ/798/95). Using R as a reference band for the A–B pair, the results show ΔΓ(B−R) = 2.3 ± 161.0 days/decade, ΔΓ(I−R) = 143.9 ± 107.4 days/decade, and ΔΓ(J−R) = 202.1 ± 256.3 days/decade.
-    A fourth independent dataset is available for Q2237+0305 from Vakulik et al. (2004; VizieR J/A+A/420/447), providing VRI photometry. This system has near-zero physical delays (~hours), so it serves as a null control for chromaticity: ΔΓ(V−R) = 0.0 ± 16.3 days/decade and ΔΓ(I−R) = 0.0 ± 17.4 days/decade.
-    These constitute direct achromaticity checks in four systems, but they do not yet replace the critical test on the primary high-significance detections (DESJ0408 and PG1115), for which only R-band light curves are publicly available in the COSMOGRAIL releases (VizieR J/A+A/609/A71 and J/A+A/616/A183; Courbin et al. 2018; Bonvin et al. 2018). The public TDCOSMO data repository was also inspected (TDCOSMO/TD_data_public), which contains notebooks and mock imaging artifacts, and found no band-tagged monitoring light-curve time series for DESJ0408, PG1115, or J1206. Future multi-band monitoring of DESJ0408 and PG1115 remains a high priority for a robust chromaticity test.
-</p>
-
-<h2>4.7 Internal Consistency: Residual Cross-Correlation</h2>
-
-<p>
-    If TEP is real, residuals from the Γ fit should show coherent structure across image pairs 
-    within the same system (shared path through the gravitational potential). If the signal were 
-    noise, residuals should be independent.
-</p>
-
-<p>
-    Cross-correlations of fit residuals between all pair combinations within each system are computed:
-</p>
-
-<table class="data-table">
-    <thead>
-        <tr>
-            <th>Metric</th>
-            <th>Value</th>
-        </tr>
-    </thead>
-    <tbody>
-        <tr><td>Pairs tested</td><td>39</td></tr>
-        <tr><td>Mean cross-correlation</td><td>r = 0.284</td></tr>
-        <tr><td>t-test (mean ≠ 0)</td><td>p = 0.020</td></tr>
-        <tr><td>Significant at 0.05</td><td>18/39 pairs</td></tr>
-    </tbody>
-</table>
-
-<p>
-    The significant positive mean correlation (p = 0.02) supports the interpretation that 
-    residuals share coherent structure, consistent with a real physical effect rather than 
-    independent noise.
-</p>
-
-<h2>4.8 High-Redshift Predictions</h2>
-
-<p>
-    TEP predicts that |Γ| should scale with the geometric factor (1+z<sub>S</sub>)/(1+z<sub>L</sub>). 
-    Extrapolating from current detections yields the following predictions:
-</p>
-
-<table class="data-table">
-    <thead>
-        <tr>
-            <th>z<sub>source</sub></th>
-            <th>Geometric Factor</th>
-            <th>Predicted |Γ|</th>
-            <th>Exceeds 300?</th>
-        </tr>
-    </thead>
-    <tbody>
-        <tr><td>2.5</td><td>2.19</td><td>~131 days/decade</td><td>No</td></tr>
-        <tr><td>3.0</td><td>2.50</td><td>~165 days/decade</td><td>No</td></tr>
-        <tr><td>3.5</td><td>2.77</td><td>~197 days/decade</td><td>No</td></tr>
-        <tr><td>4.0</td><td>3.00</td><td>~227 days/decade</td><td>No</td></tr>
-    </tbody>
-</table>
-
-<p>
-    The current highest-redshift signal (DESJ0408, z<sub>S</sub> = 2.375) shows Γ ≈ +36 days/decade (2.0σ),
-    consistent with the linear extrapolation. RXJ1131 (z<sub>S</sub> = 0.658) shows smaller but
-    consistently positive values (Γ ~ +2 days/decade), suggesting the scaling includes
-    both geometric and system-specific factors (lens mass, Einstein radius, image geometry).
-</p>
-
-<div class="key-concept">
-    <h4>Testable Expectations</h4>
-    <p>
-        Conservative (geometric scaling): Systems with z<sub>S</sub> &gt; 3 should show 
-        |Γ| &gt; 150 days/decade, scaling approximately linearly with (1+z<sub>S</sub>)/(1+z<sub>L</sub>).
-    </p>
-    <p>
-        Aggressive (DESJ0408-calibrated): If DESJ0408 is representative of high-z systems, 
-        then lenses with z<sub>S</sub> &gt; 2.5 and comparable Einstein radii (θ<sub>E</sub> ≳ 1.2") should show |Γ| &gt; 300 days/decade.
-    </p>
-    <ul>
-        <li>B-D Pair ($\Delta t = t_B - t_D < 0$): If B slows ($t_B$ increases), the delay becomes less negative (closer to zero). This implies $\Gamma > 0$. Observed: $+34.5$.</li>
-    </ul>
-    <p>
-    Systematic uncertainties affecting the temporal shear measurements are quantified as follows:
-    </p>
-
-<table class="data-table">
-    <thead>
-        <tr>
-            <th>Source</th>
+            <th>Channel</th>
+            <th>Observable</th>
+            <th>Result</th>
             <th>Status</th>
-            <th>Notes</th>
         </tr>
     </thead>
     <tbody>
         <tr>
-            <td>Statistical (bootstrap)</td>
-            <td>Quantified</td>
-            <td>Median uncertainty ~40 days/decade</td>
+            <td>Pulsar Timing</td>
+            <td>0.59 dex raw excess (0.58 dex controlled residual)</td>
+            <td>Suppressed Density Scaling (Slope 0.39 vs 0.72)</td>
+            <td>Anomaly Detection / Binary Inversion</td>
         </tr>
         <tr>
-            <td>Filtering sensitivity</td>
-            <td>Partially quantified</td>
-            <td>~10-20% based on $\tau_w$ range; injection tests validate linearity</td>
+            <td>Spatial Stratification</td>
+            <td>Core vs Outskirts</td>
+            <td>−0.30 dex (inner, p=0.074) vs −0.14 dex (outer, p=0.41)</td>
+            <td>Suggestive</td>
         </tr>
         <tr>
-            <td>Microlensing</td>
-            <td>Not yet tested</td>
-            <td>Requires multi-band observations (chromatic vs achromatic)</td>
+            <td>Field Binary Control</td>
+            <td>Binary vs Isolated (Field)</td>
+            <td>p = 0.70 (null)</td>
+            <td>Null Control</td>
         </tr>
         <tr>
-            <td>Intrinsic variability</td>
-            <td>Mitigated</td>
-            <td>200-day detrending window</td>
+            <td>Suppressed Density Scaling</td>
+            <td>Does the signal track dynamical noise (ρ²) or potential (Φ)?</td>
+            <td>Observed slope = 0.39 vs Newtonian slope = 0.72 (4.1σ rejection)</td>
+            <td>Quantitative exclusion</td>
+        </tr>
+        <tr>
+            <td>Type Ia Supernovae</td>
+            <td>mB vs host σ correlation</td>
+            <td>3.24σ Pearson correlation with screening-like pattern</td>
+            <td>Exploratory (mass step ambiguity)</td>
         </tr>
     </tbody>
 </table>
 
 <p>
-    The dominant uncertainty is statistical. The key untested systematic is microlensing contamination, 
-    which requires multi-band follow-up observations. Current COSMOGRAIL data is single-band (R-band), 
-    so a definitive chromaticity test cannot yet be performed for the primary detection systems.
+    The identifiability of the pulsar signal is established not just by the detection
+    of a residual, but by the quantitative exclusion of Newtonian systematics via the
+    "Systematics Exclusion Matrix". Specifically, the observation of suppressed density
+    scaling (slope 0.39) and the binary inversion (-0.32 dex) directly contradicts the
+    predictions of standard mass segregation (slope > 0.7, positive binary residual).
 </p>
 
-<h2>4.10 Summary: Marginal Signals and Constraints</h2>
+<p>
+    <strong>Cross-Reference:</strong> Independent geometric constraints from gravitational
+    lensing temporal shear analysis are presented in TEP-LENS (Paper 14). The lensing
+    analysis places upper limits on temporal shear (|Γ| ≲ 104 days/decade) consistent
+    with the screened parameters suggested by the pulsar anomaly.
+</p>
 
-<div class="summary-box">
-    <h4>Gravitational Lensing Evidence - Summary</h4>
-    <ul>
-        <li>Constraints on scale-dependent delays in DESJ0408 (~2σ)</li>
-        <li>DESJ0408 A-B: Γ = −32.4 ± 14.8 days/decade (2.2σ)</li>
-        <li>DESJ0408 B-D: Γ = +34.5 ± 16.3 days/decade (2.1σ)</li>
-        <li>Geometric consistency: Opposite signs match prediction for intermediate saddle (B) slowing</li>
-        <li>RXJ1131: Shows significant signals (Γ = +2.5 to −8.0 days/decade, 4–5σ) but with mixed signs; classified as "Complex" pending geometric modeling</li>
-        <li>Broadband delays match Courbin et al. (2017) literature values within 1σ</li>
-        <li>Validation: Injection-recovery UNBIASED (bias 0.29 days); No significant chromaticity detected in 4 systems (consistent with zero within errors), but critical test awaits multi-band monitoring of DESJ0408 and PG1115</li>
-        <li>The −333 value (tau=5) identified as outlier from noise-dominated bin</li>
-        <li>Status: CONSTRAINT - methodology validated, consistent with screening predictions</li>
-    </ul>
+<div class="alert alert-info">
+    <strong>Note:</strong> The complete COSMOGRAIL lensing analysis, including temporal shear
+    measurements and chromaticity tests, has been migrated to the TEP-LENS repository
+    (Paper 14) to provide a focused treatment of geometric constraints.
 </div>

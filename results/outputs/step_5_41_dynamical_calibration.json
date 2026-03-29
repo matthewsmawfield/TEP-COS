@@ -1,0 +1,126 @@
+{
+  "timestamp": "2026-03-30T00:00:00.000000",
+  "method": "King Model Monte Carlo",
+  "clusters_analyzed": 15,
+  "newtonian": {
+    "mean_predicted_shift_dex": 17.115562159653713,
+    "std_predicted_shift_dex": 0.6196578677911985,
+    "cluster_predictions": {
+      "47_Tuc": {
+        "predicted_shift_dex": 17.20714043554159,
+        "predicted_std": 0.595067077021421,
+        "n_pulsars": 10000,
+        "a_los_mean": 2888.853817925794,
+        "a_los_std": 4036.5017851277894
+      },
+      "M15": {
+        "predicted_shift_dex": 17.802414436300307,
+        "predicted_std": 0.568137561748906,
+        "n_pulsars": 10000,
+        "a_los_mean": 10921.223798435913,
+        "a_los_std": 15127.635079951804
+      },
+      "M13": {
+        "predicted_shift_dex": 16.6120634660926,
+        "predicted_std": 0.6020197673502974,
+        "n_pulsars": 10000,
+        "a_los_mean": 737.1363749994586,
+        "a_los_std": 1030.300552181746
+      },
+      "Terzan_5": {
+        "predicted_shift_dex": 18.23123336777151,
+        "predicted_std": 0.5700479541848327,
+        "n_pulsars": 10000,
+        "a_los_mean": 29446.917836641092,
+        "a_los_std": 40888.06659841611
+      },
+      "M28": {
+        "predicted_shift_dex": 17.262108320065195,
+        "predicted_std": 0.5810523277046646,
+        "n_pulsars": 10000,
+        "a_los_mean": 3218.3416383074755,
+        "a_los_std": 4480.303549606607
+      },
+      "M62": {
+        "predicted_shift_dex": 17.832927706616896,
+        "predicted_std": 0.5677452591568642,
+        "n_pulsars": 10000,
+        "a_los_mean": 11765.810107292058,
+        "a_los_std": 16264.65967488976
+      },
+      "M5": {
+        "predicted_shift_dex": 16.82488650453922,
+        "predicted_std": 0.6157334442380842,
+        "n_pulsars": 10000,
+        "a_los_mean": 1221.4067413547534,
+        "a_los_std": 1703.848314058508
+      },
+      "M3": {
+        "predicted_shift_dex": 16.448667004307246,
+        "predicted_std": 0.6024056923612459,
+        "n_pulsars": 10000,
+        "a_los_mean": 505.6670357052111,
+        "a_los_std": 701.8272367149674
+      },
+      "M53": {
+        "predicted_shift_dex": 16.17229236137929,
+        "predicted_std": 0.5975478536556272,
+        "n_pulsars": 10000,
+        "a_los_mean": 266.98623351725826,
+        "a_los_std": 372.5706025997729
+      },
+      "Omega_Cen": {
+        "predicted_shift_dex": 17.370402284085593,
+        "predicted_std": 0.600721714892349,
+        "n_pulsars": 10000,
+        "a_los_mean": 4207.137286146979,
+        "a_los_std": 5830.090182654655
+      },
+      "M2": {
+        "predicted_shift_dex": 16.882402699773987,
+        "predicted_std": 0.597509371600303,
+        "n_pulsars": 10000,
+        "a_los_mean": 1375.6480310562558,
+        "a_los_std": 1918.0892345277682
+      },
+      "NGC_6440": {
+        "predicted_shift_dex": 18.13512877069625,
+        "predicted_std": 0.5712765557775847,
+        "n_pulsars": 10000,
+        "a_los_mean": 23670.78014277435,
+        "a_los_std": 32897.45528319284
+      },
+      "NGC_6544": {
+        "predicted_shift_dex": 16.726820788583474,
+        "predicted_std": 0.5912906053858178,
+        "n_pulsars": 10000,
+        "a_los_mean": 954.7797880489884,
+        "a_los_std": 1337.1946020297044
+      },
+      "M30": {
+        "predicted_shift_dex": 16.541684175590245,
+        "predicted_std": 0.5906067406151373,
+        "n_pulsars": 10000,
+        "a_los_mean": 622.1626931151544,
+        "a_los_std": 869.9711915784824
+      },
+      "NGC_6752": {
+        "predicted_shift_dex": 16.683260073462282,
+        "predicted_std": 0.5876809564723388,
+        "n_pulsars": 10000,
+        "a_los_mean": 856.5341186765742,
+        "a_los_std": 1193.9617248548213
+      }
+    }
+  },
+  "observed": {
+    "residual_dex": 0.5924814336327948,
+    "uncertainty_dex": 0.05306799446085214
+  },
+  "comparison": {
+    "difference_dex": -16.52308072602092,
+    "significance_sigma": -311.35679601025566,
+    "interpretation": "OBSERVED_MUCH_LESS_THAN_NEWTONIAN",
+    "verdict": "TEP_SUPPORTED"
+  }
+}

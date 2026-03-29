@@ -1,6 +1,0 @@
-/Users/matthewsmawfield/www/TEP-COS/scripts/steps/step_5_9_freire_gcpsr_radial_analysis.py:228: DeprecationWarning: datetime.datetime.utcnow() is deprecated and scheduled for removal in a future version. Use timezone-aware objects to represent datetimes in UTC: datetime.datetime.now(datetime.UTC).
-  "downloaded_at": datetime.utcnow().isoformat() + "Z",
-Wrote: /Users/matthewsmawfield/www/TEP-COS/results/outputs/freire_GCpsr.txt
-Wrote: /Users/matthewsmawfield/www/TEP-COS/results/outputs/freire_gcpsr_radial_summary.csv
-Wrote: /Users/matthewsmawfield/www/TEP-COS/results/outputs/freire_gcpsr_radial_summary.json
-Wrote: /Users/matthewsmawfield/www/TEP-COS/results/outputs/freire_gcpsr_radial_summary.md

@@ -11,7 +11,7 @@ def run_cancellation_analysis():
     # Hypothesis: Shklovskii effect (positive term) cancels Cluster Acceleration (negative term)
     # causing the observed suppressed density scaling.
     # Question: By what factor must Shklovskii be amplified (e.g. underestimated distance/proper motion)
-    # to reduce the density slope from 0.82 (Newtonian) to 0.35 (Observed)?
+    # to reduce the density slope from 0.82 (Newtonian) to 0.39 (Observed)?
     
     # Simulation Parameters
     n_clusters = 50
@@ -44,12 +44,12 @@ def run_cancellation_analysis():
     
     print(f"Base Acceleration Slope: {slope_acc:.2f}")
     print(f"Base Shklovskii Slope:   {slope_shk_base:.2f} (Assumed {base_shk_fraction*100}% of Acc)")
-    print(f"Target Net Slope:        0.35 (Mixed-Effects Observed)")
+    print(f"Target Net Slope:        0.39 (Mixed-Effects Observed)")
     
     # 3. Solve for Amplification Factor K
     # Net Slope = Slope_Acc + K * Slope_Shk_Base
-    # 0.35 = 0.82 + K * (-0.12)
-    # K * 0.12 = 0.82 - 0.35 = 0.47
+    # 0.39 = 0.82 + K * (-0.12)
+    # K * 0.12 = 0.82 - 0.39 = 0.43
     # K = 0.47 / 0.12 ~ 3.9
     
     amplification_factors = np.linspace(0, 10, 100)
@@ -63,7 +63,7 @@ def run_cancellation_analysis():
         
     # Find crossing
     net_slopes = np.array(net_slopes)
-    idx = np.argmin(np.abs(net_slopes - 0.35))
+    idx = np.argmin(np.abs(net_slopes - 0.39))
     required_K = amplification_factors[idx]
     
     print(f"Required Shklovskii Amplification K: {required_K:.2f}")
@@ -92,7 +92,7 @@ def run_cancellation_analysis():
     # Save results
     results = {
         "acc_slope": slope_acc,
-        "observed_slope": 0.35,
+        "observed_slope": 0.39,
         "base_shk_fraction": base_shk_fraction,
         "required_amplification_factor": float(required_K),
         "required_distance_error_factor": float(required_K),
@@ -106,7 +106,7 @@ def run_cancellation_analysis():
     # Plot
     plt.figure(figsize=(8,5))
     plt.plot(amplification_factors, net_slopes, label='Net Density Slope')
-    plt.axhline(0.35, color='r', linestyle='--', label='Observed Slope (0.35)')
+    plt.axhline(0.39, color='r', linestyle='--', label='Observed Slope (0.39)')
     plt.axhline(0.82, color='g', linestyle='--', label='Newtonian Prediction (0.82)')
     plt.axvline(required_K, color='k', linestyle=':', label=f'Required Amp ({required_K:.1f}x)')
     plt.xlabel('Shklovskii Amplification Factor')

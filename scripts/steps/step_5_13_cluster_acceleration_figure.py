@@ -8,6 +8,10 @@ def generate_cluster_acceleration_figure():
     Generates Figure 4.5: The Newtonian Baseline.
     Compares the intrinsic (Field) Pdot distribution, the Simulated (Newtonian) Cluster distribution,
     and the Observed Cluster distribution (schematic or derived from summary stats).
+    
+    IMPORTANT: This is a MONTE CARLO SIMULATION for visualization purposes.
+    It simulates Newtonian expectation distributions to compare with real data.
+    Random seed fixed at 42 for reproducibility.
     """
     print("Generating Figure 4.5: Cluster Acceleration Distribution...")
     
