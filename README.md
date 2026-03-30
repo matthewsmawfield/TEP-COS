@@ -17,15 +17,17 @@
 
 Gravitational time dilation in General Relativity is verified to 10⁻⁵ precision in the Solar System. At intermediate astrophysical scales, however, persistent anomalies emerge—rotation curves, cluster dynamics, cosmic acceleration—that conventionally require invisible matter or exotic energy. The Temporal Equivalence Principle (TEP) formalizes an alternative: that time dilation is *scale-dependent*, enhanced in extended gravitational configurations while screened in dense, well-tested regimes.
 
-This work reports a 5.8σ dynamical anomaly (5.8σ from covariance-aware test, 7.7σ from Welch t-test) in globular cluster pulsar timing that challenges standard density scaling (4.1σ tension). Pulsar timing provides a spatially-resolved probe of time-dilation effects at the 10⁵–10⁶ M☉ scale. Analysis of 394 millisecond pulsars (196 GC, 198 field) reveals a 0.59 dex *raw* excess in spin-down magnitude—cluster pulsars spin down *faster* than field controls (p=9.0×10⁻¹⁴ to 2.2×10⁻⁸, depending on correlation treatment). After controlling for population differences, a 0.58 dex residual persists (95% CI: 0.52–0.63 dex).
+This work reports a 5.8σ dynamical anomaly (5.8σ from covariance-aware test, 7.7σ from Welch t-test) in globular cluster pulsar timing that challenges standard density scaling (4.1σ tension). Pulsar timing provides a spatially-resolved probe of time-dilation effects at the 10⁵–10⁶ M☉ scale. Analysis of 394 millisecond pulsars (196 GC, 198 field) reveals a 0.61 dex *raw* excess in spin-down magnitude—cluster pulsars spin down *faster* than field controls (p=9.0×10⁻¹⁴ to 2.2×10⁻⁸, depending on correlation treatment). After controlling for population differences, a 0.58 dex residual persists (95% CI: 0.52–0.63 dex).
 
-A spatially-stratified spin-down anomaly is detected in 196 globular cluster pulsars compared to 198 field controls (0.59 dex raw excess, 0.58 dex controlled residual, 5.8σ from covariance-aware test). The signal exhibits suppressed density scaling (mixed-effects slope Γ = 0.39 ± 0.08 dex/dex vs Newtonian Γ = 0.72; 4.1σ rejection, Bayesian P(Γ > 0.72|data) = 4×10⁻⁵), saturating in dense cores in a manner consistent with TEP screening but in tension with standard dynamics. Leave-one-cluster-out validation confirms the result is stable (3.8% relative instability) and not driven by individual clusters. A "Binary Inversion" is detected where typically noisy binary systems—predicted to be dynamically hotter—exhibit significantly lower residuals (-0.32 dex, p=0.007) than isolated pulsars, challenging standard dynamical heating models. Together, the raw excess, controlled residual, and suppressed density scaling argue against conventional acceleration noise as a complete explanation. Complementary analysis of Type Ia supernovae (N=218) reveals a correlation between peak magnitude and host velocity dispersion consistent with TEP time dilation predictions, exhibiting a 3.24σ Pearson correlation with structure near σ ≈ 165 km/s. Note: This signal is indistinguishable from the standard mass-step effect; presented as exploratory support only. Gravitational lensing (COSMOGRAIL) places upper limits on cosmological temporal shear (|Γ| ≲ 104 days/decade). Multi-band chromaticity analysis to distinguish TEP from microlensing requires real data and is currently pending archival analysis.
+A spatially-stratified spin-down anomaly is detected in 196 globular cluster pulsars compared to 198 field controls (0.61 dex raw excess, 0.58 dex controlled residual, 5.8σ from covariance-aware test). The signal exhibits suppressed density scaling (mixed-effects slope Γ = 0.39 ± 0.08 dex/dex vs Newtonian Γ = 0.72; 4.1σ rejection, Bayesian P(Γ > 0.72|data) = 4×10⁻⁵), saturating in dense cores in a manner consistent with TEP screening but in tension with standard dynamics. Leave-one-cluster-out validation confirms the result is stable (3.8% relative instability) and not driven by individual clusters. A "Binary Inversion" is detected where typically noisy binary systems—predicted to be dynamically hotter—exhibit significantly lower residuals (-0.32 dex, p=0.007) than isolated pulsars, challenging standard dynamical heating models. Together, the raw excess, controlled residual, and suppressed density scaling argue against conventional acceleration noise as a complete explanation. Complementary analysis of Type Ia supernovae (N=218) reveals a correlation between peak magnitude and host velocity dispersion consistent with TEP time dilation predictions, exhibiting a 3.24σ Pearson correlation with structure near σ ≈ 165 km/s. Note: This signal is indistinguishable from the standard mass-step effect; presented as exploratory support only.
 
-The convergence of time-domain evidence (pulsars) with geometric constraints (lensing) presents a coherent "Ladder of Evidence" for potential-dependent modifications to gravitational time flow. The pulsar signal is spatially resolved, field-controlled, and shows suppressed density scaling consistent with the saturation of a gravitational soliton at the screening transition scale predicted by the universal critical density ρ_c ≈ 20 g/cm³.
+The pulsar signal—spatially resolved, field-controlled, and showing suppressed density scaling—provides the primary evidence for potential-dependent modifications to gravitational time flow.
 
 ## Key Findings
 
-Analysis of 394 millisecond pulsars reveals a 5.8σ dynamical anomaly (5.8σ from covariance-aware test, 7.7σ from Welch t-test): globular cluster pulsars spin down 0.59 dex faster than field controls (p = 2.2×10⁻⁸ to 9.0×10⁻¹⁴). The density scaling is suppressed (slope 0.39 vs 0.72 Newtonian prediction, 4.1σ tension), and binary pulsars in clusters are unexpectedly *quieter* than isolated pulsars (−0.32 dex, p = 0.007)—directly contradicting dynamical heating models. Complementary Type Ia supernova analysis reveals a 3.24σ correlation between peak magnitude and host velocity dispersion (N=218), with screening-threshold structure at σ ≈ 165 km/s. Note: This signal is indistinguishable from the standard mass-step effect; presented as exploratory support only. Gravitational lensing analysis places upper limits on temporal shear (|Γ| ≲ 104 days/decade), geometrically bounding the effect.
+Analysis of 394 millisecond pulsars reveals a 5.8σ dynamical anomaly (5.8σ from covariance-aware test, 7.7σ from Welch t-test): globular cluster pulsars spin down 0.61 dex faster than field controls (p = 2.2×10⁻⁸ to 9.0×10⁻¹⁴). The density scaling is suppressed (slope 0.39 vs 0.72 Newtonian prediction, 4.1σ tension), and binary pulsars in clusters are unexpectedly *quieter* than isolated pulsars (−0.32 dex, p = 0.007)—directly contradicting dynamical heating models. 
+
+Cluster Monte Carlo (CMC) comparison with 13 clusters and 21.0 million synthetic pulsars confirms standard Newtonian dynamics predicts 2.10 dex excess (3.1× larger than observed, 13.1σ mismatch) and slope 0.75 (4.0σ discrepancy), disfavoring standard dynamical explanations.
 
 ---
 
@@ -37,7 +39,6 @@ Analysis of 394 millisecond pulsars reveals a 5.8σ dynamical anomaly (5.8σ fro
 | **Paper 1** | [TEP-GNSS](https://github.com/matthewsmawfield/TEP-GNSS) | Global Time Echoes: Distance-Structured Correlations in GNSS Clocks | [10.5281/zenodo.17127229](https://doi.org/10.5281/zenodo.17127229) |
 | **Paper 2** | [TEP-GNSS-II](https://github.com/matthewsmawfield/TEP-GNSS-II) | Global Time Echoes: 25-Year Temporal Evolution | [10.5281/zenodo.17517141](https://doi.org/10.5281/zenodo.17517141) |
 | **Paper 3** | [TEP-GNSS-RINEX](https://github.com/matthewsmawfield/TEP-GNSS-RINEX) | Global Time Echoes: Raw RINEX Validation | [10.5281/zenodo.17860166](https://doi.org/10.5281/zenodo.17860166) |
-| **Paper 4** | [TEP-GL](https://github.com/matthewsmawfield/TEP-GL) | Temporal-Spatial Coupling in Gravitational Lensing | [10.5281/zenodo.17982540](https://doi.org/10.5281/zenodo.17982540) |
 | **Paper 6** | [TEP-GTE](https://github.com/matthewsmawfield/TEP-GTE) | Global Time Echoes: Empirical Validation of TEP | [10.5281/zenodo.18004832](https://doi.org/10.5281/zenodo.18004832) |
 | **Paper 7** | [TEP-UCD](https://github.com/matthewsmawfield/TEP-UCD) | Universal Critical Density | [10.5281/zenodo.18064366](https://doi.org/10.5281/zenodo.18064366) |
 | **Paper 8** | [TEP-RBH](https://github.com/matthewsmawfield/TEP-RBH) | The Soliton Wake | [10.5281/zenodo.18059251](https://doi.org/10.5281/zenodo.18059251) |
@@ -50,7 +51,6 @@ Analysis of 394 millisecond pulsars reveals a 5.8σ dynamical anomaly (5.8σ fro
 ```
 TEP-COS/
 ├── data/                          # Raw and processed data
-│   ├── cosmograil/               # COSMOGRAIL lensing light curves (.rdb)
 │   ├── pulsars/                  # Pulsar reference data
 │   ├── clusters/                 # Cluster structural parameters
 │   ├── supernovae/               # Supernova data
@@ -91,15 +91,14 @@ pip install -r requirements.txt
 - `results/outputs/atnf_psrcat.db` - ATNF pulsar catalog (auto-downloaded)
 - `results/outputs/freire_GCpsr.txt` - Freire catalog (auto-downloaded)
 
-**Lensing Analysis:**
-- `data/cosmograil/*.rdb` - COSMOGRAIL light curves
-- `results/outputs/step_3_0_cosmograil_temporal_shear_opB_modejump.json` - Canonical temporal shear results
+**Supernova Analysis:**
+- `data/supernovae/pantheon_plus_parsed.csv` - Pantheon+ SN Ia compilation
 
 ## Reproduction Steps
 
-The analysis is divided into two primary channels: Pulsar Timing (Section 3) and Gravitational Lensing (Section 4).
+This analysis focuses on pulsar timing in globular clusters.
 
-### 1. Pulsar Timing Analysis (Section 3)
+### Pulsar Timing Analysis
 
 The pulsar analysis proceeds in stages: sample construction, population controls, and environmental testing.
 
@@ -115,21 +114,7 @@ The pulsar analysis proceeds in stages: sample construction, population controls
 | **3.8** | Field Control | `step_5_12_field_binary_analysis.py` | Control test: binary vs isolated MSPs in the field. |
 | **3.10** | Radial Analysis | `step_5_9_freire_gcpsr_radial_analysis.py` | Analyzes radial trends within clusters. |
 
-### 2. Gravitational Lensing Analysis (Section 4)
-
-The lensing analysis tests for scale-dependent time delays ("temporal shear").
-
-| Manuscript Section | Analysis Step | Script | Description |
-|-------------------|---------------|--------|-------------|
-| **4.2** | Temporal Shear | `step_3_0_cosmograil_temporal_shear.py` | Primary analysis of COSMOGRAIL time delays vs timescale. |
-| **4.2** | Shear Figure | `step_3_0_temporal_shear_figure.py` | Generates summary figures for temporal shear results. |
-| **4.3** | Validation | `step_3_2_cosmograil_validation.py` | Injection-recovery tests and robustness checks. |
-| **4.3** | Microlensing Fig | `step_3_2_microlensing_figure.py` | Generates comparison figure for microlensing vs observed signal. |
-| **4.4** | Consistency | `step_3_10_instrumental_consistency.py` | Checks results across different telescope backends. |
-| **4.5** | High-z Lens | `step_3_16_j1004_analysis.py` | Analysis of the cluster lens SDSS J1004+4112. |
-| **4.x** | Summary Figure | `step_4_0_lensing_summary_figure.py` | Generates comprehensive lensing summary figure. |
-
-### 3. Appendix & Fossil Probes
+### Appendix & Fossil Probes
 
 | Manuscript Section | Analysis Step | Script | Description |
 |-------------------|---------------|--------|-------------|
@@ -149,7 +134,6 @@ python3 scripts/run_pipeline.py
 ```bash
 python3 scripts/run_pipeline.py --only-core       # Fast mode: core analysis only
 python3 scripts/run_pipeline.py --skip-validation # Skip long validation steps
-python3 scripts/run_pipeline.py --skip-lensing    # Skip lensing analysis
 python3 scripts/run_pipeline.py --skip-figures    # Skip figure generation
 ```
 

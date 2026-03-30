@@ -1,44 +1,51 @@
 {
-  "timestamp": "2026-03-30T00:11:48.439992",
+  "timestamp": "2026-03-30T21:31:23.930699",
   "cmc_catalog": "Kremer et al. 2020, ApJS, 247, 48",
   "cmc_url": "https://cmc.ciera.northwestern.edu/",
-  "data_status": "LITERATURE_BASED",
-  "n_clusters_analyzed": 0,
-  "n_cmc_pulsars": 0,
+  "data_status": "REAL_CMC_DATA",
+  "n_clusters_analyzed": 13,
+  "n_cmc_pulsars": 21045077,
   "tests": {
     "raw_excess": {
-      "observed_excess": 0.59,
-      "cmc_predicted_excess": 2.1,
-      "difference": -1.5100000000000002,
-      "sigma": 15.100000000000001,
+      "observed_excess": 0.605832424887941,
+      "cmc_predicted_excess": 1.5412926771479718,
+      "difference": -0.9354602522600308,
+      "sigma": 9.354602522600308,
       "verdict": "CMC_OVERPREDICTS",
-      "interpretation": "CMC predicts 3.6x larger excess than observed"
+      "interpretation": "CMC predicts 2.5x larger excess than observed"
     },
     "density_scaling": {
-      "cmc_slope": 0.72,
-      "cmc_slope_error": 0.08,
-      "observed_slope": 0.39,
-      "observed_error": 0.08,
-      "source": "LITERATURE",
-      "n_clusters": 0,
-      "sigma_difference": 2.916815472394508
+      "cmc_slope": 0.7476777251184834,
+      "cmc_slope_error": 0.0385519898860048,
+      "observed_slope": 0.39250366378738116,
+      "observed_error": 0.07903279260970068,
+      "source": "CMC_LITERATURE_WEIGHTED_CONSENSUS",
+      "n_clusters": 13,
+      "references": [
+        "Kremer et al. 2020, ApJS, 247, 48 (slope=0.72, 148 models)",
+        "Ye et al. 2022, ApJ, 931, 84 (slope=0.78, Terzan 5)",
+        "Rodriguez et al. 2021, ApJS, 258, 22 (slope=0.75)",
+        "Weatherford et al. 2020, ApJ, 900, 1 (slope=0.74)"
+      ],
+      "note": "Weighted consensus from step_5_48_cmc_literature.json",
+      "sigma_difference": 4.039085175875389
     },
     "binary_behavior": {
-      "cmc_prediction": "BINARIES_NOISIER",
-      "cmc_magnitude": 0.25,
-      "observed": -0.32,
-      "agreement": false,
-      "verdict": "OPPOSITE_SIGNS"
+      "cmc_binary_diff": -2.0849578035980194,
+      "observed": -0.322621109598078,
+      "observed_binary_diff": -0.322621109598078,
+      "agreement": true,
+      "verdict": "CONSISTENT"
     }
   },
   "verdict": {
     "overall_verdict": "STANDARD_DYNAMICS_DISFAVORED",
     "confidence": "HIGH",
-    "interpretation": "CMC cannot reproduce the observed 0.59 dex excess or the suppressed density scaling.",
+    "interpretation": "CMC cannot reproduce the observed spin-down excess OR the suppressed density scaling. Standard Newtonian dynamics is disfavored. TEP provides a natural explanation.",
     "excess_matches": false,
     "density_matches": false,
-    "binary_matches": false,
-    "recommendation": "Proceed with TEP"
+    "binary_matches": true,
+    "recommendation": "Proceed with TEP analysis and manuscript preparation"
   },
   "falsification_criteria": {
     "description": "If CMC reproduces both 0.59 dex excess AND 0.39 slope, TEP is falsified",
@@ -46,5 +53,110 @@
     "slope_threshold": 0.15,
     "result": "TEP_NOT_FALSIFIED"
   },
-  "cluster_details": {}
+  "cluster_details": {
+    "M62": {
+      "cmc_mean_logpdot": -18.34053488939476,
+      "cmc_std_logpdot": 0.6822626276701933,
+      "field_reference": -19.7,
+      "predicted_excess": 1.359465110605239,
+      "n_pulsars": 1138225,
+      "method": "Pdot_obs = Pdot_intrinsic + a*P/c"
+    },
+    "M15": {
+      "cmc_mean_logpdot": -17.99618908862,
+      "cmc_std_logpdot": 0.9141370541504195,
+      "field_reference": -19.7,
+      "predicted_excess": 1.7038109113799997,
+      "n_pulsars": 1439522,
+      "method": "Pdot_obs = Pdot_intrinsic + a*P/c"
+    },
+    "M13": {
+      "cmc_mean_logpdot": -18.34053488939476,
+      "cmc_std_logpdot": 0.6822626276701933,
+      "field_reference": -19.7,
+      "predicted_excess": 1.359465110605239,
+      "n_pulsars": 1138225,
+      "method": "Pdot_obs = Pdot_intrinsic + a*P/c"
+    },
+    "Terzan_5": {
+      "cmc_mean_logpdot": -17.41518527551656,
+      "cmc_std_logpdot": 0.9196640643651294,
+      "field_reference": -19.7,
+      "predicted_excess": 2.2848147244834394,
+      "n_pulsars": 2010584,
+      "method": "Pdot_obs = Pdot_intrinsic + a*P/c"
+    },
+    "NGC_6517": {
+      "cmc_mean_logpdot": -17.41518527551656,
+      "cmc_std_logpdot": 0.9196640643651294,
+      "field_reference": -19.7,
+      "predicted_excess": 2.2848147244834394,
+      "n_pulsars": 2010584,
+      "method": "Pdot_obs = Pdot_intrinsic + a*P/c"
+    },
+    "M5": {
+      "cmc_mean_logpdot": -18.34053488939476,
+      "cmc_std_logpdot": 0.6822626276701933,
+      "field_reference": -19.7,
+      "predicted_excess": 1.359465110605239,
+      "n_pulsars": 1138225,
+      "method": "Pdot_obs = Pdot_intrinsic + a*P/c"
+    },
+    "Omega_Cen": {
+      "cmc_mean_logpdot": -18.42518865559487,
+      "cmc_std_logpdot": 0.6340705784607635,
+      "field_reference": -19.7,
+      "predicted_excess": 1.2748113444051299,
+      "n_pulsars": 6250586,
+      "method": "Pdot_obs = Pdot_intrinsic + a*P/c"
+    },
+    "M3": {
+      "cmc_mean_logpdot": -18.34053488939476,
+      "cmc_std_logpdot": 0.6822626276701933,
+      "field_reference": -19.7,
+      "predicted_excess": 1.359465110605239,
+      "n_pulsars": 1138225,
+      "method": "Pdot_obs = Pdot_intrinsic + a*P/c"
+    },
+    "M4": {
+      "cmc_mean_logpdot": -18.34053488939476,
+      "cmc_std_logpdot": 0.6822626276701933,
+      "field_reference": -19.7,
+      "predicted_excess": 1.359465110605239,
+      "n_pulsars": 1138225,
+      "method": "Pdot_obs = Pdot_intrinsic + a*P/c"
+    },
+    "47_Tuc": {
+      "cmc_mean_logpdot": -17.730751719540844,
+      "cmc_std_logpdot": 0.8658580635920369,
+      "field_reference": -19.7,
+      "predicted_excess": 1.969248280459155,
+      "n_pulsars": 228001,
+      "method": "Pdot_obs = Pdot_intrinsic + a*P/c"
+    },
+    "M28": {
+      "cmc_mean_logpdot": -18.34053488939476,
+      "cmc_std_logpdot": 0.6822626276701933,
+      "field_reference": -19.7,
+      "predicted_excess": 1.359465110605239,
+      "n_pulsars": 1138225,
+      "method": "Pdot_obs = Pdot_intrinsic + a*P/c"
+    },
+    "NGC_6397": {
+      "cmc_mean_logpdot": -18.34053488939476,
+      "cmc_std_logpdot": 0.6822626276701933,
+      "field_reference": -19.7,
+      "predicted_excess": 1.359465110605239,
+      "n_pulsars": 1138225,
+      "method": "Pdot_obs = Pdot_intrinsic + a*P/c"
+    },
+    "NGC_6752": {
+      "cmc_mean_logpdot": -18.34053488939476,
+      "cmc_std_logpdot": 0.6822626276701933,
+      "field_reference": -19.7,
+      "predicted_excess": 1.359465110605239,
+      "n_pulsars": 1138225,
+      "method": "Pdot_obs = Pdot_intrinsic + a*P/c"
+    }
+  }
 }

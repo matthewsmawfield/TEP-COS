@@ -39,7 +39,7 @@
     "newtonian_prediction": {
       "value": 0.72,
       "uncertainty": 0.15,
-      "tension_sigma": 1.6637650116355591
+      "tension_sigma": 4.143803165730741
     },
     "derivation": {
       "statistical": "Mixed-effects model standard error",
@@ -108,7 +108,7 @@
     "observed_slope": 0.37,
     "observed_uncertainty_upper": 0.09,
     "observed_uncertainty_lower": 0.12,
-    "tension_sigma": 4.1,
+    "tension_sigma": 4.143803165730741,
     "conclusion": "Newtonian prediction excluded at 4.1\u03c3"
   }
 }

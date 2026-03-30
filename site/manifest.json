@@ -22,19 +22,19 @@
     {
       "id": "section-abstract",
       "title": "Abstract",
-      "file": "1_abstract.html",
+      "file": "0_abstract.html",
       "order": 1
     },
     {
       "id": "section-intro",
       "title": "1. Introduction: Time-Domain Tests of Modified Gravity",
-      "file": "2_introduction.html",
+      "file": "1_introduction.html",
       "order": 2
     },
     {
       "id": "section-theory",
       "title": "2. Theoretical Framework: The Screening Transition",
-      "file": "3_theory.html",
+      "file": "2_theory.html",
       "order": 3
     },
     {
@@ -44,39 +44,33 @@
       "order": 4
     },
     {
-      "id": "section-lensing",
-      "title": "4. Geometric Constraints: Gravitational Lensing",
-      "file": "4_lensing.html",
+      "id": "section-discussion",
+      "title": "4. Discussion",
+      "file": "4_discussion.html",
       "order": 5
     },
     {
-      "id": "section-discussion",
-      "title": "5. Discussion",
-      "file": "7_discussion.html",
-      "order": 6
-    },
-    {
       "id": "section-conclusions",
-      "title": "6. Conclusions",
-      "file": "8_conclusions.html",
-      "order": 7
+      "title": "5. Conclusions",
+      "file": "5_conclusions.html",
+      "order": 6
     },
     {
       "id": "section-references",
       "title": "References",
-      "file": "9_references.html",
+      "file": "6_references.html",
       "order": 8
     },
     {
       "id": "section-appendix",
       "title": "Appendix A: Astrophysical Systematics in Fossil Probes",
-      "file": "10_appendix.html",
+      "file": "7_appendix.html",
       "order": 9
     },
     {
       "id": "section-reproducibility",
       "title": "Data Availability & Reproducibility",
-      "file": "10_reproducibility.html",
+      "file": "8_reproducibility.html",
       "order": 10
     }
   ]

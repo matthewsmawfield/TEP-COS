@@ -1,61 +1,61 @@
-[23:28:52] [INFO] --- Step 5.33: Hierarchical (Mixed-Effects) Density Scaling ---
-[23:28:52] [INFO] Analyzing 184 pulsars in 29 clusters.
-[23:28:52] [INFO] 
-[23:28:52] [INFO] ============================================================
-[23:28:52] [INFO] MODEL A: OLS on Cluster Means (Current Manuscript Method)
-[23:28:52] [INFO] ============================================================
-[23:28:52] [INFO]                             OLS Regression Results
-[23:28:52] [INFO] ==============================================================================
-[23:28:52] [INFO] Dep. Variable:            logPdot_abs   R-squared:                       0.232
-[23:28:52] [INFO] Model:                            OLS   Adj. R-squared:                  0.203
-[23:28:52] [INFO] Method:                 Least Squares   F-statistic:                     8.134
-[23:28:52] [INFO] Date:                Sun, 29 Mar 2026   Prob (F-statistic):            0.00823
-[23:28:52] [INFO] Time:                        23:28:52   Log-Likelihood:                -24.477
-[23:28:52] [INFO] No. Observations:                  29   AIC:                             52.95
-[23:28:52] [INFO] Df Residuals:                      27   BIC:                             55.69
-[23:28:52] [INFO] Df Model:                           1
-[23:28:52] [INFO] Covariance Type:            nonrobust
-[23:28:52] [INFO] ==============================================================================
-[23:28:52] [INFO]                  coef    std err          t      P>|t|      [0.025      0.975]
-[23:28:52] [INFO] ------------------------------------------------------------------------------
-[23:28:52] [INFO] Intercept    -20.7002      0.491    -42.166      0.000     -21.707     -19.693
-[23:28:52] [INFO] log_rho_c      0.3182      0.112      2.852      0.008       0.089       0.547
-[23:28:52] [INFO] ==============================================================================
-[23:28:52] [INFO] Omnibus:                        0.778   Durbin-Watson:                   2.495
-[23:28:52] [INFO] Prob(Omnibus):                  0.678   Jarque-Bera (JB):                0.193
-[23:28:52] [INFO] Skew:                          -0.177   Prob(JB):                        0.908
-[23:28:52] [INFO] Kurtosis:                       3.183   Cond. No.                         20.9
-[23:28:52] [INFO] ==============================================================================
-[23:28:52] [INFO] 
-[23:28:52] [INFO] Notes:
-[23:28:52] [INFO] [1] Standard Errors assume that the covariance matrix of the errors is correctly specified.
-[23:28:52] [INFO] 
-[23:28:52] [INFO] ============================================================
-[23:28:52] [INFO] MODEL B: Hierarchical Mixed-Effects (Recommended Update)
-[23:28:52] [INFO] ============================================================
-[23:28:52] [INFO]               Mixed Linear Model Regression Results
-[23:28:52] [INFO] ==================================================================
-[23:28:52] [INFO] Model:               MixedLM    Dependent Variable:    logPdot_abs
-[23:28:52] [INFO] No. Observations:    184        Method:                REML
-[23:28:52] [INFO] No. Groups:          29         Scale:                 0.3906
-[23:28:52] [INFO] Min. group size:     1          Log-Likelihood:        -186.6075
-[23:28:52] [INFO] Max. group size:     47         Converged:             Yes
-[23:28:52] [INFO] Mean group size:     6.3
-[23:28:52] [INFO] ------------------------------------------------------------------
-[23:28:52] [INFO]                     Coef.  Std.Err.    z     P>|z|  [0.025  0.975]
-[23:28:52] [INFO] ------------------------------------------------------------------
-[23:28:52] [INFO] Intercept          -19.180    0.079 -244.277 0.000 -19.334 -19.026
-[23:28:52] [INFO] log_rho_c_centered   0.393    0.079    4.966 0.000   0.238   0.547
-[23:28:52] [INFO] logP_std             0.271    0.049    5.581 0.000   0.176   0.367
-[23:28:52] [INFO] Group Var            0.061    0.077
-[23:28:52] [INFO] ==================================================================
-[23:28:52] [INFO] 
-[23:28:52] [INFO] 
-[23:28:52] [INFO] ============================================================
-[23:28:52] [INFO] HYPOTHESIS TEST: Suppressed Density Scaling
-[23:28:52] [INFO] ============================================================
-[23:28:52] [INFO] Observed Slope (Mixed Model): 0.393 ± 0.079
-[23:28:52] [INFO] Newtonian Target Slope:       0.720
-[23:28:52] [INFO] Difference:                   -0.327
-[23:28:52] [INFO] Z-score (Rejection of GR):    -4.1σ
-[23:28:52] [INFO] p-value:                      3.42e-05
+[21:30:04] [INFO] --- Step 5.33: Hierarchical (Mixed-Effects) Density Scaling ---
+[21:30:04] [INFO] Analyzing 184 pulsars in 29 clusters.
+[21:30:04] [INFO] 
+[21:30:04] [INFO] ============================================================
+[21:30:04] [INFO] MODEL A: WLS on Cluster Means (Weighted by N, Valid Baseline)
+[21:30:04] [INFO] ============================================================
+[21:30:04] [INFO]                             WLS Regression Results
+[21:30:04] [INFO] ==============================================================================
+[21:30:04] [INFO] Dep. Variable:            logPdot_abs   R-squared:                       0.464
+[21:30:04] [INFO] Model:                            WLS   Adj. R-squared:                  0.445
+[21:30:04] [INFO] Method:                 Least Squares   F-statistic:                     23.41
+[21:30:04] [INFO] Date:                Mon, 30 Mar 2026   Prob (F-statistic):           4.70e-05
+[21:30:04] [INFO] Time:                        21:30:04   Log-Likelihood:                -20.878
+[21:30:04] [INFO] No. Observations:                  29   AIC:                             45.76
+[21:30:04] [INFO] Df Residuals:                      27   BIC:                             48.49
+[21:30:04] [INFO] Df Model:                           1
+[21:30:04] [INFO] Covariance Type:            nonrobust
+[21:30:04] [INFO] ==============================================================================
+[21:30:04] [INFO]                  coef    std err          t      P>|t|      [0.025      0.975]
+[21:30:04] [INFO] ------------------------------------------------------------------------------
+[21:30:04] [INFO] Intercept    -21.0169      0.386    -54.407      0.000     -21.809     -20.224
+[21:30:04] [INFO] log_rho_c      0.3884      0.080      4.838      0.000       0.224       0.553
+[21:30:04] [INFO] ==============================================================================
+[21:30:04] [INFO] Omnibus:                        0.040   Durbin-Watson:                   2.162
+[21:30:04] [INFO] Prob(Omnibus):                  0.980   Jarque-Bera (JB):                0.060
+[21:30:04] [INFO] Skew:                           0.008   Prob(JB):                        0.970
+[21:30:04] [INFO] Kurtosis:                       2.778   Cond. No.                         27.1
+[21:30:04] [INFO] ==============================================================================
+[21:30:04] [INFO] 
+[21:30:04] [INFO] Notes:
+[21:30:04] [INFO] [1] Standard Errors assume that the covariance matrix of the errors is correctly specified.
+[21:30:04] [INFO] 
+[21:30:04] [INFO] ============================================================
+[21:30:04] [INFO] MODEL B: Hierarchical Mixed-Effects (Recommended Update)
+[21:30:04] [INFO] ============================================================
+[21:30:04] [INFO]               Mixed Linear Model Regression Results
+[21:30:04] [INFO] ==================================================================
+[21:30:04] [INFO] Model:               MixedLM    Dependent Variable:    logPdot_abs
+[21:30:04] [INFO] No. Observations:    184        Method:                REML
+[21:30:04] [INFO] No. Groups:          29         Scale:                 0.3906
+[21:30:04] [INFO] Min. group size:     1          Log-Likelihood:        -186.6075
+[21:30:04] [INFO] Max. group size:     47         Converged:             Yes
+[21:30:04] [INFO] Mean group size:     6.3
+[21:30:04] [INFO] ------------------------------------------------------------------
+[21:30:04] [INFO]                     Coef.  Std.Err.    z     P>|z|  [0.025  0.975]
+[21:30:04] [INFO] ------------------------------------------------------------------
+[21:30:04] [INFO] Intercept          -19.180    0.079 -244.277 0.000 -19.334 -19.026
+[21:30:04] [INFO] log_rho_c_centered   0.393    0.079    4.966 0.000   0.238   0.547
+[21:30:04] [INFO] logP_std             0.271    0.049    5.581 0.000   0.176   0.367
+[21:30:04] [INFO] Group Var            0.061    0.077
+[21:30:04] [INFO] ==================================================================
+[21:30:04] [INFO] 
+[21:30:04] [INFO] 
+[21:30:04] [INFO] ============================================================
+[21:30:04] [INFO] HYPOTHESIS TEST: Suppressed Density Scaling
+[21:30:04] [INFO] ============================================================
+[21:30:04] [INFO] Observed Slope (Mixed Model): 0.393 ± 0.079
+[21:30:04] [INFO] Newtonian Target Slope:       0.720
+[21:30:04] [INFO] Difference:                   -0.327
+[21:30:04] [INFO] Z-score (Rejection of GR):    -4.1σ
+[21:30:04] [INFO] p-value:                      3.42e-05

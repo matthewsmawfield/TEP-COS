@@ -1,20 +1,20 @@
-[23:28:58] [INFO] Loading ATNF database...
-[23:28:58] [INFO] Parsed 4286 pulsars.
-[23:28:58] [INFO] Found 334 Field MSPs with measured Pdot.
-[23:28:58] [INFO]   Binaries: 268
-[23:28:58] [INFO]   Isolated: 66
-[23:28:58] [INFO] {
-[23:28:58] [INFO]   "binary_n": 268,
-[23:28:58] [INFO]   "isolated_n": 66,
-[23:28:58] [INFO]   "binary_mean_logpdot": 0.17123170737142734,
-[23:28:58] [INFO]   "binary_std_logpdot": 0.6432122251973879,
-[23:28:58] [INFO]   "isolated_mean_logpdot": 0.21809130829766393,
-[23:28:58] [INFO]   "isolated_std_logpdot": 0.924866199840388,
-[23:28:58] [INFO]   "diff_dex": -0.04685960092623659,
-[23:28:58] [INFO]   "t_stat": -0.3863709280118236,
-[23:28:58] [INFO]   "t_p_value": 0.7002358665867912,
-[23:28:58] [INFO]   "mw_u_stat": 9300.0,
-[23:28:58] [INFO]   "mw_p_value": 0.5168476442938648,
-[23:28:58] [INFO]   "interpretation": "CONSISTENT: No significant difference between Binary and Isolated Field MSPs. This supports the hypothesis that the difference observed in GCs is environmental (e.g. acceleration or TEP cluster potential)."
-[23:28:58] [INFO] }
-[23:28:58] [INFO] Results saved to /Users/matthewsmawfield/www/TEP-COS/results/outputs/step_5_12_field_binary_analysis.md
+[21:30:07] [INFO] Loading ATNF database...
+[21:30:07] [INFO] Parsed 4286 pulsars.
+[21:30:07] [INFO] Found 334 Field MSPs with measured Pdot.
+[21:30:07] [INFO]   Binaries: 268
+[21:30:07] [INFO]   Isolated: 66
+[21:30:07] [INFO] {
+[21:30:07] [INFO]   "binary_n": 268,
+[21:30:07] [INFO]   "isolated_n": 66,
+[21:30:07] [INFO]   "binary_mean_logpdot": 0.17123170737142734,
+[21:30:07] [INFO]   "binary_std_logpdot": 0.6432122251973879,
+[21:30:07] [INFO]   "isolated_mean_logpdot": 0.21809130829766393,
+[21:30:07] [INFO]   "isolated_std_logpdot": 0.924866199840388,
+[21:30:07] [INFO]   "diff_dex": -0.04685960092623659,
+[21:30:07] [INFO]   "t_stat": -0.3863709280118236,
+[21:30:07] [INFO]   "t_p_value": 0.7002358665867912,
+[21:30:07] [INFO]   "mw_u_stat": 9300.0,
+[21:30:07] [INFO]   "mw_p_value": 0.5168476442938648,
+[21:30:07] [INFO]   "interpretation": "CONSISTENT: No significant difference between Binary and Isolated Field MSPs. This supports the hypothesis that the difference observed in GCs is environmental (e.g. acceleration or TEP cluster potential)."
+[21:30:07] [INFO] }
+[21:30:07] [INFO] Results saved to /Users/matthewsmawfield/www/TEP-COS/results/outputs/step_5_12_field_binary_analysis.md

@@ -9,16 +9,16 @@
     "field_total": 334
   },
   "power_analysis": {
-    "current_power": 0.9838,
-    "current_power_percent": "98.4%",
+    "current_power": 0.9854,
+    "current_power_percent": "98.5%",
     "min_detectable_effect_80power": 0.20526315789473684,
     "adequate_power": true,
     "power_status": "ADEQUATE"
   },
   "required_sample_sizes": {
     "for_observed_effect_80_power": {
-      "gc_needed": 120,
-      "field_needed": 120,
+      "gc_needed": 125,
+      "field_needed": 125,
       "additional_gc_needed": 0,
       "additional_field_needed": 0
     }

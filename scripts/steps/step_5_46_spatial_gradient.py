@@ -99,6 +99,23 @@ def load_pulsar_data_with_radial():
                 except ValueError:
                     continue
                 
+                # Extract Period (ms) - 3rd column - CRITICAL MSP FILTER
+                period_str = parts[2] if len(parts) > 2 else '*'
+                if period_str == '*' or period_str == 'i':
+                    continue  # Skip pulsars without period data
+                
+                try:
+                    period_ms = float(period_str)
+                except ValueError:
+                    continue
+                
+                # MSP FILTER: Only include pulsars with P < 30 ms
+                # This matches step_5_10 methodology and prevents canonical
+                # pulsars (Pdot ~ 10^-15) from contaminating the analysis
+                MSP_PERIOD_CUT_MS = 30.0
+                if period_ms >= MSP_PERIOD_CUT_MS:
+                    continue  # Skip non-MSPs
+                
                 # Extract Pdot (10^-20) - 4th column
                 pdot_str = parts[3] if len(parts) > 3 else '*'
                 if pdot_str == '*' or pdot_str == 'i':
@@ -123,12 +140,13 @@ def load_pulsar_data_with_radial():
                     'cluster': current_cluster,
                     'pulsar': pulsar_name,
                     'r_arcmin': r_arcmin,
+                    'period_ms': period_ms,  # Added for transparency
                     'pdot_1e20': pdot_1e20,
                     'logPdot_abs': log_pdot_abs
                 })
     
     df = pd.DataFrame(rows)
-    print(f"Parsed {len(df)} pulsars with radial positions from Freire catalog")
+    print(f"Parsed {len(df)} MSPs (P < 30 ms) with radial positions from Freire catalog")
     return df
 
 

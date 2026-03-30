@@ -1,0 +1,126 @@
+{
+  "constants": {
+    "rho_c_g_cm3": 20.0,
+    "M_pulsar": 1.4
+  },
+  "pulsar_screening": {
+    "radius_km": 321524.99336885056
+  },
+  "typical_binary": {
+    "period_days": 1.0,
+    "companion_mass": 0.2,
+    "separation_km": 3424545.2211549836,
+    "shielding_predicted": 0.4740002404057548,
+    "shielding_observed": 0.5517241379310346
+  },
+  "sweep": [
+    {
+      "period_days": 0.1,
+      "companion_mass": 0.05,
+      "separation_km": 713979.2308480167,
+      "shielding_fraction": 0.519361014263103
+    },
+    {
+      "period_days": 0.5,
+      "companion_mass": 0.05,
+      "separation_km": 2087687.9357151792,
+      "shielding_fraction": 0.26983186042543994
+    },
+    {
+      "period_days": 1.0,
+      "companion_mass": 0.05,
+      "separation_km": 3313998.0253355945,
+      "shielding_fraction": 0.18883866672206423
+    },
+    {
+      "period_days": 5.0,
+      "companion_mass": 0.05,
+      "separation_km": 9690189.01048369,
+      "shielding_fraction": 0.0737452622828759
+    },
+    {
+      "period_days": 10.0,
+      "companion_mass": 0.05,
+      "separation_km": 15382216.229012491,
+      "shielding_fraction": 0.047759907940834456
+    },
+    {
+      "period_days": 100.0,
+      "companion_mass": 0.05,
+      "separation_km": 71397923.08480164,
+      "shielding_fraction": 0.010690122866763947
+    },
+    {
+      "period_days": 0.1,
+      "companion_mass": 0.2,
+      "separation_km": 737795.9022039206,
+      "shielding_fraction": 0.807051442840169
+    },
+    {
+      "period_days": 0.5,
+      "companion_mass": 0.2,
+      "separation_km": 2157328.305225029,
+      "shielding_fraction": 0.5885574620465346
+    },
+    {
+      "period_days": 1.0,
+      "companion_mass": 0.2,
+      "separation_km": 3424545.2211549836,
+      "shielding_fraction": 0.4740002404057548
+    },
+    {
+      "period_days": 5.0,
+      "companion_mass": 0.2,
+      "separation_km": 10013430.971969273,
+      "shielding_fraction": 0.23558275215187255
+    },
+    {
+      "period_days": 10.0,
+      "companion_mass": 0.2,
+      "separation_km": 15895330.858714975,
+      "shielding_fraction": 0.1625808023141387
+    },
+    {
+      "period_days": 100.0,
+      "companion_mass": 0.2,
+      "separation_km": 73779590.22039205,
+      "shielding_fraction": 0.04014800369257166
+    },
+    {
+      "period_days": 0.1,
+      "companion_mass": 0.5,
+      "separation_km": 781293.320730496,
+      "shielding_fraction": 0.9080430381535695
+    },
+    {
+      "period_days": 0.5,
+      "companion_mass": 0.5,
+      "separation_km": 2284515.528563204,
+      "shielding_fraction": 0.771537378782244
+    },
+    {
+      "period_days": 1.0,
+      "companion_mass": 0.5,
+      "separation_km": 3626442.3532789173,
+      "shielding_fraction": 0.6802485750650156
+    },
+    {
+      "period_days": 5.0,
+      "companion_mass": 0.5,
+      "separation_km": 10603781.767593961,
+      "shielding_fraction": 0.42115245969291926
+    },
+    {
+      "period_days": 10.0,
+      "companion_mass": 0.5,
+      "separation_km": 16832454.33271987,
+      "shielding_fraction": 0.31428920878840366
+    },
+    {
+      "period_days": 100.0,
+      "companion_mass": 0.5,
+      "separation_km": 78129332.07304958,
+      "shielding_fraction": 0.0898719788912201
+    }
+  ]
+}

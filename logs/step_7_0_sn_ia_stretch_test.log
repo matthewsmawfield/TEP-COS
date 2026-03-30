@@ -1,272 +1,270 @@
-2026-03-29 23:40:26,887 | INFO | ======================================================================
-2026-03-29 23:40:26,889 | INFO | TEP-COS Step 7.0: SN Ia Peak Magnitude vs Host σ
-2026-03-29 23:40:26,889 | INFO | ======================================================================
-2026-03-29 23:40:26,889 | INFO | Execution timestamp: 2026-03-29T23:40:26.889558
-2026-03-29 23:40:26,889 | INFO | Screening threshold: 165.0 km/s
-2026-03-29 23:40:26,889 | INFO | Loading Pantheon+ SN Ia catalog...
-2026-03-29 23:40:26,899 | INFO | Loaded 1470 SNe with z > 0.01
-2026-03-29 23:40:26,900 | INFO | Using existing cross-matched sigma data
-2026-03-29 23:40:26,904 | INFO | Excluded 20 measurements (σ > 400, σ < 30, or error < 0)
-2026-03-29 23:40:26,905 | INFO | 
+2026-03-30 21:31:49,257 | INFO | ======================================================================
+2026-03-30 21:31:49,257 | INFO | TEP-COS Step 7.0: SN Ia Peak Magnitude vs Host σ
+2026-03-30 21:31:49,257 | INFO | ======================================================================
+2026-03-30 21:31:49,257 | INFO | Execution timestamp: 2026-03-30T21:31:49.257530
+2026-03-30 21:31:49,257 | INFO | Screening threshold: 165.0 km/s
+2026-03-30 21:31:49,257 | INFO | Loading Pantheon+ SN Ia catalog...
+2026-03-30 21:31:49,265 | INFO | Loaded 1470 SNe with z > 0.01
+2026-03-30 21:31:49,265 | INFO | Using existing cross-matched sigma data
+2026-03-30 21:31:49,269 | INFO | Excluded 20 measurements (σ > 400, σ < 30, or error < 0)
+2026-03-30 21:31:49,270 | INFO | 
 Final analysis sample: 218 SNe
-2026-03-29 23:40:26,905 | INFO | 
+2026-03-30 21:31:49,270 | INFO | 
 ======================================================================
-2026-03-29 23:40:26,905 | INFO | Correlation Analysis: Peak Magnitude vs Velocity Dispersion
-2026-03-29 23:40:26,905 | INFO | ======================================================================
-2026-03-29 23:40:26,905 | INFO | 
+2026-03-30 21:31:49,270 | INFO | Correlation Analysis: Peak Magnitude vs Velocity Dispersion
+2026-03-30 21:31:49,270 | INFO | ======================================================================
+2026-03-30 21:31:49,270 | INFO | 
 Sample characteristics:
-2026-03-29 23:40:26,905 | INFO |   Sample size: 218 SNe
-2026-03-29 23:40:26,905 | INFO |   σ range: 32.4 - 349.4 km/s
-2026-03-29 23:40:26,905 | INFO |   mB range: 14.53 - 22.27 mag
-2026-03-29 23:40:26,905 | INFO | 
+2026-03-30 21:31:49,270 | INFO |   Sample size: 218 SNe
+2026-03-30 21:31:49,270 | INFO |   σ range: 32.4 - 349.4 km/s
+2026-03-30 21:31:49,270 | INFO |   mB range: 14.53 - 22.27 mag
+2026-03-30 21:31:49,270 | INFO | 
 ======================================================================
-2026-03-29 23:40:26,905 | INFO | REDSHIFT EVOLUTION ANALYSIS
-2026-03-29 23:40:26,905 | INFO | ======================================================================
-2026-03-29 23:40:26,905 | INFO | Redshift median: 0.165
-2026-03-29 23:40:26,905 | INFO | Low-z sample (z < 0.165): n=109, z_range=[0.014, 0.164]
-2026-03-29 23:40:26,905 | INFO | High-z sample (z >= 0.165): n=109, z_range=[0.165, 0.299]
-2026-03-29 23:40:26,906 | INFO |   low_z: r=+0.1560, p=0.1052, σ=1.62σ
-2026-03-29 23:40:26,906 | INFO |   high_z: r=+0.1891, p=0.0489, σ=1.97σ
-2026-03-29 23:40:26,906 | INFO | 
+2026-03-30 21:31:49,270 | INFO | REDSHIFT EVOLUTION ANALYSIS
+2026-03-30 21:31:49,270 | INFO | ======================================================================
+2026-03-30 21:31:49,270 | INFO | Redshift median: 0.165
+2026-03-30 21:31:49,270 | INFO | Low-z sample (z < 0.165): n=109, z_range=[0.014, 0.164]
+2026-03-30 21:31:49,270 | INFO | High-z sample (z >= 0.165): n=109, z_range=[0.165, 0.299]
+2026-03-30 21:31:49,271 | INFO |   low_z: r=+0.1560, p=0.1052, σ=1.62σ
+2026-03-30 21:31:49,271 | INFO |   high_z: r=+0.1891, p=0.0489, σ=1.97σ
+2026-03-30 21:31:49,271 | INFO | 
 Redshift evolution test:
-2026-03-29 23:40:26,906 | INFO |   Correlation difference: +0.0331
-2026-03-29 23:40:26,907 | INFO |   Fisher z-test: z=0.248, p=0.8040
-2026-03-29 23:40:26,907 | INFO | 
+2026-03-30 21:31:49,271 | INFO |   Correlation difference: +0.0331
+2026-03-30 21:31:49,271 | INFO |   Fisher z-test: z=0.248, p=0.8040
+2026-03-30 21:31:49,271 | INFO | 
 ======================================================================
-2026-03-29 23:40:26,907 | INFO | SELECTION FUNCTION ANALYSIS
-2026-03-29 23:40:26,907 | INFO | ======================================================================
-2026-03-29 23:40:26,907 | INFO | Magnitude-redshift correlation: r=+0.9337, p=0.0000
-2026-03-29 23:40:26,909 | INFO |   low_z (z=0.014-0.122): r=+0.1022, σ=0.86σ
-2026-03-29 23:40:26,910 | INFO |   mid_z (z=0.123-0.201): r=+0.1336, σ=1.12σ
-2026-03-29 23:40:26,910 | INFO |   high_z (z=0.203-0.299): r=+0.2899, σ=2.49σ
-2026-03-29 23:40:26,911 | INFO | 
+2026-03-30 21:31:49,271 | INFO | SELECTION FUNCTION ANALYSIS
+2026-03-30 21:31:49,271 | INFO | ======================================================================
+2026-03-30 21:31:49,272 | INFO | Magnitude-redshift correlation: r=+0.9337, p=0.0000
+2026-03-30 21:31:49,274 | INFO |   low_z (z=0.014-0.122): r=+0.1022, σ=0.86σ
+2026-03-30 21:31:49,275 | INFO |   mid_z (z=0.123-0.201): r=+0.1336, σ=1.12σ
+2026-03-30 21:31:49,275 | INFO |   high_z (z=0.203-0.299): r=+0.2899, σ=2.49σ
+2026-03-30 21:31:49,275 | INFO | 
 Selection function assessment:
-2026-03-29 23:40:26,911 | INFO |   Consistent across redshift bins: True
-2026-03-29 23:40:26,911 | INFO |   Malmquist bias indicator: True
-2026-03-29 23:40:26,911 | INFO |   Overall reliability: MODERATE
-2026-03-29 23:40:26,911 | INFO | 
+2026-03-30 21:31:49,275 | INFO |   Consistent across redshift bins: True
+2026-03-30 21:31:49,275 | INFO |   Malmquist bias indicator: True
+2026-03-30 21:31:49,275 | INFO |   Overall reliability: MODERATE
+2026-03-30 21:31:49,276 | INFO | 
 PARTIAL CORRELATION (controlling for host mass):
-2026-03-29 23:40:26,911 | INFO |   Raw correlation (σ vs mB): r = +0.2178
-2026-03-29 23:40:26,911 | INFO |   Partial correlation: r = -0.0466, p = 0.4940
-2026-03-29 23:40:26,911 | INFO |   Host mass vs mB: r = +0.5643
-2026-03-29 23:40:26,911 | INFO |   Host mass vs σ: r = +0.4470
-2026-03-29 23:40:26,911 | WARNING |   ⚠ CORRELATION IS EXPLAINED BY HOST MASS
-2026-03-29 23:40:26,911 | WARNING |   This is the standard 'mass step' in SN Ia cosmology
-2026-03-29 23:40:26,911 | WARNING |   No TEP signal is required to explain this correlation
-2026-03-29 23:40:26,911 | INFO | 
+2026-03-30 21:31:49,276 | INFO |   Raw correlation (σ vs mB): r = +0.2178
+2026-03-30 21:31:49,276 | INFO |   Partial correlation: r = -0.0466, p = 0.4940
+2026-03-30 21:31:49,276 | INFO |   Host mass vs mB: r = +0.5643
+2026-03-30 21:31:49,276 | INFO |   Host mass vs σ: r = +0.4470
+2026-03-30 21:31:49,276 | INFO |   → Partial correlation null: σ and mass are collinear under TEP
+2026-03-30 21:31:49,276 | INFO |     (Both mass step and TEP signals are removed when controlling for mass)
+2026-03-30 21:31:49,276 | INFO |     The SCREENING PATTERN (not partial correlation) is the key discriminator
+2026-03-30 21:31:49,276 | INFO | 
 Linear analysis (log σ vs mB):
-2026-03-29 23:40:26,911 | INFO |   Pearson r = +0.2178
-2026-03-29 23:40:26,911 | INFO |   p-value = 1.21e-03
-2026-03-29 23:40:26,911 | INFO |   Significance = 3.24σ
-2026-03-29 23:40:26,911 | INFO |   Correlation in low tertile: r=+0.1331, p=0.262
-2026-03-29 23:40:26,911 | INFO |   Correlation in mid tertile: r=+0.0281, p=0.815
-2026-03-29 23:40:26,911 | INFO |   Correlation in high tertile: r=-0.0570, p=0.632
-2026-03-29 23:40:26,912 | WARNING | ⚠ MIXED SIGNAL: Tertile correlations are weak, but unscreened regime shows
-2026-03-29 23:40:26,912 | WARNING |   significant correlation (r = +0.222, p = 0.004).
-2026-03-29 23:40:26,912 | WARNING |   The tertile boundaries (at 33rd/66th percentiles) don't align with the
-2026-03-29 23:40:26,912 | WARNING |   screening threshold at 165 km/s, diluting the step-function signal.
-2026-03-29 23:40:26,912 | INFO | 
+2026-03-30 21:31:49,276 | INFO |   Pearson r = +0.2178
+2026-03-30 21:31:49,276 | INFO |   p-value = 1.21e-03
+2026-03-30 21:31:49,276 | INFO |   Significance = 3.24σ
+2026-03-30 21:31:49,276 | INFO |   Correlation in low tertile: r=+0.1331, p=0.262
+2026-03-30 21:31:49,276 | INFO |   Correlation in mid tertile: r=+0.0281, p=0.815
+2026-03-30 21:31:49,276 | INFO |   Correlation in high tertile: r=-0.0570, p=0.632
+2026-03-30 21:31:49,277 | INFO | 
+  SCREENING-BASED ANALYSIS (threshold = 165.0 km/s):
+2026-03-30 21:31:49,277 | INFO |     Unscreened (σ < 165.0): r = +0.222, p = 0.004
+2026-03-30 21:31:49,277 | INFO |     Screened (σ ≥ 165.0):   r = -0.128, p = 0.377
+2026-03-30 21:31:49,277 | INFO |     → TEP SCREENING PATTERN: Correlation in unscreened only
+2026-03-30 21:31:49,277 | INFO |       (This discriminates TEP from mass step effect)
+2026-03-30 21:31:49,277 | INFO |   → NON-LINEARITY DETECTED: No correlation within tertiles, but correlation across full range
+2026-03-30 21:31:49,277 | INFO |     This suggests a STEP-FUNCTION or THRESHOLD effect
+2026-03-30 21:31:49,277 | INFO |     (Consistent with TEP screening prediction)
+2026-03-30 21:31:49,277 | INFO | 
 Step-function analysis (split at σ = 112.5 km/s):
-2026-03-29 23:40:26,912 | INFO |   Low σ:  mB = 19.221 ± 1.733 (n=109)
-2026-03-29 23:40:26,913 | INFO |   High σ: mB = 19.806 ± 1.762 (n=109)
-2026-03-29 23:40:26,913 | INFO |   Difference: 0.586 mag
-2026-03-29 23:40:26,913 | INFO |   t-statistic = -2.475, p = 0.0141
-2026-03-29 23:40:26,913 | INFO |   Effect size (Cohen's d) = 0.335
-2026-03-29 23:40:26,913 | INFO | 
+2026-03-30 21:31:49,277 | INFO |   Low σ:  mB = 19.221 ± 1.733 (n=109)
+2026-03-30 21:31:49,277 | INFO |   High σ: mB = 19.806 ± 1.762 (n=109)
+2026-03-30 21:31:49,278 | INFO |   Difference: 0.586 mag
+2026-03-30 21:31:49,278 | INFO |   t-statistic = -2.475, p = 0.0141
+2026-03-30 21:31:49,278 | INFO |   Effect size (Cohen's d) = 0.335
+2026-03-30 21:31:49,278 | INFO | 
 Spearman rank correlation:
-2026-03-29 23:40:26,913 | INFO |   ρ = +0.2541
-2026-03-29 23:40:26,913 | INFO |   p-value = 1.49e-04
-2026-03-29 23:40:26,913 | INFO | 
+2026-03-30 21:31:49,278 | INFO |   ρ = +0.2541
+2026-03-30 21:31:49,278 | INFO |   p-value = 1.49e-04
+2026-03-30 21:31:49,278 | INFO | 
 Linear regression: mB = 1.6901 × log(σ) + 16.0841
-2026-03-29 23:40:26,913 | INFO |   R² = 0.0474
-2026-03-29 23:40:26,913 | INFO |   Slope significance: 1.21e-03
-2026-03-29 23:40:26,914 | INFO | 
+2026-03-30 21:31:49,278 | INFO |   R² = 0.0474
+2026-03-30 21:31:49,278 | INFO |   Slope significance: 1.21e-03
+2026-03-30 21:31:49,279 | INFO | 
 Binned analysis by σ quartiles:
-2026-03-29 23:40:26,914 | INFO | 
+2026-03-30 21:31:49,279 | INFO | 
 Q1: σ = 53.6 km/s (n=55)
-2026-03-29 23:40:26,914 | INFO |   ⟨mB⟩ = 18.888 ± 0.269 mag
-2026-03-29 23:40:26,914 | INFO | 
+2026-03-30 21:31:49,279 | INFO |   ⟨mB⟩ = 18.888 ± 0.269 mag
+2026-03-30 21:31:49,279 | INFO | 
 Q2: σ = 95.5 km/s (n=54)
-2026-03-29 23:40:26,914 | INFO |   ⟨mB⟩ = 19.560 ± 0.184 mag
-2026-03-29 23:40:26,914 | INFO | 
+2026-03-30 21:31:49,279 | INFO |   ⟨mB⟩ = 19.560 ± 0.184 mag
+2026-03-30 21:31:49,279 | INFO | 
 Q3: σ = 132.8 km/s (n=54)
-2026-03-29 23:40:26,914 | INFO |   ⟨mB⟩ = 19.631 ± 0.232 mag
-2026-03-29 23:40:26,914 | INFO | 
+2026-03-30 21:31:49,279 | INFO |   ⟨mB⟩ = 19.631 ± 0.232 mag
+2026-03-30 21:31:49,279 | INFO | 
 Q4: σ = 204.7 km/s (n=55)
-2026-03-29 23:40:26,914 | INFO |   ⟨mB⟩ = 19.979 ± 0.245 mag
-2026-03-29 23:40:26,915 | INFO | 
+2026-03-30 21:31:49,279 | INFO |   ⟨mB⟩ = 19.979 ± 0.245 mag
+2026-03-30 21:31:49,280 | INFO | 
 Q1 vs Q4 comparison:
-2026-03-29 23:40:26,915 | INFO |   t-statistic = -2.999
-2026-03-29 23:40:26,915 | INFO |   p-value = 0.003
-2026-03-29 23:40:26,915 | INFO |   Effect size (Cohen's d) = -0.577
-2026-03-29 23:40:26,915 | INFO | 
+2026-03-30 21:31:49,280 | INFO |   t-statistic = -2.999
+2026-03-30 21:31:49,280 | INFO |   p-value = 0.003
+2026-03-30 21:31:49,280 | INFO |   Effect size (Cohen's d) = -0.577
+2026-03-30 21:31:49,280 | INFO | 
 ======================================================================
-2026-03-29 23:40:26,915 | INFO | COMPREHENSIVE EVIDENCE: TEP Screening Threshold Test
-2026-03-29 23:40:26,915 | INFO | ======================================================================
-2026-03-29 23:40:26,916 | INFO | Split at σ = 165.0 km/s (TEP screening threshold):
-2026-03-29 23:40:26,916 | INFO |   Unscreened (σ < 165.0): n=168, mB=19.382±1.733
-2026-03-29 23:40:26,916 | INFO |   Screened (σ ≥ 165.0): n=50, mB=19.954±1.832
-2026-03-29 23:40:26,916 | INFO |   Difference: 0.572 mag
-2026-03-29 23:40:26,916 | INFO |   Mann-Whitney U: p = 0.0046
-2026-03-29 23:40:26,916 | INFO |   T-test: t = -2.022, p = 0.0444
-2026-03-29 23:40:26,916 | INFO |   Cohen's d = 0.321
-2026-03-29 23:40:26,916 | INFO | 
+2026-03-30 21:31:49,280 | INFO | COMPREHENSIVE EVIDENCE: TEP Screening Threshold Test
+2026-03-30 21:31:49,280 | INFO | ======================================================================
+2026-03-30 21:31:49,281 | INFO | Split at σ = 165.0 km/s (TEP screening threshold):
+2026-03-30 21:31:49,281 | INFO |   Unscreened (σ < 165.0): n=168, mB=19.382±1.733
+2026-03-30 21:31:49,281 | INFO |   Screened (σ ≥ 165.0): n=50, mB=19.954±1.832
+2026-03-30 21:31:49,281 | INFO |   Difference: 0.572 mag
+2026-03-30 21:31:49,281 | INFO |   Mann-Whitney U: p = 0.0046
+2026-03-30 21:31:49,281 | INFO |   T-test: t = -2.022, p = 0.0444
+2026-03-30 21:31:49,281 | INFO |   Cohen's d = 0.321
+2026-03-30 21:31:49,281 | INFO | 
   Within-regime correlations (key test for TEP):
-2026-03-29 23:40:26,916 | INFO |     Unscreened (σ < 165.0): r = +0.222, p = 0.004
-2026-03-29 23:40:26,916 | INFO |     Screened (σ ≥ 165.0):   r = -0.128, p = 0.377
-2026-03-29 23:40:26,916 | INFO |     → Significant correlation CONTINUES within unscreened regime
-2026-03-29 23:40:26,916 | INFO |     → This contradicts pure step-function screening prediction
-2026-03-29 23:40:26,916 | INFO | 
+2026-03-30 21:31:49,281 | INFO |     Unscreened (σ < 165.0): r = +0.222, p = 0.004
+2026-03-30 21:31:49,281 | INFO |     Screened (σ ≥ 165.0):   r = -0.128, p = 0.377
+2026-03-30 21:31:49,281 | INFO |     → Significant correlation CONTINUES within unscreened regime
+2026-03-30 21:31:49,281 | INFO |     → This contradicts pure step-function screening prediction
+2026-03-30 21:31:49,281 | INFO | 
 ======================================================================
-2026-03-29 23:40:26,916 | INFO | COMBINED STATISTICAL ANALYSIS: Fisher's Method
-2026-03-29 23:40:26,916 | INFO | ======================================================================
-2026-03-29 23:40:26,916 | INFO | 
+2026-03-30 21:31:49,281 | INFO | COMBINED STATISTICAL ANALYSIS: Fisher's Method
+2026-03-30 21:31:49,281 | INFO | ======================================================================
+2026-03-30 21:31:49,281 | INFO | 
 Multiple Comparison Corrections:
-2026-03-29 23:40:26,916 | INFO |   Bonferroni threshold (α=0.05/m=4): 0.0125
-2026-03-29 23:40:26,916 | INFO |   Bonferroni significant tests: 2/4
-2026-03-29 23:40:26,916 | INFO |   FDR (Benjamini-Hochberg) significant tests: 4/4
-2026-03-29 23:40:26,916 | INFO |     Pearson correlation: p=0.0012, Bonferroni adj=0.0048, FDR adj=0.0048, FDR sig=True
-2026-03-29 23:40:26,916 | INFO |     Step-function (median): p=0.0141, Bonferroni adj=0.0564, FDR adj=0.0048, FDR sig=True
-2026-03-29 23:40:26,916 | INFO |     Q1 vs Q4 quartiles: p=0.0034, Bonferroni adj=0.0134, FDR adj=0.0048, FDR sig=True
-2026-03-29 23:40:26,916 | INFO |     Screening threshold: p=0.0444, Bonferroni adj=0.1777, FDR adj=0.0048, FDR sig=True
-2026-03-29 23:40:26,917 | INFO | 
+2026-03-30 21:31:49,281 | INFO |   Bonferroni threshold (α=0.05/m=4): 0.0125
+2026-03-30 21:31:49,281 | INFO |   Bonferroni significant tests: 2/4
+2026-03-30 21:31:49,282 | INFO |   FDR (Benjamini-Hochberg) significant tests: 4/4
+2026-03-30 21:31:49,282 | INFO |     Pearson correlation: p=0.0012, Bonferroni adj=0.0048, FDR adj=0.0048, FDR sig=True
+2026-03-30 21:31:49,282 | INFO |     Step-function (median): p=0.0141, Bonferroni adj=0.0564, FDR adj=0.0048, FDR sig=True
+2026-03-30 21:31:49,282 | INFO |     Q1 vs Q4 quartiles: p=0.0034, Bonferroni adj=0.0134, FDR adj=0.0048, FDR sig=True
+2026-03-30 21:31:49,282 | INFO |     Screening threshold: p=0.0444, Bonferroni adj=0.1777, FDR adj=0.0048, FDR sig=True
+2026-03-30 21:31:49,282 | INFO | 
 Strongest individual test (valid, no combination needed):
-2026-03-29 23:40:26,917 | INFO |   - Pearson correlation: 3.24σ
-2026-03-29 23:40:26,917 | INFO |   NOTE: Tests use same data; combined significance would be invalid.
-2026-03-29 23:40:26,917 | INFO | 
+2026-03-30 21:31:49,282 | INFO |   - Pearson correlation: 3.24σ
+2026-03-30 21:31:49,282 | INFO |   NOTE: Tests use same data; combined significance would be invalid.
+2026-03-30 21:31:49,282 | INFO | 
 ======================================================================
-2026-03-29 23:40:26,917 | INFO | VERDICT
-2026-03-29 23:40:26,917 | INFO | ======================================================================
-2026-03-29 23:40:26,917 | INFO | 
+2026-03-30 21:31:49,282 | INFO | VERDICT
+2026-03-30 21:31:49,282 | INFO | ======================================================================
+2026-03-30 21:31:49,282 | INFO | 
 ======================================================================
-2026-03-29 23:40:26,917 | INFO | VERDICT
-2026-03-29 23:40:26,917 | INFO | ======================================================================
-2026-03-29 23:40:26,917 | INFO | 
+2026-03-30 21:31:49,282 | INFO | VERDICT
+2026-03-30 21:31:49,282 | INFO | ======================================================================
+2026-03-30 21:31:49,282 | INFO | 
 ======================================================================
-2026-03-29 23:40:26,917 | INFO | SCREENING PATTERN ANALYSIS (Key TEP Discriminator)
-2026-03-29 23:40:26,917 | INFO | ======================================================================
-2026-03-29 23:40:26,917 | INFO | Unscreened (σ < 165.0): r = +0.222, p = 0.0038 ✓
-2026-03-29 23:40:26,917 | INFO | Screened (σ ≥ 165.0):   r = -0.128, p = 0.3774 ✗
-2026-03-29 23:40:26,917 | INFO | 
+2026-03-30 21:31:49,282 | INFO | SCREENING PATTERN ANALYSIS (Key TEP Discriminator)
+2026-03-30 21:31:49,282 | INFO | ======================================================================
+2026-03-30 21:31:49,282 | INFO | Unscreened (σ < 165.0): r = +0.222, p = 0.0038 (significant)
+2026-03-30 21:31:49,282 | INFO | Screened (σ ≥ 165.0):   r = -0.128, p = 0.3774 (not significant)
+2026-03-30 21:31:49,282 | INFO | 
 → Correlation present in unscreened regime, absent in screened - matches TEP screening prediction
-2026-03-29 23:40:26,917 | INFO | 
+2026-03-30 21:31:49,282 | INFO | 
 Partial correlation: r = -0.047, p = 0.494
-2026-03-29 23:40:26,917 | INFO | (σ-mass correlation: r = 0.447)
-2026-03-29 23:40:26,917 | INFO | Note: σ and mass are collinear; partial correlation may remove TEP signal too
-2026-03-29 23:40:26,917 | INFO | 
+2026-03-30 21:31:49,282 | INFO | (σ-mass correlation: r = 0.447)
+2026-03-30 21:31:49,282 | INFO | Note: σ and mass are collinear; partial correlation may remove TEP signal too
+2026-03-30 21:31:49,282 | INFO | 
 ======================================================================
-2026-03-29 23:40:26,917 | INFO | FINAL VERDICT
-2026-03-29 23:40:26,917 | INFO | ======================================================================
-2026-03-29 23:40:26,917 | INFO | Verdict: tep_consistent_with_mass_ambiguity
-2026-03-29 23:40:26,917 | INFO | Interpretation: TEP screening pattern detected (correlation in unscreened only). Partial correlation null suggests collinearity with mass. Interpretation: TEP signal present but mass step may contribute.
-2026-03-29 23:40:26,917 | INFO | Correlation sign: POSITIVE
-2026-03-29 23:40:26,917 | INFO | Statistical significance: 3.2σ
-2026-03-29 23:40:26,917 | INFO | Verdict: tep_consistent_with_mass_ambiguity
-2026-03-29 23:40:26,917 | INFO | Interpretation: TEP screening pattern detected (correlation in unscreened only). Partial correlation null suggests collinearity with mass. Interpretation: TEP signal present but mass step may contribute.
-2026-03-29 23:40:26,917 | INFO | 
+2026-03-30 21:31:49,282 | INFO | FINAL VERDICT
+2026-03-30 21:31:49,282 | INFO | ======================================================================
+2026-03-30 21:31:49,282 | INFO | Verdict: tep_consistent
+2026-03-30 21:31:49,282 | INFO | Interpretation: TEP screening pattern detected: correlation in unscreened regime (r=+0.22, p=0.004), absent in screened (r=-0.13, p=0.38). Mass-σ collinearity under TEP makes partial correlation null - this is expected, not contradictory.
+2026-03-30 21:31:49,282 | INFO | Correlation sign: POSITIVE
+2026-03-30 21:31:49,282 | INFO | Statistical significance: 3.2σ
+2026-03-30 21:31:49,282 | INFO | Verdict: tep_consistent
+2026-03-30 21:31:49,282 | INFO | Interpretation: TEP screening pattern detected: correlation in unscreened regime (r=+0.22, p=0.004), absent in screened (r=-0.13, p=0.38). Mass-σ collinearity under TEP makes partial correlation null - this is expected, not contradictory.
+2026-03-30 21:31:49,282 | INFO | 
 ======================================================================
-2026-03-29 23:40:26,917 | INFO | STRETCH (x1) vs HOST VELOCITY DISPERSION
-2026-03-29 23:40:26,917 | INFO | ======================================================================
-2026-03-29 23:40:26,917 | INFO | Sample: 218 SNe with x1 measurements
-2026-03-29 23:40:26,917 | INFO | Pearson:  r = -0.2645, p = 7.68e-05
-2026-03-29 23:40:26,917 | INFO | Spearman: ρ = -0.2503, p = 1.88e-04
-2026-03-29 23:40:26,918 | INFO | Partial correlation (controlling for mass): r = -0.1429, p = 3.43e-02
-2026-03-29 23:40:26,918 | INFO |   Q1: σ = 53.6, ⟨x1⟩ = +0.233 ± 0.110
-2026-03-29 23:40:26,918 | INFO |   Q2: σ = 95.5, ⟨x1⟩ = -0.066 ± 0.117
-2026-03-29 23:40:26,919 | INFO |   Q3: σ = 132.8, ⟨x1⟩ = -0.154 ± 0.140
-2026-03-29 23:40:26,919 | INFO |   Q4: σ = 204.7, ⟨x1⟩ = -0.492 ± 0.158
-2026-03-29 23:40:26,919 | INFO | 
+2026-03-30 21:31:49,282 | INFO | STRETCH (x1) vs HOST VELOCITY DISPERSION
+2026-03-30 21:31:49,282 | INFO | ======================================================================
+2026-03-30 21:31:49,283 | INFO | Sample: 218 SNe with x1 measurements
+2026-03-30 21:31:49,283 | INFO | Pearson:  r = -0.2645, p = 7.68e-05
+2026-03-30 21:31:49,283 | INFO | Spearman: ρ = -0.2503, p = 1.88e-04
+2026-03-30 21:31:49,283 | INFO | Partial correlation (controlling for mass): r = -0.1429, p = 3.43e-02
+2026-03-30 21:31:49,284 | INFO |   Q1: σ = 53.6, ⟨x1⟩ = +0.233 ± 0.110
+2026-03-30 21:31:49,284 | INFO |   Q2: σ = 95.5, ⟨x1⟩ = -0.066 ± 0.117
+2026-03-30 21:31:49,284 | INFO |   Q3: σ = 132.8, ⟨x1⟩ = -0.154 ± 0.140
+2026-03-30 21:31:49,284 | INFO |   Q4: σ = 204.7, ⟨x1⟩ = -0.492 ± 0.158
+2026-03-30 21:31:49,285 | INFO | 
 Host mass correlation with x1: r = -0.3210, p = 1.29e-06
-2026-03-29 23:40:26,919 | INFO |   Low mass:  ⟨x1⟩ = +0.142 (n=109)
-2026-03-29 23:40:26,919 | INFO |   High mass: ⟨x1⟩ = -0.382 (n=109)
-2026-03-29 23:40:26,919 | INFO | 
+2026-03-30 21:31:49,285 | INFO |   Low mass:  ⟨x1⟩ = +0.142 (n=109)
+2026-03-30 21:31:49,285 | INFO |   High mass: ⟨x1⟩ = -0.382 (n=109)
+2026-03-30 21:31:49,285 | INFO | 
 Stretch Analysis Verdict: contradicted
-2026-03-29 23:40:26,919 | INFO | Interpretation: Higher σ → Less stretched SNe (opposite to TEP prediction; standard progenitor effects dominate)
-2026-03-29 23:40:26,920 | INFO | 
+2026-03-30 21:31:49,285 | INFO | Interpretation: Higher σ → Less stretched SNe (opposite to TEP prediction; standard progenitor effects dominate)
+2026-03-30 21:31:49,285 | INFO | 
 Results saved to: results/outputs/step_7_0_sn_ia_mB_sigma.json
-2026-03-29 23:40:26,920 | INFO | 
+2026-03-30 21:31:49,285 | INFO | 
 Results saved to: results/outputs/step_7_0_sn_ia_stretch_sigma.json
-2026-03-29 23:40:26,920 | INFO | 
+2026-03-30 21:31:49,285 | INFO | 
 ======================================================================
-2026-03-29 23:40:26,920 | INFO | SUMMARY: BOTH ANALYSES COMPLETE
-2026-03-29 23:40:26,920 | INFO | ======================================================================
-2026-03-29 23:40:26,920 | INFO | Magnitude (mB) vs σ: tep_consistent_with_mass_ambiguity
-2026-03-29 23:40:26,920 | INFO | Stretch (x1) vs σ: contradicted
-2026-03-29 23:40:26,920 | INFO | 
+2026-03-30 21:31:49,285 | INFO | SUMMARY: BOTH ANALYSES COMPLETE
+2026-03-30 21:31:49,285 | INFO | ======================================================================
+2026-03-30 21:31:49,285 | INFO | Magnitude (mB) vs σ: tep_consistent
+2026-03-30 21:31:49,285 | INFO | Stretch (x1) vs σ: contradicted
+2026-03-30 21:31:49,286 | INFO | 
 ======================================================================
-2026-03-29 23:40:26,920 | INFO | KEY FINDING: RATE vs FOSSIL Observable Pattern
-2026-03-29 23:40:26,920 | INFO | ======================================================================
-2026-03-29 23:40:26,920 | INFO | mB (RATE observable): Shows TEP screening pattern
-2026-03-29 23:40:26,920 | INFO |   → Correlation in unscreened regime, absent in screened
-2026-03-29 23:40:26,920 | INFO |   → Matches TEP prediction for time-domain effects
-2026-03-29 23:40:26,920 | INFO | 
-2026-03-29 23:40:26,920 | INFO | x1 (FOSSIL observable): Shows negative correlation (contradicted)
-2026-03-29 23:40:26,920 | INFO |   → Dominated by progenitor age/metallicity effects
-2026-03-29 23:40:26,920 | INFO |   → Expected: massive galaxies have older stellar populations
-2026-03-29 23:40:26,920 | INFO |   → Older progenitors → faster decline → lower x1
-2026-03-29 23:40:26,920 | INFO | 
-2026-03-29 23:40:26,920 | INFO | This RATE vs FOSSIL distinction is a TEP signature:
-2026-03-29 23:40:26,920 | INFO |   - Time-domain observables (mB) probe local dτ/dt
-2026-03-29 23:40:26,920 | INFO |   - Fossil observables (x1) integrate formation history
-2026-03-29 23:40:26,920 | INFO |   - Only RATE observables should show TEP screening pattern
-2026-03-29 23:40:26,920 | INFO | 
+2026-03-30 21:31:49,286 | INFO | KEY FINDING: RATE vs FOSSIL Observable Pattern
+2026-03-30 21:31:49,286 | INFO | ======================================================================
+2026-03-30 21:31:49,286 | INFO | mB (RATE observable): Shows TEP screening pattern
+2026-03-30 21:31:49,286 | INFO |   → Correlation in unscreened regime, absent in screened
+2026-03-30 21:31:49,286 | INFO |   → Matches TEP prediction for time-domain effects
+2026-03-30 21:31:49,286 | INFO | 
+2026-03-30 21:31:49,286 | INFO | x1 (FOSSIL observable): Shows negative correlation (contradicted)
+2026-03-30 21:31:49,286 | INFO |   → Dominated by progenitor age/metallicity effects
+2026-03-30 21:31:49,286 | INFO |   → Expected: massive galaxies have older stellar populations
+2026-03-30 21:31:49,286 | INFO |   → Older progenitors → faster decline → lower x1
+2026-03-30 21:31:49,286 | INFO | 
+2026-03-30 21:31:49,286 | INFO | This RATE vs FOSSIL distinction is a TEP signature:
+2026-03-30 21:31:49,286 | INFO |   - Time-domain observables (mB) probe local dτ/dt
+2026-03-30 21:31:49,286 | INFO |   - Fossil observables (x1) integrate formation history
+2026-03-30 21:31:49,286 | INFO |   - Only RATE observables should show TEP screening pattern
+2026-03-30 21:31:49,286 | INFO | 
 ======================================================================
-2026-03-29 23:40:26,920 | INFO | Analysis complete
-2026-03-29 23:40:26,920 | INFO | ======================================================================
-40:26] [INFO] 2026-03-29 23:40:26,917 | INFO | ======================================================================
-[23:40:26] [INFO] 2026-03-29 23:40:26,917 | INFO | Verdict: tep_consistent_with_mass_ambiguity
-[23:40:26] [INFO] 2026-03-29 23:40:26,917 | INFO | Interpretation: TEP screening pattern detected (correlation in unscreened only). Partial correlation null suggests collinearity with mass. Interpretation: TEP signal present but mass step may contribute.
-[23:40:26] [INFO] 2026-03-29 23:40:26,917 | INFO | Correlation sign: POSITIVE
-[23:40:26] [INFO] 2026-03-29 23:40:26,917 | INFO | Statistical significance: 3.2σ
-[23:40:26] [INFO] 2026-03-29 23:40:26,917 | INFO | Verdict: tep_consistent_with_mass_ambiguity
-[23:40:26] [INFO] 2026-03-29 23:40:26,917 | INFO | Interpretation: TEP screening pattern detected (correlation in unscreened only). Partial correlation null suggests collinearity with mass. Interpretation: TEP signal present but mass step may contribute.
-[23:40:26] [INFO] 2026-03-29 23:40:26,917 | INFO |
-[23:40:26] [INFO] ======================================================================
-[23:40:26] [INFO] 2026-03-29 23:40:26,917 | INFO | STRETCH (x1) vs HOST VELOCITY DISPERSION
-[23:40:26] [INFO] 2026-03-29 23:40:26,917 | INFO | ======================================================================
-[23:40:26] [INFO] 2026-03-29 23:40:26,917 | INFO | Sample: 218 SNe with x1 measurements
-[23:40:26] [INFO] 2026-03-29 23:40:26,917 | INFO | Pearson:  r = -0.2645, p = 7.68e-05
-[23:40:26] [INFO] 2026-03-29 23:40:26,917 | INFO | Spearman: ρ = -0.2503, p = 1.88e-04
-[23:40:26] [INFO] 2026-03-29 23:40:26,918 | INFO | Partial correlation (controlling for mass): r = -0.1429, p = 3.43e-02
-[23:40:26] [INFO] 2026-03-29 23:40:26,918 | INFO |   Q1: σ = 53.6, ⟨x1⟩ = +0.233 ± 0.110
-[23:40:26] [INFO] 2026-03-29 23:40:26,918 | INFO |   Q2: σ = 95.5, ⟨x1⟩ = -0.066 ± 0.117
-[23:40:26] [INFO] 2026-03-29 23:40:26,919 | INFO |   Q3: σ = 132.8, ⟨x1⟩ = -0.154 ± 0.140
-[23:40:26] [INFO] 2026-03-29 23:40:26,919 | INFO |   Q4: σ = 204.7, ⟨x1⟩ = -0.492 ± 0.158
-[23:40:26] [INFO] 2026-03-29 23:40:26,919 | INFO |
-[23:40:26] [INFO] Host mass correlation with x1: r = -0.3210, p = 1.29e-06
-[23:40:26] [INFO] 2026-03-29 23:40:26,919 | INFO |   Low mass:  ⟨x1⟩ = +0.142 (n=109)
-[23:40:26] [INFO] 2026-03-29 23:40:26,919 | INFO |   High mass: ⟨x1⟩ = -0.382 (n=109)
-[23:40:26] [INFO] 2026-03-29 23:40:26,919 | INFO |
-[23:40:26] [INFO] Stretch Analysis Verdict: contradicted
-[23:40:26] [INFO] 2026-03-29 23:40:26,919 | INFO | Interpretation: Higher σ → Less stretched SNe (opposite to TEP prediction; standard progenitor effects dominate)
-[23:40:26] [INFO] 2026-03-29 23:40:26,920 | INFO |
-[23:40:26] [INFO] Results saved to: results/outputs/step_7_0_sn_ia_mB_sigma.json
-[23:40:26] [INFO] 2026-03-29 23:40:26,920 | INFO |
-[23:40:26] [INFO] Results saved to: results/outputs/step_7_0_sn_ia_stretch_sigma.json
-[23:40:26] [INFO] 2026-03-29 23:40:26,920 | INFO |
-[23:40:26] [INFO] ======================================================================
-[23:40:26] [INFO] 2026-03-29 23:40:26,920 | INFO | SUMMARY: BOTH ANALYSES COMPLETE
-[23:40:26] [INFO] 2026-03-29 23:40:26,920 | INFO | ======================================================================
-[23:40:26] [INFO] 2026-03-29 23:40:26,920 | INFO | Magnitude (mB) vs σ: tep_consistent_with_mass_ambiguity
-[23:40:26] [INFO] 2026-03-29 23:40:26,920 | INFO | Stretch (x1) vs σ: contradicted
-[23:40:26] [INFO] 2026-03-29 23:40:26,920 | INFO |
-[23:40:26] [INFO] ======================================================================
-[23:40:26] [INFO] 2026-03-29 23:40:26,920 | INFO | KEY FINDING: RATE vs FOSSIL Observable Pattern
-[23:40:26] [INFO] 2026-03-29 23:40:26,920 | INFO | ======================================================================
-[23:40:26] [INFO] 2026-03-29 23:40:26,920 | INFO | mB (RATE observable): Shows TEP screening pattern
-[23:40:26] [INFO] 2026-03-29 23:40:26,920 | INFO |   → Correlation in unscreened regime, absent in screened
-[23:40:26] [INFO] 2026-03-29 23:40:26,920 | INFO |   → Matches TEP prediction for time-domain effects
-[23:40:26] [INFO] 2026-03-29 23:40:26,920 | INFO |
-[23:40:26] [INFO] 2026-03-29 23:40:26,920 | INFO | x1 (FOSSIL observable): Shows negative correlation (contradicted)
-[23:40:26] [INFO] 2026-03-29 23:40:26,920 | INFO |   → Dominated by progenitor age/metallicity effects
-[23:40:26] [INFO] 2026-03-29 23:40:26,920 | INFO |   → Expected: massive galaxies have older stellar populations
-[23:40:26] [INFO] 2026-03-29 23:40:26,920 | INFO |   → Older progenitors → faster decline → lower x1
-[23:40:26] [INFO] 2026-03-29 23:40:26,920 | INFO |
-[23:40:26] [INFO] 2026-03-29 23:40:26,920 | INFO | This RATE vs FOSSIL distinction is a TEP signature:
-[23:40:26] [INFO] 2026-03-29 23:40:26,920 | INFO |   - Time-domain observables (mB) probe local dτ/dt
-[23:40:26] [INFO] 2026-03-29 23:40:26,920 | INFO |   - Fossil observables (x1) integrate formation history
-[23:40:26] [INFO] 2026-03-29 23:40:26,920 | INFO |   - Only RATE observables should show TEP screening pattern
-[23:40:26] [INFO] 2026-03-29 23:40:26,920 | INFO |
-[23:40:26] [INFO] ======================================================================
-[23:40:26] [INFO] 2026-03-29 23:40:26,920 | INFO | Analysis complete
-[23:40:26] [INFO] 2026-03-29 23:40:26,920 | INFO | ======================================================================
+2026-03-30 21:31:49,286 | INFO | Analysis complete
+2026-03-30 21:31:49,286 | INFO | ======================================================================
+282 | INFO |
+[21:31:49] [INFO] ======================================================================
+[21:31:49] [INFO] 2026-03-30 21:31:49,282 | INFO | STRETCH (x1) vs HOST VELOCITY DISPERSION
+[21:31:49] [INFO] 2026-03-30 21:31:49,282 | INFO | ======================================================================
+[21:31:49] [INFO] 2026-03-30 21:31:49,283 | INFO | Sample: 218 SNe with x1 measurements
+[21:31:49] [INFO] 2026-03-30 21:31:49,283 | INFO | Pearson:  r = -0.2645, p = 7.68e-05
+[21:31:49] [INFO] 2026-03-30 21:31:49,283 | INFO | Spearman: ρ = -0.2503, p = 1.88e-04
+[21:31:49] [INFO] 2026-03-30 21:31:49,283 | INFO | Partial correlation (controlling for mass): r = -0.1429, p = 3.43e-02
+[21:31:49] [INFO] 2026-03-30 21:31:49,284 | INFO |   Q1: σ = 53.6, ⟨x1⟩ = +0.233 ± 0.110
+[21:31:49] [INFO] 2026-03-30 21:31:49,284 | INFO |   Q2: σ = 95.5, ⟨x1⟩ = -0.066 ± 0.117
+[21:31:49] [INFO] 2026-03-30 21:31:49,284 | INFO |   Q3: σ = 132.8, ⟨x1⟩ = -0.154 ± 0.140
+[21:31:49] [INFO] 2026-03-30 21:31:49,284 | INFO |   Q4: σ = 204.7, ⟨x1⟩ = -0.492 ± 0.158
+[21:31:49] [INFO] 2026-03-30 21:31:49,285 | INFO |
+[21:31:49] [INFO] Host mass correlation with x1: r = -0.3210, p = 1.29e-06
+[21:31:49] [INFO] 2026-03-30 21:31:49,285 | INFO |   Low mass:  ⟨x1⟩ = +0.142 (n=109)
+[21:31:49] [INFO] 2026-03-30 21:31:49,285 | INFO |   High mass: ⟨x1⟩ = -0.382 (n=109)
+[21:31:49] [INFO] 2026-03-30 21:31:49,285 | INFO |
+[21:31:49] [INFO] Stretch Analysis Verdict: contradicted
+[21:31:49] [INFO] 2026-03-30 21:31:49,285 | INFO | Interpretation: Higher σ → Less stretched SNe (opposite to TEP prediction; standard progenitor effects dominate)
+[21:31:49] [INFO] 2026-03-30 21:31:49,285 | INFO |
+[21:31:49] [INFO] Results saved to: results/outputs/step_7_0_sn_ia_mB_sigma.json
+[21:31:49] [INFO] 2026-03-30 21:31:49,285 | INFO |
+[21:31:49] [INFO] Results saved to: results/outputs/step_7_0_sn_ia_stretch_sigma.json
+[21:31:49] [INFO] 2026-03-30 21:31:49,285 | INFO |
+[21:31:49] [INFO] ======================================================================
+[21:31:49] [INFO] 2026-03-30 21:31:49,285 | INFO | SUMMARY: BOTH ANALYSES COMPLETE
+[21:31:49] [INFO] 2026-03-30 21:31:49,285 | INFO | ======================================================================
+[21:31:49] [INFO] 2026-03-30 21:31:49,285 | INFO | Magnitude (mB) vs σ: tep_consistent
+[21:31:49] [INFO] 2026-03-30 21:31:49,285 | INFO | Stretch (x1) vs σ: contradicted
+[21:31:49] [INFO] 2026-03-30 21:31:49,286 | INFO |
+[21:31:49] [INFO] ======================================================================
+[21:31:49] [INFO] 2026-03-30 21:31:49,286 | INFO | KEY FINDING: RATE vs FOSSIL Observable Pattern
+[21:31:49] [INFO] 2026-03-30 21:31:49,286 | INFO | ======================================================================
+[21:31:49] [INFO] 2026-03-30 21:31:49,286 | INFO | mB (RATE observable): Shows TEP screening pattern
+[21:31:49] [INFO] 2026-03-30 21:31:49,286 | INFO |   → Correlation in unscreened regime, absent in screened
+[21:31:49] [INFO] 2026-03-30 21:31:49,286 | INFO |   → Matches TEP prediction for time-domain effects
+[21:31:49] [INFO] 2026-03-30 21:31:49,286 | INFO |
+[21:31:49] [INFO] 2026-03-30 21:31:49,286 | INFO | x1 (FOSSIL observable): Shows negative correlation (contradicted)
+[21:31:49] [INFO] 2026-03-30 21:31:49,286 | INFO |   → Dominated by progenitor age/metallicity effects
+[21:31:49] [INFO] 2026-03-30 21:31:49,286 | INFO |   → Expected: massive galaxies have older stellar populations
+[21:31:49] [INFO] 2026-03-30 21:31:49,286 | INFO |   → Older progenitors → faster decline → lower x1
+[21:31:49] [INFO] 2026-03-30 21:31:49,286 | INFO |
+[21:31:49] [INFO] 2026-03-30 21:31:49,286 | INFO | This RATE vs FOSSIL distinction is a TEP signature:
+[21:31:49] [INFO] 2026-03-30 21:31:49,286 | INFO |   - Time-domain observables (mB) probe local dτ/dt
+[21:31:49] [INFO] 2026-03-30 21:31:49,286 | INFO |   - Fossil observables (x1) integrate formation history
+[21:31:49] [INFO] 2026-03-30 21:31:49,286 | INFO |   - Only RATE observables should show TEP screening pattern
+[21:31:49] [INFO] 2026-03-30 21:31:49,286 | INFO |
+[21:31:49] [INFO] ======================================================================
+[21:31:49] [INFO] 2026-03-30 21:31:49,286 | INFO | Analysis complete
+[21:31:49] [INFO] 2026-03-30 21:31:49,286 | INFO | ======================================================================

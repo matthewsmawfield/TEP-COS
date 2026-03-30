@@ -19,12 +19,10 @@ Workflow Steps:
 6.  **Sensitivity Analysis**: Tests robustness to rho_intra assumption.
 7.  **Power Analysis**: Validates statistical power of differential tests.
 8.  **Monte Carlo Validation**: Validates Type I error, power, and bias.
-9.  **Lensing Analysis**: COSMOGRAIL temporal shear analysis.
 
 Usage:
     python run_pipeline.py
     python run_pipeline.py --skip-validation  # Skip long validation steps
-    python run_pipeline.py --skip-lensing     # Skip lensing analysis
 
 Author: Matthew Lukin Smawfield
 Date: March 2026
@@ -66,9 +64,6 @@ def check_and_acquire_data(pipeline_logger, skip_prompt=False):
         return False
     
     # Warn about non-critical missing data
-    if not results.get("cosmograil"):
-        print_status("⚠ COSMOGRAIL data incomplete - lensing steps may fail", "WARNING")
-    
     if not results.get("pantheon_plus"):
         print_status("⚠ Pantheon+ data missing - supernova steps will be skipped", "WARNING")
     
@@ -116,10 +111,18 @@ def run_step(script_with_args, description, logs_dir, pipeline_logger):
         )
         
         # Stream output to console, step log, AND master log
-        for line in process.stdout:
-            print(line, end="")
-            step_logger.info(line.rstrip())
-            pipeline_logger.info(line.rstrip())  # Also log to master
+        try:
+            for line in process.stdout:
+                try:
+                    print(line, end="")
+                except BrokenPipeError:
+                    # Stdout pipe closed (e.g., user pressed Ctrl+C or pager quit)
+                    pass
+                step_logger.info(line.rstrip())
+                pipeline_logger.info(line.rstrip())  # Also log to master
+        except BrokenPipeError:
+            # Handle case where process.stdout itself is closed
+            pass
         
         process.wait()
         duration = time.time() - start_time
@@ -141,12 +144,8 @@ def run_pipeline():
     ap = argparse.ArgumentParser(add_help=True)
     ap.add_argument("--skip-validation", action="store_true", 
                    help="Skip long validation steps (rho_sensitivity, power_analysis, monte_carlo)")
-    ap.add_argument("--skip-lensing", action="store_true",
-                   help="Skip lensing analysis steps")
     ap.add_argument("--skip-figures", action="store_true",
                    help="Skip figure generation steps")
-    ap.add_argument("--only-core", action="store_true",
-                   help="Run only core analysis steps (fast mode)")
     ap.add_argument("--parallel", action="store_true",
                    help="Enable parallel processing using all available CPU cores (M4 Pro optimized)")
     args = ap.parse_args()
@@ -186,13 +185,12 @@ def run_pipeline():
         ("step_5_31_per_cluster_controlled_residuals.py", "Core: Per-Cluster Controlled Residuals"),
         ("step_5_32_full_density_scaling.py", "Core: Full Density Scaling Simulation"),
         ("step_5_33_hierarchical_density_scaling.py", "Core: Hierarchical Mixed-Effects Density Scaling"),
-        ("step_5_33b_outlier_exclusion_sensitivity.py", "Core: Outlier Exclusion Sensitivity"),
-        ("step_5_34_shklovskii_sensitivity.py", "Core: Shklovskii Sensitivity"),
         ("step_5_35_covariance_validation.py", "Core: Covariance-Aware Statistical Validation"),
     ]
     
     steps_binary = [
         ("step_5_11_binary_pulsar_analysis.py", "Binary: GC Binary vs Isolated Analysis"),
+        ("step_5_11b_binary_screening_model.py", "Binary: Nested Time Domains Screening Model"),
         ("step_5_12_field_binary_analysis.py", "Binary: Field Binary Control"),
         ("step_5_36_integrated_binary_control.py", "Binary: Integrated Binary Control Test"),
     ]
@@ -207,30 +205,24 @@ def run_pipeline():
     ]
     
     steps_nbody_pushback = [
+        ("download_cmc_data.py --cluster M15", "N-Body: Download CMC Data (M15)"),
+        ("step_5_50_cmc_gold_standard_analysis.py", "N-Body: CMC Gold Standard Test"),
         ("step_5_41_pulsar_dynamical_calibration.py", "N-Body Pushback: Dynamical Calibration"),
         ("step_5_41b_sensitivity_analysis.py", "N-Body Pushback: Sensitivity Analysis"),
         ("step_5_42_cmc_real_comparison.py", "N-Body Pushback: CMC Real Comparison"),
         ("step_5_44_theoretical_uncertainty.py", "N-Body Pushback: Theoretical Uncertainty"),
         ("step_5_45_bayesian_posterior.py", "N-Body Pushback: Bayesian Posterior"),
-        ("step_5_46_spatial_gradient.py", "N-Body Pushback: Spatial Gradient Analysis"),
+        # NOTE: step_5_46 removed - insufficient MSPs with radial positions for meaningful analysis
         ("step_5_47_core_collapse_test.py", "N-Body Pushback: Core Collapse Test"),
         ("step_5_48_cmc_literature_comparison.py", "N-Body Pushback: CMC Literature Comparison"),
         ("step_5_49_systematic_ceiling.py", "N-Body Pushback: Systematic Ceiling Analysis"),
-    ]
-    
-    steps_lensing = [
-        ("convert_cds_to_rdb.py", "Lensing: Convert CDS to RDB"),
-        ("step_3_0_cosmograil_temporal_shear.py", "Lensing: Temporal Shear Analysis"),
-        ("step_3_2_cosmograil_validation.py", "Lensing: Validation & Injection-Recovery"),
-        ("step_3_10_instrumental_consistency.py", "Lensing: Instrumental Consistency"),
-        ("step_3_16_j1004_analysis.py", "Lensing: High-z Cluster Lens (J1004)"),
+        ("step_5_51_exotic_physics_quantification.py", "N-Body Pushback: Exotic Physics Quantification"),
+        ("step_5_52_gamma_parameter_free_derivation.py", "Theory: Parameter-Free Γ Derivation"),
     ]
     
     steps_figures = [
         ("step_5_32_density_scaling_figure.py", "Figure: Density Scaling"),
         ("step_5_13_cluster_acceleration_figure.py", "Figure: Cluster Acceleration"),
-        ("step_3_0_temporal_shear_figure.py", "Figure: Temporal Shear"),
-        ("step_4_0_lensing_summary_figure.py", "Figure: Lensing Summary"),
         ("step_5_40_tep_summary_figure.py", "Figure: TEP Summary"),
     ]
     
@@ -242,26 +234,17 @@ def run_pipeline():
     
     # Build execution list based on arguments
     all_steps = steps_data.copy()
+    all_steps.extend(steps_core_pulsar)
+    all_steps.extend(steps_binary)
     
-    if not args.only_core:
-        all_steps.extend(steps_core_pulsar)
-        all_steps.extend(steps_binary)
-    else:
-        # Core mode: minimal essential steps
-        all_steps = steps_core_pulsar[:3]  # Just population + hybrid + density scaling
-    
-    if not args.skip_validation and not args.only_core:
+    if not args.skip_validation:
         all_steps.extend(steps_validation)
         all_steps.extend(steps_nbody_pushback)
     
-    if not args.skip_lensing and not args.only_core:
-        all_steps.extend(steps_lensing)
-    
-    if not args.skip_figures and not args.only_core:
+    if not args.skip_figures:
         all_steps.extend(steps_figures)
     
-    if not args.only_core:
-        all_steps.extend(steps_appendix)
+    all_steps.extend(steps_appendix)
     
     # Execute steps
     for script, desc in all_steps:
@@ -271,8 +254,9 @@ def run_pipeline():
         
         if not success:
             failures.append((script, desc))
-            print_status(f"Step failed: {desc}", "WARNING")
-            # Continue with next step (don't stop pipeline)
+            print_status(f"Step failed: {desc}", "ERROR")
+            print_status("Pipeline halted due to step failure.", "ERROR")
+            sys.exit(1)
     
     # Final Summary
     total_time = time.time() - start_time

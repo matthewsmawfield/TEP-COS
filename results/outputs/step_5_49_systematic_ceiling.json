@@ -1,12 +1,13 @@
 {
-  "timestamp": "2026-03-30T00:00:00.000000",
+  "timestamp": "2026-03-30T21:31:45.092535",
   "method": "Conservative systematic ceiling: upper bounds on N-body contributions",
   "observed_suppression": {
     "gc_field_offset_dex": 0.592,
-    "density_scaling_slope": 0.393,
-    "newtonian_predicted_slope": 0.75,
-    "slope_suppression_dex": 0.357,
-    "total_discrepancy_dex": 0.45
+    "density_scaling_slope": 0.39250366378738116,
+    "newtonian_predicted_slope": 0.7476777251184834,
+    "slope_suppression_dex": 0.35517406133110224,
+    "total_discrepancy_dex": 0.35517406133110224,
+    "density_scaling_error": 0.07903279260970068
   },
   "systematic_ceiling": {
     "individual_bounds": {
@@ -67,14 +68,14 @@
     "conservative_ceiling_dex": 0.23
   },
   "comparison": {
-    "observed_discrepancy_dex": 0.45,
+    "observed_discrepancy_dex": 0.35517406133110224,
     "systematic_ceiling_dex": 0.23,
-    "explainable_fraction": 0.5111111111111111,
-    "explainable_percent": 51.11111111111111,
-    "unexplained_dex": 0.22,
-    "unexplained_sigma": 2.7848101265822787,
-    "verdict": "Maximum systematic (0.23 dex) explains only 51% of observed suppression (0.45 dex). Remaining 0.22 dex (2.8\u03c3) requires non-systematic explanation.",
-    "tep_required": true
+    "explainable_fraction": 0.6475698116524005,
+    "explainable_percent": 64.75698116524005,
+    "unexplained_dex": 0.12517406133110223,
+    "unexplained_sigma": 1.5838243493339252,
+    "verdict": "Maximum systematic (0.23 dex) explains only 65% of observed suppression (0.36 dex). Remaining 0.13 dex (1.6\u03c3) requires non-systematic explanation.",
+    "tep_required": false
   },
   "assumptions_note": "All bounds are CONSERVATIVE (generous to N-body explanation)"
 }

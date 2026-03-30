@@ -1,6 +1,6 @@
 {
-    "model_a_ols_slope": 0.3182270097763662,
-    "model_a_ols_error": 0.11157869222740852,
+    "model_a_wls_slope": 0.38838771146709394,
+    "model_a_wls_error": 0.08027506036704055,
     "model_b_mixed_slope": 0.39250366378738116,
     "model_b_mixed_error": 0.07903279260970068,
     "model_b_mixed_p": 6.822854083489291e-07,

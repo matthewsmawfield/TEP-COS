@@ -1,8 +1,8 @@
 {
   "monte_carlo": {
     "n_iterations": 1000,
-    "prediction_mean": 17.113694808590964,
-    "prediction_std": 0.17318316923387955,
+    "prediction_mean": 17.113694513427,
+    "prediction_std": 0.17318344218146578,
     "prediction_ci_68": [
       16.94886024953124,
       17.276708765456505

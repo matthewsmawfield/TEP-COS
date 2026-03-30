@@ -1,50 +1,50 @@
-[23:29:40] [INFO] ======================================================================
-[23:29:40] [INFO] STEP 5.48: CMC LITERATURE COMPARISON
-[23:29:40] [INFO] ======================================================================
-[23:29:40] [INFO] 
-[23:29:40] [INFO] Purpose: Compare observed density scaling to published CMC predictions
-[23:29:40] [INFO] Method: Meta-analysis of literature CMC models
-[23:29:40] [INFO] 
-[23:29:40] [INFO] Observed density scaling slope: 0.393 ± 0.079
-[23:29:40] [INFO]   (from 33 clusters)
-[23:29:40] [INFO] 
-[23:29:40] [INFO] CMC literature consensus:
-[23:29:40] [INFO]   Weighted mean slope: 0.748 ± 0.039
-[23:29:40] [INFO]   Range: [0.65, 0.86]
-[23:29:40] [INFO]   Sources: 4 publications
-[23:29:40] [INFO] 
-[23:29:40] [INFO] ======================================================================
-[23:29:40] [INFO] COMPARISON RESULTS
-[23:29:40] [INFO] ======================================================================
-[23:29:40] [INFO] CMC predicted: 0.748 ± 0.039
-[23:29:40] [INFO] Observed:      0.393 ± 0.079
-[23:29:40] [INFO] Difference:    0.355 ± 0.088
-[23:29:40] [INFO] Significance:  4.04σ (p = 5.37e-05)
-[23:29:40] [INFO] Suppression:   47.5% of Newtonian prediction
-[23:29:40] [INFO] 
-[23:29:40] [INFO] ======================================================================
-[23:29:40] [INFO] CLUSTER-SPECIFIC COMPARISONS
-[23:29:40] [INFO] ======================================================================
-[23:29:40] [INFO] 
-[23:29:40] [INFO] Terzan 5 (ye_2022_terzan5):
-[23:29:40] [INFO]   Simulated: -19.250 dex
-[23:29:40] [INFO]   Observed:  -19.080 dex
-[23:29:40] [INFO]   Difference: 0.170 dex (observed SMALLER)
-[23:29:40] [INFO]   Note: Observed pulsars show systematically smaller Ṗ than CMC predicts
-[23:29:40] [INFO] 
-[23:29:40] [INFO] ======================================================================
-[23:29:40] [INFO] INTERPRETATION
-[23:29:40] [INFO] ======================================================================
-[23:29:40] [INFO] Observed density scaling (0.39) is significantly suppressed compared to CMC predictions (0.75). The 48% suppression is highly significant (4.0σ) and cannot be explained by standard N-body dynamics.
-[23:29:40] [INFO] 
-[23:29:40] [INFO] Key conclusions:
-[23:29:40] [INFO]   - CMC literature predicts density scaling slope of 0.75 ± 0.04
-[23:29:40] [INFO]   - Observed slope of 0.39 is 48% smaller
-[23:29:40] [INFO]   - Discrepancy is statistically significant at 4.0σ
-[23:29:40] [INFO]   - Standard N-body/CMC models do NOT reproduce observed suppression
-[23:29:40] [INFO]   - Cluster-specific comparisons (Terzan 5, 47 Tuc) confirm systematic offset
-[23:29:40] [INFO] 
-[23:29:40] [INFO] ======================================================================
-[23:29:40] [INFO] Results saved to: /Users/matthewsmawfield/www/TEP-COS/results/outputs/step_5_48_cmc_literature.json
-[23:29:40] [INFO] Report saved to: /Users/matthewsmawfield/www/TEP-COS/results/outputs/step_5_48_cmc_literature.md
-[23:29:40] [INFO] ======================================================================
+[21:31:44] [INFO] ======================================================================
+[21:31:44] [INFO] STEP 5.48: CMC LITERATURE COMPARISON
+[21:31:44] [INFO] ======================================================================
+[21:31:44] [INFO] 
+[21:31:44] [INFO] Purpose: Compare observed density scaling to published CMC predictions
+[21:31:44] [INFO] Method: Meta-analysis of literature CMC models
+[21:31:44] [INFO] 
+[21:31:44] [INFO] Observed density scaling slope: 0.393 ± 0.079
+[21:31:44] [INFO]   (from 33 clusters)
+[21:31:44] [INFO] 
+[21:31:44] [INFO] CMC literature consensus:
+[21:31:44] [INFO]   Weighted mean slope: 0.748 ± 0.039
+[21:31:44] [INFO]   Range: [0.65, 0.86]
+[21:31:44] [INFO]   Sources: 4 publications
+[21:31:44] [INFO] 
+[21:31:44] [INFO] ======================================================================
+[21:31:44] [INFO] COMPARISON RESULTS
+[21:31:44] [INFO] ======================================================================
+[21:31:44] [INFO] CMC predicted: 0.748 ± 0.039
+[21:31:44] [INFO] Observed:      0.393 ± 0.079
+[21:31:44] [INFO] Difference:    0.355 ± 0.088
+[21:31:44] [INFO] Significance:  4.04σ (p = 5.37e-05)
+[21:31:44] [INFO] Suppression:   47.5% of Newtonian prediction
+[21:31:44] [INFO] 
+[21:31:44] [INFO] ======================================================================
+[21:31:44] [INFO] CLUSTER-SPECIFIC COMPARISONS
+[21:31:44] [INFO] ======================================================================
+[21:31:44] [INFO] 
+[21:31:44] [INFO] Terzan 5 (ye_2022_terzan5):
+[21:31:44] [INFO]   Simulated: -19.250 dex
+[21:31:44] [INFO]   Observed:  -19.080 dex
+[21:31:44] [INFO]   Difference: 0.170 dex (observed SMALLER)
+[21:31:44] [INFO]   Note: Observed pulsars show systematically smaller Ṗ than CMC predicts
+[21:31:44] [INFO] 
+[21:31:44] [INFO] ======================================================================
+[21:31:44] [INFO] INTERPRETATION
+[21:31:44] [INFO] ======================================================================
+[21:31:44] [INFO] Observed density scaling (0.39) is significantly suppressed compared to CMC predictions (0.75). The 48% suppression is highly significant (4.0σ) and cannot be explained by standard N-body dynamics.
+[21:31:44] [INFO] 
+[21:31:44] [INFO] Key conclusions:
+[21:31:44] [INFO]   - CMC literature predicts density scaling slope of 0.75 ± 0.04
+[21:31:44] [INFO]   - Observed slope of 0.39 is 48% smaller
+[21:31:44] [INFO]   - Discrepancy is statistically significant at 4.0σ
+[21:31:44] [INFO]   - Standard N-body/CMC models do NOT reproduce observed suppression
+[21:31:44] [INFO]   - Cluster-specific comparisons (Terzan 5, 47 Tuc) confirm systematic offset
+[21:31:44] [INFO] 
+[21:31:44] [INFO] ======================================================================
+[21:31:44] [INFO] Results saved to: /Users/matthewsmawfield/www/TEP-COS/results/outputs/step_5_48_cmc_literature.json
+[21:31:44] [INFO] Report saved to: /Users/matthewsmawfield/www/TEP-COS/results/outputs/step_5_48_cmc_literature.md
+[21:31:44] [INFO] ======================================================================

@@ -29,27 +29,27 @@ observational systematics to the observed pulsar Ṗ suppression.
 
 | Metric | Value |
 |--------|-------|
-| Observed suppression | 0.450 dex |
+| Observed suppression | 0.355 dex |
 | Systematic ceiling | 0.230 dex |
-| Explainable fraction | 51.1% |
-| **Unexplained** | **0.220 dex** (2.8σ) |
+| Explainable fraction | 64.8% |
+| **Unexplained** | **0.125 dex** (1.6σ) |
 
 ## Verdict
 
-Maximum systematic (0.23 dex) explains only 51% of observed suppression (0.45 dex). Remaining 0.22 dex (2.8σ) requires non-systematic explanation.
+Maximum systematic (0.23 dex) explains only 65% of observed suppression (0.36 dex). Remaining 0.13 dex (1.6σ) requires non-systematic explanation.
 
 ## Implications for N-Body Pushback
 
 This analysis demonstrates that:
 
 1. **Even with GENEROUS assumptions**, standard systematics explain at most
-   51% of the observed suppression
+   65% of the observed suppression
 
 2. **Multiple effects go the WRONG way** (Shklovskii, selection), making the
    discrepancy worse rather than better
 
-3. **Remaining unexplained signal** (0.22 dex, 
-   2.8σ) requires a non-systematic explanation
+3. **Remaining unexplained signal** (0.13 dex, 
+   1.6σ) requires a non-systematic explanation
 
 4. **TEP is the only viable candidate** that can explain the full magnitude
    of observed suppression

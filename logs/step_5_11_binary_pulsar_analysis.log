@@ -1,14 +1,14 @@
-[23:28:58] [INFO] Parsed 359 pulsars from Freire catalog
-[23:28:58] [INFO] MSPs (P < 30 ms): 335
-[23:28:58] [INFO] 
-[23:28:58] [INFO] Binary vs Isolated MSPs in GCs:
-[23:28:58] [INFO]   Binary MSPs: 115
-[23:28:58] [INFO]   Isolated MSPs: 81
-[23:28:58] [INFO]   Difference (binary - isolated): -0.323 dex
-[23:28:58] [INFO]   t-test p-value: 0.006788
-[23:28:58] [INFO] 
-[23:28:58] [INFO] Orbital Parameter Analysis:
-[23:28:58] [INFO]   Binaries with measured Pdot: 115
-[23:28:58] [INFO] 
-[23:28:58] [INFO] Wrote: /Users/matthewsmawfield/www/TEP-COS/results/outputs/step_5_11_binary_pulsar_analysis.json
-[23:28:58] [INFO] Wrote: /Users/matthewsmawfield/www/TEP-COS/results/outputs/step_5_11_binary_pulsar_analysis.md
+[21:30:07] [INFO] Parsed 359 pulsars from Freire catalog
+[21:30:07] [INFO] MSPs (P < 30 ms): 335
+[21:30:07] [INFO] 
+[21:30:07] [INFO] Binary vs Isolated MSPs in GCs:
+[21:30:07] [INFO]   Binary MSPs: 115
+[21:30:07] [INFO]   Isolated MSPs: 81
+[21:30:07] [INFO]   Difference (binary - isolated): -0.323 dex
+[21:30:07] [INFO]   t-test p-value: 0.006788
+[21:30:07] [INFO] 
+[21:30:07] [INFO] Orbital Parameter Analysis:
+[21:30:07] [INFO]   Binaries with measured Pdot: 115
+[21:30:07] [INFO] 
+[21:30:07] [INFO] Wrote: /Users/matthewsmawfield/www/TEP-COS/results/outputs/step_5_11_binary_pulsar_analysis.json
+[21:30:07] [INFO] Wrote: /Users/matthewsmawfield/www/TEP-COS/results/outputs/step_5_11_binary_pulsar_analysis.md

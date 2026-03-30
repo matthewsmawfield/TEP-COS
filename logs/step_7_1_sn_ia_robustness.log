@@ -1,70 +1,70 @@
-[23:40:27] [INFO] ======================================================================
-[23:40:27] [INFO] TEP-COS STEP 7.1: SN Ia σ-mB ROBUSTNESS VALIDATION
-[23:40:27] [INFO] ======================================================================
-[23:40:27] [INFO] 
-[23:40:27] [INFO] 1. LOADING DATA
-[23:40:27] [INFO] ----------------------------------------------------------------------
-[23:40:27] [INFO] Quality-filtered sample: 218 SNe (z > 0.01, 30 <= σ <= 400 km/s)
-[23:40:27] [INFO] 
-[23:40:27] [INFO] 2. TEST 1: OUTLIER REMOVAL (Z-score > 3)
-[23:40:27] [INFO] ----------------------------------------------------------------------
-[23:40:27] [INFO] Removed 3 outliers
-[23:40:27] [INFO] Clean sample: 215 SNe
-[23:40:27] [INFO]   r = 0.252591
-[23:40:27] [INFO]   p = 1.818327e-04
-[23:40:27] [INFO]   Significance = 3.74σ
-[23:40:27] [INFO]   Slope = 1.9880 ± 0.5218
-[23:40:27] [INFO] 
-[23:40:27] [INFO] 3. TEST 2: SUBSAMPLE ANALYSIS
-[23:40:27] [INFO] ----------------------------------------------------------------------
-[23:40:27] [INFO]   no_clusters: n=215, r=0.2526, p=1.8183e-04, σ=3.74σ
-[23:40:27] [INFO]   no_low_quality: n=209, r=0.2167, p=1.6278e-03, σ=3.15σ
-[23:40:27] [INFO]   clean_range: n=206, r=0.2560, p=2.0363e-04, σ=3.71σ
-[23:40:27] [INFO]   low_z: n=218, r=0.2178, p=1.2111e-03, σ=3.24σ
-[23:40:27] [INFO]   mid_sigma: n=163, r=0.1480, p=5.9366e-02, σ=1.89σ
-[23:40:27] [INFO] 
-[23:40:27] [INFO] 4. TEST 3: BOOTSTRAP CONFIDENCE INTERVALS
-[23:40:27] [INFO] ----------------------------------------------------------------------
-[23:40:29] [INFO] Bootstrap samples: 10000
-[23:40:29] [INFO] Slope distribution:
-[23:40:29] [INFO]   Mean: 1.6932
-[23:40:29] [INFO]   Std: 0.6060
-[23:40:29] [INFO]   95% CI: [0.4847, 2.8746]
-[23:40:29] [INFO]   99% CI: [0.0936, 3.2176]
-[23:40:29] [INFO]   P(slope > 0): 0.9966
-[23:40:29] [INFO] 
-[23:40:29] [INFO] r distribution:
-[23:40:29] [INFO]   Mean: 0.2181
-[23:40:29] [INFO]   95% CI: [0.0632, 0.3640]
-[23:40:29] [INFO] 
-[23:40:29] [INFO] 5. COMPARISON WITH ORIGINAL ANALYSIS
-[23:40:29] [INFO] ----------------------------------------------------------------------
-[23:40:29] [INFO] Original: r=0.2178, σ=3.24σ
-[23:40:29] [INFO] No outliers: r=0.2526, σ=3.74σ
-[23:40:29] [INFO] Bootstrap mean: r=0.2181
-[23:40:29] [INFO] 
-[23:40:29] [INFO] All tests significant: True
-[23:40:29] [INFO] 
-[23:40:29] [INFO] ======================================================================
-[23:40:29] [INFO] ROBUSTNESS ASSESSMENT COMPLETE
-[23:40:29] [INFO] ======================================================================
-[23:40:29] [INFO] 
-[23:40:29] [INFO] 1. OUTLIER REMOVAL:
-[23:40:29] [INFO]    Signal persists: TEP-CONSISTENT
-[23:40:29] [INFO] 
-[23:40:29] [INFO] 2. SUBSAMPLE TESTS:
-[23:40:29] [INFO]    no_clusters: TEP-CONSISTENT (3.74σ)
-[23:40:29] [INFO]    no_low_quality: TEP-CONSISTENT (3.15σ)
-[23:40:29] [INFO]    clean_range: TEP-CONSISTENT (3.71σ)
-[23:40:29] [INFO]    low_z: TEP-CONSISTENT (3.24σ)
-[23:40:29] [INFO]    mid_sigma: NULL (1.89σ)
-[23:40:29] [INFO] 
-[23:40:29] [INFO] 3. BOOTSTRAP:
-[23:40:29] [INFO]    Slope 95% CI: [0.485, 2.875]
-[23:40:29] [INFO]    P(slope > 0) = 0.9966
-[23:40:29] [INFO] 
-[23:40:29] [INFO] ======================================================================
-[23:40:29] [INFO] OVERALL: Conditional - requires further validation
-[23:40:29] [INFO] ======================================================================
-[23:40:29] [INFO] 
-[23:40:29] [INFO] Results saved to: results/outputs/robustness_analysis.json
+[21:31:49] [INFO] ======================================================================
+[21:31:49] [INFO] TEP-COS STEP 7.1: SN Ia σ-mB ROBUSTNESS VALIDATION
+[21:31:49] [INFO] ======================================================================
+[21:31:49] [INFO] 
+[21:31:49] [INFO] 1. LOADING DATA
+[21:31:49] [INFO] ----------------------------------------------------------------------
+[21:31:50] [INFO] Quality-filtered sample: 218 SNe (z > 0.01, 30 <= σ <= 400 km/s)
+[21:31:50] [INFO] 
+[21:31:50] [INFO] 2. TEST 1: OUTLIER REMOVAL (Z-score > 3)
+[21:31:50] [INFO] ----------------------------------------------------------------------
+[21:31:50] [INFO] Removed 3 outliers
+[21:31:50] [INFO] Clean sample: 215 SNe
+[21:31:50] [INFO]   r = 0.252591
+[21:31:50] [INFO]   p = 1.818327e-04
+[21:31:50] [INFO]   Significance = 3.74σ
+[21:31:50] [INFO]   Slope = 1.9880 ± 0.5218
+[21:31:50] [INFO] 
+[21:31:50] [INFO] 3. TEST 2: SUBSAMPLE ANALYSIS
+[21:31:50] [INFO] ----------------------------------------------------------------------
+[21:31:50] [INFO]   no_clusters: n=215, r=0.2526, p=1.8183e-04, σ=3.74σ
+[21:31:50] [INFO]   no_low_quality: n=209, r=0.2167, p=1.6278e-03, σ=3.15σ
+[21:31:50] [INFO]   clean_range: n=206, r=0.2560, p=2.0363e-04, σ=3.71σ
+[21:31:50] [INFO]   low_z: n=218, r=0.2178, p=1.2111e-03, σ=3.24σ
+[21:31:50] [INFO]   mid_sigma: n=163, r=0.1480, p=5.9366e-02, σ=1.89σ
+[21:31:50] [INFO] 
+[21:31:50] [INFO] 4. TEST 3: BOOTSTRAP CONFIDENCE INTERVALS
+[21:31:50] [INFO] ----------------------------------------------------------------------
+[21:31:51] [INFO] Bootstrap samples: 10000
+[21:31:51] [INFO] Slope distribution:
+[21:31:51] [INFO]   Mean: 1.6932
+[21:31:51] [INFO]   Std: 0.6060
+[21:31:51] [INFO]   95% CI: [0.4847, 2.8746]
+[21:31:51] [INFO]   99% CI: [0.0936, 3.2176]
+[21:31:51] [INFO]   P(slope > 0): 0.9966
+[21:31:51] [INFO] 
+[21:31:51] [INFO] r distribution:
+[21:31:51] [INFO]   Mean: 0.2181
+[21:31:51] [INFO]   95% CI: [0.0632, 0.3640]
+[21:31:51] [INFO] 
+[21:31:51] [INFO] 5. COMPARISON WITH ORIGINAL ANALYSIS
+[21:31:51] [INFO] ----------------------------------------------------------------------
+[21:31:51] [INFO] Original: r=0.2178, σ=3.24σ
+[21:31:51] [INFO] No outliers: r=0.2526, σ=3.74σ
+[21:31:51] [INFO] Bootstrap mean: r=0.2181
+[21:31:51] [INFO] 
+[21:31:51] [INFO] All tests significant: True
+[21:31:51] [INFO] 
+[21:31:51] [INFO] ======================================================================
+[21:31:51] [INFO] ROBUSTNESS ASSESSMENT COMPLETE
+[21:31:51] [INFO] ======================================================================
+[21:31:51] [INFO] 
+[21:31:51] [INFO] 1. OUTLIER REMOVAL:
+[21:31:51] [INFO]    Signal persists: TEP-CONSISTENT
+[21:31:51] [INFO] 
+[21:31:51] [INFO] 2. SUBSAMPLE TESTS:
+[21:31:51] [INFO]    no_clusters: TEP-CONSISTENT (3.74σ)
+[21:31:51] [INFO]    no_low_quality: TEP-CONSISTENT (3.15σ)
+[21:31:51] [INFO]    clean_range: TEP-CONSISTENT (3.71σ)
+[21:31:51] [INFO]    low_z: TEP-CONSISTENT (3.24σ)
+[21:31:51] [INFO]    mid_sigma: NULL (1.89σ)
+[21:31:51] [INFO] 
+[21:31:51] [INFO] 3. BOOTSTRAP:
+[21:31:51] [INFO]    Slope 95% CI: [0.485, 2.875]
+[21:31:51] [INFO]    P(slope > 0) = 0.9966
+[21:31:51] [INFO] 
+[21:31:51] [INFO] ======================================================================
+[21:31:51] [INFO] OVERALL: Conditional - requires further validation
+[21:31:51] [INFO] ======================================================================
+[21:31:51] [INFO] 
+[21:31:51] [INFO] Results saved to: results/outputs/robustness_analysis.json

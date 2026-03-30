@@ -11,35 +11,18 @@ The master pipeline executes scripts in the following phases:
 
 | Phase | Scripts | Purpose |
 |-------|---------|---------|
-| **Data Acquisition** | utils/data_acquisition.py | Download Freire GCpsr, ATNF psrcat, COSMOGRAIL |
+| **Data Acquisition** | utils/data_acquisition.py | Download Freire GCpsr, ATNF psrcat |
 | **Population Controls** | step_5_10 | Match GC and Field MSPs by period, magnetic field |
 | **Core Pulsar Analysis** | step_5_27, step_5_31, step_5_32, step_5_33, step_5_35 | Density scaling, hierarchical models, covariance validation |
 | **Binary Analysis** | step_5_11, step_5_12, step_5_36 | Binary vs isolated MSP comparison |
 | **Validation Suite** | step_5_33b, step_5_34, step_5_37-39, step_5_43 | Sensitivity, power analysis, Monte Carlo |
-| **N-Body Pushback** | step_5_46-49 | Spatial gradients, core collapse, systematic ceilings |
-| **Lensing Analysis** | step_3_0, step_3_2, step_3_10, step_3_16 | COSMOGRAIL temporal shear |
-| **Figure Generation** | step_3_0_temporal_shear_figure.py, step_4_0, step_5_13, step_5_32, step_5_40 | Publication figures |
+| **N-Body Pushback** | step_5_41-45, step_5_47-49 | Dynamical tests, core collapse, systematic ceilings |
+| **Figure Generation** | step_5_13, step_5_32, step_5_40 | Publication figures |
 | **Appendix** | step_7_0, step_7_1, step_7_2 | SN Ia tests, robustness, audit |
 
 ---
 
-## Section 3: Gravitational Lensing
-
-| Script | Purpose | Output | Manuscript Ref |
-|--------|---------|--------|----------------|
-| `convert_cds_to_rdb.py` | Convert CDS format to RDB for COSMOGRAIL | `data/cosmograil/*.rdb` | §3.1 |
-| `step_3_0_cosmograil_temporal_shear.py` | Core temporal shear analysis | `step_3_0_*.json` | §3.2 |
-| `step_3_2_cosmograil_validation.py` | Injection-recovery validation | `validation_*.json` | §3.4 |
-| `step_3_10_instrumental_consistency.py` | Instrumental consistency checks | `step_3_10_*.json` | §3.5 |
-| `step_3_16_j1004_analysis.py` | High-z cluster lens J1004 | `step_3_16_*.json` | §3.8 |
-| `step_3_20_lensing_chromaticity.py` | Lensing chromaticity simulation | `step_3_20_*.json` | §3.6.3 |
-| `step_3_20_lensing_chromaticity_real.py` | Real chromaticity analysis | `step_3_20b_*.json` | §3.6.3 |
-| `step_3_21_high_z_lensing.py` | High-z lensing predictions | `step_3_21_*.json` | §3.8 |
-| `step_3_21_rxj1131_investigation.py` | RXJ1131 detailed analysis | `step_3_21b_*.json` | §3.2 |
-
----
-
-## Section 4: Pulsar Timing (Core Analysis)
+## Section 3: Pulsar Timing (Core Analysis)
 
 | Script | Purpose | Output | Manuscript Ref |
 |--------|---------|--------|----------------|
@@ -78,7 +61,6 @@ The master pipeline executes scripts in the following phases:
 | `step_5_42_cmc_real_comparison.py` | CMC vs real cluster comparison | `step_5_42_*.json` | §4.5 |
 | `step_5_44_theoretical_uncertainty.py` | Theoretical uncertainty quantification | `step_5_44_*.json` | §4.8 |
 | `step_5_45_bayesian_posterior.py` | Bayesian posterior analysis | `step_5_45_*.json` | §4.4 |
-| `step_5_46_spatial_gradient.py` | Spatial gradient analysis | `step_5_46_*.json` | §4.9 |
 | `step_5_47_core_collapse_test.py` | Core collapse test | `step_5_47_*.json` | §4.9 |
 | `step_5_48_cmc_literature_comparison.py` | CMC literature comparison | `step_5_48_*.json` | §4.5 |
 | `step_5_49_systematic_ceiling.py` | Systematic ceiling analysis | `step_5_49_*.json` | §4.8 |
@@ -88,6 +70,7 @@ The master pipeline executes scripts in the following phases:
 | Script | Purpose | Output |
 |--------|---------|--------|
 | `step_5_9_freire_gcpsr_radial_analysis.py` | Freire GCpsr radial analysis (legacy) | `freire_gcpsr_radial_*.json` |
+| `step_5_46_spatial_gradient.py` | **REMOVED** — Spatial gradient analysis deprecated due to insufficient MSPs with radial positions (N=14) and Pdot measurements | — |
 
 ---
 
@@ -116,9 +99,6 @@ The master pipeline executes scripts in the following phases:
 
 | Script | Purpose | Output |
 |--------|---------|--------|
-| `step_3_0_temporal_shear_figure.py` | Temporal shear figure | `figures/manuscript/` |
-| `step_3_2_microlensing_figure.py` | Microlensing comparison | `figures/manuscript/` |
-| `step_4_0_lensing_summary_figure.py` | Lensing summary figure | `figures/manuscript/` |
 | `step_5_11_binary_spatial_figure.py` | Binary spatial figure | `figures/manuscript/` |
 | `step_5_13_cluster_acceleration_figure.py` | Cluster acceleration figure | `figures/manuscript/` |
 | `step_5_32_density_scaling_figure.py` | Density scaling figure | `figures/manuscript/` |
@@ -152,7 +132,6 @@ python scripts/run_pipeline.py
 ### Run with Options
 ```bash
 python scripts/run_pipeline.py --skip-validation    # Skip long validation steps
-python scripts/run_pipeline.py --skip-lensing       # Skip lensing analysis
 python scripts/run_pipeline.py --skip-figures       # Skip figure generation
 python scripts/run_pipeline.py --only-core          # Fast mode: core analysis only
 python scripts/run_pipeline.py --parallel           # Enable parallel processing
@@ -168,7 +147,6 @@ python scripts/steps/step_5_32_full_density_scaling.py
 ## Key Outputs (results/outputs/)
 
 ### Primary Results
-- `step_3_0_cosmograil_temporal_shear_opB_modejump.json` - Lensing temporal shear
 - `step_5_10_pulsar_population_controls.json` - Population controls
 - `step_5_32_full_density_scaling.json` - Density scaling
 - `step_5_33_hierarchical_density_scaling.json` - Hierarchical models
