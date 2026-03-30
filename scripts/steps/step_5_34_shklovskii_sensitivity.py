@@ -10,80 +10,100 @@ def run_cancellation_analysis():
     
     # Hypothesis: Shklovskii effect (positive term) cancels Cluster Acceleration (negative term)
     # causing the observed suppressed density scaling.
-    # Question: By what factor must Shklovskii be amplified (e.g. underestimated distance/proper motion)
-    # to reduce the density slope from 0.82 (Newtonian) to 0.39 (Observed)?
+    # Question: By what factor must Shklovskii be amplified to reduce the density slope
+    # from 0.82 (Newtonian) to 0.39 (Observed)?
+    
+    # CORRECTED APPROACH: Combine quantities in LINEAR space, then measure log slope
+    # When P_net = P_acc + K * P_shk, the log slope is NOT slope_acc + K * slope_shk
+    # Instead, we must: (1) sum in linear space, (2) take log, (3) regress
     
     # Simulation Parameters
     n_clusters = 50
     # Log Density range: 2.3 to 5.8
-    densities = np.linspace(2.3, 5.8, n_clusters)
+    log_densities = np.linspace(2.3, 5.8, n_clusters)
+    densities = 10**log_densities  # Convert to linear density
     
-    # 1. Newtonian Acceleration Scaling (Cluster Potential)
-    # Scales as rho (approx 0.82 slope in dex space)
-    # This increases |Pdot| (shifts it positive in dex)
-    slope_acc = 0.82
-    intercept_acc = -0.5 # Normalized so dense clusters have high shift
-    shift_acc = slope_acc * densities + intercept_acc
+    # 1. Newtonian Acceleration (in linear space)
+    # P_acc scales with cluster potential ~ rho^(0.82) in dex space
+    # In linear space: P_acc ~ rho^0.82, but we need absolute values
+    # Normalize: at log_rho = 4 (rho = 10^4), set P_acc = 1.0 as reference
+    ref_log_density = 4.0
+    P_acc_ref = 1.0
+    slope_acc_dex = 0.82
+    # P_acc = P_acc_ref * (rho / rho_ref)^slope_acc_dex
+    P_acc = P_acc_ref * (densities / 10**ref_log_density)**slope_acc_dex
     
-    # 2. Shklovskii Scaling
-    # Shklovskii term P_shk ~ v^2/D
-    # v ~ sigma_v ~ sqrt(M/R) ~ rho^...
-    # Empirically, dense clusters have higher velocity dispersion.
-    # If sigma_v^2 scales with potential depth, and potential depth scales with density...
-    # Let's assume Shklovskii also scales with density, but acts to REDUCE |Pdot|.
-    # (Since Shklovskii is positive and Pdot_int is negative).
+    # 2. Shklovskii Effect (in linear space)
+    # Shklovskii: P_shk ~ v^2/D where v^2 ~ sigma_v^2 ~ M/R (virialized)
+    # For homologous systems: M/R ~ rho^(2/3), giving sigma_v^2 ~ rho^(2/3) ~ rho^0.67
+    # However, observed velocity dispersion profiles show weaker scaling in cluster cores.
+    # Empirically, Shklovskii has shallower density dependence than acceleration.
+    # We model this as: P_shk ~ rho^0.50 (flatter than P_acc ~ rho^0.82)
     
-    # In dex space, adding a positive term to a negative value reduces its absolute magnitude.
-    # So Shklovskii contributes a NEGATIVE slope to log|Pdot|.
+    slope_shk_dex = 0.50  # Flatter density scaling than acceleration
+    base_shk_fraction = 0.15  # Shklovskii is 15% of acceleration at reference point
+    # P_shk has different density scaling than P_acc
+    P_shk_base = base_shk_fraction * P_acc_ref * (densities / 10**ref_log_density)**slope_shk_dex
     
-    # Estimate Shklovskii slope relative to Acc slope
-    # In standard models, Shklovskii is sub-dominant (~10% of Acc in cores).
-    # So initial slope_shk ~ -0.08 (approx 10% of 0.82)
-    base_shk_fraction = 0.15 
-    slope_shk_base = -1 * base_shk_fraction * slope_acc
+    print(f"Base Acceleration Slope (input):       {slope_acc_dex:.2f}")
+    print(f"Base Shklovskii Slope (input):         {slope_shk_dex:.2f}")
+    print(f"Base Shklovskii Fraction at rho_ref:   {base_shk_fraction*100:.1f}%")
+    print(f"Target Net Slope:                      0.39 (Mixed-Effects Observed)")
     
-    print(f"Base Acceleration Slope: {slope_acc:.2f}")
-    print(f"Base Shklovskii Slope:   {slope_shk_base:.2f} (Assumed {base_shk_fraction*100}% of Acc)")
-    print(f"Target Net Slope:        0.39 (Mixed-Effects Observed)")
+    # 3. Find amplification factor K such that combined slope = 0.39
+    # P_net = P_acc + K * P_shk
+    # Measure slope of log(P_net) vs log(density)
     
-    # 3. Solve for Amplification Factor K
-    # Net Slope = Slope_Acc + K * Slope_Shk_Base
-    # 0.39 = 0.82 + K * (-0.12)
-    # K * 0.12 = 0.82 - 0.39 = 0.43
-    # K = 0.47 / 0.12 ~ 3.9
+    target_slope = 0.39
     
-    amplification_factors = np.linspace(0, 10, 100)
-    net_slopes = []
+    def measure_combined_slope(K):
+        """Combine in linear space, then measure log slope via OLS."""
+        P_net = P_acc + K * P_shk_base
+        # Take logarithms for slope measurement
+        log_P_net = np.log10(P_net)
+        # OLS regression: log_P vs log_density
+        slope, intercept, r_value, p_value, std_err = stats.linregress(log_densities, log_P_net)
+        return slope, r_value**2
+    
+    # Search for K
+    amplification_factors = np.linspace(0, 20, 200)
+    measured_slopes = []
     
     for K in amplification_factors:
-        # Net shift = Acc Shift + K * Shk Shift
-        # Note: We simulate this by combining slopes directly for robustness
-        net_slope = slope_acc + K * slope_shk_base
-        net_slopes.append(net_slope)
-        
-    # Find crossing
-    net_slopes = np.array(net_slopes)
-    idx = np.argmin(np.abs(net_slopes - 0.39))
+        slope, r2 = measure_combined_slope(K)
+        measured_slopes.append(slope)
+    
+    measured_slopes = np.array(measured_slopes)
+    
+    # Find crossing with target slope
+    # Slope decreases as K increases (Shklovskii adds flat component)
+    # Find where measured slope = target_slope
+    idx = np.argmin(np.abs(measured_slopes - target_slope))
     required_K = amplification_factors[idx]
+    final_slope = measured_slopes[idx]
     
-    print(f"Required Shklovskii Amplification K: {required_K:.2f}")
+    print(f"Measured Acc-only slope (verification): {measured_slopes[0]:.3f}")
+    print(f"Required Shklovskii Amplification K:    {required_K:.2f}")
+    print(f"Resulting net slope at K={required_K:.2f}:     {final_slope:.3f}")
     
-    # Validate with physics
+    # 4. Physical plausibility assessment
     # Shklovskii = 2.43e-21 * P * mu^2 * D
-    # To get K=3.9, we need D * mu^2 to be 3.9x larger.
-    # If D is error source: D_true = 3.9 * D_catalog? Or D_true = D_cat / 3.9?
-    # Shklovskii proportional to D. So D would need to be 3.9x LARGER.
-    # OR mu would need to be sqrt(3.9) ~ 2.0x LARGER.
+    # To get amplification K, we need:
+    # - Distance error factor: D_true = K * D_catalog (since Shklovskii ~ D)
+    # - Proper motion error factor: mu_true = sqrt(K) * mu_catalog (since Shklovskii ~ mu^2)
     
-    # Implication:
-    # Are distances to Globular Clusters underestimated by factor 3.9?
-    # Typical uncertainty is 5-10%. 390% is impossible.
-    # Are proper motions underestimated by factor 2.0?
-    # Gaia EDR3 precision is ~0.02 mas/yr. PMs are ~5 mas/yr. Error is <1%.
+    distance_error_factor = required_K
+    pm_error_factor = np.sqrt(required_K)
+    
+    # Physical constraints
+    typical_distance_uncertainty = 0.10  # 10% for GCs (Baumgardt et al.)
+    typical_pm_uncertainty = 0.02 / 5.0  # Gaia EDR3: ~0.02 mas/yr vs typical 5 mas/yr
     
     conclusion = ""
-    if required_K > 2.0:
-        conclusion = f"Physically excluded. Requires distances to be off by factor {required_K:.1f}x or proper motions by {np.sqrt(required_K):.1f}x."
+    if required_K > 5.0:
+        conclusion = f"Physically excluded. Requires distances off by {distance_error_factor:.1f}x (typical error ~10%) or proper motions off by {pm_error_factor:.1f}x (Gaia precision <1%)."
+    elif required_K > 2.0:
+        conclusion = f"Highly implausible. Requires distances off by {distance_error_factor:.1f}x or proper motions off by {pm_error_factor:.1f}x."
     else:
         conclusion = "Plausible systematic."
         
@@ -91,7 +111,8 @@ def run_cancellation_analysis():
     
     # Save results
     results = {
-        "acc_slope": slope_acc,
+        "acc_slope": slope_acc_dex,
+        "shk_slope": slope_shk_dex,
         "observed_slope": 0.39,
         "base_shk_fraction": base_shk_fraction,
         "required_amplification_factor": float(required_K),
@@ -105,7 +126,7 @@ def run_cancellation_analysis():
         
     # Plot
     plt.figure(figsize=(8,5))
-    plt.plot(amplification_factors, net_slopes, label='Net Density Slope')
+    plt.plot(amplification_factors, measured_slopes, label='Net Density Slope')
     plt.axhline(0.39, color='r', linestyle='--', label='Observed Slope (0.39)')
     plt.axhline(0.82, color='g', linestyle='--', label='Newtonian Prediction (0.82)')
     plt.axvline(required_K, color='k', linestyle=':', label=f'Required Amp ({required_K:.1f}x)')

@@ -55,24 +55,24 @@
       "rationale": "Weakly informative positive offset expected from acceleration"
     },
     "likelihood": {
-      "mean": 0.592,
-      "se": 0.103,
+      "mean": 0.5924814387755113,
+      "se": 0.10282329745189066,
       "source": "Covariance-aware t-test (step_5_35)"
     },
     "posterior": {
-      "mean": 0.530788990100575,
-      "std": 0.09157002702432877,
-      "median": 0.530788990100575
+      "mean": 0.5313357528689269,
+      "std": 0.09144579733922133,
+      "median": 0.5313357528689269
     },
     "credible_intervals": {
       "95%": [
-        0.35131503506953116,
-        0.7102629451316189
+        0.3521052835465044,
+        0.7105662221913494
       ]
     },
     "hypothesis_testing": {
       "null_hypothesis": 0.0,
-      "p_null": 0.9999999966150741,
+      "p_null": 0.9999999968836276,
       "conclusion": "Null hypothesis (no offset) excluded at >99% confidence"
     }
   },

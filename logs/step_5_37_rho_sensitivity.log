@@ -1,44 +1,44 @@
-[23:29:03] [INFO] ======================================================================
-[23:29:03] [INFO] STEP 5.37: Sensitivity Analysis for rho_intra
-[23:29:03] [INFO] ======================================================================
-[23:29:03] [INFO] 
-[23:29:03] [INFO] Testing robustness of GC vs Field difference to within-cluster
-[23:29:03] [INFO] correlation assumption (rho_intra).
-[23:29:03] [INFO] 
-[23:29:03] [INFO] Dataset:
-[23:29:03] [INFO]   GC pulsars: 196 (in 33 clusters)
-[23:29:03] [INFO]   Field pulsars: 198
-[23:29:03] [INFO] 
-[23:29:03] [INFO] ----------------------------------------------------------------------
-[23:29:03] [INFO] SENSITIVITY TEST RESULTS
-[23:29:03] [INFO] ----------------------------------------------------------------------
-[23:29:03] [INFO] rho_intra    N_eff      t-stat     p-value      sigma    Significant?
-[23:29:03] [INFO] ----------------------------------------------------------------------
-[23:29:03] [INFO] 0.00         196.0      7.73       8.86e-14     7.73     YES
-[23:29:03] [INFO] 0.05         157.2      7.26       2.41e-12     7.26     YES
-[23:29:03] [INFO] 0.10         131.2      6.87       3.23e-11     6.87     YES
-[23:29:03] [INFO] 0.15         112.6      6.53       2.63e-10     6.53     YES
-[23:29:03] [INFO] 0.20         98.6       6.24       1.49e-09     6.24     YES
-[23:29:03] [INFO] 0.25         87.7       5.99       6.39e-09     5.99     YES
-[23:29:03] [INFO] 0.30         79.0       5.76       2.22e-08     5.76     YES
-[23:29:03] [INFO] 0.35         71.8       5.56       6.53e-08     5.56     YES
-[23:29:03] [INFO] 0.40         65.9       5.38       1.68e-07     5.38     YES
-[23:29:03] [INFO] 0.45         60.8       5.21       3.85e-07     5.21     YES
-[23:29:03] [INFO] 0.50         56.5       5.06       8.07e-07     5.06     YES
-[23:29:03] [INFO] 0.60         49.4       4.79       2.84e-06     4.79     YES
-[23:29:03] [INFO] 0.70         44.0       4.56       7.99e-06     4.56     YES
-[23:29:03] [INFO] 
-[23:29:03] [INFO] ======================================================================
-[23:29:03] [INFO] SUMMARY
-[23:29:03] [INFO] ======================================================================
-[23:29:03] [INFO] Range of rho_intra tested: [0.00, 0.70]
-[23:29:03] [INFO] Significance range: 4.56σ to 7.73σ
-[23:29:03] [INFO] Maximum p-value: 7.99e-06
-[23:29:03] [INFO] 
-[23:29:03] [INFO] Robustness Assessment:
-[23:29:03] [INFO]   Result: The GC vs Field difference remains significant (p<0.05)
-[23:29:03] [INFO]     across all tested values of rho_intra
-[23:29:03] [INFO]   Even with rho_intra=0.5 (very conservative), significance = 4.56σ
-[23:29:03] [INFO] 
-[23:29:03] [INFO] Results saved to: results/outputs/step_5_37_rho_sensitivity.json
-[23:29:03] [INFO] ======================================================================
+[21:30:10] [INFO] ======================================================================
+[21:30:10] [INFO] STEP 5.37: Sensitivity Analysis for rho_intra
+[21:30:10] [INFO] ======================================================================
+[21:30:10] [INFO] 
+[21:30:10] [INFO] Testing robustness of GC vs Field difference to within-cluster
+[21:30:10] [INFO] correlation assumption (rho_intra).
+[21:30:10] [INFO] 
+[21:30:10] [INFO] Dataset:
+[21:30:10] [INFO]   GC pulsars: 196 (in 33 clusters)
+[21:30:10] [INFO]   Field pulsars: 198
+[21:30:10] [INFO] 
+[21:30:10] [INFO] ----------------------------------------------------------------------
+[21:30:10] [INFO] SENSITIVITY TEST RESULTS
+[21:30:10] [INFO] ----------------------------------------------------------------------
+[21:30:10] [INFO] rho_intra    N_eff      t-stat     p-value      sigma    Significant?
+[21:30:10] [INFO] ----------------------------------------------------------------------
+[21:30:10] [INFO] 0.00         196.0      7.73       8.86e-14     7.73     YES
+[21:30:10] [INFO] 0.05         157.2      7.26       2.41e-12     7.26     YES
+[21:30:10] [INFO] 0.10         131.2      6.87       3.23e-11     6.87     YES
+[21:30:10] [INFO] 0.15         112.6      6.53       2.63e-10     6.53     YES
+[21:30:10] [INFO] 0.20         98.6       6.24       1.49e-09     6.24     YES
+[21:30:10] [INFO] 0.25         87.7       5.99       6.39e-09     5.99     YES
+[21:30:10] [INFO] 0.30         79.0       5.76       2.22e-08     5.76     YES
+[21:30:10] [INFO] 0.35         71.8       5.56       6.53e-08     5.56     YES
+[21:30:10] [INFO] 0.40         65.9       5.38       1.68e-07     5.38     YES
+[21:30:10] [INFO] 0.45         60.8       5.21       3.85e-07     5.21     YES
+[21:30:10] [INFO] 0.50         56.5       5.06       8.07e-07     5.06     YES
+[21:30:10] [INFO] 0.60         49.4       4.79       2.84e-06     4.79     YES
+[21:30:10] [INFO] 0.70         44.0       4.56       7.99e-06     4.56     YES
+[21:30:10] [INFO] 
+[21:30:10] [INFO] ======================================================================
+[21:30:10] [INFO] SUMMARY
+[21:30:10] [INFO] ======================================================================
+[21:30:10] [INFO] Range of rho_intra tested: [0.00, 0.70]
+[21:30:10] [INFO] Significance range: 4.56σ to 7.73σ
+[21:30:10] [INFO] Maximum p-value: 7.99e-06
+[21:30:10] [INFO] 
+[21:30:10] [INFO] Robustness Assessment:
+[21:30:10] [INFO]   Result: The GC vs Field difference remains significant (p<0.05)
+[21:30:10] [INFO]     across all tested values of rho_intra
+[21:30:10] [INFO]   Even with rho_intra=0.5 (very conservative), significance = 4.56σ
+[21:30:10] [INFO] 
+[21:30:10] [INFO] Results saved to: results/outputs/step_5_37_rho_sensitivity.json
+[21:30:10] [INFO] ======================================================================

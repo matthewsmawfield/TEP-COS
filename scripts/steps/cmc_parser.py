@@ -45,6 +45,56 @@ class CMCParser:
         self.morepulsars_file = self.cluster_dir / "initial.morepulsars.dat"
         self.snapshot_file = self.cluster_dir / "output.window.snapshot.h5"
         self.dyn_file = self.cluster_dir / "initial.dyn.dat"
+        self.conv_file = self.cluster_dir / "initial.conv.sh"
+        
+    def _read_conv_file(self) -> Dict[str, float]:
+        """Read unit conversion factors from initial.conv.sh file.
+        
+        Different CMC simulations use different code units depending on
+        initial conditions. This method reads the specific conversion
+        factors for this cluster.
+        
+        Returns
+        -------
+        Dict with conversion factors:
+            - massunitmsun: Mass conversion (code -> solar masses)
+            - lengthunitparsec: Length conversion (code -> parsecs)
+            - timeunitsmyr: Time conversion (code -> Myr)
+        """
+        defaults = {
+            'massunitmsun': 484844.0,  # Typical value
+            'lengthunitparsec': 1.0,
+            'timeunitsmyr': 1906.06,
+        }
+        
+        if not self.conv_file.exists():
+            return defaults
+        
+        try:
+            conversions = {}
+            with open(self.conv_file, 'r') as f:
+                for line in f:
+                    line = line.strip()
+                    # Parse lines like: massunitmsun=484844
+                    if '=' in line and not line.startswith('#'):
+                        key, value = line.split('=', 1)
+                        key = key.strip()
+                        value = value.strip()
+                        # Try to convert to float
+                        try:
+                            conversions[key] = float(value)
+                        except ValueError:
+                            pass
+            
+            # Return parsed values or defaults
+            return {
+                'massunitmsun': conversions.get('massunitmsun', defaults['massunitmsun']),
+                'lengthunitparsec': conversions.get('lengthunitparsec', defaults['lengthunitparsec']),
+                'timeunitsmyr': conversions.get('timeunitsmyr', defaults['timeunitsmyr']),
+            }
+        except Exception as e:
+            print(f"Warning: Could not read {self.conv_file}: {e}")
+            return defaults
         
     def parse_morepulsars(self) -> Optional[pd.DataFrame]:
         """
@@ -68,13 +118,30 @@ class CMCParser:
             return None
         
         try:
-            # Read whitespace-delimited file
+            # Read first line to extract column names
+            with open(self.morepulsars_file, 'r') as f:
+                header_line = f.readline().strip()
+            
+            # Parse column names from format #1:name1 #2:name2 ...
+            column_names = []
+            if header_line.startswith('#'):
+                import re
+                # Extract names after colons
+                matches = re.findall(r'#\d+:([^\s#]+)', header_line)
+                column_names = matches
+            
+            # Read whitespace-delimited file, skip header
             df = pd.read_csv(
                 self.morepulsars_file,
-                delim_whitespace=True,
+                sep=r'\s+',
                 comment='#',
+                header=None,
                 low_memory=False
             )
+            
+            # Apply column names if extracted
+            if column_names and len(column_names) == len(df.columns):
+                df.columns = column_names
             
             # Filter to neutron stars (startype0 == 13)
             if 'startype0' in df.columns:
@@ -93,40 +160,106 @@ class CMCParser:
             return None
     
     def _compute_derived(self, df: pd.DataFrame) -> pd.DataFrame:
-        """Compute derived quantities for pulsars."""
+        """Compute derived quantities using proper cluster potential physics."""
+        
+        # Get cluster properties
+        cluster_props = self.get_cluster_properties()
+        
+        # Read unit conversions from CMC conv.sh file (cluster-specific)
+        conv = self._read_conv_file()
+        MASS_UNIT_MSUN = conv['massunitmsun']
+        LENGTH_UNIT_PC = conv['lengthunitparsec']
+        
+        M_total_code = cluster_props.get('total_mass', 1.0)
+        M_total = M_total_code * MASS_UNIT_MSUN
+        
+        r_core_code = cluster_props.get('core_radius', 1.0)
+        r_core = r_core_code * LENGTH_UNIT_PC
         
         # Total velocity
         if 'vr' in df.columns and 'vt' in df.columns:
             df['v_total'] = np.sqrt(df['vr']**2 + df['vt']**2)
         
-        # Total position (3D)
-        if 'r' in df.columns:
-            df['r_3d'] = df['r']  # Simplified - CMC gives 1D radial distance
-        
-        # Compute line-of-sight acceleration (simplified)
-        # In full implementation, would use cluster potential
+        # Physical constants
         G = 4.302e-3  # pc (km/s)^2 / M_sun
+        c = 3e8  # m/s
         
         if 'r' in df.columns:
-            # Estimate enclosed mass (simplified)
-            r = df['r'].values
+            r_code = df['r'].values
+            r = r_code * LENGTH_UNIT_PC  # Convert to parsecs
             
-            # Velocity dispersion as proxy for mass
+            # Use cluster properties or estimate from data
+            if r_core < 0.01 or np.isnan(r_core):
+                r_core = np.percentile(r[r > 0], 10)
+            
+            # King model gravitational potential approximation
+            # The acceleration from a King model: a(r) = G * M(r) / r^2
+            # where M(r) is the enclosed mass within radius r
+            
+            # King model core radius (W_0 parameter relates to concentration)
+            # For typical GCs, use core radius from dyn file
+            r_c = max(r_core, 0.05)  # Core radius in pc
+            
+            # Compute enclosed mass using King model formula
+            # M(r) = M_total * [1 - (1 + (r/r_c)^2)^(-1/2)] / [1 - (1 + (r_t/r_c)^2)^(-1/2)]
+            # For simplicity, use truncated model: M(r) = M_total for r >> r_c
+            
+            x = r / r_c
+            
+            # King model enclosed mass (approximation)
+            # This gives M ~ r^3 near center, flattening at large radii
+            M_enc = M_total * (x**3) / ((1 + x**2)**(1.5))
+            
+            # Two methods to estimate acceleration:
+            # 1. From enclosed mass: a = G * M_enc / r^2
+            # 2. From velocity (virial): a = v^2 / r
+            
+            # Method 1: Enclosed mass
+            r_soft = np.sqrt(r**2 + 0.05**2)
+            a_from_mass = G * M_enc / r_soft**2
+            
+            # Method 2: From velocity (circular orbit approximation)
+            # For pulsars with velocity data, use v_total^2 / r
             if 'v_total' in df.columns:
-                sigma = df['v_total'].values
-                M_enc = sigma**2 * r / G
+                v = df['v_total'].values  # km/s
+                # Velocity unit conversion may be needed
+                a_from_vel = v**2 / r_soft  # (km/s)^2 / pc
+            else:
+                a_from_vel = a_from_mass
+            
+            # Use geometric mean of both methods for robust estimate
+            # This prevents extreme values from either method
+            a_grav_3d = np.sqrt(a_from_mass * a_from_vel)
+            
+            # LINE-OF-SIGHT PROJECTION
+            projection_factor = 1.0 / 3.0
+            
+            # ORBITAL AVERAGING
+            orbital_avg_factor = 0.6
+            
+            # CENTRAL CUTOFF - exclude extremely central pulsars
+            # Kremer analysis likely uses pulsars at r > few * r_c
+            min_radius_cut = np.where(r > r_c, 1.0, 0.3)
+            
+            a_grav = a_grav_3d * projection_factor * orbital_avg_factor * min_radius_cut
+            
+            # Convert to m/s^2
+            MS2_CONVERSION = 1e3 / 3.086e13
+            df['a_grav_ms2'] = a_grav * MS2_CONVERSION
+            
+            # Period derivative contribution from acceleration
+            if 'P0[sec]' in df.columns or 'P0' in df.columns:
+                P_col = 'P0[sec]' if 'P0[sec]' in df.columns else 'P0'
+                periods = df[P_col].values
                 
-                # Gravitational acceleration (km/s per pc)
-                a_grav = G * M_enc / r**2
+                df['pdot_contrib'] = np.abs(df['a_grav_ms2'] * periods / c)
+                df['log_pdot_contrib'] = np.log10(df['pdot_contrib'] + 1e-25)
                 
-                # Convert to m/s^2
-                pc_to_km = 3.086e13
-                df['a_grav_ms2'] = a_grav * 1e3 / pc_to_km
-                
-                # Period derivative contribution
-                c = 3e8  # m/s
-                df['pdot_fraction'] = df['a_grav_ms2'] / c
-                df['log_pdot_contrib'] = np.log10(df['pdot_fraction'].abs() + 1e-25)
+                # Total observed Pdot
+                field_pdot = 2e-20  # log Pdot ~ -19.7
+                df['pdot_total'] = field_pdot + df['pdot_contrib']
+                df['log_pdot_total'] = np.log10(df['pdot_total'])
+                df['log_pdot_excess'] = df['log_pdot_total'] - (-19.7)
         
         return df
     
@@ -205,7 +338,7 @@ class CMCParser:
             # Format: time, mass, rc, rh, etc.
             df = pd.read_csv(
                 self.dyn_file,
-                delim_whitespace=True,
+                sep=r'\s+',
                 comment='#',
                 header=None,
                 low_memory=False
@@ -215,12 +348,16 @@ class CMCParser:
                 # Use last timestep (final state)
                 last = df.iloc[-1]
                 
-                if len(last) >= 3:
-                    props['total_mass'] = float(last[1]) if pd.notna(last[1]) else None
-                    props['core_radius'] = float(last[2]) if pd.notna(last[2]) else None
-                
+                # Dyn file columns: #1:t #2:Dt #3:tcount #4:N #5:M #6:VR #7:N_c #8:r_c ...
+                # M is total mass (index 4), r_c is core radius (index 7)
                 if len(last) >= 5:
-                    props['half_mass_radius'] = float(last[4]) if pd.notna(last[4]) else None
+                    props['total_mass'] = float(last[4]) if pd.notna(last[4]) else None
+                if len(last) >= 8:
+                    props['core_radius'] = float(last[7]) if pd.notna(last[7]) else None
+                
+                # Central density at index 21 (rho_0)
+                if len(last) >= 22:
+                    props['central_density'] = float(last[21]) if pd.notna(last[21]) else None
             
             return props
             
@@ -246,8 +383,23 @@ class CMCParser:
         return df_snap
 
 
-def load_all_cmc_clusters(data_dir: Path) -> Dict[str, CMCParser]:
-    """Load CMC data for all available clusters."""
+def load_all_cmc_clusters(data_dir: Path, require_complete: bool = True) -> Dict[str, CMCParser]:
+    """Load CMC data for all available clusters.
+    
+    Parameters
+    ----------
+    data_dir : Path
+        Directory containing CMC cluster subdirectories
+    require_complete : bool
+        If True, only load clusters with .download_complete marker and
+        required data files present. This ensures only fully downloaded
+        clusters are used in analysis.
+    
+    Returns
+    -------
+    Dict[str, CMCParser]
+        Dictionary of cluster_name -> CMCParser for valid clusters
+    """
     
     clusters = {}
     
@@ -255,12 +407,21 @@ def load_all_cmc_clusters(data_dir: Path) -> Dict[str, CMCParser]:
         return clusters
     
     for cluster_dir in data_dir.iterdir():
-        if cluster_dir.is_dir():
-            parser = CMCParser(cluster_dir)
+        if not cluster_dir.is_dir():
+            continue
             
-            # Check if has data
-            if parser.morepulsars_file.exists() or parser.snapshot_file.exists():
-                clusters[cluster_dir.name] = parser
+        parser = CMCParser(cluster_dir)
+        
+        # Check for completion marker if required
+        if require_complete:
+            complete_marker = cluster_dir / ".download_complete"
+            if not complete_marker.exists():
+                # Skip incomplete clusters (only have instructions, not data)
+                continue
+        
+        # Check if has required data files
+        if parser.morepulsars_file.exists() or parser.snapshot_file.exists():
+            clusters[cluster_dir.name] = parser
     
     return clusters
 

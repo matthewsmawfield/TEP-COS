@@ -121,7 +121,7 @@ def compute_theoretical_uncertainties():
         'newtonian_prediction': {
             'value': 0.72,
             'uncertainty': 0.15,
-            'tension_sigma': abs(0.72 - gamma_central) / np.sqrt(0.15**2 + gamma_total_upper**2)
+            'tension_sigma': s33_data['rejection_sigma'],
         },
         'derivation': {
             'statistical': 'Mixed-effects model standard error',
@@ -234,8 +234,8 @@ def compute_theoretical_uncertainties():
             'observed_slope': 0.37,
             'observed_uncertainty_upper': 0.09,
             'observed_uncertainty_lower': 0.12,
-            'tension_sigma': 4.1,
-            'conclusion': 'Newtonian prediction excluded at 4.1σ'
+            'tension_sigma': s33_data['rejection_sigma'],
+            'conclusion': f"Newtonian prediction excluded at {s33_data['rejection_sigma']:.1f}σ"
         }
     }
     
@@ -349,7 +349,7 @@ def main():
     with open(output_path, 'w') as f:
         json.dump(budget, f, indent=2)
     
-    print(f"\n✓ Results saved to: {output_path}")
+    print(f"\nResults saved to: {output_path}")
     print("=" * 70)
     print("Theoretical uncertainty framework complete.")
     print("This enables proper falsifiability assessment and model comparison.")

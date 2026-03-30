@@ -1,0 +1,146 @@
+<h1>Appendix A: Astrophysical Systematics in Fossil Probes</h1>
+
+<p>
+    This appendix documents why fossil observables (integrated quantities rather than rates) 
+    are expected to be insensitive to TEP due to astrophysical systematics. For the main 
+    pulsar analysis, see Section 3.
+</p>
+
+<h2>A.1 Why Fossil Probes Are Insensitive</h2>
+
+<p>
+    The distinction between rate and fossil observables is fundamental to TEP phenomenology:
+</p>
+
+<table class="data-table">
+    <thead>
+        <tr>
+            <th>Observable Type</th>
+            <th>Examples</th>
+            <th>TEP Sensitivity</th>
+            <th>Systematics</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>Rate (time-domain)</td>
+            <td>Pulsar Ṗ, clock frequencies</td>
+            <td>Direct: measures dτ/dt</td>
+            <td>Moderate (acceleration, noise)</td>
+        </tr>
+        <tr>
+            <td>Fossil (integrated)</td>
+            <td>SN stretch, stellar ages</td>
+            <td>Indirect: cumulative effect</td>
+            <td>Dominant (progenitor evolution, metallicity)</td>
+        </tr>
+    </tbody>
+</table>
+
+<p>
+    TEP modifications at the ~10<sup>−5</sup> level are swamped by astrophysical scatter at the 
+    ~10<sup>−1</sup> level in fossil observables. Fossil probes are therefore expected to show 
+    TEP-consistent correlations that cannot be distinguished from standard astrophysical systematics.
+</p>
+
+<h2>A.2 Exploratory Channel: Type Ia Supernovae</h2>
+
+<p>
+    Type Ia supernovae occupy an intermediate category between rate and fossil observables. While SNe Ia light curves are instantaneous events (theoretically rate-sensitive), their use as distance indicators relies on peak magnitude standardization, which is dominated by host galaxy mass effects.
+</p>
+
+<p>
+    SNe Ia in galaxies with higher velocity dispersion appear systematically fainter 
+    (r = +0.22, p = 1.2×10<sup>−3</sup>, 218 SNe from Pantheon+). This direction matches the 
+    TEP prediction—deeper potentials correlate with enhanced time dilation—but the correlation 
+    is <em>indistinguishable</em> from the standard mass-step effect. Partial correlation controlling 
+    for host mass is null (r = −0.047, p = 0.49), indicating the signal is dominated by 
+    established astrophysical systematics rather than a novel TEP signature. Consequently, 
+    SNe Ia provide qualitative framework-consistency but cannot independently confirm TEP 
+    predictions.
+</p>
+
+<div class="key-concept">
+    <h4>Why SNe Ia Are Not Fossil Observables</h4>
+    <p>
+        The manuscript's fossil category (Section 1.2) comprises integrated quantities like stellar ages 
+        that accumulate over Gyr timescales. SNe Ia are explosive, instantaneous dynamic events (~weeks duration). 
+        They are classified as <em>exploratory</em> rather than <em>fossil</em> because:
+    </p>
+    <ul>
+        <li>Light curve decay rates are rate-sensitive in principle, but standardization uses peak magnitude</li>
+        <li>The mass-step degeneracy prevents clean TEP discrimination</li>
+        <li>They measure current dynamical state, not accumulated history</li>
+    </ul>
+    <p>
+        SNe Ia remain valuable as a consistency check but are excluded from the primary evidence ladder.
+    </p>
+</div>
+
+<h1>Appendix B: Data and Code Availability</h1>
+
+<p>
+    To facilitate reproduction and independent verification of these results, the exact 
+    data snapshots, selection queries, and analysis scripts used in this work are provided via the public repository:
+    <a href="https://github.com/matthewsmawfield/TEP-COS" target="_blank">https://github.com/matthewsmawfield/TEP-COS</a>.
+</p>
+
+<h2>B.1 Catalog Snapshots</h2>
+<table class="data-table">
+    <thead>
+        <tr>
+            <th>Dataset</th>
+            <th>Source</th>
+            <th>File Path</th>
+            <th>Description</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>GC Pulsars</td>
+            <td>Freire (MPIfR)</td>
+            <td><code>data/freire_gcpsr.txt</code></td>
+            <td>Exact snapshot of the MPIfR catalog used for analysis.</td>
+        </tr>
+        <tr>
+            <td>Field Pulsars</td>
+            <td>ATNF Pulsar Cat</td>
+            <td><code>data/atnf_psrcat.db</code></td>
+            <td>Snapshot of the ATNF catalog (v1.70) used for control sample.</td>
+        </tr>
+        <tr>
+            <td>Pantheon+ SNe</td>
+            <td>Scolnic et al. (2022)</td>
+            <td><code>data/supernovae/pantheon_plus_parsed.csv</code></td>
+            <td>Pantheon+ SN Ia compilation cross-matched with SDSS DR17 specObj.</td>
+        </tr>
+    </tbody>
+</table>
+
+<h2>B.2 Selection Queries</h2>
+<div class="code-block">
+    <h4>Pulsar Selection Criteria</h4>
+    <pre><code>
+# Standard Millisecond Pulsar (MSP) Definition
+P_spin < 30 ms
+P_dot_intrinsic > 0 (where available)
+Not in binary with massive companion (> 10 M_sun)
+
+# Cluster Association
+Use Freire catalog "Cluster" field.
+Filter out foreground contaminants identified in literature.
+    </code></pre>
+</div>
+
+<h2>B.3 Analysis Code</h2>
+<p>
+    All analysis steps are encapsulated in Python scripts available in the <code>scripts/</code> directory.
+    Key reproduction scripts include:
+</p>
+<ul>
+    <li><code>scripts/steps/step_5_10_pulsar_population_controls.py</code>: Implements the exact matching procedure for pulsar controls.</li>
+    <li><code>scripts/steps/step_5_33_hierarchical_density_scaling.py</code>: Runs the hierarchical mixed-effects model for density scaling.</li>
+    <li><code>scripts/steps/step_7_0_sn_ia_stretch_test.py</code>: SN Ia peak magnitude vs host velocity dispersion correlation (mB-σ test).</li>
+</ul>
+
+

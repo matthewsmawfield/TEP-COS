@@ -73,10 +73,16 @@ def _load_results_data(project_root: Path) -> Dict[str, object]:
         data["total_field_msps"] = sizes.get("field_total")
         data["total_msps"] = sizes.get("total")
     
-    # Load lensing results summary
-    lensing_results = _load_json(results_dir / "step_3_0_cosmograil_temporal_shear.json")
-    if lensing_results:
-        data["lensing_analysis_date"] = lensing_results.get("analysis_date", "")[:10]
+    # Load CMC Gold Standard results
+    cmc_results = _load_json(results_dir / "step_5_50_cmc_gold_standard.json")
+    if cmc_results:
+        data["cmc_n_pulsars"] = cmc_results.get("n_cmc_pulsars")
+        data["cmc_verdict"] = cmc_results.get("verdict", {}).get("overall_verdict")
+        tests = cmc_results.get("tests", {})
+        raw_excess = tests.get("raw_excess", {})
+        data["cmc_raw_excess_sigma"] = raw_excess.get("sigma")
+        density_scaling = tests.get("density_scaling", {})
+        data["cmc_density_sigma"] = density_scaling.get("sigma_difference")
     
     return data
 
@@ -307,6 +313,16 @@ def _load_default_metadata(project_root: Path) -> Dict[str, str]:
             metadata["XMP-TEPCOS:BinaryInversionDex"] = f"{results_data['binary_inversion_dex']:.3f}"
         if results_data.get("binary_inversion_p"):
             metadata["XMP-TEPCOS:BinaryInversionP"] = f"{results_data['binary_inversion_p']:.4f}"
+        
+        # Add CMC Gold Standard results
+        if results_data.get("cmc_n_pulsars"):
+            metadata["XMP-TEPCOS:CMCNPulsars"] = str(results_data["cmc_n_pulsars"])
+        if results_data.get("cmc_verdict"):
+            metadata["XMP-TEPCOS:CMCVerdict"] = str(results_data["cmc_verdict"])
+        if results_data.get("cmc_raw_excess_sigma"):
+            metadata["XMP-TEPCOS:CMCRawExcessSigma"] = f"{results_data['cmc_raw_excess_sigma']:.1f}"
+        if results_data.get("cmc_density_sigma"):
+            metadata["XMP-TEPCOS:CMCDensitySigma"] = f"{results_data['cmc_density_sigma']:.2f}"
     
     return metadata
 
@@ -473,6 +489,12 @@ def main() -> int:
             print(f"  Density Scaling: {results_data['rejection_sigma']:.2f}σ rejection of Newtonian prediction")
         if results_data.get("binary_inversion_dex"):
             print(f"  Binary Inversion: {results_data['binary_inversion_dex']:.3f} dex (p={results_data.get('binary_inversion_p', 'N/A'):.4f})")
+        if results_data.get("cmc_n_pulsars"):
+            print(f"  CMC Analysis: {results_data['cmc_n_pulsars']:,} synthetic pulsars")
+        if results_data.get("cmc_raw_excess_sigma"):
+            print(f"  CMC Discrepancy: {results_data['cmc_raw_excess_sigma']:.1f}σ (raw excess)")
+        if results_data.get("cmc_verdict"):
+            print(f"  CMC Verdict: {results_data['cmc_verdict']}")
         print()
 
     print("Step 1: Compressing PDF...")

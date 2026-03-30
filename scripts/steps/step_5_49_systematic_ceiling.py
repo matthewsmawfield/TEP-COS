@@ -42,18 +42,54 @@ DATA_DIR = REPO_ROOT / "data"
 OUTPUT_JSON = RESULTS_DIR / "step_5_49_systematic_ceiling.json"
 OUTPUT_MD = RESULTS_DIR / "step_5_49_systematic_ceiling.md"
 
+
+def load_observed_suppression():
+    """Load dynamically computed values from upstream pipeline outputs."""
+    # Load from step_5_33 hierarchical density results
+    hierarchical_file = RESULTS_DIR / "step_5_33_hierarchical_density_results.json"
+    cmc_file = RESULTS_DIR / "step_5_48_cmc_literature.json"
+    
+    if hierarchical_file.exists():
+        with open(hierarchical_file, 'r') as f:
+            hier_data = json.load(f)
+        density_slope = hier_data.get('model_b_mixed_slope', 0.3925)
+        density_error = hier_data.get('model_b_mixed_error', 0.079)
+    else:
+        raise FileNotFoundError(f"Required input missing: {hierarchical_file}")
+    
+    if cmc_file.exists():
+        with open(cmc_file, 'r') as f:
+            cmc_data = json.load(f)
+        newtonian_slope = cmc_data.get('cmc_consensus', {}).get('weighted_mean', 0.748)
+    else:
+        # Fallback to step_5_32 if CMC literature unavailable
+        sim_file = RESULTS_DIR / "step_5_32_full_density_scaling.json"
+        if sim_file.exists():
+            with open(sim_file, 'r') as f:
+                sim_data = json.load(f)
+            newtonian_slope = sim_data.get('slope', 0.757)
+        else:
+            raise FileNotFoundError(f"Required input missing: {cmc_file} or {sim_file}")
+    
+    slope_suppression = newtonian_slope - density_slope
+    total_discrepancy = slope_suppression  # Conservative estimate
+    
+    return {
+        "gc_field_offset_dex": 0.592,  # From step 5.33 - not dynamically loaded
+        "density_scaling_slope": density_slope,
+        "newtonian_predicted_slope": newtonian_slope,
+        "slope_suppression_dex": slope_suppression,
+        "total_discrepancy_dex": total_discrepancy,
+        "density_scaling_error": density_error,
+    }
+
+
 # Physical constants and reference values
 C = 299792458  # m/s
 KMS_TO_MS = 1000  # km/s to m/s
 
-# Observed suppression to explain
-OBSERVED_SUPPRESSION = {
-    "gc_field_offset_dex": 0.592,  # From step 5.33
-    "density_scaling_slope": 0.393,
-    "newtonian_predicted_slope": 0.75,
-    "slope_suppression_dex": 0.75 - 0.393,  # ~0.36 dex
-    "total_discrepancy_dex": 0.45,  # Conservative estimate
-}
+# Observed suppression loaded dynamically
+OBSERVED_SUPPRESSION = load_observed_suppression()
 
 
 def bound_shklovskii_contribution():
@@ -286,7 +322,7 @@ def compare_to_observed(ceiling, observed):
     
     # Remaining unexplained
     unexplained = observed_disc - ceiling_val
-    unexplained_sigma = unexplained / 0.079  # Using density scaling error as proxy
+    unexplained_sigma = unexplained / observed.get('density_scaling_error', 0.079)
     
     # Statistical significance of unexplained portion
     # If even maximum systematic cannot explain it, TEP is required

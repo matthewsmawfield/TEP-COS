@@ -55,6 +55,46 @@ DATA_DIR = REPO_ROOT / "data"
 OUTPUT_JSON = RESULTS_DIR / "step_5_50_cmc_gold_standard.json"
 OUTPUT_MD = RESULTS_DIR / "step_5_50_cmc_gold_standard.md"
 
+def load_observed_results() -> Dict:
+    """Load observed results from previous analysis steps."""
+    observed = {}
+    
+    # Load pulsar population controls (period-matched is primary)
+    pop_controls_path = RESULTS_DIR / "step_5_10_pulsar_population_controls.json"
+    if pop_controls_path.exists():
+        with open(pop_controls_path) as f:
+            pop_data = json.load(f)
+            # Use period-matched residual as primary raw excess measure
+            observed["raw_excess"] = pop_data["controls"]["period_matched"]["diff_mean"]
+            observed["controlled_residual"] = pop_data["controls"]["period_and_bproxy_matched"]["diff_mean"]
+            observed["n_pulsars_gc"] = pop_data["meta"]["counts"]["gc_msp"]
+            observed["n_pulsars_field"] = pop_data["meta"]["counts"]["field_msp"]
+    else:
+        raise FileNotFoundError(f"Population controls not found: {pop_controls_path}")
+    
+    # Load hierarchical density scaling results
+    density_path = RESULTS_DIR / "step_5_33_hierarchical_density_results.json"
+    if density_path.exists():
+        with open(density_path) as f:
+            density_data = json.load(f)
+            observed["density_scaling_slope"] = density_data["model_b_mixed_slope"]
+            observed["density_scaling_error"] = density_data["model_b_mixed_error"]
+    else:
+        raise FileNotFoundError(f"Density scaling results not found: {density_path}")
+    
+    # Load binary pulsar analysis
+    binary_path = RESULTS_DIR / "step_5_11_binary_pulsar_analysis.json"
+    if binary_path.exists():
+        with open(binary_path) as f:
+            binary_data = json.load(f)
+            observed["binary_inversion"] = binary_data["binary_vs_isolated"]["diff_dex"]
+            observed["n_clusters"] = len([c for c in binary_data["cluster_summary"].values() 
+                                         if c.get("n_with_pdot", 0) > 0])
+    else:
+        raise FileNotFoundError(f"Binary analysis not found: {binary_path}")
+    
+    return observed
+
 # CMC Catalog reference data from Kremer et al. 2020
 CMC_CATALOG_METADATA = {
     "reference": "Kremer et al. 2020, ApJS, 247, 48",
@@ -65,6 +105,7 @@ CMC_CATALOG_METADATA = {
 }
 
 # Published CMC-predicted density scaling from literature synthesis
+# These are literature/theoretical predictions, not observed values
 CMC_LITERATURE_PREDICTIONS = {
     "density_scaling_slope": {
         "value": 0.72,  # dex/dex - Newtonian expectation from CMC ensemble
@@ -83,17 +124,8 @@ CMC_LITERATURE_PREDICTIONS = {
     }
 }
 
-# Our observed results from Step 5.33
-OBSERVED_RESULTS = {
-    "raw_excess": 0.59,  # dex
-    "controlled_residual": 0.58,  # dex
-    "density_scaling_slope": 0.39,  # dex/dex
-    "density_scaling_error": 0.08,
-    "binary_inversion": -0.32,  # dex - binaries are QUIETER (opposite to Newtonian)
-    "n_clusters": 33,
-    "n_pulsars_gc": 196,
-    "n_pulsars_field": 198,
-}
+# Observed results - will be loaded dynamically in main()
+OBSERVED_RESULTS: Dict = {}
 
 
 @dataclass
@@ -442,17 +474,31 @@ def render_falsification_verdict(
 def main_analysis():
     """
     Main Gold Standard analysis.
+    
+    Loads observed results dynamically from previous analysis steps
+    to ensure consistency with the latest data.
     """
+    global OBSERVED_RESULTS
+    
     print("=" * 80)
     print("STEP 5.50: CMC GOLD STANDARD TEST")
     print("=" * 80)
     print("\nComparing observed residuals against synthetic CMC pulsars")
     print("This is the decisive test reviewers demand\n")
     
-    # Load observed data
+    # Load observed results from previous analysis steps
+    print("Loading observed results from previous analysis steps...")
+    OBSERVED_RESULTS = load_observed_results()
+    print(f"  Raw excess (period-matched): {OBSERVED_RESULTS['raw_excess']:.3f} dex")
+    print(f"  Density slope: {OBSERVED_RESULTS['density_scaling_slope']:.3f} ± {OBSERVED_RESULTS['density_scaling_error']:.3f} dex/dex")
+    print(f"  Binary inversion: {OBSERVED_RESULTS['binary_inversion']:.3f} dex")
+    print(f"  GC pulsars: {OBSERVED_RESULTS['n_pulsars_gc']}, Field pulsars: {OBSERVED_RESULTS['n_pulsars_field']}")
+    print(f"  Clusters analyzed: {OBSERVED_RESULTS['n_clusters']}\n")
+    
+    # Load observed pulsar dataframe
     try:
         observed_df = load_pulsar_observations()
-        print(f"Loaded {len(observed_df)} observed pulsars")
+        print(f"Loaded {len(observed_df)} observed pulsars from CSV")
     except FileNotFoundError as e:
         print(f"Warning: Could not load observed data: {e}")
         observed_df = pd.DataFrame()

@@ -50,14 +50,16 @@ def run_hierarchical_analysis():
     
     # 3. Define Models
     
-    # Model A: OLS on Cluster Means (The "Naive" Approach)
-    # This matches the current analysis in step_5_32
+    # Model A: WLS on Cluster Means (Weighted by sample size for valid baseline)
+    # Weighted by N to properly account for cluster sample sizes
     cluster_means = gc_df.groupby('cluster').agg({
         'logPdot_abs': 'mean',
-        'log_rho_c': 'first'
-    }).reset_index()
+        'log_rho_c': 'first',
+        'logP': 'count'  # sample size per cluster
+    }).reset_index().rename(columns={'logP': 'n_obs'})
     
-    ols_means = smf.ols("logPdot_abs ~ log_rho_c", data=cluster_means).fit()
+    # Weighted Least Squares: weights = N (inverse variance approximation)
+    wls_means = smf.wls("logPdot_abs ~ log_rho_c", data=cluster_means, weights=cluster_means['n_obs']).fit()
     
     # Model B: Mixed Effects Model (Hierarchical)
     # Fixed effects: log_rho_c, logP, log_b_proxy (controls)
@@ -93,9 +95,9 @@ def run_hierarchical_analysis():
             return
     
     print("\n" + "="*60)
-    print("MODEL A: OLS on Cluster Means (Current Manuscript Method)")
+    print("MODEL A: WLS on Cluster Means (Weighted by N, Valid Baseline)")
     print("="*60)
-    print(ols_means.summary())
+    print(wls_means.summary())
     
     print("\n" + "="*60)
     print("MODEL B: Hierarchical Mixed-Effects (Recommended Update)")
@@ -126,8 +128,8 @@ def run_hierarchical_analysis():
     
     # Save results
     results = {
-        "model_a_ols_slope": float(ols_means.params['log_rho_c']),
-        "model_a_ols_error": float(ols_means.bse['log_rho_c']),
+        "model_a_wls_slope": float(wls_means.params['log_rho_c']),
+        "model_a_wls_error": float(wls_means.bse['log_rho_c']),
         "model_b_mixed_slope": float(density_slope),
         "model_b_mixed_error": float(density_slope_err),
         "model_b_mixed_p": float(density_p),

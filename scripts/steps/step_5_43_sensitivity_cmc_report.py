@@ -144,18 +144,18 @@ def generate_report():
     s33 = load_json("step_5_33_hierarchical_density_results.json")
     
     print("Loaded data sources:")
-    print(f"  - step_5_37_rho_sensitivity: {'✓' if s37 else '✗'}")
-    print(f"  - step_5_41_dynamical_calibration: {'✓' if s41 else '✗'}")
-    print(f"  - step_5_42_cmc_real_comparison: {'✓' if s42 else '✗'}")
-    print(f"  - step_5_33_hierarchical_density: {'✓' if s33 else '✗'}")
+    print(f"  - step_5_37_rho_sensitivity: {'loaded' if s37 else 'not found'}")
+    print(f"  - step_5_41_dynamical_calibration: {'loaded' if s41 else 'not found'}")
+    print(f"  - step_5_42_cmc_real_comparison: {'loaded' if s42 else 'not found'}")
+    print(f"  - step_5_33_hierarchical_density: {'loaded' if s33 else 'not found'}")
     
     # Calculate sigma values that may not exist in the JSON
     if s33:
-        # Calculate OLS sigma from slope, error, and Newtonian prediction
-        ols_slope = s33.get('model_a_ols_slope', 0)
-        ols_error = s33.get('model_a_ols_error', 1)
+        # Calculate WLS sigma from slope, error, and Newtonian prediction
+        wls_slope = s33.get('model_a_wls_slope', 0)
+        wls_error = s33.get('model_a_wls_error', 1)
         newtonian = s33.get('newtonian_predicted_slope', 0.72)
-        s33['model_a_ols_sigma'] = abs(ols_slope - newtonian) / ols_error if ols_error > 0 else 0
+        s33['model_a_wls_sigma'] = abs(wls_slope - newtonian) / wls_error if wls_error > 0 else 0
         
         # Mixed-effects sigma already exists as rejection_sigma
         s33['model_b_mixed_sigma'] = s33.get('rejection_sigma', 0)
@@ -170,9 +170,9 @@ def generate_report():
             "and the observed cluster shifts are systematically **smaller than standard dynamics predicts**."
         )
         cross_validation_lines = (
-            "- ✓ Varying intra-cluster correlation assumptions\n"
-            "- ✓ Different regression methods (OLS, mixed-effects, WLS)\n"
-            "- ✓ Comparison with direct CMC/N-body cluster-shift predictions"
+            "- Varying intra-cluster correlation assumptions\n"
+            "- Different regression methods (OLS, mixed-effects, WLS)\n"
+            "- Comparison with direct CMC/N-body cluster-shift predictions"
         )
         cmc_primary_line = f"- CMC comparison: **{s42['summary']['average_ratio']:.0%}** of Newtonian prediction"
         conclusion_header = "The sensitivity analysis (C) and CMC comparison (D) **strengthen the TEP case**:"
@@ -190,9 +190,9 @@ def generate_report():
             "Direct CMC real-cluster comparison remains pending."
         )
         cross_validation_lines = (
-            "- ✓ Varying intra-cluster correlation assumptions\n"
-            "- ✓ Different regression methods (OLS, mixed-effects, WLS)\n"
-            "- ✓ Direct CMC real-cluster comparison remains pending"
+            "- Varying intra-cluster correlation assumptions\n"
+            "- Different regression methods (OLS, mixed-effects, WLS)\n"
+            "- Direct CMC real-cluster comparison remains pending"
         )
         cmc_primary_line = "- CMC comparison: **pending** (step 5.42 not yet run)"
         conclusion_header = "The sensitivity analysis **strengthens the TEP case**, while direct CMC comparison remains pending:"
@@ -249,7 +249,7 @@ Testing different analytical approaches:
 
 | Method | Slope (dex/dex) | Error | z-score vs Newtonian |
 |--------|-----------------|-------|----------------------|
-| OLS on cluster means | {s33['model_a_ols_slope']:.3f} | ±{s33['model_a_ols_error']:.3f} | {s33['model_a_ols_sigma']:.1f}σ |
+| WLS on cluster means | {s33['model_a_wls_slope']:.3f} | ±{s33['model_a_wls_error']:.3f} | {s33['model_a_wls_sigma']:.1f}σ |
 | Mixed-effects (hierarchical) | {s33['model_b_mixed_slope']:.3f} | ±{s33['model_b_mixed_error']:.3f} | **{s33['model_b_mixed_sigma']:.1f}σ** |
 
 All methods reject the Newtonian prediction at >3.5σ.
@@ -326,8 +326,8 @@ The suppressed density scaling survives:
     with open(OUTPUT_JSON, 'w') as f:
         json.dump(summary, f, indent=2)
     
-    print(f"\n✓ Report saved to: {OUTPUT_MD}")
-    print(f"✓ Summary saved to: {OUTPUT_JSON}")
+    print(f"\nReport saved to: {OUTPUT_MD}")
+    print(f"Summary saved to: {OUTPUT_JSON}")
     
     return summary
 

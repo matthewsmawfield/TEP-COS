@@ -97,11 +97,14 @@ def predict_newtonian_shift(cluster_params, n_pulsars=1000):
     a_los = []
     
     for r in r_pulsars:
-        # Enclosed mass (simplified King model)
+        # Enclosed mass (simplified King model - uniform density core)
         if r < rc:
-            M_enclosed = M * (r/rc)**3 / 3  # Core: M ~ r^3
+            M_enclosed = M * (r/rc)**3  # Core: uniform density sphere
         else:
-            M_enclosed = M * (r/rc) / (1 + r/rc)  # Outer: approaches M
+            # Beyond core: King model falloff with finite mass
+            # King model: M(r) = M * [1 - 1/sqrt(1+(r/rc)²)] approximately
+            x = r / rc
+            M_enclosed = M * (1 - 1/np.sqrt(1 + x**2))
         
         # Line-of-sight component (random orientation)
         cos_theta = np.random.uniform(-1, 1)
@@ -112,7 +115,8 @@ def predict_newtonian_shift(cluster_params, n_pulsars=1000):
     
     # Convert to pdot/p and log|Ṗ|
     c = 3e5  # km/s
-    pdot_over_p = a_los / c
+    pc_to_km = 3.086e13  # km/pc - CRITICAL UNIT CONVERSION
+    pdot_over_p = a_los / (c * pc_to_km)  # Now dimensionless: (km/s)^2/km / (km/s) = 1/s
     
     # Reference: typical MSP intrinsic spin-down
     log_pdot_intrinsic = -19.5  # dex

@@ -1,0 +1,30 @@
+{
+  "derivation": {
+    "method": "Parameter-free from scaling relations",
+    "formula": "\u0393_TEP = 2\u0393_N - 1",
+    "physics": "TEP clock effect \u221d potential |\u03a6|, Newtonian \u221d acceleration a",
+    "input": {
+      "gamma_N": 0.7476777251184834,
+      "gamma_N_error": 0.0385519898860048,
+      "source": "CMC Newtonian simulations"
+    }
+  },
+  "prediction": {
+    "gamma_TEP": 0.4953554502369668,
+    "formula_applied": "2 \u00d7 0.7476777251184834 - 1 = 0.495"
+  },
+  "observation": {
+    "gamma_obs": 0.39250366378738116,
+    "gamma_obs_error": 0.07903279260970068,
+    "source": "Mixed-effects model (step_5_33)"
+  },
+  "comparison": {
+    "sigma_agreement": 0.9315121082825476,
+    "status": "EXCELLENT"
+  },
+  "newtonian_rejection": {
+    "gamma_N": 0.7476777251184834,
+    "sigma_rejection": 4.4940087475474995,
+    "conclusion": "Newtonian scaling excluded at >4\u03c3"
+  }
+}

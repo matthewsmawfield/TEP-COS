@@ -44,6 +44,7 @@ tmp/
 # Data & Large Results
 data/cache/
 data/maps/
+data/cmc/
 data/archive/*.tmp
 data/**/*.fits
 data/**/*.fits.gz

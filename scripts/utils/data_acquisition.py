@@ -9,7 +9,6 @@ Downloads data from external sources when needed.
 Usage:
     from scripts.utils.data_acquisition import ensure_data
     ensure_data('pulsars')  # Downloads Freire + ATNF if needed
-    ensure_data('lensing')  # Checks COSMOGRAIL files exist
     ensure_data('supernovae')  # Downloads Pantheon+ if needed
 """
 
@@ -224,36 +223,6 @@ def ensure_data(dataset: str, verbose: bool = True) -> Dict[str, bool]:
                         print(f"  ✗ Extraction failed: {e}")
                     results["atnf_psrcat"] = False
     
-    if dataset == "lensing" or dataset == "all":
-        # Check COSMOGRAIL files exist
-        cosmograil_dir = DATA_DIR / "cosmograil"
-        required_rdb = [
-            "HE0435_Bonvin2016.rdb",
-            "HS2209_Eulaers2013.rdb",
-            "J1001_Rathnakumar2013.rdb",
-            "J1206_Eulaers2013.rdb",
-            "PG1115_Bonvin2018.rdb",
-            "RXJ1131_Tewes2013.rdb",
-            "WFI2033_Bonvin2019.rdb",
-        ]
-        
-        all_present = True
-        for fname in required_rdb:
-            fpath = cosmograil_dir / fname
-            if fpath.exists():
-                if verbose:
-                    print(f"  ✓ {fname}")
-            else:
-                if verbose:
-                    print(f"  ✗ Missing: {fname}")
-                all_present = False
-        
-        results["cosmograil"] = all_present
-        
-        if not all_present:
-            if verbose:
-                print("  ⚠ Some COSMOGRAIL files missing. Run data download scripts manually.")
-    
     if dataset == "supernovae" or dataset == "all":
         # Check Pantheon+ data
         pantheon_file = DATA_DIR / "supernovae" / "pantheon_plus.dat"
@@ -311,20 +280,6 @@ def check_data_health(verbose: bool = True) -> Dict[str, Dict]:
             symbol = "✓" if val else "✗" if "exists" in key else ""
             print(f"  {symbol} {key}: {val}")
     
-    # Check lensing data
-    cosmograil_dir = DATA_DIR / "cosmograil"
-    lens_files = list(cosmograil_dir.glob("*.rdb")) if cosmograil_dir.exists() else []
-    status["lensing"] = {
-        "dir_exists": cosmograil_dir.exists(),
-        "rdb_count": len(lens_files),
-        "files": [f.name for f in lens_files],
-    }
-    
-    if verbose:
-        print("\nLensing Data (COSMOGRAIL):")
-        print(f"  ✓ Directory exists: {status['lensing']['dir_exists']}")
-        print(f"  ✓ RDB files found: {status['lensing']['rdb_count']}")
-    
     return status
 
 
@@ -336,7 +291,7 @@ if __name__ == "__main__":
     results = ensure_data("all", verbose=True)
     
     # Exit with error code if any critical data missing
-    critical = ["freire_gcpsr", "atnf_psrcat", "cosmograil"]
+    critical = ["freire_gcpsr", "atnf_psrcat"]
     missing = [k for k in critical if not results.get(k)]
     
     if missing:

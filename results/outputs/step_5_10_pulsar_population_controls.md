@@ -21,5 +21,16 @@
 - **Two-sided p:** 0\
 
 ### Period + B-proxy matched bootstrap
-- **Mean diff:** 0.575 dex (16–84%: 0.524 to 0.630)\
+- **Mean diff:** 0.604 dex (16–84%: 0.553 to 0.655)\
 - **Two-sided p:** 0\
+
+## Period Cut Sensitivity Analysis
+Testing robustness of signal to MSP period boundary choice.
+
+| Period Cut | GC N | Field N | Raw Diff (dex) | Period-Matched (dex) | p-value |
+|------------|------|---------|----------------|----------------------|---------|
+| P < 10 ms | 175 | 148 | 0.782 | 0.782 [0.721, 0.845] | 0 |
+| P < 30 ms | 196 | 198 | 0.592 | 0.606 [0.551, 0.663] | 0 |
+| P < 50 ms | 198 | 224 | 0.471 | 0.606 [0.550, 0.662] | 0 |
+
+**Interpretation:** The signal persists across period cut choices, demonstrating robustness to the P < 30 ms boundary definition.

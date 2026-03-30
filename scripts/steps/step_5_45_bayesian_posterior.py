@@ -148,8 +148,21 @@ def bayesian_analysis_pymc_simulation():
     prior_offset_mean = 0.30
     prior_offset_std = 0.20
     
-    observed_offset = 0.592
-    observed_offset_se = 0.103
+    # Load from upstream covariance validation - REQUIRED
+    s35_path = Path('results/outputs/step_5_35_covariance_validation.json')
+    if not s35_path.exists():
+        print(f"ERROR: Required input file not found: {s35_path}")
+        print(f"Bayesian analysis requires covariance validation results from step_5_35.")
+        raise RuntimeError("Missing required input: step_5_35_covariance_validation.json")
+    
+    with open(s35_path, 'r') as f:
+        s35_data = json.load(f)
+    
+    observed_offset = s35_data['covariance_aware_ttest']['difference_dex']
+    observed_offset_se = s35_data['covariance_aware_ttest']['se_diff']
+    
+    if observed_offset is None or observed_offset_se is None:
+        raise RuntimeError("Required fields 'gc_field_mean_offset_dex' or 'gc_field_offset_se_dex' not found in step_5_35_covariance_validation.json")
     
     # Conjugate posterior
     prior_off_precision = 1 / prior_offset_std**2
@@ -226,7 +239,7 @@ def bayesian_analysis_pymc_simulation():
         
         print(f"{name:<20} {p_mean:<12.2f} {post_mean:<15.3f} [{ci[0]:.3f}, {ci[1]:.3f}]")
     
-    print("\n✓ Results robust across all reasonable prior specifications")
+    print("\nResults robust across all reasonable prior specifications")
     
     # ============================================================================
     # POSTERIOR PREDICTIVE CHECK
@@ -301,7 +314,7 @@ def bayesian_analysis_pymc_simulation():
     with open(output_path, 'w') as f:
         json.dump(results, f, indent=2)
     
-    print(f"\n✓ Results saved to: {output_path}")
+    print(f"\nResults saved to: {output_path}")
     print("=" * 70)
     print("Bayesian posterior analysis complete.")
     print("Provides credible intervals and model comparison statistics.")

@@ -1,6 +1,6 @@
 {
   "meta": {
-    "timestamp_utc": "2026-03-29T20:28:38.223555+00:00",
+    "timestamp_utc": "2026-03-30T18:29:51.061727+00:00",
     "sources": {
       "freire_gcpsr": {
         "url": "https://www3.mpifr-bonn.mpg.de/staff/pfreire/GCpsr.txt",
@@ -39,15 +39,62 @@
       "n_boot": 2000,
       "diff_mean": 0.605832424887941,
       "diff_ci16": 0.5514655579036538,
-      "diff_ci84": 0.6631635310313341,
+      "diff_ci84": 0.6631635310313376,
       "p_two_sided": 0.0
     },
     "period_and_bproxy_matched": {
       "n_boot": 2000,
-      "diff_mean": 0.5753932146681091,
-      "diff_ci16": 0.5236315298655703,
-      "diff_ci84": 0.6297675187872745,
+      "diff_mean": 0.6037271689051414,
+      "diff_ci16": 0.5534616162165932,
+      "diff_ci84": 0.6549781621951845,
       "p_two_sided": 0.0
     }
-  }
+  },
+  "period_cut_sensitivity": [
+    {
+      "period_cut_ms": 10.0,
+      "n_gc": 175,
+      "n_field": 148,
+      "gc_mean_logpdot": -19.24762758968515,
+      "field_mean_logpdot": -20.029317360790014,
+      "diff_dex": 0.7816897711048654,
+      "t_stat": 11.144012702144634,
+      "t_p": 1.999531875835039e-24,
+      "mw_p": 2.5862977490989155e-23,
+      "period_matched_diff": 0.7816669284552452,
+      "period_matched_ci16": 0.7214743717412216,
+      "period_matched_ci84": 0.8453133132335265,
+      "period_matched_p": 0.0
+    },
+    {
+      "period_cut_ms": 30.0,
+      "n_gc": 196,
+      "n_field": 198,
+      "gc_mean_logpdot": -19.165670063058574,
+      "field_mean_logpdot": -19.75815149669137,
+      "diff_dex": 0.5924814336327948,
+      "t_stat": 7.734621292982895,
+      "t_p": 8.986644899746344e-14,
+      "mw_p": 6.730113086296262e-16,
+      "period_matched_diff": 0.605832424887941,
+      "period_matched_ci16": 0.5514655579036538,
+      "period_matched_ci84": 0.6631635310313376,
+      "period_matched_p": 0.0
+    },
+    {
+      "period_cut_ms": 50.0,
+      "n_gc": 198,
+      "n_field": 224,
+      "gc_mean_logpdot": -19.15368697006879,
+      "field_mean_logpdot": -19.62463552013447,
+      "diff_dex": 0.47094855006567826,
+      "t_stat": 5.909187384484551,
+      "t_p": 7.13581833383932e-09,
+      "mw_p": 1.4181512471773816e-11,
+      "period_matched_diff": 0.6060148571410737,
+      "period_matched_ci16": 0.5501978635958966,
+      "period_matched_ci84": 0.6623760828538572,
+      "period_matched_p": 0.0
+    }
+  ]
 }
