@@ -1,4 +1,4 @@
-# The Temporal Equivalence Principle: Suppressed Density Scaling in Globular Cluster Pulsars
+# Temporal Equivalence Principle: Suppressed Density Scaling in Globular Cluster Pulsars
 
 [![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.18165798.svg)](https://doi.org/10.5281/zenodo.18165798)
 [![License: CC BY 4.0](https://img.shields.io/badge/License-CC%20BY%204.0-lightgrey.svg)](https://creativecommons.org/licenses/by/4.0/)
@@ -6,28 +6,26 @@
 ![TEP-COS: Suppressed Density Scaling](site/public/image.webp)
 
 **Author:** Matthew Lukin Smawfield  
-**Version:** v0.4 (Caracas)  
-**Date:** First published: 9 January 2026 | Updated: 30 March 2026  
+**Version:** v0.5 (Caracas)  
+**Date:** First published: 9 January 2026 | Updated: 24 April 2026  
 **Status:** Preprint  
 **DOI:** [10.5281/zenodo.18165798](https://doi.org/10.5281/zenodo.18165798)  
 **Website:** [https://mlsmawfield.com/tep/cos/](https://mlsmawfield.com/tep/cos/)  
-**Paper Series:** TEP Series: Paper 11 (Cosmological Observations)
+**Paper Series:** TEP Series: Paper 10 (Cosmological Observations)
 
 ## Abstract
 
 Gravitational time dilation in General Relativity is verified to 10⁻⁵ precision in the Solar System. At intermediate astrophysical scales, however, persistent anomalies emerge—rotation curves, cluster dynamics, cosmic acceleration—that conventionally require invisible matter or exotic energy. The Temporal Equivalence Principle (TEP) formalizes an alternative: that time dilation is *scale-dependent*, enhanced in extended gravitational configurations while screened in dense, well-tested regimes.
 
-This work reports a 5.8σ dynamical anomaly (5.8σ from covariance-aware test, 7.7σ from Welch t-test) in globular cluster pulsar timing that challenges standard density scaling (4.1σ tension). Pulsar timing provides a spatially-resolved probe of time-dilation effects at the 10⁵–10⁶ M☉ scale. Analysis of 394 millisecond pulsars (196 GC, 198 field) reveals a 0.61 dex *raw* excess in spin-down magnitude—cluster pulsars spin down *faster* than field controls (p=9.0×10⁻¹⁴ to 2.2×10⁻⁸, depending on correlation treatment). After controlling for population differences, a 0.58 dex residual persists (95% CI: 0.52–0.63 dex).
+This work reports a dynamical anomaly in globular cluster pulsar timing that challenges standard density scaling. Pulsar timing provides a spatially-resolved probe of time-dilation effects at the 10⁵–10⁶ M☉ scale. Analysis of 394 millisecond pulsars (196 GC, 198 field) reveals a 0.59 dex (decimal exponent, factor of ~3.9) *raw* excess in spin-down magnitude—cluster pulsars spin down *faster* than field controls. After controlling for population differences, a 0.61 dex residual persists (95% CI: 0.55–0.66 dex, 5.8σ–7.7σ depending on correlation treatment).
 
-A spatially-stratified spin-down anomaly is detected in 196 globular cluster pulsars compared to 198 field controls (0.61 dex raw excess, 0.58 dex controlled residual, 5.8σ from covariance-aware test). The signal exhibits suppressed density scaling (mixed-effects slope Γ = 0.39 ± 0.08 dex/dex vs Newtonian Γ = 0.72; 4.1σ rejection, Bayesian P(Γ > 0.72|data) = 4×10⁻⁵), saturating in dense cores in a manner consistent with TEP screening but in tension with standard dynamics. Leave-one-cluster-out validation confirms the result is stable (3.8% relative instability) and not driven by individual clusters. A "Binary Inversion" is detected where typically noisy binary systems—predicted to be dynamically hotter—exhibit significantly lower residuals (-0.32 dex, p=0.007) than isolated pulsars, challenging standard dynamical heating models. Together, the raw excess, controlled residual, and suppressed density scaling argue against conventional acceleration noise as a complete explanation. Complementary analysis of Type Ia supernovae (N=218) reveals a correlation between peak magnitude and host velocity dispersion consistent with TEP time dilation predictions, exhibiting a 3.24σ Pearson correlation with structure near σ ≈ 165 km/s. Note: This signal is indistinguishable from the standard mass-step effect; presented as exploratory support only.
+A spatially-stratified spin-down anomaly is detected in 196 globular cluster pulsars compared to 198 field controls (0.59 dex raw excess, 0.61 dex controlled residual, 5.8σ from covariance-aware test). The signal exhibits suppressed density scaling (mixed-effects slope Γ = 0.39 ± 0.08 dex/dex vs Newtonian ensemble baseline Γ = 0.72; 4.1σ rejection, Bayesian P(Γ > 0.72|data) < 10⁻⁴), saturating in dense cores in a manner consistent with TEP screening but in tension with standard dynamics. Leave-one-cluster-out validation confirms the result is stable (3.8% relative instability) and not driven by individual clusters. A "Binary Inversion" is detected where typically noisy binary systems—predicted to be dynamically hotter—exhibit significantly lower residuals (-0.32 dex, Mann-Whitney p=0.004) than isolated pulsars, challenging standard dynamical heating models. Together, the raw excess, controlled residual, and suppressed density scaling argue against standard Newtonian dynamics as a complete explanation.
 
 The pulsar signal—spatially resolved, field-controlled, and showing suppressed density scaling—provides the primary evidence for potential-dependent modifications to gravitational time flow.
 
 ## Key Findings
 
-Analysis of 394 millisecond pulsars reveals a 5.8σ dynamical anomaly (5.8σ from covariance-aware test, 7.7σ from Welch t-test): globular cluster pulsars spin down 0.61 dex faster than field controls (p = 2.2×10⁻⁸ to 9.0×10⁻¹⁴). The density scaling is suppressed (slope 0.39 vs 0.72 Newtonian prediction, 4.1σ tension), and binary pulsars in clusters are unexpectedly *quieter* than isolated pulsars (−0.32 dex, p = 0.007)—directly contradicting dynamical heating models. 
-
-Cluster Monte Carlo (CMC) comparison with 13 clusters and 21.0 million synthetic pulsars confirms standard Newtonian dynamics predicts 2.10 dex excess (3.1× larger than observed, 13.1σ mismatch) and slope 0.75 (4.0σ discrepancy), disfavoring standard dynamical explanations.
+Analysis of 394 millisecond pulsars reveals a 5.8σ dynamical anomaly (5.8σ from covariance-aware test, 7.7σ from Welch t-test): globular cluster pulsars spin down 0.59 dex (raw) to 0.61 dex (controlled) faster than field controls. The density scaling is suppressed (slope Γ = 0.39 ± 0.08 vs Newtonian ensemble baseline Γ = 0.72; 4.1σ rejection), and binary pulsars in clusters are unexpectedly *quieter* than isolated pulsars (−0.32 dex, Mann-Whitney p = 0.004)—challenging standard dynamical heating models. Leave-one-cluster-out validation confirms the result is stable (3.8% relative instability).
 
 ---
 
@@ -37,14 +35,18 @@ Cluster Monte Carlo (CMC) comparison with 13 clusters and 21.0 million synthetic
 |-------|-----------|-------|-----|
 | **Paper 0** | [TEP](https://github.com/matthewsmawfield/TEP) | Temporal Equivalence Principle: Dynamic Time & Emergent Light Speed | [10.5281/zenodo.16921911](https://doi.org/10.5281/zenodo.16921911) |
 | **Paper 1** | [TEP-GNSS](https://github.com/matthewsmawfield/TEP-GNSS) | Global Time Echoes: Distance-Structured Correlations in GNSS Clocks | [10.5281/zenodo.17127229](https://doi.org/10.5281/zenodo.17127229) |
-| **Paper 2** | [TEP-GNSS-II](https://github.com/matthewsmawfield/TEP-GNSS-II) | Global Time Echoes: 25-Year Temporal Evolution | [10.5281/zenodo.17517141](https://doi.org/10.5281/zenodo.17517141) |
-| **Paper 3** | [TEP-GNSS-RINEX](https://github.com/matthewsmawfield/TEP-GNSS-RINEX) | Global Time Echoes: Raw RINEX Validation | [10.5281/zenodo.17860166](https://doi.org/10.5281/zenodo.17860166) |
-| **Paper 6** | [TEP-GTE](https://github.com/matthewsmawfield/TEP-GTE) | Global Time Echoes: Empirical Validation of TEP | [10.5281/zenodo.18004832](https://doi.org/10.5281/zenodo.18004832) |
-| **Paper 7** | [TEP-UCD](https://github.com/matthewsmawfield/TEP-UCD) | Universal Critical Density | [10.5281/zenodo.18064366](https://doi.org/10.5281/zenodo.18064366) |
-| **Paper 8** | [TEP-RBH](https://github.com/matthewsmawfield/TEP-RBH) | The Soliton Wake | [10.5281/zenodo.18059251](https://doi.org/10.5281/zenodo.18059251) |
-| **Paper 9** | [TEP-SLR](https://github.com/matthewsmawfield/TEP-SLR) | Satellite Laser Ranging Validation | [10.5281/zenodo.18064582](https://doi.org/10.5281/zenodo.18064582) |
-| **Paper 10** | [TEP-EXP](https://github.com/matthewsmawfield/TEP-EXP) | What Do Precision Tests of General Relativity Actually Measure? | [10.5281/zenodo.18109761](https://doi.org/10.5281/zenodo.18109761) |
-| **Paper 11** | **TEP-COS** (This repo) | Suppressed Density Scaling in Globular Cluster Pulsars | [10.5281/zenodo.18165798](https://doi.org/10.5281/zenodo.18165798) |
+| **Paper 2** | [TEP-GNSS-II](https://github.com/matthewsmawfield/TEP-GNSS-II) | Global Time Echoes: 25-Year Temporal Evolution of Distance-Structured Correlations in GNSS Clocks | [10.5281/zenodo.17517141](https://doi.org/10.5281/zenodo.17517141) |
+| **Paper 3** | [TEP-GNSS-RINEX](https://github.com/matthewsmawfield/TEP-GNSS-RINEX) | Global Time Echoes: Raw RINEX Validation of Distance-Structured Correlations in GNSS Clocks | [10.5281/zenodo.17860166](https://doi.org/10.5281/zenodo.17860166) |
+| **Paper 4** | [TEP-GL](https://github.com/matthewsmawfield/TEP-GL) | Temporal-Spatial Coupling in Gravitational Lensing: A Reinterpretation of Dark Matter Observations | [10.5281/zenodo.17982540](https://doi.org/10.5281/zenodo.17982540) |
+| **Paper 5** | [TEP-GTE](https://github.com/matthewsmawfield/TEP-GTE) | Global Time Echoes: Empirical Validation of the Temporal Equivalence Principle | [10.5281/zenodo.18004832](https://doi.org/10.5281/zenodo.18004832) |
+| **Paper 6** | [TEP-UCD](https://github.com/matthewsmawfield/TEP-UCD) | Universal Critical Density: Unifying Atomic, Galactic, and Compact Object Scales | [10.5281/zenodo.18064366](https://doi.org/10.5281/zenodo.18064366) |
+| **Paper 7** | [TEP-RBH](https://github.com/matthewsmawfield/TEP-RBH) | The Soliton Wake: A Runaway Black Hole as a Gravitational Soliton | [10.5281/zenodo.18059251](https://doi.org/10.5281/zenodo.18059251) |
+| **Paper 8** | [TEP-SLR](https://github.com/matthewsmawfield/TEP-SLR) | Global Time Echoes: Optical Validation of the Temporal Equivalence Principle via Satellite Laser Ranging | [10.5281/zenodo.18064582](https://doi.org/10.5281/zenodo.18064582) |
+| **Paper 9** | [TEP-EXP](https://github.com/matthewsmawfield/TEP-EXP) | What Do Precision Tests of General Relativity Actually Measure? | [10.5281/zenodo.18109761](https://doi.org/10.5281/zenodo.18109761) |
+| **Paper 10** | **TEP-COS** (This repo) | Temporal Equivalence Principle: Suppressed Density Scaling in Globular Cluster Pulsars | [10.5281/zenodo.18165798](https://doi.org/10.5281/zenodo.18165798) |
+| **Paper 11** | [TEP-H0](https://github.com/matthewsmawfield/TEP-H0) | The Cepheid Bias: Resolving the Hubble Tension | [10.5281/zenodo.18209702](https://doi.org/10.5281/zenodo.18209702) |
+| **Paper 12** | [TEP-JWST](https://github.com/matthewsmawfield/TEP-JWST) | The Temporal Equivalence Principle: A Unified Resolution to the JWST High-Redshift Anomalies | [10.5281/zenodo.19000827](https://doi.org/10.5281/zenodo.19000827) |
+| **Paper 13** | [TEP-WB](https://github.com/matthewsmawfield/TEP-WB) | The Temporal Equivalence Principle: Density-Dependent Screening in Gaia DR3 Wide Binaries | [10.5281/zenodo.19102062](https://doi.org/10.5281/zenodo.19102062) |
 
 ## Directory Structure
 
@@ -148,12 +150,12 @@ that calls `scripts/run_pipeline.py`.
 
 ```bibtex
 @article{smawfield2026tepcos,
-  title={The Temporal Equivalence Principle: Suppressed Density Scaling in Globular Cluster Pulsars},
+  title={Temporal Equivalence Principle: Suppressed Density Scaling in Globular Cluster Pulsars},
   author={Smawfield, Matthew Lukin},
   year={2026},
   doi={10.5281/zenodo.18165798},
   url={https://doi.org/10.5281/zenodo.18165798},
-  note={Preprint v0.4 (Caracas)}
+  note={Preprint v0.5 (Caracas)}
 }
 ```
 

@@ -1,46 +1,46 @@
-[21:30:11] [INFO] ======================================================================
-[21:30:11] [INFO] STEP 5.38: Power Analysis for Differential Test
-[21:30:11] [INFO] ======================================================================
-[21:30:11] [INFO] M4 Pro Optimized: Using 14 CPU cores
-[21:30:11] [INFO] 
-[21:30:11] [INFO] Observed Effect Sizes:
-[21:30:11] [INFO]   GC Binary-Isolated difference: -0.323 dex
-[21:30:11] [INFO]   Field Binary-Isolated difference: -0.047 dex
-[21:30:11] [INFO]   Differential effect (GC - Field): 0.276 dex
-[21:30:11] [INFO] 
-[21:30:11] [INFO] Current Sample Sizes:
-[21:30:11] [INFO]   GC Binary: 115, Isolated: 81
-[21:30:11] [INFO]   Field Binary: 268, Isolated: 66
-[21:30:11] [INFO] 
-[21:30:11] [INFO] ----------------------------------------------------------------------
-[21:30:11] [INFO] POWER ANALYSIS: Differential Test
-[21:30:11] [INFO] ----------------------------------------------------------------------
-[21:30:11] [INFO] Testing: Can we detect the observed differential effect (0.276 dex)?
-[21:30:11] [INFO] 
-[21:30:11] [INFO] 1. Current Statistical Power:
-[21:30:11] [INFO]    Computing with 5000 simulations...
-[21:30:12] [INFO]    Power with current sample: 98.5%
-[21:30:12] [INFO]    (Probability of detecting effect if it exists)
-[21:30:12] [INFO]    Result: Adequate power - good chance of detecting true effects
-[21:30:12] [INFO] 
-[21:30:12] [INFO] 2. Minimum Detectable Effect (80% power):
-[21:30:12] [INFO]    Computing power curve with parallel simulations...
-[21:30:14] [INFO]    Can detect effects ≥ 0.21 dex with 80% power
-[21:30:14] [INFO] 
-[21:30:14] [INFO] 3. Required Sample Sizes:
-[21:30:14] [INFO]    To detect observed effect (0.276 dex) with 80% power:
-[21:30:18] [INFO]    Need ~125 GC pulsars and ~125 Field pulsars
-[21:30:18] [INFO]    (Currently have 196 GC, 334 Field)
-[21:30:18] [INFO] 
-[21:30:18] [INFO]    To detect a larger effect (0.30 dex, Cohen's d ~0.4) with 80% power:
-[21:30:21] [INFO]    Need ~100 per group
-[21:30:21] [INFO] 
-[21:30:21] [INFO]    To detect a substantial effect (0.50 dex, Cohen's d ~0.7) with 80% power:
-[21:30:22] [INFO]    Need ~40 per group
-[21:30:22] [INFO] 
-[21:30:22] [INFO] ======================================================================
-[21:30:22] [INFO] RECOMMENDATIONS
-[21:30:22] [INFO] ======================================================================
-[21:30:22] [INFO] 
-[21:30:22] [INFO] Results saved to: results/outputs/step_5_38_power_analysis.json
-[21:30:22] [INFO] ======================================================================
+[10:46:59] [INFO] ======================================================================
+[10:46:59] [INFO] STEP 5.38: Power Analysis for Differential Test
+[10:46:59] [INFO] ======================================================================
+[10:46:59] [INFO] M4 Pro Optimized: Using 14 CPU cores
+[10:46:59] [INFO] 
+[10:46:59] [INFO] Observed Effect Sizes:
+[10:46:59] [INFO]   GC Binary-Isolated difference: -0.323 dex
+[10:46:59] [INFO]   Field Binary-Isolated difference: -0.047 dex
+[10:46:59] [INFO]   Differential effect (GC - Field): 0.276 dex
+[10:46:59] [INFO] 
+[10:46:59] [INFO] Current Sample Sizes:
+[10:46:59] [INFO]   GC Binary: 115, Isolated: 81
+[10:46:59] [INFO]   Field Binary: 268, Isolated: 66
+[10:46:59] [INFO] 
+[10:46:59] [INFO] ----------------------------------------------------------------------
+[10:46:59] [INFO] POWER ANALYSIS: Differential Test
+[10:46:59] [INFO] ----------------------------------------------------------------------
+[10:46:59] [INFO] Testing: Can we detect the observed differential effect (0.276 dex)?
+[10:46:59] [INFO] 
+[10:46:59] [INFO] 1. Current Statistical Power:
+[10:46:59] [INFO]    Computing with 5000 simulations...
+[10:46:59] [INFO]    Power with current sample: 98.5%
+[10:46:59] [INFO]    (Probability of detecting effect if it exists)
+[10:46:59] [INFO]    Result: Adequate power - good chance of detecting true effects
+[10:46:59] [INFO] 
+[10:46:59] [INFO] 2. Minimum Detectable Effect (80% power):
+[10:46:59] [INFO]    Computing power curve with parallel simulations...
+[10:47:01] [INFO]    Can detect effects ≥ 0.18 dex with 80% power
+[10:47:01] [INFO] 
+[10:47:01] [INFO] 3. Required Sample Sizes:
+[10:47:01] [INFO]    To detect observed effect (0.276 dex) with 80% power:
+[10:47:04] [INFO]    Need ~120 GC pulsars and ~120 Field pulsars
+[10:47:04] [INFO]    (Currently have 196 GC, 334 Field)
+[10:47:04] [INFO] 
+[10:47:04] [INFO]    To detect a larger effect (0.30 dex, Cohen's d ~0.4) with 80% power:
+[10:47:07] [INFO]    Need ~100 per group
+[10:47:07] [INFO] 
+[10:47:07] [INFO]    To detect a substantial effect (0.50 dex, Cohen's d ~0.7) with 80% power:
+[10:47:07] [INFO]    Need ~40 per group
+[10:47:07] [INFO] 
+[10:47:07] [INFO] ======================================================================
+[10:47:07] [INFO] RECOMMENDATIONS
+[10:47:07] [INFO] ======================================================================
+[10:47:07] [INFO] 
+[10:47:07] [INFO] Results saved to: results/outputs/step_5_38_power_analysis.json
+[10:47:07] [INFO] ======================================================================

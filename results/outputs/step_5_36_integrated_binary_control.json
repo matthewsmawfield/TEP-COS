@@ -3,12 +3,12 @@
     "n_binary": 115,
     "n_isolated": 81,
     "binary_mean_logPdot": -19.28986947961344,
-    "isolated_mean_logPdot": -18.967248370015362,
+    "isolated_mean_logPdot": -18.96724701165866,
     "binary_std_logPdot": 0.7009449869681832,
-    "isolated_std_logPdot": 0.8716181226626007,
-    "diff_dex": -0.322621109598078,
-    "t_stat": -2.745703074429563,
-    "t_p": 0.006788483046667362,
+    "isolated_std_logPdot": 0.871618655154003,
+    "diff_dex": -0.3226224679547798,
+    "t_stat": -2.7457134810891994,
+    "t_p": 0.0067882787263095525,
     "mw_u": 3525.0,
     "mw_p": 0.003794433967346857,
     "binary_sign_dist": {
@@ -55,14 +55,14 @@
     }
   },
   "differential_test": {
-    "gc_binary_isolated_diff": -0.322621109598078,
-    "gc_diff_se": 0.11790018601891382,
+    "gc_binary_isolated_diff": -0.3226224679547798,
+    "gc_diff_se": 0.11790023895042633,
     "field_binary_isolated_diff": -0.04685960092623659,
     "field_diff_se": 0.12160738013206729,
-    "differential_signal": -0.2757615086718414,
-    "differential_se": 0.16937771035729463,
-    "z_score": -1.6280861755075975,
-    "p_value": 0.10350661445239928,
+    "differential_signal": -0.2757628670285432,
+    "differential_se": 0.1693777472017878,
+    "z_score": -1.6280938410404864,
+    "p_value": 0.1035049892958615,
     "interpretation": "INCONCLUSIVE"
   },
   "conclusion": {

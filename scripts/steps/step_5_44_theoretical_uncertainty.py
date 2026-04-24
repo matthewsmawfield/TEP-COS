@@ -61,7 +61,7 @@ def compute_theoretical_uncertainties():
         'confidence_level': '68% CL (1-sigma)',
         'derivation': {
             'statistical': 'From screening test fit to SN Ia data',
-            'systematic': 'Model dependence (Vainshtein vs. Chameleon screening)',
+            'systematic': 'Model dependence (canonical screening parameter variation)',
             'method': 'Quadrature combination'
         }
     }
@@ -174,8 +174,8 @@ def compute_theoretical_uncertainties():
         'upper_bound': float(offset_central + offset_total),
         'confidence_level': '68% CL (1-sigma)',
         'significance': {
-            'sigma': 5.6,  # From covariance-aware test
-            'p_value': 2.2e-8
+            'sigma': float(s35_data['covariance_aware_ttest']['t_statistic']),
+            'p_value': float(s35_data['covariance_aware_ttest']['p_value'])
         },
         'derivation': {
             'statistical': 'Covariance-aware t-test SE',
@@ -189,20 +189,43 @@ def compute_theoretical_uncertainties():
     # PARAMETER 4: Binary Isolation Offset
     # ============================================================================
     
+    # Load from upstream integrated binary control - REQUIRED
+    s36_path = Path('results/outputs/step_5_36_integrated_binary_control.json')
+    if not s36_path.exists():
+        print(f"ERROR: Required input file not found: {s36_path}")
+        print(f"Theoretical uncertainty requires binary control results from step_5_36.")
+        raise RuntimeError("Missing required input: step_5_36_integrated_binary_control.json")
+    
+    with open(s36_path, 'r') as f:
+        s36_data = json.load(f)
+    
+    binary_central = s36_data['gc_binary_analysis']['diff_dex']
+    binary_t_stat = s36_data['gc_binary_analysis']['t_stat']
+    binary_p_value = s36_data['gc_binary_analysis']['t_p']
+    
+    # Statistical uncertainty (from t-test)
+    binary_stat = abs(binary_central / binary_t_stat) if binary_t_stat != 0 else 0.12
+    
+    # Systematic uncertainty (model variation)
+    binary_sys = 0.08  # dex
+    
+    # Combined
+    binary_total = np.sqrt(binary_stat**2 + binary_sys**2)
+    
     binary_offset = {
         'parameter': 'Delta_binary_isolated',
         'description': 'Binary vs Isolated MSP offset in GCs',
         'unit': 'dex',
-        'central_value': -0.31,
-        'statistical_uncertainty': 0.12,
-        'systematic_uncertainty': 0.08,
-        'total_uncertainty': 0.14,
-        'lower_bound': -0.45,
-        'upper_bound': -0.17,
+        'central_value': float(binary_central),
+        'statistical_uncertainty': float(binary_stat),
+        'systematic_uncertainty': float(binary_sys),
+        'total_uncertainty': float(binary_total),
+        'lower_bound': float(binary_central - binary_total),
+        'upper_bound': float(binary_central + binary_total),
         'confidence_level': '68% CL',
         'significance': {
-            'sigma': 2.2,
-            'p_value': 0.007
+            'sigma': float(abs(binary_t_stat)),
+            'p_value': float(binary_p_value)
         },
         'interpretation': 'Negative = binaries have lower |Ṗ| (screening)'
     }

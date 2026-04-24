@@ -1,18 +1,18 @@
 {
   "meta": {
-    "timestamp_utc": "2026-03-30T18:30:07.431272+00:00",
+    "timestamp_utc": "2026-04-24T07:46:54.858195+00:00",
     "source": {
       "freire_gcpsr": {
-        "path": "/Users/matthewsmawfield/www/TEP-COS/results/outputs/freire_GCpsr.txt",
-        "sha256": "647ceabcd85221688ce4975cb270939186c3dd9667fdb80d99bd6623997f54c3"
+        "path": "/Users/matthewsmawfield/www/Temporal Equivalence Principle/TEP-COS/results/outputs/freire_GCpsr.txt",
+        "sha256": "5037c57b524019ea130b9a89b8c0a41246fbb087609c750e26c354b9aa97b679"
       }
     },
     "selection": {
       "msp_cut": "P < 30.0 ms"
     },
     "counts": {
-      "total_pulsars": 359,
-      "total_msps": 335,
+      "total_pulsars": 366,
+      "total_msps": 342,
       "binary_msps": 115,
       "isolated_msps": 81
     }
@@ -21,12 +21,12 @@
     "n_binary": 115,
     "n_isolated": 81,
     "binary_mean_logPdot": -19.28986947961344,
-    "isolated_mean_logPdot": -18.967248370015362,
+    "isolated_mean_logPdot": -18.96724701165866,
     "binary_std_logPdot": 0.7009449869681832,
-    "isolated_std_logPdot": 0.8716181226626007,
-    "diff_dex": -0.322621109598078,
-    "t_stat": -2.745703074429563,
-    "t_p": 0.006788483046667362,
+    "isolated_std_logPdot": 0.871618655154003,
+    "diff_dex": -0.3226224679547798,
+    "t_stat": -2.7457134810891994,
+    "t_p": 0.0067882787263095525,
     "mw_u": 3525.0,
     "mw_p": 0.003794433967346857,
     "binary_sign_dist": {
@@ -155,7 +155,7 @@
     },
     "M80 (NGC 6093)": {
       "n_binary": 1,
-      "n_isolated": 2,
+      "n_isolated": 5,
       "n_with_pdot": 1,
       "binary_with_pdot": 1,
       "isolated_with_pdot": 0
@@ -260,7 +260,7 @@
     },
     "NGC 6441": {
       "n_binary": 1,
-      "n_isolated": 6,
+      "n_isolated": 8,
       "n_with_pdot": 3,
       "binary_with_pdot": 1,
       "isolated_with_pdot": 2
@@ -302,7 +302,7 @@
     },
     "NGC 6624": {
       "n_binary": 2,
-      "n_isolated": 7,
+      "n_isolated": 9,
       "n_with_pdot": 2,
       "binary_with_pdot": 1,
       "isolated_with_pdot": 1

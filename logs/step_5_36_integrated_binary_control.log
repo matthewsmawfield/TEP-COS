@@ -1,48 +1,48 @@
-[21:30:08] [INFO] Loading binary analysis results...
-[21:30:08] [INFO] ======================================================================
-[21:30:08] [INFO] INTEGRATED BINARY CONTROL ANALYSIS
-[21:30:08] [INFO] ======================================================================
-[21:30:08] [INFO] 
-[21:30:08] [INFO] 1. GLOBULAR CLUSTER BINARIES (Step 5.11)
-[21:30:08] [INFO] ----------------------------------------------------------------------
-[21:30:08] [INFO] Binary MSPs: 115
-[21:30:08] [INFO] Isolated MSPs: 81
-[21:30:08] [INFO] Mean log|Ṗ| (Binary): -19.290
-[21:30:08] [INFO] Mean log|Ṗ| (Isolated): -18.967
-[21:30:08] [INFO] Difference (Binary - Isolated): -0.323 dex
-[21:30:08] [INFO] t-test p-value: 0.0068
-[21:30:08] [INFO] Significance: 0.5σ
-[21:30:08] [INFO] 
-[21:30:08] [INFO] NOTE: Binary inversion detected.
-[21:30:08] [INFO] Binary MSPs exhibit slower spin-down than isolated MSPs in GCs,
-[21:30:08] [INFO] which is inconsistent with standard dynamical predictions.
-[21:30:08] [INFO] 
-[21:30:08] [INFO] 2. FIELD BINARY CONTROL (Step 5.12)
-[21:30:08] [INFO] ----------------------------------------------------------------------
-[21:30:08] [INFO] Binary MSPs: 268
-[21:30:08] [INFO] Isolated MSPs: 66
-[21:30:08] [INFO] Mean log|Ṗ| (Binary): 0.171
-[21:30:08] [INFO] Mean log|Ṗ| (Isolated): 0.218
-[21:30:08] [INFO] Difference (Binary - Isolated): -0.047 dex
-[21:30:08] [INFO] t-test p-value: 0.700
-[21:30:08] [INFO] Result: NULL (consistent with zero)
-[21:30:08] [INFO] 
-[21:30:08] [INFO] 3. DIFFERENTIAL TEST: GC vs FIELD
-[21:30:08] [INFO] ----------------------------------------------------------------------
-[21:30:08] [INFO] GC Binary-Isolated Difference: -0.323 dex
-[21:30:08] [INFO] Field Binary-Isolated Difference: -0.047 dex
-[21:30:08] [INFO] Differential Signal: -0.276 dex
-[21:30:08] [INFO] Z-score: -1.63
-[21:30:08] [INFO] p-value: 0.1035
-[21:30:08] [INFO] 
-[21:30:08] [INFO] Interpretation: INCONCLUSIVE
-[21:30:08] [INFO] 
-[21:30:08] [INFO] Conclusion:
-[21:30:08] [INFO] The binary-inversion signal appears environmental rather than intrinsic:
-[21:30:08] [INFO] - GCs show significant binary-isolated difference (inverted)
-[21:30:08] [INFO] - Field shows no difference (p=0.70, null control)
-[21:30:08] [INFO] - This supports the TEP interpretation over population effects
-[21:30:08] [INFO] ======================================================================
-[21:30:08] [INFO] 
-[21:30:08] [INFO] Results saved to: results/outputs/step_5_36_integrated_binary_control.json
-[21:30:08] [INFO] ======================================================================
+[10:46:55] [INFO] Loading binary analysis results...
+[10:46:55] [INFO] ======================================================================
+[10:46:55] [INFO] INTEGRATED BINARY CONTROL ANALYSIS
+[10:46:55] [INFO] ======================================================================
+[10:46:55] [INFO] 
+[10:46:55] [INFO] 1. GLOBULAR CLUSTER BINARIES (Step 5.11)
+[10:46:55] [INFO] ----------------------------------------------------------------------
+[10:46:55] [INFO] Binary MSPs: 115
+[10:46:55] [INFO] Isolated MSPs: 81
+[10:46:55] [INFO] Mean log|Ṗ| (Binary): -19.290
+[10:46:55] [INFO] Mean log|Ṗ| (Isolated): -18.967
+[10:46:55] [INFO] Difference (Binary - Isolated): -0.323 dex
+[10:46:55] [INFO] t-test p-value: 0.0068
+[10:46:55] [INFO] Significance: 0.5σ
+[10:46:55] [INFO] 
+[10:46:55] [INFO] NOTE: Binary inversion detected.
+[10:46:55] [INFO] Binary MSPs exhibit slower spin-down than isolated MSPs in GCs,
+[10:46:55] [INFO] which is inconsistent with standard dynamical predictions.
+[10:46:55] [INFO] 
+[10:46:55] [INFO] 2. FIELD BINARY CONTROL (Step 5.12)
+[10:46:55] [INFO] ----------------------------------------------------------------------
+[10:46:55] [INFO] Binary MSPs: 268
+[10:46:55] [INFO] Isolated MSPs: 66
+[10:46:55] [INFO] Mean log|Ṗ| (Binary): 0.171
+[10:46:55] [INFO] Mean log|Ṗ| (Isolated): 0.218
+[10:46:55] [INFO] Difference (Binary - Isolated): -0.047 dex
+[10:46:55] [INFO] t-test p-value: 0.700
+[10:46:55] [INFO] Result: NULL (consistent with zero)
+[10:46:55] [INFO] 
+[10:46:55] [INFO] 3. DIFFERENTIAL TEST: GC vs FIELD
+[10:46:55] [INFO] ----------------------------------------------------------------------
+[10:46:55] [INFO] GC Binary-Isolated Difference: -0.323 dex
+[10:46:55] [INFO] Field Binary-Isolated Difference: -0.047 dex
+[10:46:55] [INFO] Differential Signal: -0.276 dex
+[10:46:55] [INFO] Z-score: -1.63
+[10:46:55] [INFO] p-value: 0.1035
+[10:46:55] [INFO] 
+[10:46:55] [INFO] Interpretation: INCONCLUSIVE
+[10:46:55] [INFO] 
+[10:46:55] [INFO] Conclusion:
+[10:46:55] [INFO] The binary-inversion signal appears environmental rather than intrinsic:
+[10:46:55] [INFO] - GCs show significant binary-isolated difference (inverted)
+[10:46:55] [INFO] - Field shows no difference (p=0.70, null control)
+[10:46:55] [INFO] - This supports the TEP interpretation over population effects
+[10:46:55] [INFO] ======================================================================
+[10:46:55] [INFO] 
+[10:46:55] [INFO] Results saved to: results/outputs/step_5_36_integrated_binary_control.json
+[10:46:55] [INFO] ======================================================================

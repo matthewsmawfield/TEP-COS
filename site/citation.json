@@ -11,8 +11,8 @@
   "issued": {
     "date-parts": [[2026, 1, 9]]
   },
-  "abstract": "Gravitational time dilation in General Relativity is confirmed to 10⁻⁵ precision in the Solar System. At intermediate astrophysical scales, however, persistent anomalies emerge. The Temporal Equivalence Principle (TEP) formalizes an alternative: that time dilation is scale-dependent. This work reports a 5.8σ–7.7σ dynamical anomaly in globular cluster pulsar timing that challenges standard density scaling (4.1σ tension). Analysis of 394 millisecond pulsars (196 GC, 198 field) reveals a 0.59 dex excess in spin-down magnitude—cluster pulsars spin down faster than field controls. The signal exhibits Suppressed Density Scaling (Slope 0.39 ± 0.08 vs Newtonian ~0.72), saturating in dense cores. Complementary analysis of gravitational lensing places upper limits on temporal shear (|Γ| ≲ 104 days/decade) consistent with TEP screening in halo-scale potentials.",
+  "abstract": "Gravitational time dilation in General Relativity is verified to 10⁻⁵ precision in the Solar System. At intermediate astrophysical scales, persistent anomalies emerge. The Temporal Equivalence Principle (TEP) formalizes an alternative: that time dilation is scale-dependent. Analysis of 394 millisecond pulsars (196 GC, 198 field) reveals a 0.59 dex raw excess in spin-down magnitude—cluster pulsars spin down faster than field controls. After controlling for population differences, a 0.61 dex residual persists (95% CI: 0.55–0.66 dex). The signal exhibits suppressed density scaling (slope Γ = 0.39 ± 0.08 vs Newtonian Γ = 0.72; 4.1σ rejection), saturating in dense cores. Leave-one-cluster-out validation confirms the result is stable (3.8% relative instability). The pulsar signal provides primary evidence for potential-dependent modifications to gravitational time flow.",
   "URL": "https://mlsmawfield.com/tep/cos/",
   "publisher": "Preprint",
-  "note": "Preprint, Version v0.4 (Caracas)"
+  "note": "Preprint, Version v0.5 (Caracas)"
 }

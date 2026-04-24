@@ -231,7 +231,7 @@ def _load_default_metadata(project_root: Path) -> Dict[str, str]:
     cff_text = _read_text(citation_cff) or ""
     cff = _parse_citation_cff(cff_text) if cff_text else {}
 
-    title = str(cff.get("title") or "The Temporal Equivalence Principle: Suppressed Density Scaling in Globular Cluster Pulsars")
+    title = str(cff.get("title") or "Temporal Equivalence Principle: Suppressed Density Scaling in Globular Cluster Pulsars")
     author = str(cff.get("author") or "")
     doi = str(cff.get("doi") or "")
     date_released = str(cff.get("date_released") or "")

@@ -1,10 +1,10 @@
 # Binary Pulsar Analysis (Freire GCpsr)
-**Source:** /Users/matthewsmawfield/www/TEP-COS/results/outputs/freire_GCpsr.txt
-**SHA256:** `647ceabcd8522168...`
+**Source:** /Users/matthewsmawfield/www/Temporal Equivalence Principle/TEP-COS/results/outputs/freire_GCpsr.txt
+**SHA256:** `5037c57b524019ea...`
 
 ## Sample Sizes
-- **Total GC pulsars parsed:** 359
-- **GC MSPs (P < 30 ms):** 335
+- **Total GC pulsars parsed:** 366
+- **GC MSPs (P < 30 ms):** 342
 - **Binary MSPs:** 115
 - **Isolated MSPs:** 81
 

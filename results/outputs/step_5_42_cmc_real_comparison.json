@@ -1,5 +1,5 @@
 {
-  "timestamp": "2026-03-30T21:31:42.188618",
+  "timestamp": "2026-04-24T10:48:37.615614",
   "method": "Real pulsar data vs synthetic N-body/CMC comparison",
   "clusters": [
     {
@@ -43,8 +43,8 @@
       "n_pulsars_real": 8,
       "log_rho_c": 5.0,
       "nbody_predicted_shift": 2.44,
-      "observed_shift_estimate": 0.9440883716913682,
-      "ratio": 0.3869214638079378,
+      "observed_shift_estimate": 0.944102121691369,
+      "ratio": 0.38692709905383976,
       "status": "UNCERTAIN",
       "note": "Ambiguous comparison",
       "cmc_available": true,
@@ -103,7 +103,7 @@
     "total_clusters": 8,
     "tep_consistent": 4,
     "newtonian_consistent": 0,
-    "average_ratio": 0.22944011668601977,
+    "average_ratio": 0.2294408210917575,
     "overall_status": "STRONG_TEP_SUPPORT"
   },
   "interpretation": {

@@ -6,168 +6,168 @@
   "rho_step": 0.05,
   "results_by_rho": [
     {
-      "mean_gc": -19.16567006122449,
+      "mean_gc": -19.1656695,
       "mean_field": -19.7581515,
-      "difference_dex": 0.5924814387755113,
-      "t_statistic": 7.734621295120923,
+      "difference_dex": 0.5924820000000004,
+      "t_statistic": 7.734626572658802,
       "p_value": 8.859579736508749e-14,
       "effective_df": 392.0,
       "effective_sample_size_gc": 196.0,
       "design_effect": 1.0,
       "rho_intra": 0.0,
-      "significance_sigma": 7.734621295120923
+      "significance_sigma": 7.734626572658802
     },
     {
-      "mean_gc": -19.16567006122449,
+      "mean_gc": -19.1656695,
       "mean_field": -19.7581515,
-      "difference_dex": 0.5924814387755113,
-      "t_statistic": 7.264438938846773,
+      "difference_dex": 0.5924820000000004,
+      "t_statistic": 7.264443703171525,
       "p_value": 2.4149571231646405e-12,
       "effective_df": 353.18104495747264,
       "effective_sample_size_gc": 157.18104495747264,
       "design_effect": 1.246969696969697,
       "rho_intra": 0.05,
-      "significance_sigma": 7.264438938846773
+      "significance_sigma": 7.264443703171525
     },
     {
-      "mean_gc": -19.16567006122449,
+      "mean_gc": -19.1656695,
       "mean_field": -19.7581515,
-      "difference_dex": 0.5924814387755113,
-      "t_statistic": 6.870745219919386,
-      "p_value": 3.232392131735651e-11,
+      "difference_dex": 0.5924820000000004,
+      "t_statistic": 6.870749582452787,
+      "p_value": 3.232303313893681e-11,
       "effective_df": 327.1967545638945,
       "effective_sample_size_gc": 131.19675456389453,
       "design_effect": 1.493939393939394,
       "rho_intra": 0.1,
-      "significance_sigma": 6.870745219919386
+      "significance_sigma": 6.870749582452787
     },
     {
-      "mean_gc": -19.16567006122449,
+      "mean_gc": -19.1656695,
       "mean_field": -19.7581515,
-      "difference_dex": 0.5924814387755113,
-      "t_statistic": 6.534823358245471,
-      "p_value": 2.629374495910497e-10,
+      "difference_dex": 0.5924820000000004,
+      "t_statistic": 6.534827396973096,
+      "p_value": 2.629312323421118e-10,
       "effective_df": 308.5848563968668,
       "effective_sample_size_gc": 112.58485639686685,
       "design_effect": 1.7409090909090907,
       "rho_intra": 0.15,
-      "significance_sigma": 6.534823358245471
+      "significance_sigma": 6.534827396973096
     },
     {
-      "mean_gc": -19.16567006122449,
+      "mean_gc": -19.1656695,
       "mean_field": -19.7581515,
-      "difference_dex": 0.5924814387755113,
-      "t_statistic": 6.2437988309360035,
-      "p_value": 1.4870749076578704e-09,
+      "difference_dex": 0.5924820000000004,
+      "t_statistic": 6.243802602599708,
+      "p_value": 1.4870431552793661e-09,
       "effective_df": 294.5975609756098,
       "effective_sample_size_gc": 98.59756097560977,
       "design_effect": 1.9878787878787878,
       "rho_intra": 0.2,
-      "significance_sigma": 6.2437988309360035
+      "significance_sigma": 6.243802602599708
     },
     {
-      "mean_gc": -19.16567006122449,
+      "mean_gc": -19.1656695,
       "mean_field": -19.7581515,
-      "difference_dex": 0.5924814387755113,
-      "t_statistic": 5.9884861281457145,
-      "p_value": 6.393666929227493e-09,
+      "difference_dex": 0.5924820000000004,
+      "t_statistic": 5.988489675347982,
+      "p_value": 6.3935432503825496e-09,
       "effective_df": 283.7016949152542,
       "effective_sample_size_gc": 87.70169491525424,
       "design_effect": 2.234848484848485,
       "rho_intra": 0.25,
-      "significance_sigma": 5.9884861281457145
+      "significance_sigma": 5.988489675347982
     },
     {
-      "mean_gc": -19.16567006122449,
+      "mean_gc": -19.1656695,
       "mean_field": -19.7581515,
-      "difference_dex": 0.5924814387755113,
-      "t_statistic": 5.7621322546354214,
-      "p_value": 2.223046946525642e-08,
+      "difference_dex": 0.5924820000000004,
+      "t_statistic": 5.762135610203511,
+      "p_value": 2.2230074891993468e-08,
       "effective_df": 274.974358974359,
       "effective_sample_size_gc": 78.97435897435899,
       "design_effect": 2.4818181818181815,
       "rho_intra": 0.3,
-      "significance_sigma": 5.7621322546354214
+      "significance_sigma": 5.762135610203511
     },
     {
-      "mean_gc": -19.16567006122449,
+      "mean_gc": -19.1656695,
       "mean_field": -19.7581515,
-      "difference_dex": 0.5924814387755113,
-      "t_statistic": 5.5596465991173005,
-      "p_value": 6.533544172349082e-08,
+      "difference_dex": 0.5924820000000004,
+      "t_statistic": 5.55964978890324,
+      "p_value": 6.533437146849508e-08,
       "effective_df": 267.82676290949473,
       "effective_sample_size_gc": 71.82676290949473,
       "design_effect": 2.7287878787878785,
       "rho_intra": 0.35,
-      "significance_sigma": 5.5596465991173005
+      "significance_sigma": 5.55964978890324
     },
     {
-      "mean_gc": -19.16567006122449,
+      "mean_gc": -19.1656695,
       "mean_field": -19.7581515,
-      "difference_dex": 0.5924814387755113,
-      "t_statistic": 5.377109269924759,
-      "p_value": 1.6768803567934754e-07,
+      "difference_dex": 0.5924820000000004,
+      "t_statistic": 5.377112314668399,
+      "p_value": 1.6768548327661392e-07,
       "effective_df": 261.8655804480652,
       "effective_sample_size_gc": 65.86558044806517,
       "design_effect": 2.9757575757575756,
       "rho_intra": 0.4,
-      "significance_sigma": 5.377109269924759
+      "significance_sigma": 5.377112314668399
     },
     {
-      "mean_gc": -19.16567006122449,
+      "mean_gc": -19.1656695,
       "mean_field": -19.7581515,
-      "difference_dex": 0.5924814387755113,
-      "t_statistic": 5.2114462243038275,
-      "p_value": 3.8519046641205534e-07,
+      "difference_dex": 0.5924820000000004,
+      "t_statistic": 5.211449140911472,
+      "p_value": 3.8518498990391947e-07,
       "effective_df": 256.81805359661496,
       "effective_sample_size_gc": 60.81805359661495,
       "design_effect": 3.2227272727272727,
       "rho_intra": 0.45,
-      "significance_sigma": 5.2114462243038275
+      "significance_sigma": 5.211449140911472
     },
     {
-      "mean_gc": -19.16567006122449,
+      "mean_gc": -19.1656695,
       "mean_field": -19.7581515,
-      "difference_dex": 0.5924814387755113,
-      "t_statistic": 5.060208196170505,
-      "p_value": 8.069982340153103e-07,
+      "difference_dex": 0.5924820000000004,
+      "t_statistic": 5.060210998616131,
+      "p_value": 8.069874675165067e-07,
       "effective_df": 252.48908296943233,
       "effective_sample_size_gc": 56.48908296943232,
       "design_effect": 3.4696969696969697,
       "rho_intra": 0.5,
-      "significance_sigma": 5.060208196170505
+      "significance_sigma": 5.060210998616131
     },
     {
-      "mean_gc": -19.16567006122449,
+      "mean_gc": -19.1656695,
       "mean_field": -19.7581515,
-      "difference_dex": 0.5924814387755113,
-      "t_statistic": 4.79345225589303,
-      "p_value": 2.842445512296621e-06,
+      "difference_dex": 0.5924820000000004,
+      "t_statistic": 4.793454863286331,
+      "p_value": 2.8424117248793124e-06,
       "effective_df": 245.44954128440367,
       "effective_sample_size_gc": 49.44954128440367,
       "design_effect": 3.9636363636363634,
       "rho_intra": 0.6,
-      "significance_sigma": 4.79345225589303
+      "significance_sigma": 4.793454863286331
     },
     {
-      "mean_gc": -19.16567006122449,
+      "mean_gc": -19.1656695,
       "mean_field": -19.7581515,
-      "difference_dex": 0.5924814387755113,
-      "t_statistic": 4.564874286956267,
-      "p_value": 7.986019592287619e-06,
+      "difference_dex": 0.5924820000000004,
+      "t_statistic": 4.564876733343804,
+      "p_value": 7.985933931697886e-06,
       "effective_df": 239.97008837525493,
       "effective_sample_size_gc": 43.97008837525493,
       "design_effect": 4.457575757575757,
       "rho_intra": 0.7,
-      "significance_sigma": 4.564874286956267
+      "significance_sigma": 4.564876733343804
     }
   ],
   "summary": {
-    "min_sigma": 4.564874286956267,
-    "max_p_value": 7.986019592287619e-06,
+    "min_sigma": 4.564876733343804,
+    "max_p_value": 7.985933931697886e-06,
     "all_significant": true,
     "robustness_assessment": "STRONG",
     "baseline_rho": 0.3,
-    "baseline_sigma": 5.7621322546354214
+    "baseline_sigma": 5.762135610203511
   }
 }

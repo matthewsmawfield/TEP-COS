@@ -1,7 +1,7 @@
 TEP-COS: Recent Changes Log
 ====================================================
-Date: 30 March 2026
-Version: v0.4 (Caracas)
+Date: 24 April 2026
+Version: v0.5 (Caracas)
 
 This document tracks corrections and improvements to the TEP-COS analysis
 pipeline and manuscript components.
@@ -148,21 +148,21 @@ CHANGES MADE:
   * 10_reproducibility.html: Added CMC steps to pipeline table and checklist
 
 DATA ANALYZED:
-- Nine CMC clusters: 47 Tuc, M13, M15, M28, M62, NGC 6397, NGC 6517, NGC 6752, Terzan 5
-- Total synthetic pulsars: 11,391,314
+- Thirteen CMC clusters: 47 Tuc, M13, M15, M28, M62, M3, M4, M5, Omega Cen, NGC 6397, NGC 6517, NGC 6752, Terzan 5
+- Total synthetic pulsars: 21,045,077 (21.0M)
 - Data volume: approximately 5.4 GB
 - Source: Kremer et al. 2020, ApJS, 247, 48
 
 RESULTS:
-- Raw Excess Test: CMC predicts 2.10 dex, observed 0.59 dex (15.1σ discrepancy)
-- Density Scaling Test: CMC predicts slope 0.72, observed 0.39 (2.9σ discrepancy)
-- Binary Behavior Test: CMC predicts binaries noisier (+0.25 dex), observed quieter (−0.32 dex)
+- Raw Excess Test: CMC predicts 1.54 dex, observed 0.61 dex (9.4σ model-data tension)
+- Density Scaling Test: CMC predicts slope 0.75, observed 0.39 (4.0σ discrepancy)
+- Binary Behavior Test: CMC predicts binaries noisier (−2.08 dex), observed quieter (−0.32 dex)
 - Verdict: Standard Newtonian dynamics is disfavored; TEP interpretation is not falsified
 
 PIPELINE INTEGRATION:
 - CMC download: ~8 minutes per cluster (600 MB each)
-- CMC analysis: ~16 seconds (parsing 11.4M pulsars)
-- Total pipeline runtime: ~95 seconds including CMC steps
+- CMC analysis: ~66 seconds (parsing 21.0M pulsars)
+- Total pipeline runtime: ~148 seconds including CMC steps
 - All 34 steps complete successfully
 
 DEEP AUDIT:
@@ -218,9 +218,9 @@ CHANGES MADE:
   * Added key result to reproducibility checklist
 
 KEY RESULTS:
-- Improbability factor: 6.3×10⁻⁸ (fine-tuning of 1 in 16 million required)
-- Bayes factor: ~10⁶⁰ (decisive evidence favoring TEP over exotic-GR)
-- Sensitivity sweep: Only 1/5 mechanisms can reach observed slope (with implausible parameters)
+- Improbability factor: 6.3×10⁻⁸ (fine-tuning of ~1 in 16 million required)
+- Bayes factor: ~10¹¹⁸ (decisive evidence for TEP)
+- Sensitivity sweep: 2/5 mechanisms excluded; remaining require implausible parameters
 - Multi-mechanism conspiracy: Requires 3 independent exotic mechanisms
 
 EXOTIC PHYSICS TESTS (Sensitivity Sweep):
@@ -263,7 +263,7 @@ RATIONALE:
 The exotic physics quantification addresses the primary epistemic limitation cited
 in review: that exotic GR-compatible mechanisms could theoretically explain the
 signal. By calculating the improbability factor (6.3×10⁻⁸) and Bayes factor
-(10⁶⁰), the degeneracy is bounded rather than left as an open loophole. This
+(~10¹¹⁸), the degeneracy is bounded rather than left as an open loophole. This
 moves the pulsar channel to the standard scientific status: "anomaly with
 bounded systematic uncertainty"—the same status held by other evidence for new
 physics pending independent replication.
@@ -414,9 +414,9 @@ DERIVATIONS ADDED:
 
 KEY RESULTS:
 - Derivation gap: Resolved with field equation derivation
-- Curvature dominance: Verified at 26.8 orders of magnitude
+- Curvature dominance: Companion field dominates cluster field at soliton boundary (χ_comp/χ_clust >> 1)
 - Period/mass correlations: Confounded by B-field burial (explained)
-- Quantitative discrepancy: Resolved (56% vs 55%)
+- Quantitative discrepancy: Resolved (50% predicted vs 55% observed)
 
 RATIONALE:
 The nested screening mechanism is the only explanation for why binary MSPs

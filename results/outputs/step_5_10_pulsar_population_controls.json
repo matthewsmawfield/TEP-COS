@@ -1,11 +1,11 @@
 {
   "meta": {
-    "timestamp_utc": "2026-03-30T18:29:51.061727+00:00",
+    "timestamp_utc": "2026-04-24T07:46:37.395203+00:00",
     "sources": {
       "freire_gcpsr": {
         "url": "https://www3.mpifr-bonn.mpg.de/staff/pfreire/GCpsr.txt",
-        "sha256": "647ceabcd85221688ce4975cb270939186c3dd9667fdb80d99bd6623997f54c3",
-        "bytes": 47081
+        "sha256": "5037c57b524019ea130b9a89b8c0a41246fbb087609c750e26c354b9aa97b679",
+        "bytes": 47972
       },
       "atnf_psrcat_pkg": {
         "url": "https://www.atnf.csiro.au/research/pulsar/psrcat/downloads/psrcat_pkg.tar.gz",
@@ -24,11 +24,11 @@
     }
   },
   "base_log10_abs_pdot": {
-    "gc_mean": -19.165670063058574,
+    "gc_mean": -19.165669501696875,
     "field_mean": -19.75815149669137,
-    "diff_dex": 0.5924814336327948,
-    "t_stat": 7.734621292982895,
-    "t_p": 8.986644899746344e-14,
+    "diff_dex": 0.5924819949944933,
+    "t_stat": 7.734626571812154,
+    "t_p": 8.986323248097665e-14,
     "mw_u": 28531.5,
     "mw_p": 6.730113086296262e-16,
     "gc_n": 196,
@@ -37,16 +37,16 @@
   "controls": {
     "period_matched": {
       "n_boot": 2000,
-      "diff_mean": 0.605832424887941,
-      "diff_ci16": 0.5514655579036538,
-      "diff_ci84": 0.6631635310313376,
+      "diff_mean": 0.6058329674440227,
+      "diff_ci16": 0.5514669725351369,
+      "diff_ci84": 0.6631650354806895,
       "p_two_sided": 0.0
     },
     "period_and_bproxy_matched": {
       "n_boot": 2000,
-      "diff_mean": 0.6037271689051414,
-      "diff_ci16": 0.5534616162165932,
-      "diff_ci84": 0.6549781621951845,
+      "diff_mean": 0.6037277114612232,
+      "diff_ci16": 0.5534620877604199,
+      "diff_ci84": 0.6549788133747546,
       "p_two_sided": 0.0
     }
   },
@@ -55,45 +55,45 @@
       "period_cut_ms": 10.0,
       "n_gc": 175,
       "n_field": 148,
-      "gc_mean_logpdot": -19.24762758968515,
+      "gc_mean_logpdot": -19.247626960960048,
       "field_mean_logpdot": -20.029317360790014,
-      "diff_dex": 0.7816897711048654,
-      "t_stat": 11.144012702144634,
-      "t_p": 1.999531875835039e-24,
+      "diff_dex": 0.7816903998299658,
+      "t_stat": 11.144016574451198,
+      "t_p": 1.9994745091862805e-24,
       "mw_p": 2.5862977490989155e-23,
-      "period_matched_diff": 0.7816669284552452,
-      "period_matched_ci16": 0.7214743717412216,
-      "period_matched_ci84": 0.8453133132335265,
+      "period_matched_diff": 0.7816675521887801,
+      "period_matched_ci16": 0.7214751151661735,
+      "period_matched_ci84": 0.845313670077504,
       "period_matched_p": 0.0
     },
     {
       "period_cut_ms": 30.0,
       "n_gc": 196,
       "n_field": 198,
-      "gc_mean_logpdot": -19.165670063058574,
+      "gc_mean_logpdot": -19.165669501696875,
       "field_mean_logpdot": -19.75815149669137,
-      "diff_dex": 0.5924814336327948,
-      "t_stat": 7.734621292982895,
-      "t_p": 8.986644899746344e-14,
+      "diff_dex": 0.5924819949944933,
+      "t_stat": 7.734626571812154,
+      "t_p": 8.986323248097665e-14,
       "mw_p": 6.730113086296262e-16,
-      "period_matched_diff": 0.605832424887941,
-      "period_matched_ci16": 0.5514655579036538,
-      "period_matched_ci84": 0.6631635310313376,
+      "period_matched_diff": 0.6058329674440227,
+      "period_matched_ci16": 0.5514669725351369,
+      "period_matched_ci84": 0.6631650354806895,
       "period_matched_p": 0.0
     },
     {
       "period_cut_ms": 50.0,
       "n_gc": 198,
       "n_field": 224,
-      "gc_mean_logpdot": -19.15368697006879,
+      "gc_mean_logpdot": -19.153686414377415,
       "field_mean_logpdot": -19.62463552013447,
-      "diff_dex": 0.47094855006567826,
-      "t_stat": 5.909187384484551,
-      "t_p": 7.13581833383932e-09,
+      "diff_dex": 0.47094910575705384,
+      "t_stat": 5.909192971050951,
+      "t_p": 7.135595332103227e-09,
       "mw_p": 1.4181512471773816e-11,
-      "period_matched_diff": 0.6060148571410737,
-      "period_matched_ci16": 0.5501978635958966,
-      "period_matched_ci84": 0.6623760828538572,
+      "period_matched_diff": 0.60601540783123,
+      "period_matched_ci16": 0.5501997307189275,
+      "period_matched_ci84": 0.6623772831472355,
       "period_matched_p": 0.0
     }
   ]

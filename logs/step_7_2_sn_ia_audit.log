@@ -1,150 +1,45 @@
-[21:31:52] [INFO] ======================================================================
-[21:31:52] [INFO] TEP-COS STEP 7.2: SN Ia σ-mB DEEP AUDIT
-[21:31:52] [INFO] ======================================================================
-[21:31:52] [INFO] 
-[21:31:52] [INFO] 1. DATA LOADING AND INTEGRITY
-[21:31:52] [INFO] ----------------------------------------------------------------------
-[21:31:52] [INFO] Pantheon+ loaded: 1470 SNe (z > 0.01)
-[21:31:52] [INFO]   Columns: 47
-[21:31:52] [INFO] All required columns present
-[21:31:52] [INFO]   NaN counts: mB=0, zCMB=0
-[21:31:52] [INFO] 
-[21:31:52] [INFO] SpecObj loaded: 242 SNe with σ > 0
-[21:31:52] [INFO]   Columns: ['CID', 'sn_ra', 'sn_dec', 'sn_z', 'x1', 'HOST_LOGMASS', 'sigma_host', 'sigma_err', 'sdss_z', 'sdss_ra', 'sdss_dec', 'match_sep_arcsec', 'plate', 'mjd', 'fiberID', 'sigma_source']
-[21:31:52] [INFO] No duplicate CIDs
-[21:31:52] [INFO] 
-[21:31:52] [INFO] 2. MERGE VERIFICATION
-[21:31:52] [INFO] ----------------------------------------------------------------------
-[21:31:52] [INFO] Merge successful: 238 SNe
-[21:31:52] [INFO]   Pantheon+ SNe without σ: 1232
-[21:31:52] [INFO] Valid sample (with mB): 238 SNe
-[21:31:52] [INFO]   Excluded 20 measurements (σ > 400, σ < 30, or invalid errors)
-[21:31:52] [INFO] Final audit sample: 218 SNe
-[21:31:52] [INFO] 
-[21:31:52] [INFO] 3. SAMPLE CHARACTERISTICS
-[21:31:52] [INFO] ----------------------------------------------------------------------
-[21:31:52] [INFO] Velocity dispersion (σ):
-[21:31:52] [INFO]   Min: 32.4 km/s
-[21:31:52] [INFO]   Max: 349.4 km/s
-[21:31:52] [INFO]   Mean: 121.7 km/s
-[21:31:52] [INFO]   Median: 112.5 km/s
-[21:31:52] [INFO]   Std: 61.2 km/s
-[21:31:52] [INFO] 
-[21:31:52] [INFO] Peak magnitude (mB):
-[21:31:52] [INFO]   Min: 14.53 mag
-[21:31:52] [INFO]   Max: 22.27 mag
-[21:31:52] [INFO]   Mean: 19.51 mag
-[21:31:52] [INFO]   Median: 20.06 mag
-[21:31:52] [INFO] 
-[21:31:52] [INFO] Redshift (zCMB):
-[21:31:52] [INFO]   Min: 0.014
-[21:31:52] [INFO]   Max: 0.299
-[21:31:52] [INFO]   Mean: 0.156
-[21:31:52] [INFO] 
-[21:31:52] [INFO] 4. DISTRIBUTION CHECKS
-[21:31:52] [INFO] ----------------------------------------------------------------------
-[21:31:52] [INFO] Log(σ) normality (Shapiro-Wilk): p = 0.0054
-[21:31:52] [INFO] mB normality (Shapiro-Wilk): p = 0.0000
-[21:31:52] [INFO] 
-[21:31:52] [INFO] σ distribution shape:
-[21:31:52] [INFO]   Skewness: 0.939
-[21:31:52] [INFO]   Kurtosis: 1.052
-[21:31:52] [INFO] 
-[21:31:52] [INFO] 5. MATHEMATICAL CORRECTNESS
-[21:31:52] [INFO] ----------------------------------------------------------------------
-[21:31:52] [INFO] Pearson correlation (parametric):
-[21:31:52] [INFO]   r = 0.217801
-[21:31:52] [INFO]   p = 1.211108e-03
-[21:31:52] [INFO]   Significance = 3.2363σ
-[21:31:52] [INFO]   P-value (verified): 1.211108e-03
-[21:31:52] [INFO]   P-values match: True
-[21:31:52] [INFO] 
-[21:31:52] [INFO] Spearman correlation (non-parametric, robust to non-normality):
-[21:31:52] [INFO]   ρ = 0.254063
-[21:31:52] [INFO]   p = 1.494125e-04
-[21:31:52] [INFO] 
-[21:31:52] [INFO] Winsorized correlation (5% outlier-robust):
-[21:31:52] [INFO]   r = 0.239026
-[21:31:52] [INFO]   p = 3.699638e-04
-[21:31:52] [INFO] 
-[21:31:52] [INFO] Method consistency check:
-[21:31:52] [INFO]   Pearson vs Spearman: 0.0363 (should be < 0.1)
-[21:31:52] [INFO]   Pearson vs Winsorized: 0.0212 (should be < 0.1)
-[21:31:52] [INFO] 
-[21:31:52] [INFO] Linear regression:
-[21:31:52] [INFO]   Slope: 1.690051
-[21:31:52] [INFO]   Intercept: 16.084139
-[21:31:52] [INFO]   R²: 0.047437
-[21:31:52] [INFO]   Std err: 0.515299
-[21:31:52] [INFO]   Slope p-value: 1.211108e-03
-[21:31:52] [INFO] 
-[21:31:52] [INFO] 6. BINNED ANALYSIS
-[21:31:52] [INFO] ----------------------------------------------------------------------
-[21:31:52] [INFO] Q1: σ=53.6 km/s, mB=18.888±0.269, n=55
-[21:31:52] [INFO] Q2: σ=95.5 km/s, mB=19.560±0.184, n=54
-[21:31:52] [INFO] Q3: σ=132.8 km/s, mB=19.631±0.232, n=54
-[21:31:52] [INFO] Q4: σ=204.7 km/s, mB=19.979±0.245, n=55
-[21:31:52] [INFO] 
-[21:31:52] [INFO] Q1 vs Q4 comparison:
-[21:31:52] [INFO]   t-statistic = -2.9991
-[21:31:52] [INFO]   p-value = 0.003362
-[21:31:52] [INFO]   Cohen's d = -0.5719
-[21:31:52] [INFO] 
-[21:31:52] [INFO] Monotonic trend (mB increases with σ): True
-[21:31:52] [INFO] 
-[21:31:52] [INFO] 7. OUTLIER DETECTION
-[21:31:52] [INFO] ----------------------------------------------------------------------
-[21:31:52] [INFO] Outliers (|z| > 3):
-[21:31:52] [INFO]   σ outliers: 3
-[21:31:52] [INFO]   mB outliers: 0
-[21:31:52] [INFO]   Expected (normal approx): ~1
-[21:31:52] [INFO]   High-σ outliers: ['17552', '1999dk', '5549']
-[21:31:52] [INFO]   Note: Outlier count consistent with Gaussian expectation
-[21:31:52] [INFO]   σ outliers (IQR method): 3
-[21:31:52] [INFO] 
-[21:31:52] [INFO] 8. RESIDUAL ANALYSIS
-[21:31:52] [INFO] ----------------------------------------------------------------------
-[21:31:52] [INFO] Residual statistics:
-[21:31:52] [INFO]   Mean: 0.000000 (should be ~0)
-[21:31:52] [INFO]   Std: 1.7256
-[21:31:52] [INFO]   Min: -5.7726
-[21:31:52] [INFO]   Max: 2.6862
-[21:31:52] [INFO] 
-[21:31:52] [INFO] Residual variance by σ quartile: ['3.9474', '1.8167', '2.8760', '3.3832']
-[21:31:52] [INFO] Max/Min variance ratio: 2.17
-[21:31:52] [INFO] 
-[21:31:52] [INFO] 9. VERDICT VALIDATION
-[21:31:52] [INFO] ----------------------------------------------------------------------
-[21:31:52] [INFO] JSON reported:
-[21:31:52] [INFO]   Sample: 218
-[21:31:52] [INFO]   r: 0.217801
-[21:31:52] [INFO]   p: 1.211108e-03
-[21:31:52] [INFO]   Significance: 3.2363σ
-[21:31:52] [INFO]   Verdict: tep_consistent
-[21:31:52] [INFO] 
-[21:31:52] [INFO] Calculated:
-[21:31:52] [INFO]   Sample: 218
-[21:31:52] [INFO]   r: 0.217801
-[21:31:52] [INFO]   p: 1.211108e-03
-[21:31:52] [INFO]   Significance: 3.2363σ
-[21:31:52] [INFO]   Step 7.0 verdict: tep_consistent
-[21:31:52] [INFO]   Audit category: tep_consistent
-[21:31:52] [INFO] 
-[21:31:52] [INFO] Validation:
-[21:31:52] [INFO]   Sample size match: True
-[21:31:52] [INFO]   r match: True
-[21:31:52] [INFO]   p match: True
-[21:31:52] [INFO]   Verdict match: True
-[21:31:52] [INFO] 
-[21:31:52] [INFO] ======================================================================
-[21:31:52] [INFO] AUDIT COMPLETE
-[21:31:52] [INFO] ======================================================================
-[21:31:52] [INFO] NO CRITICAL ISSUES FOUND
-[21:31:52] [INFO] 
-[21:31:52] [INFO] WARNING: 1 WARNINGS:
-[21:31:52] [INFO]   1. Both Log(σ) and mB distributions are non-normal - using non-parametric methods
-[21:31:52] [INFO] 
-[21:31:52] [INFO] Overall Status: PASS
-[21:31:52] [INFO] 
-[21:31:52] [INFO] Audit report saved to: results/outputs/deep_audit_report.json
-[21:31:52] [INFO] ======================================================================
+[10:48:48] [INFO] ======================================================================
+[10:48:48] [INFO] TEP-COS STEP 7.2: SN Ia DEEP AUDIT
+[10:48:48] [INFO] ======================================================================
+[10:48:48] [INFO] 
+[10:48:48] [INFO] 1. DATA COMPLETENESS AUDIT
+[10:48:48] [INFO] ----------------------------------------------------------------------
+[10:48:48] [INFO] ✓ Pantheon+ data loaded: 1470 SNe Ia (z > 0.01)
+[10:48:48] [INFO] ✓ All required columns present
+[10:48:48] [INFO] 
+[10:48:48] [INFO] 2. CROSS-VALIDATION WITH PREVIOUS RESULTS
+[10:48:48] [INFO] ----------------------------------------------------------------------
+[10:48:48] [INFO] ✓ Step 7.0 results loaded: r = 0.2178
+[10:48:48] [INFO] ✓ Step 7.1 results loaded: overall_robust = False
+[10:48:48] [INFO] 
+[10:48:48] [INFO] 3. DATA QUALITY METRICS
+[10:48:48] [INFO] ----------------------------------------------------------------------
+[10:48:48] [INFO]    mB: 1470/1470 (100.0%)
+[10:48:48] [INFO]    HOST_LOGMASS: 1470/1470 (100.0%)
+[10:48:48] [INFO]    MU_SH0ES: 1470/1470 (100.0%)
+[10:48:48] [INFO] 
+[10:48:48] [INFO] 4. REDSHIFT COVERAGE ANALYSIS
+[10:48:48] [INFO] ----------------------------------------------------------------------
+[10:48:48] [INFO]    z = 0.01-0.1: 510 SNe
+[10:48:48] [INFO]    z = 0.1-0.5: 750 SNe
+[10:48:48] [INFO]    z = 0.5-1.0: 185 SNe
+[10:48:48] [INFO]    z = 1.0-2.0: 24 SNe
+[10:48:48] [INFO] 
+[10:48:48] [INFO] 5. SYSTEMATIC BIAS DETECTION
+[10:48:48] [INFO] ----------------------------------------------------------------------
+[10:48:48] [INFO]    Hubble residual outliers (|z| > 3): 0
+[10:48:48] [INFO] 
+[10:48:48] [INFO] 6. CROSS-VALIDATION SUMMARY
+[10:48:48] [INFO] ----------------------------------------------------------------------
+[10:48:48] [INFO] 
+[10:48:48] [INFO] ======================================================================
+[10:48:48] [INFO] AUDIT COMPLETE
+[10:48:48] [INFO] ======================================================================
+[10:48:48] [INFO] 
+[10:48:48] [INFO] ✓ No quality flags raised
+[10:48:48] [INFO] 
+[10:48:48] [INFO] ======================================================================
+[10:48:48] [INFO] OVERALL: PASS
+[10:48:48] [INFO] ======================================================================
+[10:48:48] [INFO] 
+[10:48:48] [INFO] Results saved to: results/outputs/sn_ia_audit.json

@@ -3,8 +3,8 @@
     "rho_c_g_cm3": 20.0,
     "M_pulsar": 1.4
   },
-  "pulsar_screening": {
-    "radius_km": 321524.99336885056
+  "pulsar_topology": {
+    "saturation_radius_km": 321524.99336885056
   },
   "typical_binary": {
     "period_days": 1.0,

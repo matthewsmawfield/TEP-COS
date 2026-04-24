@@ -1,6 +1,6 @@
 # Pulsar Population Controls (Freire + ATNF)
 **Freire GCpsr URL:** https://www3.mpifr-bonn.mpg.de/staff/pfreire/GCpsr.txt\
-**Freire SHA256:** `647ceabcd85221688ce4975cb270939186c3dd9667fdb80d99bd6623997f54c3`\
+**Freire SHA256:** `5037c57b524019ea130b9a89b8c0a41246fbb087609c750e26c354b9aa97b679`\
 **ATNF psrcat_pkg URL:** https://www.atnf.csiro.au/research/pulsar/psrcat/downloads/psrcat_pkg.tar.gz\
 **ATNF SHA256:** `c4330ee179cbec1e65c2d6e82c4890da107cd0f403ea488746a8a188220382f3`\
 

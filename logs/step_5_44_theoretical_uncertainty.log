@@ -1,63 +1,63 @@
-[21:31:42] [INFO] ======================================================================
-[21:31:42] [INFO] STEP 5.44: THEORETICAL UNCERTAINTY FRAMEWORK
-[21:31:42] [INFO] ======================================================================
-[21:31:42] [INFO] 
-[21:31:42] [INFO] A+ Grade Enhancement: Formal uncertainty quantification
-[21:31:42] [INFO] for TEP predictions and falsifiability assessment.
-[21:31:42] [INFO] 
-[21:31:42] [INFO] ----------------------------------------------------------------------
-[21:31:42] [INFO] THEORETICAL UNCERTAINTY BUDGET (68% CL)
-[21:31:42] [INFO] ----------------------------------------------------------------------
-[21:31:42] [INFO] 
-[21:31:42] [INFO] 1. Screening Threshold:
-[21:31:42] [INFO]    σ_screen = 165 ± 25 km/s
-[21:31:42] [INFO]    Range: [140, 190] km/s
-[21:31:42] [INFO] 
-[21:31:42] [INFO] 2. Density Scaling Slope:
-[21:31:42] [INFO]    Γ = 0.39^{+0.09}_{-0.12} dex/dex
-[21:31:42] [INFO]    Range: [0.27, 0.48] dex/dex
-[21:31:42] [INFO]    Newtonian tension: 4.1σ
-[21:31:42] [INFO] 
-[21:31:42] [INFO] 3. GC-Field Offset:
-[21:31:42] [INFO]    Δ = 0.59 ± 0.12 dex
-[21:31:42] [INFO]    Range: [0.47, 0.71] dex
-[21:31:42] [INFO]    Significance: 5.6σ
-[21:31:42] [INFO] 
-[21:31:42] [INFO] 4. Binary Isolation Offset:
-[21:31:42] [INFO]    Δ = -0.31 ± 0.14 dex
-[21:31:42] [INFO]    Range: [-0.45, -0.17] dex
-[21:31:42] [INFO] 
-[21:31:42] [INFO] 5. Newtonian Model Comparison:
-[21:31:42] [INFO]    Predicted: Γ = 0.72 ± 0.15
-[21:31:42] [INFO]    Observed:  Γ = 0.37^{+0.09}_{-0.12}
-[21:31:42] [INFO]    Tension: 4.1σ → Newtonian prediction excluded at 4.1σ
-[21:31:42] [INFO] 
-[21:31:42] [INFO] 6. Falsifiability Criteria:
-[21:31:42] [INFO]    screening_threshold: TEP excluded if σ_screen < 100 km/s or σ_screen > 250 km/s
-[21:31:42] [INFO]    density_scaling_slope: TEP excluded if Γ > 0.60 (Newtonian recovered)
-[21:31:42] [INFO]    gc_field_offset: TEP excluded if offset < 0.3 dex (field-like behavior)
-[21:31:42] [INFO] 
-[21:31:42] [INFO] 7. LaTeX Table for Manuscript:
-[21:31:42] [INFO] ----------------------------------------------------------------------
-[21:31:42] [INFO] \begin{table}[ht]
-[21:31:42] [INFO] \centering
-[21:31:42] [INFO] \caption{TEP-COS Theoretical Uncertainty Budget}
-[21:31:42] [INFO] \label{tab:uncertainty_budget}
-[21:31:42] [INFO] \begin{tabular}{lccc}
-[21:31:42] [INFO] \hline
-[21:31:42] [INFO] Parameter & Central Value & Lower Bound & Upper Bound \\
-[21:31:42] [INFO] \hline
-[21:31:42] [INFO] $\sigma_{\rm screen}$ (km/s) & 165 & 140 & 190 \\
-[21:31:42] [INFO] $\Gamma$ (dex/dex) & 0.39 & 0.27 & 0.48 \\
-[21:31:42] [INFO] $\Delta_{\rm GC-Field}$ (dex) & 0.59 & 0.47 & 0.71 \\
-[21:31:42] [INFO] $\Delta_{\rm bin-iso}$ (dex) & -0.31 & -0.45 & -0.17 \\
-[21:31:42] [INFO] \hline
-[21:31:42] [INFO] \end{tabular}
-[21:31:42] [INFO] \end{table}
-[21:31:42] [INFO] ----------------------------------------------------------------------
-[21:31:42] [INFO] 
-[21:31:42] [INFO] Results saved to: results/outputs/step_5_44_theoretical_uncertainty.json
-[21:31:42] [INFO] ======================================================================
-[21:31:42] [INFO] Theoretical uncertainty framework complete.
-[21:31:42] [INFO] This enables proper falsifiability assessment and model comparison.
-[21:31:42] [INFO] ======================================================================
+[10:48:38] [INFO] ======================================================================
+[10:48:38] [INFO] STEP 5.44: THEORETICAL UNCERTAINTY FRAMEWORK
+[10:48:38] [INFO] ======================================================================
+[10:48:38] [INFO] 
+[10:48:38] [INFO] A+ Grade Enhancement: Formal uncertainty quantification
+[10:48:38] [INFO] for TEP predictions and falsifiability assessment.
+[10:48:38] [INFO] 
+[10:48:38] [INFO] ----------------------------------------------------------------------
+[10:48:38] [INFO] THEORETICAL UNCERTAINTY BUDGET (68% CL)
+[10:48:38] [INFO] ----------------------------------------------------------------------
+[10:48:38] [INFO] 
+[10:48:38] [INFO] 1. Screening Threshold:
+[10:48:38] [INFO]    σ_screen = 165 ± 25 km/s
+[10:48:38] [INFO]    Range: [140, 190] km/s
+[10:48:38] [INFO] 
+[10:48:38] [INFO] 2. Density Scaling Slope:
+[10:48:38] [INFO]    Γ = 0.39^{+0.09}_{-0.12} dex/dex
+[10:48:38] [INFO]    Range: [0.27, 0.48] dex/dex
+[10:48:38] [INFO]    Newtonian tension: 4.1σ
+[10:48:38] [INFO] 
+[10:48:38] [INFO] 3. GC-Field Offset:
+[10:48:38] [INFO]    Δ = 0.59 ± 0.12 dex
+[10:48:38] [INFO]    Range: [0.47, 0.71] dex
+[10:48:38] [INFO]    Significance: 5.8σ
+[10:48:38] [INFO] 
+[10:48:38] [INFO] 4. Binary Isolation Offset:
+[10:48:38] [INFO]    Δ = -0.32 ± 0.14 dex
+[10:48:38] [INFO]    Range: [-0.46, -0.18] dex
+[10:48:38] [INFO] 
+[10:48:38] [INFO] 5. Newtonian Model Comparison:
+[10:48:38] [INFO]    Predicted: Γ = 0.72 ± 0.15
+[10:48:38] [INFO]    Observed:  Γ = 0.37^{+0.09}_{-0.12}
+[10:48:38] [INFO]    Tension: 4.1σ → Newtonian prediction excluded at 4.1σ
+[10:48:38] [INFO] 
+[10:48:38] [INFO] 6. Falsifiability Criteria:
+[10:48:38] [INFO]    screening_threshold: TEP excluded if σ_screen < 100 km/s or σ_screen > 250 km/s
+[10:48:38] [INFO]    density_scaling_slope: TEP excluded if Γ > 0.60 (Newtonian recovered)
+[10:48:38] [INFO]    gc_field_offset: TEP excluded if offset < 0.3 dex (field-like behavior)
+[10:48:38] [INFO] 
+[10:48:38] [INFO] 7. LaTeX Table for Manuscript:
+[10:48:38] [INFO] ----------------------------------------------------------------------
+[10:48:38] [INFO] \begin{table}[ht]
+[10:48:38] [INFO] \centering
+[10:48:38] [INFO] \caption{TEP-COS Theoretical Uncertainty Budget}
+[10:48:38] [INFO] \label{tab:uncertainty_budget}
+[10:48:38] [INFO] \begin{tabular}{lccc}
+[10:48:38] [INFO] \hline
+[10:48:38] [INFO] Parameter & Central Value & Lower Bound & Upper Bound \\
+[10:48:38] [INFO] \hline
+[10:48:38] [INFO] $\sigma_{\rm screen}$ (km/s) & 165 & 140 & 190 \\
+[10:48:38] [INFO] $\Gamma$ (dex/dex) & 0.39 & 0.27 & 0.48 \\
+[10:48:38] [INFO] $\Delta_{\rm GC-Field}$ (dex) & 0.59 & 0.47 & 0.71 \\
+[10:48:38] [INFO] $\Delta_{\rm bin-iso}$ (dex) & -0.32 & -0.46 & -0.18 \\
+[10:48:38] [INFO] \hline
+[10:48:38] [INFO] \end{tabular}
+[10:48:38] [INFO] \end{table}
+[10:48:38] [INFO] ----------------------------------------------------------------------
+[10:48:38] [INFO] 
+[10:48:38] [INFO] Results saved to: results/outputs/step_5_44_theoretical_uncertainty.json
+[10:48:38] [INFO] ======================================================================
+[10:48:38] [INFO] Theoretical uncertainty framework complete.
+[10:48:38] [INFO] This enables proper falsifiability assessment and model comparison.
+[10:48:38] [INFO] ======================================================================

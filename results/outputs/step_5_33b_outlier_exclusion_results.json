@@ -1,13 +1,13 @@
 {
   "full_sample": {
-    "slope": 0.39250366378738116,
-    "slope_err": 0.07903279260970068,
-    "slope_p": 6.822854083489291e-07,
+    "slope": 0.3925040943834753,
+    "slope_err": 0.07903293743319778,
+    "slope_p": 6.822982514068999e-07,
     "n_clusters": 29,
     "n_pulsars": 184,
-    "newtonian_z": 4.143803165730741,
-    "newtonian_p": 3.4159297045421866e-05,
-    "significance_sigma": 4.143803165730741
+    "newtonian_z": 4.143790124128172,
+    "newtonian_p": 3.416124072552762e-05,
+    "significance_sigma": 4.143790124128172
   },
   "exclusion_tests": [
     {
@@ -16,11 +16,11 @@
         "NGC 6517"
       ],
       "status": "success",
-      "slope": 0.403526589230877,
-      "slope_err": 0.08892575326542458,
-      "significance_sigma": 3.55884992983435,
-      "slope_change": 0.011022925443495812,
-      "sigma_change": -0.5849532358963914,
+      "slope": 0.40352715848079407,
+      "slope_err": 0.08892588192481862,
+      "significance_sigma": 3.5588383794356324,
+      "slope_change": 0.011023064097318791,
+      "sigma_change": -0.5849517446925394,
       "n_clusters_remaining": 28,
       "n_pulsars_remaining": 171
     },
@@ -31,11 +31,11 @@
         "NGC 6397"
       ],
       "status": "success",
-      "slope": 0.435865194345513,
-      "slope_err": 0.08855938524424387,
-      "significance_sigma": 3.208409869500026,
-      "slope_change": 0.043361530558131856,
-      "sigma_change": -0.9353932962307154,
+      "slope": 0.4358658743940811,
+      "slope_err": 0.08855950773570452,
+      "significance_sigma": 3.2083977527730156,
+      "slope_change": 0.04336178001060581,
+      "sigma_change": -0.9353923713551562,
       "n_clusters_remaining": 27,
       "n_pulsars_remaining": 169
     },
@@ -47,18 +47,18 @@
         "NGC 6624"
       ],
       "status": "success",
-      "slope": 0.4331938158812218,
-      "slope_err": 0.09318681182646228,
-      "significance_sigma": 3.0777550867700545,
-      "slope_change": 0.04069015209384064,
-      "sigma_change": -1.0660480789606868,
+      "slope": 0.4331945643344806,
+      "slope_err": 0.09318693725281765,
+      "significance_sigma": 3.0777429124793705,
+      "slope_change": 0.04069046995100534,
+      "sigma_change": -1.0660472116488013,
       "n_clusters_remaining": 26,
       "n_pulsars_remaining": 167
     }
   ],
   "interpretation": {
-    "full_sample_slope": 0.39250366378738116,
-    "full_sample_sigma": 4.143803165730741,
+    "full_sample_slope": 0.3925040943834753,
+    "full_sample_sigma": 4.143790124128172,
     "robustness_conclusion": "The suppressed density scaling conclusion is ROBUST to exclusion of the top 3 densest clusters. Even after removing NGC 6517, NGC 6397, NGC 6624, the slope remains suppressed (0.43 vs Newtonian 0.72) with >3\u03c3 significance.",
     "reviewer_response": "Addressing the concern that Terzan 5 and other dense clusters drive the fit: We explicitly tested the mixed-effects model after sequentially removing the top 1, 2, and 3 densest clusters (NGC 6517, NGC 6397, NGC 6624). The suppressed scaling (slope < 0.72) persists in all cases, with significance remaining above 3\u03c3. This confirms the result is not an artifact of outlier influence."
   }

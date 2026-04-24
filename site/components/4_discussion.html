@@ -72,7 +72,7 @@
     The universal critical density ρ<sub>c</sub> ≈ 20 g/cm³, independently calibrated from 
     terrestrial clock correlations, defines the screening threshold 
     across all scales. Since ρ<sub>c</sub> far exceeds astrophysical densities, essentially all 
-    extended gravitational systems are in the unscreened regime:
+    extended gravitational systems are in the weak screening regime:
 </p>
 
 <table class="data-table">
@@ -89,22 +89,22 @@
         <tr>
             <td>Earth (GNSS)</td>
             <td>~5–13 g/cm³</td>
-            <td>Partial (ρ ~ ρ<sub>c</sub>)</td>
+            <td>Partial/Transition (ρ ~ ρ<sub>c</sub>)</td>
             <td>Correlation length L<sub>c</sub></td>
             <td>L<sub>c</sub> ≈ 4,200 km</td>
         </tr>
         <tr>
             <td>Globular Cluster</td>
             <td>~10<sup>−18</sup> g/cm³</td>
-            <td>Unscreened ($\rho \ll \rho_c$)</td>
-            <td>Saturated residual</td>
-            <td>0.606 dex controlled residual</td>
+            <td>Weak screening ($\rho \ll \rho_c$)</td>
+            <td>Topologically flattened residual</td>
+            <td>+0.606 dex (this work)</td>
         </tr>
         <tr>
             <td>Galaxy Halo</td>
             <td>~10<sup>−24</sup> g/cm³</td>
-            <td>Unscreened ($\rho \ll \rho_c$)</td>
-            <td>Expected screening saturation</td>
+            <td>Weak screening ($\rho \ll \rho_c$)</td>
+            <td>Active gradient coherence</td>
             <td>External constraints (beyond scope)</td>
         </tr>
     </tbody>
@@ -112,7 +112,7 @@
 
 <p>
     The key test is not whether ρ<sub>c</sub> predicts specific length scales, but whether the 
-    <em>saturation behavior</em> is observed: in unscreened systems, TEP effects should not scale 
+    <em>topological flattening</em> is observed: in weakly screened systems, TEP effects should not scale 
     indefinitely with density. The pulsar channel confirms this with a 4.1σ rejection of $\rho^2$ scaling, 
     showing 0.606 dex higher |Ṗ| than field pulsars. Leave-one-cluster-out validation confirms this result is robust.
 </p>
@@ -122,8 +122,8 @@
 <p>
     The suppressed density scaling result (Section 3.4–3.17) provides evidence 
     against standard dynamical contamination. The observed slope (0.393 ± 0.079) is significantly flatter than 
-    the CMC Newtonian expectation (0.748 ± 0.039)—a 4.1σ rejection. The signal saturates rather than scaling with density, 
-    consistent with a screening threshold at $\rho_c$.
+    the CMC Newtonian expectation (0.748 ± 0.039)—a 4.1σ rejection. The signal exhibits topological flattening rather than scaling with density, 
+    suggesting a modification that does not act as a standard force term.
 </p>
 
 <div class="defense-box">
@@ -152,6 +152,21 @@
     </ul>
     <p>
         However, to reproduce the observed 'flat' residual (slope 0.39) purely via these failure modes would require an improbable combination of errors that accurately cancels the strong ρ² dynamical scaling across 29 independent systems.
+    </p>
+</div>
+
+<div class="key-concept">
+    <h4>Robustness to Core-Collapse Status</h4>
+    <p>
+        Post-core-collapse (PCC) clusters have undergone gravitational collapse to extremely high central densities, potentially creating distinct dynamical regimes. To test whether the TEP signal is specific to PCC clusters (which would suggest a core-collapse artifact), the sample was stratified into PCC (N=7) and non-PCC (N=12) clusters:
+    </p>
+    <ul>
+        <li><strong>PCC slope:</strong> 0.70 ± 0.12 dex/dex (r = 0.93, p = 0.002)</li>
+        <li><strong>Non-PCC slope:</strong> 0.87 ± 0.09 dex/dex (r = 0.95, p = 2×10⁻⁶)</li>
+        <li><strong>Difference:</strong> −0.17 ± 0.15 (p = 0.25, 1.1σ—not significant)</li>
+    </ul>
+    <p>
+        The TEP signal persists in both PCC and non-PCC clusters with no statistically significant difference. This demonstrates that the suppressed density scaling is not a core-collapse artifact—it is a general feature of globular cluster pulsar populations regardless of dynamical state.
     </p>
 </div>
 
@@ -233,7 +248,7 @@
             <tr>
                 <td>3</td>
                 <td>Pulsar Binary vs Isolated (GC)</td>
-                <td>0.32 dex difference (p=0.007)</td>
+                <td>0.32 dex difference (p=0.004)</td>
                 <td>Strong Signal.</td>
             </tr>
             <tr>
@@ -433,7 +448,7 @@
 </ul>
 <p>
     A matched comparison of field MSPs (Section 3.12) shows no difference between binary and isolated systems 
-    (p = 0.70), whereas cluster binary MSPs show a significant offset (p = 0.007). This strongly argues against intrinsic 
+    (p = 0.70), whereas cluster binary MSPs show a significant offset (p = 0.004). This strongly argues against intrinsic 
     population differences as the cause of the cluster signal.
 </p>
 
@@ -532,7 +547,7 @@
     and Lunar Laser Ranging (LLR). Atom interferometry excludes a wide range of chameleon/symmetron parameters 
     in vacuum (Burrage et al. 2018). However, TEP posits a screening transition at $\rho_c \approx 20 \text{ g/cm}^3$. 
     Laboratory vacuum chambers are embedded within the Earth's density field, which is well above $\rho_c$, 
-    ensuring the local environment is screened. The predicted enhancement ($\alpha_{eff} \sim 10^6$) applies 
+    ensuring the local environment is screened. The predicted enhancement ($\alpha_{\text{eff}} \sim 10^6$) applies 
     only to extended systems with density below $\rho_c$ (e.g., cluster outskirts, galactic halos), 
     consistent with the observed null results in dense Solar System regimes.
 </p>
@@ -577,11 +592,11 @@
 <h3>4.7.8 Cross-Scale Consistency: The Hubble Tension Connection</h3>
 
 <p>
-    The TEP framework provides a <strong>unifying interpretation</strong> across scales—from GNSS clock correlations (Earth) to pulsar timing (globular clusters) to cosmological distances. The Hubble tension (5σ discrepancy between Planck CMB and SH0ES local H₀ measurements) may find natural interpretation within this framework: time-dilation-dependent methods (Cepheid period-luminosity) systematically differ from dynamics-based methods (CMB, BAO) because clocks in galactic potentials experience enhanced time dilation.
+    The TEP framework provides a unifying interpretation across scales—from GNSS clock correlations (Earth) to pulsar timing (globular clusters) to cosmological distances. The Hubble tension (5σ discrepancy between Planck CMB and SH0ES local H₀ measurements) may find natural interpretation within this framework: time-dilation-dependent methods (Cepheid period-luminosity) systematically differ from dynamics-based methods (CMB, BAO) because clocks in galactic potentials experience enhanced time dilation.
 </p>
 
 <p>
-    <strong>Quantitative evidence from Paper 12:</strong> Analysis of 29 SH0ES host galaxies reveals correlation between host velocity dispersion σ and derived H₀ (Spearman ρ=0.434, p=0.019). TEP correction yields unified H₀=68.66±1.51 km/s/Mpc, reducing Planck tension to 0.79σ. See Paper 12 (12manuscript-tep-h0.md) for complete derivation.
+    <strong>Quantitative evidence from Paper 11:</strong> Analysis of 29 SH0ES host galaxies reveals correlation between host velocity dispersion σ and derived H₀ (Spearman ρ=0.434, p=0.019). TEP correction yields unified H₀=68.66±1.51 km/s/Mpc, reducing Planck tension to 0.79σ. See Paper 11 (11manuscript-tep-h0.md) for complete derivation.
 </p>
 
 <p>
@@ -643,7 +658,7 @@
     
     <h4>The Physics</h4>
     <p>
-        From TEP-H0 (Paper 12), the TEP effect operates on clock rates via the conformal factor 
+        From TEP-H0 (Paper 11), the TEP effect operates on clock rates via the conformal factor 
         A(Φ) ≈ 1 − ηΦ/c², where Φ is the gravitational potential. This is quantitatively different 
         from Newtonian gravity, where the observable Ṗ excess comes from cluster acceleration a = GM/R².
     </p>
@@ -739,12 +754,12 @@
         </tbody>
     </table>
 
-    <h3>4.9.3 Falsification Criteria</h3>
+    <h3>4.9.3 Falsification Criteria for TEP-COS</h3>
     <p>
-        The TEP hypothesis is vulnerable to falsification by:
+        The TEP-COS pulsar prediction—that globular cluster pulsars should exhibit suppressed density scaling (Γ ≈ 0.39) and a 0.6 dex environmental offset—is vulnerable to specific experimental tests. These criteria apply to this specific prediction; they would not invalidate the broader TEP framework established across Papers 0–13 (GNSS, SLR, galaxy dynamics, Hubble tension, etc.), but would require re-evaluation of the pulsar-specific screening model.
     </p>
     <ul>
-        <li>Newtonian Reproduction: Gold Standard Test — Full N-body/CMC simulations (13 clusters, 21.0M synthetic pulsars) predict 1.541 dex excess and 0.748 slope. Observations show 0.606 dex excess and 0.393 slope. Standard Newtonian dynamics cannot reproduce the observations (9.4σ and 4.1σ prediction discrepancies respectively). TEP is not falsified; standard dynamics is disfavored.</li>
+        <li>Newtonian Reproduction: Gold Standard Test — Full N-body/CMC simulations (13 clusters, 21.0M synthetic pulsars) predict 1.541 dex excess and 0.748 slope. Observations show 0.606 dex excess and 0.393 slope. Standard Newtonian dynamics cannot reproduce the observations (9.4σ and 4.1σ prediction discrepancies respectively). The TEP-COS prediction is not falsified; standard dynamics is disfavored.</li>
     </ul>
 
     <h4>Limitation: CMC Coverage Scope</h4>
@@ -819,10 +834,12 @@
         for evidence of new physics pending independent replication.
     </p>
     
-    <h4>Explicit TEP Exclusion Zones (from Uncertainty Framework)</h4>
+    <h4>Explicit TEP-COS Exclusion Zones (from Uncertainty Framework)</h4>
     <p>
         Based on the theoretical uncertainty quantification, the following experimental outcomes would 
-        exclude the TEP hypothesis at >95% confidence:
+        exclude the TEP-COS pulsar prediction at >95% confidence. These apply specifically to 
+        the globular cluster pulsar channel; they would not invalidate the broader TEP framework 
+        (Papers 0–13) but would indicate that the pulsar-specific screening model requires revision:
     </p>
     <table class="data-table">
         <thead>
@@ -859,10 +876,12 @@
         </tbody>
     </table>
     <p>
-        Interpretation: Current measurements are comfortably within TEP predictions, 
+        Interpretation: Current measurements are comfortably within TEP-COS predictions, 
         with 2–3σ safety margins before reaching exclusion zones. Measuring Γ > 0.60 (returning to Newtonian scaling), 
-        σ_screen outside [100, 250] km/s, or GC-field offset < 0.30 dex would exclude TEP at 
-        >95% confidence.
+        σ_screen outside [100, 250] km/s, or GC-field offset < 0.30 dex would exclude the TEP-COS pulsar prediction at 
+        >95% confidence. Such a result would indicate that the specific screening model applied to globular cluster pulsars 
+        requires revision, but would not invalidate the broader TEP framework established through independent channels 
+        (GNSS, SLR, galaxy dynamics, Hubble tension—see Papers 0–13).
     </p>
 </div>
 

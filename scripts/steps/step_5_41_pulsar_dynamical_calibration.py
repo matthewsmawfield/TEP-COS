@@ -200,7 +200,7 @@ def analyze_dynamical_calibration():
     # Key test: Compare minimum observed to maximum predicted
     # The observed residual (0.59 dex) represents the signal AFTER removing
     # field-like populations. If Newtonian dynamics dominated, we would expect
-    # ~17 dex even after such controls (since acceleration affects all GC pulsars).
+    # ~3.9 dex even after such controls (since acceleration affects all GC pulsars).
     difference = observed_residual - avg_predicted
     difference_sigma = difference / observed_uncertainty
     

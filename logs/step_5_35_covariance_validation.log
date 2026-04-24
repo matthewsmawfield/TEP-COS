@@ -1,80 +1,80 @@
-[21:30:05] [INFO] ======================================================================
-[21:30:05] [INFO] STEP 5.35: Covariance-Aware Statistical Validation
-[21:30:05] [INFO] ======================================================================
-[21:30:05] [INFO] 
-[21:30:05] [INFO] Dataset:
-[21:30:05] [INFO]   GC pulsars: 196 (in 33 clusters)
-[21:30:05] [INFO]   Field pulsars: 198
-[21:30:05] [INFO] 
-[21:30:05] [INFO] ----------------------------------------------------------------------
-[21:30:05] [INFO] 1. COVARIANCE-AWARE T-TEST (GC vs Field)
-[21:30:05] [INFO] ----------------------------------------------------------------------
-[21:30:05] [INFO] GC mean log|Ṗ|: -19.166
-[21:30:05] [INFO] Field mean log|Ṗ|: -19.758
-[21:30:05] [INFO] Difference: 0.592 dex
-[21:30:05] [INFO] Standard error (covariance-aware): 0.1028
-[21:30:05] [INFO] t-statistic: 5.76
-[21:30:05] [INFO] Effective sample size (GC): 79.0
-[21:30:05] [INFO] p-value (two-sided): 2.22e-08
-[21:30:05] [INFO] Significance: 5.8σ
-[21:30:05] [INFO] 
-[21:30:05] [INFO] ----------------------------------------------------------------------
-[21:30:05] [INFO] 2. LEAVE-ONE-CLUSTER-OUT CROSS-VALIDATION
-[21:30:05] [INFO] ----------------------------------------------------------------------
-[21:30:05] [INFO] Full sample difference: 0.592 dex
-[21:30:05] [INFO] LOOCV mean difference: 0.592 ± 0.022 dex
-[21:30:05] [INFO] Range: [0.502, 0.635]
-[21:30:05] [INFO] Max change when removing cluster: 0.091 dex
-[21:30:05] [INFO] Relative instability: 3.8%
-[21:30:05] [INFO] Assessment: STABLE
-[21:30:05] [INFO] 
-[21:30:05] [INFO]   Most influential clusters:
-[21:30:05] [INFO]     Terzan 5: diff = 0.502 (change: -0.091)
-[21:30:05] [INFO]     47 Tuc (NGC 104): diff = 0.635 (change: +0.042)
-[21:30:05] [INFO]     M13 (NGC 6205): diff = 0.629 (change: +0.036)
-[21:30:05] [INFO] 
-[21:30:05] [INFO] ----------------------------------------------------------------------
-[21:30:05] [INFO] 3. HIERARCHICAL BOOTSTRAP CONFIDENCE INTERVALS
-[21:30:05] [INFO] ----------------------------------------------------------------------
-[21:30:06] [INFO] Bootstrap mean difference: 0.578 ± 0.135 dex
-[21:30:06] [INFO] 95% CI: [0.305, 0.840]
-[21:30:06] [INFO] 99% CI: [0.218, 0.909]
-[21:30:06] [INFO] Fraction positive: 100.0%
-[21:30:06] [INFO] Fraction negative: 0.0%
-[21:30:06] [INFO] 
-[21:30:06] [INFO] ----------------------------------------------------------------------
-[21:30:06] [INFO] 4. PERMUTATION NULL HYPOTHESIS TEST
-[21:30:06] [INFO] ----------------------------------------------------------------------
-[21:30:07] [INFO] Observed difference: 0.592 dex
-[21:30:07] [INFO] Permutation mean ± std: -0.0004 ± 0.0823
-[21:30:07] [INFO] Permutation range: [-0.295, 0.309]
-[21:30:07] [INFO] p-value: 0.0001
-[21:30:07] [INFO] Significance: 7.2σ
-[21:30:07] [INFO] 
-[21:30:07] [INFO] ----------------------------------------------------------------------
-[21:30:07] [INFO] 5. DENSITY SCALING LEAVE-ONE-OUT VALIDATION
-[21:30:07] [INFO] ----------------------------------------------------------------------
-[21:30:07] [INFO] Full sample slope: 0.388
-[21:30:07] [INFO] LOOCV mean slope: 0.389 ± 0.013
-[21:30:07] [INFO] Range: [0.360, 0.428]
-[21:30:07] [INFO] Max change: 0.039
-[21:30:07] [INFO] Relative instability: 3.3%
-[21:30:07] [INFO] Assessment: STABLE
-[21:30:07] [INFO] 
-[21:30:07] [INFO] ======================================================================
-[21:30:07] [INFO] Results saved to: results/outputs/step_5_35_covariance_validation.json
-[21:30:07] [INFO] ======================================================================
-[21:30:07] [INFO] 
-[21:30:07] [INFO] ======================================================================
-[21:30:07] [INFO] SUMMARY OF STATISTICAL VALIDATION
-[21:30:07] [INFO] ======================================================================
-[21:30:07] [INFO] GC vs Field difference: 0.592 dex
-[21:30:07] [INFO]   Covariance-aware significance: 5.8σ (p=2.22e-08)
-[21:30:07] [INFO]   LOOCV stability: STABLE (3.8% relative instability)
-[21:30:07] [INFO]   95% CI from bootstrap: [0.305, 0.840]
-[21:30:07] [INFO]   Permutation p-value: 0.0001
-[21:30:07] [INFO] 
-[21:30:07] [INFO] Density scaling slope: 0.388
-[21:30:07] [INFO]   LOOCV stability: STABLE
-[21:30:07] [INFO]   Range across LOOCV: [0.360, 0.428]
-[21:30:07] [INFO] ======================================================================
+[10:46:52] [INFO] ======================================================================
+[10:46:52] [INFO] STEP 5.35: Covariance-Aware Statistical Validation
+[10:46:52] [INFO] ======================================================================
+[10:46:52] [INFO] 
+[10:46:52] [INFO] Dataset:
+[10:46:52] [INFO]   GC pulsars: 196 (in 33 clusters)
+[10:46:52] [INFO]   Field pulsars: 198
+[10:46:52] [INFO] 
+[10:46:52] [INFO] ----------------------------------------------------------------------
+[10:46:52] [INFO] 1. COVARIANCE-AWARE T-TEST (GC vs Field)
+[10:46:52] [INFO] ----------------------------------------------------------------------
+[10:46:52] [INFO] GC mean log|Ṗ|: -19.166
+[10:46:52] [INFO] Field mean log|Ṗ|: -19.758
+[10:46:52] [INFO] Difference: 0.592 dex
+[10:46:52] [INFO] Standard error (covariance-aware): 0.1028
+[10:46:52] [INFO] t-statistic: 5.76
+[10:46:52] [INFO] Effective sample size (GC): 79.0
+[10:46:52] [INFO] p-value (two-sided): 2.22e-08
+[10:46:52] [INFO] Significance: 5.8σ
+[10:46:52] [INFO] 
+[10:46:52] [INFO] ----------------------------------------------------------------------
+[10:46:52] [INFO] 2. LEAVE-ONE-CLUSTER-OUT CROSS-VALIDATION
+[10:46:52] [INFO] ----------------------------------------------------------------------
+[10:46:52] [INFO] Full sample difference: 0.592 dex
+[10:46:52] [INFO] LOOCV mean difference: 0.592 ± 0.022 dex
+[10:46:52] [INFO] Range: [0.502, 0.635]
+[10:46:52] [INFO] Max change when removing cluster: 0.091 dex
+[10:46:52] [INFO] Relative instability: 3.8%
+[10:46:52] [INFO] Assessment: STABLE
+[10:46:52] [INFO] 
+[10:46:52] [INFO]   Most influential clusters:
+[10:46:52] [INFO]     Terzan 5: diff = 0.502 (change: -0.091)
+[10:46:52] [INFO]     47 Tuc (NGC 104): diff = 0.635 (change: +0.042)
+[10:46:52] [INFO]     M13 (NGC 6205): diff = 0.629 (change: +0.036)
+[10:46:52] [INFO] 
+[10:46:52] [INFO] ----------------------------------------------------------------------
+[10:46:52] [INFO] 3. HIERARCHICAL BOOTSTRAP CONFIDENCE INTERVALS
+[10:46:52] [INFO] ----------------------------------------------------------------------
+[10:46:54] [INFO] Bootstrap mean difference: 0.578 ± 0.135 dex
+[10:46:54] [INFO] 95% CI: [0.305, 0.840]
+[10:46:54] [INFO] 99% CI: [0.218, 0.909]
+[10:46:54] [INFO] Fraction positive: 100.0%
+[10:46:54] [INFO] Fraction negative: 0.0%
+[10:46:54] [INFO] 
+[10:46:54] [INFO] ----------------------------------------------------------------------
+[10:46:54] [INFO] 4. PERMUTATION NULL HYPOTHESIS TEST
+[10:46:54] [INFO] ----------------------------------------------------------------------
+[10:46:54] [INFO] Observed difference: 0.592 dex
+[10:46:54] [INFO] Permutation mean ± std: -0.0004 ± 0.0823
+[10:46:54] [INFO] Permutation range: [-0.295, 0.309]
+[10:46:54] [INFO] p-value: 0.0001
+[10:46:54] [INFO] Significance: 7.2σ
+[10:46:54] [INFO] 
+[10:46:54] [INFO] ----------------------------------------------------------------------
+[10:46:54] [INFO] 5. DENSITY SCALING LEAVE-ONE-OUT VALIDATION
+[10:46:54] [INFO] ----------------------------------------------------------------------
+[10:46:54] [INFO] Full sample slope: 0.388
+[10:46:54] [INFO] LOOCV mean slope: 0.389 ± 0.013
+[10:46:54] [INFO] Range: [0.360, 0.428]
+[10:46:54] [INFO] Max change: 0.039
+[10:46:54] [INFO] Relative instability: 3.3%
+[10:46:54] [INFO] Assessment: STABLE
+[10:46:54] [INFO] 
+[10:46:54] [INFO] ======================================================================
+[10:46:54] [INFO] Results saved to: results/outputs/step_5_35_covariance_validation.json
+[10:46:54] [INFO] ======================================================================
+[10:46:54] [INFO] 
+[10:46:54] [INFO] ======================================================================
+[10:46:54] [INFO] SUMMARY OF STATISTICAL VALIDATION
+[10:46:54] [INFO] ======================================================================
+[10:46:54] [INFO] GC vs Field difference: 0.592 dex
+[10:46:54] [INFO]   Covariance-aware significance: 5.8σ (p=2.22e-08)
+[10:46:54] [INFO]   LOOCV stability: STABLE (3.8% relative instability)
+[10:46:54] [INFO]   95% CI from bootstrap: [0.305, 0.840]
+[10:46:54] [INFO]   Permutation p-value: 0.0001
+[10:46:54] [INFO] 
+[10:46:54] [INFO] Density scaling slope: 0.388
+[10:46:54] [INFO]   LOOCV stability: STABLE
+[10:46:54] [INFO]   Range across LOOCV: [0.360, 0.428]
+[10:46:54] [INFO] ======================================================================
