@@ -1,16 +1,16 @@
 {
-  "timestamp": "2026-03-30T21:30:25.020637",
+  "timestamp": "2026-04-24T10:47:10.524552",
   "status": "COMPLETE",
   "sensitivity": {
     "rho_intra_robustness": "STRONG",
-    "min_significance_sigma": 4.564874286956267,
-    "density_scaling_slope": 0.39250366378738116,
-    "density_scaling_error": 0.07903279260970068
+    "min_significance_sigma": 4.564876733343804,
+    "density_scaling_slope": 0.3925040943834753,
+    "density_scaling_error": 0.07903293743319778
   },
   "cmc_comparison": {
     "clusters_analyzed": 8,
     "tep_consistent_clusters": 4,
-    "average_ratio": 0.22944011668601977,
+    "average_ratio": 0.2294408210917575,
     "overall_status": "STRONG_TEP_SUPPORT"
   },
   "conclusion": "Sensitivity analysis and direct CMC comparison both support suppressed density scaling"

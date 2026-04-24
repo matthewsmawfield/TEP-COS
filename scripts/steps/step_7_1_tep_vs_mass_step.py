@@ -31,8 +31,9 @@ Discrimination Tests:
 1. σ vs. Mass Residual Test: If TEP, residuals after mass correction
    should correlate with σ (time dilation independent of metallicity)
    
-2. Step-Function vs. Linear: TEP predicts step-function at screening
-   threshold; mass step predicts smooth metallicity gradient
+2. Continuous Gradient vs. Linear: TEP predicts continuous suppression
+   of correlation with screening strength (Temporal Shear suppression modulating
+   the Temporal Topology); mass step predicts smooth metallicity gradient
    
 3. Evolution with Redshift: TEP amplitude redshift-independent;
    mass step may evolve with galaxy formation history
@@ -42,7 +43,7 @@ Discrimination Tests:
 
 Expected Outcomes:
 - If pure mass step: r(mB,σ|mass) ≈ 0, smooth σ dependence
-- If pure TEP: r(mB,σ|mass) > 0, step at σ_screen
+- If pure TEP: r(mB,σ|mass) > 0, gradual suppression with screening strength
 - If combined: Need to fit both components simultaneously
 """
 

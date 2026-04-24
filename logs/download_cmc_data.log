@@ -1,25 +1,25 @@
-[21:30:25] [INFO] [21:30:25] [INFO    ] ======================================================================
-[21:30:25] [INFO] [21:30:25] [INFO    ] CMC CLUSTER CATALOG DOWNLOADER
-[21:30:25] [INFO] [21:30:25] [INFO    ] ======================================================================
-[21:30:25] [INFO] [21:30:25] [INFO    ] Target URL: https://cmc.ciera.northwestern.edu/index.php
-[21:30:25] [INFO] [21:30:25] [INFO    ] Data directory: /Users/matthewsmawfield/www/TEP-COS/data/cmc
-[21:30:25] [INFO] [21:30:25] [INFO    ] Clusters: M15
-[21:30:25] [INFO] [21:30:25] [INFO    ]
-[21:30:25] [INFO] [21:30:25] [INFO    ] NOTE: Each download is 200-400 MB and takes 3-8 minutes
-[21:30:25] [INFO] [21:30:25] [INFO    ]       Please be patient and do not interrupt the download
-[21:30:25] [INFO] [21:30:25] [INFO    ]
-[21:30:25] [INFO] [21:30:25] [INFO    ]
-[21:30:25] [INFO] ======================================================================
-[21:30:25] [INFO] [21:30:25] [INFO    ] CLUSTER: M15 - M15
-[21:30:25] [INFO] [21:30:25] [INFO    ] ======================================================================
-[21:30:25] [INFO] [21:30:25] [INFO    ] Already downloaded (use --force to re-download)
-[21:30:25] [INFO] [21:30:25] [INFO    ]
-[21:30:25] [INFO] ======================================================================
-[21:30:25] [INFO] [21:30:25] [INFO    ] FINAL SUMMARY
-[21:30:25] [INFO] [21:30:25] [INFO    ] ======================================================================
-[21:30:25] [INFO] [21:30:25] [INFO    ] SUCCESS: M15        - M15
-[21:30:25] [INFO] [21:30:25] [INFO    ]            Files: 0, Time: 0.0s
-[21:30:25] [INFO] [21:30:25] [INFO    ]
-[21:30:25] [INFO] ======================================================================
-[21:30:25] [INFO] [21:30:25] [INFO    ] TOTAL: 1/1 clusters successfully downloaded
-[21:30:25] [INFO] [21:30:25] [INFO    ] ======================================================================
+[10:47:10] [INFO] [10:47:10] [INFO    ] ======================================================================
+[10:47:10] [INFO] [10:47:10] [INFO    ] CMC CLUSTER CATALOG DOWNLOADER
+[10:47:10] [INFO] [10:47:10] [INFO    ] ======================================================================
+[10:47:10] [INFO] [10:47:10] [INFO    ] Target URL: https://cmc.ciera.northwestern.edu/index.php
+[10:47:10] [INFO] [10:47:10] [INFO    ] Data directory: /Users/matthewsmawfield/www/Temporal Equivalence Principle/TEP-COS/data/cmc
+[10:47:10] [INFO] [10:47:10] [INFO    ] Clusters: M15
+[10:47:10] [INFO] [10:47:10] [INFO    ]
+[10:47:10] [INFO] [10:47:10] [INFO    ] NOTE: Each download is 200-400 MB and takes 3-8 minutes
+[10:47:10] [INFO] [10:47:10] [INFO    ]       Please be patient and do not interrupt the download
+[10:47:10] [INFO] [10:47:10] [INFO    ]
+[10:47:10] [INFO] [10:47:10] [INFO    ]
+[10:47:10] [INFO] ======================================================================
+[10:47:10] [INFO] [10:47:10] [INFO    ] CLUSTER: M15 - M15
+[10:47:10] [INFO] [10:47:10] [INFO    ] ======================================================================
+[10:47:10] [INFO] [10:47:10] [INFO    ] Already downloaded (use --force to re-download)
+[10:47:10] [INFO] [10:47:10] [INFO    ]
+[10:47:10] [INFO] ======================================================================
+[10:47:10] [INFO] [10:47:10] [INFO    ] FINAL SUMMARY
+[10:47:10] [INFO] [10:47:10] [INFO    ] ======================================================================
+[10:47:10] [INFO] [10:47:10] [INFO    ] SUCCESS: M15        - M15
+[10:47:10] [INFO] [10:47:10] [INFO    ]            Files: 0, Time: 0.0s
+[10:47:10] [INFO] [10:47:10] [INFO    ]
+[10:47:10] [INFO] ======================================================================
+[10:47:10] [INFO] [10:47:10] [INFO    ] TOTAL: 1/1 clusters successfully downloaded
+[10:47:10] [INFO] [10:47:10] [INFO    ] ======================================================================

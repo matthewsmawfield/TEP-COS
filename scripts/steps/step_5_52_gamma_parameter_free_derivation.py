@@ -190,7 +190,9 @@ result = {
     }
 }
 
-with open('/Users/matthewsmawfield/www/TEP-COS/results/outputs/gamma_parameter_free_derivation.json', 'w') as f:
+output_path = Path(__file__).resolve().parents[2] / 'results' / 'outputs' / 'gamma_parameter_free_derivation.json'
+output_path.parent.mkdir(parents=True, exist_ok=True)
+with open(output_path, 'w') as f:
     json.dump(result, f, indent=2)
 
 print("\nSaved: results/outputs/gamma_parameter_free_derivation.json")

@@ -1,9 +1,9 @@
-[21:30:10] [INFO] --- Step 5.34: Shklovskii Cancellation Analysis ---
-[21:30:10] [INFO] Base Acceleration Slope (input):       0.82
-[21:30:10] [INFO] Base Shklovskii Slope (input):         0.50
-[21:30:10] [INFO] Base Shklovskii Fraction at rho_ref:   15.0%
-[21:30:10] [INFO] Target Net Slope:                      0.39 (Mixed-Effects Observed)
-[21:30:10] [INFO] Measured Acc-only slope (verification): 0.820
-[21:30:10] [INFO] Required Shklovskii Amplification K:    20.00
-[21:30:10] [INFO] Resulting net slope at K=20.00:     0.587
-[21:30:10] [INFO] Physically excluded. Requires distances off by 20.0x (typical error ~10%) or proper motions off by 4.5x (Gaia precision <1%).
+[10:46:57] [INFO] --- Step 5.34: Shklovskii Cancellation Analysis ---
+[10:46:57] [INFO] Base Acceleration Slope (input):       0.82
+[10:46:57] [INFO] Base Shklovskii Slope (input):         0.50
+[10:46:57] [INFO] Base Shklovskii Fraction at rho_ref:   15.0%
+[10:46:57] [INFO] Target Net Slope:                      0.39 (Mixed-Effects Observed)
+[10:46:57] [INFO] Measured Acc-only slope (verification): 0.820
+[10:46:57] [INFO] Required Shklovskii Amplification K:    20.00
+[10:46:57] [INFO] Resulting net slope at K=20.00:     0.587
+[10:46:57] [INFO] Physically excluded. Requires distances off by 20.0x (typical error ~10%) or proper motions off by 4.5x (Gaia precision <1%).

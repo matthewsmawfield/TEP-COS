@@ -1,7 +1,7 @@
 # Sensitivity Analysis and CMC Comparison Report
 ## TEP-COS: Suppressed Density Scaling in Globular Cluster Pulsars
 
-**Date:** 2026-03-30 21:30:25  
+**Date:** 2026-04-24 10:47:10  
 **Analysis:** Comprehensive robustness check and comparison with N-body/CMC predictions
 
 ---

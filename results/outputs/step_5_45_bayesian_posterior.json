@@ -9,39 +9,39 @@
       "rationale": "Weakly informative: encompasses Newtonian (0.72) and TEP (0.35) predictions"
     },
     "likelihood": {
-      "mean": 0.39250366378738116,
-      "se": 0.07903279260970068,
+      "mean": 0.3925040943834753,
+      "se": 0.07903293743319778,
       "source": "Mixed-effects model (step_5_33)"
     },
     "posterior": {
       "distribution": "Normal (conjugate)",
-      "mean": 0.39947995829894956,
-      "std": 0.07642524272841464,
-      "median": 0.39947995829894956,
-      "mode": 0.39947995829894956
+      "mean": 0.39948038485827386,
+      "std": 0.07642537368503217,
+      "median": 0.39948038485827386,
+      "mode": 0.39948038485827386
     },
     "credible_intervals": {
       "68%": [
-        0.3234782731914587,
-        0.4754816434064404
+        0.32347856951994236,
+        0.47548220019660536
       ],
       "95%": [
-        0.2496892350415252,
-        0.5492706815563739
+        0.2496894049305956,
+        0.5492713647859522
       ],
       "99%": [
-        0.20262157854826163,
-        0.5963383380496374
+        0.202621667785693,
+        0.5963391019308547
       ]
     },
     "hypothesis_testing": {
       "newtonian_prediction": 0.72,
-      "p_newtonian": 1.370977382852967e-05,
+      "p_newtonian": 1.3710545924916495e-05,
       "tep_prediction_range": [
         0.3,
         0.45
       ],
-      "p_tep": 0.6491905462792538,
+      "p_tep": 0.6491889664495534,
       "conclusion": "Newtonian prediction excluded at >95% confidence"
     }
   },
@@ -55,24 +55,24 @@
       "rationale": "Weakly informative positive offset expected from acceleration"
     },
     "likelihood": {
-      "mean": 0.5924814387755113,
-      "se": 0.10282329745189066,
+      "mean": 0.5924820000000004,
+      "se": 0.10282333497164513,
       "source": "Covariance-aware t-test (step_5_35)"
     },
     "posterior": {
-      "mean": 0.5313357528689269,
-      "std": 0.09144579733922133,
-      "median": 0.5313357528689269
+      "mean": 0.5313361614700461,
+      "std": 0.09144582373148305,
+      "median": 0.5313361614700461
     },
     "credible_intervals": {
       "95%": [
-        0.3521052835465044,
-        0.7105662221913494
+        0.3521056404197412,
+        0.7105666825203512
       ]
     },
     "hypothesis_testing": {
       "null_hypothesis": 0.0,
-      "p_null": 0.9999999968836276,
+      "p_null": 0.9999999968836796,
       "conclusion": "Null hypothesis (no offset) excluded at >99% confidence"
     }
   },
@@ -82,8 +82,8 @@
     "dominant_influence": "Likelihood dominates posterior (data is informative)"
   },
   "model_comparison": {
-    "newtonian_log_bayes_factor": -7.1580521506499055,
-    "tep_log_bayes_factor": 1.4342124945779267,
+    "newtonian_log_bayes_factor": -7.15800031763027,
+    "tep_log_bayes_factor": 1.4342096308564514,
     "interpretation": "Strong evidence for suppressed scaling (TEP-like)"
   },
   "methodology_notes": {

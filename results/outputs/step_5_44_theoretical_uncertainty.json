@@ -12,7 +12,7 @@
     "confidence_level": "68% CL (1-sigma)",
     "derivation": {
       "statistical": "From screening test fit to SN Ia data",
-      "systematic": "Model dependence (Vainshtein vs. Chameleon screening)",
+      "systematic": "Model dependence (canonical screening parameter variation)",
       "method": "Quadrature combination"
     }
   },
@@ -20,10 +20,10 @@
     "parameter": "Gamma",
     "description": "Density scaling slope of pulsar residuals",
     "unit": "dex/dex",
-    "central_value": 0.39250366378738116,
+    "central_value": 0.3925040943834753,
     "statistical_uncertainty": {
-      "upper": 0.07903279260970068,
-      "lower": 0.07903279260970068
+      "upper": 0.07903293743319778,
+      "lower": 0.07903293743319778
     },
     "systematic_uncertainty": {
       "model_dependence": 0.06,
@@ -33,13 +33,13 @@
       "upper": 0.09,
       "lower": 0.12
     },
-    "lower_bound": 0.27250366378738117,
-    "upper_bound": 0.4825036637873812,
+    "lower_bound": 0.2725040943834753,
+    "upper_bound": 0.4825040943834753,
     "confidence_level": "68% CL (1-sigma)",
     "newtonian_prediction": {
       "value": 0.72,
       "uncertainty": 0.15,
-      "tension_sigma": 4.143803165730741
+      "tension_sigma": 4.143790124128172
     },
     "derivation": {
       "statistical": "Mixed-effects model standard error",
@@ -52,19 +52,19 @@
     "parameter": "Delta_logPdot",
     "description": "GC vs Field mean log|\u1e56| offset",
     "unit": "dex",
-    "central_value": 0.5924814387755113,
+    "central_value": 0.5924820000000004,
     "statistical_uncertainty": 0.08,
     "systematic_uncertainty": {
       "matching_procedure": 0.06,
       "rho_propagation": 0.065
     },
     "total_uncertainty": 0.11926860441876563,
-    "lower_bound": 0.47321283435674566,
-    "upper_bound": 0.7117500431942769,
+    "lower_bound": 0.47321339558123476,
+    "upper_bound": 0.711750604418766,
     "confidence_level": "68% CL (1-sigma)",
     "significance": {
-      "sigma": 5.6,
-      "p_value": 2.2e-08
+      "sigma": 5.762135610203511,
+      "p_value": 2.2230074891993468e-08
     },
     "derivation": {
       "statistical": "Covariance-aware t-test SE",
@@ -77,16 +77,16 @@
     "parameter": "Delta_binary_isolated",
     "description": "Binary vs Isolated MSP offset in GCs",
     "unit": "dex",
-    "central_value": -0.31,
-    "statistical_uncertainty": 0.12,
+    "central_value": -0.3226224679547798,
+    "statistical_uncertainty": 0.11750041298074496,
     "systematic_uncertainty": 0.08,
-    "total_uncertainty": 0.14,
-    "lower_bound": -0.45,
-    "upper_bound": -0.17,
+    "total_uncertainty": 0.14214903112805807,
+    "lower_bound": -0.4647714990828379,
+    "upper_bound": -0.1804734368267217,
     "confidence_level": "68% CL",
     "significance": {
-      "sigma": 2.2,
-      "p_value": 0.007
+      "sigma": 2.7457134810891994,
+      "p_value": 0.0067882787263095525
     },
     "interpretation": "Negative = binaries have lower |\u1e56| (screening)"
   },
@@ -108,7 +108,7 @@
     "observed_slope": 0.37,
     "observed_uncertainty_upper": 0.09,
     "observed_uncertainty_lower": 0.12,
-    "tension_sigma": 4.143803165730741,
+    "tension_sigma": 4.143790124128172,
     "conclusion": "Newtonian prediction excluded at 4.1\u03c3"
   }
 }

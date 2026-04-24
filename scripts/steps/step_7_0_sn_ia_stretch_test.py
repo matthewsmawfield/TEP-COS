@@ -587,34 +587,88 @@ def analyze_mB_sigma_correlation(df, data_source=""):
     
     all_tertiles_weak = all(abs(t['r']) < 0.15 for t in tertile_corrs.values())
         
-    # SCREENING-BASED BINS (not tertiles) - aligned with TEP threshold
-    unscreened_full = df[df['sigma_host'] < SCREENING_THRESHOLD]
-    screened_full = df[df['sigma_host'] >= SCREENING_THRESHOLD]
+    # CONTINUOUS SCREENING GRADIENT ANALYSIS (TEP Temporal Topology)
+    # Jakarta v0.7: Rather than discrete thin-shell boundaries, screening operates
+    # via the continuous spatial profile governed by Temporal Shear
+    def compute_screening_strength(sigma, sigma_c=SCREENING_THRESHOLD, width=0.3):
+        """
+        Compute continuous screening strength using logistic transition.
         
-    if len(unscreened_full) > 30 and len(screened_full) > 20:
-        r_unscreened, p_unscreened = pearsonr(np.log10(unscreened_full['sigma_host']), unscreened_full['mB'])
-        r_screened, p_screened = pearsonr(np.log10(screened_full['sigma_host']), screened_full['mB'])
-            
-        # Use screening-based bins instead of tertiles for TEP test
-        logger.info(f"\n  SCREENING-BASED ANALYSIS (threshold = {SCREENING_THRESHOLD} km/s):")
-        logger.info(f"    Unscreened (σ < {SCREENING_THRESHOLD}): r = {r_unscreened:+.3f}, p = {p_unscreened:.3f}")
-        logger.info(f"    Screened (σ ≥ {SCREENING_THRESHOLD}):   r = {r_screened:+.3f}, p = {p_screened:.3f}")
-            
-        if p_unscreened < SIGNIFICANCE_THRESHOLD and p_screened > SIGNIFICANCE_THRESHOLD:
-            logger.info(f"    → TEP SCREENING PATTERN: Correlation in unscreened only")
-            logger.info(f"      (This discriminates TEP from mass step effect)")
-        elif p_unscreened < SIGNIFICANCE_THRESHOLD and p_screened < SIGNIFICANCE_THRESHOLD:
-            logger.info(f"    → Correlation in BOTH regimes - more consistent with mass step")
+        In TEP theory, screening is a continuous gradient, not a step-function.
+        The effective coupling transitions smoothly around the critical density
+        (mapped to velocity dispersion σ_c) with width parameter controlling
+        the steepness of the Temporal Topology profile.
         
-        # Tertile analysis for non-linearity detection (supplementary)
+        Parameters:
+        -----------
+        sigma : float or array
+            Velocity dispersion in km/s
+        sigma_c : float
+            Critical velocity dispersion (SCREENING_THRESHOLD ~165 km/s)
+        width : float
+            Transition width in dex (log10 space)
+            
+        Returns:
+        --------
+        screening_strength : float or array (0 to 1)
+            0 = fully unscreened (active TEP effects)
+            1 = fully screened (suppressed TEP effects)
+        """
+        return 1.0 / (1.0 + np.exp(-(np.log10(sigma) - np.log10(sigma_c)) / width))
+    
+    # Apply continuous screening model
+    df['screening_strength'] = compute_screening_strength(df['sigma_host'].values)
+    
+    # Analyze correlation as function of screening strength
+    low_screening = df[df['screening_strength'] < 0.3]    # Weak screening (unscreened regime)
+    mid_screening = df[(df['screening_strength'] >= 0.3) & (df['screening_strength'] < 0.7)]
+    high_screening = df[df['screening_strength'] >= 0.7]  # Strong screening (screened regime)
+    
+    results['continuous_screening'] = {
+        'screening_threshold_kms': SCREENING_THRESHOLD,
+        'transition_width_dex': 0.3,
+        'mean_screening_strength': float(df['screening_strength'].mean()),
+        'n_low_screening': len(low_screening),
+        'n_mid_screening': len(mid_screening),
+        'n_high_screening': len(high_screening)
+    }
+    
+    if len(low_screening) > 20 and len(high_screening) > 20:
+        r_low, p_low = pearsonr(np.log10(low_screening['sigma_host']), low_screening['mB'])
+        if len(mid_screening) > 10:
+            r_mid, p_mid = pearsonr(np.log10(mid_screening['sigma_host']), mid_screening['mB'])
+        else:
+            r_mid, p_mid = np.nan, np.nan
+        r_high, p_high = pearsonr(np.log10(high_screening['sigma_host']), high_screening['mB'])
+        
+        results['continuous_screening']['correlations'] = {
+            'low_screening': {'r': float(r_low), 'p': float(p_low), 'n': len(low_screening)},
+            'mid_screening': {'r': float(r_mid), 'p': float(p_mid), 'n': len(mid_screening)},
+            'high_screening': {'r': float(r_high), 'p': float(p_high), 'n': len(high_screening)}
+        }
+            
+        logger.info(f"\n  CONTINUOUS SCREENING ANALYSIS (Temporal Topology):")
+        logger.info(f"    Low screening (< 0.3):    r = {r_low:+.3f}, p = {p_low:.3f}, n = {len(low_screening)}")
+        if not np.isnan(r_mid):
+            logger.info(f"    Mid screening (0.3-0.7):    r = {r_mid:+.3f}, p = {p_mid:.3f}, n = {len(mid_screening)}")
+        logger.info(f"    High screening (≥ 0.7):     r = {r_high:+.3f}, p = {p_high:.3f}, n = {len(high_screening)}")
+            
+        if p_low < SIGNIFICANCE_THRESHOLD and p_high > SIGNIFICANCE_THRESHOLD:
+            logger.info(f"    → TEP CONTINUOUS SCREENING: Correlation vanishes with screening strength")
+            logger.info(f"      (Consistent with Temporal Shear suppression)")
+        elif p_low < SIGNIFICANCE_THRESHOLD and p_high < SIGNIFICANCE_THRESHOLD:
+            logger.info(f"    → Correlation persists across screening gradient")
+        
+        # Gradient analysis for non-linearity detection
         if all_tertiles_weak and abs(r_pearson) > 0.15:
             logger.info("  → NON-LINEARITY DETECTED: No correlation within tertiles, but correlation across full range")
-            logger.info("    This suggests a STEP-FUNCTION or THRESHOLD effect")
-            logger.info("    (Consistent with TEP screening prediction)")
-            results['linearity_note'] = "Step-function pattern detected - consistent with TEP screening"
+            logger.info("    This suggests a GRADUAL SUPPRESSION of correlation with screening strength")
+            logger.info("    (Consistent with TEP continuous screening prediction)")
+            results['linearity_note'] = "Continuous gradient pattern detected - consistent with TEP Temporal Topology"
     
-    # STEP-FUNCTION ANALYSIS (more physically appropriate)
-    # Split at median sigma for direct comparison
+    # MEDIAN SPLIT ANALYSIS (complementary stratification)
+    # Note: This is a data stratification tool, not a physical step-function
+    # The TEP continuous screening model predicts gradual changes, not sharp jumps
     median_sigma = np.median(sigma_vals)
     low_sigma = df[df['sigma_host'] < median_sigma]
     high_sigma = df[df['sigma_host'] >= median_sigma]

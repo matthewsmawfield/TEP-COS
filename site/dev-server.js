@@ -93,7 +93,7 @@ class DevServer {
     }
 
     async start() {
-        console.log('🎯 TEP-COS Development Server (Paper 11)');
+        console.log('🎯 TEP-COS Development Server (Paper 10)');
         console.log('=====================================\n');
 
         // Ensure dist directory exists and do initial build

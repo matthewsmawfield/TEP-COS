@@ -1,0 +1,7 @@
+v0.5 (Caracas) - LaTeX Consistency Patch
+
+- Fixed LaTeX formatting inconsistencies: Standardized $\alpha_{\text{eff}}$ to use \text (not \rm) throughout all component files
+- Verified $M_{\rm Pl}$ consistently uses \rm as established convention
+- Replaced thin-shell/boundary terminology with continuous Temporal Topology: Screening now described as a fluid spatial profile governed by non-linear field gradient superposition rather than discrete phase transitions.
+- Formalized Temporal Shear nomenclature: Defined the mechanism governing screening saturation and local PPN safety through gradient coherence rather than boundary competition.
+- Aligned theoretical framework with TEP v0.7 (Jakarta): Adopted continuous geometric screening language throughout derivations, from chameleon mass transitions to Temporal Shear recovery factors.

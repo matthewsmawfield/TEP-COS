@@ -1,5 +1,5 @@
 {
-  "timestamp": "2026-03-30T21:31:25.211039",
+  "timestamp": "2026-04-24T10:48:20.632914",
   "method": "King Model Monte Carlo",
   "clusters_analyzed": 15,
   "newtonian": {
@@ -114,12 +114,12 @@
     }
   },
   "observed": {
-    "residual_dex": 0.5924814336327948,
-    "uncertainty_dex": 0.05075827298929564
+    "residual_dex": 0.5924819949944933,
+    "uncertainty_dex": 0.050758362807167334
   },
   "comparison": {
-    "difference_dex": -3.2941797052663775,
-    "significance_sigma": -64.89936538938359,
+    "difference_dex": -3.294179143904679,
+    "significance_sigma": -64.8992394892517,
     "interpretation": "OBSERVED_MUCH_LESS_THAN_NEWTONIAN",
     "verdict": "TEP_SUPPORTED"
   }

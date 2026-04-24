@@ -1,17 +1,17 @@
 {
-    "model_a_wls_slope": 0.38838771146709394,
-    "model_a_wls_error": 0.08027506036704055,
-    "model_b_mixed_slope": 0.39250366378738116,
-    "model_b_mixed_error": 0.07903279260970068,
-    "model_b_mixed_p": 6.822854083489291e-07,
+    "model_a_wls_slope": 0.3883879539811774,
+    "model_a_wls_error": 0.08027514458724132,
+    "model_b_mixed_slope": 0.3925040943834753,
+    "model_b_mixed_error": 0.07903293743319778,
+    "model_b_mixed_p": 6.822982514068999e-07,
     "newtonian_predicted_slope": 0.72,
     "newtonian_slope_range": [
         0.72,
         0.82
     ],
-    "observed_vs_newtonian_diff": -0.3274963362126188,
-    "rejection_sigma": 4.143803165730741,
-    "rejection_p_value": 3.4159297045421866e-05,
+    "observed_vs_newtonian_diff": -0.3274959056165247,
+    "rejection_sigma": 4.143790124128172,
+    "rejection_p_value": 3.416124072552762e-05,
     "interpretation": "Observed slope significantly flatter than Newtonian prediction",
-    "suppression_factor": 0.5451439774824739
+    "suppression_factor": 0.5451445755326045
 }

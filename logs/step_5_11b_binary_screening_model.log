@@ -1,52 +1,52 @@
-[21:30:07] [INFO] ================================================================================
-[21:30:07] [INFO] TEP BINARY SCREENING: SCREENING BOUNDARY DISRUPTION MODEL
-[21:30:07] [INFO] ================================================================================
-[21:30:07] [INFO] 
-[21:30:07] [INFO] 1. PULSAR SCREENING GEOMETRY
-[21:30:07] [INFO] --------------------------
-[21:30:07] [INFO] Pulsar Mass: 1.4 M_sun
-[21:30:07] [INFO] Critical Density (TEP): 20.0 g/cm³
-[21:30:07] [INFO] Screening Radius (R_sol): 321525.0 km
-[21:30:07] [INFO] 
-[21:30:07] [INFO] 2. TYPICAL MSP BINARY
-[21:30:07] [INFO] ---------------------
-[21:30:07] [INFO] Companion Mass: 0.2 M_sun
-[21:30:07] [INFO] Orbital Period: 1.0 days
-[21:30:07] [INFO] Orbital Separation (a): 3424545.2 km
-[21:30:07] [INFO] Ratio (a / R_sol): 10.7
-[21:30:07] [INFO] Companion Screening Radius: 168079.7 km
-[21:30:07] [INFO] Screened zones are distinct, with interacting boundary conditions
-[21:30:07] [INFO] 
-[21:30:07] [INFO] 3. BOUNDARY DISRUPTION EFFECT
-[21:30:07] [INFO] -----------------------------
-[21:30:07] [INFO] Observed total cluster enhancement: +0.58 dex
-[21:30:07] [INFO] Observed binary suppression:        -0.32 dex
-[21:30:07] [INFO] Required shielding fraction:        0.55 (55%)
-[21:30:07] [INFO] 
-[21:30:07] [INFO] Model Prediction:
-[21:30:07] [INFO] Predicted shielding fraction:       0.47
-[21:30:07] [INFO] 
-[21:30:07] [INFO] 4. POPULATION SWEEP
-[21:30:07] [INFO] -------------------
-[21:30:07] [INFO] Pb (d)   | Mc (M_sun) | Sep (km)     | Shielding %
-[21:30:07] [INFO] ------------------------------------------------
-[21:30:07] [INFO] 0.1      | 0.05       | 7.1e+05      |     51.9%
-[21:30:07] [INFO] 0.5      | 0.05       | 2.1e+06      |     27.0%
-[21:30:07] [INFO] 1.0      | 0.05       | 3.3e+06      |     18.9%
-[21:30:07] [INFO] 5.0      | 0.05       | 9.7e+06      |      7.4%
-[21:30:07] [INFO] 10.0     | 0.05       | 1.5e+07      |      4.8%
-[21:30:07] [INFO] 100.0    | 0.05       | 7.1e+07      |      1.1%
-[21:30:07] [INFO] 0.1      | 0.20       | 7.4e+05      |     80.7%
-[21:30:07] [INFO] 0.5      | 0.20       | 2.2e+06      |     58.9%
-[21:30:07] [INFO] 1.0      | 0.20       | 3.4e+06      |     47.4%
-[21:30:07] [INFO] 5.0      | 0.20       | 1.0e+07      |     23.6%
-[21:30:07] [INFO] 10.0     | 0.20       | 1.6e+07      |     16.3%
-[21:30:07] [INFO] 100.0    | 0.20       | 7.4e+07      |      4.0%
-[21:30:07] [INFO] 0.1      | 0.50       | 7.8e+05      |     90.8%
-[21:30:07] [INFO] 0.5      | 0.50       | 2.3e+06      |     77.2%
-[21:30:07] [INFO] 1.0      | 0.50       | 3.6e+06      |     68.0%
-[21:30:07] [INFO] 5.0      | 0.50       | 1.1e+07      |     42.1%
-[21:30:07] [INFO] 10.0     | 0.50       | 1.7e+07      |     31.4%
-[21:30:07] [INFO] 100.0    | 0.50       | 7.8e+07      |      9.0%
-[21:30:07] [INFO] 
-[21:30:07] [INFO] Results saved to /Users/matthewsmawfield/www/TEP-COS/results/outputs/step_5_11b_screening_boundary_model.json
+[10:46:54] [INFO] ================================================================================
+[10:46:54] [INFO] TEP BINARY SCREENING: TEMPORAL TOPOLOGY COMPETITION MODEL
+[10:46:54] [INFO] ================================================================================
+[10:46:54] [INFO] 
+[10:46:54] [INFO] 1. PULSAR TEMPORAL TOPOLOGY
+[10:46:54] [INFO] --------------------------
+[10:46:54] [INFO] Pulsar Mass: 1.4 M_sun
+[10:46:54] [INFO] Critical Density (TEP): 20.0 g/cm³
+[10:46:54] [INFO] Saturation Radius (R_sol): 321525.0 km
+[10:46:54] [INFO] 
+[10:46:54] [INFO] 2. TYPICAL MSP BINARY
+[10:46:54] [INFO] ---------------------
+[10:46:54] [INFO] Companion Mass: 0.2 M_sun
+[10:46:54] [INFO] Orbital Period: 1.0 days
+[10:46:54] [INFO] Orbital Separation (a): 3424545.2 km
+[10:46:54] [INFO] Ratio (a / R_sol): 10.7
+[10:46:54] [INFO] Companion Saturation Radius: 168079.7 km
+[10:46:54] [INFO] Saturation regions are distinct, with interacting topology transitions
+[10:46:54] [INFO] 
+[10:46:54] [INFO] 3. TEMPORAL TOPOLOGY COMPETITION EFFECT
+[10:46:54] [INFO] -----------------------------
+[10:46:54] [INFO] Observed total cluster enhancement: +0.58 dex
+[10:46:54] [INFO] Observed binary suppression:        -0.32 dex
+[10:46:54] [INFO] Required shielding fraction:        0.55 (55%)
+[10:46:54] [INFO] 
+[10:46:54] [INFO] Model Prediction:
+[10:46:54] [INFO] Predicted shielding fraction:       0.47
+[10:46:54] [INFO] 
+[10:46:54] [INFO] 4. POPULATION SWEEP
+[10:46:54] [INFO] -------------------
+[10:46:54] [INFO] Pb (d)   | Mc (M_sun) | Sep (km)     | Shielding %
+[10:46:54] [INFO] ------------------------------------------------
+[10:46:54] [INFO] 0.1      | 0.05       | 7.1e+05      |     51.9%
+[10:46:54] [INFO] 0.5      | 0.05       | 2.1e+06      |     27.0%
+[10:46:54] [INFO] 1.0      | 0.05       | 3.3e+06      |     18.9%
+[10:46:54] [INFO] 5.0      | 0.05       | 9.7e+06      |      7.4%
+[10:46:54] [INFO] 10.0     | 0.05       | 1.5e+07      |      4.8%
+[10:46:54] [INFO] 100.0    | 0.05       | 7.1e+07      |      1.1%
+[10:46:54] [INFO] 0.1      | 0.20       | 7.4e+05      |     80.7%
+[10:46:54] [INFO] 0.5      | 0.20       | 2.2e+06      |     58.9%
+[10:46:54] [INFO] 1.0      | 0.20       | 3.4e+06      |     47.4%
+[10:46:54] [INFO] 5.0      | 0.20       | 1.0e+07      |     23.6%
+[10:46:54] [INFO] 10.0     | 0.20       | 1.6e+07      |     16.3%
+[10:46:54] [INFO] 100.0    | 0.20       | 7.4e+07      |      4.0%
+[10:46:54] [INFO] 0.1      | 0.50       | 7.8e+05      |     90.8%
+[10:46:54] [INFO] 0.5      | 0.50       | 2.3e+06      |     77.2%
+[10:46:54] [INFO] 1.0      | 0.50       | 3.6e+06      |     68.0%
+[10:46:54] [INFO] 5.0      | 0.50       | 1.1e+07      |     42.1%
+[10:46:54] [INFO] 10.0     | 0.50       | 1.7e+07      |     31.4%
+[10:46:54] [INFO] 100.0    | 0.50       | 7.8e+07      |      9.0%
+[10:46:54] [INFO] 
+[10:46:54] [INFO] Results saved to /Users/matthewsmawfield/www/Temporal Equivalence Principle/TEP-COS/results/outputs/step_5_11b_screening_boundary_model.json

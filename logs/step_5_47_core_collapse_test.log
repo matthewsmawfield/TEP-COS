@@ -1,39 +1,39 @@
-[21:31:43] [INFO] ======================================================================
-[21:31:43] [INFO] STEP 5.47: CORE COLLAPSE CLUSTER TEST
-[21:31:43] [INFO] ======================================================================
-[21:31:43] [INFO] 
-[21:31:43] [INFO] Purpose: Test if post-core-collapse status affects density scaling
-[21:31:43] [INFO] N-body prediction: PCC clusters show different dynamics
-[21:31:43] [INFO] TEP prediction: Suppression independent of core collapse status
-[21:31:43] [INFO] 
-[21:31:43] [INFO] Classified 7 PCC clusters, 12 non-PCC clusters
-[21:31:43] [INFO] 
-[21:31:43] [INFO] PCC clusters (n=7):
-[21:31:43] [INFO]   Slope: 0.701 ± 0.120
-[21:31:43] [INFO]   Correlation: r = 0.934, p = 0.0021
-[21:31:43] [INFO] 
-[21:31:43] [INFO] non-PCC clusters (n=12):
-[21:31:43] [INFO]   Slope: 0.872 ± 0.090
-[21:31:43] [INFO]   Correlation: r = 0.951, p = 0.0000
-[21:31:43] [INFO] 
-[21:31:43] [INFO] Slope comparison:
-[21:31:43] [INFO]   PCC slope: 0.701
-[21:31:43] [INFO]   non-PCC slope: 0.872
-[21:31:43] [INFO]   Difference: -0.171 ± 0.150
-[21:31:43] [INFO]   Significance: 1.15σ (p = 0.2522)
-[21:31:43] [INFO] 
-[21:31:43] [INFO] ======================================================================
-[21:31:43] [INFO] RESIDUAL ANALYSIS
-[21:31:43] [INFO] ======================================================================
-[21:31:43] [INFO] Residual analysis: Residual data not available
-[21:31:43] [INFO] 
-[21:31:43] [INFO] ======================================================================
-[21:31:43] [INFO] INTERPRETATION
-[21:31:43] [INFO] ======================================================================
-[21:31:43] [INFO]   - Weak trend in slope difference, but not statistically significant
-[21:31:43] [INFO]   - TEP signal robust to PCC stratification
-[21:31:43] [INFO] 
-[21:31:43] [INFO] ======================================================================
-[21:31:43] [INFO] Results saved to: /Users/matthewsmawfield/www/TEP-COS/results/outputs/step_5_47_core_collapse.json
-[21:31:43] [INFO] Report saved to: /Users/matthewsmawfield/www/TEP-COS/results/outputs/step_5_47_core_collapse.md
-[21:31:43] [INFO] ======================================================================
+[10:48:39] [INFO] ======================================================================
+[10:48:39] [INFO] STEP 5.47: CORE COLLAPSE CLUSTER TEST
+[10:48:39] [INFO] ======================================================================
+[10:48:39] [INFO] 
+[10:48:39] [INFO] Purpose: Test if post-core-collapse status affects density scaling
+[10:48:39] [INFO] N-body prediction: PCC clusters show different dynamics
+[10:48:39] [INFO] TEP prediction: Suppression independent of core collapse status
+[10:48:39] [INFO] 
+[10:48:39] [INFO] Classified 7 PCC clusters, 12 non-PCC clusters
+[10:48:39] [INFO] 
+[10:48:39] [INFO] PCC clusters (n=7):
+[10:48:39] [INFO]   Slope: 0.701 ± 0.120
+[10:48:39] [INFO]   Correlation: r = 0.934, p = 0.0021
+[10:48:39] [INFO] 
+[10:48:39] [INFO] non-PCC clusters (n=12):
+[10:48:39] [INFO]   Slope: 0.872 ± 0.090
+[10:48:39] [INFO]   Correlation: r = 0.951, p = 0.0000
+[10:48:39] [INFO] 
+[10:48:39] [INFO] Slope comparison:
+[10:48:39] [INFO]   PCC slope: 0.701
+[10:48:39] [INFO]   non-PCC slope: 0.872
+[10:48:39] [INFO]   Difference: -0.171 ± 0.150
+[10:48:39] [INFO]   Significance: 1.15σ (p = 0.2522)
+[10:48:39] [INFO] 
+[10:48:39] [INFO] ======================================================================
+[10:48:39] [INFO] RESIDUAL ANALYSIS
+[10:48:39] [INFO] ======================================================================
+[10:48:39] [INFO] Residual analysis: Residual data not available
+[10:48:39] [INFO] 
+[10:48:39] [INFO] ======================================================================
+[10:48:39] [INFO] INTERPRETATION
+[10:48:39] [INFO] ======================================================================
+[10:48:39] [INFO]   - Weak trend in slope difference, but not statistically significant
+[10:48:39] [INFO]   - TEP signal robust to PCC stratification
+[10:48:39] [INFO] 
+[10:48:39] [INFO] ======================================================================
+[10:48:39] [INFO] Results saved to: /Users/matthewsmawfield/www/Temporal Equivalence Principle/TEP-COS/results/outputs/step_5_47_core_collapse.json
+[10:48:39] [INFO] Report saved to: /Users/matthewsmawfield/www/Temporal Equivalence Principle/TEP-COS/results/outputs/step_5_47_core_collapse.md
+[10:48:39] [INFO] ======================================================================

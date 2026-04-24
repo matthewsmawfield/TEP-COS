@@ -1,7 +1,7 @@
 {
   "data_source": "SDSS_specObj_DIRECT_STELLAR",
   "n_sample": 218,
-  "timestamp": "2026-03-30T21:31:49.270054",
+  "timestamp": "2026-04-24T10:48:45.164140",
   "sigma_range": {
     "min": 32.44382,
     "max": 349.3705,
@@ -137,7 +137,14 @@
       "p": 0.6316590260321636
     }
   },
-  "linearity_note": "Step-function pattern detected - consistent with TEP screening",
+  "continuous_screening": {
+    "screening_threshold_kms": 165.0,
+    "transition_width_dex": 0.3,
+    "mean_screening_strength": 0.3659249318914531,
+    "n_low_screening": 76,
+    "n_mid_screening": 139,
+    "n_high_screening": 3
+  },
   "step_function": {
     "median_sigma": 112.455735,
     "low_sigma_n": 109,

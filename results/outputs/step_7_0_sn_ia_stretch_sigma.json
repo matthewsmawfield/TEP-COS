@@ -1,7 +1,7 @@
 {
   "data_source": "SDSS_specObj_DIRECT_STELLAR",
   "n_sample": 218,
-  "timestamp": "2026-03-30T21:31:49.282867",
+  "timestamp": "2026-04-24T10:48:45.175880",
   "stretch_sigma": {
     "n_sample": 218,
     "r_pearson": -0.26454865527097104,

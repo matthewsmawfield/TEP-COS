@@ -313,8 +313,9 @@ class HTMLToMarkdownConverter {
             // Build the complete markdown document
             const markdown = this.buildMarkdownDocument(metadata, markdownContent);
             
-            // Write to file
-            const outputPath = path.join(__dirname, '..', 'manuscript-tep-cos.md');
+            // Write to file with versioned filename
+            const versionSlug = metadata.version.replace(/[()]/g, '').replace(/\s+/g, '-');
+            const outputPath = path.join(__dirname, '..', `10-TEP-COS-${versionSlug}.md`);
             fs.writeFileSync(outputPath, markdown, 'utf8');
             
             console.log('✅ Markdown conversion complete!');
@@ -341,13 +342,10 @@ class HTMLToMarkdownConverter {
         const cleanTitle = metadata.title.replace(' | Matthew Lukin Smawfield', '');
         
         return `# ${cleanTitle}
-
-**Author:** ${metadata.author}  
-**Version:** ${metadata.version}  
-**Date:** ${metadata.date}  
-**DOI:** ${metadata.doi}  
-**Generated:** ${timestamp}  
-**Paper Series:** TEP Series: Paper 11 (Experimental Foundations)
+**${metadata.author}**
+Version: ${metadata.version}
+First published: 9 January 2026 · Last updated: ${timestamp}
+DOI: ${metadata.doi}
 
 ---
 

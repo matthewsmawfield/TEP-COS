@@ -1,5 +1,5 @@
 {
-  "timestamp": "2026-03-30T21:31:23.930699",
+  "timestamp": "2026-04-24T10:48:18.873813",
   "cmc_catalog": "Kremer et al. 2020, ApJS, 247, 48",
   "cmc_url": "https://cmc.ciera.northwestern.edu/",
   "data_status": "REAL_CMC_DATA",
@@ -7,18 +7,18 @@
   "n_cmc_pulsars": 21045077,
   "tests": {
     "raw_excess": {
-      "observed_excess": 0.605832424887941,
+      "observed_excess": 0.6058329674440227,
       "cmc_predicted_excess": 1.5412926771479718,
-      "difference": -0.9354602522600308,
-      "sigma": 9.354602522600308,
+      "difference": -0.9354597097039491,
+      "sigma": 9.354597097039491,
       "verdict": "CMC_OVERPREDICTS",
       "interpretation": "CMC predicts 2.5x larger excess than observed"
     },
     "density_scaling": {
       "cmc_slope": 0.7476777251184834,
       "cmc_slope_error": 0.0385519898860048,
-      "observed_slope": 0.39250366378738116,
-      "observed_error": 0.07903279260970068,
+      "observed_slope": 0.3925040943834753,
+      "observed_error": 0.07903293743319778,
       "source": "CMC_LITERATURE_WEIGHTED_CONSENSUS",
       "n_clusters": 13,
       "references": [
@@ -28,12 +28,12 @@
         "Weatherford et al. 2020, ApJ, 900, 1 (slope=0.74)"
       ],
       "note": "Weighted consensus from step_5_48_cmc_literature.json",
-      "sigma_difference": 4.039085175875389
+      "sigma_difference": 4.039074300311542
     },
     "binary_behavior": {
       "cmc_binary_diff": -2.0849578035980194,
-      "observed": -0.322621109598078,
-      "observed_binary_diff": -0.322621109598078,
+      "observed": -0.3226224679547798,
+      "observed_binary_diff": -0.3226224679547798,
       "agreement": true,
       "verdict": "CONSISTENT"
     }

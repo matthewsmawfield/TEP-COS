@@ -1,0 +1,36 @@
+{
+  "timestamp": "2026-04-24T14:34:38.546558",
+  "data_completeness": {
+    "mB": {
+      "valid": 1470,
+      "total": 1470,
+      "fraction": 1.0
+    },
+    "HOST_LOGMASS": {
+      "valid": 1470,
+      "total": 1470,
+      "fraction": 1.0
+    },
+    "MU_SH0ES": {
+      "valid": 1470,
+      "total": 1470,
+      "fraction": 1.0
+    }
+  },
+  "cross_validation": {
+    "steps_consistent": null,
+    "n_checks": 0
+  },
+  "quality_flags": [],
+  "redshift_coverage": {
+    "0.01-0.1": 510,
+    "0.1-0.5": 750,
+    "0.5-1.0": 185,
+    "1.0-2.0": 24
+  },
+  "systematic_checks": {
+    "hubble_residual_outliers": 0,
+    "hubble_residual_std": 2.9275586232021586
+  },
+  "verdict": "PASS"
+}

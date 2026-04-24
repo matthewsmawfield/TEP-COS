@@ -14,17 +14,17 @@
     "formula_applied": "2 \u00d7 0.7476777251184834 - 1 = 0.495"
   },
   "observation": {
-    "gamma_obs": 0.39250366378738116,
-    "gamma_obs_error": 0.07903279260970068,
+    "gamma_obs": 0.3925040943834753,
+    "gamma_obs_error": 0.07903293743319778,
     "source": "Mixed-effects model (step_5_33)"
   },
   "comparison": {
-    "sigma_agreement": 0.9315121082825476,
+    "sigma_agreement": 0.9315073338898376,
     "status": "EXCELLENT"
   },
   "newtonian_rejection": {
     "gamma_N": 0.7476777251184834,
-    "sigma_rejection": 4.4940087475474995,
+    "sigma_rejection": 4.493995064212525,
     "conclusion": "Newtonian scaling excluded at >4\u03c3"
   }
 }

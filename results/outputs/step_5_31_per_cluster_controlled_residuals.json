@@ -1,5 +1,5 @@
 {
-  "timestamp_utc": "2026-03-30T18:30:01.517704+00:00",
+  "timestamp_utc": "2026-04-24T07:46:48.815978+00:00",
   "method": "Period + B-proxy matching (5 nearest neighbors)",
   "clusters": {
     "Terzan 5": {
@@ -47,9 +47,9 @@
     "M15 (NGC 7078)": {
       "cluster": "M15 (NGC 7078)",
       "n_pulsars": 8,
-      "controlled_residual": 0.3365556749999996,
-      "residual_std": 0.2744971026053992,
-      "residual_sem": 0.09704938133416866
+      "controlled_residual": 0.33656942499999953,
+      "residual_std": 0.27450257376868814,
+      "residual_sem": 0.09705131568249993
     },
     "M13 (NGC 6205)": {
       "cluster": "M13 (NGC 6205)",
@@ -173,10 +173,10 @@
   },
   "summary": {
     "n_clusters": 24,
-    "mean_controlled_residual": 0.2052723378985594,
-    "weighted_mean": 0.23461790267379642,
-    "std_across_clusters": 0.20742764692648755,
-    "density_correlation_r": 0.6624905473926369,
-    "density_correlation_p": 0.0007811436638879758
+    "mean_controlled_residual": 0.20527291081522603,
+    "weighted_mean": 0.23461849090909054,
+    "std_across_clusters": 0.20742800954989832,
+    "density_correlation_r": 0.6624911469801372,
+    "density_correlation_p": 0.000781132014997442
   }
 }

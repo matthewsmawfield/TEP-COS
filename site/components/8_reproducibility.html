@@ -112,7 +112,7 @@ TEP-COS/
                 <td>3.1 Sample</td>
                 <td><code>step_5_10_pulsar_population_controls.py</code></td>
                 <td>Population controls: period/B-field matching (394 MSPs)</td>
-                <td>~11s</td>
+                <td>~10.8s</td>
             </tr>
             <tr>
                 <td>Core</td>
@@ -185,14 +185,14 @@ TEP-COS/
                 <td>3.10b Analysis</td>
                 <td><code>step_5_50_cmc_gold_standard_analysis.py</code></td>
                 <td>Comparison of observed versus 21.0M CMC synthetic pulsars</td>
-                <td>~30s</td>
+                <td>~66.5s</td>
             </tr>
             <tr>
                 <td>CMC</td>
                 <td>3.11 Exotic</td>
                 <td><code>step_5_51_exotic_physics_quantification.py</code></td>
                 <td>Quantify exotic-GR burden (improbability 6.3×10⁻⁸, Bayes factor 10⁶⁰)</td>
-                <td>~0.5s</td>
+                <td>~16.7s</td>
             </tr>
             <tr>
                 <td>CMC</td>
@@ -223,14 +223,14 @@ TEP-COS/
                 <td>4.3 Power</td>
                 <td><code>step_5_38_power_analysis.py</code></td>
                 <td>Statistical power analysis</td>
-                <td>~11s</td>
+                <td>~9.9s</td>
             </tr>
             <tr>
                 <td>Valid</td>
                 <td>4.4 Monte Carlo</td>
                 <td><code>step_5_39_monte_carlo_validation.py</code></td>
                 <td>Monte Carlo validation (Type I, Power, Bias)</td>
-                <td>~3s</td>
+                <td>~8.7s</td>
             </tr>
             <tr style="background-color: #f0f8f8;">
                 <td colspan="5">Appendix (Brief Supplementary Notes & Archived Tests)</td>
@@ -267,21 +267,29 @@ TEP-COS/
     </table>
 
     <h4>Total Runtime Summary</h4>
+    <p class="runtime-note">
+        <em>Runtimes measured on Apple M4 Pro with --parallel flag. First runs include CMC data processing and may take 2–3× longer.</em>
+    </p>
     <table class="runtime-summary-table">
         <tr>
             <th>Component</th>
             <th>Steps</th>
-            <th>Runtime (M4 Pro)</th>
+            <th>Runtime</th>
         </tr>
         <tr>
             <td>Pulsar Timing (Section 3)</td>
             <td>10</td>
-            <td>~26s</td>
+            <td>~22s</td>
+        </tr>
+        <tr>
+            <td>CMC N-Body Analysis (3.10)</td>
+            <td>4</td>
+            <td>~85s</td>
         </tr>
         <tr>
             <td>Sensitivity & Validation</td>
             <td>4</td>
-            <td>~16s</td>
+            <td>~21s</td>
         </tr>
         <tr>
             <td>Figure Generation</td>
@@ -295,8 +303,8 @@ TEP-COS/
         </tr>
         <tr style="font-weight: bold;">
             <td>Total</td>
-            <td>19</td>
-            <td>~46s</td>
+            <td>23</td>
+            <td>~148s (~2.5 min)</td>
         </tr>
     </table>
 
@@ -443,30 +451,4 @@ python reproduce_manuscript.py
         </tr>
     </table>
     <p>All dependencies are specified in <code>requirements.txt</code>.</p>
-
-    <h3>Validation & Testing</h3>
-    <p>The pipeline includes comprehensive validation:</p>
-    <ul>
-        <li>Type I Error Control: Monte Carlo validation under H0 (target: ~5%)</li>
-        <li>Statistical Power: Validation under H1 with observed effect size (target: ≥80%)</li>
-        <li>Bias Assessment: Effect size estimation bias check (target: <10%)</li>
-        <li>Sensitivity Analysis: Robustness to rho_intra assumptions</li>
-        <li>Field Controls: Binary analysis null controls in field populations</li>
-    </ul>
-
-    <h3>Reproducibility Checklist</h3>
-    <div class="checklist-box" style="background: #f9f9f9; padding: 1em; border: 1px solid #ddd; margin: 1em 0;">
-        <p>To verify successful reproduction:</p>
-        <ol>
-            <li>All 27 steps complete with "COMPLETED" status in master log</li>
-            <li>23 JSON files in <code>results/outputs/</code></li>
-            <li>10 figure files in <code>results/figures/</code> (PNG/PDF)</li>
-            <li>Key result: GC pulsars show +0.606 dex period-matched residual vs field (95% CI: 0.55–0.66 dex)</li>
-            <li>Key result: Binary inversion −0.323 dex (p = 0.007)</li>
-            <li>Key result: Mixed-effects density scaling gives Γ = 0.393 ± 0.079 vs CMC Newtonian Γ = 0.748 ± 0.039 (4.1σ rejection)</li>
-            <li>Key result: CMC catalog comparison — 21.0M synthetic pulsars from 13 clusters. CMC predicts 1.541 dex excess, observed 0.606 dex (9.4σ model-data tension). Standard dynamics is disfavored; TEP not falsified.</li>
-            <li>Key result: Exotic physics quantification — Improbability factor 6.3×10⁻⁸ (1-in-16-million tuning required); Bayes factor ~10⁶⁰ favoring TEP over exotic-GR (Decisive evidence)</li>
-            <li>Key result: PTA mock observations — 100% detection rate for CMC-predicted +1.541 dex pulsars; observational filtering defense rejected</li>
-        </ol>
-    </div>
 </section>
