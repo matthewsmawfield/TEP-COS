@@ -9,9 +9,9 @@
     "field_total": 334
   },
   "power_analysis": {
-    "current_power": 0.9854,
+    "current_power": 0.9846,
     "current_power_percent": "98.5%",
-    "min_detectable_effect_80power": 0.1842105263157895,
+    "min_detectable_effect_80power": 0.20526315789473684,
     "adequate_power": true,
     "power_status": "ADEQUATE"
   },

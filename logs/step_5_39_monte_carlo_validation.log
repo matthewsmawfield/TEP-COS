@@ -1,46 +1,46 @@
-[10:47:08] [INFO] ======================================================================
-[10:47:08] [INFO] STEP 5.39: Monte Carlo Validation of Statistical Methods
-[10:47:08] [INFO] ======================================================================
-[10:47:08] [INFO] M4 Pro Optimized: Using 14 CPU cores
-[10:47:08] [INFO] 
-[10:47:08] [INFO] ----------------------------------------------------------------------
-[10:47:08] [INFO] TEST 1: Type I Error Control (H0: No GC-Field Difference)
-[10:47:08] [INFO] ----------------------------------------------------------------------
-[10:47:08] [INFO] Generating 1000 synthetic datasets with NO true effect...
-[10:47:08] [INFO] Expected: ~5% false positive rate (p<SIGNIFICANCE_THRESHOLD when H0 true)
-[10:47:08] [INFO] Running 1000 simulations using 14 cores...
-[10:47:10] [INFO] 
-[10:47:10] [INFO] Results:
-[10:47:10] [INFO]   False positives: 19/1000 = 1.9%
-[10:47:10] [INFO]   Expected: ~5%
-[10:47:10] [INFO]   Result: Type I error rate is controlled (conservative)
-[10:47:10] [INFO] 
-[10:47:10] [INFO] ----------------------------------------------------------------------
-[10:47:10] [INFO] TEST 2: Statistical Power (H1: GC-Field Difference = 0.65 dex)
-[10:47:10] [INFO] ----------------------------------------------------------------------
-[10:47:10] [INFO] Generating 500 synthetic datasets with TRUE effect of 0.65 dex...
-[10:47:10] [INFO] Expected: High power (>80% detection rate)
-[10:47:10] [INFO] Running 500 simulations using 14 cores...
-[10:47:10] [INFO] 
-[10:47:10] [INFO] Results:
-[10:47:10] [INFO]   True positives: 500/500 = 100.0%
-[10:47:10] [INFO]   Target: ≥80%
-[10:47:10] [INFO]   Result: Power is adequate
-[10:47:10] [INFO] 
-[10:47:10] [INFO] ----------------------------------------------------------------------
-[10:47:10] [INFO] TEST 3: Bias in Effect Size Estimation
-[10:47:10] [INFO] ----------------------------------------------------------------------
-[10:47:10] [INFO]   True effect size: 0.650 dex
-[10:47:10] [INFO]   Mean estimate: 0.649 dex
-[10:47:10] [INFO]   Std of estimates: 0.068 dex
-[10:47:10] [INFO]   Bias: -0.001 dex (-0.2%)
-[10:47:10] [INFO]   Result: Bias is acceptable (<10%)
-[10:47:10] [INFO] 
-[10:47:10] [INFO] ======================================================================
-[10:47:10] [INFO] VALIDATION SUMMARY
-[10:47:10] [INFO] ======================================================================
-[10:47:10] [INFO] Result: All tests passed
-[10:47:10] [INFO] The statistical pipeline is validated and trustworthy.
-[10:47:10] [INFO] 
-[10:47:10] [INFO] Results saved to: results/outputs/step_5_39_monte_carlo_validation.json
-[10:47:10] [INFO] ======================================================================
+[07:57:41] [INFO] ======================================================================
+[07:57:41] [INFO] STEP 5.39: Monte Carlo Validation of Statistical Methods
+[07:57:41] [INFO] ======================================================================
+[07:57:41] [INFO] M4 Pro Optimized: Using 14 CPU cores
+[07:57:41] [INFO] 
+[07:57:41] [INFO] ----------------------------------------------------------------------
+[07:57:41] [INFO] TEST 1: Type I Error Control (H0: No GC-Field Difference)
+[07:57:41] [INFO] ----------------------------------------------------------------------
+[07:57:41] [INFO] Generating 1000 synthetic datasets with NO true effect...
+[07:57:41] [INFO] Expected: ~5% false positive rate (p<SIGNIFICANCE_THRESHOLD when H0 true)
+[07:57:41] [INFO] Running 1000 simulations using 14 cores...
+[07:57:43] [INFO] 
+[07:57:43] [INFO] Results:
+[07:57:43] [INFO]   False positives: 19/1000 = 1.9%
+[07:57:43] [INFO]   Expected: ~5%
+[07:57:43] [INFO]   Result: Type I error rate is controlled (conservative)
+[07:57:43] [INFO] 
+[07:57:43] [INFO] ----------------------------------------------------------------------
+[07:57:43] [INFO] TEST 2: Statistical Power (H1: GC-Field Difference = 0.65 dex)
+[07:57:43] [INFO] ----------------------------------------------------------------------
+[07:57:43] [INFO] Generating 500 synthetic datasets with TRUE effect of 0.65 dex...
+[07:57:43] [INFO] Expected: High power (>80% detection rate)
+[07:57:43] [INFO] Running 500 simulations using 14 cores...
+[07:57:43] [INFO] 
+[07:57:43] [INFO] Results:
+[07:57:43] [INFO]   True positives: 500/500 = 100.0%
+[07:57:43] [INFO]   Target: ≥80%
+[07:57:43] [INFO]   Result: Power is adequate
+[07:57:43] [INFO] 
+[07:57:43] [INFO] ----------------------------------------------------------------------
+[07:57:43] [INFO] TEST 3: Bias in Effect Size Estimation
+[07:57:43] [INFO] ----------------------------------------------------------------------
+[07:57:43] [INFO]   True effect size: 0.650 dex
+[07:57:43] [INFO]   Mean estimate: 0.649 dex
+[07:57:43] [INFO]   Std of estimates: 0.068 dex
+[07:57:43] [INFO]   Bias: -0.001 dex (-0.2%)
+[07:57:43] [INFO]   Result: Bias is acceptable (<10%)
+[07:57:43] [INFO] 
+[07:57:43] [INFO] ======================================================================
+[07:57:43] [INFO] VALIDATION SUMMARY
+[07:57:43] [INFO] ======================================================================
+[07:57:43] [INFO] Result: All tests passed
+[07:57:43] [INFO] The statistical pipeline is validated and trustworthy.
+[07:57:43] [INFO] 
+[07:57:43] [INFO] Results saved to: results/outputs/step_5_39_monte_carlo_validation.json
+[07:57:43] [INFO] ======================================================================

@@ -1,7 +1,20 @@
+#!/usr/bin/env python3
+"""
+Step 5.13: Cluster Acceleration Figure Generation
+
+Generates Figure 4.5: The Newtonian Baseline.
+Compares the intrinsic (Field) Pdot distribution, the Simulated (Newtonian) Cluster distribution,
+and the Observed Cluster distribution.
+
+Author: TEP-COS Analysis Pipeline
+Date: 2026
+"""
+
 import numpy as np
 import matplotlib.pyplot as plt
 import scipy.stats as stats
 import os
+
 
 def generate_cluster_acceleration_figure():
     """

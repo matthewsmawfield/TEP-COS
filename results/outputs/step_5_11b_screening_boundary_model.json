@@ -1,6 +1,6 @@
 {
   "constants": {
-    "rho_c_g_cm3": 20.0,
+    "rho_T_g_cm3": 20.0,
     "M_pulsar": 1.4
   },
   "pulsar_topology": {

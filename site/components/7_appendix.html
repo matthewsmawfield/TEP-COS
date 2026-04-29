@@ -143,4 +143,125 @@ Filter out foreground contaminants identified in literature.
     <li><code>scripts/steps/step_7_0_sn_ia_stretch_test.py</code>: SN Ia peak magnitude vs host velocity dispersion correlation (mB-σ test).</li>
 </ul>
 
+<h1>Appendix C: Candidate Microscopic Transfer Model (Illustrative)</h1>
 
+<p>
+    This appendix presents one possible microscopic origin for $\kappa_{\text{MSP}}$ using a 
+    chameleon-type potential as an illustration; the empirical analysis is entirely independent 
+    of this model. It is not required for the empirical test, which treats $\kappa_{\text{MSP}}$ 
+    as an observable pulsar response coefficient determined from data.
+</p>
+
+<p>
+    The following derives an illustrative transfer model using chameleon-type equations as a 
+    candidate completion of the continuous Temporal Shear mechanism. As established in Paper 0, 
+    chameleon and Vainshtein-type completions are both phenomenologically viable; the empirical 
+    inference does not depend on which completion is correct.
+</p>
+
+<h2>C.1 Motivation</h2>
+
+<p>
+    To satisfy precision tests in dense environments while allowing cosmological dynamics, 
+    a chameleon-like potential may be adopted. The following derivation shows how such a 
+    microscopic framework could, in principle, produce the observed $\kappa_{\text{MSP}} \sim 10^6$ 
+    response coefficient through geometric compactness factors.
+</p>
+
+<h2>C.2 Effective Potential and Field Equilibrium</h2>
+
+<p>
+    For a potential of the form $V(\phi) = \Lambda^4 [1 + (\Lambda/\phi)^n]$ with $n > 0$, 
+    the effective potential including matter coupling is:
+</p>
+
+<div class="equation">
+    $$V_{\rm eff}(\phi; \rho) = V(\phi) + [A(\phi) - 1] \rho \approx V(\phi) +
+    \frac{\beta\phi}{M_{\rm Pl}}\rho$$
+</div>
+
+<p>
+    where $A(\phi) = \exp(\beta\phi/M_{\rm Pl})$ and the approximation holds for 
+    small $\beta\phi/M_{\rm Pl}$. The equilibrium field value $\phi_{\rm min}(\rho)$ 
+    and effective mass $m_{\rm eff}(\rho)$ are:
+</p>
+
+<div class="equation">
+    $$\phi_{\rm min}(\rho) \approx \left[ \frac{n \Lambda^{n+4} M_{\rm Pl}}{\beta \rho} \right]^{1/(n+1)}, \quad m_{\rm eff}^2(\rho) \approx
+    \frac{(n+1) n \Lambda^{n+4}}{\phi_{\rm min}^{n+2}}$$
+</div>
+
+<p>
+    The effective mass grows with ambient density, ensuring that in dense
+    regions (Solar System), the scalar field is massive and suppressed, while in
+    diffuse regions (clusters, cosmology), the field is light and dynamical.
+</p>
+
+<h2>C.3 Weak-Field Mapping</h2>
+
+<p>
+    The linear relation between the scalar field and Newtonian potential emerges from perturbations
+    around equilibrium in the weak screening regime. Consider a cluster with
+    background density $\rho_0$ and the associated equilibrium field value
+    $\phi_{\rm min}(\rho_0)$. In the presence of a localized gravitational
+    source, the total matter density becomes $\rho = \rho_0 + \delta\rho$, where $\delta\rho$ is
+    related to the Newtonian potential through the Poisson equation: $\nabla^2\Phi = 4\pi G \delta\rho$.
+</p>
+
+<p>
+    Expanding the field around its equilibrium value, write $\phi = \phi_{\rm min}(\rho_0) + \delta\phi$. 
+    The equation of motion for the perturbation $\delta\phi$ in the static limit is:
+</p>
+
+<div class="equation">
+    $$\nabla^2 \delta\phi - m_{\rm eff}^2(\rho_0) \delta\phi =
+    +\frac{\beta}{M_{\rm Pl}} \delta\rho$$
+</div>
+
+<p>
+    In the weak screening regime ($\rho_0 \ll \rho_T$), the mass term is negligible on cluster scales. 
+    Substituting $\delta\rho = \nabla^2\Phi/(4\pi G)$:
+</p>
+
+<div class="equation">
+    $$\nabla^2 \delta\phi \approx +\frac{\beta}{4\pi G M_{\rm Pl}} \nabla^2 \Phi$$
+</div>
+
+<p>
+    Integrating and requiring $\delta\phi \to 0$ as $\Phi \to 0$ at infinity:
+</p>
+
+<div class="equation">
+    $$\delta\phi = +\frac{\beta}{4\pi G M_{\rm Pl}} \Phi$$
+</div>
+
+<h2>C.4 Response Coefficient Estimate</h2>
+
+<p>
+    For $A(\phi) = \exp(\beta\phi/M_{\rm Pl})$, the proper time relation including 
+    the perturbation is:
+</p>
+
+<div class="equation">
+    $$\frac{d\tau}{dt} \approx \exp\left(\frac{\beta \phi_{\rm min}}{M_{\rm Pl}}
+    + \frac{\beta \delta\phi}{M_{\rm Pl}}\right) \approx A(\phi_{\rm min})
+    \left(1 + \frac{\beta \delta\phi}{M_{\rm Pl}}\right)$$
+</div>
+
+<p>
+    Comparing to the phenomenological form and substituting the linear mapping yields 
+    a candidate expression for the response coefficient:
+</p>
+
+<div class="equation">
+    $$\kappa_{\text{MSP}} \approx \frac{\beta^2}{M_{\rm Pl}^2} \cdot \left(
+    \frac{c^2}{4\pi G \rho_0 R_c^2} \right) \cdot \left(1 - e^{-m_{\rm eff} r}\right)$$
+</div>
+
+<p>
+    where the geometric factor $c^2/(4\pi G \rho_0 R_c^2) \approx 10^6$–$10^7$
+    for typical cluster densities ($\rho_0 \sim 10^{-18}$ g/cm³) and core radii
+    ($R_c \sim 1$ pc). This demonstrates <em>one possible</em> microscopic origin 
+    for the observed $\kappa_{\text{MSP}} \sim 10^6$ response coefficient, but the 
+    empirical value is determined from data, not from this or any other transfer model.
+</p>

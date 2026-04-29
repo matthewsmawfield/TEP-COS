@@ -1,8 +1,8 @@
 {
-  "timestamp": "2026-04-24T10:48:40.693033",
+  "timestamp": "2026-04-29T07:59:18.785776",
   "method": "Conservative systematic ceiling: upper bounds on N-body contributions",
   "observed_suppression": {
-    "gc_field_offset_dex": 0.592,
+    "gc_field_offset_dex": 0.6058329674440227,
     "density_scaling_slope": 0.3925040943834753,
     "newtonian_predicted_slope": 0.7476777251184834,
     "slope_suppression_dex": 0.35517363073500813,

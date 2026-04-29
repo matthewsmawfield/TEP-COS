@@ -66,12 +66,12 @@
     directly contradicts the predictions of standard mass segregation (slope > 0.7, positive binary residual).
 </p>
 
-<h2>4.2 Cross-Scale Consistency with ρ<sub>c</sub></h2>
+<h2>4.2 Cross-Scale Consistency with ρ<sub>T</sub></h2>
 
 <p>
-    The universal critical density ρ<sub>c</sub> ≈ 20 g/cm³, independently calibrated from 
+    The Temporal Topology saturation density ρ<sub>T</sub> ≈ 20 g/cm³, independently calibrated from 
     terrestrial clock correlations, defines the screening threshold 
-    across all scales. Since ρ<sub>c</sub> far exceeds astrophysical densities, essentially all 
+    across all scales. Since ρ<sub>T</sub> far exceeds astrophysical densities, essentially all 
     extended gravitational systems are in the weak screening regime:
 </p>
 
@@ -89,21 +89,21 @@
         <tr>
             <td>Earth (GNSS)</td>
             <td>~5–13 g/cm³</td>
-            <td>Partial/Transition (ρ ~ ρ<sub>c</sub>)</td>
+            <td>Partial/Transition (ρ ~ ρ<sub>T</sub>)</td>
             <td>Correlation length L<sub>c</sub></td>
             <td>L<sub>c</sub> ≈ 4,200 km</td>
         </tr>
         <tr>
             <td>Globular Cluster</td>
             <td>~10<sup>−18</sup> g/cm³</td>
-            <td>Weak screening ($\rho \ll \rho_c$)</td>
+            <td>Weak screening ($\rho \ll \rho_T$)</td>
             <td>Topologically flattened residual</td>
             <td>+0.606 dex (this work)</td>
         </tr>
         <tr>
             <td>Galaxy Halo</td>
             <td>~10<sup>−24</sup> g/cm³</td>
-            <td>Weak screening ($\rho \ll \rho_c$)</td>
+            <td>Weak screening ($\rho \ll \rho_T$)</td>
             <td>Active gradient coherence</td>
             <td>External constraints (beyond scope)</td>
         </tr>
@@ -111,7 +111,7 @@
 </table>
 
 <p>
-    The key test is not whether ρ<sub>c</sub> predicts specific length scales, but whether the 
+    The key test is not whether ρ<sub>T</sub> predicts specific length scales, but whether the 
     <em>topological flattening</em> is observed: in weakly screened systems, TEP effects should not scale 
     indefinitely with density. The pulsar channel confirms this with a 4.1σ rejection of $\rho^2$ scaling, 
     showing 0.606 dex higher |Ṗ| than field pulsars. Leave-one-cluster-out validation confirms this result is robust.
@@ -129,8 +129,8 @@
 <div class="defense-box">
     <h4>Counter-Argument 1: "Structural Scaling Artifacts"</h4>
     <p>Critique: The "Suppressed Density Scaling" result (Slope 0.393 vs 0.748) relies on comparing clusters of different densities. 
-    If dense clusters systematically have smaller core radii ($R_c$), and acceleration variance scales as $\sigma_a^2 \propto \rho_c^2 R_c^2$, 
-    an inverse correlation between $\rho_c$ and $R_c$ could artificially flatten the Newtonian prediction, mimicking the TEP signal.</p>
+    If dense clusters systematically have smaller core radii ($R_c$), and acceleration variance scales as $\sigma_a^2 \propto \rho_{\text{core}}^2 R_c^2$, 
+    an inverse correlation between $\rho_{\text{core}}$ and $R_c$ could artificially flatten the Newtonian prediction, mimicking the TEP signal.</p>
     
     <p>Test Result: This critique was explicitly tested. 
     Instead of using a generic $\rho^2$ scaling law, the Newtonian baseline simulation was re-run using the 
@@ -295,12 +295,12 @@
 <div class="defense-box">
     <h4>Counter-Argument: "The Missing Noisy Pulsars"</h4>
     <p>
-        <strong>Critique:</strong> If CMC models are correct and cluster cores contain extreme-acceleration pulsars (+1.54 dex), 
+        Critique: If CMC models are correct and cluster cores contain extreme-acceleration pulsars (+1.54 dex), 
         could radio telescopes simply be failing to detect or time them because their signals are too wildly accelerated?
     </p>
     
     <p>
-        <strong>Response:</strong> This observational bias scenario faces three substantive objections:
+        Response: This observational bias scenario faces three substantive objections:
     </p>
     
     <ol>
@@ -434,7 +434,7 @@
 </table>
 
 <p>
-    <strong>Synthesis:</strong> All four systematic categories have been explicitly tested with dedicated validation pipelines. The intrinsic evolution and selection bias channels return null results; the cluster acceleration channel shows severe tension with Newtonian predictions; and the environmental effects channel reveals the binary inversion signature predicted by chameleon screening. The combined validation framework constrains standard systematic explanations to an improbability factor of ~6×10⁻⁸.
+    Synthesis: All four systematic categories have been explicitly tested with dedicated validation pipelines. The intrinsic evolution and selection bias channels return null results; the cluster acceleration channel shows severe tension with Newtonian predictions; and the environmental effects channel reveals the binary inversion signature predicted by chameleon screening. The combined validation framework constrains standard systematic explanations to an improbability factor of ~6×10⁻⁸.
 </p>
 
 <h3>4.7.3 Population Differences (Pulsar Channel)</h3>
@@ -469,12 +469,12 @@
 </div>
 
 <p>
-    where a<sub>∥</sub> is the line-of-sight acceleration and R is the cluster scale. Under TEP with α<sub>eff</sub> ~ 10⁶–10⁷, 
+    where a<sub>∥</sub> is the line-of-sight acceleration and R is the cluster scale. Under TEP with κ<sub>MSP</sub> ~ 10⁶–10⁷, 
     the same physical acceleration produces an enhanced effect:
 </p>
 
 <div class="equation">
-    $$\Delta \dot{P}_{\text{TEP}} \sim \alpha_{\text{eff}} \cdot \frac{a_{\parallel} R}{c^2} \sim 0.01\text{–}0.1 \times \dot{P}_{\text{int}}$$
+    $$\Delta \dot{P}_{\text{TEP}} \sim \kappa_{\text{MSP}} \cdot \frac{a_{\parallel} R}{c^2} \sim 0.01\text{–}0.1 \times \dot{P}_{\text{int}}$$
 </div>
 
 <p>
@@ -529,7 +529,7 @@
     </p>
     
     <div class="equation">
-        $$\Delta \text{(Age)} \sim \alpha_{\text{eff}} \cdot \frac{\Phi}{c^2} \cdot \tau_{\text{nuclear}} \sim 10^6 \cdot 10^{-6} \cdot 10 \text{ Gyr} \sim 10 \text{ kyr}$$
+        $$\Delta \text{(Age)} \sim \kappa_{\text{MSP}} \cdot \frac{\Phi}{c^2} \cdot \tau_{\text{nuclear}} \sim 10^6 \cdot 10^{-6} \cdot 10 \text{ Gyr} \sim 10 \text{ kyr}$$
     </div>
     
     <p>
@@ -545,10 +545,10 @@
 <p>
     Modified gravity theories with screening mechanisms are tightly constrained by laboratory atom interferometry 
     and Lunar Laser Ranging (LLR). Atom interferometry excludes a wide range of chameleon/symmetron parameters 
-    in vacuum (Burrage et al. 2018). However, TEP posits a screening transition at $\rho_c \approx 20 \text{ g/cm}^3$. 
-    Laboratory vacuum chambers are embedded within the Earth's density field, which is well above $\rho_c$, 
-    ensuring the local environment is screened. The predicted enhancement ($\alpha_{\text{eff}} \sim 10^6$) applies 
-    only to extended systems with density below $\rho_c$ (e.g., cluster outskirts, galactic halos), 
+    in vacuum (Burrage et al. 2018). However, TEP posits a screening transition at $\rho_T \approx 20 \text{ g/cm}^3$. 
+    Laboratory vacuum chambers are embedded within the Earth's density field, which is well above $\rho_T$, 
+    ensuring the local environment is in a source/shear-suppressed regime. The predicted enhancement ($\kappa_{\text{MSP}} \sim 10^6$) applies 
+    only to extended systems with density below $\rho_T$ (e.g., cluster outskirts, galactic halos), 
     consistent with the observed null results in dense Solar System regimes.
 </p>
 
@@ -556,7 +556,7 @@
 <p>
     Pulsar Timing Arrays (PTAs) such as NANOGrav, EPTA, and the Fermi-LAT PTA (Xia et al. 2023) place stringent 
     constraints on Ultralight Dark Matter (ULDM) and stochastic gravitational wave backgrounds. 
-    Since the Galaxy is an "extended configuration" with density $\rho \ll \rho_c$, field pulsars used in PTAs 
+    Since the Galaxy is an "extended configuration" with density $\rho \ll \rho_T$, field pulsars used in PTAs 
     might be expected to exhibit strong TEP signatures. The absence of such signals is consistent with TEP 
     for three reasons:
 </p>
@@ -569,9 +569,9 @@
     pulsar's spin frequency ($\nu$) and spin-down rate ($\dot{\nu}$). Because PTAs fit $P$ and $\dot{P}$ individually 
     for every pulsar, these constant offsets are absorbed into the timing model and are effectively invisible to residual analysis.</li>
 
-    <li>Screened Earth Term: PTA searches for correlated signals rely on the "Earth term"—the 
-    component of the signal common to all pulsars due to the detector's (Earth's) motion or potential. 
-    However, the Solar System density ($\rho \gg \rho_c$) ensures the Earth is locally screened. 
+    <li>Source/Shear Sector Suppressed Earth Term: PTA searches for correlated signals rely on the "Earth term"—the
+    component of the signal common to all pulsars due to the detector's (Earth's) motion or potential.
+    However, the Solar System density ($\rho \gg \rho_T$) ensures the Earth is in a source/shear-suppressed regime. 
     Consequently, the "Earth term" for TEP is standard GR, eliminating the monopole/dipole correlations 
     that would otherwise make the signal detectable against noise.</li>
 
@@ -610,11 +610,11 @@
 </p>
 
 <p>
-    <strong>Analysis:</strong> TEP modifies the proper time accumulation rate dτ/dt = A(Φ)<sup>1/2</sup>, not the spatial geometry itself. The angular deflection of starlight (parallax) is a purely geometric effect depending on baseline and trigonometry, which TEP preserves. However, two subtle TEP effects on distance measurements must be considered:
+    <strong>Analysis:</strong> TEP modifies the proper time relation dτ̃/dτ<sub>g</sub> = A(Φ), not the spatial geometry itself. The angular deflection of starlight (parallax) is a purely geometric effect depending on baseline and trigonometry, which TEP preserves. However, two subtle TEP effects on distance measurements must be considered:
 </p>
 
 <ul>
-    <li><strong>Time-Dilation Bias in Parallax:</strong> Parallax is measured by comparing apparent stellar positions at different times. If Earth's clocks run at a different rate during the observation interval, the effective baseline length is unchanged, but the <em>coordinate time</em> interval differs. For Earth-based parallax (ρ ~ ρ<sub>c</sub>), the screening mechanism suppresses TEP effects, ensuring the standard π = 1/d relation holds to high precision.</li>
+    <li><strong>Time-Dilation Bias in Parallax:</strong> Parallax is measured by comparing apparent stellar positions at different times. If Earth's clocks run at a different rate during the observation interval, the effective baseline length is unchanged, but the <em>coordinate time</em> interval differs. For Earth-based parallax (ρ ~ ρ<sub>T</sub>), the screening mechanism suppresses TEP effects, ensuring the standard π = 1/d relation holds to high precision.</li>
     
     <li><strong>Shklovskii Contribution:</strong> The Shklovskii effect contributes to observed Ṗ: Ṗ<sub>obs</sub> = Ṗ<sub>int</sub> + Ṗ<sub>cluster</sub> + Ṗ<sub>Shk</sub>. For cluster pulsars, Ṗ<sub>cluster</sub> (~10⁻¹⁴ s/s) dominates Ṗ<sub>Shk</sub> (~10⁻¹⁶ s/s) by ~100× in dense cores. The Shklovskii term is only relevant for field pulsars with minimal environmental acceleration, where it contributes a random positive bias. The analysis handles this by:
     <ul>
@@ -665,31 +665,31 @@
     
     <h4>The Scaling Analysis</h4>
     <p>
-        For self-gravitating clusters with central density ρ_c ∝ M/R_c³:
+        For self-gravitating clusters with central density ρ_T ∝ M/R_c³:
     </p>
     <ul>
-        <li><strong>Acceleration (Newtonian):</strong> a ∝ GM/R_c² ∝ ρ_c × R_c</li>
-        <li><strong>Potential (TEP):</strong> |Φ| ∝ GM/R_c ∝ ρ_c × R_c²</li>
+        <li><strong>Acceleration (Newtonian):</strong> a ∝ GM/R_c² ∝ ρ_T × R_c</li>
+        <li><strong>Potential (TEP):</strong> |Φ| ∝ GM/R_c ∝ ρ_T × R_c²</li>
     </ul>
     
     <p>
-        Across the cluster sample, let the effective scaling relationship between core radius and density be characterized by a log-log regression slope $\alpha_{\text{eff}} = \text{Cov}(\log R_c, \log \rho_c) / \text{Var}(\log \rho_c)$. By the exact linearity of covariance in Ordinary Least Squares (OLS) regression:
+        Across the cluster sample, let the effective scaling relationship between core radius and density be characterized by a log-log regression slope $s = \text{Cov}(\log R_c, \log \rho_T) / \text{Var}(\log \rho_T)$. By the exact linearity of covariance in Ordinary Least Squares (OLS) regression:
     </p>
     <ul>
-        <li>Γ_N = d(log a)/d(log ρ) = 1 + α_eff  (Newtonian)</li>
-        <li>Γ_TEP = d(log |Φ|)/d(log ρ) = 1 + 2α_eff  (TEP)</li>
+        <li>Γ_N = d(log a)/d(log ρ) = 1 + s  (Newtonian)</li>
+        <li>Γ_TEP = d(log |Φ|)/d(log ρ) = 1 + 2s  (TEP)</li>
     </ul>
     
     <h4>The Parameter-Free Prediction</h4>
     <p>
-        Eliminating α_eff: From Γ_N = 1 + α_eff, this gives α_eff = Γ_N − 1. Substituting:
+        Eliminating s: From Γ_N = 1 + s, this gives s = Γ_N − 1. Substituting:
     </p>
     <p style="text-align: center; font-size: 1.2em; margin: 20px 0;">
         <strong>Γ_TEP = 2Γ_N − 1</strong>
     </p>
     
     <div class="note-box" style="background-color: #f8f9fa; border-left: 4px solid #6c757d; padding: 10px; margin: 15px 0; font-size: 0.9em;">
-        <strong>Note on Mathematical Exactness:</strong> The identity Γ_TEP = 2Γ_N − 1 is an <em>exact</em> mathematical consequence of the definition of the regression slope. It does not assume that $\alpha$ is strictly constant across all clusters, nor does it require zero scatter in the $R_c$ vs $\rho_c$ relationship. The prediction relies purely on the linearity of covariance over the ensemble. Furthermore, taking $\Gamma_N$ from full N-body/CMC simulations natively captures the effective $\alpha_{\text{eff}}$ of the mass-segregated pulsar population, rather than the bare structural $\alpha$ of the overall cluster light profile.
+        <strong>Note on Mathematical Exactness:</strong> The identity Γ_TEP = 2Γ_N − 1 is an <em>exact</em> mathematical consequence of the definition of the regression slope. It does not assume that $\alpha$ is strictly constant across all clusters, nor does it require zero scatter in the $R_c$ vs $\rho_T$ relationship. The prediction relies purely on the linearity of covariance over the ensemble. Furthermore, taking $\Gamma_N$ from full N-body/CMC simulations natively captures the effective slope $s$ of the mass-segregated pulsar population, rather than the bare structural slope of the overall cluster light profile.
     </div>
     
     <h4>Result</h4>
@@ -697,7 +697,7 @@
         Using the CMC literature consensus (Γ_N = 0.748 ± 0.039 from Kremer+20, Ye+22, Rodriguez+21, Weatherford+20):
     </p>
     <ul>
-        <li><strong>Predicted:</strong> Γ_TEP = 2 × 0.748 − 1 = <strong>0.50 ± 0.08</strong></li>
+        <li><strong>Predicted:</strong> Γ_TEP = 2 × 0.748 − 1 = 0.50 ± 0.08</li>
         <li><strong>Observed:</strong> Γ = 0.393 ± 0.079</li>
         <li><strong>Agreement:</strong> 0.9σ</li>
     </ul>
@@ -715,17 +715,17 @@
 </p>
 
 <div class="critical-analysis">
-    <h3>4.9.1 Parameter Sensitivity ($\rho_c$)</h3>
+    <h3>4.9.1 Parameter Sensitivity ($\rho_T$)</h3>
     <p>
-        The unification of GNSS and cluster scales relies on the universal critical density $\rho_c \approx 20$ g/cm³. 
+        The unification of GNSS and cluster scales relies on the Temporal Topology saturation density $\rho_T \approx 20$ g/cm³. 
         How sensitive is the result to this parameter?
     </p>
     <ul>
-        <li>Scaling: The screening radius scales as $R_{\text{sol}} \propto \rho_c^{-1/3}$. A factor of 2 uncertainty in $\rho_c$ 
+        <li>Scaling: The screening radius scales as $R_{\text{sol}} \propto \rho_T^{-1/3}$. A factor of 2 uncertainty in $\rho_T$ 
             shifts $R_{\text{sol}}$ by only ~26%.</li>
-        <li>Robustness: Since globular cluster core radii span a factor of ~10 (0.1 to 1 pc), an O(1) shift in $\rho_c$ 
+        <li>Robustness: Since globular cluster core radii span a factor of ~10 (0.1 to 1 pc), an O(1) shift in $\rho_T$ 
             does not invalidate the predicted screening phenomenology; it shifts the precise onset of saturation. 
-            The fact that <em>all</em> observed clusters in the sample appear saturated (suppressed density scaling) suggests the analysis is well within the screened regime, making the conclusion robust to moderate uncertainties in $\rho_c$.</li>
+            The fact that <em>all</em> observed clusters in the sample appear saturated (suppressed density scaling) suggests the analysis is well within the screened regime, making the conclusion robust to moderate uncertainties in $\rho_T$.</li>
     </ul>
 
     <h3>4.9.2 Failure Modes and Confounds</h3>

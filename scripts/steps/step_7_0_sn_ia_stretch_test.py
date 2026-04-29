@@ -595,7 +595,7 @@ def analyze_mB_sigma_correlation(df, data_source=""):
         Compute continuous screening strength using logistic transition.
         
         In TEP theory, screening is a continuous gradient, not a step-function.
-        The effective coupling transitions smoothly around the critical density
+        The response normalization transitions smoothly around the critical density
         (mapped to velocity dispersion σ_c) with width parameter controlling
         the steepness of the Temporal Topology profile.
         

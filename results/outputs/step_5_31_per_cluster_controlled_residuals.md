@@ -1,6 +1,6 @@
 # Per-Cluster Controlled Residuals
 
-**Generated:** 2026-04-24T07:46:48.815978+00:00
+**Generated:** 2026-04-29T04:57:17.850039+00:00
 
 ## Method
 For each GC pulsar, find the 5 closest field MSPs by period and B-proxy,

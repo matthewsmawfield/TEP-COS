@@ -1,9 +1,21 @@
+#!/usr/bin/env python3
+"""
+Step 5.34: Shklovskii Cancellation Sensitivity Analysis
+
+Tests whether Shklovskii effect amplification could explain the observed
+suppressed density scaling by simulating cancellation scenarios.
+
+Author: TEP-COS Analysis Pipeline
+Date: 2026
+"""
+
 import numpy as np
 import pandas as pd
 import matplotlib.pyplot as plt
 import json
 import os
 from scipy import stats
+
 
 def run_cancellation_analysis():
     print("--- Step 5.34: Shklovskii Cancellation Analysis ---")

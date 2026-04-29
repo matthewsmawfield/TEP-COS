@@ -1,5 +1,5 @@
 {
-  "timestamp": "2026-04-24T10:48:41.505550",
+  "timestamp": "2026-04-29T07:59:19.556617",
   "observed_values": {
     "raw_excess": 0.6058329674440227,
     "controlled_residual": 0.6037277114612232,
@@ -77,13 +77,13 @@
     "n_params_exotic_gr": 8,
     "n_data": 33,
     "chi2_tep": 0.0,
-    "chi2_exotic_gr": 526.5988995893631,
+    "chi2_exotic_gr": 528.2574236583016,
     "bic_tep": 10.489522684399441,
-    "bic_exotic_gr": 554.570960081095,
-    "log_bayes_factor": 272.0407186983478,
-    "bayes_factor": 1.3988881255579226e+118,
+    "bic_exotic_gr": 556.2294841500335,
+    "log_bayes_factor": 272.86998073281706,
+    "bayes_factor": 3.205729762685306e+118,
     "evidence_strength": "Decisive",
-    "interpretation": "TEP is favored over exotic-GR by factor of 13988881255579226378677230779909802881165422836114892467901406717760741547083512129191598824020812639588668218493894656.0 (Decisive)"
+    "interpretation": "TEP is favored over exotic-GR by factor of 32057297626853058436314782393117018746526916498752743870220104621068014283339272273406209089202905970522188788722040832.0 (Decisive)"
   },
   "sensitivity_sweep": {
     "individual_tests": [
@@ -320,17 +320,17 @@
       "interpretation": "Exotic physics would need to be tuned to 1 in 2e+07 to explain all three discrepancies simultaneously."
     },
     "bayesian_comparison": {
-      "bayes_factor": 1.3988881255579226e+118,
+      "bayes_factor": 3.205729762685306e+118,
       "evidence_strength": "Decisive",
-      "interpretation": "TEP is favored over exotic-GR by factor of 13988881255579226378677230779909802881165422836114892467901406717760741547083512129191598824020812639588668218493894656.0 (Decisive)"
+      "interpretation": "TEP is favored over exotic-GR by factor of 32057297626853058436314782393117018746526916498752743870220104621068014283339272273406209089202905970522188788722040832.0 (Decisive)"
     },
     "sensitivity_sweep": {
       "exclusion_zone": "Standard dynamics cannot reach observed slope 0.39 with any single-parameter variation. Would need 48% suppression of density scaling, requiring physically implausible parameter combinations.",
       "all_single_mechanisms_exclude": false
     },
     "combined_evidence": {
-      "total_sigma": 18.125264480997764,
-      "conclusion": "The exotic-GR hypothesis requires three independent mechanisms to conspire across 33 clusters with fine-tuning of 1 in 2e+07. Standard dynamics is excluded at >18.1\u03c3. TEP is favored by Bayes factor 13988881255579226378677230779909802881165422836114892467901406717760741547083512129191598824020812639588668218493894656.0 (Decisive evidence)."
+      "total_sigma": 18.166888952847728,
+      "conclusion": "The exotic-GR hypothesis requires three independent mechanisms to conspire across 33 clusters with fine-tuning of 1 in 2e+07. Standard dynamics is excluded at >18.2\u03c3. TEP is favored by Bayes factor 32057297626853058436314782393117018746526916498752743870220104621068014283339272273406209089202905970522188788722040832.0 (Decisive evidence)."
     },
     "mechanism_analyses": [
       {

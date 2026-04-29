@@ -1,8 +1,8 @@
 {
   "monte_carlo": {
     "n_iterations": 1000,
-    "prediction_mean": 17.11370250939161,
-    "prediction_std": 0.1731762255090782,
+    "prediction_mean": 17.11369754517293,
+    "prediction_std": 0.17318066253798037,
     "prediction_ci_68": [
       16.94886024953124,
       17.276708765456505
@@ -11,10 +11,10 @@
       16.76838161673721,
       17.47383999534672
     ],
-    "observed_residual": 0.59,
-    "observed_uncertainty": 0.053,
-    "conservative_difference": -16.17838161673721,
-    "conservative_significance_sigma": 305.2524833346643,
+    "observed_residual": 0.6058329674440227,
+    "observed_uncertainty": 0.05584903147277631,
+    "conservative_difference": -16.162548649293186,
+    "conservative_significance_sigma": 289.3971161732973,
     "robustness_assessment": "ROBUST",
     "interpretation": "The 311\u03c3 tension claim is robust to parameter uncertainties at the >100\u03c3 level, even when adopting conservative 95% CI bounds for cluster parameters."
   },
@@ -27,7 +27,7 @@
   },
   "summary": {
     "key_finding": "The dynamical calibration tension is robust to cluster parameter uncertainties.",
-    "even_conservative_95ci_bounds": "305.3\u03c3 tension persists",
+    "even_conservative_95ci_bounds": "289.4\u03c3 tension persists",
     "recommendation": "The 311\u03c3 claim can be stated as >100\u03c3 conservative lower bound."
   }
 }

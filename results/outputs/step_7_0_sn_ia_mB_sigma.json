@@ -1,7 +1,7 @@
 {
   "data_source": "SDSS_specObj_DIRECT_STELLAR",
   "n_sample": 218,
-  "timestamp": "2026-04-24T10:48:45.164140",
+  "timestamp": "2026-04-29T07:59:23.601230",
   "sigma_range": {
     "min": 32.44382,
     "max": 349.3705,

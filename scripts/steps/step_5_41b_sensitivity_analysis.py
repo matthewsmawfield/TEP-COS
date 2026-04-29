@@ -31,6 +31,21 @@ REPO_ROOT = Path(__file__).resolve().parents[2]
 RESULTS_DIR = REPO_ROOT / "results" / "outputs"
 OUTPUT_JSON = RESULTS_DIR / "step_5_41b_sensitivity_analysis.json"
 
+
+def load_observed_residual():
+    """Load observed residual and uncertainty from population controls analysis."""
+    pop_controls_path = RESULTS_DIR / "step_5_10_pulsar_population_controls.json"
+    if pop_controls_path.exists():
+        with open(pop_controls_path) as f:
+            pop_data = json.load(f)
+        period_match = pop_data["controls"]["period_matched"]
+        observed_residual = period_match["diff_mean"]
+        # Uncertainty from bootstrap CI
+        observed_uncertainty = (period_match["diff_ci84"] - period_match["diff_ci16"]) / 2
+        return observed_residual, observed_uncertainty
+    else:
+        raise FileNotFoundError(f"Required input missing: {pop_controls_path}")
+
 # Base cluster parameters with plausible uncertainty ranges
 CLUSTER_PARAMS_BASE = {
     "47_Tuc": {"M": 1.0e6, "rc": 0.36, "rh": 3.17, "M_unc": 0.2e6, "rc_unc": 0.05},
@@ -150,16 +165,15 @@ def run_monte_carlo_sensitivity(n_iterations=1000):
     print(f"  68% CI: [{ci_16:.2f}, {ci_84:.2f}] dex")
     print(f"  95% CI: [{ci_2_5:.2f}, {ci_97_5:.2f}] dex")
     
-    # Compare to observed
-    observed_residual = 0.59  # dex
-    observed_uncertainty = 0.053  # dex
+    # Load observed values dynamically from upstream analysis
+    observed_residual, observed_uncertainty = load_observed_residual()
     
     # Conservative comparison: use lower bound of prediction
     min_predicted = ci_2_5
     max_difference = observed_residual - min_predicted
     
     print(f"\nRobustness Test:")
-    print(f"  Observed residual: {observed_residual:.2f} ± {observed_uncertainty:.2f} dex")
+    print(f"  Observed residual: {observed_residual:.3f} ± {observed_uncertainty:.3f} dex (loaded from step_5_10)")
     print(f"  Minimum Newtonian prediction (95% CI lower): {min_predicted:.2f} dex")
     print(f"  Maximum difference: {max_difference:.2f} dex")
     print(f"  Significance (conservative): {abs(max_difference / observed_uncertainty):.1f}σ")
