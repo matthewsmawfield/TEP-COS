@@ -1,5 +1,27 @@
 TEP-COS: Recent Changes Log
 ====================================================
+Date: 27 April 2026
+Version: v0.6 (Caracas)
+
+----------------------------------------------------
+This document tracks corrections and improvements to the TEP-COS analysis
+pipeline and manuscript components.
+
+================================================================================
+VERSION v0.6 (Caracas) - 27 April 2026
+================================================================================
+
+Version bump from v0.5 to v0.6 with updated last modified date.
+
+CHANGES MADE:
+- Updated all metadata files (CITATION.cff, codemeta.json, VERSION.json)
+- Updated README.md version badge and dates
+- Updated site/index.html version display and PDF links
+- Updated manuscript files to v0.6 (Caracas)
+- First published date: 9 January 2026 (unchanged)
+- Last updated date: 27 April 2026
+
+================================================================================
 Date: 24 April 2026
 Version: v0.5 (Caracas)
 

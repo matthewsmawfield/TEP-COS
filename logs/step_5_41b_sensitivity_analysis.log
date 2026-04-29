@@ -1,38 +1,38 @@
-[10:48:21] [INFO] STEP 5.41b: SENSITIVITY ANALYSIS FOR DYNAMICAL CALIBRATION
-[10:48:21] [INFO] ======================================================================
-[10:48:21] [INFO] 
-[10:48:21] [INFO] Purpose: Test robustness of 311σ tension claim to cluster parameter uncertainties
-[10:48:21] [INFO] 
-[10:48:21] [INFO] ======================================================================
-[10:48:21] [INFO] CLUSTER PARAMETER SENSITIVITY ANALYSIS
-[10:48:21] [INFO] ======================================================================
-[10:48:36] [INFO] 
-[10:48:36] [INFO] Sensitivity Analysis Results (1000 iterations):
-[10:48:36] [INFO]   Mean prediction: 17.11 dex
-[10:48:36] [INFO]   Standard deviation: 0.17 dex
-[10:48:36] [INFO]   68% CI: [16.95, 17.28] dex
-[10:48:36] [INFO]   95% CI: [16.77, 17.47] dex
-[10:48:36] [INFO] 
-[10:48:36] [INFO] Robustness Test:
-[10:48:36] [INFO]   Observed residual: 0.59 ± 0.05 dex
-[10:48:36] [INFO]   Minimum Newtonian prediction (95% CI lower): 16.77 dex
-[10:48:36] [INFO]   Maximum difference: -16.18 dex
-[10:48:36] [INFO]   Significance (conservative): 305.3σ
-[10:48:36] [INFO]   Conclusion: Tension persists at >2σ even with conservative parameter bounds
-[10:48:36] [INFO] 
-[10:48:36] [INFO] ======================================================================
-[10:48:36] [INFO] INDIVIDUAL PARAMETER SENSITIVITY
-[10:48:36] [INFO] ======================================================================
-[10:48:36] [INFO] 
-[10:48:36] [INFO] Terzan_5 parameter sensitivities:
-[10:48:36] [INFO]   d(shift)/dM: 2.31e-07 dex/(M_sun)
-[10:48:36] [INFO]   d(shift)/d(rc): -4.00 dex/parsec
-[10:48:36] [INFO] 
-[10:48:36] [INFO] Uncertainty propagation:
-[10:48:36] [INFO]   Mass uncertainty contribution: ±0.12 dex
-[10:48:36] [INFO]   Core radius uncertainty contribution: ±0.12 dex
-[10:48:36] [INFO]   Combined (quadrature): ±0.17 dex
-[10:48:36] [INFO] 
-[10:48:36] [INFO] ======================================================================
-[10:48:36] [INFO] Results saved to: /Users/matthewsmawfield/www/Temporal Equivalence Principle/TEP-COS/results/outputs/step_5_41b_sensitivity_analysis.json
-[10:48:36] [INFO] ======================================================================
+[07:58:59] [INFO] STEP 5.41b: SENSITIVITY ANALYSIS FOR DYNAMICAL CALIBRATION
+[07:58:59] [INFO] ======================================================================
+[07:58:59] [INFO] 
+[07:58:59] [INFO] Purpose: Test robustness of 311σ tension claim to cluster parameter uncertainties
+[07:58:59] [INFO] 
+[07:58:59] [INFO] ======================================================================
+[07:58:59] [INFO] CLUSTER PARAMETER SENSITIVITY ANALYSIS
+[07:58:59] [INFO] ======================================================================
+[07:59:14] [INFO] 
+[07:59:14] [INFO] Sensitivity Analysis Results (1000 iterations):
+[07:59:14] [INFO]   Mean prediction: 17.11 dex
+[07:59:14] [INFO]   Standard deviation: 0.17 dex
+[07:59:14] [INFO]   68% CI: [16.95, 17.28] dex
+[07:59:14] [INFO]   95% CI: [16.77, 17.47] dex
+[07:59:14] [INFO] 
+[07:59:14] [INFO] Robustness Test:
+[07:59:14] [INFO]   Observed residual: 0.606 ± 0.056 dex (loaded from step_5_10)
+[07:59:14] [INFO]   Minimum Newtonian prediction (95% CI lower): 16.77 dex
+[07:59:14] [INFO]   Maximum difference: -16.16 dex
+[07:59:14] [INFO]   Significance (conservative): 289.4σ
+[07:59:14] [INFO]   Conclusion: Tension persists at >2σ even with conservative parameter bounds
+[07:59:14] [INFO] 
+[07:59:14] [INFO] ======================================================================
+[07:59:14] [INFO] INDIVIDUAL PARAMETER SENSITIVITY
+[07:59:14] [INFO] ======================================================================
+[07:59:15] [INFO] 
+[07:59:15] [INFO] Terzan_5 parameter sensitivities:
+[07:59:15] [INFO]   d(shift)/dM: 2.31e-07 dex/(M_sun)
+[07:59:15] [INFO]   d(shift)/d(rc): -4.00 dex/parsec
+[07:59:15] [INFO] 
+[07:59:15] [INFO] Uncertainty propagation:
+[07:59:15] [INFO]   Mass uncertainty contribution: ±0.12 dex
+[07:59:15] [INFO]   Core radius uncertainty contribution: ±0.12 dex
+[07:59:15] [INFO]   Combined (quadrature): ±0.17 dex
+[07:59:15] [INFO] 
+[07:59:15] [INFO] ======================================================================
+[07:59:15] [INFO] Results saved to: /Users/matthewsmawfield/www/Temporal Equivalence Principle/TEP-COS/results/outputs/step_5_41b_sensitivity_analysis.json
+[07:59:15] [INFO] ======================================================================

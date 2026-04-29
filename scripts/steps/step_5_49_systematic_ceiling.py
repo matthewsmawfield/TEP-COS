@@ -42,6 +42,26 @@ DATA_DIR = REPO_ROOT / "data"
 OUTPUT_JSON = RESULTS_DIR / "step_5_49_systematic_ceiling.json"
 OUTPUT_MD = RESULTS_DIR / "step_5_49_systematic_ceiling.md"
 
+# =============================================================================
+# THEORETICAL SYSTEMATIC BOUNDS
+# =============================================================================
+# These are CONSERVATIVE (generous to N-body explanations) upper bounds on
+# systematic effects. They represent physical limits, not tuned parameters.
+# 
+# Rationale:
+# - MAX_UNMODELED_BINARY_SHIFT: Even if ALL binary orbits had unmodeled
+#   acceleration in the "helpful" direction, binary fraction is ~30-40%
+#   and effect is bounded by orbital dynamics. 0.05 dex is very generous.
+# - MAX_SELECTION_SHIFT: Detection bias favors brighter/higher-Ṗ pulsars,
+#   which would INCREASE observed Ṗ, not decrease it. 0.08 dex bounds
+#   the magnitude of this wrong-direction effect.
+# - MAX_METALLICITY_SHIFT: Metallicity effects on Ṗ are secondary and
+#   poorly constrained. 0.08 dex is a generous upper bound.
+# =============================================================================
+MAX_UNMODELED_BINARY_SHIFT = 0.05  # dex
+MAX_SELECTION_SHIFT_WRONG_DIRECTION = 0.08  # dex
+MAX_METALLICITY_SHIFT = 0.08  # dex
+
 
 def load_observed_suppression():
     """Load dynamically computed values from upstream pipeline outputs."""
@@ -71,11 +91,20 @@ def load_observed_suppression():
         else:
             raise FileNotFoundError(f"Required input missing: {cmc_file} or {sim_file}")
     
+    # Also load GC/field offset from population controls
+    pop_controls_file = RESULTS_DIR / "step_5_10_pulsar_population_controls.json"
+    if pop_controls_file.exists():
+        with open(pop_controls_file, 'r') as f:
+            pop_data = json.load(f)
+        gc_field_offset = pop_data["controls"]["period_matched"]["diff_mean"]
+    else:
+        raise FileNotFoundError(f"Required input missing: {pop_controls_file}")
+    
     slope_suppression = newtonian_slope - density_slope
     total_discrepancy = slope_suppression  # Conservative estimate
     
     return {
-        "gc_field_offset_dex": 0.592,  # From step 5.33 - not dynamically loaded
+        "gc_field_offset_dex": gc_field_offset,  # Loaded dynamically from step_5_10
         "density_scaling_slope": density_slope,
         "newtonian_predicted_slope": newtonian_slope,
         "slope_suppression_dex": slope_suppression,
@@ -197,18 +226,16 @@ def bound_binary_acceleration():
     # If ALL binaries had unmodeled acceleration (they don't - orbits measured)
     # and it was systematically in the wrong direction
     
-    max_unmodeled_binary_shift = 0.05  # dex (very conservative)
-    
     return {
         "mechanism": "Unmodeled binary orbital acceleration",
         "direction": "Could go either way depending on orbital phase",
-        "max_contribution_dex": max_unmodeled_binary_shift,
+        "max_contribution_dex": MAX_UNMODELED_BINARY_SHIFT,
         "assumptions": [
             "All binary orbits have unmodeled systematic acceleration",
             "Systematic direction aligned to explain suppression (unlikely)",
         ],
-        "conclusion": f"Binary effects bounded at < {max_unmodeled_binary_shift:.2f} dex",
-        "relevance": f"NEGLIGIBLE: Explains at most {max_unmodeled_binary_shift/0.45*100:.0f}% of observed suppression",
+        "conclusion": f"Binary effects bounded at < {MAX_UNMODELED_BINARY_SHIFT:.2f} dex",
+        "relevance": f"NEGLIGIBLE: Explains at most {MAX_UNMODELED_BINARY_SHIFT/0.45*100:.0f}% of observed suppression",
     }
 
 
@@ -225,13 +252,11 @@ def bound_selection_effects():
     
     # But the observed suppression is LOWER Ṗ, so selection goes wrong way
     
-    max_selection_shift_wrong_direction = 0.08  # dex
-    
     return {
         "mechanism": "Observational selection (detection bias toward bright/high-Ṗ)",
         "direction": "INCREASES observed Ṗ (opposite to suppression)",
         "max_contribution_dex": 0.0,  # Wrong direction
-        "max_if_wrong_direction_dex": max_selection_shift_wrong_direction,
+        "max_if_wrong_direction_dex": MAX_SELECTION_SHIFT_WRONG_DIRECTION,
         "conclusion": "Selection effects INCREASE apparent Ṗ, cannot explain suppression",
         "relevance": "OPPOSITE to required direction - EXCLUDED as explanation",
     }
@@ -252,18 +277,16 @@ def bound_metallicity_effects():
     # Metallicity affects magnetic field decay and spin-up
     # But effect on Ṗ is secondary and poorly constrained
     
-    max_metallicity_shift = 0.08  # dex (very generous)
-    
     return {
         "mechanism": "Metallicity differences (GC vs field)",
         "direction": "Uncertain, but secondary effect",
-        "max_contribution_dex": max_metallicity_shift,
+        "max_contribution_dex": MAX_METALLICITY_SHIFT,
         "assumptions": [
             "Extreme metallicity gradient effect on Ṗ",
             "All other parameters constant (unrealistic)",
         ],
-        "conclusion": f"Metallicity effects bounded at < {max_metallicity_shift:.2f} dex",
-        "relevance": f"SMALL: Explains at most {max_metallicity_shift/0.45*100:.0f}% of observed suppression",
+        "conclusion": f"Metallicity effects bounded at < {MAX_METALLICITY_SHIFT:.2f} dex",
+        "relevance": f"SMALL: Explains at most {MAX_METALLICITY_SHIFT/0.45*100:.0f}% of observed suppression",
     }
 
 

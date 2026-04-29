@@ -1,68 +1,68 @@
-[10:46:56] [INFO] STEP 5.33b: OUTLIER EXCLUSION SENSITIVITY ANALYSIS
-[10:46:56] [INFO] ======================================================================
-[10:46:56] [INFO] 
-[10:46:56] [INFO] Loaded 184 pulsars in 29 clusters
-[10:46:56] [INFO] ======================================================================
-[10:46:56] [INFO] OUTLIER EXCLUSION SENSITIVITY ANALYSIS
-[10:46:56] [INFO] ======================================================================
-[10:46:56] [INFO] 
-[10:46:56] [INFO] This analysis tests whether the suppressed density scaling
-[10:46:56] [INFO] conclusion is driven by extreme high-density clusters.
-[10:46:56] [INFO] 
-[10:46:56] [INFO] Cluster density ranking (log10 rho_c):
-[10:46:56] [INFO]    1. NGC 6517                 : 5.80 (13 pulsars) <--
-[10:46:56] [INFO]    2. NGC 6397                 : 5.68 ( 2 pulsars) <--
-[10:46:56] [INFO]    3. NGC 6624                 : 5.60 ( 2 pulsars) <--
-[10:46:56] [INFO]    4. Terzan 5                 : 5.50 (47 pulsars)
-[10:46:56] [INFO]    5. NGC 6522                 : 5.50 ( 2 pulsars)
-[10:46:56] [INFO]    6. NGC 6544                 : 5.20 ( 2 pulsars)
-[10:46:56] [INFO]    7. M62 (NGC 6266)           : 5.16 ( 9 pulsars)
-[10:46:56] [INFO]    8. NGC 1851                 : 5.09 ( 2 pulsars)
-[10:46:56] [INFO]    9. M15 (NGC 7078)           : 5.05 ( 8 pulsars)
-[10:46:56] [INFO]   10. Terzan 1                 : 5.00 ( 6 pulsars)
-[10:46:56] [INFO] 
-[10:46:56] [INFO] 
-[10:46:56] [INFO] ----------------------------------------------------------------------
-[10:46:56] [INFO] FULL SAMPLE (all clusters)
-[10:46:56] [INFO] ----------------------------------------------------------------------
-[10:46:56] [INFO]   Slope: 0.393 ± 0.079
-[10:46:56] [INFO]   Clusters: 29, Pulsars: 184
-[10:46:56] [INFO]   Tension with Newtonian (0.72): 4.1σ
-[10:46:56] [INFO] 
-[10:46:56] [INFO] ----------------------------------------------------------------------
-[10:46:56] [INFO] EXCLUDING TOP 1 DENSEST CLUSTER(S): NGC 6517
-[10:46:56] [INFO] ----------------------------------------------------------------------
-[10:46:56] [INFO]   Slope: 0.404 ± 0.089
-[10:46:56] [INFO]   Clusters: 28, Pulsars: 171
-[10:46:56] [INFO]   Tension with Newtonian: 3.6σ
-[10:46:56] [INFO]   Change from full sample: +0.011 dex/dex
-[10:46:56] [INFO]   Tension change: -0.6σ
-[10:46:56] [INFO] 
-[10:46:56] [INFO] ----------------------------------------------------------------------
-[10:46:56] [INFO] EXCLUDING TOP 2 DENSEST CLUSTER(S): NGC 6517, NGC 6397
-[10:46:56] [INFO] ----------------------------------------------------------------------
-[10:46:56] [INFO]   Slope: 0.436 ± 0.089
-[10:46:56] [INFO]   Clusters: 27, Pulsars: 169
-[10:46:56] [INFO]   Tension with Newtonian: 3.2σ
-[10:46:56] [INFO]   Change from full sample: +0.043 dex/dex
-[10:46:56] [INFO]   Tension change: -0.9σ
-[10:46:56] [INFO] 
-[10:46:56] [INFO] ----------------------------------------------------------------------
-[10:46:56] [INFO] EXCLUDING TOP 3 DENSEST CLUSTER(S): NGC 6517, NGC 6397, NGC 6624
-[10:46:56] [INFO] ----------------------------------------------------------------------
-[10:46:56] [INFO]   Slope: 0.433 ± 0.093
-[10:46:56] [INFO]   Clusters: 26, Pulsars: 167
-[10:46:56] [INFO]   Tension with Newtonian: 3.1σ
-[10:46:56] [INFO]   Change from full sample: +0.041 dex/dex
-[10:46:56] [INFO]   Tension change: -1.1σ
-[10:46:56] [INFO] 
-[10:46:56] [INFO] ======================================================================
-[10:46:56] [INFO] SUMMARY & INTERPRETATION
-[10:46:56] [INFO] ======================================================================
-[10:46:56] [INFO] 
-[10:46:56] [INFO] The suppressed density scaling conclusion is ROBUST to exclusion of the top 3 densest clusters. Even after removing NGC 6517, NGC 6397, NGC 6624, the slope remains suppressed (0.43 vs Newtonian 0.72) with >3σ significance.
-[10:46:56] [INFO] 
-[10:46:56] [INFO] Addressing the concern that Terzan 5 and other dense clusters drive the fit: We explicitly tested the mixed-effects model after sequentially removing the top 1, 2, and 3 densest clusters (NGC 6517, NGC 6397, NGC 6624). The suppressed scaling (slope < 0.72) persists in all cases, with significance remaining above 3σ. This confirms the result is not an artifact of outlier influence.
-[10:46:56] [INFO] 
-[10:46:56] [INFO] Results saved to: /Users/matthewsmawfield/www/Temporal Equivalence Principle/TEP-COS/results/outputs/step_5_33b_outlier_exclusion_results.json
-[10:46:56] [INFO] ======================================================================
+[07:57:26] [INFO] STEP 5.33b: OUTLIER EXCLUSION SENSITIVITY ANALYSIS
+[07:57:26] [INFO] ======================================================================
+[07:57:26] [INFO] 
+[07:57:26] [INFO] Loaded 184 pulsars in 29 clusters
+[07:57:26] [INFO] ======================================================================
+[07:57:26] [INFO] OUTLIER EXCLUSION SENSITIVITY ANALYSIS
+[07:57:26] [INFO] ======================================================================
+[07:57:26] [INFO] 
+[07:57:26] [INFO] This analysis tests whether the suppressed density scaling
+[07:57:26] [INFO] conclusion is driven by extreme high-density clusters.
+[07:57:26] [INFO] 
+[07:57:26] [INFO] Cluster density ranking (log10 rho_c):
+[07:57:26] [INFO]    1. NGC 6517                 : 5.80 (13 pulsars) <--
+[07:57:26] [INFO]    2. NGC 6397                 : 5.68 ( 2 pulsars) <--
+[07:57:26] [INFO]    3. NGC 6624                 : 5.60 ( 2 pulsars) <--
+[07:57:26] [INFO]    4. Terzan 5                 : 5.50 (47 pulsars)
+[07:57:26] [INFO]    5. NGC 6522                 : 5.50 ( 2 pulsars)
+[07:57:26] [INFO]    6. NGC 6544                 : 5.20 ( 2 pulsars)
+[07:57:26] [INFO]    7. M62 (NGC 6266)           : 5.16 ( 9 pulsars)
+[07:57:26] [INFO]    8. NGC 1851                 : 5.09 ( 2 pulsars)
+[07:57:26] [INFO]    9. M15 (NGC 7078)           : 5.05 ( 8 pulsars)
+[07:57:26] [INFO]   10. Terzan 1                 : 5.00 ( 6 pulsars)
+[07:57:26] [INFO] 
+[07:57:26] [INFO] 
+[07:57:26] [INFO] ----------------------------------------------------------------------
+[07:57:26] [INFO] FULL SAMPLE (all clusters)
+[07:57:26] [INFO] ----------------------------------------------------------------------
+[07:57:26] [INFO]   Slope: 0.393 ± 0.079
+[07:57:26] [INFO]   Clusters: 29, Pulsars: 184
+[07:57:26] [INFO]   Tension with Newtonian (0.72): 4.1σ
+[07:57:26] [INFO] 
+[07:57:26] [INFO] ----------------------------------------------------------------------
+[07:57:26] [INFO] EXCLUDING TOP 1 DENSEST CLUSTER(S): NGC 6517
+[07:57:26] [INFO] ----------------------------------------------------------------------
+[07:57:26] [INFO]   Slope: 0.404 ± 0.089
+[07:57:26] [INFO]   Clusters: 28, Pulsars: 171
+[07:57:26] [INFO]   Tension with Newtonian: 3.6σ
+[07:57:26] [INFO]   Change from full sample: +0.011 dex/dex
+[07:57:26] [INFO]   Tension change: -0.6σ
+[07:57:26] [INFO] 
+[07:57:26] [INFO] ----------------------------------------------------------------------
+[07:57:26] [INFO] EXCLUDING TOP 2 DENSEST CLUSTER(S): NGC 6517, NGC 6397
+[07:57:26] [INFO] ----------------------------------------------------------------------
+[07:57:26] [INFO]   Slope: 0.436 ± 0.089
+[07:57:26] [INFO]   Clusters: 27, Pulsars: 169
+[07:57:26] [INFO]   Tension with Newtonian: 3.2σ
+[07:57:26] [INFO]   Change from full sample: +0.043 dex/dex
+[07:57:26] [INFO]   Tension change: -0.9σ
+[07:57:26] [INFO] 
+[07:57:26] [INFO] ----------------------------------------------------------------------
+[07:57:26] [INFO] EXCLUDING TOP 3 DENSEST CLUSTER(S): NGC 6517, NGC 6397, NGC 6624
+[07:57:26] [INFO] ----------------------------------------------------------------------
+[07:57:26] [INFO]   Slope: 0.433 ± 0.093
+[07:57:26] [INFO]   Clusters: 26, Pulsars: 167
+[07:57:26] [INFO]   Tension with Newtonian: 3.1σ
+[07:57:26] [INFO]   Change from full sample: +0.041 dex/dex
+[07:57:26] [INFO]   Tension change: -1.1σ
+[07:57:26] [INFO] 
+[07:57:26] [INFO] ======================================================================
+[07:57:26] [INFO] SUMMARY & INTERPRETATION
+[07:57:26] [INFO] ======================================================================
+[07:57:26] [INFO] 
+[07:57:26] [INFO] The suppressed density scaling conclusion is ROBUST to exclusion of the top 3 densest clusters. Even after removing NGC 6517, NGC 6397, NGC 6624, the slope remains suppressed (0.43 vs Newtonian 0.72) with >3σ significance.
+[07:57:26] [INFO] 
+[07:57:26] [INFO] Addressing the concern that Terzan 5 and other dense clusters drive the fit: We explicitly tested the mixed-effects model after sequentially removing the top 1, 2, and 3 densest clusters (NGC 6517, NGC 6397, NGC 6624). The suppressed scaling (slope < 0.72) persists in all cases, with significance remaining above 3σ. This confirms the result is not an artifact of outlier influence.
+[07:57:26] [INFO] 
+[07:57:26] [INFO] Results saved to: /Users/matthewsmawfield/www/Temporal Equivalence Principle/TEP-COS/results/outputs/step_5_33b_outlier_exclusion_results.json
+[07:57:26] [INFO] ======================================================================

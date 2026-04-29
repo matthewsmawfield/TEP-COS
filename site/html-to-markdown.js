@@ -239,8 +239,8 @@ class HTMLToMarkdownConverter {
         const dateMatch = html.match(/<div[^>]*class=["'][^"']*date[^"']*["'][^>]*>(.*?)<\/div>/i);
         const date = dateMatch ? dateMatch[1].replace(/<[^>]+>/g, '').trim() : 'First published: 31 December 2025';
         
-        // Robust DOI extraction (handles links and plain text)
-        const doiDivMatch = html.match(/<div[^>]*class=["'][^"']*doi[^"']*["'][^>]*>(.*?)<\/div>/i);
+        // Robust DOI extraction (handles links and plain text, matches across newlines)
+        const doiDivMatch = html.match(/<div[^>]*class=["'][^"']*doi[^"']*["'][^>]*>([\s\S]*?)<\/div>/i);
         let doi = '[DOI]';
         if (doiDivMatch) {
             // Remove comments and tags to get raw text
@@ -336,7 +336,8 @@ class HTMLToMarkdownConverter {
      * Build the complete markdown document with metadata
      */
     buildMarkdownDocument(metadata, content) {
-        const timestamp = new Date().toISOString().split('T')[0];
+        const now = new Date();
+        const timestamp = now.toLocaleDateString('en-GB', { day: 'numeric', month: 'long', year: 'numeric' });
         
         // Clean up the title to remove the author part
         const cleanTitle = metadata.title.replace(' | Matthew Lukin Smawfield', '');

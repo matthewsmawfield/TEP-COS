@@ -84,8 +84,8 @@ def run_monte_carlo_proof(n_clusters=1000, alpha_true=-0.4, scatter_dex=0.5):
     noise = np.random.normal(0, scatter_dex, n_clusters)
     log_R = alpha_true * log_rho + noise
     
-    # Calculate effective alpha from this specific realization
-    alpha_eff, _, _, _, _ = stats.linregress(log_rho, log_R)
+    # Calculate structural scaling index (power-law slope of R_c vs rho_c)
+    slope_rho, _, _, _, _ = stats.linregress(log_rho, log_R)
     
     # Calculate Newtonian and TEP observables
     log_a = log_rho + log_R
@@ -102,7 +102,7 @@ def run_monte_carlo_proof(n_clusters=1000, alpha_true=-0.4, scatter_dex=0.5):
     return {
         "alpha_true": alpha_true,
         "scatter_dex": scatter_dex,
-        "alpha_eff_measured": alpha_eff,
+        "slope_rho_measured": slope_rho,
         "gamma_N_measured": gamma_N,
         "gamma_TEP_measured": gamma_TEP,
         "gamma_TEP_predicted": predicted_gamma_TEP,
@@ -126,7 +126,7 @@ def main():
     
     print(f"Input true α:        {results['alpha_true']:.3f}")
     print(f"Scatter applied:     ±{results['scatter_dex']} dex (huge variation!)")
-    print(f"Measured α_eff:      {results['alpha_eff_measured']:.3f}")
+    print(f"Measured slope:      {results['slope_rho_measured']:.3f}")
     print(f"Measured Γ_N:        {results['gamma_N_measured']:.3f}")
     print(f"Measured Γ_TEP:      {results['gamma_TEP_measured']:.3f}")
     print(f"Predicted Γ_TEP:     {results['gamma_TEP_predicted']:.3f} (using 2Γ_N - 1)")

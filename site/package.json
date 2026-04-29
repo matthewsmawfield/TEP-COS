@@ -1,8 +1,8 @@
 {
   "name": "tep-cos-site",
-  "version": "0.5.0",
+  "version": "0.6.0",
   "description": "The Temporal Equivalence Principle: Suppressed Density Scaling in Globular Cluster Pulsars",
-  "comment": "Package version matches manuscript version v0.5 (Caracas)",
+  "comment": "Package version matches manuscript version v0.6 (Caracas)",
   "main": "index.html",
   "scripts": {
     "dev": "node dev-server.js",
@@ -25,7 +25,7 @@
     "density scaling",
     "modified gravity"
   ],
-  "author": "Matthew Lukin Smawfield <matthewsmawfield@gmail.com>",
+  "author": "Matthew Lukin Smawfield <matthew@mlsmawfield.com>",
   "license": "CC-BY-4.0",
   "repository": {
     "type": "git",

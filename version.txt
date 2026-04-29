@@ -1,4 +1,4 @@
-v0.5 (Caracas) - LaTeX Consistency Patch
+v0.6 (Caracas) - 29 April 2026
 
 - Fixed LaTeX formatting inconsistencies: Standardized $\alpha_{\text{eff}}$ to use \text (not \rm) throughout all component files
 - Verified $M_{\rm Pl}$ consistently uses \rm as established convention

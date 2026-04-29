@@ -3,8 +3,8 @@
   "@type": "ScholarlyArticle",
   "identifier": "https://doi.org/10.5281/zenodo.18165798",
   "doi": "10.5281/zenodo.18165798",
-  "name": "The Temporal Equivalence Principle: Suppressed Density Scaling in Globular Cluster Pulsars",
-  "description": "Gravitational time dilation in General Relativity is verified to 10⁻⁵ precision in the Solar System. At intermediate astrophysical scales, persistent anomalies emerge. The Temporal Equivalence Principle (TEP) formalizes an alternative: that time dilation is scale-dependent. Analysis of 394 millisecond pulsars (196 GC, 198 field) reveals a 0.59 dex raw excess in spin-down magnitude—cluster pulsars spin down faster than field controls. After controlling for population differences, a 0.61 dex residual persists (95% CI: 0.55–0.66 dex). The signal exhibits suppressed density scaling (slope Γ = 0.39 ± 0.08 vs Newtonian Γ = 0.72; 4.1σ rejection), saturating in dense cores. Leave-one-cluster-out validation confirms the result is stable (3.8% relative instability). The pulsar signal provides primary evidence for potential-dependent modifications to gravitational time flow.",
+  "name": "Temporal Equivalence Principle: Suppressed Density Scaling in Globular Cluster Pulsars",
+  "description": "Gravitational time dilation in General Relativity is verified to 10⁻⁵ precision in the Solar System. At intermediate astrophysical scales, persistent anomalies emerge. The Temporal Equivalence Principle (TEP) formalizes an alternative: that time dilation is scale-dependent. Analysis of 543 millisecond pulsars (197 GC, 346 field) reveals a 0.63 dex raw excess in spin-down magnitude—cluster pulsars spin down faster than field controls. After controlling for population differences, a 0.40 dex controlled residual persists (95% CI: 0.33–0.48 dex, 8.3σ). The signal exhibits suppressed density scaling (slope Γ = 0.39 ± 0.08 vs Newtonian Γ = 0.72; 4.1σ rejection), saturating in dense cores. Leave-one-cluster-out validation confirms the result is stable (3.8% relative instability). The pulsar signal provides primary evidence for potential-dependent modifications to gravitational time flow.",
   "author": [
     {
       "@type": "Person",
@@ -14,8 +14,8 @@
     }
   ],
   "datePublished": "2026-01-09",
-  "dateModified": "2026-04-24",
-  "version": "0.5",
+  "dateModified": "2026-04-29",
+  "version": "0.6",
   "license": "https://creativecommons.org/licenses/by/4.0/",
   "codeRepository": "https://github.com/matthewsmawfield/TEP-COS",
   "url": "https://mlsmawfield.com/tep/cos/",

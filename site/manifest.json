@@ -1,6 +1,8 @@
 {
   "name": "TEP-COS",
   "short_name": "TEP-COS",
+  "version": "v0.6 (Caracas)",
+  "last_updated": "29 April 2026",
   "start_url": ".",
   "display": "standalone",
   "theme_color": "#1C2E4A",
@@ -17,7 +19,7 @@
       "type": "image/png"
     }
   ],
-  "title": "The Temporal Equivalence Principle: Suppressed Density Scaling in Globular Cluster Pulsars",
+  "title": "Temporal Equivalence Principle: Suppressed Density Scaling in Globular Cluster Pulsars",
   "sections": [
     {
       "id": "section-abstract",

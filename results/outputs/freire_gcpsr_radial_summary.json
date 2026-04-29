@@ -1,0 +1,30 @@
+{
+  "meta": {
+    "source_url": "https://www3.mpifr-bonn.mpg.de/staff/pfreire/GCpsr.txt",
+    "downloaded_at": "2026-04-28T21:47:28.034648+00:00Z",
+    "sha256": "5037c57b524019ea130b9a89b8c0a41246fbb087609c750e26c354b9aa97b679",
+    "bytes": 47972,
+    "min_n": 5,
+    "analysis": {
+      "x": "r_arcmin (projected offset)",
+      "y1": "log10(|Pdot_1e20|)",
+      "y2": "Pdot_1e20 (signed)"
+    }
+  },
+  "results": [
+    {
+      "cluster": "J1748-2446Z  0.033      2.46259       -8.6                   238.85          3.48807     3.5304        0.7608          0.25",
+      "n": 12,
+      "r_span_arcmin": 0.30500000000000005,
+      "r_span_arcsec": 18.300000000000004,
+      "pearson_r_logabs": -0.2994319043411194,
+      "pearson_p_logabs": 0.34439799988530084,
+      "spearman_rho_logabs": -0.4070200493770522,
+      "spearman_p_logabs": 0.1891310499791825,
+      "pearson_r_signed": 0.09521152041583758,
+      "pearson_p_signed": 0.7684994873327908,
+      "spearman_rho_signed": 0.04195804195804196,
+      "spearman_p_signed": 0.8969858708195542
+    }
+  ]
+}

@@ -1,30 +1,30 @@
-[10:48:41] [INFO] ======================================================================
-[10:48:41] [INFO] CMC EXOTIC PHYSICS QUANTIFICATION AND SENSITIVITY SWEEP
-[10:48:41] [INFO] ======================================================================
-[10:48:41] [INFO] 
-[10:48:41] [INFO] [0/3] Loading observed results and CMC predictions...
-[10:48:41] [INFO]   Raw excess (period-matched): 0.606 dex
-[10:48:41] [INFO]   Density slope: 0.393 ± 0.079 dex/dex
-[10:48:41] [INFO]   Binary inversion: -0.323 dex
-[10:48:41] [INFO]   CMC predicted excess: 1.541 dex
-[10:48:41] [INFO]   CMC predicted slope: 0.748 dex/dex
-[10:48:41] [INFO] 
-[10:48:41] [INFO] [1/3] Calculating exotic physics burden...
-[10:48:41] [INFO]   Improbability: 6.25e-08
-[10:48:41] [INFO]   Sigma equivalent: 5.4σ
-[10:48:41] [INFO] 
-[10:48:41] [INFO] [2/3] Computing Bayesian evidence ratio...
-[10:48:41] [INFO]   Bayes factor: 13988881255579226378677230779909802881165422836114892467901406717760741547083512129191598824020812639588668218493894656.0
-[10:48:41] [INFO]   Evidence: Decisive
-[10:48:41] [INFO] 
-[10:48:41] [INFO] [3/3] Performing parameter sensitivity sweep...
-[10:48:41] [INFO]   All single mechanisms exclude observed: False
-[10:48:41] [INFO]   Required suppression: 48%
-[10:48:41] [INFO] 
-[10:48:41] [INFO] ======================================================================
-[10:48:41] [INFO] RESULTS SAVED
-[10:48:41] [INFO]   JSON: /Users/matthewsmawfield/www/Temporal Equivalence Principle/TEP-COS/results/outputs/step_5_51_exotic_physics_quantification.json
-[10:48:41] [INFO]   Markdown: /Users/matthewsmawfield/www/Temporal Equivalence Principle/TEP-COS/results/outputs/step_5_51_exotic_physics_quantification.md
-[10:48:41] [INFO] ======================================================================
-[10:48:41] [INFO] 
-[10:48:41] [INFO] The exotic-GR hypothesis requires three independent mechanisms to conspire across 33 clusters with fine-tuning of 1 in 2e+07. Standard dynamics is excluded at >18.1σ. TEP is favored by Bayes factor 13988881255579226378677230779909802881165422836114892467901406717760741547083512129191598824020812639588668218493894656.0 (Decisive evidence).
+[07:59:19] [INFO] ======================================================================
+[07:59:19] [INFO] CMC EXOTIC PHYSICS QUANTIFICATION AND SENSITIVITY SWEEP
+[07:59:19] [INFO] ======================================================================
+[07:59:19] [INFO] 
+[07:59:19] [INFO] [0/3] Loading observed results and CMC predictions...
+[07:59:19] [INFO]   Raw excess (period-matched): 0.606 dex
+[07:59:19] [INFO]   Density slope: 0.393 ± 0.079 dex/dex
+[07:59:19] [INFO]   Binary inversion: -0.323 dex
+[07:59:19] [INFO]   CMC predicted excess: 1.541 dex
+[07:59:19] [INFO]   CMC predicted slope: 0.748 dex/dex
+[07:59:19] [INFO] 
+[07:59:19] [INFO] [1/3] Calculating exotic physics burden...
+[07:59:19] [INFO]   Improbability: 6.25e-08
+[07:59:19] [INFO]   Sigma equivalent: 5.4σ
+[07:59:19] [INFO] 
+[07:59:19] [INFO] [2/3] Computing Bayesian evidence ratio...
+[07:59:19] [INFO]   Bayes factor: 32057297626853058436314782393117018746526916498752743870220104621068014283339272273406209089202905970522188788722040832.0
+[07:59:19] [INFO]   Evidence: Decisive
+[07:59:19] [INFO] 
+[07:59:19] [INFO] [3/3] Performing parameter sensitivity sweep...
+[07:59:19] [INFO]   All single mechanisms exclude observed: False
+[07:59:19] [INFO]   Required suppression: 48%
+[07:59:19] [INFO] 
+[07:59:19] [INFO] ======================================================================
+[07:59:19] [INFO] RESULTS SAVED
+[07:59:19] [INFO]   JSON: /Users/matthewsmawfield/www/Temporal Equivalence Principle/TEP-COS/results/outputs/step_5_51_exotic_physics_quantification.json
+[07:59:19] [INFO]   Markdown: /Users/matthewsmawfield/www/Temporal Equivalence Principle/TEP-COS/results/outputs/step_5_51_exotic_physics_quantification.md
+[07:59:19] [INFO] ======================================================================
+[07:59:19] [INFO] 
+[07:59:19] [INFO] The exotic-GR hypothesis requires three independent mechanisms to conspire across 33 clusters with fine-tuning of 1 in 2e+07. Standard dynamics is excluded at >18.2σ. TEP is favored by Bayes factor 32057297626853058436314782393117018746526916498752743870220104621068014283339272273406209089202905970522188788722040832.0 (Decisive evidence).

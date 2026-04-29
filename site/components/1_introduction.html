@@ -5,7 +5,7 @@
 <p>
     General Relativity has passed every precision test in the Solar System. Yet at intermediate and cosmological 
     scales, persistent discrepancies arise—rotation curves, cluster dynamics, cosmic acceleration—that conventionally 
-    require invisible mass or exotic energy to resolve. A fundamental question is asked: 
+    require invisible mass or exotic energy to resolve. A fundamental question follows: 
     Is gravitational time dilation scale-dependent?
     This work explores the hypothesis that these anomalies reflect not missing matter but modified temporal structure: 
     a scale-dependent enhancement of gravitational time dilation beyond the predictions of standard General Relativity.
@@ -23,8 +23,7 @@
 <h2>1.2 Why Time-Domain Tests Are Critical</h2>
 
 <p>
-    TEP modifies the instantaneous rate of proper time: dτ/dt = A(φ)<sup>1/2</sup>, where A(φ) is a 
-    potential-dependent conformal factor. This creates two classes of observables with quantitatively 
+    TEP modifies the proper time relation: dτ̃/dτ<sub>g</sub> = A(φ) where A(φ) = exp(βφ/M<sub>Pl</sub>), τ̃ is the TEP-modified proper time, τ<sub>g</sub> is the GR proper time, and A(φ) is the universal conformal factor. This creates two classes of observables with quantitatively 
     different TEP sensitivity:
 </p>
 
@@ -65,7 +64,7 @@
 <div class="key-concept">
     <h4>Theoretical Framework</h4>
     <p>
-        The TEP framework uses observational data to constrain the <em>class</em> of viable modified gravity theories through the effective parameters α<sub>eff</sub> and R<sub>sol</sub>, following the same strategy as the PPN (Parameterized Post-Newtonian) framework used to test GR in the Solar System. The complete derivation of the screening mechanism and field equations is presented in Section 2.1.1 below, making this manuscript self-contained and independently evaluable.
+        The TEP framework uses observational data to constrain the <em>class</em> of viable modified gravity theories through the observable pulsar response coefficient κ<sub>MSP</sub> (absorbing stellar physics and environment, not the microscopic coupling β) and the topological transition scale R<sub>T</sub>, following the same strategy as the PPN (Parameterized Post-Newtonian) framework used to test GR in the Solar System. The effective screening framework motivates the response model tested here; candidate transfer models are discussed separately and are not required for the empirical inference. Section 2.1.1 presents the screening framework, making this manuscript self-contained and independently evaluable.
     </p>
     <table class="data-table">
         <thead>
@@ -81,7 +80,7 @@
                 <td>Pulsar Timing</td>
                 <td>Cluster Spin-down Residual</td>
                 <td>Anomaly Detection</td>
-                <td>0.59 dex raw excess; core-concentrated; null in field</td>
+                <td>0.63 dex raw excess; 0.40 dex controlled residual; null in field</td>
             </tr>
             <tr>
                 <td>Field Binary Control</td>
@@ -104,7 +103,7 @@
             <tr>
                 <td>Suppressed Density Scaling</td>
                 <td>Does the signal track dynamical noise ($\rho^2$) or potential ($\Phi$)?</td>
-                <td>Validation</td>
+                <td>Consistency test</td>
                 <td>Observed slope = 0.39 vs Newtonian slope = 0.72 (4.1σ rejection)</td>
             </tr>
         </tbody>
@@ -126,28 +125,26 @@
     </p>
 </div>
 
-<h2>1.4 The Screening Hierarchy and ρ<sub>c</sub></h2>
+<h2>1.4 The Screening Hierarchy and ρ<sub>T</sub></h2>
 
 <p>
     A central requirement of TEP phenomenology is that intermediate-scale signals coexist with stringent 
-    Solar System bounds. In TEP's two-metric architecture (see Section 2), photon propagation tests constrain the gravitational 
-    metric and the disformal factor $B(\phi)$, while clock-rate observables (like pulsar spin-down and Cepheid periods) 
-    measure the conformal factor $A(\phi)$. Because conformal transformations preserve null cones, Shapiro delay 
-    measurements such as the Cassini bound ($\alpha_0 \lesssim 3\times10^{-3}$) are insensitive to $A(\phi)$. 
-    This structural separation allows the clock-sector effective coupling ($\alpha_{\text{eff}} \sim 10^6$) to be 
-    many orders of magnitude larger than photon-sector constraints.
+    Solar System bounds. Local light-propagation tests constrain the screened local gradient/source-charge sector 
+    and any disformal cone tilt. The pulsar analysis instead fits an observable response coefficient, 
+    $\kappa_{\text{MSP}}$, in globular-cluster environments. $\kappa_{\text{MSP}}$ should not be compared 
+    directly to PPN couplings without a solved transfer function.
 </p>
 
 <p>
     The screening hierarchy itself is governed by the non-linear superposition 
     of field gradients, termed Temporal Shear. While the 
-    asymptotic saturation of screening occurs at the critical density ρ<sub>c</sub> 
-    ≈ 20 g/cm³, the onset of modulation is sensitive to the gradient 
-    coherence length. In compact systems like globular clusters 
-    (ρ ~ 10<sup>−18</sup> g/cm³), the gradient is set by the diffuse 
-    embedding halo, allowing TEP effects to remain fully active despite high 
-    local densities. In contrast, distributed galactic environments (ρ ~ 
-    10<sup>−23</sup> g/cm³) matching the gradient scale exhibit partial 
+    asymptotic saturation of screening occurs at the Temporal Topology saturation density ρ<sub>T</sub>
+    ≈ 20 g/cm³, the onset of modulation is sensitive to the gradient
+    coherence length. In compact systems like globular clusters
+    (ρ ~ 10<sup>−18</sup> g/cm³), the gradient is set by the diffuse
+    embedding halo, allowing TEP effects to remain fully active despite high
+    local densities. In contrast, distributed galactic environments (ρ ~
+    10<sup>−23</sup> g/cm³) matching the gradient scale exhibit partial
     suppression, as observed in the distance-ladder modulation of Paper 11.
 </p>
 
@@ -166,7 +163,7 @@
 
 <ol>
     <li>Section 2 establishes the theoretical framework: the TEP modification and spin-down predictions for pulsars.</li>
-    <li>Section 3 presents the primary detection: pulsar timing in globular clusters using 394 MSPs with measured Ṗ, including the Suppressed Density Scaling test, Spatial Stratification, and Field Binary Control.</li>
+    <li>Section 3 presents the primary detection: pulsar timing in globular clusters using 543 MSPs (197 GC, 346 field) with measured Ṗ, including the Suppressed Density Scaling test, Spatial Stratification, and Field Binary Control. A conservative period-matched analysis with 394 MSPs serves as robustness confirmation.</li>
     <li>Section 4 discusses the unified picture, falsification criteria, and implications.</li>
     <li>Section 5 concludes.</li>
 </ol>

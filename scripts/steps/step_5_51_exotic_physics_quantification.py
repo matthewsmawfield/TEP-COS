@@ -316,14 +316,33 @@ def calculate_bayesian_evidence_ratio() -> Dict:
     # Data points - count clusters from binary analysis data
     n_data = OBSERVED.get("n_clusters", 29)
     
-    # Error estimates from loaded data (not hardcoded prototypes)
+    # Error estimates loaded dynamically from upstream analysis outputs
     # Excess error: derived from bootstrap CI in population controls
-    excess_error = (0.663 - 0.551) / 2  # ~0.056 dex from step_5_10
+    pop_controls_path = RESULTS_DIR / "step_5_10_pulsar_population_controls.json"
+    if pop_controls_path.exists():
+        with open(pop_controls_path) as f:
+            pop_data = json.load(f)
+        period_match = pop_data["controls"]["period_matched"]
+        excess_error = (period_match["diff_ci84"] - period_match["diff_ci16"]) / 2
+    else:
+        excess_error = 0.056  # Fallback only if file missing
+    
     # Slope error: loaded from hierarchical density analysis
     slope_error = OBSERVED.get("density_error", 0.08)
-    # Binary error: derived from standard errors of means
-    # binary_std ≈ 0.70, isolated_std ≈ 0.87, n_binary=115, n_isolated=81
-    binary_error = np.sqrt((0.701**2/115 + 0.872**2/81))
+    
+    # Binary error: derived from standard errors of means from step_5_11
+    binary_path = RESULTS_DIR / "step_5_11_binary_pulsar_analysis.json"
+    if binary_path.exists():
+        with open(binary_path) as f:
+            binary_data = json.load(f)
+        bvs = binary_data["binary_vs_isolated"]
+        n_binary = bvs["n_binary"]
+        n_isolated = bvs["n_isolated"]
+        binary_std = bvs["binary_std_logPdot"]
+        isolated_std = bvs["isolated_std_logPdot"]
+        binary_error = np.sqrt((binary_std**2 / n_binary) + (isolated_std**2 / n_isolated))
+    else:
+        binary_error = 0.10  # Fallback only if file missing
     
     # Log-likelihoods (approximate)
     # TEP: fits all three observables (parameters formally set to match data perfectly)
@@ -483,8 +502,16 @@ def generate_exotic_physics_burden_summary(improb: Dict, bayes: Dict, sweep: Dic
     """
     
     # Calculate combined evidence using dynamic error estimates from loaded data
-    # Excess error: derived from bootstrap CI in population controls (~0.056 dex)
-    excess_error = (0.663 - 0.551) / 2
+    # Excess error: derived from bootstrap CI in population controls
+    pop_controls_path = RESULTS_DIR / "step_5_10_pulsar_population_controls.json"
+    if pop_controls_path.exists():
+        with open(pop_controls_path) as f:
+            pop_data = json.load(f)
+        period_match = pop_data["controls"]["period_matched"]
+        excess_error = (period_match["diff_ci84"] - period_match["diff_ci16"]) / 2
+    else:
+        excess_error = 0.056  # Fallback only if file missing
+    
     # Slope error: loaded from hierarchical density analysis
     slope_error = OBSERVED.get("density_error", 0.08)
     

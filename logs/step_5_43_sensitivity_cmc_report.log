@@ -1,19 +1,19 @@
-[10:47:10] [INFO] ======================================================================
-[10:47:10] [INFO] STEP 5.43: Sensitivity and CMC Comparison Report Generation
-[10:47:10] [INFO] ======================================================================
-[10:47:10] [INFO] Loaded data sources:
-[10:47:10] [INFO]   - step_5_37_rho_sensitivity: loaded
-[10:47:10] [INFO]   - step_5_41_dynamical_calibration: loaded
-[10:47:10] [INFO]   - step_5_42_cmc_real_comparison: loaded
-[10:47:10] [INFO]   - step_5_33_hierarchical_density: loaded
-[10:47:10] [INFO] 
-[10:47:10] [INFO] Report saved to: results/outputs/step_5_43_sensitivity_cmc_report.md
-[10:47:10] [INFO] Summary saved to: results/outputs/step_5_43_sensitivity_cmc_summary.json
-[10:47:10] [INFO] 
-[10:47:10] [INFO] ======================================================================
-[10:47:10] [INFO] SUMMARY
-[10:47:10] [INFO] ======================================================================
-[10:47:10] [INFO] Sensitivity robustness: STRONG
-[10:47:10] [INFO] CMC comparison status: STRONG_TEP_SUPPORT
-[10:47:10] [INFO] Conclusion: Sensitivity analysis and direct CMC comparison both support suppressed density scaling
-[10:47:10] [INFO] ======================================================================
+[07:57:44] [INFO] ======================================================================
+[07:57:44] [INFO] STEP 5.43: Sensitivity and CMC Comparison Report Generation
+[07:57:44] [INFO] ======================================================================
+[07:57:44] [INFO] Loaded data sources:
+[07:57:44] [INFO]   - step_5_37_rho_sensitivity: loaded
+[07:57:44] [INFO]   - step_5_41_dynamical_calibration: loaded
+[07:57:44] [INFO]   - step_5_42_cmc_real_comparison: loaded
+[07:57:44] [INFO]   - step_5_33_hierarchical_density: loaded
+[07:57:44] [INFO] 
+[07:57:44] [INFO] Report saved to: results/outputs/step_5_43_sensitivity_cmc_report.md
+[07:57:44] [INFO] Summary saved to: results/outputs/step_5_43_sensitivity_cmc_summary.json
+[07:57:44] [INFO] 
+[07:57:44] [INFO] ======================================================================
+[07:57:44] [INFO] SUMMARY
+[07:57:44] [INFO] ======================================================================
+[07:57:44] [INFO] Sensitivity robustness: STRONG
+[07:57:44] [INFO] CMC comparison status: STRONG_TEP_SUPPORT
+[07:57:44] [INFO] Conclusion: Sensitivity analysis and direct CMC comparison both support suppressed density scaling
+[07:57:44] [INFO] ======================================================================

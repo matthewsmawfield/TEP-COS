@@ -164,7 +164,7 @@ async function buildStaticSite() {
         
         console.log('✅ Static site built successfully!');
         console.log(`📁 Output: ${outputPath}`);
-        console.log('📄 Markdown: 10-TEP-COS-v0.5-Caracas.md (in root)');
+        console.log('📄 Markdown: 10-TEP-COS-v0.6-Caracas.md (in root)');
         console.log(`📊 Generated ${manifest.sections.length} sections (TEP-COS)`);
         console.log('🚀 TEP-COS ready for deployment');
         

@@ -1,3 +1,14 @@
+#!/usr/bin/env python3
+"""
+Step 5.33: Hierarchical (Mixed-Effects) Density Scaling Analysis
+
+Performs mixed-effects regression of pulsar spin-down residuals against
+central density with cluster-level random effects.
+
+Author: TEP-COS Analysis Pipeline
+Date: 2026
+"""
+
 import numpy as np
 import pandas as pd
 import statsmodels.formula.api as smf
@@ -6,6 +17,7 @@ from scipy import stats
 import json
 import os
 from pathlib import Path
+
 
 def run_hierarchical_analysis():
     print("--- Step 5.33: Hierarchical (Mixed-Effects) Density Scaling ---")

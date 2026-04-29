@@ -9,7 +9,7 @@ The physical insight:
 1. A neutron star's extreme self-gravity causes the TEP scalar field to saturate,
    flattening the Temporal Topology (φ-profile) and suppressing Temporal Shear (∇φ)
    within the saturation radius.
-2. The saturation radius scales as R_sol ∝ M^(1/3) ρ_c^(-1/3).
+2. The saturation radius scales as R_T ∝ M^(1/3) ρ_T^(-1/3).
 3. The absolute clock rate inside the pulsar is determined by the field value at the
    topology transition region, where the flattened profile recovers toward the
    ambient cluster field.
@@ -41,31 +41,31 @@ PROJECT_ROOT = SCRIPT_DIR.parent.parent
 RESULTS_DIR = PROJECT_ROOT / "results" / "outputs"
 
 
-def compute_screening_radius(M_obj_msun: float, rho_c_g_cm3: float = 20.0) -> float:
+def compute_screening_radius(M_obj_msun: float, rho_T_g_cm3: float = 20.0) -> float:
     """
     Compute the TEP Temporal Topology saturation radius for a compact object.
 
-    In TEP theory, the scalar field saturates at density ρ_c, flattening the
+    In TEP theory, the scalar field saturates at density ρ_T, flattening the
     Temporal Topology and suppressing Temporal Shear within this radius.
-    R_sol = (3M / 4πρ_c)^(1/3)
+    R_T = (3M / 4πρ_T)^(1/3)
 
     Parameters:
     -----------
     M_obj_msun : float
         Mass of the object in solar masses
-    rho_c_g_cm3 : float
-        Critical density in g/cm³ (Universal constant from Paper 7 ~ 20.0)
+    rho_T_g_cm3 : float
+        Temporal Topology saturation density in g/cm³ (Universal constant from Paper 7 ~ 20.0)
 
     Returns:
     --------
-    R_sol_m : float
+    R_T_m : float
         Saturation radius in meters (Temporal Topology transition scale)
     """
     M_kg = M_obj_msun * M_sun
-    rho_c_kg_m3 = rho_c_g_cm3 * 1000.0  # Convert g/cm³ to kg/m³
+    rho_T_kg_m3 = rho_T_g_cm3 * 1000.0  # Convert g/cm³ to kg/m³
 
-    R_screen_m = (3.0 * M_kg / (4.0 * np.pi * rho_c_kg_m3)) ** (1 / 3)
-    return R_screen_m
+    R_T_m = (3.0 * M_kg / (4.0 * np.pi * rho_T_kg_m3)) ** (1 / 3)
+    return R_T_m
 
 
 def compute_binary_orbital_parameters(
@@ -175,15 +175,15 @@ def main():
 
     # 1. Compute Pulsar Screening Radius
     Mp = 1.4  # typical MSP
-    rho_c = 20.0  # g/cm³ from TEP-GNSS unification
+    rho_T = 20.0  # g/cm³ from TEP-GNSS unification
 
-    R_sol_p = compute_screening_radius(Mp, rho_c)
+    R_T_p = compute_screening_radius(Mp, rho_T)
 
     print(f"\n1. PULSAR TEMPORAL TOPOLOGY")
     print(f"--------------------------")
     print(f"Pulsar Mass: {Mp} M_sun")
-    print(f"Critical Density (TEP): {rho_c} g/cm³")
-    print(f"Saturation Radius (R_sol): {R_sol_p / 1000.0:.1f} km")
+    print(f"Temporal Topology Saturation Density (TEP): {rho_T} g/cm³")
+    print(f"Saturation Radius (R_T): {R_T_p / 1000.0:.1f} km")
 
     # 2. Typical Binary Scales
     Pb_typical = 1.0  # days
@@ -197,13 +197,13 @@ def main():
     print(f"Companion Mass: {Mc_typical} M_sun")
     print(f"Orbital Period: {Pb_typical} days")
     print(f"Orbital Separation (a): {sep_km:.1f} km")
-    print(f"Ratio (a / R_sol): {sep_km / (R_sol_p / 1000.0):.1f}")
+    print(f"Ratio (a / R_T): {sep_km / (R_T_p / 1000.0):.1f}")
 
     # Check intersection
-    R_sol_c = compute_screening_radius(Mc_typical, rho_c)
-    print(f"Companion Saturation Radius: {R_sol_c / 1000.0:.1f} km")
+    R_T_c = compute_screening_radius(Mc_typical, rho_T)
+    print(f"Companion Saturation Radius: {R_T_c / 1000.0:.1f} km")
 
-    if sep_km < (R_sol_p + R_sol_c) / 1000.0:
+    if sep_km < (R_T_p + R_T_c) / 1000.0:
         print("Saturation regions overlap (highly nonlinear regime)")
     else:
         print("Saturation regions are distinct, with interacting topology transitions")
@@ -256,8 +256,8 @@ def main():
 
     # Compile output
     results = {
-        "constants": {"rho_c_g_cm3": rho_c, "M_pulsar": Mp},
-        "pulsar_topology": {"saturation_radius_km": R_sol_p / 1000.0},
+        "constants": {"rho_T_g_cm3": rho_T, "M_pulsar": Mp},
+        "pulsar_topology": {"saturation_radius_km": R_T_p / 1000.0},
         "typical_binary": {
             "period_days": Pb_typical,
             "companion_mass": Mc_typical,
