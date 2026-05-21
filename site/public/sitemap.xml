@@ -4,16 +4,15 @@
         xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9
         http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
     <url>
-        <loc>https://mlsmawfield.com/tep/cos/</loc>
-        <lastmod>2026-04-24</lastmod>
+        <loc>https://matthewsmawfield.github.io/TEP-COS/</loc>
+        <lastmod>2026-05-21</lastmod>
         <changefreq>weekly</changefreq>
         <priority>1.0</priority>
     </url>
     <url>
-        <loc>https://mlsmawfield.com/tep/cos/public/docs/10-TEP-COS-v0.6-Caracas.pdf</loc>
-        <lastmod>2026-04-27</lastmod>
+        <loc>https://matthewsmawfield.github.io/TEP-COS/public/docs/10-TEP-COS-v0.6-Caracas.pdf</loc>
+        <lastmod>2026-05-19</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.8</priority>
     </url>
-    <!-- Add more URLs here as you create additional pages -->
 </urlset>

@@ -1,6 +1,9 @@
 {
   "@context": "https://doi.org/10.5063/schema/codemeta-2.0",
-  "@type": "ScholarlyArticle",
+  "@type": [
+    "ScholarlyArticle",
+    "SoftwareSourceCode"
+  ],
   "identifier": "https://doi.org/10.5281/zenodo.18165798",
   "doi": "10.5281/zenodo.18165798",
   "name": "Temporal Equivalence Principle: Suppressed Density Scaling in Globular Cluster Pulsars",
@@ -28,5 +31,8 @@
     "modified gravity",
     "millisecond pulsars",
     "density scaling"
-  ]
+  ],
+  "developmentStatus": "active",
+  "runtimePlatform": "Python",
+  "applicationCategory": "Scientific/Research"
 }
