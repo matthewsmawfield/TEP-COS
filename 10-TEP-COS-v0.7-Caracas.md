@@ -1589,7 +1589,7 @@ To aid critical evaluation, the primary limitations, parameter sensitivities, an
 
 ### 4.9.1 Parameter Sensitivity ($\rho_T$)
 
-The unification of terrestrial and cluster scales relies on the Temporal Topology saturation density $\rho_T \approx 20$ g/cm³. How sensitive is the result to this parameter?
+The unification of terrestrial and cluster scales relies on the Temporal Topology saturation proximity scale $\rho_T \approx 20$ g/cm³. How sensitive is the result to this parameter?
 
 - Scaling: The screening radius scales as $R_{\text{sol}} \propto \rho_T^{-1/3}$. A factor of 2 uncertainty in $\rho_T$ shifts $R_{\text{sol}}$ by only ~26%.
 
@@ -1698,7 +1698,7 @@ Conclusion: The CMC comparison is not a selective test of outlier clusters but a
 
 ## 5. Conclusions
 
-This work presents time-domain astrophysical tests of the Temporal Equivalence Principle at intermediate gravitational scales (10⁵–10¹² M☉). Analysis of 543 millisecond pulsars (197 GC, 346 field) with measured spin-down rates provides spatially-resolved evidence for environmental anomalies in pulsar spin-down rates, validated by independent controls and consistent with the Temporal Topology saturation density ρT ≈ 20 g/cm³ calibrated from terrestrial observations.
+This work presents time-domain astrophysical tests of the Temporal Equivalence Principle at intermediate gravitational scales (10⁵–10¹² M☉). Analysis of 543 millisecond pulsars (197 GC, 346 field) with measured spin-down rates provides spatially-resolved evidence for environmental anomalies in pulsar spin-down rates, validated by independent controls and consistent with the Temporal Topology saturation proximity scale ρT ≈ 20 g/cm³ calibrated from terrestrial observations.
 
 ## 5.1 Summary of Findings
 
