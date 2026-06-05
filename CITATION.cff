@@ -1,4 +1,4 @@
-cff-version: 0.6
+cff-version: 1.2.0
 title: 'Temporal Equivalence Principle: Suppressed Density Scaling in Globular Cluster
   Pulsars'
 message: If you use this software, please cite it as below.
@@ -40,7 +40,7 @@ abstract: 'Gravitational time dilation in General Relativity is verified to 10‚Å
   time flow.
 
   '
-version: 0.7
+version: v0.7 (Caracas)
 date-released: 2026-06-04
 license: CC-BY-4.0
 keywords:
