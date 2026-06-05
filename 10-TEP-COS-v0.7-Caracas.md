@@ -1676,13 +1676,13 @@ Key points:
 
 - Statistical Dominance: The 13 CMC clusters contain the majority of the 196 MSPs, including Terzan 5 alone with 47 pulsars. They are not a minor subsample but the statistical backbone of the detection.
 
-- Dynamical Range Coverage: The CMC clusters span the high-density regime (log ρ > 4.5) where: The Newtonian prediction is most extreme (+2.0 to +4.6 dex)
+- Dynamical Range Coverage: The CMC clusters span the high-proximity regime (log ρ > 4.5) where: The Newtonian prediction is most extreme (+2.0 to +4.6 dex)
 
 - The discrepancy with observations is most severe (literature predicts +2.0 to +4.6 dex, observed +0.02 to +0.28 dex)
 
 - The TEP signal is strongest and least ambiguous
 
-Lower-density clusters (log ρ &lt; 3.5) contribute minimal predicted signal (~0.5 dex) and are consistent with both TEP and Newtonian expectations.
+More dilute clusters (log ρ &lt; 3.5) contribute minimal predicted signal (~0.5 dex) and are consistent with both TEP and Newtonian expectations.
 
 - Structural Diversity: The CMC sample includes: Terzan 5: Core-collapsed, highest density, extreme prediction (+4.56 dex)
 
