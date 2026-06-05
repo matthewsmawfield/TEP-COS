@@ -555,11 +555,11 @@ To aid critical evaluation, the primary methodological limitations are explicitl
 
 ### Sample Composition Concerns
 
-The mixed-effects model for density scaling weights clusters by their statistical contribution. Dense clusters like Terzan 5 contribute many pulsars, while sparse clusters like M53 contribute few. This weighting is statistically appropriate but means the result is dominated by a subset of high-density systems. The leave-one-cluster-out validation (Section 3.10.7) confirms stability, but readers should note that the "suppressed density scaling" conclusion relies most heavily on the densest clusters.
+The mixed-effects model for density scaling weights clusters by their statistical contribution. Dense clusters like Terzan 5 contribute many pulsars, while sparse clusters like M53 contribute few. This weighting is statistically appropriate but means the result is dominated by a subset of dense systems. The leave-one-cluster-out validation (Section 3.10.7) confirms stability, but readers should note that the "suppressed density scaling" conclusion relies most heavily on the densest clusters.
 
 #### Outlier Exclusion Test: Addressing Extreme Cluster Influence
 
-To directly address whether extreme high-density clusters drive the suppressed scaling result, a systematic "leave-top-N-clusters-out" analysis was performed:
+To directly address whether extreme dense clusters drive the suppressed scaling result, a systematic "leave-top-N-clusters-out" analysis was performed:
 
 | Excluded Clusters | Density Scaling Γ | Tension with Newtonian | Status |
 | --- | --- | --- | --- |
@@ -1614,7 +1614,7 @@ Acknowledged Gap: The gold-standard dynamical comparison has been completed for 
 
 Why This Matters: A mainstream referee would correctly note that the remaining 25 clusters (46% of MSPs, mostly lower-density systems) have not been subjected to the same high-fidelity CMC scrutiny. While the Newtonian ρ² scaling prediction (Γ = 0.72) is a robust theoretical expectation derived from virial theorem constraints that applies universally across all cluster densities, cluster-specific dynamical effects (transient heating, non-equilibrium states, or unusual mass distributions) could in principle vary between the CMC-modeled clusters and the remainder.
 
-Mitigation: The hierarchical mixed-effects model (Section 3.17) includes all 29 clusters and shows consistent suppressed scaling (Γ = 0.39) across the full sample. The 13 CMC clusters span the high-density regime where the Newtonian prediction is most extreme and the TEP signal is strongest; lower-density clusters (log ρ &lt; 3.5) contribute minimal predicted signal and cannot rescue the 9.4σ excess discrepancy. Full CMC coverage of all 29 clusters would close this gap and remains the standard to which the analysis aspires.
+Mitigation: The hierarchical mixed-effects model (Section 3.17) includes all 29 clusters and shows consistent suppressed scaling (Γ = 0.39) across the full sample. The 13 CMC clusters span the high-proximity regime where the Newtonian prediction is most extreme and the TEP signal is strongest; more dilute clusters (log ρ &lt; 3.5) contribute minimal predicted signal and cannot rescue the 9.4σ excess discrepancy. Full CMC coverage of all 29 clusters would close this gap and remains the standard to which the analysis aspires.
 
 ### 4.9.4 Degeneracy with Unknown Dynamics (Addressed)
 
