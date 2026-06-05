@@ -30,7 +30,7 @@
     <p>
         Standard "cluster acceleration" is a kinematic effect: a changing Doppler shift ($\dot{P} \propto a_{\ell}/c$).
         TEP proposes that in screened environments, the gravitational potential also induces a gradient in the rate of proper time flow.
-        This is distinct from semantic re-labeling; TEP predicts an enhancement of the effective signal magnitude by a factor $\alpha \sim 10^6$.
+        This is distinct from semantic re-labeling; TEP predicts an enhancement of the effective signal magnitude by the response coefficient $\kappa_{\rm MSP} \sim 10^6$.
         The observed signal is too large (by ~0.606 dex) and scales too weakly with density to be explained by standard kinematic acceleration alone (see Section 3.4).
         Thus, the analysis is not "interpreting acceleration as dilation," but detecting an <em>excess</em> signal that correlates with potential depth.
     </p>
@@ -436,7 +436,11 @@
     Early iterations of this analysis relied on analytic Mean-Field models (King/Plummer profiles) to estimate the acceleration baseline.
     However, these models do not fully capture the "messy" dynamics that dominate pulsar timing noise in dense cores.
     To provide a rigorous "High-Fidelity" test, the simulation was upgraded to compare observed residuals directly against
-    synthetic pulsar populations derived from Cluster Monte Carlo (CMC) models (Kremer et al. 2020) and direct N-body integration.
+    synthetic pulsar populations — <em>published N-body simulation outputs</em> from Cluster Monte Carlo (CMC) models (Kremer et al. 2020), not ad hoc fabricated data — and direct N-body integration.
+</p>
+
+<p>
+    <em>Note on terminology:</em> The CMC populations are legitimate published simulation outputs (Kremer et al. 2020), providing a calibrated Newtonian dynamical baseline. The mock PTA pipeline (Section 3.18) is a detection-probability simulation using published telescope sensitivity curves; it tests whether observational selection effects could explain the missing population but does not itself generate pulsar data.
 </p>
 
 <div class="calibration-box">
@@ -1238,11 +1242,11 @@
     <h4>Interpretation: Nested Overlapping Time Domains</h4>
     <p>The TEP framework offers a natural resolution to this inversion through "Nested Overlapping Time Domains." Non-linear scalar theories do not superimpose linearly; they create stacked boundary layers:</p>
     <ul>
-        <li><strong>Layer 1 (The Bath)</strong>: The macroscopic cluster creates the +0.58 dex background temporal enhancement in the weakly screened regime.</li>
+        <li><strong>Layer 1 (The Bath)</strong>: The macroscopic cluster creates a +0.58 dex <em>model-derived</em> background temporal enhancement amplitude in the weakly screened regime (prior to companion-shielding corrections; the primary empirical residual is 0.40 dex).</li>
         <li><strong>Layer 2 (The Shield)</strong>: A binary companion creates a stiff local field domain due to its steep curvature.</li>
         <li><strong>Layer 3 (The Anchor)</strong>: The pulsar's own soliton boundary anchors to whatever immediate domain surrounds it.</li>
     </ul>
-    <p>When observed from Earth, we look through these nested time domains. Isolated pulsars couple directly to the macroscopic cluster bath, showing the full +0.58 dex enhancement. Binary pulsars, however, are partially shielded by their companion's intermediate domain. The companion "flattens" the local temporal topology relative to the cluster background, suppressing the TEP enhancement and producing the observed -0.32 dex relative quietness.</p>
+    <p>When observed from Earth, we look through these nested time domains. Isolated pulsars couple directly to the macroscopic cluster bath, showing the full +0.58 dex <em>model-derived</em> unshielded enhancement amplitude. Binary pulsars, however, are partially shielded by their companion's intermediate domain. The companion "flattens" the local temporal topology relative to the cluster background, suppressing the TEP enhancement and producing the observed -0.32 dex relative quietness.</p>
 </div>
 
 <table class="data-table">
@@ -1407,8 +1411,8 @@
         not invalidate the mechanism but represents a minor limitation of the analytic derivation.</li>
     </ol>
     <p>
-        See <code>step_5_11b_binary_screening_model.py</code> for the quantitative derivation using pure
-        density-based chameleon screening.
+        See <code>step_5_11b_binary_screening_model.py</code> for the quantitative derivation using an
+        environmentally screened chameleon-compatible transfer model (Paper 0, &sect;7).
     </p>
 </div>
 

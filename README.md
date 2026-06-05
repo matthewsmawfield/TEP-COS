@@ -6,8 +6,8 @@
 ![TEP-COS: Suppressed Density Scaling](site/public/image.webp)
 
 **Author:** Matthew Lukin Smawfield  
-**Version:** v0.6 (Caracas)  
-**Date:** First published: 9 January 2026 | Updated: 29 April 2026  
+**Version:** v0.7 (Caracas)  
+**Date:** First published: 9 January 2026 | Updated: 4 June 2026  
 **Status:** Preprint  
 **DOI:** [10.5281/zenodo.18165798](https://doi.org/10.5281/zenodo.18165798)  
 **Website:** [https://mlsmawfield.com/tep/cos/](https://mlsmawfield.com/tep/cos/)  
@@ -158,7 +158,7 @@ that calls `scripts/run_pipeline.py`.
   year={2026},
   doi={10.5281/zenodo.18165798},
   url={https://doi.org/10.5281/zenodo.18165798},
-  note={Preprint v0.6 (Caracas)}
+  note={Preprint v0.7 (Caracas)}
 }
 ```
 

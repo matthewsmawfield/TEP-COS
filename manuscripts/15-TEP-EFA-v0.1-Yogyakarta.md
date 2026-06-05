@@ -18,9 +18,9 @@ This work shows that a restricted TEP Temporal-Shear model quantitatively organi
 
 Keywords: Earth flyby anomaly, Temporal Equivalence Principle, scalar force, Phantom Mass, trajectory asymmetry, geometric screening, Temporal Topology, Temporal Shear
 
-# 1. Introduction
+## 1. Introduction
 
-The Equivalence Principle (EP) is a cornerstone of general relativity, stating that gravitational acceleration is locally indistinguishable from acceleration due to motion. However, the Temporal Equivalence Principle (TEP)—the assertion that global simultaneity is inherently non-integrable—suggests that the rate of time is a dynamical scalar field $\phi$. This framework, established in the Jakarta foundational axioms (v0.8), proposes that all non-gravitational matter couples universally to a causal matter metric $\tilde{g}_{\mu\nu} = A^2(\phi)g_{\mu\nu}$, where $A(\phi) = \exp(\beta \phi/M_{\text{Pl}})$.
+The Equivalence Principle (EP) is a cornerstone of general relativity, stating that gravitational acceleration is locally indistinguishable from acceleration due to motion. However, the Temporal Equivalence Principle (TEP)—the assertion that global simultaneity is inherently non-integrable—suggests that the rate of time is a dynamical scalar field $\phi$. This framework, established in the Jakarta foundational axioms (v0.8), proposes that all non-gravitational matter couples universally to a causal matter metric $\tilde{g}_{\mu\nu} = A^2(\phi)g_{\mu\nu}$, where $A(\phi) = \exp(\beta_A \phi/M_{\text{Pl}})$.
 
 #### Key Terminology
 
@@ -44,7 +44,7 @@ Standard physics offers no satisfactory explanation. Thermal radiation pressure,
 
 The TEP framework provides a natural explanation through the interaction between the spacecraft and the Earth's Temporal Topology. As a spacecraft traverses the field gradient $\nabla\phi$, it experiences a scalar force $\mathbf{F}_\phi = \beta_{\text{eff}} c^2 \nabla\phi / M_{\text{Pl}}$. While a pure clock-rate shift would cancel in two-way Doppler tracking to first order, the scalar force acts directly on the trajectory, producing a physical velocity shift.
 
-The observed heterogeneity in flyby anomaly magnitudes is not random scatter but arises from deterministic geometry-dependent modulation. The TEP prediction for a given flyby depends on several physical factors: (1) perigee altitude (determines Temporal Shear strength via density suppression), (2) approach-departure asymmetry (disformal coupling requires velocity-dependent anti-aligned geometry), (3) plasma environment (plasma attenuation modulates the scalar field), (4) solar activity (modulates ionospheric density), and (5) cosmographic CMB-frame velocity geometry (the disformal coupling scales as v² in the scalar rest frame, approximated by the CMB dipole frame)—a deeper prediction tested only in an exploratory capacity (Section 4.11). These factors combine to produce a wide span in per-flyby fitted β across the Step 008 S/N-qualified ensemble; the legacy inverse-variance diagnostic restricted to sign agreement at βref (NEAR, Galileo 1990, Rosetta 2005) is reported separately as `beta_statistics_sign_gated_diagnostic` in `results/step008_fitting_results.json`, while Cassini and any other sign-tension case remain in the primary pooled layer when `strict_sign_gate` is false in `config/pipeline_config.json`. The Temporal Topology screening mechanism is essential for three reasons: (1) it ensures the coupling strength satisfies solar system PPN constraints; (2) it explains both detections and null results through density-dependent screening; and (3) it establishes the transition radius $R_{\rm sol} \approx 4146$ km as a universal scale. Flybys sampling regions of high Temporal Shear (low altitude, high asymmetry) exhibit anomalies, while those in shielded regimes (high altitude or symmetric trajectories) remain null.
+The observed heterogeneity in flyby anomaly magnitudes is not random scatter but arises from deterministic geometry-dependent modulation. The TEP prediction for a given flyby depends on several physical factors: (1) perigee altitude (determines Temporal Shear strength via density suppression), (2) approach-departure asymmetry (disformal coupling requires velocity-dependent anti-aligned geometry), (3) plasma environment (plasma attenuation modulates the scalar field), (4) solar activity (modulates ionospheric density), and (5) cosmographic CMB-frame velocity geometry (the disformal coupling scales as v² in the scalar rest frame, approximated by the CMB dipole frame)—a deeper prediction tested only in an exploratory capacity (Section 4.11). These factors combine to produce a wide span in per-flyby fitted β across the Step 008 S/N-qualified ensemble; the legacy inverse-variance diagnostic restricted to sign agreement at βref (NEAR, Galileo 1990, Rosetta 2005) is reported separately as `beta_statistics_sign_gated_diagnostic` in `results/step008_fitting_results.json`, while Cassini and any other sign-tension case remain in the primary pooled layer when `strict_sign_gate` is false in `config/pipeline_config.json`. The Temporal Topology screening mechanism is essential for three reasons: (1) it ensures the coupling strength satisfies solar system PPN constraints; (2) it explains both detections and null results through environment-dependent screening; and (3) it establishes the transition radius $R_{\rm sol} \approx 4146$ km as a universal scale. Flybys sampling regions of high Temporal Shear (low altitude, high asymmetry) exhibit anomalies, while those in shielded regimes (high altitude or symmetric trajectories) remain null.
 
 ## 1.3 This Work
 
@@ -52,7 +52,7 @@ The analysis proceeds by reconstructing trajectories from JPL Horizons, computin
 
 The structure of this paper is as follows: Section 2 describes the data sources; Section 3 presents the TEP Temporal Topology model; Section 4 reports the fitting results and PPN validation, with an exploratory cosmographic test in Section 4.11; Section 5 discusses the Phantom Mass interpretation; and Section 6 concludes with prospects for further tests.
 
-# 2. Observations and Data
+## 2. Observations and Data
 
 ## 2.1 The Flyby Spacecraft Sample
 
@@ -126,7 +126,7 @@ Key finding: For five of the six flybys with published Anderson values, the comp
 
 Systematic uncertainty from the NEAR convention mismatch. For NEAR, the published asymmetry factor (0.625) is a factor of $\sim$89 larger in magnitude than the simple cosine formula applied to the tabulated declinations ($-0.007$). Because the TEP scalar-force amplitude scales with asymmetry, this discrepancy propagates linearly into the predicted anomaly. If the Anderson asymmetry were replaced by the Horizons-derived value, the predicted NEAR anomaly at $\beta_{\rm ref}$ would drop from $+3.68$ mm/s to $\sim 0.04$ mm/s, requiring a fitted $\beta$ two orders of magnitude larger to match the observed 13.46 mm/s. Such a coupling would violate Cassini PPN constraints by orders of magnitude. The TEP pipeline therefore adopts the published Anderson values for consistency with the historical literature, but the NEAR geometry factor remains the dominant unquantified systematic in the primary detection. Resolving the Anderson trajectory convention—via independent orbit reconstruction or published mission-specific asymptotic-state vectors—is a priority for reducing this systematic.
 
-# 3. Methodology
+## 3. Methodology
 
 The analysis employs a four-step pipeline to test whether TEP with Temporal Topology explains observed flyby velocity anomalies as "Phantom Mass" artifacts. The pipeline retrieves spacecraft trajectories from JPL Horizons, computes TEP predictions for each flyby geometry using full 3D integration, fits the coupling parameter $\beta$ to match observed anomalies, and validates all parameters against solar system PPN constraints.
 
@@ -595,7 +595,7 @@ The systematic uncertainty on $\rho_T = 20 \pm 8$ g/cm³ (40%) from Paper 6 (UCD
 
 A deeper TEP prediction is that the disformal coupling term depends on the total velocity in the scalar-field rest frame. If the CMB dipole frame approximates this rest frame, the Solar System's ~370 km/s bulk motion toward (RA, Dec) = (167.94°, −6.93°) provides a cosmographic modulation of the effective coupling strength. Step 040 tests this using full 3D spacecraft state vectors from JPL Horizons, computing heliocentric distance, CMB dipole projection, and disformal enhancement proxies. With only n = 8 usable vectors in the historical sample, all cosmographic tests remain exploratory; the full extraction protocol is documented in the Step 040 pipeline output.
 
-# 4. Results
+## 4. Results
 
 ## 4.1 Individual Flyby Fits
 
@@ -783,14 +783,14 @@ All gated fitted $β$ values satisfy the Cassini PPN bound ($|γ - 1| < 2.3 \tim
 
 ### 4.6.1 PPN Constraint Derivation
 
-The PPN (Parametrized Post-Newtonian) formalism characterizes deviations from General Relativity. For scalar-tensor theories with conformal coupling $A(\phi) = \exp(\beta \phi/M_{\rm Pl})$, the PPN parameter $\gamma$ relates to the coupling strength:
+The PPN (Parametrized Post-Newtonian) formalism characterizes deviations from General Relativity. For scalar-tensor theories with conformal coupling $A(\phi) = \exp(\beta_A \phi/M_{\rm Pl})$, the PPN parameter $\gamma$ relates to the coupling strength:
 
 \begin{equation}
 |\gamma - 1| \approx 2\beta_{\rm eff}^2 \quad \text{(for small }
 \beta_{\rm eff}\text{)}
 \end{equation}
 
-Derivation (Jakarta v0.8, Sec. 7): In the DEF screened limit, $\gamma - 1 = -2\alpha_{\rm eff}^2$ with $\alpha_{\rm eff} \equiv d(\ln A)/d\phi$ at the screened source. For $A(\phi)=\exp(\beta\phi/M_{\rm Pl})$, use $\psi\equiv\phi/M_{\rm Pl}$ so $d(\ln A)/d\psi=\beta$. Identifying the locally active dimensionless coupling with screened $\beta_{\rm eff}=\beta S_\oplus$ gives $|\gamma - 1| \approx 2\beta_{\rm eff}^2$ for magnitude comparisons to Cassini (the measured $\gamma - 1$ is negative in the DEF convention).
+Derivation (Jakarta v0.8, Sec. 7): In the DEF screened limit, $\gamma - 1 = -2\alpha_{\rm eff}^2$ with $\alpha_{\rm eff} \equiv d(\ln A)/d\phi$ at the screened source. For $A(\phi)=\exp(\beta\phi/M_{\rm Pl})$, use $\psi\equiv\phi/M_{\rm Pl}$ so $d(\ln A)/d\psi=\beta_A$. Identifying the locally active dimensionless coupling with screened $\beta_{\rm eff}=\beta S_\oplus$ gives $|\gamma - 1| \approx 2\beta_{\rm eff}^2$ for magnitude comparisons to Cassini (the measured $\gamma - 1$ is negative in the DEF convention).
 
 Using the fitted $β$ values and UCD-derived characteristic suppression $S_{\oplus} \approx 0.35$, the effective coupling is $β_{\rm eff} = β \times S_{\oplus}$:
 
@@ -1206,7 +1206,7 @@ conventionally significant correlation with the residual ratio.
 
 Caveats: With *n* = 8 flybys, cosmographic modulation remains exploratory. The both-aligned test (p = 0.095) and individual ratio correlations (all p > 0.05) do not currently support a decisive CMB-rest-frame claim. Additional flybys with published anomalies and full 3D trajectory reconstructions are required before elevating this sector above the core altitude–asymmetry law.
 
-# 5. Discussion
+## 5. Discussion
 
 ## 5.1 Physical Interpretation: The Phantom Mass Mechanism
 
@@ -1594,7 +1594,7 @@ The following evidence ledger documents the core model-comparison and cross-chec
 
 These limitations are explicitly acknowledged to ensure intellectual honesty. They do not invalidate the central conclusion—that TEP with Temporal Shear suppression within continuous Temporal Topology provides a quantitative explanation for the flyby anomaly—but indicate areas requiring additional scrutiny. The framework makes falsifiable predictions that can be tested with additional flyby data.
 
-# 6. Conclusions
+## 6. Conclusions
 
 This study investigated whether the Temporal Equivalence Principle (TEP), incorporating Temporal Shear Suppression, can explain the Earth flyby anomaly—unexplained velocity shifts observed during spacecraft gravity assists. The analysis of twelve Earth flyby events spanning nine spacecraft (Galileo 1990/1992, NEAR, Cassini, Rosetta 2005/2007/2009, MESSENGER, Juno, Stardust, OSIRIS-REx, BepiColombo) yields the following key findings:
 
@@ -1775,7 +1775,7 @@ modulation of the TEP signal. Day-side vs. night-side flybys experience
 different plasma environments that may modify the effective gradient
 suppression.
 
-# References
+## References
 
 - Anderson, J. D., Campbell, J. K., Ekelund, J. E., Ellis, J., & Jordan, J. F. 2008, "Anomalous Orbital-Energy Changes Observed during Spacecraft Flybys of Earth," *Phys. Rev. Lett.*, 100, 091102
 
