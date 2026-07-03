@@ -1,0 +1,12 @@
+[11:04:15] [INFO] Step 04: PM-Corrected Field Control Analysis
+[11:04:15] [INFO]   GC MSPs (Freire): 198
+[11:04:15] [INFO]   Field MSPs (all ATNF): 202
+[11:04:15] [INFO]   Field MSPs (PM-corrected ATNF): 202
+[11:04:15] [INFO]   Base residual (all field): 0.591 dex
+[11:04:15] [INFO]   Base residual (PM-corrected field): 0.645 dex
+[11:04:18] [INFO]   Period-matched (all field): 0.612 dex
+[11:04:18] [INFO]   2D-matched (all field):     0.609 dex
+[11:04:22] [INFO]   Period-matched (PM field):  0.667 dex
+[11:04:22] [INFO]   2D-matched (PM field):      0.664 dex
+[11:04:22] [INFO] 
+[11:04:22] [INFO] Output written to /Users/matthewsmawfield/www/Temporal Equivalence Principle/TEP-COS/results/outputs/step_04_pm_corrected_controls.json

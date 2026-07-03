@@ -138,8 +138,8 @@ Filter out foreground contaminants identified in literature.
     Key reproduction scripts include:
 </p>
 <ul>
-    <li><code>scripts/steps/step_5_10_pulsar_population_controls.py</code>: Implements the exact matching procedure for pulsar controls.</li>
-    <li><code>scripts/steps/step_5_33_hierarchical_density_scaling.py</code>: Runs the hierarchical mixed-effects model for density scaling.</li>
+    <li><code>scripts/steps/step_02_pulsar_population_controls.py</code>: Implements the exact matching procedure for pulsar controls.</li>
+    <li><code>scripts/steps/step_12_hierarchical_density_scaling.py</code>: Runs the hierarchical mixed-effects model for density scaling.</li>
     <li><code>scripts/steps/step_7_0_sn_ia_stretch_test.py</code>: SN Ia peak magnitude vs host velocity dispersion correlation (mB-σ test).</li>
 </ul>
 
@@ -164,8 +164,9 @@ Filter out foreground contaminants identified in literature.
 <p>
     To satisfy precision tests in dense environments while allowing cosmological dynamics, 
     a chameleon-like potential may be adopted. The following derivation shows how such a 
-    microscopic framework could, in principle, produce the observed $\kappa_{\text{MSP}} \sim 10^6$ 
-    response coefficient through geometric compactness factors.
+    microscopic framework could, in principle, produce the bare geometric factor of $\sim 10^6$, 
+    which is then heavily attenuated by local screening down to the empirically observed 
+    $\kappa_{\text{MSP}}^{\text{emp}} \approx 0.05$ response coefficient in the cluster core.
 </p>
 
 <h2>C.2 Effective Potential and Field Equilibrium</h2>
@@ -176,8 +177,10 @@ Filter out foreground contaminants identified in literature.
 </p>
 
 <div class="equation">
-    $$V_{\rm eff}(\phi; \rho) = V(\phi) + [A(\phi) - 1] \rho \approx V(\phi) +
-    \frac{\beta_A\phi}{M_{\rm Pl}}\rho$$
+    \begin{equation} \label{eq:appendix_1}
+    V_{\rm eff}(\phi; \rho) = V(\phi) + [A(\phi) - 1] \rho \approx V(\phi) +
+    \frac{\beta_A\phi}{M_{\rm Pl}}\rho
+\end{equation}
 </div>
 
 <p>
@@ -187,8 +190,10 @@ Filter out foreground contaminants identified in literature.
 </p>
 
 <div class="equation">
-    $$\phi_{\rm min}(\rho) \approx \left[ \frac{n \Lambda^{n+4} M_{\rm Pl}}{\beta_A \rho} \right]^{1/(n+1)}, \quad m_{\rm eff}^2(\rho) \approx
-    \frac{(n+1) n \Lambda^{n+4}}{\phi_{\rm min}^{n+2}}$$
+    \begin{equation} \label{eq:appendix_2}
+    \phi_{\rm min}(\rho) \approx \left[ \frac{n \Lambda^{n+4} M_{\rm Pl}}{\beta_A \rho} \right]^{1/(n+1)}, \quad m_{\rm eff}^2(\rho) \approx
+    \frac{(n+1) n \Lambda^{n+4}}{\phi_{\rm min}^{n+2}}
+\end{equation}
 </div>
 
 <p>
@@ -214,8 +219,10 @@ Filter out foreground contaminants identified in literature.
 </p>
 
 <div class="equation">
-    $$\nabla^2 \delta\phi - m_{\rm eff}^2(\rho_0) \delta\phi =
-    +\frac{\beta_A}{M_{\rm Pl}} \delta\rho$$
+    \begin{equation} \label{eq:appendix_3}
+    \nabla^2 \delta\phi - m_{\rm eff}^2(\rho_0) \delta\phi =
+    +\frac{\beta_A}{M_{\rm Pl}} \delta\rho
+\end{equation}
 </div>
 
 <p>
@@ -224,7 +231,9 @@ Filter out foreground contaminants identified in literature.
 </p>
 
 <div class="equation">
-    $$\nabla^2 \delta\phi \approx +\frac{\beta_A}{4\pi G M_{\rm Pl}} \nabla^2 \Phi$$
+    \begin{equation} \label{eq:appendix_4}
+    \nabla^2 \delta\phi \approx +\frac{\beta_A}{4\pi G M_{\rm Pl}} \nabla^2 \Phi
+\end{equation}
 </div>
 
 <p>
@@ -232,7 +241,9 @@ Filter out foreground contaminants identified in literature.
 </p>
 
 <div class="equation">
-    $$\delta\phi = +\frac{\beta_A}{4\pi G M_{\rm Pl}} \Phi$$
+    \begin{equation} \label{eq:appendix_5}
+    \delta\phi = +\frac{\beta_A}{4\pi G M_{\rm Pl}} \Phi
+\end{equation}
 </div>
 
 <h2>C.4 Response Coefficient Estimate</h2>
@@ -243,9 +254,11 @@ Filter out foreground contaminants identified in literature.
 </p>
 
 <div class="equation">
-    $$\frac{d\tau}{dt} \approx \exp\left(\frac{\beta_A \phi_{\rm min}}{M_{\rm Pl}}
+    \begin{equation} \label{eq:appendix_6}
+    \frac{d\tau}{dt} \approx \exp\left(\frac{\beta_A \phi_{\rm min}}{M_{\rm Pl}}
     + \frac{\beta_A \delta\phi}{M_{\rm Pl}}\right) \approx A(\phi_{\rm min})
-    \left(1 + \frac{\beta_A \delta\phi}{M_{\rm Pl}}\right)$$
+    \left(1 + \frac{\beta_A \delta\phi}{M_{\rm Pl}}\right)
+\end{equation}
 </div>
 
 <p>
@@ -254,14 +267,19 @@ Filter out foreground contaminants identified in literature.
 </p>
 
 <div class="equation">
-    $$\kappa_{\text{MSP}} \approx \frac{\beta_A^2}{M_{\rm Pl}^2} \cdot \left(
-    \frac{c^2}{4\pi G \rho_0 R_c^2} \right) \cdot \left(1 - e^{-m_{\rm eff} r}\right)$$
+    \begin{equation} \label{eq:appendix_7}
+    \kappa_{\text{MSP}}^{\text{emp}} \approx \frac{\beta_A^2}{M_{\rm Pl}^2} \cdot \left(
+    \frac{c^2}{4\pi G \rho_0 R_c^2} \right) \cdot \mathcal{S}(m_{\rm eff}, R_c)
+\end{equation}
 </div>
 
 <p>
-    where the geometric factor $c^2/(4\pi G \rho_0 R_c^2) \approx 10^6$–$10^7$
+    where the bare geometric factor $c^2/(4\pi G \rho_0 R_c^2) \approx 10^6$–$10^7$
     for typical cluster densities ($\rho_0 \sim 10^{-18}$ g/cm³) and core radii
-    ($R_c \sim 1$ pc). This demonstrates <em>one possible</em> microscopic origin 
-    for the observed $\kappa_{\text{MSP}} \sim 10^6$ response coefficient, but the 
-    empirical value is determined from data, not from this or any other transfer model.
+    ($R_c \sim 1$ pc). Because the cluster core is dense, the local effective mass $m_{\rm eff}$ 
+    is large, leading to severe geometric screening $\mathcal{S}(m_{\rm eff}, R_c) \sim 10^{-8}$. 
+    This strong attenuation squashes the bare $\sim 10^6$ coupling down to the 
+    observed $\kappa_{\text{MSP}}^{\text{emp}} \approx 0.05$ response coefficient. This demonstrates 
+    <em>one possible</em> microscopic origin for the screened coupling, but the 
+    empirical value is ultimately determined directly from data, not from this or any other transfer model.
 </p>

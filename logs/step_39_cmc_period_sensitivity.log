@@ -1,0 +1,27 @@
+[11:11:24] [INFO] Step 39: CMC Period Sensitivity Sweep
+[11:11:26] [INFO]   Deduplicated 1439522 rows -> 1213 unique neutron stars
+[11:11:29] [INFO]   Deduplicated 228001 rows -> 250 unique neutron stars
+[11:11:33] [INFO]   Deduplicated 2010584 rows -> 1125 unique neutron stars
+[11:11:38] [INFO]   Deduplicated 1439522 rows -> 1213 unique neutron stars
+[11:11:40] [INFO]   Deduplicated 228001 rows -> 250 unique neutron stars
+[11:11:45] [INFO]   Deduplicated 2010584 rows -> 1125 unique neutron stars
+[11:11:52] [INFO]   Deduplicated 1439522 rows -> 1213 unique neutron stars
+[11:11:54] [INFO]   Deduplicated 228001 rows -> 250 unique neutron stars
+[11:11:58] [INFO]   Deduplicated 2010584 rows -> 1125 unique neutron stars
+[11:12:03] [INFO]   Deduplicated 1439522 rows -> 1213 unique neutron stars
+[11:12:05] [INFO]   Deduplicated 228001 rows -> 250 unique neutron stars
+[11:12:09] [INFO]   Deduplicated 2010584 rows -> 1125 unique neutron stars
+[11:12:15] [INFO]   Deduplicated 1439522 rows -> 1213 unique neutron stars
+[11:12:17] [INFO]   Deduplicated 228001 rows -> 250 unique neutron stars
+[11:12:21] [INFO]   Deduplicated 2010584 rows -> 1125 unique neutron stars
+[11:12:25] [INFO]   Observed period distribution: N=5, median=5.00 ms
+[11:12:26] [INFO]   Deduplicated 1439522 rows -> 1213 unique neutron stars
+[11:12:29] [INFO]   Deduplicated 228001 rows -> 250 unique neutron stars
+[11:12:34] [INFO]   Deduplicated 2010584 rows -> 1125 unique neutron stars
+[11:12:39] [INFO]   Deduplicated 1439522 rows -> 1213 unique neutron stars
+[11:12:46] [INFO]   Deduplicated 228001 rows -> 250 unique neutron stars
+[11:12:50] [INFO]   Deduplicated 2010584 rows -> 1125 unique neutron stars
+[11:12:54] [INFO] 
+[11:12:54] [INFO] Baseline (5 ms combined excess): 1.884 dex
+[11:12:54] [INFO] Observed-distribution combined excess: 1.436 dex
+[11:12:54] [INFO] Output written to /Users/matthewsmawfield/www/Temporal Equivalence Principle/TEP-COS/results/outputs/step_39_period_sensitivity.json

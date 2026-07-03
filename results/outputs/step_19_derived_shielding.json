@@ -1,0 +1,30 @@
+{
+  "formula": "f_shield = (M_c/d) / (M_clust/R_core + M_c/d)",
+  "derivation": {
+    "mechanism": "Gravitational influence weights",
+    "physics": [
+      "Companion creates region of suppressed Temporal Shear with \u03c6 \u2248 \u03c6_min(\u03c1_c)",
+      "Cluster provides enhanced background with active Temporal Shear",
+      "Pulsar topology transition sees weighted average of both",
+      "Weights are mass/distance (gravitational influence)"
+    ]
+  },
+  "typical_binary": {
+    "shielding_fraction": 0.4986249658944627,
+    "weight_cluster": 1.289047310434219e+20,
+    "weight_comp": 1.2819768187067623e+20,
+    "distance_to_topology_m": 3103020227.7861333,
+    "ratio_weights": 0.9945149478454169
+  },
+  "observation_comparison": {
+    "predicted_shielding": 0.4986249658944627,
+    "observed_shielding": 0.55,
+    "discrepancy_pp": 5.137503410553734,
+    "agreement_percent": 90.65908470808412
+  },
+  "mass_trend": {
+    "direction": "positive",
+    "meaning": "Higher companion mass gives stronger Temporal Shear suppression",
+    "correct": true
+  }
+}

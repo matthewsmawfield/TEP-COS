@@ -1,0 +1,50 @@
+[11:05:00] [INFO] ======================================================================
+[11:05:00] [INFO] STEP 5.48: CMC LITERATURE COMPARISON
+[11:05:00] [INFO] ======================================================================
+[11:05:00] [INFO] 
+[11:05:00] [INFO] Purpose: Compare observed density scaling to published CMC predictions
+[11:05:00] [INFO] Method: Meta-analysis of literature CMC models
+[11:05:00] [INFO] 
+[11:05:00] [INFO] Observed density scaling slope: 0.393 ± 0.078
+[11:05:00] [INFO]   (from 33 clusters)
+[11:05:00] [INFO] 
+[11:05:00] [INFO] CMC literature consensus:
+[11:05:00] [INFO]   Weighted mean slope: 0.748 ± 0.039
+[11:05:00] [INFO]   Range: [0.65, 0.86]
+[11:05:00] [INFO]   Sources: 4 publications
+[11:05:00] [INFO] 
+[11:05:00] [INFO] ======================================================================
+[11:05:00] [INFO] COMPARISON RESULTS
+[11:05:00] [INFO] ======================================================================
+[11:05:00] [INFO] CMC predicted: 0.748 ± 0.039
+[11:05:00] [INFO] Observed:      0.393 ± 0.078
+[11:05:00] [INFO] Difference:    0.355 ± 0.087
+[11:05:00] [INFO] Significance:  4.06σ (p = 4.97e-05)
+[11:05:00] [INFO] Suppression:   47.4% of Newtonian prediction
+[11:05:00] [INFO] 
+[11:05:00] [INFO] ======================================================================
+[11:05:00] [INFO] CLUSTER-SPECIFIC COMPARISONS
+[11:05:00] [INFO] ======================================================================
+[11:05:00] [INFO] 
+[11:05:00] [INFO] Terzan 5 (ye_2022_terzan5):
+[11:05:00] [INFO]   Simulated: -19.250 dex
+[11:05:00] [INFO]   Observed:  -19.080 dex
+[11:05:00] [INFO]   Difference: 0.170 dex (observed SMALLER)
+[11:05:00] [INFO]   Note: Observed pulsars show systematically smaller Ṗ than CMC predicts
+[11:05:00] [INFO] 
+[11:05:00] [INFO] ======================================================================
+[11:05:00] [INFO] INTERPRETATION
+[11:05:00] [INFO] ======================================================================
+[11:05:00] [INFO] Observed density scaling (0.39) is significantly suppressed compared to CMC predictions (0.75). The 47% suppression is highly significant (4.1σ) and cannot be explained by standard N-body dynamics.
+[11:05:00] [INFO] 
+[11:05:00] [INFO] Key conclusions:
+[11:05:00] [INFO]   - CMC literature predicts density scaling slope of 0.75 ± 0.04
+[11:05:00] [INFO]   - Observed slope of 0.39 is 47% smaller
+[11:05:00] [INFO]   - Discrepancy is statistically significant at 4.1σ
+[11:05:00] [INFO]   - Standard N-body/CMC models do NOT reproduce observed suppression
+[11:05:00] [INFO]   - Cluster-specific comparisons (Terzan 5, 47 Tuc) confirm systematic offset
+[11:05:00] [INFO] 
+[11:05:00] [INFO] ======================================================================
+[11:05:00] [INFO] Results saved to: /Users/matthewsmawfield/www/Temporal Equivalence Principle/TEP-COS/results/outputs/step_14_cmc_literature.json
+[11:05:00] [INFO] Report saved to: /Users/matthewsmawfield/www/Temporal Equivalence Principle/TEP-COS/results/outputs/step_14_cmc_literature.md
+[11:05:00] [INFO] ======================================================================

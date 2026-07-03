@@ -1,0 +1,14 @@
+[11:04:57] [INFO] Parsed 368 pulsars from Freire catalog
+[11:04:57] [INFO] MSPs (P < 30 ms): 344
+[11:04:57] [INFO] 
+[11:04:57] [INFO] Binary vs Isolated MSPs in GCs:
+[11:04:57] [INFO]   Binary MSPs: 117
+[11:04:57] [INFO]   Isolated MSPs: 81
+[11:04:57] [INFO]   Difference (binary - isolated): -0.329 dex
+[11:04:57] [INFO]   t-test p-value: 0.005636
+[11:04:57] [INFO] 
+[11:04:57] [INFO] Orbital Parameter Analysis:
+[11:04:57] [INFO]   Binaries with measured Pdot: 117
+[11:04:57] [INFO] 
+[11:04:57] [INFO] Wrote: /Users/matthewsmawfield/www/Temporal Equivalence Principle/TEP-COS/results/outputs/step_15_binary_pulsar_analysis.json
+[11:04:57] [INFO] Wrote: /Users/matthewsmawfield/www/Temporal Equivalence Principle/TEP-COS/results/outputs/step_15_binary_pulsar_analysis.md

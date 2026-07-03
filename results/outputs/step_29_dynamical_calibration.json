@@ -1,0 +1,126 @@
+{
+  "timestamp": "2026-07-03T11:09:13.343472",
+  "method": "King Model Monte Carlo",
+  "clusters_analyzed": 15,
+  "newtonian": {
+    "mean_predicted_shift_dex": 4.1474430811848055,
+    "std_predicted_shift_dex": 0.619080206776043,
+    "cluster_predictions": {
+      "47_Tuc": {
+        "predicted_shift_dex": 4.244485457802632,
+        "predicted_std": 0.5856694953533038,
+        "n_pulsars": 10000,
+        "a_los_mean": 5470.77929185667,
+        "a_los_std": 8074.82959248225
+      },
+      "M15": {
+        "predicted_shift_dex": 4.833839144455343,
+        "predicted_std": 0.567484217257367,
+        "n_pulsars": 10000,
+        "a_los_mean": 20532.998758869657,
+        "a_los_std": 30041.020774807424
+      },
+      "M13": {
+        "predicted_shift_dex": 3.6458100870844454,
+        "predicted_std": 0.5908134980179632,
+        "n_pulsars": 10000,
+        "a_los_mean": 1387.6977185993169,
+        "a_los_std": 2049.3435879900876
+      },
+      "Terzan_5": {
+        "predicted_shift_dex": 5.260726291211181,
+        "predicted_std": 0.5620040903899751,
+        "n_pulsars": 10000,
+        "a_los_mean": 54464.76060124416,
+        "a_los_std": 79582.94549850763
+      },
+      "M28": {
+        "predicted_shift_dex": 4.2931553123606125,
+        "predicted_std": 0.5731364501555959,
+        "n_pulsars": 10000,
+        "a_los_mean": 6011.833810004232,
+        "a_los_std": 8837.139903661828
+      },
+      "M62": {
+        "predicted_shift_dex": 4.865264054477784,
+        "predicted_std": 0.562366463669287,
+        "n_pulsars": 10000,
+        "a_los_mean": 22207.324018349467,
+        "a_los_std": 32649.3470202959
+      },
+      "M5": {
+        "predicted_shift_dex": 3.8627613546750172,
+        "predicted_std": 0.6013395728364933,
+        "n_pulsars": 10000,
+        "a_los_mean": 2299.086002796072,
+        "a_los_std": 3371.6056859720015
+      },
+      "M3": {
+        "predicted_shift_dex": 3.473885912490733,
+        "predicted_std": 0.5907782357286523,
+        "n_pulsars": 10000,
+        "a_los_mean": 932.084886279309,
+        "a_los_std": 1369.9564794558041
+      },
+      "M53": {
+        "predicted_shift_dex": 3.2055268498293756,
+        "predicted_std": 0.5878562771728009,
+        "n_pulsars": 10000,
+        "a_los_mean": 500.4893372233395,
+        "a_los_std": 734.6622805316294
+      },
+      "Omega_Cen": {
+        "predicted_shift_dex": 4.399521740608048,
+        "predicted_std": 0.5929541727586493,
+        "n_pulsars": 10000,
+        "a_los_mean": 7876.87535989984,
+        "a_los_std": 11591.023180348724
+      },
+      "M2": {
+        "predicted_shift_dex": 3.9173681782163055,
+        "predicted_std": 0.5881626001382277,
+        "n_pulsars": 10000,
+        "a_los_mean": 2589.702969145646,
+        "a_los_std": 3809.7609481341015
+      },
+      "NGC_6440": {
+        "predicted_shift_dex": 5.163532756152952,
+        "predicted_std": 0.5694510560846227,
+        "n_pulsars": 10000,
+        "a_los_mean": 44001.692744765256,
+        "a_los_std": 64476.099640866625
+      },
+      "NGC_6544": {
+        "predicted_shift_dex": 3.7596579056133486,
+        "predicted_std": 0.5807674190637185,
+        "n_pulsars": 10000,
+        "a_los_mean": 1782.124964498052,
+        "a_los_std": 2627.126457371988
+      },
+      "M30": {
+        "predicted_shift_dex": 3.569648215488286,
+        "predicted_std": 0.5755762938860025,
+        "n_pulsars": 10000,
+        "a_los_mean": 1138.9730194221286,
+        "a_los_std": 1672.1659646816645
+      },
+      "NGC_6752": {
+        "predicted_shift_dex": 3.7164629573060175,
+        "predicted_std": 0.578424572291366,
+        "n_pulsars": 10000,
+        "a_los_mean": 1604.9535743668116,
+        "a_los_std": 2367.6307694066218
+      }
+    }
+  },
+  "observed": {
+    "residual_dex": 0.5905561131808206,
+    "uncertainty_dex": 0.04862485845905251
+  },
+  "comparison": {
+    "difference_dex": -3.556886968003985,
+    "significance_sigma": -73.14955931438394,
+    "interpretation": "OBSERVED_MUCH_LESS_THAN_NEWTONIAN",
+    "verdict": "TEP_SUPPORTED"
+  }
+}

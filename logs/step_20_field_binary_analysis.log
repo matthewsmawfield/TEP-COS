@@ -1,0 +1,20 @@
+[11:04:59] [INFO] Loading ATNF database...
+[11:04:59] [INFO] Parsed 4331 pulsars.
+[11:04:59] [INFO] Found 339 Field MSPs with measured Pdot.
+[11:04:59] [INFO]   Binaries: 269
+[11:04:59] [INFO]   Isolated: 70
+[11:04:59] [INFO] {
+[11:04:59] [INFO]   "binary_n": 269,
+[11:04:59] [INFO]   "isolated_n": 70,
+[11:04:59] [INFO]   "binary_mean_logpdot": 0.17244325013605347,
+[11:04:59] [INFO]   "binary_std_logpdot": 0.6430633310209793,
+[11:04:59] [INFO]   "isolated_mean_logpdot": 0.20498788908677693,
+[11:04:59] [INFO]   "isolated_std_logpdot": 0.9002842893649335,
+[11:04:59] [INFO]   "diff_dex": -0.03254463895072346,
+[11:04:59] [INFO]   "t_stat": -0.2823085049802042,
+[11:04:59] [INFO]   "t_p_value": 0.7783704174585205,
+[11:04:59] [INFO]   "mw_u_stat": 10009.0,
+[11:04:59] [INFO]   "mw_p_value": 0.4164796855489207,
+[11:04:59] [INFO]   "interpretation": "CONSISTENT: No significant difference between Binary and Isolated Field MSPs. This supports the hypothesis that the difference observed in GCs is environmental (e.g. acceleration or TEP cluster potential)."
+[11:04:59] [INFO] }
+[11:04:59] [INFO] Results saved to /Users/matthewsmawfield/www/Temporal Equivalence Principle/TEP-COS/results/outputs/step_20_field_binary_analysis.md

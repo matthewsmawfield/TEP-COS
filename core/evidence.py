@@ -101,7 +101,6 @@ def model_comparison_summary(evidence_null, evidence_alt, model_names=("Null", "
 
 def angular_separation_deg(ra1, dec1, ra2, dec2):
     """Angular separation in degrees."""
-    import numpy as np
     dra = np.radians(float(ra2) - float(ra1))
     ddec = np.radians(float(dec2) - float(dec1))
     a = (

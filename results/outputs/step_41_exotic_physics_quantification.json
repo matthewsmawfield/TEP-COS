@@ -1,0 +1,398 @@
+{
+  "timestamp": "2026-07-03T11:09:35.200971",
+  "observed_values": {
+    "raw_excess": 0.6116545605061704,
+    "controlled_residual": 0.608908974037327,
+    "density_slope": 0.3929054987420065,
+    "density_error": 0.07848558701147679,
+    "binary_inversion": -0.32861635352084306,
+    "n_clusters": 34
+  },
+  "cmc_predictions": {
+    "raw_excess": 1.880143026913185,
+    "density_slope": 0.7476777251184834,
+    "density_slope_error": 0.0385519898860048,
+    "binary_diff": 0.2614807441864375
+  },
+  "exotic_mechanism_evaluation": {
+    "excess_discrepancy_dex": 1.2684884664070144,
+    "slope_discrepancy_dex_dex": 0.35477222637647693,
+    "binary_discrepancy_dex": 0.5900970977072806,
+    "mechanism_analyses": [
+      {
+        "name": "Extreme Mass Segregation Suppression",
+        "description": "Pulsars avoid cluster cores despite Newtonian dynamics predicting concentration",
+        "addresses_excess": true,
+        "addresses_slope": true,
+        "addresses_binary": false,
+        "n_addressed": 2,
+        "independent_of_density": false,
+        "assessment": "Could address 2/3 discrepancies"
+      },
+      {
+        "name": "Inverse Binary Acceleration",
+        "description": "Binary companions somehow shield pulsars from acceleration effects",
+        "addresses_excess": true,
+        "addresses_slope": false,
+        "addresses_binary": true,
+        "n_addressed": 2,
+        "independent_of_density": true,
+        "assessment": "Could address 2/3 discrepancies"
+      },
+      {
+        "name": "Transient Pulsar States",
+        "description": "Pulsars in dense environments spend time in low-spin-down states",
+        "addresses_excess": true,
+        "addresses_slope": true,
+        "addresses_binary": false,
+        "n_addressed": 2,
+        "independent_of_density": false,
+        "assessment": "Could address 2/3 discrepancies"
+      },
+      {
+        "name": "Anomalous Eccentricity Distribution",
+        "description": "Systematically lower eccentricities in dense clusters reduce acceleration variance",
+        "addresses_excess": true,
+        "addresses_slope": true,
+        "addresses_binary": false,
+        "n_addressed": 2,
+        "independent_of_density": false,
+        "assessment": "Could address 2/3 discrepancies"
+      },
+      {
+        "name": "Tidal Heating Cancellation",
+        "description": "Internal heating exactly cancels gravitational acceleration effects",
+        "addresses_excess": true,
+        "addresses_slope": true,
+        "addresses_binary": false,
+        "n_addressed": 2,
+        "independent_of_density": false,
+        "assessment": "Could address 2/3 discrepancies"
+      }
+    ],
+    "summary": {
+      "n_mechanisms_tested": 5,
+      "n_full_solutions": 0,
+      "n_partial_solutions": 5,
+      "n_no_effect": 0,
+      "full_solution_names": [],
+      "conclusion": "No tested exotic mechanism can address all three discrepancies simultaneously."
+    },
+    "note": "Each mechanism is evaluated independently. Probabilities are NOT combined multiplicatively because mechanisms may share physical causes (unknown dependence). For formal model comparison, use the BIC-based Bayes factor from calculate_bayesian_evidence_ratio()."
+  },
+  "bayesian_comparison": {
+    "n_params_tep": 3,
+    "n_params_exotic_gr": 8,
+    "n_data": 34,
+    "chi2_tep": 0.0,
+    "chi2_exotic_gr": 541.8472415355751,
+    "bic_tep": 10.579081573848484,
+    "bic_exotic_gr": 570.0581257325044,
+    "log_bayes_factor": 279.73952207932797,
+    "bayes_factor": 3.085537360291593e+121,
+    "evidence_strength": "Decisive",
+    "interpretation": "TEP is favored over exotic-GR by factor of 3.09e+121 (Decisive)"
+  },
+  "sensitivity_sweep": {
+    "individual_tests": [
+      {
+        "name": "Mass Segregation Suppression",
+        "description": "Reduce effective mass segregation by factor",
+        "standard_value": 1.0,
+        "variations": [
+          {
+            "parameter_value": 0.0,
+            "predicted_slope": 0.3476777251184834,
+            "can_reach_observed": true,
+            "discrepancy_from_observed": 0.04522777362352309
+          },
+          {
+            "parameter_value": 0.1,
+            "predicted_slope": 0.38767772511848336,
+            "can_reach_observed": true,
+            "discrepancy_from_observed": 0.005227773623523113
+          },
+          {
+            "parameter_value": 0.3,
+            "predicted_slope": 0.46767772511848343,
+            "can_reach_observed": true,
+            "discrepancy_from_observed": 0.07477222637647696
+          },
+          {
+            "parameter_value": 0.5,
+            "predicted_slope": 0.5476777251184834,
+            "can_reach_observed": true,
+            "discrepancy_from_observed": 0.15477222637647697
+          },
+          {
+            "parameter_value": 0.7,
+            "predicted_slope": 0.6276777251184834,
+            "can_reach_observed": false,
+            "discrepancy_from_observed": 0.23477222637647693
+          },
+          {
+            "parameter_value": 0.9,
+            "predicted_slope": 0.7076777251184834,
+            "can_reach_observed": false,
+            "discrepancy_from_observed": 0.3147722263764769
+          }
+        ],
+        "any_variation_viable": true,
+        "minimum_achievable_slope": 0.3476777251184834,
+        "excludes_observed": false
+      },
+      {
+        "name": "Eccentricity Suppression",
+        "description": "Reduce binary eccentricities in dense clusters",
+        "standard_value": 1.0,
+        "variations": [
+          {
+            "parameter_value": 0.1,
+            "predicted_slope": 0.5676777251184834,
+            "can_reach_observed": false,
+            "discrepancy_from_observed": 0.17477222637647688
+          },
+          {
+            "parameter_value": 0.3,
+            "predicted_slope": 0.6076777251184834,
+            "can_reach_observed": false,
+            "discrepancy_from_observed": 0.21477222637647692
+          },
+          {
+            "parameter_value": 0.5,
+            "predicted_slope": 0.6476777251184834,
+            "can_reach_observed": false,
+            "discrepancy_from_observed": 0.25477222637647695
+          },
+          {
+            "parameter_value": 0.7,
+            "predicted_slope": 0.6876777251184834,
+            "can_reach_observed": false,
+            "discrepancy_from_observed": 0.2947722263764769
+          },
+          {
+            "parameter_value": 0.9,
+            "predicted_slope": 0.7276777251184834,
+            "can_reach_observed": false,
+            "discrepancy_from_observed": 0.3347722263764769
+          }
+        ],
+        "any_variation_viable": false,
+        "minimum_achievable_slope": 0.5676777251184834,
+        "excludes_observed": true
+      },
+      {
+        "name": "Tidal Heating Enhancement",
+        "description": "Increase internal heating to counteract gravity",
+        "standard_value": 1.0,
+        "variations": [
+          {
+            "parameter_value": 1.0,
+            "predicted_slope": 0.7476777251184834,
+            "can_reach_observed": false,
+            "discrepancy_from_observed": 0.35477222637647693
+          },
+          {
+            "parameter_value": 2.0,
+            "predicted_slope": 0.528687989573411,
+            "can_reach_observed": true,
+            "discrepancy_from_observed": 0.13578249083140453
+          },
+          {
+            "parameter_value": 5.0,
+            "predicted_slope": 0.3343716437254662,
+            "can_reach_observed": true,
+            "discrepancy_from_observed": 0.05853385501654029
+          },
+          {
+            "parameter_value": 10.0,
+            "predicted_slope": 0.23643645671476943,
+            "can_reach_observed": true,
+            "discrepancy_from_observed": 0.15646904202723705
+          }
+        ],
+        "any_variation_viable": true,
+        "minimum_achievable_slope": 0.23643645671476943,
+        "excludes_observed": false
+      },
+      {
+        "name": "Core Radius Inflation",
+        "description": "Systematically overestimate core radii (underestimate densities)",
+        "standard_value": 1.0,
+        "variations": [
+          {
+            "parameter_value": 1.0,
+            "predicted_slope": 0.7476777251184834,
+            "can_reach_observed": false,
+            "discrepancy_from_observed": 0.35477222637647693
+          },
+          {
+            "parameter_value": 1.5,
+            "predicted_slope": 0.6948503474017791,
+            "can_reach_observed": false,
+            "discrepancy_from_observed": 0.3019448486597726
+          },
+          {
+            "parameter_value": 2.0,
+            "predicted_slope": 0.657368726419289,
+            "can_reach_observed": false,
+            "discrepancy_from_observed": 0.26446322767728253
+          },
+          {
+            "parameter_value": 3.0,
+            "predicted_slope": 0.6045413487025847,
+            "can_reach_observed": false,
+            "discrepancy_from_observed": 0.21163584996057822
+          },
+          {
+            "parameter_value": 5.0,
+            "predicted_slope": 0.5379867238176778,
+            "can_reach_observed": true,
+            "discrepancy_from_observed": 0.14508122507567128
+          }
+        ],
+        "any_variation_viable": true,
+        "minimum_achievable_slope": 0.5379867238176778,
+        "excludes_observed": false
+      },
+      {
+        "name": "Velocity Anisotropy",
+        "description": "Radially-biased velocity distributions",
+        "standard_value": 0.0,
+        "variations": [
+          {
+            "parameter_value": 0.0,
+            "predicted_slope": 0.7476777251184834,
+            "can_reach_observed": false,
+            "discrepancy_from_observed": 0.35477222637647693
+          },
+          {
+            "parameter_value": 0.3,
+            "predicted_slope": 0.7026777251184834,
+            "can_reach_observed": false,
+            "discrepancy_from_observed": 0.3097722263764769
+          },
+          {
+            "parameter_value": 0.5,
+            "predicted_slope": 0.6726777251184834,
+            "can_reach_observed": false,
+            "discrepancy_from_observed": 0.279772226376477
+          },
+          {
+            "parameter_value": 0.7,
+            "predicted_slope": 0.6426777251184834,
+            "can_reach_observed": false,
+            "discrepancy_from_observed": 0.24977222637647695
+          },
+          {
+            "parameter_value": 0.9,
+            "predicted_slope": 0.6126777251184834,
+            "can_reach_observed": false,
+            "discrepancy_from_observed": 0.21977222637647692
+          }
+        ],
+        "any_variation_viable": false,
+        "minimum_achievable_slope": 0.6126777251184834,
+        "excludes_observed": true
+      }
+    ],
+    "all_single_mechanisms_exclude": false,
+    "required_slope_suppression": 0.35477222637647693,
+    "required_suppression_fraction": 0.4744988575395324,
+    "exclusion_zone_summary": "Standard dynamics cannot reach observed slope 0.39 with any single-parameter variation. Would need 47% suppression of density scaling, requiring physically implausible parameter combinations."
+  },
+  "combined_summary": {
+    "triple_discrepancy": {
+      "raw_excess": {
+        "observed": 0.6116545605061704,
+        "cmc_predicted": 1.880143026913185,
+        "discrepancy": 1.2684884664070144,
+        "significance": "22.3\u03c3"
+      },
+      "density_scaling": {
+        "observed": 0.3929054987420065,
+        "cmc_predicted": 0.7476777251184834,
+        "discrepancy": 0.35477222637647693,
+        "significance": "4.5\u03c3"
+      },
+      "binary_inversion": {
+        "observed": -0.32861635352084306,
+        "cmc_predicted": 0.2614807441864375,
+        "discrepancy": 0.5900970977072806,
+        "significance": "Opposite signs"
+      }
+    },
+    "exotic_mechanism_evaluation": {
+      "mechanisms_tested": 5,
+      "full_solutions": 0,
+      "conclusion": "No tested exotic mechanism can address all three discrepancies simultaneously.",
+      "mechanism_list": [],
+      "note": "Each mechanism is evaluated independently. Probabilities are NOT combined multiplicatively because mechanisms may share physical causes (unknown dependence). For formal model comparison, use the BIC-based Bayes factor from calculate_bayesian_evidence_ratio()."
+    },
+    "bayesian_comparison": {
+      "bayes_factor": 3.085537360291593e+121,
+      "evidence_strength": "Decisive",
+      "interpretation": "TEP is favored over exotic-GR by factor of 3.09e+121 (Decisive)"
+    },
+    "sensitivity_sweep": {
+      "exclusion_zone": "Standard dynamics cannot reach observed slope 0.39 with any single-parameter variation. Would need 47% suppression of density scaling, requiring physically implausible parameter combinations.",
+      "all_single_mechanisms_exclude": false
+    },
+    "combined_evidence": {
+      "total_sigma": 20.0,
+      "conclusion": "Standard dynamics fails on amplitude (22.3\u03c3 overprediction) and slope (4.5\u03c3 discrepancy). No tested exotic mechanism addresses all three failures simultaneously (0/5). TEP is favored by Bayes factor 3.09e+121 (Decisive evidence)."
+    },
+    "mechanism_analyses": [
+      {
+        "name": "Extreme Mass Segregation Suppression",
+        "description": "Pulsars avoid cluster cores despite Newtonian dynamics predicting concentration",
+        "addresses_excess": true,
+        "addresses_slope": true,
+        "addresses_binary": false,
+        "n_addressed": 2,
+        "independent_of_density": false,
+        "assessment": "Could address 2/3 discrepancies"
+      },
+      {
+        "name": "Inverse Binary Acceleration",
+        "description": "Binary companions somehow shield pulsars from acceleration effects",
+        "addresses_excess": true,
+        "addresses_slope": false,
+        "addresses_binary": true,
+        "n_addressed": 2,
+        "independent_of_density": true,
+        "assessment": "Could address 2/3 discrepancies"
+      },
+      {
+        "name": "Transient Pulsar States",
+        "description": "Pulsars in dense environments spend time in low-spin-down states",
+        "addresses_excess": true,
+        "addresses_slope": true,
+        "addresses_binary": false,
+        "n_addressed": 2,
+        "independent_of_density": false,
+        "assessment": "Could address 2/3 discrepancies"
+      },
+      {
+        "name": "Anomalous Eccentricity Distribution",
+        "description": "Systematically lower eccentricities in dense clusters reduce acceleration variance",
+        "addresses_excess": true,
+        "addresses_slope": true,
+        "addresses_binary": false,
+        "n_addressed": 2,
+        "independent_of_density": false,
+        "assessment": "Could address 2/3 discrepancies"
+      },
+      {
+        "name": "Tidal Heating Cancellation",
+        "description": "Internal heating exactly cancels gravitational acceleration effects",
+        "addresses_excess": true,
+        "addresses_slope": true,
+        "addresses_binary": false,
+        "n_addressed": 2,
+        "independent_of_density": false,
+        "assessment": "Could address 2/3 discrepancies"
+      }
+    ]
+  }
+}

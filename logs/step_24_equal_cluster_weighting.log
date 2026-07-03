@@ -1,0 +1,19 @@
+[11:05:28] [INFO] --- Step 24: Equal Cluster Weighting Analysis (Real Data) ---
+[11:05:28] [INFO] 
+[11:05:28] [INFO] Results saved to: /Users/matthewsmawfield/www/Temporal Equivalence Principle/TEP-COS/results/outputs/step_24_equal_cluster_weighting.json
+[11:05:28] [INFO] 
+[11:05:28] [INFO] ======================================================================
+[11:05:28] [INFO] DENSITY SLOPE DEFINITIONS SUMMARY
+[11:05:28] [INFO] ======================================================================
+[11:05:28] [INFO] 
+[11:05:28] [INFO] A) Raw log|Ṗ| (comparable to step_12 primary):
+[11:05:28] [INFO]    OLS (equal weight):  0.430 ± 0.102
+[11:05:28] [INFO]    WLS (by N):          0.417 ± 0.029
+[11:05:28] [INFO]    Tension vs Newtonian: 2.92σ
+[11:05:28] [INFO] 
+[11:05:28] [INFO] B) Controlled residual (GC − matched field):
+[11:05:28] [INFO]    OLS (equal weight):  0.138 ± 0.033
+[11:05:28] [INFO]    WLS (by N):          0.130 ± 0.010
+[11:05:28] [INFO]    Tension vs Newtonian: 12.02σ
+[11:05:28] [INFO] 
+[11:05:28] [INFO] ======================================================================

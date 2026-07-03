@@ -1,0 +1,77 @@
+{
+  "meta": {
+    "timestamp_utc": "2026-07-03T10:04:43.113448+00:00",
+    "note": "Pdot/P parallel observable. All tests rerun on log|Pdot/P| alongside existing log|Pdot|."
+  },
+  "base_sample": {
+    "counts": {
+      "gc_n": 198,
+      "field_n": 202
+    },
+    "base_comparison": {
+      "gc_mean": -16.82705202999179,
+      "gc_std": 0.7311088945992903,
+      "field_mean": -17.56603136942231,
+      "field_std": 0.5569710723420951,
+      "diff_dex": 0.738979339430518,
+      "t_stat": 11.355048518827795,
+      "t_p": 8.012705384756047e-26,
+      "mw_u": 32282.0,
+      "mw_p": 2.2781207489861978e-26,
+      "gc_n": 198,
+      "field_n": 202
+    },
+    "controls": {
+      "period_matched": {
+        "n_boot": 2000,
+        "diff_mean": 0.7472318633672159,
+        "diff_ci16": 0.6945671378091386,
+        "diff_ci84": 0.799860748529672,
+        "p_two_sided": 0.0
+      },
+      "period_and_bproxy_matched": {
+        "n_boot": 2000,
+        "diff_mean": 0.7456707406937828,
+        "diff_ci16": 0.6967727553675784,
+        "diff_ci84": 0.7940687030905315,
+        "p_two_sided": 0.0
+      }
+    }
+  },
+  "hybrid_sample": {
+    "counts": {
+      "gc_n": 199,
+      "field_n": 351
+    },
+    "base_comparison": {
+      "gc_mean": -16.821587209058666,
+      "gc_std": 0.7333233506552911,
+      "field_mean": -17.475155404432133,
+      "field_std": 0.6637955525985915,
+      "diff_dex": 0.6535681953734667,
+      "t_stat": 10.388939974239607,
+      "t_p": 2.0707150119837524e-22,
+      "mw_u": 55365.0,
+      "mw_p": 3.583763511151384e-30,
+      "gc_n": 199,
+      "field_n": 351
+    },
+    "controls": {
+      "period_matched": {
+        "n_boot": 5000,
+        "diff_mean": 0.6926967244702192,
+        "diff_ci16": 0.6359777734857431,
+        "diff_ci84": 0.7501793456254713,
+        "p_two_sided": 0.0
+      }
+    }
+  },
+  "manuscript_summary": {
+    "base_raw_difference_dex": 0.74,
+    "base_period_matched_residual_dex": 0.75,
+    "base_bproxy_matched_residual_dex": 0.75,
+    "hybrid_raw_difference_dex": 0.65,
+    "hybrid_period_matched_residual_dex": 0.69,
+    "hybrid_p_value": 0.0
+  }
+}

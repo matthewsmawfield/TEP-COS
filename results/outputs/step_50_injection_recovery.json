@@ -1,0 +1,232 @@
+{
+  "timestamp_utc": "2026-07-03T10:05:28.695351+00:00",
+  "baseline": {
+    "label": "baseline",
+    "n_gc": 198,
+    "n_field": 202,
+    "raw_amplitude_dex": 0.5905561111111126,
+    "period_only_residual_dex": 0.8173529212121213,
+    "period_bfield_residual_dex": 0.2332304292929289,
+    "gamma_raw": 0.31975491395961925,
+    "gamma_raw_err": 0.10738300952378525,
+    "gamma_raw_r2": 0.2224091935863918,
+    "gamma_period_only": 0.3953723492518057,
+    "gamma_period_only_err": 0.08695029608093956,
+    "gamma_period_only_r2": 0.4001105409503861,
+    "gamma_period_bfield": 0.11776915184187026,
+    "gamma_period_bfield_err": 0.029409756331667036,
+    "gamma_period_bfield_r2": 0.34092217378907175,
+    "negative_fraction": 0.4494949494949495,
+    "negative_n": 89,
+    "total_n": 198,
+    "binary_negative_fraction": 0.43103448275862066,
+    "binary_n": 116,
+    "isolated_negative_fraction": 0.47560975609756095,
+    "isolated_n": 82
+  },
+  "scenarios": [
+    {
+      "name": "Uniform +0.60 dex GC excess",
+      "injected_params": {
+        "raw_dex": 0.6,
+        "period_only_dex": 0.6,
+        "period_bfield_dex": 0.6
+      },
+      "injected_results": {
+        "label": "Uniform +0.60 dex GC excess",
+        "n_gc": 198,
+        "n_field": 202,
+        "raw_amplitude_dex": 1.1905561116007846,
+        "period_only_residual_dex": 1.417352921701795,
+        "period_bfield_residual_dex": 0.5402547621058348,
+        "gamma_raw": 0.31975491818342083,
+        "gamma_raw_err": 0.10738299376634096,
+        "gamma_raw_r2": 0.22240924891100022,
+        "gamma_period_only": 0.3953723534756069,
+        "gamma_period_only_err": 0.08695028499732238,
+        "gamma_period_only_r2": 0.40011060727033104,
+        "gamma_period_bfield": 0.1802826322427108,
+        "gamma_period_bfield_err": 0.038661766310722795,
+        "gamma_period_bfield_r2": 0.4122581889180754,
+        "negative_fraction": 0.4494949494949495,
+        "negative_n": 89,
+        "total_n": 198,
+        "binary_negative_fraction": 0.43103448275862066,
+        "binary_n": 116,
+        "isolated_negative_fraction": 0.47560975609756095,
+        "isolated_n": 82
+      },
+      "recovery": {
+        "raw_amplitude_recovery_fraction": 1.00000000081612,
+        "raw_amplitude_delta": 0.600000000489672,
+        "period_only_recovery_fraction": 1.000000000816123,
+        "period_only_delta": 0.6000000004896737,
+        "period_bfield_recovery_fraction": 0.5117072213548431,
+        "period_bfield_delta": 0.30702433281290586
+      }
+    },
+    {
+      "name": "Gamma = 0.39 density-flattened",
+      "injected_params": {
+        "gamma": 0.39
+      },
+      "injected_results": {
+        "label": "Gamma = 0.39 density-flattened",
+        "n_gc": 198,
+        "n_field": 202,
+        "raw_amplitude_dex": 2.4384667176613917,
+        "period_only_residual_dex": 2.665263527762401,
+        "period_bfield_residual_dex": 1.5694254105906837,
+        "gamma_raw": 0.7097549181834208,
+        "gamma_raw_err": 0.10738299376634106,
+        "gamma_raw_r2": 0.584930872675294,
+        "gamma_period_only": 0.7853723534756069,
+        "gamma_period_only_err": 0.08695028499732235,
+        "gamma_period_only_r2": 0.7246519706675727,
+        "gamma_period_bfield": 0.4836626003849159,
+        "gamma_period_bfield_err": 0.06545647396640045,
+        "gamma_period_bfield_r2": 0.6378436359587045,
+        "negative_fraction": 0.4494949494949495,
+        "negative_n": 89,
+        "total_n": 198,
+        "binary_negative_fraction": 0.43103448275862066,
+        "binary_n": 116,
+        "isolated_negative_fraction": 0.47560975609756095,
+        "isolated_n": 82
+      },
+      "recovery": {
+        "raw_amplitude_delta": 1.847910606550279,
+        "period_only_delta": 1.8479106065502795,
+        "period_bfield_delta": 1.336194981297755,
+        "gamma_raw_delta": 0.3900000042238016,
+        "gamma_raw_injected": 0.39,
+        "gamma_raw_recovered": 0.7097549181834208,
+        "gamma_raw_recovery_fraction": 1.0000000108302605,
+        "gamma_period_only_delta": 0.39000000422380116,
+        "gamma_period_only_recovery_fraction": 1.0000000108302594
+      }
+    },
+    {
+      "name": "Gamma = 0.75 Newtonian scaling",
+      "injected_params": {
+        "gamma": 0.75
+      },
+      "injected_results": {
+        "label": "Gamma = 0.75 Newtonian scaling",
+        "n_gc": 198,
+        "n_field": 202,
+        "raw_amplitude_dex": 4.144230354025028,
+        "period_only_residual_dex": 4.371027164126038,
+        "period_bfield_residual_dex": 3.249041682307855,
+        "gamma_raw": 1.069754918183421,
+        "gamma_raw_err": 0.10738299376634103,
+        "gamma_raw_r2": 0.761982402517042,
+        "gamma_period_only": 1.1453723534756064,
+        "gamma_period_only_err": 0.0869502849973226,
+        "gamma_period_only_r2": 0.8484261247699965,
+        "gamma_period_bfield": 0.765921725734337,
+        "gamma_period_bfield_err": 0.08381099088258188,
+        "gamma_period_bfield_r2": 0.7292941700487554,
+        "negative_fraction": 0.4494949494949495,
+        "negative_n": 89,
+        "total_n": 198,
+        "binary_negative_fraction": 0.43103448275862066,
+        "binary_n": 116,
+        "isolated_negative_fraction": 0.47560975609756095,
+        "isolated_n": 82
+      },
+      "recovery": {
+        "raw_amplitude_delta": 3.5536742429139156,
+        "period_only_delta": 3.5536742429139165,
+        "period_bfield_delta": 3.015811253014926,
+        "gamma_raw_delta": 0.7500000042238018,
+        "gamma_raw_injected": 0.75,
+        "gamma_raw_recovered": 1.069754918183421,
+        "gamma_raw_recovery_fraction": 1.0000000056317357,
+        "gamma_period_only_delta": 0.7500000042238006,
+        "gamma_period_only_recovery_fraction": 1.0000000056317342
+      }
+    },
+    {
+      "name": "Binary shielding -0.33 dex",
+      "injected_params": {
+        "raw_dex": -0.19333333333333333
+      },
+      "injected_results": {
+        "label": "Binary shielding -0.33 dex",
+        "n_gc": 198,
+        "n_field": 202,
+        "raw_amplitude_dex": 0.39722279200002575,
+        "period_only_residual_dex": 0.624019602101033,
+        "period_bfield_residual_dex": 0.1716256616969924,
+        "gamma_raw": 0.36809209887214495,
+        "gamma_raw_err": 0.11084625593465758,
+        "gamma_raw_r2": 0.26238498935072857,
+        "gamma_period_only": 0.44370953416433107,
+        "gamma_period_only_err": 0.09050912431913744,
+        "gamma_period_only_r2": 0.436704339150233,
+        "gamma_period_bfield": 0.13148595470632063,
+        "gamma_period_bfield_err": 0.029725067233173093,
+        "gamma_period_bfield_r2": 0.3869458426956795,
+        "negative_fraction": 0.4494949494949495,
+        "negative_n": 89,
+        "total_n": 198,
+        "binary_negative_fraction": 0.43103448275862066,
+        "binary_n": 116,
+        "isolated_negative_fraction": 0.47560975609756095,
+        "isolated_n": 82
+      },
+      "recovery": {
+        "raw_amplitude_recovery_fraction": 0.9999999264366563,
+        "raw_amplitude_delta": -0.19333331911108687,
+        "period_only_recovery_fraction": 0.9999999264366637,
+        "period_only_delta": -0.1933333191110883,
+        "period_bfield_recovery_fraction": 0.3186453496341543,
+        "period_bfield_delta": -0.0616047675959365
+      }
+    },
+    {
+      "name": "Signed acceleration mixture (40% negative)",
+      "injected_params": {
+        "negative_fraction": 0.4,
+        "raw_dex": 1.0
+      },
+      "injected_results": {
+        "label": "Signed acceleration mixture (40% negative)",
+        "n_gc": 198,
+        "n_field": 202,
+        "raw_amplitude_dex": 1.5905561116007867,
+        "period_only_residual_dex": 1.817352921701795,
+        "period_bfield_residual_dex": 0.8163485863482592,
+        "gamma_raw": 0.3197549181834207,
+        "gamma_raw_err": 0.10738299376634101,
+        "gamma_raw_r2": 0.22240924891099997,
+        "gamma_period_only": 0.3953723534756068,
+        "gamma_period_only_err": 0.08695028499732234,
+        "gamma_period_only_r2": 0.40011060727033115,
+        "gamma_period_bfield": 0.2025107652753114,
+        "gamma_period_bfield_err": 0.049177543760927485,
+        "gamma_period_bfield_r2": 0.3535947161358035,
+        "negative_fraction": 0.398989898989899,
+        "negative_n": 79,
+        "total_n": 198,
+        "binary_negative_fraction": 0.41379310344827586,
+        "binary_n": 116,
+        "isolated_negative_fraction": 0.3780487804878049,
+        "isolated_n": 82
+      },
+      "recovery": {
+        "raw_amplitude_recovery_fraction": 1.000000000489674,
+        "raw_amplitude_delta": 1.000000000489674,
+        "period_only_recovery_fraction": 1.0000000004896736,
+        "period_only_delta": 1.0000000004896736,
+        "period_bfield_recovery_fraction": 0.5831181570553303,
+        "period_bfield_delta": 0.5831181570553303,
+        "negative_fraction_delta": -0.0505050505050505,
+        "negative_fraction_target": 0.4,
+        "negative_fraction_recovered": 0.398989898989899,
+        "negative_fraction_match": 0.398989898989899
+      }
+    }
+  ]
+}

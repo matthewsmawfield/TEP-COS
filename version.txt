@@ -1,9 +1,12 @@
-v0.7 (Caracas) - 4 June 2026
+v0.7 (Caracas) - 3 July 2026
 
-- Added CMC baseline tension and mock PTA defense to abstract for completeness
-- Disambiguated "synthetic pulsars" terminology: clarified CMC populations are published N-body simulation outputs (Kremer et al. 2020), not fabricated data
-- Added terminology note distinguishing CMC simulation outputs from mock PTA detection-probability simulations
-- Added canonical source statement in reproducibility section: HTML components are canonical; Markdown/PDF are derived build artifacts
+- Expanded CMC baseline: 20 clusters, 18,813 filtered MSPs with fixed MSP period and mass-segregation spatial filters (was 13 clusters, 21.0M raw pulsars)
+- Expanded sample: 199 GC + 351 field MSPs = 550 total; covariance-aware significance revised to 5.6σ
+- CMC predicted excess: 1.88 dex; model-data tension 12.7σ nominal (3.6σ conservative stacked)
+- Binary inversion reinterpreted: corrected CMC (-0.27 dex, 3rc filter) matches observed (-0.33 dex); binary comparator now a sanity check, not primary failure mode
+- Newtonian density scaling baseline updated to 0.75 (literature consensus 0.748 ± 0.039; was 0.72)
+- Pipeline restructured: renumbered steps (step_02–step_55), added CMC binary forensic audit, period sensitivity, uncertainty stack, injection-recovery, environment axis scan, cluster bootstrap
+- Disambiguated "synthetic pulsars" terminology: CMC populations are published N-body simulation outputs (Kremer et al. 2020), not fabricated data
 
 v0.6 (Caracas) - 29 April 2026
 

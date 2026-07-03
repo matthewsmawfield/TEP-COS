@@ -1,0 +1,17 @@
+{
+  "timestamp": "2026-07-03T11:05:27.821779",
+  "status": "COMPLETE",
+  "sensitivity": {
+    "rho_intra_robustness": "STRONG",
+    "min_significance_sigma": 4.6299573252486725,
+    "density_scaling_slope": 0.3929054987420065,
+    "density_scaling_error": 0.07848558701147679
+  },
+  "cmc_comparison": {
+    "clusters_analyzed": 0,
+    "tep_consistent_clusters": 0,
+    "average_ratio": null,
+    "overall_status": "N/A"
+  },
+  "conclusion": "Sensitivity analysis strengthens the case; direct CMC comparison pending"
+}

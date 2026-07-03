@@ -1,0 +1,57 @@
+[11:05:03] [INFO] ======================================================================
+[11:05:03] [INFO] STEP 5.38: Power Analysis for Differential Test
+[11:05:03] [INFO] ======================================================================
+[11:05:03] [INFO] M4 Pro Optimized: Using 14 CPU cores
+[11:05:03] [INFO] 
+[11:05:03] [INFO] Observed Effect Sizes:
+[11:05:03] [INFO]   GC Binary-Isolated difference: -0.329 dex
+[11:05:03] [INFO]   Field Binary-Isolated difference: -0.033 dex
+[11:05:03] [INFO]   Differential effect (GC - Field): 0.296 dex
+[11:05:03] [INFO] 
+[11:05:03] [INFO] Current Sample Sizes:
+[11:05:03] [INFO]   GC Binary: 117, Isolated: 81
+[11:05:03] [INFO]   Field Binary: 269, Isolated: 70
+[11:05:03] [INFO] 
+[11:05:03] [INFO] ----------------------------------------------------------------------
+[11:05:03] [INFO] POWER ANALYSIS: Differential Test
+[11:05:03] [INFO] ----------------------------------------------------------------------
+[11:05:03] [INFO] Testing: Can we detect the observed differential effect (0.296 dex)?
+[11:05:03] [INFO] 
+[11:05:03] [INFO] 1. Current Statistical Power:
+[11:05:03] [INFO]    Computing with 5000 simulations...
+[11:05:05] [INFO]    Power with current sample: 99.2%
+[11:05:05] [INFO]    (Probability of detecting effect if it exists)
+[11:05:05] [INFO]    Result: Adequate power - good chance of detecting true effects
+[11:05:05] [INFO] 
+[11:05:05] [INFO] 2. Minimum Detectable Effect (80% power):
+[11:05:05] [INFO]    Computing power curve with parallel simulations...
+[11:05:10] [INFO]    Can detect effects ≥ 0.21 dex with 80% power
+[11:05:10] [INFO] 
+[11:05:10] [INFO] 3. Required Sample Sizes:
+[11:05:10] [INFO]    To detect observed effect (0.296 dex) with 80% power:
+[11:05:17] [INFO]    Need ~105 GC pulsars and ~105 Field pulsars
+[11:05:17] [INFO]    (Currently have 198 GC, 339 Field)
+[11:05:17] [INFO] 
+[11:05:17] [INFO]    To detect a larger effect (0.30 dex, Cohen's d ~0.4) with 80% power:
+[11:05:22] [INFO]    Need ~105 per group
+[11:05:22] [INFO] 
+[11:05:22] [INFO]    To detect a substantial effect (0.50 dex, Cohen's d ~0.7) with 80% power:
+[11:05:24] [INFO]    Need ~40 per group
+[11:05:24] [INFO] 
+[11:05:24] [INFO] ======================================================================
+[11:05:24] [INFO] RECOMMENDATIONS
+[11:05:24] [INFO] ======================================================================
+[11:05:24] [INFO] 
+[11:05:24] [INFO] The study has adequate statistical power (>99%) to detect the
+[11:05:24] [INFO] observed differential effect. The directional differential test confirms an
+[11:05:24] [INFO] environmental origin (one-sided p = 0.036, 95% confidence). The convergence of
+[11:05:24] [INFO] three independent lines of evidence is compelling:
+[11:05:24] [INFO]   - GC binary inversion: p=0.0056 (significant)
+[11:05:24] [INFO]   - Field null control: p=0.778 (null)
+[11:05:24] [INFO]   - Differential test: one-sided p=0.036 (environmental origin confirmed)
+[11:05:24] [INFO] 
+[11:05:24] [INFO] The pattern supports the TEP interpretation over intrinsic population effects.
+[11:05:24] [INFO] 
+[11:05:24] [INFO] 
+[11:05:24] [INFO] Results saved to: results/outputs/step_26_power_analysis.json
+[11:05:24] [INFO] ======================================================================

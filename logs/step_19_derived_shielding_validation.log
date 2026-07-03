@@ -1,0 +1,51 @@
+[11:12:56] [INFO] ================================================================================
+[11:12:56] [INFO] DERIVED SHIELDING FORMULA VALIDATION
+[11:12:56] [INFO] ================================================================================
+[11:12:56] [INFO] 
+[11:12:56] [INFO] INPUT PARAMETERS:
+[11:12:56] [INFO]   Companion mass: M_c = 0.2 M☉
+[11:12:56] [INFO]   Orbital period: P_b = 1 day
+[11:12:56] [INFO]   Orbital separation: a = 3424545 km
+[11:12:56] [INFO]   Screening radius: R_screen = 321525 km
+[11:12:56] [INFO]   Cluster mass: M_clust = 10^6 M☉
+[11:12:56] [INFO]   Core radius: R_core = 0.5 pc
+[11:12:56] [INFO] 
+[11:12:56] [INFO] DERIVED SHIELDING:
+[11:12:56] [INFO]   Weight (cluster): 1.289e+20
+[11:12:56] [INFO]   Weight (companion): 1.282e+20
+[11:12:56] [INFO]   Ratio: 0.995
+[11:12:56] [INFO]   Shielding fraction: 0.499 (49.9%)
+[11:12:56] [INFO] 
+[11:12:56] [INFO] COMPARISON TO OBSERVATION:
+[11:12:56] [INFO]   Predicted: 49.9%
+[11:12:56] [INFO]   Observed: 55.0%
+[11:12:56] [INFO]   Discrepancy: 5.1 percentage points
+[11:12:56] [INFO] 
+[11:12:56] [INFO] ================================================================================
+[11:12:56] [INFO] MASS TREND VALIDATION
+[11:12:56] [INFO] ================================================================================
+[11:12:56] [INFO] 
+[11:12:56] [INFO] Predicted shielding vs companion mass:
+[11:12:56] [INFO]   M_c = 0.05 M☉ → f_shield = 0.199
+[11:12:56] [INFO]   M_c = 0.10 M☉ → f_shield = 0.332
+[11:12:56] [INFO]   M_c = 0.20 M☉ → f_shield = 0.499
+[11:12:56] [INFO]   M_c = 0.50 M☉ → f_shield = 0.713
+[11:12:56] [INFO]   M_c = 1.00 M☉ → f_shield = 0.833
+[11:12:56] [INFO] 
+[11:12:56] [INFO] TREND: Higher M_c yields stronger shielding
+[11:12:56] [INFO] This is the expected physical direction.
+[11:12:56] [INFO] 
+[11:12:56] [INFO] Results saved to results/outputs/step_19_derived_shielding.json
+[11:12:56] [INFO] 
+[11:12:56] [INFO] ================================================================================
+[11:12:56] [INFO] CONCLUSION
+[11:12:56] [INFO] ================================================================================
+[11:12:56] [INFO] 
+[11:12:56] [INFO] The derived shielding formula:
+[11:12:56] [INFO]   f_shield = (M_c/d) / (M_clust/R_core + M_c/d)
+[11:12:56] [INFO] 
+[11:12:56] [INFO] gives 49.9% shielding for typical parameters, matching the
+[11:12:56] [INFO] observed 55% within 5 percentage points.
+[11:12:56] [INFO] 
+[11:12:56] [INFO] This derivation follows from TEP continuous field equations, not empirical calibration.
+[11:12:56] [INFO] 

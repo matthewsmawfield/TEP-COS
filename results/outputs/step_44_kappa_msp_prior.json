@@ -1,0 +1,92 @@
+{
+  "meta": {
+    "script": "step_44_kappa_msp_prior.py",
+    "timestamp_utc": "2026-07-03T10:09:36.154464+00:00",
+    "description": "\u03ba_MSP empirical + screening factor from real pulsar data"
+  },
+  "inputs": {
+    "observed_raw_excess_dex": 0.6295730049318884,
+    "f_accel_dominated": 0.45,
+    "total_gc_pulsars": 64,
+    "n_clusters": 7,
+    "kappa_bare_paper11": 1050000.0
+  },
+  "cluster_breakdown": [
+    {
+      "cluster": "47_Tuc",
+      "n_pulsars": 20,
+      "phi_c2": 1.3294111162312035e-07,
+      "a_mean_mps2": 1.772773587769498e-07,
+      "delta_pdot_frac": 177.3956225253,
+      "tep_factor": 2.3583171255588833e-05
+    },
+    {
+      "cluster": "M15",
+      "n_pulsars": 8,
+      "phi_c2": 1.914352007372933e-07,
+      "a_mean_mps2": 6.653596486996e-07,
+      "delta_pdot_frac": 665.8035177114076,
+      "tep_factor": 0.00012745823006467933
+    },
+    {
+      "cluster": "M13",
+      "n_pulsars": 5,
+      "phi_c2": 5.2209600201079984e-08,
+      "a_mean_mps2": 4.496752166556439e-08,
+      "delta_pdot_frac": 44.997520012239214,
+      "tep_factor": 2.349302529879105e-06
+    },
+    {
+      "cluster": "Terzan_5",
+      "n_pulsars": 10,
+      "phi_c2": 5.982350023040416e-07,
+      "a_mean_mps2": 1.7648982696449826e-06,
+      "delta_pdot_frac": 1766.0756534139252,
+      "tep_factor": 0.0010565282725891914
+    },
+    {
+      "cluster": "M28",
+      "n_pulsars": 10,
+      "phi_c2": 9.970583371734027e-08,
+      "a_mean_mps2": 1.948099095918416e-07,
+      "delta_pdot_frac": 194.93986950484484,
+      "tep_factor": 1.9436642213730073e-05
+    },
+    {
+      "cluster": "NGC_6440",
+      "n_pulsars": 6,
+      "phi_c2": 4.466821350536844e-07,
+      "a_mean_mps2": 1.4258487603618036e-06,
+      "delta_pdot_frac": 1426.7999603353605,
+      "tep_factor": 0.0006373260525771111
+    },
+    {
+      "cluster": "NGC_6752",
+      "n_pulsars": 5,
+      "phi_c2": 3.8287040147458666e-08,
+      "a_mean_mps2": 5.2007568838846784e-08,
+      "delta_pdot_frac": 52.04226368130098,
+      "tep_factor": 1.9925442389306005e-06
+    }
+  ],
+  "population_average": {
+    "avg_tep_factor": 0.00025151006192133035,
+    "std_tep_factor": 0.00038590264694124627
+  },
+  "derived": {
+    "kappa_msp_empirical": 28818.0,
+    "kappa_msp_empirical_uncertainty": 44629.1,
+    "formula": "\u03ba_MSP^emp = (10^raw_dex - 1) / (f_accel \u00d7 <\u03a6/c\u00b2 \u00b7 \u03b4\u1e56_accel/\u1e56_int>)"
+  },
+  "screening": {
+    "effective_screening_factor_S_MSP": 0.0274,
+    "S_MSP_uncertainty": 0.0425,
+    "interpretation": "Dense-cluster geometric suppression (higher \u03c1\u2080, smaller R_c) reduces bare \u03ba=1e+06 to effective \u03ba=2.9e+04; not pulsar-specific self-screening"
+  },
+  "cross_paper": {
+    "paper_11_bare_kappa_cep": 1050000.0,
+    "paper_11_kappa_cep_unc": 430000.0,
+    "tension_sigma": 2.362153370124942,
+    "resolution": "Resolved via dense-cluster geometric suppression: bare coefficient ~10\u2076, effective in dense GCs ~10\u2074"
+  }
+}

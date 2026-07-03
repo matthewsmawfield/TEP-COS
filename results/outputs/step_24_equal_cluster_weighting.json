@@ -1,0 +1,27 @@
+{
+  "analysis_raw_logpdot": {
+    "label": "Raw cluster-mean log|\u1e56|",
+    "n_clusters": 25,
+    "ols_slope": 0.4298979754934464,
+    "ols_stderr": 0.10164636200582128,
+    "ols_p": 0.00031791369230888987,
+    "wls_slope": 0.4167267343415346,
+    "wls_stderr": 0.029176920994286214,
+    "wls_p": 8.986806905489608e-32,
+    "ols_tension_sigma": 2.923141491110302,
+    "wls_tension_sigma": 6.845156110146354
+  },
+  "analysis_controlled_residual": {
+    "label": "Controlled residual (GC \u2212 matched field)",
+    "n_clusters": 25,
+    "ols_slope": 0.13783553079034272,
+    "ols_stderr": 0.0330097175480663,
+    "ols_p": 0.00036346441704268573,
+    "wls_slope": 0.1296751423119889,
+    "wls_stderr": 0.010482594042570322,
+    "wls_p": 4.533155185250241e-26,
+    "ols_tension_sigma": 12.015813834477346,
+    "wls_tension_sigma": 15.468731597343412
+  },
+  "note": "The raw-logPdot and controlled-residual slopes differ because the matched field mean itself correlates with cluster density (period/B-proxy distributions differ across clusters). The primary discriminant uses raw logPdot with mixed-effects (step_12)."
+}

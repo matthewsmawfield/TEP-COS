@@ -1,0 +1,207 @@
+{
+    "simulation_type": "N-Body/CMC Synthetic (Mass Segregation + Binary Hardening)",
+    "slope": 0.7551406402639291,
+    "intercept": -1.387493709170942,
+    "r_value": 0.9663390132587609,
+    "p_value": 7.742316811192444e-20,
+    "clusters": [
+        {
+            "name": "Terzan 5",
+            "rho_c_log": 5.5,
+            "shift": 3.0038266095118544,
+            "n_pulsars_real": 47
+        },
+        {
+            "name": "47 Tuc (NGC 104)",
+            "rho_c_log": 4.88,
+            "shift": 1.9767917508367923,
+            "n_pulsars_real": 23
+        },
+        {
+            "name": "NGC 6517",
+            "rho_c_log": 5.8,
+            "shift": 2.8617199079048348,
+            "n_pulsars_real": 13
+        },
+        {
+            "name": "M62 (NGC 6266)",
+            "rho_c_log": 5.16,
+            "shift": 2.6292534146517603,
+            "n_pulsars_real": 9
+        },
+        {
+            "name": "M28 (NGC 6626)",
+            "rho_c_log": 4.52,
+            "shift": 2.027957544982314,
+            "n_pulsars_real": 9
+        },
+        {
+            "name": "Omega Centauri (NGC 5139)",
+            "rho_c_log": 3.12,
+            "shift": 1.0525150012712743,
+            "n_pulsars_real": 8
+        },
+        {
+            "name": "M15 (NGC 7078)",
+            "rho_c_log": 5.05,
+            "shift": 2.488128130399623,
+            "n_pulsars_real": 8
+        },
+        {
+            "name": "M13 (NGC 6205)",
+            "rho_c_log": 3.79,
+            "shift": 1.3283658564890821,
+            "n_pulsars_real": 8
+        },
+        {
+            "name": "NGC 6440",
+            "rho_c_log": 5.1,
+            "shift": 2.130278446403711,
+            "n_pulsars_real": 7
+        },
+        {
+            "name": "M5 (NGC 5904)",
+            "rho_c_log": 3.53,
+            "shift": 1.5742302056532438,
+            "n_pulsars_real": 7
+        },
+        {
+            "name": "M2 (NGC 7089)",
+            "rho_c_log": 4.15,
+            "shift": 1.8651780213555291,
+            "n_pulsars_real": 7
+        },
+        {
+            "name": "NGC 6752",
+            "rho_c_log": 4.3,
+            "shift": 2.1043805463474285,
+            "n_pulsars_real": 6
+        },
+        {
+            "name": "Terzan 1",
+            "rho_c_log": 5.0,
+            "shift": 2.314253258087234,
+            "n_pulsars_real": 6
+        },
+        {
+            "name": "M3 (NGC 5272)",
+            "rho_c_log": 3.68,
+            "shift": 1.6962772827929733,
+            "n_pulsars_real": 5
+        },
+        {
+            "name": "M53 (NGC 5024)",
+            "rho_c_log": 2.96,
+            "shift": 1.037012941872792,
+            "n_pulsars_real": 4
+        },
+        {
+            "name": "M71 (NGC 6838)",
+            "rho_c_log": 2.29,
+            "shift": 0.218897692825049,
+            "n_pulsars_real": 3
+        },
+        {
+            "name": "NGC 6441",
+            "rho_c_log": 5.0,
+            "shift": 2.426298322343765,
+            "n_pulsars_real": 3
+        },
+        {
+            "name": "NGC 1851",
+            "rho_c_log": 5.09,
+            "shift": 2.6781895761665027,
+            "n_pulsars_real": 2
+        },
+        {
+            "name": "NGC 6624",
+            "rho_c_log": 5.6,
+            "shift": 2.8294333326567447,
+            "n_pulsars_real": 2
+        },
+        {
+            "name": "NGC 6760",
+            "rho_c_log": 3.8,
+            "shift": 1.4090981020242843,
+            "n_pulsars_real": 2
+        },
+        {
+            "name": "M92 (NGC 6341)",
+            "rho_c_log": 4.3,
+            "shift": 1.7982387964869098,
+            "n_pulsars_real": 2
+        },
+        {
+            "name": "NGC 6397",
+            "rho_c_log": 5.68,
+            "shift": 2.7277819443305127,
+            "n_pulsars_real": 2
+        },
+        {
+            "name": "M22 (NGC 6656)",
+            "rho_c_log": 2.97,
+            "shift": 0.6797048212475829,
+            "n_pulsars_real": 2
+        },
+        {
+            "name": "NGC 6544",
+            "rho_c_log": 5.2,
+            "shift": 2.4216048651653708,
+            "n_pulsars_real": 2
+        },
+        {
+            "name": "NGC 6522",
+            "rho_c_log": 5.5,
+            "shift": 3.0174332721238777,
+            "n_pulsars_real": 2
+        },
+        {
+            "name": "M14 (NGC 6402)",
+            "rho_c_log": 3.44,
+            "shift": 1.3496187622741544,
+            "n_pulsars_real": 1
+        },
+        {
+            "name": "NGC 6652",
+            "rho_c_log": 4.5,
+            "shift": 2.14396729746246,
+            "n_pulsars_real": 1
+        },
+        {
+            "name": "NGC 6712",
+            "rho_c_log": 3.7,
+            "shift": 1.2769100536714326,
+            "n_pulsars_real": 1
+        },
+        {
+            "name": "NGC 6539",
+            "rho_c_log": 3.3,
+            "shift": 1.1060675009777725,
+            "n_pulsars_real": 1
+        },
+        {
+            "name": "NGC 6316",
+            "rho_c_log": 4.8,
+            "shift": 1.8614201791522724,
+            "n_pulsars_real": 1
+        },
+        {
+            "name": "M4 (NGC 6121)",
+            "rho_c_log": 2.85,
+            "shift": 0.45732075954322937,
+            "n_pulsars_real": 1
+        },
+        {
+            "name": "M80 (NGC 6093)",
+            "rho_c_log": 4.79,
+            "shift": 2.378267576454295,
+            "n_pulsars_real": 1
+        },
+        {
+            "name": "M30 (NGC 7099)",
+            "rho_c_log": 4.2,
+            "shift": 1.7427247337792835,
+            "n_pulsars_real": 1
+        }
+    ]
+}

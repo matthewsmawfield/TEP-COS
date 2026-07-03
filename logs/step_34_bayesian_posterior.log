@@ -1,0 +1,72 @@
+[11:09:32] [INFO] ======================================================================
+[11:09:32] [INFO] STEP 5.45: BAYESIAN POSTERIOR ANALYSIS
+[11:09:32] [INFO] ======================================================================
+[11:09:32] [INFO] 
+[11:09:32] [INFO] Bayesian credible intervals
+[11:09:32] [INFO] for density scaling slope and other key parameters.
+[11:09:32] [INFO] 
+[11:09:32] [INFO] ----------------------------------------------------------------------
+[11:09:32] [INFO] DENSITY SCALING SLOPE (Γ)
+[11:09:32] [INFO] ----------------------------------------------------------------------
+[11:09:32] [INFO] Prior: N(0.50, 0.30)
+[11:09:32] [INFO] Likelihood: N(0.39, 0.08)
+[11:09:32] [INFO] Posterior: N(0.400, 0.076)
+[11:09:32] [INFO] 
+[11:09:32] [INFO] Credible Intervals:
+[11:09:32] [INFO]   68%: [0.324, 0.475]
+[11:09:32] [INFO]   95%: [0.251, 0.549]
+[11:09:32] [INFO]   99%: [0.204, 0.595]
+[11:09:32] [INFO] 
+[11:09:32] [INFO] Hypothesis Testing:
+[11:09:32] [INFO]   P(Γ > 0.75 | data) = 0.0000
+[11:09:32] [INFO]   → Newtonian excluded at 100.0% confidence
+[11:09:32] [INFO] 
+[11:09:32] [INFO] ----------------------------------------------------------------------
+[11:09:32] [INFO] GC-FIELD OFFSET (Δ)
+[11:09:32] [INFO] ----------------------------------------------------------------------
+[11:09:32] [INFO] Posterior: N(0.526, 0.094)
+[11:09:32] [INFO] 95% Credible Interval: [0.342, 0.711]
+[11:09:32] [INFO] P(Δ > 0 | data) = 1.000000
+[11:09:32] [INFO] 
+[11:09:32] [INFO] ----------------------------------------------------------------------
+[11:09:32] [INFO] PRIOR SENSITIVITY ANALYSIS
+[11:09:32] [INFO] ----------------------------------------------------------------------
+[11:09:32] [INFO] 
+[11:09:32] [INFO] Density Scaling Slope (Γ) under different priors:
+[11:09:32] [INFO] Prior                Prior Mean   Posterior Mean  95% CI
+[11:09:32] [INFO] ----------------------------------------------------------------------
+[11:09:32] [INFO] Uninformative        0.00         0.393           [0.239, 0.547]
+[11:09:32] [INFO] Weakly informative   0.50         0.395           [0.244, 0.547]
+[11:09:32] [INFO] Newtonian favoring   0.75         0.470           [0.333, 0.606]
+[11:09:32] [INFO] TEP favoring         0.35         0.377           [0.256, 0.498]
+[11:09:32] [INFO] 
+[11:09:32] [INFO] Results robust across all reasonable prior specifications
+[11:09:32] [INFO] 
+[11:09:32] [INFO] ----------------------------------------------------------------------
+[11:09:32] [INFO] POSTERIOR PREDICTIVE CHECK
+[11:09:32] [INFO] ----------------------------------------------------------------------
+[11:09:32] [INFO] 
+[11:09:32] [INFO] Posterior predictive 68% interval width: 0.605 dex
+[11:09:32] [INFO] Posterior predictive 95% interval width: 1.197 dex
+[11:09:32] [INFO] 
+[11:09:32] [INFO] Results saved to: results/outputs/step_34_bayesian_posterior.json
+[11:09:32] [INFO] ======================================================================
+[11:09:32] [INFO] Bayesian posterior analysis complete.
+[11:09:32] [INFO] Provides credible intervals and model comparison statistics.
+[11:09:32] [INFO] ======================================================================
+[11:09:32] [INFO] 
+[11:09:32] [INFO] ======================================================================
+[11:09:32] [INFO] LaTeX SUMMARY FOR MANUSCRIPT
+[11:09:32] [INFO] ======================================================================
+[11:09:32] [INFO] 
+[11:09:32] [INFO] Density Scaling Slope:
+[11:09:32] [INFO] $\Gamma = 0.40^{+0.08}_{-0.08}$ dex/dex
+[11:09:32] [INFO] 95% credible interval: [0.25, 0.55]
+[11:09:32] [INFO] 
+[11:09:32] [INFO] GC-Field Offset:
+[11:09:32] [INFO] $\Delta = 0.53^{+0.09}_{-0.09}$ dex
+[11:09:32] [INFO] 95% credible interval: [0.34, 0.71]
+[11:09:32] [INFO] 
+[11:09:32] [INFO] Model Comparison:
+[11:09:32] [INFO] P($\Gamma > 0.75$ | data) = 0.0000
+[11:09:32] [INFO] → Strong evidence against Newtonian prediction

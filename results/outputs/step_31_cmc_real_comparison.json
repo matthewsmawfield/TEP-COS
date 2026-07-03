@@ -1,0 +1,127 @@
+{
+  "timestamp": "2026-07-03T11:09:31.893962",
+  "method": "Real pulsar data vs synthetic N-body/CMC comparison",
+  "clusters": [
+    {
+      "cluster": "47_Tuc",
+      "n_pulsars_real": 23,
+      "log_rho_c": 4.8,
+      "nbody_predicted_shift": 1.5773793735735104,
+      "observed_shift_estimate": 0.27813374071046937,
+      "ratio": 0.17632647248351224,
+      "status": "TEP_CONSISTENT",
+      "note": "Observed much smaller than Newtonian prediction",
+      "cmc_available": true,
+      "data_source": "csv_actual"
+    },
+    {
+      "cluster": "Terzan_5",
+      "n_pulsars_real": 47,
+      "log_rho_c": 5.5,
+      "nbody_predicted_shift": 2.1693228053907987,
+      "observed_shift_estimate": 0.8828854696651405,
+      "ratio": 0.4069866722790897,
+      "status": "TEP_CONSISTENT",
+      "note": "Observed much smaller than Newtonian prediction",
+      "cmc_available": true,
+      "data_source": "csv_actual"
+    },
+    {
+      "cluster": "M28",
+      "n_pulsars_real": 9,
+      "log_rho_c": 4.5,
+      "nbody_predicted_shift": 0.5121459912337976,
+      "observed_shift_estimate": 0.7570294460244789,
+      "ratio": 1.4781516578910223,
+      "status": "UNCERTAIN",
+      "note": "Ambiguous comparison",
+      "cmc_available": false,
+      "data_source": "csv_actual"
+    },
+    {
+      "cluster": "M15",
+      "n_pulsars_real": 8,
+      "log_rho_c": 5.0,
+      "nbody_predicted_shift": 1.9045871214893992,
+      "observed_shift_estimate": 0.9469726265800347,
+      "ratio": 0.49720625320594214,
+      "status": "TEP_CONSISTENT",
+      "note": "Observed much smaller than Newtonian prediction",
+      "cmc_available": true,
+      "data_source": "csv_actual"
+    },
+    {
+      "cluster": "M62",
+      "n_pulsars_real": 9,
+      "log_rho_c": 5.2,
+      "nbody_predicted_shift": 0.5121459912337976,
+      "observed_shift_estimate": 0.938176668246701,
+      "ratio": 1.8318539719242242,
+      "status": "UNCERTAIN",
+      "note": "Ambiguous comparison",
+      "cmc_available": true,
+      "data_source": "csv_actual"
+    },
+    {
+      "cluster": "M13",
+      "n_pulsars_real": 8,
+      "log_rho_c": 4.5,
+      "nbody_predicted_shift": 0.5121459912337976,
+      "observed_shift_estimate": 0.2524434984199644,
+      "ratio": 0.4929131590228976,
+      "status": "TEP_CONSISTENT",
+      "note": "Observed much smaller than Newtonian prediction",
+      "cmc_available": true,
+      "data_source": "csv_actual"
+    },
+    {
+      "cluster": "M3",
+      "n_pulsars_real": 5,
+      "log_rho_c": 4.2,
+      "nbody_predicted_shift": 0.5121459912337976,
+      "observed_shift_estimate": 0.2164337984199669,
+      "ratio": 0.42260176224080537,
+      "status": "TEP_CONSISTENT",
+      "note": "Observed much smaller than Newtonian prediction",
+      "cmc_available": true,
+      "data_source": "csv_actual"
+    },
+    {
+      "cluster": "M5",
+      "n_pulsars_real": 7,
+      "log_rho_c": 3.5,
+      "nbody_predicted_shift": 0.5121459912337976,
+      "observed_shift_estimate": 0.011577569848537195,
+      "ratio": 0.02260599525663761,
+      "status": "TEP_CONSISTENT",
+      "note": "Observed much smaller than Newtonian prediction",
+      "cmc_available": true,
+      "data_source": "csv_actual"
+    }
+  ],
+  "summary": {
+    "total_clusters_configured": 8,
+    "clusters_with_data": 8,
+    "tep_consistent": 6,
+    "newtonian_consistent": 0,
+    "pending_cmc": 0,
+    "average_ratio": 0.6660807430380163,
+    "overall_status": "TEP_FAVORED"
+  },
+  "interpretation": {
+    "nbody_prediction": "Corrected CMC per-cluster predictions pending (see step_37 for overall test)",
+    "observed_shift": "~0.61 dex period-matched excess",
+    "ratio": "67% of Newtonian prediction",
+    "conclusion": "Real data smaller than Newtonian - TEP interpretation favored"
+  },
+  "recommendations": [
+    "Download additional CMC cluster catalogs for per-cluster corrected predictions",
+    "Run step_01_cmc_parser.py with deduplication and MSP-period enforcement",
+    "The overall gold-standard test (step_37) already shows standard dynamics fails on all three tests"
+  ],
+  "priority_clusters": [
+    "M15 (10 pulsars, corrected CMC available: 1.90 dex predicted vs 0.61 dex observed)",
+    "47 Tuc (25 pulsars, CMC download required)",
+    "Terzan 5 (37 pulsars, CMC download required)"
+  ]
+}

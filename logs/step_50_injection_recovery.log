@@ -1,0 +1,133 @@
+[11:05:28] [INFO] ==============================================================================
+[11:05:28] [INFO] STEP 5.70: INJECTION-RECOVERY TEST
+[11:05:28] [INFO] ==============================================================================
+[11:05:28] [INFO] 
+[11:05:28] [INFO] Loaded 198 GC pulsars, 202 field pulsars
+[11:05:28] [INFO] Binary flags resolved for 197 GC pulsars
+[11:05:28] [INFO] 
+[11:05:28] [INFO] --- BASELINE (no injection) ---
+[11:05:28] [INFO]   Raw amplitude:         +0.591 dex
+[11:05:28] [INFO]   Period-only residual:  +0.817 dex
+[11:05:28] [INFO]   Period+B residual:     +0.233 dex
+[11:05:28] [INFO]   Gamma (raw):           0.320 +/- 0.107
+[11:05:28] [INFO]   Negative fraction:     44.9% (89/198)
+[11:05:28] [INFO] 
+[11:05:28] [INFO] --- INJECTION: Uniform +0.60 dex GC excess ---
+[11:05:28] [INFO]   Raw amplitude:         +1.191 dex
+[11:05:28] [INFO]   Period-only residual:  +1.417 dex
+[11:05:28] [INFO]   Period+B residual:     +0.540 dex
+[11:05:28] [INFO]   Gamma (raw):           0.320 +/- 0.107
+[11:05:28] [INFO]   Negative fraction:     44.9%
+[11:05:28] [INFO] 
+[11:05:28] [INFO]   RECOVERY:
+[11:05:28] [INFO]     raw_amplitude_recovery_fraction: 100.00%
+[11:05:28] [INFO]     raw_amplitude_delta: 0.600000000489672
+[11:05:28] [INFO]     period_only_recovery_fraction: 100.00%
+[11:05:28] [INFO]     period_only_delta: 0.6000000004896737
+[11:05:28] [INFO]     period_bfield_recovery_fraction: 51.17%
+[11:05:28] [INFO]     period_bfield_delta: 0.30702433281290586
+[11:05:28] [INFO] 
+[11:05:28] [INFO] --- INJECTION: Gamma = 0.39 density-flattened ---
+[11:05:28] [INFO]   Raw amplitude:         +2.438 dex
+[11:05:28] [INFO]   Period-only residual:  +2.665 dex
+[11:05:28] [INFO]   Period+B residual:     +1.569 dex
+[11:05:28] [INFO]   Gamma (raw):           0.710 +/- 0.107
+[11:05:28] [INFO]   Negative fraction:     44.9%
+[11:05:28] [INFO] 
+[11:05:28] [INFO]   RECOVERY:
+[11:05:28] [INFO]     raw_amplitude_delta: 1.847910606550279
+[11:05:28] [INFO]     period_only_delta: 1.8479106065502795
+[11:05:28] [INFO]     period_bfield_delta: 1.336194981297755
+[11:05:28] [INFO]     gamma_raw_delta: 0.3900000042238016
+[11:05:28] [INFO]     gamma_raw_injected: 0.39
+[11:05:28] [INFO]     gamma_raw_recovered: 0.7097549181834208
+[11:05:28] [INFO]     gamma_raw_recovery_fraction: 100.00%
+[11:05:28] [INFO]     gamma_period_only_delta: 0.39000000422380116
+[11:05:28] [INFO]     gamma_period_only_recovery_fraction: 100.00%
+[11:05:28] [INFO] 
+[11:05:28] [INFO] --- INJECTION: Gamma = 0.75 Newtonian scaling ---
+[11:05:28] [INFO]   Raw amplitude:         +4.144 dex
+[11:05:28] [INFO]   Period-only residual:  +4.371 dex
+[11:05:28] [INFO]   Period+B residual:     +3.249 dex
+[11:05:28] [INFO]   Gamma (raw):           1.070 +/- 0.107
+[11:05:28] [INFO]   Negative fraction:     44.9%
+[11:05:28] [INFO] 
+[11:05:28] [INFO]   RECOVERY:
+[11:05:28] [INFO]     raw_amplitude_delta: 3.5536742429139156
+[11:05:28] [INFO]     period_only_delta: 3.5536742429139165
+[11:05:28] [INFO]     period_bfield_delta: 3.015811253014926
+[11:05:28] [INFO]     gamma_raw_delta: 0.7500000042238018
+[11:05:28] [INFO]     gamma_raw_injected: 0.75
+[11:05:28] [INFO]     gamma_raw_recovered: 1.069754918183421
+[11:05:28] [INFO]     gamma_raw_recovery_fraction: 100.00%
+[11:05:28] [INFO]     gamma_period_only_delta: 0.7500000042238006
+[11:05:28] [INFO]     gamma_period_only_recovery_fraction: 100.00%
+[11:05:28] [INFO] 
+[11:05:28] [INFO] --- INJECTION: Binary shielding -0.33 dex ---
+[11:05:28] [INFO]   Raw amplitude:         +0.397 dex
+[11:05:28] [INFO]   Period-only residual:  +0.624 dex
+[11:05:28] [INFO]   Period+B residual:     +0.172 dex
+[11:05:28] [INFO]   Gamma (raw):           0.368 +/- 0.111
+[11:05:28] [INFO]   Negative fraction:     44.9%
+[11:05:28] [INFO] 
+[11:05:28] [INFO]   RECOVERY:
+[11:05:28] [INFO]     raw_amplitude_recovery_fraction: 100.00%
+[11:05:28] [INFO]     raw_amplitude_delta: -0.19333331911108687
+[11:05:28] [INFO]     period_only_recovery_fraction: 100.00%
+[11:05:28] [INFO]     period_only_delta: -0.1933333191110883
+[11:05:28] [INFO]     period_bfield_recovery_fraction: 31.86%
+[11:05:28] [INFO]     period_bfield_delta: -0.0616047675959365
+[11:05:28] [INFO] 
+[11:05:28] [INFO] --- INJECTION: Signed acceleration mixture (40% negative) ---
+[11:05:28] [INFO]   Raw amplitude:         +1.591 dex
+[11:05:28] [INFO]   Period-only residual:  +1.817 dex
+[11:05:28] [INFO]   Period+B residual:     +0.816 dex
+[11:05:28] [INFO]   Gamma (raw):           0.320 +/- 0.107
+[11:05:28] [INFO]   Negative fraction:     39.9%
+[11:05:28] [INFO] 
+[11:05:28] [INFO]   RECOVERY:
+[11:05:28] [INFO]     raw_amplitude_recovery_fraction: 100.00%
+[11:05:28] [INFO]     raw_amplitude_delta: 1.000000000489674
+[11:05:28] [INFO]     period_only_recovery_fraction: 100.00%
+[11:05:28] [INFO]     period_only_delta: 1.0000000004896736
+[11:05:28] [INFO]     period_bfield_recovery_fraction: 58.31%
+[11:05:28] [INFO]     period_bfield_delta: 0.5831181570553303
+[11:05:28] [INFO]     negative_fraction_delta: -5.05%
+[11:05:28] [INFO]     negative_fraction_target: 40.00%
+[11:05:28] [INFO]     negative_fraction_recovered: 39.90%
+[11:05:28] [INFO]     negative_fraction_match: 39.90%
+[11:05:28] [INFO] 
+[11:05:28] [INFO] Saved JSON: /Users/matthewsmawfield/www/Temporal Equivalence Principle/TEP-COS/results/outputs/step_50_injection_recovery.json
+[11:05:28] [INFO] Saved Markdown: /Users/matthewsmawfield/www/Temporal Equivalence Principle/TEP-COS/results/outputs/step_50_injection_recovery.md
+[11:05:28] [INFO] 
+[11:05:28] [INFO] ==============================================================================
+[11:05:28] [INFO] SUMMARY
+[11:05:28] [INFO] ==============================================================================
+[11:05:28] [INFO] 
+[11:05:28] [INFO] Recovery fractions (1.0 = perfect recovery, <0.7 = attenuation warning):
+[11:05:28] [INFO] 
+[11:05:28] [INFO]   Uniform +0.60 dex GC excess:
+[11:05:28] [INFO]     Raw amplitude:       100.00%
+[11:05:28] [INFO]     Period-only resid:   100.00%
+[11:05:28] [INFO]     Period+B resid:      51.17%
+[11:05:28] [INFO] 
+[11:05:28] [INFO]   Gamma = 0.39 density-flattened:
+[11:05:28] [INFO]     Gamma (raw):         100.00%
+[11:05:28] [INFO] 
+[11:05:28] [INFO]   Gamma = 0.75 Newtonian scaling:
+[11:05:28] [INFO]     Gamma (raw):         100.00%
+[11:05:28] [INFO] 
+[11:05:28] [INFO]   Binary shielding -0.33 dex:
+[11:05:28] [INFO]     Raw amplitude:       100.00%
+[11:05:28] [INFO]     Period-only resid:   100.00%
+[11:05:28] [INFO]     Period+B resid:      31.86%
+[11:05:28] [INFO] 
+[11:05:28] [INFO]   Signed acceleration mixture (40% negative):
+[11:05:28] [INFO]     Raw amplitude:       100.00%
+[11:05:28] [INFO]     Period-only resid:   100.00%
+[11:05:28] [INFO]     Period+B resid:      58.31%
+[11:05:28] [INFO]     Neg fraction delta:  -0.051
+[11:05:28] [INFO] 
+[11:05:28] [INFO] ==============================================================================
+[11:05:28] [INFO] Done.
+[11:05:28] [INFO] ==============================================================================

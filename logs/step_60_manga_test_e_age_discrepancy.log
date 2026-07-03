@@ -1,0 +1,13 @@
+[11:13:10] [INFO] ============================================================
+[11:13:10] [INFO] STEP 6.10: TEST E - LW vs MW AGE DISCREPANCY
+[11:13:10] [INFO] ============================================================
+[11:13:10] [INFO] Loading cached data...
+[11:13:10] [INFO] Data size: 10000
+[11:13:10] [INFO] Analyzing Age Discrepancy...
+[11:13:10] [INFO] Simple r(ΔAge, σ): 0.4796 (p=0.00e+00)
+[11:13:10] [INFO] Controlled r(ΔAge_resid, σ): 0.0982 (p=7.29e-23)
+[11:13:10] [INFO] Figure saved to /Users/matthewsmawfield/www/Temporal Equivalence Principle/TEP-COS/scripts/steps/../../results/figures/step_60_sdss_test_e_age_discrepancy.png
+[11:13:10] [INFO] 
+[11:13:10] [INFO] SUMMARY:
+[11:13:10] [INFO] Discrepancy Detected: True
+[11:13:10] [INFO] Correlation Strength: 0.0982

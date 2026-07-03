@@ -1,0 +1,5 @@
+[11:04:44] [INFO] Step 10: Signed Pdot CMC Comparison
+[11:04:46] [INFO]   Deduplicated 1439522 rows -> 1213 unique neutron stars
+[11:04:49] [INFO]   Deduplicated 228001 rows -> 250 unique neutron stars
+[11:04:53] [INFO]   Deduplicated 2010584 rows -> 1125 unique neutron stars
+[11:04:57] [INFO] Comparison complete. Output: /Users/matthewsmawfield/www/Temporal Equivalence Principle/TEP-COS/results/outputs/step_10_signed_pdot_cmc.json

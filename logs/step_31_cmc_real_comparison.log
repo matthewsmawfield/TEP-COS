@@ -1,0 +1,125 @@
+[11:09:31] [INFO] ======================================================================
+[11:09:31] [INFO] STEP 5.42: REAL CMC DATA COMPARISON
+[11:09:31] [INFO] ======================================================================
+[11:09:31] [INFO] 
+[11:09:31] [INFO] Purpose: Validate synthetic N-body against real cluster data
+[11:09:31] [INFO] Key Question: Do real pulsars match Newtonian or TEP predictions?
+[11:09:31] [INFO] 
+[11:09:31] [INFO]   Loaded field mean from step_02: -19.761 dex
+[11:09:31] [INFO] 
+[11:09:31] [INFO]   Loaded data for 34 clusters from CSV
+[11:09:31] [INFO]   Loaded CMC predictions for 20 clusters from step_37
+[11:09:31] [INFO] 
+[11:09:31] [INFO]   47_Tuc:
+[11:09:31] [INFO]     Expected pulsars (config): 25
+[11:09:31] [INFO]     log(ρ_c): 4.8
+[11:09:31] [INFO]     Actual pulsars in CSV: 23
+[11:09:31] [INFO]     Mean log|Ṗ|: -19.483 dex
+[11:09:31] [INFO]     Computed shift: 0.278 dex (from actual data)
+[11:09:31] [INFO]     N-body predicted shift: 1.58 dex
+[11:09:31] [INFO]     Observed shift (final): 0.28 dex
+[11:09:31] [INFO]     Ratio (Observed/N-body): 0.18
+[11:09:31] [INFO]     Status: TEP_CONSISTENT
+[11:09:31] [INFO] 
+[11:09:31] [INFO]   Terzan_5:
+[11:09:31] [INFO]     Expected pulsars (config): 37
+[11:09:31] [INFO]     log(ρ_c): 5.5
+[11:09:31] [INFO]     Actual pulsars in CSV: 47
+[11:09:31] [INFO]     Mean log|Ṗ|: -18.878 dex
+[11:09:31] [INFO]     Computed shift: 0.883 dex (from actual data)
+[11:09:31] [INFO]     N-body predicted shift: 2.17 dex
+[11:09:31] [INFO]     Observed shift (final): 0.88 dex
+[11:09:31] [INFO]     Ratio (Observed/N-body): 0.41
+[11:09:31] [INFO]     Status: TEP_CONSISTENT
+[11:09:31] [INFO] 
+[11:09:31] [INFO]   M28:
+[11:09:31] [INFO]     Expected pulsars (config): 8
+[11:09:31] [INFO]     log(ρ_c): 4.5
+[11:09:31] [INFO]     Actual pulsars in CSV: 9
+[11:09:31] [INFO]     Mean log|Ṗ|: -19.004 dex
+[11:09:31] [INFO]     Computed shift: 0.757 dex (from actual data)
+[11:09:31] [INFO]     N-body predicted shift: 0.51 dex
+[11:09:31] [INFO]     Observed shift (final): 0.76 dex
+[11:09:31] [INFO]     Ratio (Observed/N-body): 1.48
+[11:09:31] [INFO]     Status: UNCERTAIN
+[11:09:31] [INFO] 
+[11:09:31] [INFO]   M15:
+[11:09:31] [INFO]     Expected pulsars (config): 10
+[11:09:31] [INFO]     log(ρ_c): 5.0
+[11:09:31] [INFO]     Actual pulsars in CSV: 8
+[11:09:31] [INFO]     Mean log|Ṗ|: -18.814 dex
+[11:09:31] [INFO]     Computed shift: 0.947 dex (from actual data)
+[11:09:31] [INFO]     N-body predicted shift: 1.90 dex
+[11:09:31] [INFO]     Observed shift (final): 0.95 dex
+[11:09:31] [INFO]     Ratio (Observed/N-body): 0.50
+[11:09:31] [INFO]     Status: TEP_CONSISTENT
+[11:09:31] [INFO] 
+[11:09:31] [INFO]   M62:
+[11:09:31] [INFO]     Expected pulsars (config): 6
+[11:09:31] [INFO]     log(ρ_c): 5.2
+[11:09:31] [INFO]     Actual pulsars in CSV: 9
+[11:09:31] [INFO]     Mean log|Ṗ|: -18.823 dex
+[11:09:31] [INFO]     Computed shift: 0.938 dex (from actual data)
+[11:09:31] [INFO]     N-body predicted shift: 0.51 dex
+[11:09:31] [INFO]     Observed shift (final): 0.94 dex
+[11:09:31] [INFO]     Ratio (Observed/N-body): 1.83
+[11:09:31] [INFO]     Status: UNCERTAIN
+[11:09:31] [INFO] 
+[11:09:31] [INFO]   M13:
+[11:09:31] [INFO]     Expected pulsars (config): 5
+[11:09:31] [INFO]     log(ρ_c): 4.5
+[11:09:31] [INFO]     Actual pulsars in CSV: 8
+[11:09:31] [INFO]     Mean log|Ṗ|: -20.013 dex
+[11:09:31] [INFO]     Computed shift: 0.252 dex (from actual data)
+[11:09:31] [INFO]     N-body predicted shift: 0.51 dex
+[11:09:31] [INFO]     Observed shift (final): 0.25 dex
+[11:09:31] [INFO]     Ratio (Observed/N-body): 0.49
+[11:09:31] [INFO]     Status: TEP_CONSISTENT
+[11:09:31] [INFO] 
+[11:09:31] [INFO]   M3:
+[11:09:31] [INFO]     Expected pulsars (config): 15
+[11:09:31] [INFO]     log(ρ_c): 4.2
+[11:09:31] [INFO]     Actual pulsars in CSV: 5
+[11:09:31] [INFO]     Mean log|Ṗ|: -19.977 dex
+[11:09:31] [INFO]     Computed shift: 0.216 dex (from actual data)
+[11:09:31] [INFO]     N-body predicted shift: 0.51 dex
+[11:09:31] [INFO]     Observed shift (final): 0.22 dex
+[11:09:31] [INFO]     Ratio (Observed/N-body): 0.42
+[11:09:31] [INFO]     Status: TEP_CONSISTENT
+[11:09:31] [INFO] 
+[11:09:31] [INFO]   M5:
+[11:09:31] [INFO]     Expected pulsars (config): 5
+[11:09:31] [INFO]     log(ρ_c): 3.5
+[11:09:31] [INFO]     Actual pulsars in CSV: 7
+[11:09:31] [INFO]     Mean log|Ṗ|: -19.773 dex
+[11:09:31] [INFO]     Computed shift: 0.012 dex (from actual data)
+[11:09:31] [INFO]     N-body predicted shift: 0.51 dex
+[11:09:31] [INFO]     Observed shift (final): 0.01 dex
+[11:09:31] [INFO]     Ratio (Observed/N-body): 0.02
+[11:09:31] [INFO]     Status: TEP_CONSISTENT
+[11:09:31] [INFO] 
+[11:09:31] [INFO] ======================================================================
+[11:09:31] [INFO] SUMMARY
+[11:09:31] [INFO] ======================================================================
+[11:09:31] [INFO] 
+[11:09:31] [INFO] Clusters with CSV data: 8
+[11:09:31] [INFO] TEP-consistent: 6
+[11:09:31] [INFO] TEP-favored: 0
+[11:09:31] [INFO] Newtonian-consistent: 0
+[11:09:31] [INFO] Pending CMC prediction: 0
+[11:09:31] [INFO] 
+[11:09:31] [INFO] Average (Observed/N-body): 0.67
+[11:09:31] [INFO] Interpretation: Real data shows 67% of Newtonian prediction
+[11:09:31] [INFO] 
+[11:09:31] [INFO] Overall Status: TEP_FAVORED
+[11:09:31] [INFO] Conclusion: Real data smaller than Newtonian - TEP interpretation favored
+[11:09:31] [INFO] 
+[11:09:31] [INFO] --- RECOMMENDATIONS FOR REAL CMC ANALYSIS ---
+[11:09:31] [INFO] 1. Download additional CMC cluster catalogs for per-cluster predictions
+[11:09:31] [INFO] 2. Run step_01_cmc_parser.py with deduplication and MSP-period enforcement
+[11:09:31] [INFO] 3. Compare corrected CMC predictions to real pulsar data per cluster
+[11:09:31] [INFO] 4. The overall gold-standard test (step_37) already shows standard dynamics fails
+[11:09:31] [INFO] 
+[11:09:31] [INFO] ======================================================================
+[11:09:31] [INFO] Results saved to: /Users/matthewsmawfield/www/Temporal Equivalence Principle/TEP-COS/results/outputs/step_31_cmc_real_comparison.json
+[11:09:31] [INFO] ======================================================================

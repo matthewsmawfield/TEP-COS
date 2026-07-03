@@ -1,0 +1,5 @@
+[11:12:54] [INFO] Step 40: CMC Uncertainty Stack
+[11:12:54] [INFO]   Baseline significance:    12.7 sigma
+[11:12:54] [INFO]   Stacked uncertainty:      0.355 dex
+[11:12:54] [INFO]   Conservative significance: 3.6 sigma
+[11:12:54] [INFO]   Output: /Users/matthewsmawfield/www/Temporal Equivalence Principle/TEP-COS/results/outputs/step_40_cmc_uncertainty_stack.json

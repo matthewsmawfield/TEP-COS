@@ -8,7 +8,7 @@
             Python scripts processing real observational data.
         </p>
         <p>
-            <strong>Canonical source:</strong> The canonical source of this manuscript is the HTML component system
+            <em>Canonical source:</em> The canonical source of this manuscript is the HTML component system
             (<code>site/components/*.html</code>). The Markdown and PDF versions are auto-generated build artifacts.
             Direct edits to derived files are non-canonical and are overwritten on rebuild.
         </p>
@@ -71,7 +71,7 @@ TEP-COS/
                 <td>Kremer et al. 2020</td>
                 <td>Auto-downloaded</td>
                 <td>~4.8 GB</td>
-                <td><code>data/cmc/</code> (13 clusters, 21.0M pulsars)</td>
+                <td><code>data/cmc/</code> (20 clusters, 18,813 synthetic MSPs)</td>
             </tr>
             <tr>
                 <td>Pantheon+ SNe Ia</td>
@@ -108,70 +108,70 @@ TEP-COS/
             <tr>
                 <td>Data</td>
                 <td>3.0 Prep</td>
-                <td><code>step_5_9_freire_gcpsr_radial_analysis.py</code></td>
+                <td><code>step_05_freire_gcpsr_radial_analysis.py</code></td>
                 <td>Radial analysis of GC pulsars (Freire catalog)</td>
                 <td>~0.5s</td>
             </tr>
             <tr>
                 <td>Data</td>
                 <td>3.1 Sample</td>
-                <td><code>step_5_10_pulsar_population_controls.py</code></td>
-                <td>Population controls: period/B-field matching (394 MSPs)</td>
+                <td><code>step_02_pulsar_population_controls.py</code></td>
+                <td>Population controls: period/B-field matching (400 MSPs)</td>
                 <td>~10.8s</td>
             </tr>
             <tr>
                 <td>Core</td>
                 <td>3.2 Maximal</td>
-                <td><code>step_5_27_hybrid_maximum_analysis.py</code></td>
+                <td><code>step_06_hybrid_maximum_analysis.py</code></td>
                 <td>Hybrid maximal sample construction (GC + Field)</td>
                 <td>~6s</td>
             </tr>
             <tr>
                 <td>Core</td>
                 <td>3.3 Density</td>
-                <td><code>step_5_31_per_cluster_controlled_residuals.py</code></td>
+                <td><code>step_07_per_cluster_controlled_residuals.py</code></td>
                 <td>Per-cluster controlled residuals vs density</td>
                 <td>~1s</td>
             </tr>
             <tr>
                 <td>Core</td>
                 <td>3.4 Scaling</td>
-                <td><code>step_5_32_full_density_scaling.py</code></td>
+                <td><code>step_11_full_density_scaling.py</code></td>
                 <td>Full density scaling simulation</td>
                 <td>~2s</td>
             </tr>
             <tr>
                 <td>Core</td>
                 <td>3.5 Hierarchical</td>
-                <td><code>step_5_33_hierarchical_density_scaling.py</code></td>
+                <td><code>step_12_hierarchical_density_scaling.py</code></td>
                 <td>Hierarchical mixed-effects density analysis</td>
                 <td>~1s</td>
             </tr>
             <tr>
                 <td>Core</td>
                 <td>3.6 Validation</td>
-                <td><code>step_5_35_covariance_validation.py</code></td>
+                <td><code>step_13_covariance_validation.py</code></td>
                 <td>Covariance-aware statistical validation</td>
                 <td>~3s</td>
             </tr>
             <tr>
                 <td>Binary</td>
                 <td>3.7 GC Binary</td>
-                <td><code>step_5_11_binary_pulsar_analysis.py</code></td>
+                <td><code>step_15_binary_pulsar_analysis.py</code></td>
                 <td>Binary vs isolated MSPs in GCs</td>
                 <td>~0.5s</td>
             </tr>
             <tr>
                 <td>Binary</td>
                 <td>3.8 Field Binary</td>
-                <td><code>step_5_12_field_binary_analysis.py</code></td>
+                <td><code>step_20_field_binary_analysis.py</code></td>
                 <td>Field binary control analysis</td>
                 <td>~0.5s</td>
             </tr>
             <tr>
                 <td>Binary</td>
                 <td>3.9 Integrated</td>
-                <td><code>step_5_36_integrated_binary_control.py</code></td>
+                <td><code>step_21_integrated_binary_control.py</code></td>
                 <td>Integrated binary control test (GC vs Field)</td>
                 <td>~0.6s</td>
             </tr>
@@ -182,28 +182,28 @@ TEP-COS/
                 <td>CMC</td>
                 <td>3.10a Download</td>
                 <td><code>download_cmc_data.py</code></td>
-                <td>Download CMC cluster catalogs (13 clusters, ~4.8 GB)</td>
+                <td>Download CMC cluster catalogs (20 clusters, ~4.8 GB)</td>
                 <td>~12 min</td>
             </tr>
             <tr>
                 <td>CMC</td>
                 <td>3.10b Analysis</td>
-                <td><code>step_5_50_cmc_gold_standard_analysis.py</code></td>
-                <td>Comparison of observed versus 21.0M CMC synthetic pulsars</td>
+                <td><code>step_37_cmc_gold_standard_analysis.py</code></td>
+                <td>Comparison of observed versus CMC synthetic pulsars (20 clusters, 18,813 synthetic MSPs)</td>
                 <td>~66.5s</td>
             </tr>
             <tr>
                 <td>CMC</td>
                 <td>3.11 Exotic</td>
-                <td><code>step_5_51_exotic_physics_quantification.py</code></td>
-                <td>Quantify exotic-GR burden (improbability 6.3×10⁻⁸, Bayes factor 10⁶⁰)</td>
+                <td><code>step_41_exotic_physics_quantification.py</code></td>
+                <td>Evaluate exotic-GR mechanism burden</td>
                 <td>~16.7s</td>
             </tr>
             <tr>
                 <td>CMC</td>
                 <td>3.12 PTA Mock</td>
-                <td><code>step_5_60_pta_mock_observation.py</code></td>
-                <td>Mock radio observations testing observational filtering defense (100% detection rate)</td>
+                <td><code>step_49_pta_mock_observation.py</code></td>
+                <td>Mock radio observations testing observational filtering defense</td>
                 <td>~2s</td>
             </tr>
             <tr style="background-color: #fff4e6;">
@@ -212,28 +212,28 @@ TEP-COS/
             <tr>
                 <td>Valid</td>
                 <td>4.1 Shklovskii</td>
-                <td><code>step_5_34_shklovskii_sensitivity.py</code></td>
+                <td><code>step_23_shklovskii_sensitivity.py</code></td>
                 <td>Shklovskii correction sensitivity analysis</td>
                 <td>~1s</td>
             </tr>
             <tr>
                 <td>Valid</td>
                 <td>4.2 Rho Sensitivity</td>
-                <td><code>step_5_37_rho_sensitivity.py</code></td>
+                <td><code>step_25_rho_sensitivity.py</code></td>
                 <td>Rho_intra sensitivity analysis</td>
                 <td>~0.7s</td>
             </tr>
             <tr>
                 <td>Valid</td>
                 <td>4.3 Power</td>
-                <td><code>step_5_38_power_analysis.py</code></td>
+                <td><code>step_26_power_analysis.py</code></td>
                 <td>Statistical power analysis</td>
                 <td>~9.9s</td>
             </tr>
             <tr>
                 <td>Valid</td>
                 <td>4.4 Monte Carlo</td>
-                <td><code>step_5_39_monte_carlo_validation.py</code></td>
+                <td><code>step_27_monte_carlo_validation.py</code></td>
                 <td>Monte Carlo validation (Type I, Power, Bias)</td>
                 <td>~8.7s</td>
             </tr>
@@ -389,15 +389,15 @@ python reproduce_manuscript.py
 
     <h4>Key Analysis Outputs</h4>
     <ul>
-        <li><code>results/outputs/step_5_10_pulsar_population_controls.csv</code> — Base pulsar dataset (394 MSPs with 196 GC, 198 field)</li>
-        <li><code>results/outputs/step_5_27_hybrid_maximum_analysis.json</code> — Expanded hybrid pulsar summary (543 MSPs; 0.40 dex hybrid-controlled residual)</li>
-        <li><code>results/outputs/step_5_11_binary_pulsar_analysis.json</code> — Binary vs isolated analysis results</li>
-        <li><code>results/outputs/step_5_33_hierarchical_density_results.json</code> — Mixed-effects density-scaling results</li>
-        <li><code>results/outputs/step_5_35_covariance_validation.json</code> — Covariance-aware and LOOCV validation</li>
-        <li><code>results/outputs/step_5_36_integrated_binary_control.json</code> — Integrated differential test</li>
-        <li><code>results/outputs/step_5_50_cmc_gold_standard.json</code> — CMC catalog comparison (21.0M synthetic pulsars, 9.4σ model-data tension: CMC predicts 1.541 dex vs observed 0.606 dex)</li>
-        <li><code>results/outputs/step_5_51_exotic_physics_quantification.json</code> — Exotic-GR quantification (improbability 6.3×10⁻⁸, Bayes factor 10⁶⁰)</li>
-        <li><code>results/outputs/step_5_60_pta_mock_observation.json</code> — PTA mock observation results (100% detection rate, observational filtering defense rejected)</li>
+        <li><code>results/outputs/step_02_pulsar_population_controls.csv</code> — Base pulsar dataset (400 MSPs with 198 GC, 202 field)</li>
+        <li><code>results/outputs/step_06_hybrid_maximum_analysis.json</code> — Expanded hybrid pulsar summary (550 MSPs; 0.40 dex hybrid-controlled residual)</li>
+        <li><code>results/outputs/step_15_binary_pulsar_analysis.json</code> — Binary vs isolated analysis results</li>
+        <li><code>results/outputs/step_12_hierarchical_density_results.json</code> — Mixed-effects density-scaling results</li>
+        <li><code>results/outputs/step_13_covariance_validation.json</code> — Covariance-aware and LOOCV validation</li>
+        <li><code>results/outputs/step_21_integrated_binary_control.json</code> — Integrated differential test</li>
+        <li><code>results/outputs/step_37_cmc_gold_standard.json</code> — CMC catalog comparison (20 clusters, 18,813 synthetic pulsars; 12.7σ nominal amplitude overprediction)</li>
+        <li><code>results/outputs/step_41_exotic_physics_quantification.json</code> — Exotic-GR mechanism evaluation</li>
+        <li><code>results/outputs/step_49_pta_mock_observation.json</code> — PTA mock observation results (observational filtering defense)</li>
     </ul>
 
     <h4>Log Files</h4>

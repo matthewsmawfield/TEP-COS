@@ -1,0 +1,279 @@
+{
+  "data_source": "SDSS_specObj_DIRECT_STELLAR",
+  "n_sample": 218,
+  "timestamp": "2026-07-03T11:13:02.109934",
+  "sigma_range": {
+    "min": 32.44382,
+    "max": 349.3705,
+    "mean": 121.7039932477064,
+    "median": 112.455735
+  },
+  "mB_range": {
+    "min": 14.5345,
+    "max": 22.2713,
+    "mean": 19.51350091743119,
+    "std": 1.763960525026671
+  },
+  "redshift_evolution": {
+    "low_z": {
+      "n": 109,
+      "z_range": [
+        0.014,
+        0.16431
+      ],
+      "r": 0.15604709012919404,
+      "p_value": 0.10515935782739982,
+      "significance": 1.6203395484823064
+    },
+    "high_z": {
+      "n": 109,
+      "z_range": [
+        0.16478,
+        0.29936
+      ],
+      "r": 0.18911860491534904,
+      "p_value": 0.048895217772100166,
+      "significance": 1.9695042259948718
+    },
+    "evolution_test": {
+      "correlation_difference": 0.033071514786155,
+      "z_statistic": 0.24818171485024138,
+      "p_value": 0.8039938132935831,
+      "evidence_for_evolution": false
+    }
+  },
+  "selection_function_analysis": {
+    "magnitude_redshift_correlation": {
+      "r": 0.9336928536883449,
+      "p_value": 2.6428930161586138e-98,
+      "potential_bias": true
+    },
+    "redshift_bins": {
+      "low_z": {
+        "n": 73,
+        "z_range": [
+          0.014,
+          0.1219
+        ],
+        "mB_range": [
+          14.5345,
+          19.9801
+        ],
+        "sigma_range": [
+          32.858288,
+          349.3705
+        ],
+        "correlation_r": 0.10219702434879002,
+        "correlation_p": 0.38959244024652345,
+        "significance": 0.8603567115400776
+      },
+      "mid_z": {
+        "n": 72,
+        "z_range": [
+          0.12262,
+          0.20074
+        ],
+        "mB_range": [
+          19.3059,
+          20.9102
+        ],
+        "sigma_range": [
+          37.561413,
+          282.1734
+        ],
+        "correlation_r": 0.133592203226508,
+        "correlation_p": 0.26324604440851207,
+        "significance": 1.1187517890515544
+      },
+      "high_z": {
+        "n": 73,
+        "z_range": [
+          0.20314,
+          0.29936
+        ],
+        "mB_range": [
+          20.1342,
+          22.2713
+        ],
+        "sigma_range": [
+          32.44382,
+          312.65982
+        ],
+        "correlation_r": 0.2898525207343852,
+        "correlation_p": 0.012867874662996215,
+        "significance": 2.48740519147902
+      }
+    },
+    "assessment": {
+      "consistent_across_redshift_bins": true,
+      "malmquist_bias_indicator": true,
+      "reliability": "MODERATE"
+    }
+  },
+  "partial_correlation": {
+    "r_raw": 0.21780141521973087,
+    "r_partial_mass_controlled": -0.04659393710077179,
+    "p_partial": 0.4940104953811617,
+    "r_mass_mB": 0.564285378825223,
+    "r_mass_sigma": 0.44695869899755425,
+    "interpretation": "Mass-\u03c3 collinearity under TEP removes both signals when controlling for mass"
+  },
+  "pearson": {
+    "r": 0.21780141521973087,
+    "p_value": 0.0012111078419130756,
+    "significance_sigma": 3.236251126988192
+  },
+  "tertile_correlations": {
+    "low": {
+      "r": 0.13307219079564472,
+      "p": 0.26171553237947764
+    },
+    "mid": {
+      "r": 0.028115191380433058,
+      "p": 0.8146462127665236
+    },
+    "high": {
+      "r": -0.057047613969193216,
+      "p": 0.6316590260321636
+    }
+  },
+  "continuous_screening": {
+    "screening_threshold_kms": 165.0,
+    "transition_width_dex": 0.3,
+    "mean_screening_strength": 0.3659249318914531,
+    "n_low_screening": 76,
+    "n_mid_screening": 139,
+    "n_high_screening": 3
+  },
+  "step_function": {
+    "median_sigma": 112.455735,
+    "low_sigma_n": 109,
+    "high_sigma_n": 109,
+    "low_sigma_mean_mB": 19.220607339449543,
+    "high_sigma_mean_mB": 19.806394495412846,
+    "t_statistic": -2.47467837074617,
+    "p_value": 0.014105466550024415,
+    "cohens_d": -0.33521273646838423
+  },
+  "spearman": {
+    "rho": 0.2540633173256237,
+    "p_value": 0.00014941253769795647
+  },
+  "linear_fit": {
+    "slope": 1.6900510226916363,
+    "intercept": 16.084138978909884,
+    "r_squared": 0.047437456471717605,
+    "p_value": 0.0012111078419130745,
+    "std_error": 0.5152986365779617
+  },
+  "binned": [
+    {
+      "quartile": "Q1",
+      "n": 55,
+      "mean_sigma": 53.570260036363635,
+      "mean_mB": 18.887863636363637,
+      "sem_mB": 0.2689846267916815,
+      "mean_x1": 0.2328793090909091
+    },
+    {
+      "quartile": "Q2",
+      "n": 54,
+      "mean_sigma": 95.5142107962963,
+      "mean_mB": 19.559512962962962,
+      "sem_mB": 0.18418112251614943,
+      "mean_x1": -0.06588862962962963
+    },
+    {
+      "quartile": "Q3",
+      "n": 54,
+      "mean_sigma": 132.7583070925926,
+      "mean_mB": 19.630935185185187,
+      "sem_mB": 0.232007205184589,
+      "mean_x1": -0.15387057407407403
+    },
+    {
+      "quartile": "Q4",
+      "n": 55,
+      "mean_sigma": 204.69800472727272,
+      "mean_mB": 19.978663636363635,
+      "sem_mB": 0.24481370688727744,
+      "mean_x1": -0.49191745454545455
+    }
+  ],
+  "q1_vs_q4": {
+    "t_statistic": -2.9990754940399564,
+    "p_value": 0.0033618982122193843,
+    "cohens_d": -0.5771723479346595
+  },
+  "screening_test": {
+    "threshold_kms": 165.0,
+    "unscreened_n": 168,
+    "screened_n": 50,
+    "unscreened_mean_mB": 19.382350595238094,
+    "screened_mean_mB": 19.954165999999997,
+    "mann_whitney_p": 0.004637920000941454,
+    "ttest_p": 0.044425558151537044,
+    "cohens_d": -0.32073256755544394,
+    "unscreened_correlation_r": 0.22217793042236308,
+    "unscreened_correlation_p": 0.0037973663147705776,
+    "screened_correlation_r": -0.12755670065403865,
+    "screened_correlation_p": 0.37736458153803965
+  },
+  "multiple_comparison_correction": {
+    "n_tests": 4,
+    "bonferroni_threshold": 0.0125,
+    "bonferroni_significant_count": 2,
+    "fdr_significant_count": 4,
+    "individual_results": [
+      {
+        "test_name": "Pearson correlation",
+        "raw_p": 0.0012111078419130756,
+        "bonferroni_adjusted": 0.0048444313676523024,
+        "fdr_adjusted": 0.0048444313676523024,
+        "fdr_significant": true
+      },
+      {
+        "test_name": "Step-function (median)",
+        "raw_p": 0.014105466550024415,
+        "bonferroni_adjusted": 0.05642186620009766,
+        "fdr_adjusted": 0.0048444313676523024,
+        "fdr_significant": true
+      },
+      {
+        "test_name": "Q1 vs Q4 quartiles",
+        "raw_p": 0.0033618982122193843,
+        "bonferroni_adjusted": 0.013447592848877537,
+        "fdr_adjusted": 0.0048444313676523024,
+        "fdr_significant": true
+      },
+      {
+        "test_name": "Screening threshold",
+        "raw_p": 0.044425558151537044,
+        "bonferroni_adjusted": 0.17770223260614817,
+        "fdr_adjusted": 0.0048444313676523024,
+        "fdr_significant": true
+      }
+    ]
+  },
+  "primary_evidence": {
+    "n_tests": 4,
+    "test_names": [
+      "Pearson correlation",
+      "Step-function (median)",
+      "Q1 vs Q4 quartiles",
+      "Screening threshold"
+    ],
+    "individual_p_values": [
+      0.0012111078419130756,
+      0.014105466550024415,
+      0.0033618982122193843,
+      0.044425558151537044
+    ],
+    "strongest_test_name": "Pearson correlation",
+    "strongest_test_p": 0.0012111078419130756,
+    "strongest_test_sigma": 3.236251126988192,
+    "note": "Tests are not independent (same dataset); combined test removed per C3 fix"
+  },
+  "verdict": "tep_consistent",
+  "interpretation": "TEP screening pattern detected: correlation in unscreened regime (r=+0.22, p=0.004), absent in screened (r=-0.13, p=0.38). Mass-\u03c3 collinearity under TEP makes partial correlation null - this is expected, not contradictory."
+}

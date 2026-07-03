@@ -1,0 +1,74 @@
+[11:04:57] [INFO] ================================================================================
+[11:04:57] [INFO] DENSITY-BASED TEMPORAL SHEAR COMPETITION VERIFICATION
+[11:04:57] [INFO] ================================================================================
+[11:04:57] [INFO] 
+[11:04:57] [INFO] 1. PULSAR TEMPORAL TOPOLOGY
+[11:04:57] [INFO] ----------------------------------------
+[11:04:57] [INFO] Critical density ρ_c: 20.0 g/cm³
+[11:04:57] [INFO] Pulsar mass: 1.4 M_sun
+[11:04:57] [INFO] Saturation radius R_sol: 321525.0 km
+[11:04:57] [INFO]                 = 1.04e-08 pc
+[11:04:57] [INFO] 
+[11:04:57] [INFO] 2. TYPICAL MSP BINARY
+[11:04:57] [INFO] ----------------------------------------
+[11:04:57] [INFO] Orbital period: 1.0 days
+[11:04:57] [INFO] Companion mass: 0.2 M_sun
+[11:04:57] [INFO] Semi-major axis a: 3424545.2 km
+[11:04:57] [INFO] 
+[11:04:57] [INFO] 3. TEMPORAL SHEAR COMPETITION AT PULSAR TOPOLOGY TRANSITION
+[11:04:57] [INFO] ----------------------------------------
+[11:04:57] [INFO] Distance from companion to topology transition: 3103020.2 km
+[11:04:57] [INFO] Cluster gravitational influence: 1.289e+20 kg/m
+[11:04:57] [INFO] Companion gravitational influence: 1.282e+20 kg/m
+[11:04:57] [INFO] Influence ratio (companion/cluster): 9.945e-01
+[11:04:57] [INFO] Shielding fraction: 0.499 (49.9%)
+[11:04:57] [INFO] 
+[11:04:57] [INFO] 4. VERIFICATION TEST
+[11:04:57] [INFO] ----------------------------------------
+[11:04:57] [INFO] Predicted shielding: 49.9%
+[11:04:57] [INFO] Observed shielding: 55.0%
+[11:04:57] [INFO] Discrepancy: 5.1 percentage points
+[11:04:57] [INFO] 
+[11:04:57] [INFO] VERIFIED: Density-based Temporal Shear competition agrees with observation
+[11:04:57] [INFO]   The continuous screening mechanism is validated.
+[11:04:57] [INFO] 
+[11:04:57] [INFO] 5. POPULATION SWEEP
+[11:04:57] [INFO] ----------------------------------------
+[11:04:57] [INFO] Pb (d)   | Mc (M☉)    | f_shield     | Status
+[11:04:57] [INFO] --------------------------------------------------
+[11:04:57] [INFO] 0.1      | 0.05       | 0.663        | Strong
+[11:04:57] [INFO] 0.5      | 0.05       | 0.304        | Moderate
+[11:04:57] [INFO] 1.0      | 0.05       | 0.205        | Moderate
+[11:04:57] [INFO] 5.0      | 0.05       | 0.076        | Weak
+[11:04:57] [INFO] 10.0     | 0.05       | 0.049        | Weak
+[11:04:57] [INFO] 100.0    | 0.05       | 0.011        | Weak
+[11:04:57] [INFO] 0.1      | 0.20       | 0.881        | Strong
+[11:04:57] [INFO] 0.5      | 0.20       | 0.627        | Strong
+[11:04:57] [INFO] 1.0      | 0.20       | 0.499        | Strong
+[11:04:57] [INFO] 5.0      | 0.20       | 0.242        | Moderate
+[11:04:57] [INFO] 10.0     | 0.20       | 0.165        | Weak
+[11:04:57] [INFO] 100.0    | 0.20       | 0.040        | Weak
+[11:04:57] [INFO] 0.1      | 0.50       | 0.944        | Strong
+[11:04:57] [INFO] 0.5      | 0.50       | 0.797        | Strong
+[11:04:57] [INFO] 1.0      | 0.50       | 0.700        | Strong
+[11:04:57] [INFO] 5.0      | 0.50       | 0.429        | Strong
+[11:04:57] [INFO] 10.0     | 0.50       | 0.318        | Moderate
+[11:04:57] [INFO] 100.0    | 0.50       | 0.090        | Weak
+[11:04:57] [INFO] 
+[11:04:57] [INFO] Results saved to /Users/matthewsmawfield/www/Temporal Equivalence Principle/TEP-COS/results/outputs/step_17_screening_competition.json
+[11:04:57] [INFO] 
+[11:04:57] [INFO] ================================================================================
+[11:04:57] [INFO] SUMMARY
+[11:04:57] [INFO] ================================================================================
+[11:04:57] [INFO] Density-based screening competition:
+[11:04:57] [INFO]   f_shield = (M_c/d) / (M_clust/R_core + M_c/d)
+[11:04:57] [INFO] 
+[11:04:57] [INFO] For typical binary (0.2 M☉ companion, 1-day orbit):
+[11:04:57] [INFO]   Predicted shielding: 49.9%
+[11:04:57] [INFO]   Observed suppression: 55% (0.32 dex / 0.58 dex)
+[11:04:57] [INFO] 
+[11:04:57] [INFO]   Status: VERIFIED - Model agrees with observation
+[11:04:57] [INFO] 
+[11:04:57] [INFO] 
+[11:04:57] [INFO] This validates the TEP continuous screening mechanism for
+[11:04:57] [INFO] binary pulsar suppression without curvature-dependent terms.

@@ -1,0 +1,108 @@
+{
+  "meta": {
+    "timestamp_utc": "2026-07-03T10:04:31.819831+00:00",
+    "note": "Signed Pdot analysis using Pdot/P as the physical observable. C = 299792458 m/s.",
+    "sample_counts": {
+      "gc_n": 198,
+      "field_n": 202
+    }
+  },
+  "sign_analysis": {
+    "gc": {
+      "n_total": 198,
+      "n_positive": 109,
+      "n_negative": 89,
+      "fraction_positive": 0.5505050505050505,
+      "fraction_negative": 0.4494949494949495,
+      "median_signed_pdot_over_p_s": 2.9292783446310028e-18,
+      "mean_signed_pdot_over_p_s": 6.680121836346501e-18,
+      "std_signed_pdot_over_p_s": 1.0369954208837898e-16,
+      "median_log_abs_pdot_over_p": -16.748537062360455,
+      "mean_log_abs_pdot_over_p": -16.82705202999179,
+      "std_log_abs_pdot_over_p": 0.7311088945992903
+    },
+    "field": {
+      "n_total": 202,
+      "n_positive": 198,
+      "n_negative": 4,
+      "fraction_positive": 0.9801980198019802,
+      "fraction_negative": 0.01980198019801982,
+      "median_signed_pdot_over_p_s": 2.403698239098898e-18,
+      "mean_signed_pdot_over_p_s": 8.2875645712052e-18,
+      "std_signed_pdot_over_p_s": 2.7081357712771304e-17,
+      "median_log_abs_pdot_over_p": -17.60916275420357,
+      "mean_log_abs_pdot_over_p": -17.56603136942231,
+      "std_log_abs_pdot_over_p": 0.5569710723420951
+    },
+    "difference": {
+      "delta_median_signed_pdot_over_p_s": 5.255801055321046e-19,
+      "delta_mean_signed_pdot_over_p_s": -1.6074427348586993e-18,
+      "delta_fraction_positive": -0.4296929692969297,
+      "fisher_exact_p": 9.48898795450967e-28
+    }
+  },
+  "latent_mixture": {
+    "gc_mixture": {
+      "means": [
+        -17.23688021636709,
+        -16.58098268494121
+      ],
+      "stds": [
+        0.7979279289925573,
+        0.5544900388530559
+      ],
+      "weights": [
+        0.3751643103697244,
+        0.6248356896302754
+      ],
+      "log_likelihood": -214.84128028240735
+    },
+    "field_mixture": {
+      "means": [
+        -17.664011698807705,
+        -17.41880441086011
+      ],
+      "stds": [
+        0.2238459293909195,
+        0.8130915193233098
+      ],
+      "weights": [
+        0.600418363558807,
+        0.399581636441193
+      ],
+      "log_likelihood": -138.11202159348971
+    },
+    "inferred_acceleration_component": {
+      "mean_dex": 0.18192419449301767,
+      "std_dex": 0.0,
+      "note": "Broad component of GC minus broad component of field, under convolution assumption"
+    }
+  },
+  "base_log10_abs_pdot_over_p": {
+    "gc_mean": -16.82705202999179,
+    "field_mean": -17.56603136942231,
+    "diff_dex": 0.738979339430518,
+    "t_stat": 11.355048518827795,
+    "t_p": 8.012705384756047e-26,
+    "mw_u": 32282.0,
+    "mw_p": 2.2781207489861978e-26,
+    "gc_n": 198,
+    "field_n": 202
+  },
+  "controls": {
+    "period_matched": {
+      "n_boot": 2000,
+      "diff_mean": 0.7472318633672159,
+      "diff_ci16": 0.6945671378091386,
+      "diff_ci84": 0.799860748529672,
+      "p_two_sided": 0.0
+    },
+    "period_and_bproxy_matched": {
+      "n_boot": 2000,
+      "diff_mean": 0.7456707406937828,
+      "diff_ci16": 0.6967727553675784,
+      "diff_ci84": 0.7940687030905315,
+      "p_two_sided": 0.0
+    }
+  }
+}

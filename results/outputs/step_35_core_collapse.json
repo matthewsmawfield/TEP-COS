@@ -1,0 +1,99 @@
+{
+  "timestamp": "2026-07-03T11:09:33.598012",
+  "method": "Core collapse stratification: testing density scaling in PCC vs non-PCC clusters",
+  "stratification_analysis": {
+    "n_pcc": 6,
+    "n_non_pcc": 11,
+    "pcc_clusters": [
+      "Terzan 5",
+      "M62 (NGC 6266)",
+      "M15 (NGC 7078)",
+      "NGC 6752",
+      "NGC 6624",
+      "NGC 6397"
+    ],
+    "non_pcc_clusters": [
+      "47 Tuc (NGC 104)",
+      "M28 (NGC 6626)",
+      "Omega Centauri (NGC 5139)",
+      "M13 (NGC 6205)",
+      "M5 (NGC 5904)",
+      "M2 (NGC 7089)",
+      "M3 (NGC 5272)",
+      "M53 (NGC 5024)",
+      "M71 (NGC 6838)",
+      "NGC 1851",
+      "M22 (NGC 6656)"
+    ],
+    "pcc_analysis": {
+      "n_clusters": 6,
+      "correlation_r": 0.025834270109789864,
+      "correlation_p": 0.9612572158541202,
+      "slope": 0.00803407524464544,
+      "intercept": 0.34313969492974816,
+      "slope_std_err": 0.15544069474214098,
+      "r_squared": 0.0006674095121055823
+    },
+    "non_pcc_analysis": {
+      "n_clusters": 11,
+      "correlation_r": 0.6559587858223862,
+      "correlation_p": 0.028402699563807164,
+      "slope": 0.06938148011229082,
+      "intercept": -0.19021116579098057,
+      "slope_std_err": 0.02661189186370067,
+      "r_squared": 0.43028192869757914
+    },
+    "slope_comparison": {
+      "pcc_slope": 0.00803407524464544,
+      "non_pcc_slope": 0.06938148011229082,
+      "slope_difference": -0.06134740486764539,
+      "std_err_difference": 0.15770225860933237,
+      "z_statistic": -0.38900777584687696,
+      "p_value": 0.6972703942624883,
+      "significance_sigma": 0.38900777584687696
+    }
+  },
+  "residual_analysis": {
+    "n_pcc": 6,
+    "n_non_pcc": 11,
+    "pcc_mean_residual": 0.3850373973305741,
+    "non_pcc_mean_residual": 0.0682663846637175,
+    "pcc_std_residual": 0.15937194236705404,
+    "non_pcc_std_residual": 0.09241920313680725,
+    "t_statistic": 4.475471181196955,
+    "t_test_p": 0.003000823986638495,
+    "u_statistic": 64.0,
+    "mann_whitney_p": 0.0006464124111182935,
+    "difference": 0.31677101266685664
+  },
+  "conclusions": [
+    "PCC and non-PCC clusters show CONSISTENT density scaling slopes",
+    "No evidence that core collapse status modifies the TEP signal",
+    "Residual difference detected (p=0.0030)"
+  ],
+  "pcc_cluster_list": [
+    "M15",
+    "M30",
+    "M62",
+    "NGC 6752",
+    "NGC 6397",
+    "Terzan 5",
+    "NGC 6624",
+    "NGC 6541",
+    "NGC 6218"
+  ],
+  "non_pcc_cluster_list": [
+    "47 Tuc",
+    "Omega Cen",
+    "M3",
+    "M5",
+    "M13",
+    "M28",
+    "M4",
+    "M53",
+    "NGC 1851",
+    "M22",
+    "M2",
+    "M71"
+  ]
+}

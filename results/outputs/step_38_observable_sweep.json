@@ -1,0 +1,11 @@
+{
+  "log_abs_pdot": {
+    "diff_binary_minus_isolated_dex": 0.12889556718214834
+  },
+  "log_abs_pdot_over_p": {
+    "status": "requires_snapshot_data"
+  },
+  "signed_pdot_over_p": {
+    "status": "requires_snapshot_data"
+  }
+}

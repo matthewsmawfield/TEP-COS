@@ -1,7 +1,8 @@
 # Temporal Equivalence Principle: A Sidereal Modulation Audit of LHC Luminosity Data
 **Matthew Lukin Smawfield**
 Version: v0.1 (Hanoi)
-First published: 28 May 2026
+First published: 6 June 2026
+DOI: 10.5281/zenodo.20572725
 
 ---
 
@@ -55,7 +56,9 @@ The structure of this paper is as follows: Section 2 presents the TEP theoretica
 
 In standard General Relativity, proper time is a passive parameter—the integrated path length of a worldline through a pre-existing metric tensor. The Temporal Equivalence Principle (TEP) reformulates this by elevating proper time to a dynamical scalar field, ϕ(x^μ), which acts as an active physical medium.
 
-A central axiom of TEP is that the coupling between matter and the temporal field is not strictly proportional to mass, but is governed by a non-linear proximity screening mechanism. The interaction strength is mediated by a coupling parameter κ(ξ) that asymptotically saturates at a critical proximity scale, observationally proxied by the density threshold:
+**Screening projection notice.** Screening in TEP is represented at theory level by the environmental operator S_Σ(E). Quantities such as ρ_T, R_T(M), S_⊕(r), compactness Φ/c^2, local stellar density, thermal epoch, coherence length, proximity, and boundary geometry are domain-specific projections of E, not independent screening mechanisms and not interchangeable universal thresholds.
+
+A central axiom of TEP is that the coupling between matter and the temporal field is not strictly proportional to mass, but is governed by a non-linear proximity screening mechanism. The interaction strength is mediated by a coupling parameter κ(ξ) that asymptotically saturates at a critical proximity scale, observationally proxied by the saturation scale:
 
 \begin{equation}
 \rho_c \approx 20~\text{g/cm}^3
@@ -70,7 +73,7 @@ The internal proximity of a single proton — the geometric overlap of its const
 If the temporal field ϕ is globally isotropic, local proper time accumulation remains symmetric. However, TEP posits the existence of a background cosmic gradient—a topological "slope" to the temporal field. The local gradient of this field is defined as the Temporal Shear, Σ:
 
 \begin{equation}
-\Sigma_\mu = \nabla_\mu \ln A(\phi) = \beta \, \nabla_\mu \phi
+\Sigma_\mu = \nabla_\mu \ln A(\phi) = \frac{\beta_A}{M_{\text{Pl}}} \, \nabla_\mu \phi
 \end{equation}
 
 Because Σ is a directional vector anchored to a cosmic background (such as the galactic center or the rest frame of the cosmic microwave background), its projection onto the Earth is not static. As the Earth rotates, the physical orientation of the LHC ring—fixed in the lithosphere at Geneva—shifts relative to Σ.

@@ -1,0 +1,34 @@
+{
+    "timestamp_utc": "2026-07-03T10:04:25.489236+00:00",
+    "model_a_wls_slope": 0.3890265010626175,
+    "model_a_wls_error": 0.08020158501161673,
+    "model_b_mixed_slope": 0.3929054987420065,
+    "model_b_mixed_error": 0.07848558701147679,
+    "model_b_mixed_p": 5.554831274118857e-07,
+    "newtonian_predicted_slope": 0.748,
+    "newtonian_predicted_error": 0.039,
+    "newtonian_slope_range": [
+        0.67,
+        0.826
+    ],
+    "observed_vs_newtonian_diff": -0.3550945012579935,
+    "combined_error": 0.08764124239498258,
+    "rejection_sigma": 4.05168265024872,
+    "rejection_p_value": 5.0850606694297085e-05,
+    "interpretation": "Observed slope significantly flatter than Newtonian prediction",
+    "suppression_factor": 0.5252747309385113,
+    "model_diagnostics": {
+        "residual_std": 0.6014796665646451,
+        "random_intercept_variance": 0.05994657454742141,
+        "icc": 0.14214633938111645,
+        "convergence": {
+            "converged": true,
+            "method": "REML"
+        },
+        "log_likelihood": -187.15143339523206,
+        "aic": 382.3028667904641,
+        "bic": 395.18429009077744,
+        "n_observations": 185,
+        "n_clusters": 29
+    }
+}

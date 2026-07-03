@@ -48,13 +48,10 @@ data/cmc/
 data/archive/*.tmp
 data/**/*.fits
 data/**/*.fits.gz
-results/**/*.fits
-results/**/*.hdf5
 
 # Private research notes
 research
 .windsurf
 # IDE files
 *.code-workspace
-
-.devin
+.devin/

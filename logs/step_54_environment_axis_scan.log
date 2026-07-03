@@ -1,0 +1,28 @@
+[11:05:29] [INFO] ==============================================================================
+[11:05:29] [INFO] STEP 5.74: ENVIRONMENT AXIS SCAN
+[11:05:29] [INFO] ==============================================================================
+[11:05:29] [INFO] 
+[11:05:29] [INFO] Loaded 198 GC pulsars across 34 clusters
+[11:05:29] [INFO] 
+[11:05:29] [INFO] Variable                               Gamma   StdErr      R^2    p-value
+[11:05:29] [INFO] ------------------------------------------------------------------------------
+[11:05:29] [INFO] Central luminosity density (current)  +0.320    0.107    0.222     0.0056
+[11:05:29] [INFO] Mass density M/Rc^3                  +0.266    0.085    0.240     0.0038
+[11:05:29] [INFO] Potential depth M/Rc                 +0.564    0.213    0.185     0.0125
+[11:05:29] [INFO] Acceleration scale M/Rc^2            +0.398    0.125    0.245     0.0034
+[11:05:29] [INFO] Escape velocity v_esc                +1.052    0.537    0.110     0.0592
+[11:05:29] [INFO] Velocity dispersion sigma_v          +1.129    0.426    0.185     0.0125
+[11:05:29] [INFO] Relaxation time proxy Rc/sigma_v     -0.531    0.170    0.240     0.0038
+[11:05:29] [INFO] 
+[11:05:29] [INFO] Ranked by R^2 (best predictor first):
+[11:05:29] [INFO]   1. Acceleration scale M/Rc^2: Gamma = +0.398, R^2 = 0.245
+[11:05:29] [INFO]   2. Mass density M/Rc^3: Gamma = +0.266, R^2 = 0.240
+[11:05:29] [INFO]   3. Relaxation time proxy Rc/sigma_v: Gamma = -0.531, R^2 = 0.240
+[11:05:29] [INFO]   4. Central luminosity density (current): Gamma = +0.320, R^2 = 0.222
+[11:05:29] [INFO]   5. Velocity dispersion sigma_v: Gamma = +1.129, R^2 = 0.185
+[11:05:29] [INFO]   6. Potential depth M/Rc: Gamma = +0.564, R^2 = 0.185
+[11:05:29] [INFO]   7. Escape velocity v_esc: Gamma = +1.052, R^2 = 0.110
+[11:05:29] [INFO] 
+[11:05:29] [INFO] Saved JSON: /Users/matthewsmawfield/www/Temporal Equivalence Principle/TEP-COS/results/outputs/step_54_environment_axis_scan.json
+[11:05:29] [INFO] Saved Markdown: /Users/matthewsmawfield/www/Temporal Equivalence Principle/TEP-COS/results/outputs/step_54_environment_axis_scan.md
+[11:05:29] [INFO] Done.

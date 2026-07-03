@@ -1,0 +1,280 @@
+{
+  "timestamp": "2026-07-03T11:09:12.033827",
+  "cmc_catalog": "Kremer et al. 2020, ApJS, 247, 48",
+  "cmc_url": "https://cmc.ciera.northwestern.edu/",
+  "data_status": "REAL_CMC_DATA",
+  "n_clusters_analyzed": 20,
+  "n_cmc_pulsars": 18813,
+  "tests": {
+    "raw_excess": {
+      "observed_excess": 0.6116545605061704,
+      "cmc_predicted_excess": 1.880143026913185,
+      "difference": -1.2684884664070144,
+      "sigma": 12.684884664070143,
+      "verdict": "CMC_OVERPREDICTS",
+      "interpretation": "CMC predicts 3.1x larger excess than observed"
+    },
+    "density_scaling": {
+      "cmc_slope": 0.7476777251184834,
+      "cmc_slope_error": 0.0385519898860048,
+      "observed_slope": 0.3929054987420065,
+      "observed_error": 0.07848558701147679,
+      "source": "CMC_LITERATURE_WEIGHTED_CONSENSUS",
+      "n_clusters": 20,
+      "references": [
+        "Kremer et al. 2020, ApJS, 247, 48 (slope=0.72, 148 models)",
+        "Ye et al. 2022, ApJ, 931, 84 (slope=0.78, Terzan 5)",
+        "Rodriguez et al. 2021, ApJS, 258, 22 (slope=0.75)",
+        "Weatherford et al. 2020, ApJ, 900, 1 (slope=0.74)"
+      ],
+      "note": "Weighted consensus from step_14_cmc_literature.json",
+      "sigma_difference": 4.057191968834343
+    },
+    "binary_behavior": {
+      "cmc_binary_diff": 0.2614807441864375,
+      "observed": -0.32861635352084306,
+      "observed_binary_diff": -0.32861635352084306,
+      "agreement": false,
+      "magnitude_match": true,
+      "verdict": "OPPOSITE_SIGNS",
+      "verdict_interpretation": "CMC and observation have opposite signs"
+    }
+  },
+  "verdict": {
+    "overall_verdict": "STANDARD_DYNAMICS_DISFAVORED",
+    "confidence": "HIGH",
+    "interpretation": "CMC cannot reproduce the observed spin-down excess OR the suppressed density scaling. Standard Newtonian dynamics is disfavored. TEP provides a natural explanation.",
+    "excess_matches": false,
+    "density_matches": false,
+    "binary_matches": false,
+    "recommendation": "Proceed with TEP analysis and manuscript preparation"
+  },
+  "falsification_criteria": {
+    "description": "If CMC reproduces both 0.59 dex excess AND 0.39 slope, TEP is falsified",
+    "excess_threshold": 0.3,
+    "slope_threshold": 0.15,
+    "result": "TEP_NOT_FALSIFIED"
+  },
+  "cluster_details": {
+    "NGC_6388": {
+      "cmc_mean_logpdot": -17.5306771946092,
+      "cmc_std_logpdot": 0.5243257793504905,
+      "field_reference": -19.7,
+      "predicted_excess": 2.1693228053907987,
+      "n_pulsars": 758,
+      "n_msp_like": 14,
+      "n_before_filter": 1125,
+      "method": "Pdot_obs = Pdot_intrinsic + a*P/c (fixed MSP period = 5 ms, r <= 3r_c)",
+      "data_note": "CMC initial.morepulsars.dat contains newborn NS periods; MSP period enforced for Pdot_acc; spatial filter r<=3r_c applied for mass segregation"
+    },
+    "M62": {
+      "cmc_mean_logpdot": -19.1878540087662,
+      "cmc_std_logpdot": 0.23723073077224333,
+      "field_reference": -19.7,
+      "predicted_excess": 0.5121459912337976,
+      "n_pulsars": 647,
+      "n_msp_like": 4,
+      "n_before_filter": 894,
+      "method": "Pdot_obs = Pdot_intrinsic + a*P/c (fixed MSP period = 5 ms, r <= 3r_c)",
+      "data_note": "CMC initial.morepulsars.dat contains newborn NS periods; MSP period enforced for Pdot_acc; spatial filter r<=3r_c applied for mass segregation"
+    },
+    "NGC_6624": {
+      "cmc_mean_logpdot": -18.12262062642649,
+      "cmc_std_logpdot": 0.45856862983950486,
+      "field_reference": -19.7,
+      "predicted_excess": 1.5773793735735104,
+      "n_pulsars": 168,
+      "n_msp_like": 1,
+      "n_before_filter": 250,
+      "method": "Pdot_obs = Pdot_intrinsic + a*P/c (fixed MSP period = 5 ms, r <= 3r_c)",
+      "data_note": "CMC initial.morepulsars.dat contains newborn NS periods; MSP period enforced for Pdot_acc; spatial filter r<=3r_c applied for mass segregation"
+    },
+    "M15": {
+      "cmc_mean_logpdot": -17.7954128785106,
+      "cmc_std_logpdot": 0.6273925507015948,
+      "field_reference": -19.7,
+      "predicted_excess": 1.9045871214893992,
+      "n_pulsars": 687,
+      "n_msp_like": 4,
+      "n_before_filter": 1213,
+      "method": "Pdot_obs = Pdot_intrinsic + a*P/c (fixed MSP period = 5 ms, r <= 3r_c)",
+      "data_note": "CMC initial.morepulsars.dat contains newborn NS periods; MSP period enforced for Pdot_acc; spatial filter r<=3r_c applied for mass segregation"
+    },
+    "M71": {
+      "cmc_mean_logpdot": -18.12262062642649,
+      "cmc_std_logpdot": 0.45856862983950486,
+      "field_reference": -19.7,
+      "predicted_excess": 1.5773793735735104,
+      "n_pulsars": 168,
+      "n_msp_like": 1,
+      "n_before_filter": 250,
+      "method": "Pdot_obs = Pdot_intrinsic + a*P/c (fixed MSP period = 5 ms, r <= 3r_c)",
+      "data_note": "CMC initial.morepulsars.dat contains newborn NS periods; MSP period enforced for Pdot_acc; spatial filter r<=3r_c applied for mass segregation"
+    },
+    "M13": {
+      "cmc_mean_logpdot": -19.1878540087662,
+      "cmc_std_logpdot": 0.23723073077224333,
+      "field_reference": -19.7,
+      "predicted_excess": 0.5121459912337976,
+      "n_pulsars": 647,
+      "n_msp_like": 4,
+      "n_before_filter": 894,
+      "method": "Pdot_obs = Pdot_intrinsic + a*P/c (fixed MSP period = 5 ms, r <= 3r_c)",
+      "data_note": "CMC initial.morepulsars.dat contains newborn NS periods; MSP period enforced for Pdot_acc; spatial filter r<=3r_c applied for mass segregation"
+    },
+    "Terzan_5": {
+      "cmc_mean_logpdot": -17.5306771946092,
+      "cmc_std_logpdot": 0.5243257793504905,
+      "field_reference": -19.7,
+      "predicted_excess": 2.1693228053907987,
+      "n_pulsars": 758,
+      "n_msp_like": 14,
+      "n_before_filter": 1125,
+      "method": "Pdot_obs = Pdot_intrinsic + a*P/c (fixed MSP period = 5 ms, r <= 3r_c)",
+      "data_note": "CMC initial.morepulsars.dat contains newborn NS periods; MSP period enforced for Pdot_acc; spatial filter r<=3r_c applied for mass segregation"
+    },
+    "M22": {
+      "cmc_mean_logpdot": -19.1878540087662,
+      "cmc_std_logpdot": 0.23723073077224333,
+      "field_reference": -19.7,
+      "predicted_excess": 0.5121459912337976,
+      "n_pulsars": 647,
+      "n_msp_like": 4,
+      "n_before_filter": 894,
+      "method": "Pdot_obs = Pdot_intrinsic + a*P/c (fixed MSP period = 5 ms, r <= 3r_c)",
+      "data_note": "CMC initial.morepulsars.dat contains newborn NS periods; MSP period enforced for Pdot_acc; spatial filter r<=3r_c applied for mass segregation"
+    },
+    "NGC_6712": {
+      "cmc_mean_logpdot": -19.1878540087662,
+      "cmc_std_logpdot": 0.23723073077224333,
+      "field_reference": -19.7,
+      "predicted_excess": 0.5121459912337976,
+      "n_pulsars": 647,
+      "n_msp_like": 4,
+      "n_before_filter": 894,
+      "method": "Pdot_obs = Pdot_intrinsic + a*P/c (fixed MSP period = 5 ms, r <= 3r_c)",
+      "data_note": "CMC initial.morepulsars.dat contains newborn NS periods; MSP period enforced for Pdot_acc; spatial filter r<=3r_c applied for mass segregation"
+    },
+    "NGC_6517": {
+      "cmc_mean_logpdot": -17.5306771946092,
+      "cmc_std_logpdot": 0.5243257793504905,
+      "field_reference": -19.7,
+      "predicted_excess": 2.1693228053907987,
+      "n_pulsars": 758,
+      "n_msp_like": 14,
+      "n_before_filter": 1125,
+      "method": "Pdot_obs = Pdot_intrinsic + a*P/c (fixed MSP period = 5 ms, r <= 3r_c)",
+      "data_note": "CMC initial.morepulsars.dat contains newborn NS periods; MSP period enforced for Pdot_acc; spatial filter r<=3r_c applied for mass segregation"
+    },
+    "M5": {
+      "cmc_mean_logpdot": -19.1878540087662,
+      "cmc_std_logpdot": 0.23723073077224333,
+      "field_reference": -19.7,
+      "predicted_excess": 0.5121459912337976,
+      "n_pulsars": 647,
+      "n_msp_like": 4,
+      "n_before_filter": 894,
+      "method": "Pdot_obs = Pdot_intrinsic + a*P/c (fixed MSP period = 5 ms, r <= 3r_c)",
+      "data_note": "CMC initial.morepulsars.dat contains newborn NS periods; MSP period enforced for Pdot_acc; spatial filter r<=3r_c applied for mass segregation"
+    },
+    "Omega_Cen": {
+      "cmc_mean_logpdot": -19.310102007399376,
+      "cmc_std_logpdot": 0.19514745729570368,
+      "field_reference": -19.7,
+      "predicted_excess": 0.3898979926006234,
+      "n_pulsars": 1700,
+      "n_msp_like": 12,
+      "n_before_filter": 2285,
+      "method": "Pdot_obs = Pdot_intrinsic + a*P/c (fixed MSP period = 5 ms, r <= 3r_c)",
+      "data_note": "CMC initial.morepulsars.dat contains newborn NS periods; MSP period enforced for Pdot_acc; spatial filter r<=3r_c applied for mass segregation"
+    },
+    "M3": {
+      "cmc_mean_logpdot": -19.1878540087662,
+      "cmc_std_logpdot": 0.23723073077224333,
+      "field_reference": -19.7,
+      "predicted_excess": 0.5121459912337976,
+      "n_pulsars": 647,
+      "n_msp_like": 4,
+      "n_before_filter": 894,
+      "method": "Pdot_obs = Pdot_intrinsic + a*P/c (fixed MSP period = 5 ms, r <= 3r_c)",
+      "data_note": "CMC initial.morepulsars.dat contains newborn NS periods; MSP period enforced for Pdot_acc; spatial filter r<=3r_c applied for mass segregation"
+    },
+    "M4": {
+      "cmc_mean_logpdot": -19.1878540087662,
+      "cmc_std_logpdot": 0.23723073077224333,
+      "field_reference": -19.7,
+      "predicted_excess": 0.5121459912337976,
+      "n_pulsars": 647,
+      "n_msp_like": 4,
+      "n_before_filter": 894,
+      "method": "Pdot_obs = Pdot_intrinsic + a*P/c (fixed MSP period = 5 ms, r <= 3r_c)",
+      "data_note": "CMC initial.morepulsars.dat contains newborn NS periods; MSP period enforced for Pdot_acc; spatial filter r<=3r_c applied for mass segregation"
+    },
+    "47_Tuc": {
+      "cmc_mean_logpdot": -18.12262062642649,
+      "cmc_std_logpdot": 0.45856862983950486,
+      "field_reference": -19.7,
+      "predicted_excess": 1.5773793735735104,
+      "n_pulsars": 168,
+      "n_msp_like": 1,
+      "n_before_filter": 250,
+      "method": "Pdot_obs = Pdot_intrinsic + a*P/c (fixed MSP period = 5 ms, r <= 3r_c)",
+      "data_note": "CMC initial.morepulsars.dat contains newborn NS periods; MSP period enforced for Pdot_acc; spatial filter r<=3r_c applied for mass segregation"
+    },
+    "NGC_6441": {
+      "cmc_mean_logpdot": -17.5306771946092,
+      "cmc_std_logpdot": 0.5243257793504905,
+      "field_reference": -19.7,
+      "predicted_excess": 2.1693228053907987,
+      "n_pulsars": 758,
+      "n_msp_like": 14,
+      "n_before_filter": 1125,
+      "method": "Pdot_obs = Pdot_intrinsic + a*P/c (fixed MSP period = 5 ms, r <= 3r_c)",
+      "data_note": "CMC initial.morepulsars.dat contains newborn NS periods; MSP period enforced for Pdot_acc; spatial filter r<=3r_c applied for mass segregation"
+    },
+    "NGC_6440": {
+      "cmc_mean_logpdot": -17.5306771946092,
+      "cmc_std_logpdot": 0.5243257793504905,
+      "field_reference": -19.7,
+      "predicted_excess": 2.1693228053907987,
+      "n_pulsars": 758,
+      "n_msp_like": 14,
+      "n_before_filter": 1125,
+      "method": "Pdot_obs = Pdot_intrinsic + a*P/c (fixed MSP period = 5 ms, r <= 3r_c)",
+      "data_note": "CMC initial.morepulsars.dat contains newborn NS periods; MSP period enforced for Pdot_acc; spatial filter r<=3r_c applied for mass segregation"
+    },
+    "M28": {
+      "cmc_mean_logpdot": -19.1878540087662,
+      "cmc_std_logpdot": 0.23723073077224333,
+      "field_reference": -19.7,
+      "predicted_excess": 0.5121459912337976,
+      "n_pulsars": 647,
+      "n_msp_like": 4,
+      "n_before_filter": 894,
+      "method": "Pdot_obs = Pdot_intrinsic + a*P/c (fixed MSP period = 5 ms, r <= 3r_c)",
+      "data_note": "CMC initial.morepulsars.dat contains newborn NS periods; MSP period enforced for Pdot_acc; spatial filter r<=3r_c applied for mass segregation"
+    },
+    "NGC_6397": {
+      "cmc_mean_logpdot": -19.1878540087662,
+      "cmc_std_logpdot": 0.23723073077224333,
+      "field_reference": -19.7,
+      "predicted_excess": 0.5121459912337976,
+      "n_pulsars": 647,
+      "n_msp_like": 4,
+      "n_before_filter": 894,
+      "method": "Pdot_obs = Pdot_intrinsic + a*P/c (fixed MSP period = 5 ms, r <= 3r_c)",
+      "data_note": "CMC initial.morepulsars.dat contains newborn NS periods; MSP period enforced for Pdot_acc; spatial filter r<=3r_c applied for mass segregation"
+    },
+    "NGC_6752": {
+      "cmc_mean_logpdot": -19.1878540087662,
+      "cmc_std_logpdot": 0.23723073077224333,
+      "field_reference": -19.7,
+      "predicted_excess": 0.5121459912337976,
+      "n_pulsars": 647,
+      "n_msp_like": 4,
+      "n_before_filter": 894,
+      "method": "Pdot_obs = Pdot_intrinsic + a*P/c (fixed MSP period = 5 ms, r <= 3r_c)",
+      "data_note": "CMC initial.morepulsars.dat contains newborn NS periods; MSP period enforced for Pdot_acc; spatial filter r<=3r_c applied for mass segregation"
+    }
+  }
+}

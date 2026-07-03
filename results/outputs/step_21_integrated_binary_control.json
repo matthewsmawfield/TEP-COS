@@ -1,0 +1,78 @@
+{
+  "gc_binary_analysis": {
+    "n_binary": 117,
+    "n_isolated": 81,
+    "binary_mean_logPdot": -19.295863365179503,
+    "isolated_mean_logPdot": -18.96724701165866,
+    "binary_std_logPdot": 0.6964833138647761,
+    "isolated_std_logPdot": 0.871618655154003,
+    "diff_dex": -0.32861635352084306,
+    "t_stat": -2.809786128783872,
+    "t_p": 0.005635636680782318,
+    "mw_u": 3560.0,
+    "mw_p": 0.0029635632411935497,
+    "binary_sign_dist": {
+      "positive": 66,
+      "negative": 51
+    },
+    "isolated_sign_dist": {
+      "positive": 43,
+      "negative": 38
+    },
+    "binary_frac_negative": 0.4358974358974359,
+    "isolated_frac_negative": 0.4691358024691358,
+    "spatial_control": {
+      "median_offset_arcmin": 0.2,
+      "inner": {
+        "n_binary": 53,
+        "n_isolated": 32,
+        "mean_binary": -19.074282355281976,
+        "mean_isolated": -18.761401429369542,
+        "diff": -0.31288092591243455,
+        "p_value": 0.0651875051022404
+      },
+      "outer": {
+        "n_binary": 51,
+        "n_isolated": 31,
+        "mean_binary": -19.609566309953426,
+        "mean_isolated": -19.465969331434003,
+        "diff": -0.14359697851942244,
+        "p_value": 0.3977872827095601
+      }
+    }
+  },
+  "field_binary_analysis": {
+    "binary_vs_isolated": {
+      "n_binary": 269,
+      "n_isolated": 70,
+      "binary_mean_logPdot": 0.17244325013605347,
+      "isolated_mean_logPdot": 0.20498788908677693,
+      "binary_std_logPdot": 0.6430633310209793,
+      "isolated_std_logPdot": 0.9002842893649335,
+      "diff_dex": -0.03254463895072346,
+      "t_p": 0.7783704174585205,
+      "mw_p": 0.4164796855489207
+    }
+  },
+  "differential_test": {
+    "gc_binary_isolated_diff": -0.32861635352084306,
+    "gc_diff_se": 0.11739789552888165,
+    "field_binary_isolated_diff": -0.03254463895072346,
+    "field_diff_se": 0.11554225203005825,
+    "differential_signal": -0.2960717145701196,
+    "differential_se": 0.16471878423175576,
+    "z_score": -1.7974374686590275,
+    "p_value_two_sided": 0.07226619690464875,
+    "p_value_one_sided": 0.03613309845232434,
+    "ci_95_lower": -0.6189205316643609,
+    "ci_95_upper": 0.026777102524121688,
+    "interpretation": "ENVIRONMENTAL"
+  },
+  "conclusion": {
+    "environmental_origin": true,
+    "environmental_origin_one_sided": true,
+    "environmental_origin_two_sided": false,
+    "binary_inversion_confirmed": true,
+    "field_control_null": true
+  }
+}

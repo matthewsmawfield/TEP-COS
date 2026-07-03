@@ -1,0 +1,33 @@
+{
+  "derivation": {
+    "method": "Scaling relation from TEP formalism",
+    "formula": "\u0393_TEP = 2\u0393_N - 1",
+    "physics": "TEP clock effect \u221d potential |\u03a6|, Newtonian \u221d acceleration a",
+    "note": "This is a consistency check within the TEP framework, not an independent prediction",
+    "input": {
+      "gamma_N": 0.7476777251184834,
+      "gamma_N_error": 0.0385519898860048,
+      "source": "CMC Newtonian simulations"
+    }
+  },
+  "tep_scaling_relation": {
+    "gamma_TEP": 0.4953554502369668,
+    "gamma_TEP_error": 0.0771039797720096,
+    "formula_applied": "2 \u00d7 0.7476777251184834 - 1 = 0.495"
+  },
+  "observation": {
+    "gamma_obs": 0.3929054987420065,
+    "gamma_obs_error": 0.07848558701147679,
+    "source": "Mixed-effects model (step_12)"
+  },
+  "comparison": {
+    "sigma_agreement": 0.9311703990206539,
+    "status": "EXCELLENT",
+    "interpretation": "TEP scaling relation is consistent with observation"
+  },
+  "newtonian_rejection": {
+    "gamma_N": 0.7476777251184834,
+    "sigma_rejection": 4.520221353821299,
+    "conclusion": "Newtonian scaling excluded at >4\u03c3"
+  }
+}

@@ -1,0 +1,9 @@
+[11:05:02] [INFO] --- Step 23: Shklovskii Cancellation Analysis ---
+[11:05:02] [INFO] Base Acceleration Slope (input):       0.748 (from CMC consensus)
+[11:05:02] [INFO] Base Shklovskii Slope (input):         0.50
+[11:05:02] [INFO] Base Shklovskii Fraction at rho_ref:   15.0%
+[11:05:02] [INFO] Target Net Slope:                      0.393 (Mixed-Effects Observed)
+[11:05:02] [INFO] Measured Acc-only slope (verification): 0.748
+[11:05:02] [INFO] Required Shklovskii Amplification K:    >20.0 (exceeds search range)
+[11:05:02] [INFO] Closest net slope within range:           0.566 (target: 0.393)
+[11:05:02] [INFO] Physically excluded. Required amplification exceeds 20x. Even at K=20x the net slope is 0.57, still far from observed 0.39. Shklovskii cannot explain the suppressed scaling.

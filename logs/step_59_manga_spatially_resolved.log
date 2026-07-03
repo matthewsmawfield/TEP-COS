@@ -1,0 +1,66 @@
+[11:13:08] [INFO] ======================================================================
+[11:13:08] [INFO] MaNGA SPATIALLY-RESOLVED AGE GRADIENT TEST FOR TEP
+[11:13:08] [INFO] ======================================================================
+[11:13:08] [INFO] Started: 2026-07-03T11:13:08.666012
+[11:13:08] [INFO] 
+[11:13:08] [INFO] Loading cached data from /Users/matthewsmawfield/www/Temporal Equivalence Principle/TEP-COS/scripts/steps/../../data/manga/manga_pipe3d.csv
+[11:13:08] [INFO] 
+[11:13:08] [INFO] Preparing data...
+[11:13:08] [INFO] σ range after conversion: 10 - 1216 km/s
+[11:13:08] [INFO] Valid galaxies: 8642
+[11:13:08] [INFO] 
+[11:13:08] [INFO] ======================================================================
+[11:13:08] [INFO] MaNGA AGE GRADIENT TEST
+[11:13:08] [INFO] ======================================================================
+[11:13:08] [INFO] 
+[11:13:08] [INFO] 1. Age gradient (α_Age) vs log(σ):
+[11:13:08] [INFO]    r = -0.0919, p = 1.14e-17
+[11:13:08] [INFO] 
+[11:13:08] [INFO] 2. Metallicity gradient (α_ZH) vs log(σ):
+[11:13:08] [INFO]    r = 0.0686, p = 1.77e-10
+[11:13:08] [INFO] 
+[11:13:08] [INFO] 3. Central age (Age_Re) vs log(σ):
+[11:13:08] [INFO]    r = -0.6032, p = 0.00e+00
+[11:13:08] [INFO] 
+[11:13:08] [INFO] 4. DISCREPANCY (Δr = r_age_grad - r_zh_grad):
+[11:13:08] [INFO]    Δr = -0.1604
+[11:13:08] [INFO] 
+[11:13:08] [INFO] 5. Binned analysis by σ:
+[11:13:08] [INFO] ----------------------------------------------------------------------
+[11:13:08] [INFO] σ bin                N      <α_Age>       <α_ZH>     <Age_Re>
+[11:13:08] [INFO] ----------------------------------------------------------------------
+[11:13:08] [INFO] low               1729      -0.0640      -0.1442         9.63
+[11:13:08] [INFO] med_low           1728      -0.0904      -0.1166         9.46
+[11:13:08] [INFO] medium            1728      -0.1218      -0.1151         9.32
+[11:13:08] [INFO] med_high          1728      -0.1341      -0.1222         9.11
+[11:13:08] [INFO] high              1729      -0.1152      -0.1175         8.96
+[11:13:08] [INFO] ----------------------------------------------------------------------
+[11:13:08] [INFO] 
+[11:13:08] [INFO] ======================================================================
+[11:13:08] [INFO] INTERPRETATION
+[11:13:08] [INFO] ======================================================================
+[11:13:08] [INFO] 
+[11:13:08] [INFO] *** TEP-CONSISTENT PATTERN ***
+[11:13:08] [INFO]   Age gradients become MORE NEGATIVE at higher σ.
+[11:13:08] [INFO]   This means galaxy centers appear YOUNGER relative to outskirts
+[11:13:08] [INFO]   in more massive galaxies - consistent with TEP time dilation.
+[11:13:08] [INFO] 
+[11:13:08] [INFO] ======================================================================
+[11:13:08] [INFO] MASS-WEIGHTED AGE ANALYSIS
+[11:13:08] [INFO] ======================================================================
+[11:13:08] [INFO] 
+[11:13:08] [INFO] Using 8642 galaxies with mass-weighted ages
+[11:13:08] [INFO] 
+[11:13:08] [INFO] Mass-weighted age gradient vs σ: r = 0.0043, p = 6.89e-01
+[11:13:08] [INFO] Mass-weighted central age vs σ: r = -0.4386, p = 0.00e+00
+[11:13:09] [INFO] 
+[11:13:09] [INFO] Figure saved: /Users/matthewsmawfield/www/Temporal Equivalence Principle/TEP-COS/scripts/steps/../../results/figures/step_59_manga_age_gradients.png
+[11:13:09] [INFO] 
+[11:13:09] [INFO] Results saved: /Users/matthewsmawfield/www/Temporal Equivalence Principle/TEP-COS/scripts/steps/../../results/outputs/step_59_manga_spatially_resolved.json
+[11:13:09] [INFO] 
+[11:13:09] [INFO] ======================================================================
+[11:13:09] [INFO] SUMMARY
+[11:13:09] [INFO] ======================================================================
+[11:13:09] [INFO] Galaxies analyzed: 8,642
+[11:13:09] [INFO] Age gradient vs σ: r = -0.0919
+[11:13:09] [INFO] Interpretation: TEP_CONSISTENT

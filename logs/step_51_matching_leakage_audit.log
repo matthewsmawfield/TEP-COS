@@ -1,0 +1,29 @@
+[11:05:29] [INFO] ==============================================================================
+[11:05:29] [INFO] STEP 5.71: MATCHING LEAKAGE AUDIT
+[11:05:29] [INFO] ==============================================================================
+[11:05:29] [INFO] 
+[11:05:29] [INFO] Loaded 198 GC pulsars, 202 field pulsars
+[11:05:29] [INFO] 
+[11:05:29] [INFO] Variant                                           Residual      Gamma  Gamma err
+[11:05:29] [INFO] ------------------------------------------------------------------------------
+[11:05:29] [INFO] Raw (no matching)                                  +0.591 dex      0.320  +/- 0.107
+[11:05:29] [INFO] Period-only matching (5 NN)                        +0.817 dex      0.395  +/- 0.087
+[11:05:29] [INFO] Period + log(tau_c) matching (5 NN)                +0.198 dex      0.090  +/- 0.019
+[11:05:29] [INFO] Period + B-proxy matching (5 NN)                   +0.233 dex      0.118  +/- 0.029
+[11:05:29] [INFO] Period + B-proxy matching (15 NN)                  +0.357 dex      0.184  +/- 0.039
+[11:05:29] [INFO] Period + B-proxy cluster-residualized (5 NN)       +0.203 dex      0.134  +/- 0.029
+[11:05:29] [INFO] 
+[11:05:29] [INFO] Attenuation relative to raw:
+[11:05:29] [INFO] Variant                                        Resid atten  Gamma atten
+[11:05:29] [INFO] ------------------------------------------------------------------------------
+[11:05:29] [INFO] Raw (no matching)                                 100.00%     100.00%
+[11:05:29] [INFO] Period-only matching (5 NN)                       138.40%     123.65%
+[11:05:29] [INFO] Period + log(tau_c) matching (5 NN)                33.53%      28.08%
+[11:05:29] [INFO] Period + B-proxy matching (5 NN)                   39.49%      36.83%
+[11:05:29] [INFO] Period + B-proxy matching (15 NN)                  60.45%      57.66%
+[11:05:29] [INFO] Period + B-proxy cluster-residualized (5 NN)       34.31%      42.01%
+[11:05:29] [INFO] 
+[11:05:29] [INFO] Saved JSON: /Users/matthewsmawfield/www/Temporal Equivalence Principle/TEP-COS/results/outputs/step_51_matching_leakage_audit.json
+[11:05:29] [INFO] Saved Markdown: /Users/matthewsmawfield/www/Temporal Equivalence Principle/TEP-COS/results/outputs/step_51_matching_leakage_audit.md
+[11:05:29] [INFO] 
+[11:05:29] [INFO] Done.

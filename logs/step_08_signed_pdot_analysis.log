@@ -1,0 +1,16 @@
+[11:04:28] [INFO] Step 08: Signed P-dot Latent-Mixture Analysis
+[11:04:28] [INFO] ============================================================
+[11:04:28] [INFO]   Loaded 198 GC MSPs, 202 field MSPs
+[11:04:28] [INFO]   After Pdot/P computation: 198 GC, 202 field
+[11:04:28] [INFO]   GC sign fractions: +0.551, -0.449
+[11:04:28] [INFO]   Field sign fractions: +0.980, -0.020
+[11:04:28] [INFO]   Fisher exact p = 9.49e-28
+[11:04:28] [INFO]   GC mixture: means = ['-17.237', '-16.581'], stds = ['0.798', '0.554']
+[11:04:28] [INFO]   Field mixture: means = ['-17.664', '-17.419'], stds = ['0.224', '0.813']
+[11:04:28] [INFO]   log|Pdot/P| base comparison: diff = 0.739 dex, t-p = 8.01e-26
+[11:04:29] [INFO]   Period-matched bootstrap: diff = 0.747 dex, p = 0.0000
+[11:04:31] [INFO]   B-proxy matched bootstrap: diff = 0.746 dex, p = 0.0000
+[11:04:31] [INFO]   Saved JSON: /Users/matthewsmawfield/www/Temporal Equivalence Principle/TEP-COS/results/outputs/step_08_signed_pdot_analysis.json
+[11:04:31] [INFO]   Saved CSV: /Users/matthewsmawfield/www/Temporal Equivalence Principle/TEP-COS/results/outputs/step_08_signed_pdot_analysis.csv
+[11:04:31] [INFO]   Saved MD: /Users/matthewsmawfield/www/Temporal Equivalence Principle/TEP-COS/results/outputs/step_08_signed_pdot_analysis.md
+[11:04:31] [INFO] Done.

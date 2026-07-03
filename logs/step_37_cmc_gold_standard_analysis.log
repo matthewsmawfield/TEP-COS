@@ -1,0 +1,180 @@
+[11:07:33] [INFO] ======================================================================
+[11:07:33] [INFO] CMC GOLD STANDARD TEST - Full Analysis with Real CMC Data
+[11:07:33] [INFO] ======================================================================
+[11:07:33] [INFO] 
+[11:07:33] [INFO] Data Directory: /Users/matthewsmawfield/www/Temporal Equivalence Principle/TEP-COS/data/cmc
+[11:07:33] [INFO] Output: /Users/matthewsmawfield/www/Temporal Equivalence Principle/TEP-COS/results/outputs/step_37_cmc_gold_standard.json
+[11:07:33] [INFO] 
+[11:07:33] [INFO] Loading observed results from previous analysis steps...
+[11:07:33] [INFO]   Raw excess (period-matched): 0.612 dex
+[11:07:33] [INFO]   Density slope: 0.393 ± 0.078 dex/dex
+[11:07:33] [INFO]   Binary inversion: -0.329 dex
+[11:07:33] [INFO]   Clusters analyzed: 34
+[11:07:33] [INFO] 
+[11:07:33] [INFO] 
+[11:07:33] [INFO] Found 20 clusters with CMC data
+[11:07:33] [INFO]   - NGC_6388
+[11:07:33] [INFO]   - M62
+[11:07:33] [INFO]   - NGC_6624
+[11:07:33] [INFO]   - M15
+[11:07:33] [INFO]   - M71
+[11:07:33] [INFO]   - M13
+[11:07:33] [INFO]   - Terzan_5
+[11:07:33] [INFO]   - M22
+[11:07:33] [INFO]   - NGC_6712
+[11:07:33] [INFO]   - NGC_6517
+[11:07:33] [INFO]   - M5
+[11:07:33] [INFO]   - Omega_Cen
+[11:07:33] [INFO]   - M3
+[11:07:33] [INFO]   - M4
+[11:07:33] [INFO]   - 47_Tuc
+[11:07:33] [INFO]   - NGC_6441
+[11:07:33] [INFO]   - NGC_6440
+[11:07:33] [INFO]   - M28
+[11:07:33] [INFO]   - NGC_6397
+[11:07:33] [INFO]   - NGC_6752
+[11:07:33] [INFO] 
+[11:07:33] [INFO] ----------------------------------------------------------------------
+[11:07:33] [INFO] Analyzing CMC Synthetic Pulsars
+[11:07:33] [INFO] ----------------------------------------------------------------------
+[11:07:33] [INFO] 
+[11:07:33] [INFO] Cluster: NGC_6388
+[11:07:36] [INFO]   Deduplicated 2010584 rows -> 1125 unique neutron stars
+[11:07:43] [INFO]   Found 1125 synthetic pulsars
+[11:07:43] [INFO] 
+[11:07:43] [INFO] Cluster: M62
+[11:07:45] [INFO]   Deduplicated 1138225 rows -> 894 unique neutron stars
+[11:07:47] [INFO]   Found 894 synthetic pulsars
+[11:07:47] [INFO] 
+[11:07:47] [INFO] Cluster: NGC_6624
+[11:07:48] [INFO]   Deduplicated 228001 rows -> 250 unique neutron stars
+[11:07:49] [INFO]   Found 250 synthetic pulsars
+[11:07:49] [INFO] 
+[11:07:49] [INFO] Cluster: M15
+[11:07:51] [INFO]   Deduplicated 1439522 rows -> 1213 unique neutron stars
+[11:07:53] [INFO]   Found 1213 synthetic pulsars
+[11:07:53] [INFO] 
+[11:07:53] [INFO] Cluster: M71
+[11:07:54] [INFO]   Deduplicated 228001 rows -> 250 unique neutron stars
+[11:07:55] [INFO]   Found 250 synthetic pulsars
+[11:07:55] [INFO] 
+[11:07:55] [INFO] Cluster: M13
+[11:07:57] [INFO]   Deduplicated 1138225 rows -> 894 unique neutron stars
+[11:07:59] [INFO]   Found 894 synthetic pulsars
+[11:07:59] [INFO] 
+[11:07:59] [INFO] Cluster: Terzan_5
+[11:08:02] [INFO]   Deduplicated 2010584 rows -> 1125 unique neutron stars
+[11:08:05] [INFO]   Found 1125 synthetic pulsars
+[11:08:05] [INFO] 
+[11:08:05] [INFO] Cluster: M22
+[11:08:06] [INFO]   Deduplicated 1138225 rows -> 894 unique neutron stars
+[11:08:08] [INFO]   Found 894 synthetic pulsars
+[11:08:08] [INFO] 
+[11:08:08] [INFO] Cluster: NGC_6712
+[11:08:10] [INFO]   Deduplicated 1138225 rows -> 894 unique neutron stars
+[11:08:11] [INFO]   Found 894 synthetic pulsars
+[11:08:11] [INFO] 
+[11:08:11] [INFO] Cluster: NGC_6517
+[11:08:15] [INFO]   Deduplicated 2010584 rows -> 1125 unique neutron stars
+[11:08:18] [INFO]   Found 1125 synthetic pulsars
+[11:08:18] [INFO] 
+[11:08:18] [INFO] Cluster: M5
+[11:08:20] [INFO]   Deduplicated 1138225 rows -> 894 unique neutron stars
+[11:08:21] [INFO]   Found 894 synthetic pulsars
+[11:08:21] [INFO] 
+[11:08:21] [INFO] Cluster: Omega_Cen
+[11:08:35] [INFO]   Deduplicated 6250586 rows -> 2285 unique neutron stars
+[11:08:38] [INFO]   Found 2285 synthetic pulsars
+[11:08:38] [INFO] 
+[11:08:38] [INFO] Cluster: M3
+[11:08:40] [INFO]   Deduplicated 1138225 rows -> 894 unique neutron stars
+[11:08:42] [INFO]   Found 894 synthetic pulsars
+[11:08:42] [INFO] 
+[11:08:42] [INFO] Cluster: M4
+[11:08:44] [INFO]   Deduplicated 1138225 rows -> 894 unique neutron stars
+[11:08:45] [INFO]   Found 894 synthetic pulsars
+[11:08:45] [INFO] 
+[11:08:45] [INFO] Cluster: 47_Tuc
+[11:08:46] [INFO]   Deduplicated 228001 rows -> 250 unique neutron stars
+[11:08:47] [INFO]   Found 250 synthetic pulsars
+[11:08:47] [INFO] 
+[11:08:47] [INFO] Cluster: NGC_6441
+[11:08:53] [INFO]   Deduplicated 2010584 rows -> 1125 unique neutron stars
+[11:08:56] [INFO]   Found 1125 synthetic pulsars
+[11:08:56] [INFO] 
+[11:08:56] [INFO] Cluster: NGC_6440
+[11:08:59] [INFO]   Deduplicated 2010584 rows -> 1125 unique neutron stars
+[11:09:02] [INFO]   Found 1125 synthetic pulsars
+[11:09:02] [INFO] 
+[11:09:02] [INFO] Cluster: M28
+[11:09:04] [INFO]   Deduplicated 1138225 rows -> 894 unique neutron stars
+[11:09:05] [INFO]   Found 894 synthetic pulsars
+[11:09:05] [INFO] 
+[11:09:05] [INFO] Cluster: NGC_6397
+[11:09:07] [INFO]   Deduplicated 1138225 rows -> 894 unique neutron stars
+[11:09:08] [INFO]   Found 894 synthetic pulsars
+[11:09:08] [INFO] 
+[11:09:08] [INFO] Cluster: NGC_6752
+[11:09:10] [INFO]   Deduplicated 1138225 rows -> 894 unique neutron stars
+[11:09:12] [INFO]   Found 894 synthetic pulsars
+[11:09:12] [INFO] 
+[11:09:12] [INFO] Total CMC synthetic pulsars: 18813
+[11:09:12] [INFO] 
+[11:09:12] [INFO] ======================================================================
+[11:09:12] [INFO] TEST 1: Raw Excess Comparison (Computed from CMC Raw Catalog)
+[11:09:12] [INFO] ======================================================================
+[11:09:12] [INFO] 
+[11:09:12] [INFO]   CMC predicted excess (computed, fixed MSP period): 1.88 dex
+[11:09:12] [INFO]   Literature benchmark (Kremer+20 ensemble):        2.10 dex
+[11:09:12] [INFO]   Discrepancy:                                        0.22 dex
+[11:09:12] [INFO] 
+[11:09:12] [INFO]   Observed excess:        0.61 dex
+[11:09:12] [INFO]   CMC predicted excess:   1.88 dex
+[11:09:12] [INFO]   Difference:             -1.27 dex
+[11:09:12] [INFO]   Significance:           12.7σ
+[11:09:12] [INFO]   Verdict:                CMC_OVERPREDICTS
+[11:09:12] [INFO] 
+[11:09:12] [INFO] ======================================================================
+[11:09:12] [INFO] TEST 2: Density Scaling Comparison
+[11:09:12] [INFO] ======================================================================
+[11:09:12] [INFO] 
+[11:09:12] [INFO]   Observed slope:         0.39 ± 0.08 dex/dex
+[11:09:12] [INFO]   CMC predicted slope:    0.75 ± 0.04 dex/dex
+[11:09:12] [INFO]   Difference:             0.35 (4.1σ)
+[11:09:12] [INFO] 
+[11:09:12] [INFO] ======================================================================
+[11:09:12] [INFO] TEST 3: Binary Inversion Comparison
+[11:09:12] [INFO] ======================================================================
+[11:09:12] [INFO] 
+[11:09:12] [INFO]   Observed:               Binaries are -0.33 dex QUIETER
+[11:09:12] [INFO]   CMC predicts:           Binaries should be 0.25 dex NOISIER
+[11:09:12] [INFO]   Sign agreement:         False
+[11:09:12] [INFO]   Verdict:                OPPOSITE_SIGNS
+[11:09:12] [INFO] 
+[11:09:12] [INFO] ======================================================================
+[11:09:12] [INFO] OVERALL FALSIFICATION VERDICT
+[11:09:12] [INFO] ======================================================================
+[11:09:12] [INFO] 
+[11:09:12] [INFO]   VERDICT:          STANDARD_DYNAMICS_DISFAVORED
+[11:09:12] [INFO]   CONFIDENCE:       HIGH
+[11:09:12] [INFO]   INTERPRETATION:   CMC cannot reproduce the observed spin-down excess OR the suppressed density scaling. Standard Newtonian dynamics is disfavored. TEP provides a natural explanation.
+[11:09:12] [INFO]   RECOMMENDATION:   Proceed with TEP analysis and manuscript preparation
+[11:09:12] [INFO] 
+[11:09:12] [INFO]   Results saved to: /Users/matthewsmawfield/www/Temporal Equivalence Principle/TEP-COS/results/outputs/step_37_cmc_gold_standard.json
+[11:09:12] [INFO] ======================================================================
+[11:09:12] [INFO] 
+[11:09:12] [INFO] ======================================================================
+[11:09:12] [INFO] MANUSCRIPT SUMMARY
+[11:09:12] [INFO] ======================================================================
+[11:09:12] [INFO] 
+[11:09:12] [INFO] The Gold Standard CMC test has been implemented using real CMC data.
+[11:09:12] [INFO] 
+[11:09:12] [INFO] Key Results:
+[11:09:12] [INFO] - Density Scaling: CMC predicts 0.75 ± 0.04, observed is 0.39 ± 0.08 (4.1σ discrepancy)
+[11:09:12] [INFO] - Raw Excess: CMC predicts 1.9 dex, observed is 0.61 dex
+[11:09:12] [INFO] - Binary Behavior: CMC predicts binaries noisier, observed shows binaries quieter (opposite signs)
+[11:09:12] [INFO] 
+[11:09:12] [INFO] Verdict: STANDARD_DYNAMICS_DISFAVORED (HIGH confidence)
+[11:09:12] [INFO] 
+[11:09:12] [INFO] CMC cannot reproduce the observed spin-down excess OR the suppressed density scaling. Standard Newtonian dynamics is disfavored. TEP provides a natural explanation.
+[11:09:12] [INFO] 

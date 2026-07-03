@@ -1,0 +1,12 @@
+{
+    "acc_slope": 0.7476777251184834,
+    "shk_slope": 0.5,
+    "observed_slope": 0.3929054987420065,
+    "newtonian_slope": 0.7476777251184834,
+    "base_shk_fraction": 0.15,
+    "required_amplification_factor": 20.0,
+    "amplification_exceeds_range": true,
+    "required_distance_error_factor": 20.0,
+    "required_pm_error_factor": 4.47213595499958,
+    "conclusion": "Physically excluded. Required amplification exceeds 20x. Even at K=20x the net slope is 0.57, still far from observed 0.39. Shklovskii cannot explain the suppressed scaling."
+}

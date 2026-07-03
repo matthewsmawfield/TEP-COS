@@ -1,0 +1,52 @@
+[11:04:57] [INFO] ================================================================================
+[11:04:57] [INFO] TEP BINARY SCREENING: TEMPORAL TOPOLOGY COMPETITION MODEL
+[11:04:57] [INFO] ================================================================================
+[11:04:57] [INFO] 
+[11:04:57] [INFO] 1. PULSAR TEMPORAL TOPOLOGY
+[11:04:57] [INFO] --------------------------
+[11:04:57] [INFO] Pulsar Mass: 1.4 M_sun
+[11:04:57] [INFO] Temporal Topology Saturation Density (TEP): 20.0 g/cm³
+[11:04:57] [INFO] Saturation Radius (R_T): 321525.0 km
+[11:04:57] [INFO] 
+[11:04:57] [INFO] 2. TYPICAL MSP BINARY
+[11:04:57] [INFO] ---------------------
+[11:04:57] [INFO] Companion Mass: 0.2 M_sun
+[11:04:57] [INFO] Orbital Period: 1.0 days
+[11:04:57] [INFO] Orbital Separation (a): 3424545.2 km
+[11:04:57] [INFO] Ratio (a / R_T): 10.7
+[11:04:57] [INFO] Companion Saturation Radius: 168079.7 km
+[11:04:57] [INFO] Saturation regions are distinct, with interacting topology transitions
+[11:04:57] [INFO] 
+[11:04:57] [INFO] 3. TEMPORAL TOPOLOGY COMPETITION EFFECT
+[11:04:57] [INFO] -----------------------------
+[11:04:57] [INFO] Observed total cluster enhancement: +0.58 dex
+[11:04:57] [INFO] Observed binary suppression:        -0.32 dex
+[11:04:57] [INFO] Required shielding fraction:        0.55 (55%)
+[11:04:57] [INFO] 
+[11:04:57] [INFO] Model Prediction:
+[11:04:57] [INFO] Predicted shielding fraction:       0.47
+[11:04:57] [INFO] 
+[11:04:57] [INFO] 4. POPULATION SWEEP
+[11:04:57] [INFO] -------------------
+[11:04:57] [INFO] Pb (d)   | Mc (M_sun) | Sep (km)     | Shielding %
+[11:04:57] [INFO] ------------------------------------------------
+[11:04:57] [INFO] 0.1      | 0.05       | 7.1e+05      |     51.9%
+[11:04:57] [INFO] 0.5      | 0.05       | 2.1e+06      |     27.0%
+[11:04:57] [INFO] 1.0      | 0.05       | 3.3e+06      |     18.9%
+[11:04:57] [INFO] 5.0      | 0.05       | 9.7e+06      |      7.4%
+[11:04:57] [INFO] 10.0     | 0.05       | 1.5e+07      |      4.8%
+[11:04:57] [INFO] 100.0    | 0.05       | 7.1e+07      |      1.1%
+[11:04:57] [INFO] 0.1      | 0.20       | 7.4e+05      |     80.7%
+[11:04:57] [INFO] 0.5      | 0.20       | 2.2e+06      |     58.9%
+[11:04:57] [INFO] 1.0      | 0.20       | 3.4e+06      |     47.4%
+[11:04:57] [INFO] 5.0      | 0.20       | 1.0e+07      |     23.6%
+[11:04:57] [INFO] 10.0     | 0.20       | 1.6e+07      |     16.3%
+[11:04:57] [INFO] 100.0    | 0.20       | 7.4e+07      |      4.0%
+[11:04:57] [INFO] 0.1      | 0.50       | 7.8e+05      |     90.8%
+[11:04:57] [INFO] 0.5      | 0.50       | 2.3e+06      |     77.2%
+[11:04:57] [INFO] 1.0      | 0.50       | 3.6e+06      |     68.0%
+[11:04:57] [INFO] 5.0      | 0.50       | 1.1e+07      |     42.1%
+[11:04:57] [INFO] 10.0     | 0.50       | 1.7e+07      |     31.4%
+[11:04:57] [INFO] 100.0    | 0.50       | 7.8e+07      |      9.0%
+[11:04:57] [INFO] 
+[11:04:57] [INFO] Results saved to /Users/matthewsmawfield/www/Temporal Equivalence Principle/TEP-COS/results/outputs/step_16_screening_boundary_model.json

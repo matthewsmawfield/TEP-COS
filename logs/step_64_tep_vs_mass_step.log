@@ -1,0 +1,66 @@
+[11:13:07] [INFO] STEP 7.1: TEP vs. Mass Step Discrimination
+[11:13:07] [INFO] ======================================================================
+[11:13:07] [INFO] 
+[11:13:07] [INFO] ======================================================================
+[11:13:07] [INFO] TEP vs. MASS STEP DISCRIMINATION ANALYSIS
+[11:13:07] [INFO] ======================================================================
+[11:13:07] [INFO] 
+[11:13:07] [INFO] [TEST 1] Partial Correlation Analysis
+[11:13:07] [INFO] --------------------------------------------------
+[11:13:07] [INFO] Raw correlation r(mB, σ):        0.218
+[11:13:07] [INFO] Partial correlation r(mB, σ|M):    -0.047 (p=0.494)
+[11:13:07] [INFO] Correlation r(mB, M):              0.564
+[11:13:07] [INFO] Correlation r(σ, M):               0.447
+[11:13:07] [INFO] 
+[11:13:07] [INFO] Discrimination verdict: MASS_STEP_DOMINATED
+[11:13:07] [INFO] Interpretation: Correlation fully explained by host mass; no residual TEP signal
+[11:13:07] [INFO] 
+[11:13:07] [INFO] [TEST 2] σ-Mass Collinearity Assessment
+[11:13:07] [INFO] --------------------------------------------------
+[11:13:07] [INFO] Correlation r(σ, M):               0.447
+[11:13:07] [INFO] Variance Inflation Factor (VIF):   1.25
+[11:13:07] [INFO] Collinearity level: LOW
+[11:13:07] [INFO] Note: σ and mass are separable; good discrimination potential
+[11:13:07] [INFO] 
+[11:13:07] [INFO] [TEST 3] Functional Form Discrimination
+[11:13:07] [INFO] --------------------------------------------------
+[11:13:07] [INFO] Unscreened regime (σ < 165) r:     0.222
+[11:13:07] [INFO] Screened regime (σ ≥ 165) r:       -0.128
+[11:13:07] [INFO] Correlation difference:            0.350
+[11:13:07] [INFO] Step-function verdict: TEP_CONSISTENT
+[11:13:07] [INFO] Note: Correlation present in unscreened, absent in screened - TEP signature
+[11:13:07] [INFO] 
+[11:13:07] [INFO] [TEST 4] x1 (Stretch) Observable Comparison
+[11:13:07] [INFO] --------------------------------------------------
+[11:13:07] [INFO] x1 vs σ correlation:               r = -0.265 (p = 0.0001)
+[11:13:07] [INFO] Observable verdict: MASS_STEP_CONSISTENT
+[11:13:07] [INFO] Note: Both observables correlate - suggests common driver (mass/metallicity)
+[11:13:07] [INFO] 
+[11:13:07] [INFO] ======================================================================
+[11:13:07] [INFO] OVERALL DISCRIMINATION ASSESSMENT
+[11:13:07] [INFO] ======================================================================
+[11:13:07] [INFO] 
+[11:13:07] [INFO] Evidence tally:
+[11:13:07] [INFO]   TEP hypothesis:         1 points
+[11:13:07] [INFO]   Mass step hypothesis:   3 points
+[11:13:07] [INFO] 
+[11:13:07] [INFO] Overall verdict: MASS_STEP_DOMINATED
+[11:13:07] [INFO] Assessment: SN Ia mB-σ correlation is primarily the standard mass step effect
+[11:13:07] [INFO] TEP contribution: None detected above mass step baseline
+[11:13:07] [INFO] 
+[11:13:07] [INFO] ======================================================================
+[11:13:07] [INFO] RECOMMENDATIONS
+[11:13:07] [INFO] ======================================================================
+[11:13:07] [INFO] 
+[11:13:07] [INFO] 1. SN Ia channel cannot distinguish TEP from mass step. Consider this exploratory only; do not present as primary evidence.
+[11:13:07] [INFO] 
+[11:13:07] [INFO] 2. Future work: Use independent mass estimates (e.g., SED fitting) to break σ-M degeneracy.
+[11:13:07] [INFO] 
+[11:13:07] [INFO] 
+[11:13:07] [INFO] Results saved to:
+[11:13:07] [INFO]   JSON: results/outputs/step_64_tep_vs_mass_step.json
+[11:13:07] [INFO]   Markdown: results/outputs/step_64_tep_vs_mass_step.md
+[11:13:07] [INFO] 
+[11:13:07] [INFO] ======================================================================
+[11:13:07] [INFO] Analysis complete.
+[11:13:07] [INFO] ======================================================================

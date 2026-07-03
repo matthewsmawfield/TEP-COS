@@ -64,17 +64,6 @@ class HTMLToMarkdownConverter {
         // Convert emphasis/italic
         html = html.replace(/<(em|i)[^>]*>(.*?)<\/(em|i)>/gi, '*$2*');
 
-        // Convert superscripts and subscripts to unicode
-        html = html.replace(/<sup[^>]*>(.*?)<\/sup>/gi, (match, content) => {
-            const superMap = {'0':'⁰','1':'¹','2':'²','3':'³','4':'⁴','5':'⁵','6':'⁶','7':'⁷','8':'⁸','9':'⁹','-':'⁻','+':'⁺','−':'⁻'};
-            return content.split('').map(c => superMap[c] || c).join('');
-        });
-        
-        html = html.replace(/<sub[^>]*>(.*?)<\/sub>/gi, (match, content) => {
-            const subMap = {'0':'₀','1':'₁','2':'₂','3':'₃','4':'₄','5':'₅','6':'₆','7':'₇','8':'₈','9':'₉','-':'₋','+':'₊'};
-            return content.split('').map(c => subMap[c] || c).join('');
-        });
-        
         // Convert links
         html = html.replace(/<a[^>]*href=["']([^"']*)["'][^>]*>(.*?)<\/a>/gi, '[$2]($1)');
         
@@ -122,12 +111,33 @@ class HTMLToMarkdownConverter {
         
         html = html.replace(/<(?!\/?[a-zA-Z!])/g, '&lt;');
 
+        console.log("DEBUG: before sub preserve, html has sub:", html.includes("<sub>A</sub>"));
+        // Preserve sub/sup tags before generic stripping
+        const subTags = [];
+        html = html.replace(/<sub>(.*?)<\/sub>/gi, (match, inner) => {
+            subTags.push(inner);
+            return `__SUB_${subTags.length - 1}__`;
+        });
+        const supTags = [];
+        html = html.replace(/<sup>(.*?)<\/sup>/gi, (match, inner) => {
+            supTags.push(inner);
+            return `__SUP_${supTags.length - 1}__`;
+        });
+
         // Remove remaining HTML tags
         html = html.replace(/<[^>]+>/g, '');
         
         // Restore MathJax expressions
         mathExpressions.forEach((expr, index) => {
             html = html.replace(`__MATH_EXPRESSION_${index}__`, expr);
+        });
+        
+        // Restore sub/sup tags
+        subTags.forEach((inner, index) => {
+            html = html.replace(`__SUB_${index}__`, `<sub>${inner}</sub>`);
+        });
+        supTags.forEach((inner, index) => {
+            html = html.replace(`__SUP_${index}__`, `<sup>${inner}</sup>`);
         });
         
         // Decode HTML entities
@@ -191,8 +201,12 @@ class HTMLToMarkdownConverter {
                         return p1.split('').map(c => subMap[c] || c).join('');
                     });
                     // Strip HTML tags (only match valid tags, not bare < symbols)
-                    text = text.replace(/<\/?[a-zA-Z][^>]*>/g, '');
-                    // Decode HTML entities AFTER stripping tags
+                    text = text.replace(/<sub[^>]*>([\s\S]*?)<\/sub>/gi, '<sub>$1</sub>');
+                    text = text.replace(/<sup[^>]*>([\s\S]*?)<\/sup>/gi, '<sup>$1</sup>');
+                    text = text.replace(/<\/?[a-zA-Z][^>]*>/g, function(m) {
+                        const tag = m.replace(/[<\/>]/g, '').split(/\s/)[0].toLowerCase();
+                        return (tag === 'sub' || tag === 'sup') ? m : '';
+                    });
                     text = text.replace(/&lt;/g, '<');
                     text = text.replace(/&gt;/g, '>');
                     text = text.replace(/&amp;/g, '&');

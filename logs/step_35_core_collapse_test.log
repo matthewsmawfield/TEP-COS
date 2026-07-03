@@ -1,0 +1,43 @@
+[11:09:33] [INFO] ======================================================================
+[11:09:33] [INFO] STEP 5.47: CORE COLLAPSE CLUSTER TEST
+[11:09:33] [INFO] ======================================================================
+[11:09:33] [INFO] 
+[11:09:33] [INFO] Purpose: Test if post-core-collapse status affects density scaling
+[11:09:33] [INFO] N-body prediction: PCC clusters show different dynamics
+[11:09:33] [INFO] TEP prediction: Suppression independent of core collapse status
+[11:09:33] [INFO] 
+[11:09:33] [INFO] Classified 6 PCC clusters, 11 non-PCC clusters
+[11:09:33] [INFO] 
+[11:09:33] [INFO] PCC clusters (n=6):
+[11:09:33] [INFO]   Slope: 0.008 ± 0.155
+[11:09:33] [INFO]   Correlation: r = 0.026, p = 0.9613
+[11:09:33] [INFO] 
+[11:09:33] [INFO] non-PCC clusters (n=11):
+[11:09:33] [INFO]   Slope: 0.069 ± 0.027
+[11:09:33] [INFO]   Correlation: r = 0.656, p = 0.0284
+[11:09:33] [INFO] 
+[11:09:33] [INFO] Slope comparison:
+[11:09:33] [INFO]   PCC slope: 0.008
+[11:09:33] [INFO]   non-PCC slope: 0.069
+[11:09:33] [INFO]   Difference: -0.061 ± 0.158
+[11:09:33] [INFO]   Significance: 0.39σ (p = 0.6973)
+[11:09:33] [INFO] 
+[11:09:33] [INFO] ======================================================================
+[11:09:33] [INFO] RESIDUAL ANALYSIS
+[11:09:33] [INFO] ======================================================================
+[11:09:33] [INFO] PCC clusters: n=6, mean residual=0.3850
+[11:09:33] [INFO] non-PCC clusters: n=11, mean residual=0.0683
+[11:09:33] [INFO] Difference: 0.3168
+[11:09:33] [INFO] t-test p-value: 0.0030
+[11:09:33] [INFO] 
+[11:09:33] [INFO] ======================================================================
+[11:09:33] [INFO] INTERPRETATION
+[11:09:33] [INFO] ======================================================================
+[11:09:33] [INFO]   - PCC and non-PCC clusters show CONSISTENT density scaling slopes
+[11:09:33] [INFO]   - No evidence that core collapse status modifies the TEP signal
+[11:09:33] [INFO]   - Residual difference detected (p=0.0030)
+[11:09:33] [INFO] 
+[11:09:33] [INFO] ======================================================================
+[11:09:33] [INFO] Results saved to: /Users/matthewsmawfield/www/Temporal Equivalence Principle/TEP-COS/results/outputs/step_35_core_collapse.json
+[11:09:33] [INFO] Report saved to: /Users/matthewsmawfield/www/Temporal Equivalence Principle/TEP-COS/results/outputs/step_35_core_collapse.md
+[11:09:33] [INFO] ======================================================================

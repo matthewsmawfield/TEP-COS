@@ -1,0 +1,49 @@
+[11:12:55] [INFO] ======================================================================
+[11:12:55] [INFO] PTA MOCK OBSERVATION PIPELINE
+[11:12:55] [INFO] Defense Against Observational Filtering Criticism
+[11:12:55] [INFO] ======================================================================
+[11:12:55] [INFO] 
+[11:12:55] [INFO] [1/4] Loading synthetic pulsar population...
+[11:12:55] [INFO]   Generating literature-benchmark synthetic population with +2.10 dex excess...
+[11:12:55] [INFO]   Total synthetic pulsars: 10000
+[11:12:55] [INFO]   Mean log|Pdot|: -17.32 (literature benchmark predicts ~-17.4)
+[11:12:55] [INFO]   Std log|Pdot|: 0.40
+[11:12:55] [INFO] 
+[11:12:55] [INFO] [2/4] Running mock observations for all surveys...
+[11:12:55] [INFO] 
+[11:12:55] [INFO] Running GBT 350 MHz Drift-Scan...
+[11:12:55] [INFO]   Detection rate: 100.0%
+[11:12:55] [INFO]   High-accel (>10^-6 m/s^2) detection rate: 100.0%
+[11:12:55] [INFO]   Mean S/N: 499.1
+[11:12:55] [INFO] 
+[11:12:55] [INFO] Running Parkes Multibeam Survey...
+[11:12:55] [INFO]   Detection rate: 100.0%
+[11:12:55] [INFO]   High-accel (>10^-6 m/s^2) detection rate: 100.0%
+[11:12:55] [INFO]   Mean S/N: 483.1
+[11:12:55] [INFO] 
+[11:12:55] [INFO] Running FAST GC Survey...
+[11:12:55] [INFO]   Detection rate: 100.0%
+[11:12:55] [INFO]   High-accel (>10^-6 m/s^2) detection rate: 100.0%
+[11:12:55] [INFO]   Mean S/N: 5141.8
+[11:12:55] [INFO] 
+[11:12:55] [INFO] Running MeerKAT TRAPUM GC Survey...
+[11:12:55] [INFO]   Detection rate: 100.0%
+[11:12:55] [INFO]   High-accel (>10^-6 m/s^2) detection rate: 100.0%
+[11:12:55] [INFO]   Mean S/N: 2434.3
+[11:12:55] [INFO] 
+[11:12:55] [INFO] [3/4] Generating falsification verdict...
+[11:12:55] [INFO] 
+[11:12:55] [INFO]   Mean high-accel detection rate: 100.0%
+[11:12:55] [INFO]   Expected detections with excess: ~800
+[11:12:55] [INFO] 
+[11:12:55] [INFO]   VERDICT: OBSERVATIONAL FILTERING DEFENSE CONFIRMED: 100.0% of literature-benchmark high-acceleration pulsars ...
+[11:12:55] [INFO] 
+[11:12:55] [INFO] [4/4] Saving results...
+[11:12:55] [INFO] 
+[11:12:55] [INFO]   Results saved to:
+[11:12:55] [INFO]     JSON: /Users/matthewsmawfield/www/Temporal Equivalence Principle/TEP-COS/results/outputs/step_49_pta_mock_observation.json
+[11:12:55] [INFO]     Markdown: /Users/matthewsmawfield/www/Temporal Equivalence Principle/TEP-COS/results/outputs/step_49_pta_mock_observation.md
+[11:12:55] [INFO] 
+[11:12:55] [INFO] ======================================================================
+[11:12:55] [INFO] PIPELINE COMPLETE
+[11:12:55] [INFO] ======================================================================

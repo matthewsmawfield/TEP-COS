@@ -7,7 +7,7 @@
 
 **Author:** Matthew Lukin Smawfield  
 **Version:** v0.7 (Caracas)  
-**Date:** First published: 9 January 2026 | Updated: 4 June 2026  
+**Date:** First published (main citation date): 9 January 2026 | Updated: 3 July 2026
 **Status:** Preprint  
 **DOI:** [10.5281/zenodo.18165798](https://doi.org/10.5281/zenodo.18165798)  
 **Website:** [https://mlsmawfield.com/tep/cos/](https://mlsmawfield.com/tep/cos/)  

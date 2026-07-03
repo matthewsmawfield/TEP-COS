@@ -40,7 +40,7 @@ from pathlib import Path
 PROJECT_ROOT = Path(__file__).resolve().parents[1]
 sys.path.append(str(PROJECT_ROOT))
 
-from scripts.utils.data_acquisition import check_data_health, ensure_data
+from scripts.steps.step_00_data_acquisition import check_data_health, ensure_data
 from scripts.utils.logger import TEPLogger, print_status, print_table, set_step_logger
 
 steps_dir = PROJECT_ROOT / "scripts" / "steps"
@@ -195,109 +195,178 @@ def run_pipeline():
     # Define all steps
     steps_data = [
         (
-            "step_5_10_pulsar_population_controls.py",
+            "step_05_freire_gcpsr_radial_analysis.py",
+            "Data Ingestion: Freire GC Pulsar Radial Analysis",
+        ),
+        (
+            "step_02_pulsar_population_controls.py",
             "Data Ingestion: Population Controls",
+        ),
+        (
+            "step_03_field_control_purity_audit.py",
+            "Data Ingestion: Field Control Purity Audit",
         ),
     ]
 
     steps_core_pulsar = [
-        ("step_5_27_hybrid_maximum_analysis.py", "Core: Hybrid Maximum Analysis"),
+        ("step_06_hybrid_maximum_analysis.py", "Core: Hybrid Maximum Analysis"),
         (
-            "step_5_31_per_cluster_controlled_residuals.py",
+            "step_07_per_cluster_controlled_residuals.py",
             "Core: Per-Cluster Controlled Residuals",
         ),
-        ("step_5_32_full_density_scaling.py", "Core: Full Density Scaling Simulation"),
+        ("step_04_pm_corrected_controls.py", "Core: PM-Corrected Field Controls"),
+        ("step_11_full_density_scaling.py", "Core: Full Density Scaling Simulation"),
         (
-            "step_5_33_hierarchical_density_scaling.py",
+            "step_12_hierarchical_density_scaling.py",
             "Core: Hierarchical Mixed-Effects Density Scaling",
         ),
         (
-            "step_5_35_covariance_validation.py",
+            "step_13_covariance_validation.py",
             "Core: Covariance-Aware Statistical Validation",
+        ),
+        (
+            "step_08_signed_pdot_analysis.py",
+            "Core: Signed P-dot Analysis",
+        ),
+        (
+            "step_09_pdot_over_p_analysis.py",
+            "Core: Pdot/P Parallel Analysis",
+        ),
+        (
+            "step_10_signed_pdot_cmc_comparison.py",
+            "Core: Signed Pdot CMC Comparison",
         ),
     ]
 
     steps_binary = [
         (
-            "step_5_11_binary_pulsar_analysis.py",
+            "step_15_binary_pulsar_analysis.py",
             "Binary: GC Binary vs Isolated Analysis",
         ),
         (
-            "step_5_11b_binary_screening_model.py",
+            "step_16_binary_screening_model.py",
             "Binary: Temporal Topology Competition Model",
         ),
-        ("step_5_12_field_binary_analysis.py", "Binary: Field Binary Control"),
+        ("step_17_curvature_verification.py", "Binary: Curvature Verification"),
+        ("step_18_binary_model_validation.py", "Binary: Model Validation"),
+        ("step_20_field_binary_analysis.py", "Binary: Field Binary Control"),
         (
-            "step_5_36_integrated_binary_control.py",
+            "step_21_integrated_binary_control.py",
             "Binary: Integrated Binary Control Test",
+        ),
+    ]
+
+    steps_literature = [
+        (
+            "step_14_cmc_literature_comparison.py",
+            "Literature: CMC Literature Consensus",
         ),
     ]
 
     steps_validation = [
         (
-            "step_5_33b_outlier_exclusion_sensitivity.py",
+            "step_22_outlier_exclusion_sensitivity.py",
             "Validation: Outlier Exclusion Sensitivity",
         ),
-        ("step_5_34_shklovskii_sensitivity.py", "Validation: Shklovskii Sensitivity"),
-        ("step_5_37_rho_sensitivity.py", "Validation: Rho_intra Sensitivity Analysis"),
-        ("step_5_38_power_analysis.py", "Validation: Power Analysis"),
-        ("step_5_39_monte_carlo_validation.py", "Validation: Monte Carlo Validation"),
+        ("step_23_shklovskii_sensitivity.py", "Validation: Shklovskii Sensitivity"),
+        ("step_25_rho_sensitivity.py", "Validation: Rho_intra Sensitivity Analysis"),
+        ("step_26_power_analysis.py", "Validation: Power Analysis"),
+        ("step_27_monte_carlo_validation.py", "Validation: Monte Carlo Validation"),
         (
-            "step_5_43_sensitivity_cmc_report.py",
+            "step_28_sensitivity_cmc_report.py",
             "Validation: Sensitivity & CMC Comparison Report",
         ),
+        (
+            "step_24_equal_cluster_weighting.py",
+            "Validation: Equal Cluster Weighting",
+        ),
+        ("step_50_injection_recovery.py", "Validation: Injection-Recovery Test"),
+        ("step_51_matching_leakage_audit.py", "Validation: Matching Leakage Audit"),
+        ("step_52_signed_observable_battery.py", "Validation: Signed Observable Battery"),
+        ("step_54_environment_axis_scan.py", "Validation: Environment Axis Scan"),
+        ("step_55_cluster_bootstrap.py", "Validation: Cluster Bootstrap"),
     ]
 
     steps_nbody_pushback = [
-        ("download_cmc_data.py --cluster M15", "N-Body: Download CMC Data (M15)"),
-        ("step_5_50_cmc_gold_standard_analysis.py", "N-Body: CMC Gold Standard Test"),
+        ("step_32_download_cmc_data.py --all", "N-Body: Download CMC Data (All Clusters)"),
+        ("step_37_cmc_gold_standard_analysis.py", "N-Body: CMC Gold Standard Test"),
         (
-            "step_5_41_pulsar_dynamical_calibration.py",
+            "step_29_pulsar_dynamical_calibration.py",
             "N-Body Pushback: Dynamical Calibration",
         ),
-        ("step_5_41b_sensitivity_analysis.py", "N-Body Pushback: Sensitivity Analysis"),
-        ("step_5_42_cmc_real_comparison.py", "N-Body Pushback: CMC Real Comparison"),
+        ("step_30_sensitivity_analysis.py", "N-Body Pushback: Sensitivity Analysis"),
+        ("step_31_cmc_real_comparison.py", "N-Body Pushback: CMC Real Comparison"),
         (
-            "step_5_44_theoretical_uncertainty.py",
+            "step_33_theoretical_uncertainty.py",
             "N-Body Pushback: Theoretical Uncertainty",
         ),
-        ("step_5_45_bayesian_posterior.py", "N-Body Pushback: Bayesian Posterior"),
-        # NOTE: step_5_46 removed - insufficient MSPs with radial positions for meaningful analysis
-        ("step_5_47_core_collapse_test.py", "N-Body Pushback: Core Collapse Test"),
+        ("step_34_bayesian_posterior.py", "N-Body Pushback: Bayesian Posterior"),
+        # NOTE: step_56 removed - insufficient MSPs with radial positions for meaningful analysis
+        ("step_35_core_collapse_test.py", "N-Body Pushback: Core Collapse Test"),
         (
-            "step_5_48_cmc_literature_comparison.py",
-            "N-Body Pushback: CMC Literature Comparison",
-        ),
-        (
-            "step_5_49_systematic_ceiling.py",
+            "step_36_systematic_ceiling.py",
             "N-Body Pushback: Systematic Ceiling Analysis",
         ),
         (
-            "step_5_51_exotic_physics_quantification.py",
+            "step_41_exotic_physics_quantification.py",
             "N-Body Pushback: Exotic Physics Quantification",
         ),
         (
-            "step_5_52_gamma_parameter_free_derivation.py",
+            "step_42_gamma_parameter_free_derivation.py",
             "Theory: Parameter-Free Γ Derivation",
+        ),
+        (
+            "step_43_exact_gamma_derivation_proof.py",
+            "Theory: Exact Gamma Derivation Proof",
+        ),
+        (
+            "step_44_kappa_msp_prior.py",
+            "Theory: κ_MSP Cross-Domain Prior Export",
+        ),
+        (
+            "step_38_cmc_binary_forensic_audit.py",
+            "N-Body Pushback: CMC Binary Forensic Audit",
+        ),
+        (
+            "step_39_cmc_period_sensitivity.py",
+            "N-Body Pushback: CMC Period Sensitivity",
+        ),
+        (
+            "step_40_cmc_uncertainty_stack.py",
+            "N-Body Pushback: CMC Uncertainty Stack",
+        ),
+        (
+            "step_49_pta_mock_observation.py",
+            "N-Body Pushback: PTA Mock Observation",
+        ),
+        (
+            "step_19_derived_shielding_validation.py",
+            "N-Body Pushback: Derived Shielding Validation",
         ),
     ]
 
     steps_figures = [
-        ("step_5_32_density_scaling_figure.py", "Figure: Density Scaling"),
-        ("step_5_13_cluster_acceleration_figure.py", "Figure: Cluster Acceleration"),
-        ("step_5_40_tep_summary_figure.py", "Figure: TEP Summary"),
+        ("step_45_binary_spatial_figure.py", "Figure: Binary Spatial Distribution"),
+        ("step_47_density_scaling_figure.py", "Figure: Density Scaling"),
+        ("step_46_cluster_acceleration_figure.py", "Figure: Cluster Acceleration"),
+        ("step_48_tep_summary_figure.py", "Figure: TEP Summary"),
     ]
 
     steps_appendix = [
-        ("step_7_0_sn_ia_stretch_test.py --fast", "Appendix: SN Ia σ-mB Correlation"),
-        ("step_7_1_sn_ia_robustness.py", "Appendix: SN Ia Robustness Validation"),
-        ("step_7_2_sn_ia_audit.py", "Appendix: SN Ia Deep Audit"),
+        ("step_62_sn_ia_stretch_test.py --fast", "Appendix: SN Ia σ-mB Correlation"),
+        ("step_63_sn_ia_robustness.py", "Appendix: SN Ia Robustness Validation"),
+        ("step_64_tep_vs_mass_step.py", "Appendix: TEP vs Mass Step Discrimination"),
+        ("step_65_sn_ia_audit.py", "Appendix: SN Ia Deep Audit"),
+        ("step_59_manga_spatially_resolved.py", "Appendix: MaNGA Age Gradients (Archived)"),
+        ("step_60_manga_test_e_age_discrepancy.py", "Appendix: MaNGA LW vs MW Age Discrepancy (Archived)"),
+        ("step_61_sdss_test_cc_manganese_clock.py", "Appendix: SDSS Mn Clock Test"),
     ]
 
     # Build execution list based on arguments
     all_steps = steps_data.copy()
     all_steps.extend(steps_core_pulsar)
     all_steps.extend(steps_binary)
+    all_steps.extend(steps_literature)
 
     if not args.skip_validation:
         all_steps.extend(steps_validation)

@@ -1,0 +1,72 @@
+[11:04:57] [INFO] ================================================================================
+[11:04:57] [INFO] BINARY MODEL VALIDATION: PERIOD/MASS PREDICTIONS
+[11:04:57] [INFO] ================================================================================
+[11:04:57] [INFO] 
+[11:04:57] [INFO] 1. SAMPLE STATISTICS
+[11:04:57] [INFO] ----------------------------------------
+[11:04:57] [INFO] Total binary MSPs: 107
+[11:04:57] [INFO] Orbital period range: 0.037 - 378.2 days
+[11:04:57] [INFO] Median period: 1.09 days
+[11:04:57] [INFO] Companion mass range: 0.003 - 1.89 M_sun
+[11:04:57] [INFO] Median companion mass: 0.170 M_sun
+[11:04:57] [INFO] 
+[11:04:57] [INFO] 2. PREDICTED SHIELDING
+[11:04:57] [INFO] ----------------------------------------
+[11:04:57] [INFO] Shielding range: 0.03 - 0.85
+[11:04:57] [INFO] Median shielding: 0.39
+[11:04:58] [INFO] 
+[11:04:58] [INFO] 3. CORRELATION TESTS
+[11:04:58] [INFO] ----------------------------------------
+[11:04:58] [INFO] Period vs log Ṗ:
+[11:04:58] [INFO]   r = -0.0189, p = 0.8468
+[11:04:58] [INFO]   Prediction: positive (longer Pb → less shielding → higher log Ṗ)
+[11:04:58] [INFO]   Observed: OPPOSITE
+[11:04:58] [INFO] 
+[11:04:58] [INFO] Companion mass vs log Ṗ:
+[11:04:58] [INFO]   r = 0.2209, p = 0.0222
+[11:04:58] [INFO]   Prediction: negative (higher m2 → more shielding → lower log Ṗ)
+[11:04:58] [INFO]   Observed: OPPOSITE
+[11:04:58] [INFO] 
+[11:04:58] [INFO] Predicted shielding vs log Ṗ:
+[11:04:58] [INFO]   r = 0.2074, p = 0.0321
+[11:04:58] [INFO]   Prediction: negative (more shielding → lower log Ṗ)
+[11:04:58] [INFO]   Observed: OPPOSITE
+[11:04:58] [INFO] 
+[11:04:58] [INFO] 4. PARTIAL CORRELATIONS
+[11:04:58] [INFO] ----------------------------------------
+[11:04:58] [INFO] Shielding vs log Ṗ (controlling for period):
+[11:04:58] [INFO]   r = 0.2145, p = 0.0265
+[11:04:58] [INFO] 
+[11:04:58] [INFO] 5. BINNED ANALYSIS BY PERIOD
+[11:04:58] [INFO] ----------------------------------------
+[11:04:58] [INFO] Period range    | N     | Mean log Ṗ   | Mean shield
+[11:04:58] [INFO] --------------------------------------------------
+[11:04:58] [INFO] 0.0-0.5 d     | 42    | -19.230      | 0.46
+[11:04:58] [INFO] 0.5-2.0 d     | 29    | -19.243      | 0.50
+[11:04:58] [INFO] 2.0-10.0 d     | 23    | -19.336      | 0.32
+[11:04:58] [INFO] 10.0-400.0 d     | 13    | -19.136      | 0.15
+[11:04:58] [INFO] 
+[11:04:58] [INFO] 6. BINNED ANALYSIS BY COMPANION MASS
+[11:04:58] [INFO] ----------------------------------------
+[11:04:58] [INFO] Mass range      | N     | Mean log Ṗ   | Mean shield
+[11:04:58] [INFO] --------------------------------------------------
+[11:04:58] [INFO] 0.00-0.05 M☉   | 30    | -19.380      | 0.36
+[11:04:58] [INFO] 0.05-0.30 M☉   | 55    | -19.326      | 0.41
+[11:04:58] [INFO] 0.30-0.60 M☉   | 17    | -18.854      | 0.40
+[11:04:58] [INFO] 0.60-2.00 M☉   | 5     | -18.874      | 0.52
+[11:04:58] [INFO] 
+[11:04:58] [INFO] ================================================================================
+[11:04:58] [INFO] VALIDATION SUMMARY
+[11:04:58] [INFO] ================================================================================
+[11:04:58] [INFO] MODEL ISSUES DETECTED:
+[11:04:58] [INFO]   - Period correlation opposite to prediction
+[11:04:58] [INFO]   - Companion mass correlation opposite to prediction
+[11:04:58] [INFO]   - Shielding correlation opposite to prediction
+[11:04:58] [INFO] 
+[11:04:58] [INFO] Possible explanations:
+[11:04:58] [INFO]   1. Confounding by cluster environment (position within cluster)
+[11:04:58] [INFO]   2. Selection effects (binary type correlates with MSP properties)
+[11:04:58] [INFO]   3. Model oversimplification (ignores binary evolution)
+[11:04:58] [INFO]   4. Statistical noise (sample size limitations)
+[11:04:58] [INFO] 
+[11:04:58] [INFO] Results saved to /Users/matthewsmawfield/www/Temporal Equivalence Principle/TEP-COS/results/outputs/step_18_model_validation.json

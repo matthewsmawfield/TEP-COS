@@ -1,0 +1,148 @@
+{
+  "fixed_periods": {
+    "2ms": {
+      "period_s": 0.002,
+      "per_cluster": {
+        "M15": {
+          "cmc_mean_logpdot": -18.166359595863373,
+          "predicted_excess_dex": 1.5336404041366265,
+          "n_pulsars": 687
+        },
+        "47_Tuc": {
+          "cmc_mean_logpdot": -18.488557604800086,
+          "predicted_excess_dex": 1.2114423951999136,
+          "n_pulsars": 168
+        },
+        "Terzan_5": {
+          "cmc_mean_logpdot": -17.916687395503477,
+          "predicted_excess_dex": 1.7833126044965226,
+          "n_pulsars": 758
+        }
+      },
+      "combined_excess_dex": 1.5094651346110208
+    },
+    "3ms": {
+      "period_s": 0.003,
+      "per_cluster": {
+        "M15": {
+          "cmc_mean_logpdot": -18.00396568690265,
+          "predicted_excess_dex": 1.6960343130973499,
+          "n_pulsars": 687
+        },
+        "47_Tuc": {
+          "cmc_mean_logpdot": -18.329171435951594,
+          "predicted_excess_dex": 1.3708285640484057,
+          "n_pulsars": 168
+        },
+        "Terzan_5": {
+          "cmc_mean_logpdot": -17.746910532562573,
+          "predicted_excess_dex": 1.953089467437426,
+          "n_pulsars": 758
+        }
+      },
+      "combined_excess_dex": 1.6733174481943938
+    },
+    "5ms": {
+      "period_s": 0.005,
+      "per_cluster": {
+        "M15": {
+          "cmc_mean_logpdot": -17.7954128785106,
+          "predicted_excess_dex": 1.9045871214893992,
+          "n_pulsars": 687
+        },
+        "47_Tuc": {
+          "cmc_mean_logpdot": -18.12262062642649,
+          "predicted_excess_dex": 1.5773793735735104,
+          "n_pulsars": 168
+        },
+        "Terzan_5": {
+          "cmc_mean_logpdot": -17.5306771946092,
+          "predicted_excess_dex": 2.1693228053907987,
+          "n_pulsars": 758
+        }
+      },
+      "combined_excess_dex": 1.883763100151236
+    },
+    "8ms": {
+      "period_s": 0.008,
+      "per_cluster": {
+        "M15": {
+          "cmc_mean_logpdot": -17.600492724535254,
+          "predicted_excess_dex": 2.0995072754647452,
+          "n_pulsars": 687
+        },
+        "47_Tuc": {
+          "cmc_mean_logpdot": -17.928304028922188,
+          "predicted_excess_dex": 1.7716959710778113,
+          "n_pulsars": 168
+        },
+        "Terzan_5": {
+          "cmc_mean_logpdot": -17.33005447522307,
+          "predicted_excess_dex": 2.3699455247769308,
+          "n_pulsars": 758
+        }
+      },
+      "combined_excess_dex": 2.0803829237731626
+    },
+    "10ms": {
+      "period_s": 0.01,
+      "per_cluster": {
+        "M15": {
+          "cmc_mean_logpdot": -17.50713989715893,
+          "predicted_excess_dex": 2.1928601028410704,
+          "n_pulsars": 687
+        },
+        "47_Tuc": {
+          "cmc_mean_logpdot": -17.834944063368063,
+          "predicted_excess_dex": 1.8650559366319364,
+          "n_pulsars": 168
+        },
+        "Terzan_5": {
+          "cmc_mean_logpdot": -17.23438896003884,
+          "predicted_excess_dex": 2.4656110399611606,
+          "n_pulsars": 758
+        }
+      },
+      "combined_excess_dex": 2.1745090264780558
+    }
+  },
+  "period_distribution": {
+    "source": "observed_MSP_distribution_or_default",
+    "median_ms": 5.0,
+    "per_cluster": {
+      "M15": {
+        "predicted_excess_dex": 1.3375274892709825,
+        "std_excess_dex": 0.910115282501559,
+        "n_pulsars": 1213
+      },
+      "47_Tuc": {
+        "predicted_excess_dex": 1.2224297864239837,
+        "std_excess_dex": 0.7177756628568605,
+        "n_pulsars": 250
+      },
+      "Terzan_5": {
+        "predicted_excess_dex": 1.7484268459830048,
+        "std_excess_dex": 0.8523538521238244,
+        "n_pulsars": 1125
+      }
+    },
+    "combined_excess_dex": 1.4361280405593237
+  },
+  "per_cluster": {
+    "M15": {
+      "cmc_mean_logpdot": -17.7954128785106,
+      "predicted_excess_dex": 1.9045871214893992,
+      "n_pulsars": 687
+    },
+    "47_Tuc": {
+      "cmc_mean_logpdot": -18.12262062642649,
+      "predicted_excess_dex": 1.5773793735735104,
+      "n_pulsars": 168
+    },
+    "Terzan_5": {
+      "cmc_mean_logpdot": -17.5306771946092,
+      "predicted_excess_dex": 2.1693228053907987,
+      "n_pulsars": 758
+    }
+  }
+}

@@ -1,0 +1,66 @@
+[11:04:03] [INFO] ======================================================================
+[11:04:03] [INFO] HYBRID MAXIMUM PULSAR ANALYSIS
+[11:04:03] [INFO] ======================================================================
+[11:04:03] [INFO] 
+[11:04:03] [INFO] Loading step_02 robust data...
+[11:04:03] [INFO]   Base GC MSPs:    198
+[11:04:03] [INFO]   Base Field MSPs: 202
+[11:04:03] [INFO] 
+[11:04:03] [INFO] Finding Freire MSPs without P-dot in Freire...
+[11:04:03] [INFO]   Freire MSPs missing P-dot: 132
+[11:04:03] [INFO] 
+[11:04:03] [INFO] Parsing ATNF catalog...
+[11:04:03] [INFO]   ATNF entries with P-dot: 2930
+[11:04:03] [INFO] 
+[11:04:03] [INFO] Cross-matching to find P-dot from ATNF...
+[11:04:03] [INFO]   Additional GC MSPs from cross-match: 1
+[11:04:03] [INFO] 
+[11:04:03] [INFO] Finding additional field MSPs...
+[11:04:03] [INFO]   Additional Field MSPs: 149
+[11:04:03] [INFO] 
+[11:04:03] [INFO] ======================================================================
+[11:04:03] [INFO] MAXIMUM SAMPLE
+[11:04:03] [INFO] ======================================================================
+[11:04:03] [INFO]   GC MSPs:    199 (base 198 + additional 1)
+[11:04:03] [INFO]   Field MSPs: 351 (base 202 + additional 149)
+[11:04:03] [INFO]   TOTAL:      550
+[11:04:03] [INFO] 
+[11:04:03] [INFO] Computing statistics...
+[11:04:03] [INFO] 
+[11:04:03] [INFO] --- RAW COMPARISON ---
+[11:04:03] [INFO]   GC mean log|Ṗ|:    -19.165
+[11:04:03] [INFO]   Field mean log|Ṗ|: -19.795
+[11:04:03] [INFO]   Difference:        0.630 dex
+[11:04:03] [INFO]   95% CI:            [0.492, 0.764]
+[11:04:03] [INFO]   p-value:           8.13e-18
+[11:04:03] [INFO] 
+[11:04:03] [INFO] Running population-controlled bootstrap...
+[11:04:13] [INFO] 
+[11:04:13] [INFO] --- CONTROLLED RESIDUAL ---
+[11:04:13] [INFO]   Residual:          0.398 dex
+[11:04:13] [INFO]   95% CI:            [0.331, 0.474]
+[11:04:13] [INFO]   p-value:           2.00e-04
+[11:04:13] [INFO] 
+[11:04:13] [INFO] ======================================================================
+[11:04:13] [INFO] FINAL MAXIMUM SAMPLE
+[11:04:13] [INFO] ======================================================================
+[11:04:13] [INFO] 
+[11:04:13] [INFO]     ┌─────────────────────────────────────────────────────────────────────┐
+[11:04:13] [INFO]     │  MAXIMUM PULSAR SAMPLE (Hybrid Approach)                            │
+[11:04:13] [INFO]     ├─────────────────────────────────────────────────────────────────────┤
+[11:04:13] [INFO]     │                                                                     │
+[11:04:13] [INFO]     │  GC MSPs:              199  (198 base + 1 ATNF cross-match)     │
+[11:04:13] [INFO]     │  Field MSPs:           351  (202 base + 149 additional)        │
+[11:04:13] [INFO]     │  ─────────────────────────────                                      │
+[11:04:13] [INFO]     │  TOTAL:                550                                            │
+[11:04:13] [INFO]     │                                                                     │
+[11:04:13] [INFO]     │  Raw difference:      +0.63 dex                                      │
+[11:04:13] [INFO]     │  Controlled residual: +0.40 dex (95% CI: 0.33–0.47)       │
+[11:04:13] [INFO]     │  p-value:             2.0e-04                                      │
+[11:04:13] [INFO]     │                                                                     │
+[11:04:13] [INFO]     └─────────────────────────────────────────────────────────────────────┘
+[11:04:13] [INFO] 
+[11:04:13] [INFO] 
+[11:04:13] [INFO] Results saved to:
+[11:04:13] [INFO]   /Users/matthewsmawfield/www/Temporal Equivalence Principle/TEP-COS/results/outputs/step_06_hybrid_maximum_analysis.json
+[11:04:13] [INFO]   /Users/matthewsmawfield/www/Temporal Equivalence Principle/TEP-COS/results/outputs/step_06_hybrid_pulsar_sample.csv

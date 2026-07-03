@@ -1,0 +1,19 @@
+[11:05:27] [INFO] ======================================================================
+[11:05:27] [INFO] STEP 5.43: Sensitivity and CMC Comparison Report Generation
+[11:05:27] [INFO] ======================================================================
+[11:05:27] [INFO] Loaded data sources:
+[11:05:27] [INFO]   - step_25_rho_sensitivity: loaded
+[11:05:27] [INFO]   - step_29_dynamical_calibration: not found
+[11:05:27] [INFO]   - step_31_cmc_real_comparison: not found
+[11:05:27] [INFO]   - step_12_hierarchical_density: loaded
+[11:05:27] [INFO] 
+[11:05:27] [INFO] Report saved to: results/outputs/step_28_sensitivity_cmc_report.md
+[11:05:27] [INFO] Summary saved to: results/outputs/step_28_sensitivity_cmc_summary.json
+[11:05:27] [INFO] 
+[11:05:27] [INFO] ======================================================================
+[11:05:27] [INFO] SUMMARY
+[11:05:27] [INFO] ======================================================================
+[11:05:27] [INFO] Sensitivity robustness: STRONG
+[11:05:27] [INFO] CMC comparison status: N/A
+[11:05:27] [INFO] Conclusion: Sensitivity analysis strengthens the case; direct CMC comparison pending
+[11:05:27] [INFO] ======================================================================

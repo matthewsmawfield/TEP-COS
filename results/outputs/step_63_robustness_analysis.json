@@ -1,0 +1,84 @@
+{
+  "timestamp": "2026-07-03T11:13:03.082215",
+  "full_sample_size": 218,
+  "tests": {
+    "outlier_removal": {
+      "n_sample": 215,
+      "n_removed": 3,
+      "pearson_r": 0.2525914899532512,
+      "pearson_p": 0.00018183271535371766,
+      "significance_sigma": 3.7430048535384195,
+      "slope": 1.9879851685578462,
+      "slope_err": 0.5217811327243406,
+      "verdict": "TEP-CONSISTENT"
+    },
+    "subsamples": {
+      "no_clusters": {
+        "n_sample": 215,
+        "pearson_r": 0.2525914899532512,
+        "pearson_p": 0.00018183271535371766,
+        "significance_sigma": 3.7430048535384195,
+        "slope": 1.9879851685578462,
+        "slope_err": 0.5217811327243406,
+        "verdict": "TEP-CONSISTENT"
+      },
+      "no_low_quality": {
+        "n_sample": 209,
+        "pearson_r": 0.21665512765371714,
+        "pearson_p": 0.0016278403243465672,
+        "significance_sigma": 3.1508716056049826,
+        "slope": 1.794577623184294,
+        "slope_err": 0.5620414573735762,
+        "verdict": "TEP-CONSISTENT"
+      },
+      "clean_range": {
+        "n_sample": 206,
+        "pearson_r": 0.25602999777162416,
+        "pearson_p": 0.00020363397307593056,
+        "significance_sigma": 3.7144650957025003,
+        "slope": 2.1571824745835912,
+        "slope_err": 0.5702412964320678,
+        "verdict": "TEP-CONSISTENT"
+      },
+      "low_z": {
+        "n_sample": 218,
+        "pearson_r": 0.21780141521973087,
+        "pearson_p": 0.0012111078419130756,
+        "significance_sigma": 3.236251126988192,
+        "slope": 1.6900510226916363,
+        "slope_err": 0.5152986365779617,
+        "verdict": "TEP-CONSISTENT"
+      },
+      "mid_sigma": {
+        "n_sample": 163,
+        "pearson_r": 0.14800653526269553,
+        "pearson_p": 0.05936553768958359,
+        "significance_sigma": 1.8854764746594888,
+        "slope": 1.7089399618208585,
+        "slope_err": 0.8999601660483211,
+        "verdict": "NULL"
+      }
+    },
+    "bootstrap": {
+      "n_bootstrap": 10000,
+      "slope_mean": 1.6931907414812835,
+      "slope_std": 0.6059837382917768,
+      "slope_ci_95": [
+        0.48469450797298713,
+        2.874637172856022
+      ],
+      "slope_ci_99": [
+        0.09358611908778042,
+        3.2176002219157076
+      ],
+      "p_slope_positive": 0.9966,
+      "r_mean": 0.21814474905551115,
+      "r_ci_95": [
+        0.06324196127040471,
+        0.3640209452121105
+      ]
+    }
+  },
+  "overall_robust": false,
+  "all_significant": false
+}

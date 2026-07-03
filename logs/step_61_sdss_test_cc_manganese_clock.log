@@ -1,0 +1,27 @@
+[11:13:11] [INFO] Loading cached data...
+[11:13:11] [INFO] Analyzing Manganese Clock...
+[11:13:11] [INFO]   Subsample (-1.5 < [Fe/H] < -0.5): 905
+[11:13:11] [INFO] /Users/matthewsmawfield/www/Temporal Equivalence Principle/TEP-COS/scripts/steps/step_61_sdss_test_cc_manganese_clock.py:163: SettingWithCopyWarning:
+[11:13:11] [INFO] A value is trying to be set on a copy of a slice from a DataFrame.
+[11:13:11] [INFO] Try using .loc[row_indexer,col_indexer] = value instead
+[11:13:11] [INFO] 
+[11:13:11] [INFO] See the caveats in the documentation: https://pandas.pydata.org/pandas-docs/stable/user_guide/indexing.html#returning-a-view-versus-a-copy
+[11:13:11] [INFO]   df_sub['r_bin'] = pd.cut(df_sub['R_gc'], bins=bins)
+[11:13:11] [INFO] 
+[11:13:11] [INFO] Mean [Mn/Fe] by R_gc (fixed [Fe/H]):
+[11:13:11] [INFO]               mean       sem  count
+[11:13:11] [INFO] r_bin
+[11:13:11] [INFO] (0, 4]   -0.151288  0.006508    473
+[11:13:11] [INFO] (4, 6]   -0.168537  0.010226    138
+[11:13:11] [INFO] (6, 8]   -0.182689  0.008248    222
+[11:13:11] [INFO] (8, 10]  -0.212515  0.018938     54
+[11:13:11] [INFO] (10, 15] -0.192337  0.083882      9
+[11:13:11] [INFO] (15, 30] -0.341706  0.048111      5
+[11:13:11] [INFO]   Slope ([Mn/Fe] vs R): -0.00842 dex/kpc
+[11:13:11] [INFO]   Correlation: -0.971
+[11:13:11] [INFO] Figure saved to /Users/matthewsmawfield/www/Temporal Equivalence Principle/TEP-COS/scripts/steps/../../results/figures/step_61_sdss_test_cc_manganese.png
+[11:13:11] [INFO] 
+[11:13:11] [INFO] SUMMARY TEST CC:
+[11:13:11] [INFO] Prediction: [Mn/Fe] varies with R_gc at fixed [Fe/H].
+[11:13:11] [INFO] Observed Slope: -0.00842
+[11:13:11] [INFO] RESULT: SIGNAL (Gradient observed)

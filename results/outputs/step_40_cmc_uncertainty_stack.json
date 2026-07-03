@@ -1,0 +1,52 @@
+{
+  "baseline_difference_dex": 1.2684884664070144,
+  "observed_excess_dex": 0.6116545605061704,
+  "cmc_predicted_excess_dex": 1.880143026913185,
+  "components": {
+    "observed_residual": {
+      "description": "Bootstrap uncertainty on the controlled residual",
+      "value_dex": 0.1,
+      "source": "step_02 bootstrap CI",
+      "included": true
+    },
+    "cmc_sampling": {
+      "description": "CMC Monte Carlo sampling variance across cluster realizations",
+      "value_dex": 0.15,
+      "source": "Per-cluster std from 148-model literature spread",
+      "included": true
+    },
+    "cluster_structural": {
+      "description": "Central density / structural parameter uncertainty",
+      "value_dex": 0.2,
+      "source": "Harris catalog \u00b10.2 dex central density scatter",
+      "included": true
+    },
+    "period_distribution": {
+      "description": "MSP period distribution uncertainty",
+      "value_dex": 0.12,
+      "source": "step_39 period-sensitivity range",
+      "included": true
+    },
+    "radial_filter": {
+      "description": "Mass-segregation spatial filter choice (1rc to 5rc)",
+      "value_dex": 0.18,
+      "source": "step_38 radial-filter sweep std",
+      "included": true
+    },
+    "intrinsic_spindown": {
+      "description": "Intrinsic Pdot scatter of field MSP reference",
+      "value_dex": 0.08,
+      "source": "Field MSP log|Pdot| std ~0.3 dex; mean uncertainty ~0.08",
+      "included": true
+    }
+  },
+  "stacked_uncertainty_dex": 0.3545419580247167,
+  "baseline_significance_sigma": 12.684884664070143,
+  "conservative_significance_sigma": 3.57782326660074,
+  "notes": [
+    "Baseline 12.7 sigma uses only observed bootstrap uncertainty (0.10 dex).",
+    "Conservative stack quadratically combines all known uncertainty sources.",
+    "Even under conservative stacking, the discrepancy remains highly significant.",
+    "Missing: systematic uncertainty in CMC-to-real-cluster mapping (epoch, population matching)."
+  ]
+}

@@ -7,59 +7,34 @@ authors:
 - family-names: Smawfield
   given-names: Matthew Lukin
   orcid: https://orcid.org/0009-0003-8219-3159
-abstract: 'Gravitational time dilation in General Relativity is verified to 10⁻⁵ precision
-  in the Solar System. At intermediate astrophysical scales, however, persistent anomalies
-  emerge—rotation curves, cluster dynamics, cosmic acceleration—that conventionally
-  require invisible matter or exotic energy. The Temporal Equivalence Principle (TEP)
-  formalizes an alternative: that time dilation is scale-dependent, enhanced in extended
-  gravitational configurations while screened in dense, well-tested regimes.
-
-  This work reports a dynamical anomaly in globular cluster pulsar timing that challenges
-  standard density scaling. Pulsar timing provides a spatially-resolved probe of time-dilation
-  effects at the 10⁵–10⁶ M☉ scale. Analysis of 543 millisecond pulsars (197 GC, 346
-  field) reveals a 0.63 dex (decimal exponent, factor of ~4.3) raw excess in spin-down
-  magnitude—cluster pulsars spin down faster than field controls. After controlling
-  for population differences, a 0.40 dex controlled residual persists (95% CI: 0.33–0.48
-  dex, 8.3σ).
-
-  A spatially-stratified spin-down anomaly is detected in 197 globular cluster pulsars
-  compared to 346 field controls (0.63 dex raw excess, 0.40 dex controlled residual,
-  8.3σ from covariance-aware test). The signal exhibits suppressed density scaling
-  (mixed-effects slope Γ = 0.39 ± 0.08 dex/dex vs Newtonian ensemble baseline Γ =
-  0.72; 4.1σ rejection, Bayesian P(Γ > 0.72|data) < 10⁻⁴), saturating in dense cores
-  in a manner consistent with TEP screening but in tension with standard dynamics.
-  Leave-one-cluster-out validation confirms the result is stable (3.8% relative instability)
-  and not driven by individual clusters. A "Binary Inversion" is detected where typically
-  noisy binary systems—predicted to be dynamically hotter—exhibit significantly lower
-  residuals (-0.32 dex, Mann-Whitney p=0.004) than isolated pulsars, challenging standard
-  dynamical heating models. Together, the raw excess, controlled residual, and suppressed
-  density scaling argue against standard Newtonian dynamics as a complete explanation.
-
-  The pulsar signal—spatially resolved, field-controlled, and showing suppressed density
-  scaling—provides the primary evidence for potential-dependent modifications to gravitational
-  time flow.
-
-  '
+abstract: 'A spatially stratified spin-down anomaly is reported in 199 globular-cluster
+  millisecond pulsars compared with 351 field controls. Cluster pulsars show a 0.63
+  dex raw excess and a 0.40 dex controlled residual, with covariance-aware significance
+  of 5.6σ. The signal exhibits suppressed density scaling: a mixed-effects slope Γ =
+  0.39 ± 0.08 dex/dex compared with a Newtonian ensemble baseline Γ = 0.75, rejecting
+  the baseline at 4.1σ. Field binaries provide a null control, while cluster binaries
+  are quieter than isolated cluster pulsars; corrected CMC reproduces this binary direction,
+  so the binary result functions as a comparator check rather than the primary failure
+  mode. An adversarial dynamics model accounting for line-of-sight acceleration, jerk,
+  Shklovskii terms, mass segregation, and cluster mass profiles cannot explain the
+  observed suppression. An N-body baseline derived from CMC synthetic pulsars (20
+  clusters, 18,813 MSPs) predicts an excess 3.1× larger than observed (12.7σ nominal
+  model-data tension, not detection significance; conservative quadrature-stacked uncertainty
+  gives 3.6σ), and a mock pulsar-timing-array detection pipeline confirms that the
+  missing high-acceleration population cannot be attributed to observational selection
+  effects. These results are interpreted as a time-domain test of the TEP observable
+  response coefficient κ<sub>MSP</sub>, not as a measurement of a microscopic scalar
+  coupling.'
 version: v0.7 (Caracas)
-date-released: 2026-06-04
+date-released: 2026-01-09
 license: CC-BY-4.0
 keywords:
-- Temporal Equivalence Principle
-- Temporal Shear
-- Temporal Topology
-- proper time
-- conformal metric
-- disformal metric
-- synchronization holonomy
-- clock-sector gravity
-- scalar-tensor theory
+- temporal equivalence principle
 - pulsar timing
 - globular clusters
 - time dilation
 - screening transition
 - modified gravity
-- millisecond pulsars
-- density scaling
 repository-code: https://github.com/matthewsmawfield/TEP-COS
 url: https://github.com/matthewsmawfield/TEP-COS
 doi: 10.5281/zenodo.18165798

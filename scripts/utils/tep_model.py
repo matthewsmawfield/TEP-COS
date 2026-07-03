@@ -32,19 +32,21 @@ from core import constants as tep_const
 # =============================================================================
 
 # CANONICAL OBSERVABLE RESPONSE COEFFICIENT (Paper 11)
-# Measured from Cepheid period-luminosity residuals.
+# Cross-paper canonical theoretical prior, derived from geometric-factor
+# and virial estimates (Appendix C of Paper 11).  Consistent with
+# TEP-H0 (Paper 11) and TEP-JWST (Paper 12).
 # Units: Magnitudes [mag]
-KAPPA_GAL = 9.6e5
-KAPPA_GAL_UNCERTAINTY = 4.0e5
+KAPPA_GAL = tep_const.KAPPA_GAL
+KAPPA_GAL_UNCERTAINTY = tep_const.KAPPA_GAL_UNCERTAINTY
 
 # STELLAR EVOLUTION INDEX
 # M/L ~ t^n from stellar isochrones.
-ALPHA_NUCLEAR = 0.7
+ALPHA_NUCLEAR = tep_const.ALPHA_NUCLEAR
 
 # POTENTIAL PARAMETERS
-LOG_MH_REF = 12.0
-PHI_REF_0 = 1.6e-7    # Dimensionless Phi/c^2 for 10^12 Msun halo at z=0
-Z_REF = 5.5
+LOG_MH_REF = tep_const.LOG_MH_REF
+PHI_REF_0 = tep_const.PHI_REF_0    # Dimensionless Phi/c^2 for 10^12 Msun halo at z=0
+Z_REF = tep_const.Z_REF
 
 # SCREENING SCALES (from core.constants)
 RHO_CRIT_G_CM3 = tep_const.RHO_C

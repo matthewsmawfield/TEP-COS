@@ -1,0 +1,82 @@
+{
+  "timestamp_utc": "2026-07-03T10:05:29.783737+00:00",
+  "regressions": [
+    {
+      "x_key": "log_rho_c",
+      "n": 33,
+      "slope": 0.31975491395961925,
+      "intercept": -20.717124267096505,
+      "r_value": 0.4716027921740835,
+      "r_squared": 0.2224091935863918,
+      "p_value": 0.005595740612305802,
+      "std_err": 0.10738300952378525,
+      "label": "Central luminosity density (current)"
+    },
+    {
+      "x_key": "log_mass_density",
+      "n": 33,
+      "slope": 0.26552284508071805,
+      "intercept": -21.28592027172012,
+      "r_value": 0.49002155683078435,
+      "r_squared": 0.24012112615886563,
+      "p_value": 0.003794879570068246,
+      "std_err": 0.08483558235977413,
+      "label": "Mass density M/Rc^3"
+    },
+    {
+      "x_key": "log_potential_depth",
+      "n": 33,
+      "slope": 0.5643887217058332,
+      "intercept": -22.77905397701428,
+      "r_value": 0.42998640145460065,
+      "r_squared": 0.184888305435877,
+      "p_value": 0.012505910719376574,
+      "std_err": 0.2128390543604616,
+      "label": "Potential depth M/Rc"
+    },
+    {
+      "x_key": "log_accel_scale",
+      "n": 33,
+      "slope": 0.39787810867772927,
+      "intercept": -22.01157459816706,
+      "r_value": 0.49505323941941876,
+      "r_squared": 0.24507770985966035,
+      "p_value": 0.0034002034581249066,
+      "std_err": 0.12542046759574646,
+      "label": "Acceleration scale M/Rc^2"
+    },
+    {
+      "x_key": "log_v_esc",
+      "n": 33,
+      "slope": 1.0515079440979198,
+      "intercept": -20.5507799968926,
+      "r_value": 0.33180611561198864,
+      "r_squared": 0.11009529835751637,
+      "p_value": 0.05923798096437093,
+      "std_err": 0.5369317375449814,
+      "label": "Escape velocity v_esc"
+    },
+    {
+      "x_key": "log_sigma_v",
+      "n": 33,
+      "slope": 1.1287774434116666,
+      "intercept": -21.443524242350968,
+      "r_value": 0.42998640145460076,
+      "r_squared": 0.1848883054358771,
+      "p_value": 0.01250591071937653,
+      "std_err": 0.4256781087209232,
+      "label": "Velocity dispersion sigma_v"
+    },
+    {
+      "x_key": "log_relax_proxy",
+      "n": 33,
+      "slope": -0.5310456901614361,
+      "intercept": -20.6576057055362,
+      "r_value": -0.49002155683078435,
+      "r_squared": 0.24012112615886563,
+      "p_value": 0.003794879570068246,
+      "std_err": 0.16967116471954824,
+      "label": "Relaxation time proxy Rc/sigma_v"
+    }
+  ]
+}

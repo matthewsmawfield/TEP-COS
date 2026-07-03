@@ -1,0 +1,41 @@
+{
+  "sample": {
+    "n_binaries": 107,
+    "period_range_days": [
+      0.03704,
+      378.23276
+    ],
+    "mass_range_msun": [
+      0.0027,
+      1.89
+    ]
+  },
+  "correlations": {
+    "period_vs_logPdot": {
+      "r": -0.018893862725292435,
+      "p": 0.8468326245173984
+    },
+    "mass_vs_logPdot": {
+      "r": 0.2209130057144564,
+      "p": 0.02221741888408647
+    },
+    "shielding_vs_logPdot": {
+      "r": 0.20738983520856635,
+      "p": 0.03207925018354251
+    },
+    "partial_shielding_vs_logPdot": {
+      "r": 0.21448003565233403,
+      "p": 0.02652591593717893
+    }
+  },
+  "predictions": {
+    "period": "positive correlation expected",
+    "mass": "negative correlation expected",
+    "shielding": "negative correlation expected"
+  },
+  "validation": {
+    "period_consistent": false,
+    "mass_consistent": false,
+    "shielding_consistent": false
+  }
+}

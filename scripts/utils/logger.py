@@ -334,13 +334,13 @@ def setup_step_logger(script_name: str, logs_dir: Optional[Path] = None) -> TEPL
     
     Usage in scripts:
         if __name__ == "__main__":
-            logger = setup_step_logger("step_5_10")
+            logger = setup_step_logger("step_02")
             main()
     
     Parameters:
     -----------
     script_name : str
-        Name of the script (e.g., "step_5_10_pulsar_population_controls")
+        Name of the script (e.g., "step_02_pulsar_population_controls")
     logs_dir : Path, optional
         Directory for log files. Defaults to PROJECT_ROOT/logs
     

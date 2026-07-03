@@ -1,0 +1,67 @@
+{
+  "meta": {
+    "description": "PM-corrected field control analysis",
+    "shklovskii_constant": 2.43e-21,
+    "msp_cut_ms": 30.0
+  },
+  "counts": {
+    "gc_msps": 198,
+    "field_msps_all": 202,
+    "field_msps_pm_corrected": 202
+  },
+  "base_residual_all_field": {
+    "gc_mean": -19.170465888399214,
+    "field_mean": -19.761022001580034,
+    "diff_dex": 0.5905561131808206,
+    "t_stat": 7.804929484560872,
+    "t_p": 5.418251382627903e-14,
+    "mw_u": 29440.5,
+    "mw_p": 3.1557607105540055e-16,
+    "gc_n": 198,
+    "field_n": 202
+  },
+  "base_residual_pm_field": {
+    "gc_mean": -19.170465888399214,
+    "field_mean": -19.815718077453784,
+    "diff_dex": 0.6452521890545704,
+    "t_stat": 8.298601891994524,
+    "t_p": 1.6618102068818198e-15,
+    "mw_u": 29839.5,
+    "mw_p": 1.7044206318259835e-17,
+    "gc_n": 198,
+    "field_n": 202
+  },
+  "period_matched_all": {
+    "n_boot": 2000,
+    "diff_mean": 0.6116545605061704,
+    "diff_ci16": 0.5534652570095387,
+    "diff_ci84": 0.6674168630333027,
+    "p_two_sided": 0.0005,
+    "p_two_sided_note": "Bootstrap resolution floor: p \u2265 0.0005 (n_boot=2000)"
+  },
+  "two_dim_matched_all": {
+    "n_boot": 2000,
+    "diff_mean": 0.608908974037327,
+    "diff_ci16": 0.5601619738131055,
+    "diff_ci84": 0.6574116907312105,
+    "p_two_sided": 0.0005,
+    "p_two_sided_note": "Bootstrap resolution floor: p \u2265 0.0005 (n_boot=2000)"
+  },
+  "period_matched_pm": {
+    "n_boot": 2000,
+    "diff_mean": 0.6674340393974508,
+    "diff_ci16": 0.6092202277110923,
+    "diff_ci84": 0.7232094410033385,
+    "p_two_sided": 0.0005,
+    "p_two_sided_note": "Bootstrap resolution floor: p \u2265 0.0005 (n_boot=2000)"
+  },
+  "two_dim_matched_pm": {
+    "n_boot": 2000,
+    "diff_mean": 0.6637243634742872,
+    "diff_ci16": 0.6156929323233481,
+    "diff_ci84": 0.7112402419253182,
+    "p_two_sided": 0.0005,
+    "p_two_sided_note": "Bootstrap resolution floor: p \u2265 0.0005 (n_boot=2000)"
+  },
+  "interpretation": "If PM-corrected field MSPs show lower |Pdot| (more negative P1_intrinsic), the GC\u2013field residual should INCREASE, strengthening the TEP signal. If the residual decreases, Shklovskii contamination was partially responsible for the observed excess."
+}

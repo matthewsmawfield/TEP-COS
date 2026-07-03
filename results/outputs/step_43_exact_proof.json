@@ -1,0 +1,14 @@
+{
+  "reviewer_premise": "Derivation assumes constant alpha",
+  "our_finding": "False. Identity is exact due to linearity of covariance.",
+  "monte_carlo_validation": {
+    "alpha_true": -0.4,
+    "scatter_dex": 0.8,
+    "slope_rho_measured": -0.35163311419873905,
+    "gamma_N_measured": 0.6483668858012605,
+    "gamma_TEP_measured": 0.29673377160252146,
+    "gamma_TEP_predicted": 0.2967337716025209,
+    "exact_match": true,
+    "difference": 5.551115123125783e-16
+  }
+}

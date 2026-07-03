@@ -1,0 +1,38 @@
+[11:09:13] [INFO] STEP 5.41b: SENSITIVITY ANALYSIS FOR DYNAMICAL CALIBRATION
+[11:09:13] [INFO] ======================================================================
+[11:09:13] [INFO] 
+[11:09:13] [INFO] Purpose: Test robustness of 311σ tension claim to cluster parameter uncertainties
+[11:09:13] [INFO] 
+[11:09:13] [INFO] ======================================================================
+[11:09:13] [INFO] CLUSTER PARAMETER SENSITIVITY ANALYSIS
+[11:09:13] [INFO] ======================================================================
+[11:09:30] [INFO] 
+[11:09:30] [INFO] Sensitivity Analysis Results (1000 iterations):
+[11:09:30] [INFO]   Mean prediction: 17.37 dex
+[11:09:30] [INFO]   Standard deviation: 0.17 dex
+[11:09:30] [INFO]   68% CI: [17.21, 17.54] dex
+[11:09:30] [INFO]   95% CI: [17.03, 17.73] dex
+[11:09:30] [INFO] 
+[11:09:30] [INFO] Robustness Test:
+[11:09:30] [INFO]   Observed residual: 0.612 ± 0.057 dex (loaded from step_02)
+[11:09:30] [INFO]   Minimum Newtonian prediction (95% CI lower): 17.03 dex
+[11:09:30] [INFO]   Maximum difference: -16.42 dex
+[11:09:30] [INFO]   Significance (conservative): 288.2σ
+[11:09:30] [INFO]   Conclusion: Tension persists at >2σ even with conservative parameter bounds
+[11:09:30] [INFO] 
+[11:09:30] [INFO] ======================================================================
+[11:09:30] [INFO] INDIVIDUAL PARAMETER SENSITIVITY
+[11:09:30] [INFO] ======================================================================
+[11:09:31] [INFO] 
+[11:09:31] [INFO] Terzan_5 parameter sensitivities:
+[11:09:31] [INFO]   d(shift)/dM: 2.31e-07 dex/(M_sun)
+[11:09:31] [INFO]   d(shift)/d(rc): -4.00 dex/parsec
+[11:09:31] [INFO] 
+[11:09:31] [INFO] Uncertainty propagation:
+[11:09:31] [INFO]   Mass uncertainty contribution: ±0.12 dex
+[11:09:31] [INFO]   Core radius uncertainty contribution: ±0.12 dex
+[11:09:31] [INFO]   Combined (quadrature): ±0.17 dex
+[11:09:31] [INFO] 
+[11:09:31] [INFO] ======================================================================
+[11:09:31] [INFO] Results saved to: /Users/matthewsmawfield/www/Temporal Equivalence Principle/TEP-COS/results/outputs/step_30_sensitivity_analysis.json
+[11:09:31] [INFO] ======================================================================

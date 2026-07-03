@@ -1,0 +1,33 @@
+[11:05:29] [INFO] ==============================================================================
+[11:05:29] [INFO] STEP 5.72: SIGNED OBSERVABLE BATTERY
+[11:05:29] [INFO] ==============================================================================
+[11:05:29] [INFO] 
+[11:05:29] [INFO] Loaded 198 GC pulsars, 202 field pulsars
+[11:05:29] [INFO] 
+[11:05:29] [INFO] Raw comparisons:
+[11:05:29] [INFO] Observable                     GC mean   Field mean        Delta   N_GC  N_Field
+[11:05:29] [INFO] ------------------------------------------------------------------------------
+[11:05:29] [INFO] log|Ṗ|                         -19.170      -19.761      +0.591    198      202
+[11:05:29] [INFO] log|Ṗ/P|                       -16.827      -17.566      +0.739    198      202
+[11:05:29] [INFO] signed Ṗ/P                   6.680e-18    8.288e-18  -1.607e-18    198      202
+[11:05:29] [INFO] positive-only Ṗ                -19.074      -19.757      +0.683    109      198
+[11:05:29] [INFO] negative-only Ṗ                -19.288      -19.940      +0.651     89        4
+[11:05:29] [INFO] width / MAD                      0.499        0.336      +0.163    198      202
+[11:05:29] [INFO] 
+[11:05:29] [INFO] Matched residuals by observable:
+[11:05:29] [INFO] Observable / Matching                             Residual      Gamma  Gamma err
+[11:05:29] [INFO] ------------------------------------------------------------------------------
+[11:05:29] [INFO] log|Ṗ|  raw                                        +0.591      0.320  +/- 0.107
+[11:05:29] [INFO] log|Ṗ|  period-only                                +0.817      0.395  +/- 0.087
+[11:05:29] [INFO] log|Ṗ|  period+B-proxy                             +0.233      0.118  +/- 0.029
+[11:05:29] [INFO] log|Ṗ/P| raw                                       +0.739      0.343  +/- 0.089
+[11:05:29] [INFO] log|Ṗ/P| period-only                               +0.822      0.397  +/- 0.088
+[11:05:29] [INFO] log|Ṗ/P| period+B-proxy                            +0.281      0.134  +/- 0.035
+[11:05:29] [INFO] signed Ṗ/P raw                                     -0.000      0.000  +/- 0.000
+[11:05:29] [INFO] signed Ṗ/P period-only                             +0.000      0.000  +/- 0.000
+[11:05:29] [INFO] signed Ṗ/P period+B-proxy                          -0.000      0.000  +/- 0.000
+[11:05:29] [INFO] 
+[11:05:29] [INFO] Saved JSON: /Users/matthewsmawfield/www/Temporal Equivalence Principle/TEP-COS/results/outputs/step_52_signed_observable_battery.json
+[11:05:29] [INFO] Saved Markdown: /Users/matthewsmawfield/www/Temporal Equivalence Principle/TEP-COS/results/outputs/step_52_signed_observable_battery.md
+[11:05:29] [INFO] 
+[11:05:29] [INFO] Done.

@@ -1,0 +1,197 @@
+[11:05:57] [INFO] [11:05:57] [INFO    ] ======================================================================
+[11:05:57] [INFO] [11:05:57] [INFO    ] CMC CLUSTER CATALOG DOWNLOADER
+[11:05:57] [INFO] [11:05:57] [INFO    ] ======================================================================
+[11:05:57] [INFO] [11:05:57] [INFO    ] Target URL: https://cmc.ciera.northwestern.edu/index.php
+[11:05:57] [INFO] [11:05:57] [INFO    ] Data directory: /Users/matthewsmawfield/www/Temporal Equivalence Principle/TEP-COS/data/cmc
+[11:05:57] [INFO] [11:05:57] [INFO    ] Clusters: 47_Tuc, Terzan_5, M15, M62, NGC_6517, M28, M13, NGC_6397, NGC_6752, M3, M5, M4, Omega_Cen, NGC_6440, NGC_6441, M22, M71, NGC_6624, NGC_6388, NGC_6712
+[11:05:57] [INFO] [11:05:57] [INFO    ]
+[11:05:57] [INFO] [11:05:57] [INFO    ] NOTE: Each download is 200-400 MB and takes 3-8 minutes
+[11:05:57] [INFO] [11:05:57] [INFO    ]       Please be patient and do not interrupt the download
+[11:05:57] [INFO] [11:05:57] [INFO    ]
+[11:05:57] [INFO] [11:05:57] [INFO    ]
+[11:05:57] [INFO] ======================================================================
+[11:05:57] [INFO] [11:05:57] [INFO    ] CLUSTER: 47_Tuc - 47 Tucanae
+[11:05:57] [INFO] [11:05:57] [INFO    ] ======================================================================
+[11:05:57] [INFO] [11:05:57] [INFO    ] Already downloaded (use --force to re-download)
+[11:05:57] [INFO] [11:05:57] [INFO    ]
+[11:05:57] [INFO] Waiting 5s before next download...
+[11:06:02] [INFO] [11:06:02] [INFO    ]
+[11:06:02] [INFO] ======================================================================
+[11:06:02] [INFO] [11:06:02] [INFO    ] CLUSTER: Terzan_5 - Terzan 5
+[11:06:02] [INFO] [11:06:02] [INFO    ] ======================================================================
+[11:06:02] [INFO] [11:06:02] [INFO    ] Already downloaded (use --force to re-download)
+[11:06:02] [INFO] [11:06:02] [INFO    ]
+[11:06:02] [INFO] Waiting 5s before next download...
+[11:06:07] [INFO] [11:06:07] [INFO    ]
+[11:06:07] [INFO] ======================================================================
+[11:06:07] [INFO] [11:06:07] [INFO    ] CLUSTER: M15 - M15
+[11:06:07] [INFO] [11:06:07] [INFO    ] ======================================================================
+[11:06:07] [INFO] [11:06:07] [INFO    ] Already downloaded (use --force to re-download)
+[11:06:07] [INFO] [11:06:07] [INFO    ]
+[11:06:07] [INFO] Waiting 5s before next download...
+[11:06:12] [INFO] [11:06:12] [INFO    ]
+[11:06:12] [INFO] ======================================================================
+[11:06:12] [INFO] [11:06:12] [INFO    ] CLUSTER: M62 - M62
+[11:06:12] [INFO] [11:06:12] [INFO    ] ======================================================================
+[11:06:12] [INFO] [11:06:12] [INFO    ] Already downloaded (use --force to re-download)
+[11:06:12] [INFO] [11:06:12] [INFO    ]
+[11:06:12] [INFO] Waiting 5s before next download...
+[11:06:17] [INFO] [11:06:17] [INFO    ]
+[11:06:17] [INFO] ======================================================================
+[11:06:17] [INFO] [11:06:17] [INFO    ] CLUSTER: NGC_6517 - NGC 6517
+[11:06:17] [INFO] [11:06:17] [INFO    ] ======================================================================
+[11:06:17] [INFO] [11:06:17] [INFO    ] Already downloaded (use --force to re-download)
+[11:06:17] [INFO] [11:06:17] [INFO    ]
+[11:06:17] [INFO] Waiting 5s before next download...
+[11:06:22] [INFO] [11:06:22] [INFO    ]
+[11:06:22] [INFO] ======================================================================
+[11:06:22] [INFO] [11:06:22] [INFO    ] CLUSTER: M28 - M28
+[11:06:22] [INFO] [11:06:22] [INFO    ] ======================================================================
+[11:06:22] [INFO] [11:06:22] [INFO    ] Already downloaded (use --force to re-download)
+[11:06:22] [INFO] [11:06:22] [INFO    ]
+[11:06:22] [INFO] Waiting 5s before next download...
+[11:06:27] [INFO] [11:06:27] [INFO    ]
+[11:06:27] [INFO] ======================================================================
+[11:06:27] [INFO] [11:06:27] [INFO    ] CLUSTER: M13 - M13
+[11:06:27] [INFO] [11:06:27] [INFO    ] ======================================================================
+[11:06:27] [INFO] [11:06:27] [INFO    ] Already downloaded (use --force to re-download)
+[11:06:27] [INFO] [11:06:27] [INFO    ]
+[11:06:27] [INFO] Waiting 5s before next download...
+[11:06:32] [INFO] [11:06:32] [INFO    ]
+[11:06:32] [INFO] ======================================================================
+[11:06:32] [INFO] [11:06:32] [INFO    ] CLUSTER: NGC_6397 - NGC 6397
+[11:06:32] [INFO] [11:06:32] [INFO    ] ======================================================================
+[11:06:32] [INFO] [11:06:32] [INFO    ] Already downloaded (use --force to re-download)
+[11:06:32] [INFO] [11:06:32] [INFO    ]
+[11:06:32] [INFO] Waiting 5s before next download...
+[11:06:37] [INFO] [11:06:37] [INFO    ]
+[11:06:37] [INFO] ======================================================================
+[11:06:37] [INFO] [11:06:37] [INFO    ] CLUSTER: NGC_6752 - NGC 6752
+[11:06:37] [INFO] [11:06:37] [INFO    ] ======================================================================
+[11:06:37] [INFO] [11:06:37] [INFO    ] Already downloaded (use --force to re-download)
+[11:06:37] [INFO] [11:06:37] [INFO    ]
+[11:06:37] [INFO] Waiting 5s before next download...
+[11:06:42] [INFO] [11:06:42] [INFO    ]
+[11:06:42] [INFO] ======================================================================
+[11:06:42] [INFO] [11:06:42] [INFO    ] CLUSTER: M3 - M3
+[11:06:42] [INFO] [11:06:42] [INFO    ] ======================================================================
+[11:06:42] [INFO] [11:06:42] [INFO    ] Already downloaded (use --force to re-download)
+[11:06:42] [INFO] [11:06:42] [INFO    ]
+[11:06:42] [INFO] Waiting 5s before next download...
+[11:06:47] [INFO] [11:06:47] [INFO    ]
+[11:06:47] [INFO] ======================================================================
+[11:06:47] [INFO] [11:06:47] [INFO    ] CLUSTER: M5 - M5
+[11:06:47] [INFO] [11:06:47] [INFO    ] ======================================================================
+[11:06:47] [INFO] [11:06:47] [INFO    ] Already downloaded (use --force to re-download)
+[11:06:47] [INFO] [11:06:47] [INFO    ]
+[11:06:47] [INFO] Waiting 5s before next download...
+[11:06:52] [INFO] [11:06:52] [INFO    ]
+[11:06:52] [INFO] ======================================================================
+[11:06:52] [INFO] [11:06:52] [INFO    ] CLUSTER: M4 - M4
+[11:06:52] [INFO] [11:06:52] [INFO    ] ======================================================================
+[11:06:52] [INFO] [11:06:52] [INFO    ] Already downloaded (use --force to re-download)
+[11:06:52] [INFO] [11:06:52] [INFO    ]
+[11:06:52] [INFO] Waiting 5s before next download...
+[11:06:57] [INFO] [11:06:57] [INFO    ]
+[11:06:57] [INFO] ======================================================================
+[11:06:57] [INFO] [11:06:57] [INFO    ] CLUSTER: Omega_Cen - Omega Centauri
+[11:06:57] [INFO] [11:06:57] [INFO    ] ======================================================================
+[11:06:57] [INFO] [11:06:57] [INFO    ] Already downloaded (use --force to re-download)
+[11:06:57] [INFO] [11:06:57] [INFO    ]
+[11:06:57] [INFO] Waiting 5s before next download...
+[11:07:02] [INFO] [11:07:02] [INFO    ]
+[11:07:02] [INFO] ======================================================================
+[11:07:02] [INFO] [11:07:02] [INFO    ] CLUSTER: NGC_6440 - NGC 6440
+[11:07:02] [INFO] [11:07:02] [INFO    ] ======================================================================
+[11:07:02] [INFO] [11:07:02] [INFO    ] Already downloaded (use --force to re-download)
+[11:07:02] [INFO] [11:07:02] [INFO    ]
+[11:07:02] [INFO] Waiting 5s before next download...
+[11:07:07] [INFO] [11:07:07] [INFO    ]
+[11:07:07] [INFO] ======================================================================
+[11:07:07] [INFO] [11:07:07] [INFO    ] CLUSTER: NGC_6441 - NGC 6441
+[11:07:07] [INFO] [11:07:07] [INFO    ] ======================================================================
+[11:07:07] [INFO] [11:07:07] [INFO    ] Already downloaded (use --force to re-download)
+[11:07:07] [INFO] [11:07:07] [INFO    ]
+[11:07:07] [INFO] Waiting 5s before next download...
+[11:07:12] [INFO] [11:07:12] [INFO    ]
+[11:07:12] [INFO] ======================================================================
+[11:07:12] [INFO] [11:07:12] [INFO    ] CLUSTER: M22 - M22
+[11:07:12] [INFO] [11:07:12] [INFO    ] ======================================================================
+[11:07:12] [INFO] [11:07:12] [INFO    ] Already downloaded (use --force to re-download)
+[11:07:12] [INFO] [11:07:12] [INFO    ]
+[11:07:12] [INFO] Waiting 5s before next download...
+[11:07:17] [INFO] [11:07:17] [INFO    ]
+[11:07:17] [INFO] ======================================================================
+[11:07:17] [INFO] [11:07:17] [INFO    ] CLUSTER: M71 - M71
+[11:07:17] [INFO] [11:07:17] [INFO    ] ======================================================================
+[11:07:17] [INFO] [11:07:17] [INFO    ] Already downloaded (use --force to re-download)
+[11:07:17] [INFO] [11:07:17] [INFO    ]
+[11:07:17] [INFO] Waiting 5s before next download...
+[11:07:22] [INFO] [11:07:22] [INFO    ]
+[11:07:22] [INFO] ======================================================================
+[11:07:22] [INFO] [11:07:22] [INFO    ] CLUSTER: NGC_6624 - NGC 6624
+[11:07:22] [INFO] [11:07:22] [INFO    ] ======================================================================
+[11:07:22] [INFO] [11:07:22] [INFO    ] Already downloaded (use --force to re-download)
+[11:07:22] [INFO] [11:07:22] [INFO    ]
+[11:07:22] [INFO] Waiting 5s before next download...
+[11:07:27] [INFO] [11:07:27] [INFO    ]
+[11:07:27] [INFO] ======================================================================
+[11:07:27] [INFO] [11:07:27] [INFO    ] CLUSTER: NGC_6388 - NGC 6388
+[11:07:27] [INFO] [11:07:27] [INFO    ] ======================================================================
+[11:07:27] [INFO] [11:07:27] [INFO    ] Already downloaded (use --force to re-download)
+[11:07:27] [INFO] [11:07:27] [INFO    ]
+[11:07:27] [INFO] Waiting 5s before next download...
+[11:07:32] [INFO] [11:07:32] [INFO    ]
+[11:07:32] [INFO] ======================================================================
+[11:07:32] [INFO] [11:07:32] [INFO    ] CLUSTER: NGC_6712 - NGC 6712
+[11:07:32] [INFO] [11:07:32] [INFO    ] ======================================================================
+[11:07:32] [INFO] [11:07:32] [INFO    ] Already downloaded (use --force to re-download)
+[11:07:32] [INFO] [11:07:32] [INFO    ]
+[11:07:32] [INFO] ======================================================================
+[11:07:32] [INFO] [11:07:32] [INFO    ] FINAL SUMMARY
+[11:07:32] [INFO] [11:07:32] [INFO    ] ======================================================================
+[11:07:32] [INFO] [11:07:32] [INFO    ] SUCCESS: 47_Tuc     - 47 Tucanae
+[11:07:32] [INFO] [11:07:32] [INFO    ]            Files: 0, Time: 0.0s
+[11:07:32] [INFO] [11:07:32] [INFO    ] SUCCESS: Terzan_5   - Terzan 5
+[11:07:32] [INFO] [11:07:32] [INFO    ]            Files: 0, Time: 0.0s
+[11:07:32] [INFO] [11:07:32] [INFO    ] SUCCESS: M15        - M15
+[11:07:32] [INFO] [11:07:32] [INFO    ]            Files: 0, Time: 0.0s
+[11:07:32] [INFO] [11:07:32] [INFO    ] SUCCESS: M62        - M62
+[11:07:32] [INFO] [11:07:32] [INFO    ]            Files: 0, Time: 0.0s
+[11:07:32] [INFO] [11:07:32] [INFO    ] SUCCESS: NGC_6517   - NGC 6517
+[11:07:32] [INFO] [11:07:32] [INFO    ]            Files: 0, Time: 0.0s
+[11:07:32] [INFO] [11:07:32] [INFO    ] SUCCESS: M28        - M28
+[11:07:32] [INFO] [11:07:32] [INFO    ]            Files: 0, Time: 0.0s
+[11:07:32] [INFO] [11:07:32] [INFO    ] SUCCESS: M13        - M13
+[11:07:32] [INFO] [11:07:32] [INFO    ]            Files: 0, Time: 0.0s
+[11:07:32] [INFO] [11:07:32] [INFO    ] SUCCESS: NGC_6397   - NGC 6397
+[11:07:32] [INFO] [11:07:32] [INFO    ]            Files: 0, Time: 0.0s
+[11:07:32] [INFO] [11:07:32] [INFO    ] SUCCESS: NGC_6752   - NGC 6752
+[11:07:32] [INFO] [11:07:32] [INFO    ]            Files: 0, Time: 0.0s
+[11:07:32] [INFO] [11:07:32] [INFO    ] SUCCESS: M3         - M3
+[11:07:32] [INFO] [11:07:32] [INFO    ]            Files: 0, Time: 0.0s
+[11:07:32] [INFO] [11:07:32] [INFO    ] SUCCESS: M5         - M5
+[11:07:32] [INFO] [11:07:32] [INFO    ]            Files: 0, Time: 0.0s
+[11:07:32] [INFO] [11:07:32] [INFO    ] SUCCESS: M4         - M4
+[11:07:32] [INFO] [11:07:32] [INFO    ]            Files: 0, Time: 0.0s
+[11:07:32] [INFO] [11:07:32] [INFO    ] SUCCESS: Omega_Cen  - Omega Centauri
+[11:07:32] [INFO] [11:07:32] [INFO    ]            Files: 0, Time: 0.0s
+[11:07:32] [INFO] [11:07:32] [INFO    ] SUCCESS: NGC_6440   - NGC 6440
+[11:07:32] [INFO] [11:07:32] [INFO    ]            Files: 0, Time: 0.0s
+[11:07:32] [INFO] [11:07:32] [INFO    ] SUCCESS: NGC_6441   - NGC 6441
+[11:07:32] [INFO] [11:07:32] [INFO    ]            Files: 0, Time: 0.0s
+[11:07:32] [INFO] [11:07:32] [INFO    ] SUCCESS: M22        - M22
+[11:07:32] [INFO] [11:07:32] [INFO    ]            Files: 0, Time: 0.0s
+[11:07:32] [INFO] [11:07:32] [INFO    ] SUCCESS: M71        - M71
+[11:07:32] [INFO] [11:07:32] [INFO    ]            Files: 0, Time: 0.0s
+[11:07:32] [INFO] [11:07:32] [INFO    ] SUCCESS: NGC_6624   - NGC 6624
+[11:07:32] [INFO] [11:07:32] [INFO    ]            Files: 0, Time: 0.0s
+[11:07:32] [INFO] [11:07:32] [INFO    ] SUCCESS: NGC_6388   - NGC 6388
+[11:07:32] [INFO] [11:07:32] [INFO    ]            Files: 0, Time: 0.0s
+[11:07:32] [INFO] [11:07:32] [INFO    ] SUCCESS: NGC_6712   - NGC 6712
+[11:07:32] [INFO] [11:07:32] [INFO    ]            Files: 0, Time: 0.0s
+[11:07:32] [INFO] [11:07:32] [INFO    ]
+[11:07:32] [INFO] ======================================================================
+[11:07:32] [INFO] [11:07:32] [INFO    ] TOTAL: 20/20 clusters successfully downloaded
+[11:07:32] [INFO] [11:07:32] [INFO    ] ======================================================================
+[11:07:32] [INFO] [11:07:32] [INFO    ] Downloaded 100% of requested clusters. Continuing pipeline.

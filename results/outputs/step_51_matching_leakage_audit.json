@@ -1,0 +1,79 @@
+{
+  "timestamp_utc": "2026-07-03T10:05:29.083472+00:00",
+  "variants": [
+    {
+      "name": "Raw (no matching)",
+      "mode": "raw",
+      "match_keys": null,
+      "n_matches": 5,
+      "residual_dex": 0.5905561111111126,
+      "gamma": 0.31975491395961925,
+      "gamma_err": 0.10738300952378525,
+      "gamma_r2": 0.2224091935863918
+    },
+    {
+      "name": "Period-only matching (5 NN)",
+      "mode": "matched",
+      "match_keys": [
+        "logP"
+      ],
+      "n_matches": 5,
+      "residual_dex": 0.8173529212121213,
+      "gamma": 0.3953723492518057,
+      "gamma_err": 0.08695029608093956,
+      "gamma_r2": 0.4001105409503861
+    },
+    {
+      "name": "Period + log(tau_c) matching (5 NN)",
+      "mode": "matched",
+      "match_keys": [
+        "logP",
+        "log_tau_c"
+      ],
+      "n_matches": 5,
+      "residual_dex": 0.19803803838383818,
+      "gamma": 0.08977722935250819,
+      "gamma_err": 0.019198934516225424,
+      "gamma_r2": 0.41361668668851537
+    },
+    {
+      "name": "Period + B-proxy matching (5 NN)",
+      "mode": "matched",
+      "match_keys": [
+        "logP",
+        "log_b_proxy"
+      ],
+      "n_matches": 5,
+      "residual_dex": 0.2332304292929289,
+      "gamma": 0.11776915184187026,
+      "gamma_err": 0.029409756331667036,
+      "gamma_r2": 0.34092217378907175
+    },
+    {
+      "name": "Period + B-proxy matching (15 NN)",
+      "mode": "matched",
+      "match_keys": [
+        "logP",
+        "log_b_proxy"
+      ],
+      "n_matches": 15,
+      "residual_dex": 0.35697945622895594,
+      "gamma": 0.18438027898378453,
+      "gamma_err": 0.03864646654830833,
+      "gamma_r2": 0.42338394612346925
+    },
+    {
+      "name": "Period + B-proxy cluster-residualized (5 NN)",
+      "mode": "cluster_residualized",
+      "match_keys": [
+        "logP",
+        "log_b_proxy"
+      ],
+      "n_matches": 5,
+      "residual_dex": 0.2026063357322526,
+      "gamma": 0.13434143537078913,
+      "gamma_err": 0.029127798469308956,
+      "gamma_r2": 0.4069462266034914
+    }
+  ]
+}

@@ -1,0 +1,134 @@
+{
+  "screening_model": "Density-based Temporal Shear competition",
+  "formula": "f_shield = (M_c/d) / (M_clust/R_core + M_c/d)",
+  "tep_parameters": {
+    "rho_c_g_cm3": 20.0,
+    "pulsar_mass_msun": 1.4,
+    "pulsar_saturation_radius_km": 321524.99336885056
+  },
+  "typical_binary": {
+    "period_days": 1.0,
+    "companion_mass_msun": 0.2,
+    "separation_km": 3424545.221154984,
+    "shielding_fraction": 0.4986249658944627,
+    "weight_cluster": 1.289047310434219e+20,
+    "weight_companion": 1.2819768187067623e+20,
+    "influence_ratio": 0.9945149478454169
+  },
+  "verification": {
+    "predicted_shielding": 0.4986249658944627,
+    "observed_shielding": 0.55,
+    "discrepancy_pp": 5.137503410553734,
+    "status": "VERIFIED"
+  },
+  "sweep": [
+    {
+      "period_days": 0.1,
+      "companion_mass_msun": 0.05,
+      "shielding_fraction": 0.6628267462395052,
+      "status": "Strong"
+    },
+    {
+      "period_days": 0.5,
+      "companion_mass_msun": 0.05,
+      "shielding_fraction": 0.30401988661530804,
+      "status": "Moderate"
+    },
+    {
+      "period_days": 1.0,
+      "companion_mass_msun": 0.05,
+      "shielding_fraction": 0.20496958757350003,
+      "status": "Moderate"
+    },
+    {
+      "period_days": 5.0,
+      "companion_mass_msun": 0.05,
+      "shielding_fraction": 0.07608358195171615,
+      "status": "Weak"
+    },
+    {
+      "period_days": 10.0,
+      "companion_mass_msun": 0.05,
+      "shielding_fraction": 0.04872983079329483,
+      "status": "Weak"
+    },
+    {
+      "period_days": 100.0,
+      "companion_mass_msun": 0.05,
+      "shielding_fraction": 0.010737962007158484,
+      "status": "Weak"
+    },
+    {
+      "period_days": 0.1,
+      "companion_mass_msun": 0.2,
+      "shielding_fraction": 0.8811425730131395,
+      "status": "Strong"
+    },
+    {
+      "period_days": 0.5,
+      "companion_mass_msun": 0.2,
+      "shielding_fraction": 0.6270059578703816,
+      "status": "Strong"
+    },
+    {
+      "period_days": 1.0,
+      "companion_mass_msun": 0.2,
+      "shielding_fraction": 0.4986249658944627,
+      "status": "Strong"
+    },
+    {
+      "period_days": 5.0,
+      "companion_mass_msun": 0.2,
+      "shielding_fraction": 0.2415106203761575,
+      "status": "Moderate"
+    },
+    {
+      "period_days": 10.0,
+      "companion_mass_msun": 0.2,
+      "shielding_fraction": 0.16538221363444808,
+      "status": "Weak"
+    },
+    {
+      "period_days": 100.0,
+      "companion_mass_msun": 0.2,
+      "shielding_fraction": 0.04031664624614836,
+      "status": "Weak"
+    },
+    {
+      "period_days": 0.1,
+      "companion_mass_msun": 0.5,
+      "shielding_fraction": 0.9437576321493097,
+      "status": "Strong"
+    },
+    {
+      "period_days": 0.5,
+      "companion_mass_msun": 0.5,
+      "shielding_fraction": 0.7971696161454312,
+      "status": "Strong"
+    },
+    {
+      "period_days": 1.0,
+      "companion_mass_msun": 0.5,
+      "shielding_fraction": 0.7000959941920074,
+      "status": "Strong"
+    },
+    {
+      "period_days": 5.0,
+      "companion_mass_msun": 0.5,
+      "shielding_fraction": 0.42867644201471233,
+      "status": "Strong"
+    },
+    {
+      "period_days": 10.0,
+      "companion_mass_msun": 0.5,
+      "shielding_fraction": 0.31846043517795036,
+      "status": "Moderate"
+    },
+    {
+      "period_days": 100.0,
+      "companion_mass_msun": 0.5,
+      "shielding_fraction": 0.09020985469773007,
+      "status": "Weak"
+    }
+  ]
+}

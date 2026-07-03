@@ -1,0 +1,29 @@
+[11:09:36] [INFO] Step 38: CMC Binary Forensic Audit
+[11:09:38] [INFO]   Deduplicated 1439522 rows -> 1213 unique neutron stars
+[11:09:42] [INFO]   Deduplicated 228001 rows -> 250 unique neutron stars
+[11:09:47] [INFO]   Deduplicated 2010584 rows -> 1125 unique neutron stars
+[11:09:52] [INFO]   Deduplicated 1439522 rows -> 1213 unique neutron stars
+[11:09:55] [INFO]   Deduplicated 228001 rows -> 250 unique neutron stars
+[11:09:59] [INFO]   Deduplicated 2010584 rows -> 1125 unique neutron stars
+[11:10:04] [INFO]   Deduplicated 1439522 rows -> 1213 unique neutron stars
+[11:10:07] [INFO]   Deduplicated 228001 rows -> 250 unique neutron stars
+[11:10:11] [INFO]   Deduplicated 2010584 rows -> 1125 unique neutron stars
+[11:10:16] [INFO]   Deduplicated 1439522 rows -> 1213 unique neutron stars
+[11:10:19] [INFO]   Deduplicated 228001 rows -> 250 unique neutron stars
+[11:10:23] [INFO]   Deduplicated 2010584 rows -> 1125 unique neutron stars
+[11:10:28] [INFO]   Deduplicated 1439522 rows -> 1213 unique neutron stars
+[11:10:30] [INFO]   Deduplicated 228001 rows -> 250 unique neutron stars
+[11:10:34] [INFO]   Deduplicated 2010584 rows -> 1125 unique neutron stars
+[11:10:39] [INFO]   Deduplicated 1439522 rows -> 1213 unique neutron stars
+[11:10:43] [INFO]   Deduplicated 228001 rows -> 250 unique neutron stars
+[11:10:47] [INFO]   Deduplicated 2010584 rows -> 1125 unique neutron stars
+[11:10:52] [INFO]   Deduplicated 1439522 rows -> 1213 unique neutron stars
+[11:10:54] [INFO]   Deduplicated 228001 rows -> 250 unique neutron stars
+[11:10:58] [INFO]   Deduplicated 2010584 rows -> 1125 unique neutron stars
+[11:11:03] [INFO]   Deduplicated 1439522 rows -> 1213 unique neutron stars
+[11:11:06] [INFO]   Deduplicated 228001 rows -> 250 unique neutron stars
+[11:11:09] [INFO]   Deduplicated 2010584 rows -> 1125 unique neutron stars
+[11:11:14] [INFO]   Deduplicated 1439522 rows -> 1213 unique neutron stars
+[11:11:17] [INFO]   Deduplicated 228001 rows -> 250 unique neutron stars
+[11:11:20] [INFO]   Deduplicated 2010584 rows -> 1125 unique neutron stars
+[11:11:24] [INFO] Audit complete. Outputs written to step_38_*.json

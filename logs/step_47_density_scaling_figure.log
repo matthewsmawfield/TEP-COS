@@ -1,0 +1,44 @@
+[11:12:58] [INFO] --- Step 47: Full Density Scaling Simulation ---
+[11:12:58] [INFO] Simulating 34 clusters with exact parameters...
+[11:12:58] [INFO]   Terzan 5             | rho=5.50 | Shift=+3.004 dex
+[11:12:58] [INFO]   47 Tuc (NGC 104)     | rho=4.88 | Shift=+1.977 dex
+[11:12:58] [INFO]   NGC 6517             | rho=5.80 | Shift=+2.862 dex
+[11:12:58] [INFO]   M62 (NGC 6266)       | rho=5.16 | Shift=+2.629 dex
+[11:12:58] [INFO]   M28 (NGC 6626)       | rho=4.52 | Shift=+2.028 dex
+[11:12:58] [INFO]   Omega Centauri (NGC 5139) | rho=3.12 | Shift=+1.053 dex
+[11:12:58] [INFO]   M15 (NGC 7078)       | rho=5.05 | Shift=+2.488 dex
+[11:12:58] [INFO]   M13 (NGC 6205)       | rho=3.79 | Shift=+1.328 dex
+[11:12:58] [INFO]   NGC 6440             | rho=5.10 | Shift=+2.130 dex
+[11:12:58] [INFO]   M5 (NGC 5904)        | rho=3.53 | Shift=+1.574 dex
+[11:12:58] [INFO]   M2 (NGC 7089)        | rho=4.15 | Shift=+1.865 dex
+[11:12:58] [INFO]   NGC 6752             | rho=4.30 | Shift=+2.104 dex
+[11:12:58] [INFO]   Terzan 1             | rho=5.00 | Shift=+2.314 dex
+[11:12:58] [INFO]   M3 (NGC 5272)        | rho=3.68 | Shift=+1.696 dex
+[11:12:58] [INFO]   M53 (NGC 5024)       | rho=2.96 | Shift=+1.037 dex
+[11:12:58] [INFO]   M71 (NGC 6838)       | rho=2.29 | Shift=+0.219 dex
+[11:12:58] [INFO]   NGC 6441             | rho=5.00 | Shift=+2.426 dex
+[11:12:58] [INFO]   NGC 1851             | rho=5.09 | Shift=+2.678 dex
+[11:12:58] [INFO]   NGC 6624             | rho=5.60 | Shift=+2.829 dex
+[11:12:58] [INFO]   NGC 6760             | rho=3.80 | Shift=+1.409 dex
+[11:12:58] [INFO]   M92 (NGC 6341)       | rho=4.30 | Shift=+1.798 dex
+[11:12:58] [INFO]   NGC 6397             | rho=5.68 | Shift=+2.728 dex
+[11:12:58] [INFO]   M22 (NGC 6656)       | rho=2.97 | Shift=+0.680 dex
+[11:12:58] [INFO]   NGC 6544             | rho=5.20 | Shift=+2.422 dex
+[11:12:58] [INFO]   NGC 6522             | rho=5.50 | Shift=+3.017 dex
+[11:12:58] [INFO]   M14 (NGC 6402)       | rho=3.44 | Shift=+1.350 dex
+[11:12:58] [INFO]   NGC 6652             | rho=4.50 | Shift=+2.144 dex
+[11:12:58] [INFO]   NGC 6712             | rho=3.70 | Shift=+1.277 dex
+[11:12:58] [INFO]   Warning: No parameters for NGC 6749, skipping.
+[11:12:58] [INFO]   NGC 6539             | rho=3.30 | Shift=+1.106 dex
+[11:12:58] [INFO]   NGC 6316             | rho=4.80 | Shift=+1.861 dex
+[11:12:58] [INFO]   M4 (NGC 6121)        | rho=2.85 | Shift=+0.457 dex
+[11:12:58] [INFO]   M80 (NGC 6093)       | rho=4.79 | Shift=+2.378 dex
+[11:12:58] [INFO]   M30 (NGC 7099)       | rho=4.20 | Shift=+1.743 dex
+[11:12:58] [INFO] --------------------------------------------------
+[11:12:58] [INFO] FULL DENSITY SCALING RESULTS (N=33)
+[11:12:58] [INFO] Correlation (r): 0.966
+[11:12:58] [INFO] Slope:           0.755 dex / dex
+[11:12:58] [INFO] P-value:         7.74e-20
+[11:12:58] [INFO] --------------------------------------------------
+[11:12:58] [INFO] Results saved to results/outputs/step_47_density_scaling_figure.json
+[11:12:59] [INFO] Updated rigorous plot saved to site/figures/step_47_density_scaling_rigorous.png

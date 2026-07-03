@@ -6,7 +6,7 @@
     with precision tests in the screened Solar System regime. This section
     establishes the theoretical basis for the time-domain probe examined in this
     work: pulsar spin-down in globular clusters, based on the continuous geometric
-    screening framework established in TEP v0.8 Jakarta. This theoretical foundation is
+    screening framework established in TEP v0.9 Jakarta. This theoretical foundation is
     necessary to derive the specific quantitative predictions (Pulsar Ṗ drift)
     tested in the subsequent sections.
 </p>
@@ -50,8 +50,10 @@
 </p>
 
 <div class="equation">
-    $$\frac{d\tau}{dt} = 1 + \frac{\Phi}{c^2} + \kappa_{\text{MSP}} \cdot
-    f(\Phi, \nabla\Phi)$$
+    \begin{equation} \label{eq:theory_1}
+    \frac{d\tau}{dt} = 1 + \frac{\Phi}{c^2} + \kappa_{\text{MSP}} \cdot
+    f(\Phi, \nabla\Phi)
+\end{equation}
 </div>
 
 <p>
@@ -106,9 +108,11 @@
 </p>
 
 <div class="equation">
-    $$S = \int d^4x \sqrt{-g} \left[ \frac{M_{\rm Pl}^2}{2} R - \frac{1}{2}
+    \begin{equation} \label{eq:theory_2}
+    S = \int d^4x \sqrt{-g} \left[ \frac{M_{\rm Pl}^2}{2} R - \frac{1}{2}
     g^{\mu\nu} \partial_\mu\phi \partial_\nu\phi - V(\phi) \right] +
-    S_{\rm matter}[\psi, \tilde{g}_{\mu\nu}, \phi]$$
+    S_{\rm matter}[\psi, \tilde{g}_{\mu\nu}, \phi]
+\end{equation}
 </div>
 
 <p>
@@ -119,7 +123,9 @@
 </p>
 
 <div class="equation">
-    $$\Box\phi - V'(\phi) = -\alpha(\phi) T + S_{\rm disf}$$
+    \begin{equation} \label{eq:theory_3}
+    \Box\phi - V'(\phi) = -\alpha(\phi) T + S_{\rm disf}
+\end{equation}
 </div>
 
 <p>
@@ -133,7 +139,7 @@
 <div class="key-concept">
     <h4>Observable Response Coefficient</h4>
     <p>
-        <strong>$\kappa_{\text{MSP}}$ is treated as an observable pulsar response coefficient.</strong>
+        <em>$\kappa_{\text{MSP}}$ is treated as an observable pulsar response coefficient.</em>
         It is not identified with the microscopic coupling β. The microscopic coupling β is 
         constrained by MICROSCOPE and Solar System PPN tests in the screened regime; 
         κ<sub>MSP</sub> represents the effective amplified response in the unscreened globular 
@@ -141,11 +147,13 @@
         mechanism (Appendix C). The empirical phenomenology is:
     </p>
     <div class="equation">
-        $$\frac{d\tau}{dt} = 1 + \frac{\Phi}{c^2} + \kappa_{\text{MSP}} \cdot f(\Phi, \nabla\Phi)$$
+        \begin{equation} \label{eq:theory_4}
+    \frac{d\tau}{dt} = 1 + \frac{\Phi}{c^2} + \kappa_{\text{MSP}}^{\text{emp}} \frac{\Phi}{c^2}
+\end{equation}
     </div>
     <p>
-        where the function $f(\Phi, \nabla\Phi)$ and the coefficient $\kappa_{\text{MSP}}$
-        are determined from observational data, not from a theoretical derivation.
+        where the empirically screened coefficient $\kappa_{\text{MSP}}^{\text{emp}}$
+        is determined from observational data, not from a theoretical derivation.
         The geometric compactness expressions and chameleon-type screening solutions 
         are candidate <em>transfer models</em> that may relate microscopic couplings 
         to observable responses; they are not required for the empirical test.
@@ -153,7 +161,9 @@
     </p>
 </div>
 
-<div class="equation">$$\kappa_{\text{MSP}} \sim 10^6 - 10^7$$</div>
+<div class="equation">\begin{equation} \label{eq:theory_5}
+    \kappa_{\text{MSP}}^{\text{emp}} \approx 0.05
+\end{equation}</div>
 
 <p>
     This order of magnitude is consistent with the observed spin-down excess
@@ -168,7 +178,7 @@
 <p>
     The TEP framework uses observational data to constrain the
     <em>class</em> of viable modified gravity theories through the
-    observable pulsar response coefficient κ<sub>MSP</sub> (not the microscopic coupling β) and the topological transition scale R<sub>T</sub>, following the same
+    observable pulsar response coefficient $\kappa_{\text{MSP}}^{\text{emp}}$ (not the microscopic coupling β) and the topological transition scale R<sub>T</sub>, following the same
     strategy as the PPN (Parameterized Post-Newtonian) framework used to
     test GR in the Solar System. The effective screening framework motivates the response model tested here; candidate transfer models are discussed separately and are not required for the empirical inference.
 </p>
@@ -179,14 +189,16 @@
     cosmological distances), the observable response is:
 </p>
 
-<div class="equation">$$\kappa_{\text{MSP}} \sim 10^6 - 10^7$$</div>
+<div class="equation">\begin{equation} \label{eq:theory_6}
+    \kappa_{\text{MSP}}^{\text{emp}} \approx 0.05
+\end{equation}</div>
 
 <div class="key-concept">
     <h4>Screening and the Scale-Transition</h4>
     <p>
         TEP requires intermediate-scale signals to coexist with strict Solar
         System bounds. This is achieved via a screening transition: the
-        observable pulsar response coefficient $\kappa_{\text{MSP}}$ is environment-dependent,
+        observable pulsar response coefficient $\kappa_{\text{MSP}}^{\text{emp}}$ is environment-dependent,
         its gradients geometrically suppressed in dense regimes (Solar System) but active in extended,
         low-density configurations (clusters).
     </p>
@@ -212,19 +224,19 @@
     </p>
     <ul>
         <li>
-            <strong>Saturated regime ($\rho \gtrsim \rho_T$):</strong> 
+            <em>Saturated regime ($\rho \gtrsim \rho_T$):</em> 
             Temporal Shear is geometrically suppressed. The 
             local topology is flattened, recovering standard GR (Solar System).
         </li>
         <li>
-            <strong>Weak Screening ($\rho \ll \rho_{\rm half}$):</strong> 
+            <em>Weak Screening ($\rho \ll \rho_{\rm half}$):</em> 
             Gradient coherence length exceeds system size (Globular Clusters). 
             Despite high local density ($\rho \sim 10^{-18}$), the 
             gradient is set by the diffuse embedding halo, allowing full 
             TEP activity.
         </li>
         <li>
-            <strong>Environmental Modulation ($\rho \sim \rho_{\rm half}$):</strong> 
+            <em>Environmental Modulation ($\rho \sim \rho_{\rm half}$):</em> 
             Gradient scale matches density profile (Galactic disks), 
             producing the modulated distance-ladder signal of Paper 11.
         </li>
@@ -289,8 +301,10 @@
 </p>
 
 <div class="equation">
-    $$\dot{P}_{\text{obs}} = \dot{P}_{\text{int}} \left(1 +
-    \frac{\Phi}{c^2}\right)$$
+    \begin{equation} \label{eq:theory_7}
+    \dot{P}_{\text{obs}} = \dot{P}_{\text{int}} \left(1 +
+    \frac{\Phi}{c^2}\right)
+\end{equation}
 </div>
 
 <p>
@@ -300,7 +314,7 @@
 
 <p>
     TEP predicts a dramatically larger effect. If the effective potential is
-    enhanced by a factor of ~10<sup>6</sup>–10<sup>7</sup>, this amplifies both
+    enhanced by the screened coupling of $\sim 5\%$, this amplifies both
     the time dilation (which slows intrinsic clocks) <em>and</em> the
     gradient-driven acceleration term ($a_{\ell} \propto \nabla \Phi$). Since
     cluster pulsars are dominated by the acceleration term (45% show negative
@@ -309,8 +323,10 @@
 </p>
 
 <div class="equation">
-    $$\dot{P}_{\text{obs}} = \dot{P}_{\text{int}} \left(1 + \kappa_{\text{MSP}}
-    \cdot \frac{\Phi}{c^2}\right) + \frac{P \cdot a_\ell}{c}$$
+    \begin{equation} \label{eq:theory_8}
+    \dot{P}_{\text{obs}} = \dot{P}_{\text{int}} \left(1 + \kappa_{\text{MSP}}^{\text{emp}}
+    \frac{\Phi}{c^2}\right) + (1 + \kappa_{\text{MSP}}^{\text{emp}}) \frac{P \cdot a_\ell}{c}
+\end{equation}
 </div>
 
 <p>
@@ -326,15 +342,19 @@
         Plummer model with mass $M = 10^6 M_\odot$ and core radius $R_c = 1$ pc:
     </p>
     <div class="equation">
-        $$\text{Potential term:} \quad \frac{\Phi}{c^2} = \frac{GM}{R_c c^2}
+        \begin{equation} \label{eq:theory_9}
+    \text{Potential term:} \quad \frac{\Phi}{c^2} = \frac{GM}{R_c c^2}
         \approx \frac{(6.67 \times 10^{-11})(2 \times 10^{36})}{(3 \times
-        10^{16})(9 \times 10^{16})} \approx 5 \times 10^{-8}$$
+        10^{16})(9 \times 10^{16})} \approx 5 \times 10^{-8}
+\end{equation}
     </div>
     <div class="equation">
-        $$\text{Acceleration term:} \quad \frac{a_\ell}{c} \cdot P \approx
+        \begin{equation} \label{eq:theory_10}
+    \text{Acceleration term:} \quad \frac{a_\ell}{c} \cdot P \approx
         \frac{GM}{R_c^2 c} \cdot P \approx \frac{(6.67 \times 10^{-11})(2 \times
         10^{36})}{(3 \times 10^{16})^2 (3 \times 10^8)} \cdot (3 \times 10^{-3})
-        \approx 1.5 \times 10^{-18} \text{ s/s}$$
+        \approx 1.5 \times 10^{-18} \text{ s/s}
+\end{equation}
     </div>
     <p>
         Standard Scaling Expectation: The line-of-sight acceleration variance
@@ -345,7 +365,9 @@
         $R_c$, the acceleration broadening scales as the square of the density:
     </p>
     <div class="equation">
-        $$\text{Bias}_{\text{GR}} \propto \rho_{core}^2$$
+        \begin{equation} \label{eq:theory_11}
+    \text{Bias}_{\text{GR}} \propto \rho_{core}^2
+\end{equation}
     </div>
     <p>
         This $\rho_{core}^2$ scaling is the specific "standard expectation"
@@ -356,28 +378,30 @@
         is:
     </p>
     <div class="equation">
-        $$\frac{\delta \dot{P}_{\text{accel}}}{\dot{P}_{\text{int}}} = \frac{P
+        \begin{equation} \label{eq:theory_12}
+    \frac{\delta \dot{P}_{\text{accel}}}{\dot{P}_{\text{int}}} = \frac{P
         \cdot a_\ell / c}{\dot{P}_{\text{int}}} \approx \frac{1.5 \times
-        10^{-18}}{10^{-20}} \approx 1.5 \times 10^{2}$$
+        10^{-18}}{10^{-20}} \approx 1.5 \times 10^{2}
+\end{equation}
     </div>
     <p>
         Result: In a dense cluster core, the acceleration term exceeds the
         intrinsic spin-down by a factor of ~10<sup>2</sup>. This is why 45% of
         GC pulsars show <em>negative</em> Ṗ (acceleration-dominated). Under TEP
-        with $\kappa_{\text{MSP}} \sim 10^6$ and $\Phi/c^2 \sim 5 \times
-        10^{-8}$ for a typical GC, the time-dilation enhancement is
-        $\kappa_{\text{MSP}} \cdot \Phi/c^2 \sim 0.05$ (a 5% effect on clock
-        rates). However, the <em>gradient</em> term (which drives acceleration)
-        is also enhanced. Since the gradient scales as $\nabla\Phi \sim
-        \Phi/R_c$ where $R_c \sim 1$ pc is the core radius, and the acceleration
-        contribution to Ṗ already dominates by ~10<sup>2</sup>, the TEP-enhanced
-        gradient term produces observable effects:
+        with the geometrically screened coupling $\kappa_{\text{MSP}}^{\text{emp}} \approx 0.05$, the effective 
+        potential $\Phi_{\rm eff} = (1 + \kappa_{\text{MSP}}^{\text{emp}})\Phi$ drives the acceleration. 
+        Since the acceleration is the spatial gradient of this modified potential, the anomalous acceleration 
+        is precisely scaled by the coupling: $a_{\rm eff} = (1+\kappa_{\text{MSP}}^{\text{emp}}) a_\ell$. 
+        Because the baseline acceleration contribution to Ṗ already dominates by ~10<sup>2</sup>, the 
+        $\sim 5\%$ anomalous enhancement to the gradient term produces observable effects:
     </p>
     <div class="equation">
-        $$\frac{\delta \dot{P}_{\text{TEP}}}{\dot{P}_{\text{int}}} \sim
-        \kappa_{\text{MSP}} \cdot \frac{\Phi}{c^2} \cdot \frac{\delta
+        \begin{equation} \label{eq:theory_13}
+    \frac{\delta \dot{P}_{\text{TEP}}}{\dot{P}_{\text{int}}} =
+        \kappa_{\text{MSP}}^{\text{emp}} \cdot \frac{\delta
         \dot{P}_{\text{accel}}}{\dot{P}_{\text{int}}} \sim 0.05 \times 1.5
-        \times 10^2 \sim 7.5$$
+        \times 10^2 \sim 7.5
+\end{equation}
     </div>
     <p>
         This explains the counterintuitive sign: cluster pulsars spin down
@@ -456,7 +480,7 @@
                     excess and 0.40 dex controlled residual after population
                     controls
                 </td>
-                <td>Robust Anomaly (8.3σ)</td>
+                <td>Robust Anomaly (5.6σ covariance-aware)</td>
             </tr>
         </tbody>
     </table>
@@ -481,10 +505,10 @@
     <ol>
         <li>
             N-body Dynamics (Pulsar Falsifier): If rigorous analysis using the
-            full CMC catalogs for Terzan 5 and 47 Tuc can reproduce the 0.63 dex
-            raw excess <em>and</em> the suppressed density scaling (slope 0.39)
-            without modified gravity, the pulsar signal is claimed by standard
-            physics.
+            full 20-cluster corrected CMC catalog set can reproduce the 0.612 dex
+            controlled residual <em>and</em> the suppressed density scaling (slope 0.393)
+            without modified gravity, the pulsar signal is attributable to standard
+            dynamics.
         </li>
     </ol>
 </div>

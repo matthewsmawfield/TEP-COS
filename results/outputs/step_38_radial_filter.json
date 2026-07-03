@@ -1,0 +1,72 @@
+{
+  "no_filter": {
+    "M15": 0.06825932009037672,
+    "47_Tuc": 0.004973698117343162,
+    "Terzan_5": 0.22541981969363434
+  },
+  "no_filter_summary": {
+    "unweighted_mean_dex": 0.09955094596711807,
+    "clusters_included": [
+      "M15",
+      "47_Tuc",
+      "Terzan_5"
+    ],
+    "n_clusters": 3
+  },
+  "1rc": {
+    "M15": -0.5398666084106125,
+    "47_Tuc": -0.18097968318098268,
+    "Terzan_5": -0.22068015808568475
+  },
+  "1rc_summary": {
+    "unweighted_mean_dex": -0.31384214989242665,
+    "clusters_included": [
+      "M15",
+      "47_Tuc",
+      "Terzan_5"
+    ],
+    "n_clusters": 3
+  },
+  "2rc": {
+    "M15": -0.5843034677648333,
+    "47_Tuc": -0.15625701901257472,
+    "Terzan_5": -0.15956358407199644
+  },
+  "2rc_summary": {
+    "unweighted_mean_dex": -0.3000413569498015,
+    "clusters_included": [
+      "M15",
+      "47_Tuc",
+      "Terzan_5"
+    ],
+    "n_clusters": 3
+  },
+  "3rc": {
+    "M15": -0.5704690734200746,
+    "47_Tuc": -0.11415685721939539,
+    "Terzan_5": -0.13500868262721966
+  },
+  "3rc_summary": {
+    "unweighted_mean_dex": -0.2732115377555632,
+    "clusters_included": [
+      "M15",
+      "47_Tuc",
+      "Terzan_5"
+    ],
+    "n_clusters": 3
+  },
+  "5rc": {
+    "M15": -0.5237189943150007,
+    "47_Tuc": -0.12220982928090152,
+    "Terzan_5": -0.08449005589010739
+  },
+  "5rc_summary": {
+    "unweighted_mean_dex": -0.24347295982866987,
+    "clusters_included": [
+      "M15",
+      "47_Tuc",
+      "Terzan_5"
+    ],
+    "n_clusters": 3
+  }
+}

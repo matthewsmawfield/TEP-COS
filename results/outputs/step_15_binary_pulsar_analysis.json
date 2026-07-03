@@ -1,0 +1,409 @@
+{
+  "meta": {
+    "timestamp_utc": "2026-07-03T10:04:57.607437+00:00",
+    "source": {
+      "freire_gcpsr": {
+        "path": "/Users/matthewsmawfield/www/Temporal Equivalence Principle/TEP-COS/data/freire_GCpsr.txt",
+        "sha256": "a8520b1133eb7d16cec8f6ede01e9248141e4aa806915ade6a21e1eae6cecf3e"
+      }
+    },
+    "selection": {
+      "msp_cut": "P < 30.0 ms"
+    },
+    "counts": {
+      "total_pulsars": 368,
+      "total_msps": 344,
+      "binary_msps": 117,
+      "isolated_msps": 81
+    }
+  },
+  "binary_vs_isolated": {
+    "n_binary": 117,
+    "n_isolated": 81,
+    "binary_mean_logPdot": -19.295863365179503,
+    "isolated_mean_logPdot": -18.96724701165866,
+    "binary_std_logPdot": 0.6964833138647761,
+    "isolated_std_logPdot": 0.871618655154003,
+    "diff_dex": -0.32861635352084306,
+    "t_stat": -2.809786128783872,
+    "t_p": 0.005635636680782318,
+    "mw_u": 3560.0,
+    "mw_p": 0.0029635632411935497,
+    "binary_sign_dist": {
+      "positive": 66,
+      "negative": 51
+    },
+    "isolated_sign_dist": {
+      "positive": 43,
+      "negative": 38
+    },
+    "binary_frac_negative": 0.4358974358974359,
+    "isolated_frac_negative": 0.4691358024691358,
+    "spatial_control": {
+      "median_offset_arcmin": 0.2,
+      "inner": {
+        "n_binary": 53,
+        "n_isolated": 32,
+        "mean_binary": -19.074282355281976,
+        "mean_isolated": -18.761401429369542,
+        "diff": -0.31288092591243455,
+        "p_value": 0.0651875051022404
+      },
+      "outer": {
+        "n_binary": 51,
+        "n_isolated": 31,
+        "mean_binary": -19.609566309953426,
+        "mean_isolated": -19.465969331434003,
+        "diff": -0.14359697851942244,
+        "p_value": 0.3977872827095601
+      }
+    }
+  },
+  "orbital_analysis": {
+    "n_binaries_with_pdot": 117,
+    "Pb_correlation": {
+      "r": 0.034164461899209714,
+      "p": 0.714600684301935,
+      "n": 117
+    },
+    "e_correlation": {
+      "r": 0.10481850698881795,
+      "p": 0.2607103112105457,
+      "n": 117
+    },
+    "m2_correlation": {
+      "r": 0.178500655332091,
+      "p": 0.054161341986966746,
+      "n": 117
+    },
+    "Pb_stats": {
+      "median_days": 1.09443,
+      "min_days": 0.03704,
+      "max_days": 378.23276
+    }
+  },
+  "cluster_summary": {
+    "47 Tuc (NGC 104)": {
+      "n_binary": 22,
+      "n_isolated": 20,
+      "n_with_pdot": 23,
+      "binary_with_pdot": 13,
+      "isolated_with_pdot": 10
+    },
+    "NGC 362": {
+      "n_binary": 0,
+      "n_isolated": 10,
+      "n_with_pdot": 0,
+      "binary_with_pdot": 0,
+      "isolated_with_pdot": 0
+    },
+    "NGC 1851": {
+      "n_binary": 7,
+      "n_isolated": 7,
+      "n_with_pdot": 2,
+      "binary_with_pdot": 2,
+      "isolated_with_pdot": 0
+    },
+    "M79 (NGC 1904)": {
+      "n_binary": 0,
+      "n_isolated": 2,
+      "n_with_pdot": 0,
+      "binary_with_pdot": 0,
+      "isolated_with_pdot": 0
+    },
+    "NGC 2808": {
+      "n_binary": 0,
+      "n_isolated": 5,
+      "n_with_pdot": 0,
+      "binary_with_pdot": 0,
+      "isolated_with_pdot": 0
+    },
+    "M53 (NGC 5024)": {
+      "n_binary": 3,
+      "n_isolated": 1,
+      "n_with_pdot": 4,
+      "binary_with_pdot": 3,
+      "isolated_with_pdot": 1
+    },
+    "Omega Centauri (NGC 5139)": {
+      "n_binary": 8,
+      "n_isolated": 11,
+      "n_with_pdot": 8,
+      "binary_with_pdot": 4,
+      "isolated_with_pdot": 4
+    },
+    "M3 (NGC 5272)": {
+      "n_binary": 5,
+      "n_isolated": 0,
+      "n_with_pdot": 5,
+      "binary_with_pdot": 5,
+      "isolated_with_pdot": 0
+    },
+    "M5 (NGC 5904)": {
+      "n_binary": 6,
+      "n_isolated": 1,
+      "n_with_pdot": 7,
+      "binary_with_pdot": 6,
+      "isolated_with_pdot": 1
+    },
+    "NGC 5986": {
+      "n_binary": 1,
+      "n_isolated": 0,
+      "n_with_pdot": 0,
+      "binary_with_pdot": 0,
+      "isolated_with_pdot": 0
+    },
+    "M80 (NGC 6093)": {
+      "n_binary": 1,
+      "n_isolated": 6,
+      "n_with_pdot": 1,
+      "binary_with_pdot": 1,
+      "isolated_with_pdot": 0
+    },
+    "M4 (NGC 6121)": {
+      "n_binary": 1,
+      "n_isolated": 0,
+      "n_with_pdot": 1,
+      "binary_with_pdot": 1,
+      "isolated_with_pdot": 0
+    },
+    "M13 (NGC 6205)": {
+      "n_binary": 6,
+      "n_isolated": 3,
+      "n_with_pdot": 8,
+      "binary_with_pdot": 6,
+      "isolated_with_pdot": 2
+    },
+    "M12 (NGC 6218)": {
+      "n_binary": 2,
+      "n_isolated": 0,
+      "n_with_pdot": 0,
+      "binary_with_pdot": 0,
+      "isolated_with_pdot": 0
+    },
+    "M10 (NGC 6254)": {
+      "n_binary": 2,
+      "n_isolated": 0,
+      "n_with_pdot": 0,
+      "binary_with_pdot": 0,
+      "isolated_with_pdot": 0
+    },
+    "M62 (NGC 6266)": {
+      "n_binary": 9,
+      "n_isolated": 1,
+      "n_with_pdot": 9,
+      "binary_with_pdot": 9,
+      "isolated_with_pdot": 0
+    },
+    "NGC 6316": {
+      "n_binary": 1,
+      "n_isolated": 0,
+      "n_with_pdot": 1,
+      "binary_with_pdot": 1,
+      "isolated_with_pdot": 0
+    },
+    "M92 (NGC 6341)": {
+      "n_binary": 2,
+      "n_isolated": 0,
+      "n_with_pdot": 2,
+      "binary_with_pdot": 2,
+      "isolated_with_pdot": 0
+    },
+    "NGC 6342": {
+      "n_binary": 0,
+      "n_isolated": 1,
+      "n_with_pdot": 0,
+      "binary_with_pdot": 0,
+      "isolated_with_pdot": 0
+    },
+    "Terzan 1": {
+      "n_binary": 0,
+      "n_isolated": 6,
+      "n_with_pdot": 6,
+      "binary_with_pdot": 0,
+      "isolated_with_pdot": 6
+    },
+    "NGC 6388": {
+      "n_binary": 0,
+      "n_isolated": 11,
+      "n_with_pdot": 0,
+      "binary_with_pdot": 0,
+      "isolated_with_pdot": 0
+    },
+    "M14 (NGC 6402)": {
+      "n_binary": 3,
+      "n_isolated": 2,
+      "n_with_pdot": 1,
+      "binary_with_pdot": 1,
+      "isolated_with_pdot": 0
+    },
+    "NGC 6397": {
+      "n_binary": 2,
+      "n_isolated": 0,
+      "n_with_pdot": 2,
+      "binary_with_pdot": 2,
+      "isolated_with_pdot": 0
+    },
+    "Terzan 5": {
+      "n_binary": 28,
+      "n_isolated": 20,
+      "n_with_pdot": 47,
+      "binary_with_pdot": 28,
+      "isolated_with_pdot": 19
+    },
+    "NGC 6440": {
+      "n_binary": 4,
+      "n_isolated": 3,
+      "n_with_pdot": 7,
+      "binary_with_pdot": 4,
+      "isolated_with_pdot": 3
+    },
+    "NGC 6441": {
+      "n_binary": 1,
+      "n_isolated": 8,
+      "n_with_pdot": 3,
+      "binary_with_pdot": 1,
+      "isolated_with_pdot": 2
+    },
+    "Terzan 6": {
+      "n_binary": 0,
+      "n_isolated": 1,
+      "n_with_pdot": 0,
+      "binary_with_pdot": 0,
+      "isolated_with_pdot": 0
+    },
+    "NGC 6517": {
+      "n_binary": 1,
+      "n_isolated": 19,
+      "n_with_pdot": 13,
+      "binary_with_pdot": 1,
+      "isolated_with_pdot": 12
+    },
+    "NGC 6522": {
+      "n_binary": 0,
+      "n_isolated": 5,
+      "n_with_pdot": 2,
+      "binary_with_pdot": 0,
+      "isolated_with_pdot": 2
+    },
+    "NGC 6539": {
+      "n_binary": 1,
+      "n_isolated": 0,
+      "n_with_pdot": 1,
+      "binary_with_pdot": 1,
+      "isolated_with_pdot": 0
+    },
+    "NGC 6544": {
+      "n_binary": 2,
+      "n_isolated": 1,
+      "n_with_pdot": 2,
+      "binary_with_pdot": 2,
+      "isolated_with_pdot": 0
+    },
+    "NGC 6624": {
+      "n_binary": 2,
+      "n_isolated": 9,
+      "n_with_pdot": 2,
+      "binary_with_pdot": 1,
+      "isolated_with_pdot": 1
+    },
+    "M28 (NGC 6626)": {
+      "n_binary": 9,
+      "n_isolated": 4,
+      "n_with_pdot": 10,
+      "binary_with_pdot": 6,
+      "isolated_with_pdot": 4
+    },
+    "M69 (NGC 6637)": {
+      "n_binary": 0,
+      "n_isolated": 3,
+      "n_with_pdot": 0,
+      "binary_with_pdot": 0,
+      "isolated_with_pdot": 0
+    },
+    "NGC 6652": {
+      "n_binary": 2,
+      "n_isolated": 0,
+      "n_with_pdot": 1,
+      "binary_with_pdot": 1,
+      "isolated_with_pdot": 0
+    },
+    "M22 (NGC 6656)": {
+      "n_binary": 1,
+      "n_isolated": 3,
+      "n_with_pdot": 2,
+      "binary_with_pdot": 1,
+      "isolated_with_pdot": 1
+    },
+    "M70 (NGC 6681)": {
+      "n_binary": 0,
+      "n_isolated": 6,
+      "n_with_pdot": 0,
+      "binary_with_pdot": 0,
+      "isolated_with_pdot": 0
+    },
+    "Glimpse-C01": {
+      "n_binary": 1,
+      "n_isolated": 5,
+      "n_with_pdot": 0,
+      "binary_with_pdot": 0,
+      "isolated_with_pdot": 0
+    },
+    "NGC 6712": {
+      "n_binary": 1,
+      "n_isolated": 0,
+      "n_with_pdot": 1,
+      "binary_with_pdot": 1,
+      "isolated_with_pdot": 0
+    },
+    "NGC 6749": {
+      "n_binary": 1,
+      "n_isolated": 0,
+      "n_with_pdot": 1,
+      "binary_with_pdot": 1,
+      "isolated_with_pdot": 0
+    },
+    "NGC 6752": {
+      "n_binary": 1,
+      "n_isolated": 8,
+      "n_with_pdot": 6,
+      "binary_with_pdot": 1,
+      "isolated_with_pdot": 5
+    },
+    "NGC 6760": {
+      "n_binary": 1,
+      "n_isolated": 1,
+      "n_with_pdot": 2,
+      "binary_with_pdot": 1,
+      "isolated_with_pdot": 1
+    },
+    "M71 (NGC 6838)": {
+      "n_binary": 3,
+      "n_isolated": 0,
+      "n_with_pdot": 3,
+      "binary_with_pdot": 3,
+      "isolated_with_pdot": 0
+    },
+    "M15 (NGC 7078)": {
+      "n_binary": 0,
+      "n_isolated": 9,
+      "n_with_pdot": 7,
+      "binary_with_pdot": 0,
+      "isolated_with_pdot": 7
+    },
+    "M2 (NGC 7089)": {
+      "n_binary": 7,
+      "n_isolated": 3,
+      "n_with_pdot": 7,
+      "binary_with_pdot": 7,
+      "isolated_with_pdot": 0
+    },
+    "M30 (NGC 7099)": {
+      "n_binary": 2,
+      "n_isolated": 0,
+      "n_with_pdot": 1,
+      "binary_with_pdot": 1,
+      "isolated_with_pdot": 0
+    }
+  }
+}

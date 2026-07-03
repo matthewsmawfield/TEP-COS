@@ -1,0 +1,13 @@
+[11:04:32] [INFO] Step 09: Pdot/P Parallel Observable Analysis
+[11:04:32] [INFO] ============================================================
+[11:04:32] [INFO]   Base sample: 198 GC, 202 field
+[11:04:32] [INFO]   Base comparison: diff = 0.739 dex, t-p = 8.01e-26
+[11:04:33] [INFO]   Period-matched: diff = 0.747 dex, p = 0.0000
+[11:04:35] [INFO]   B-proxy matched: diff = 0.746 dex, p = 0.0000
+[11:04:35] [INFO]   Hybrid sample: 199 GC, 351 field
+[11:04:35] [INFO]   Hybrid comparison: diff = 0.654 dex, t-p = 2.07e-22
+[11:04:43] [INFO]   Hybrid period-matched: diff = 0.693 dex, p = 0.0000
+[11:04:43] [INFO]   Saved JSON: /Users/matthewsmawfield/www/Temporal Equivalence Principle/TEP-COS/results/outputs/step_09_pdot_over_p_analysis.json
+[11:04:43] [INFO]   Saved CSV: /Users/matthewsmawfield/www/Temporal Equivalence Principle/TEP-COS/results/outputs/step_09_pdot_over_p_analysis.csv
+[11:04:43] [INFO]   Saved MD: /Users/matthewsmawfield/www/Temporal Equivalence Principle/TEP-COS/results/outputs/step_09_pdot_over_p_analysis.md
+[11:04:43] [INFO] Done.

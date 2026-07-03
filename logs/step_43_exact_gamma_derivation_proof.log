@@ -1,0 +1,68 @@
+[11:09:36] [INFO] ================================================================================
+[11:09:36] [INFO] STEP 5.54: EXACT PROOF OF TEP SCALING IDENTITY
+[11:09:36] [INFO] ================================================================================
+[11:09:36] [INFO] 
+[11:09:36] [INFO]     MATHEMATICAL PROOF: Γ_TEP = 2Γ_N - 1 is Exact for OLS Slopes
+[11:09:36] [INFO]     ----------------------------------------------------------
+[11:09:36] [INFO]     Let X = log(ρ_c)
+[11:09:36] [INFO]     Let R = log(R_c)
+[11:09:36] [INFO] 
+[11:09:36] [INFO]     The observables scale as:
+[11:09:36] [INFO]     Newtonian acceleration: a ∝ ρ_c * R_c  =>  log(a) = X + R + C_1
+[11:09:36] [INFO]     TEP potential:         |Φ| ∝ ρ_c * R_c^2 => log(|Φ|) = X + 2R + C_2
+[11:09:36] [INFO] 
+[11:09:36] [INFO]     The OLS slope (Γ) of any variable Y against X is defined by:
+[11:09:36] [INFO]     Γ = Cov(Y, X) / Var(X)
+[11:09:36] [INFO] 
+[11:09:36] [INFO]     For the Newtonian slope:
+[11:09:36] [INFO]     Γ_N = Cov(X + R, X) / Var(X)
+[11:09:36] [INFO]         = [Var(X) + Cov(R, X)] / Var(X)
+[11:09:36] [INFO]         = 1 + Cov(R, X)/Var(X)
+[11:09:36] [INFO] 
+[11:09:36] [INFO]     Let α_eff = Cov(R, X)/Var(X). Note that α_eff is precisely the OLS slope
+[11:09:36] [INFO]     of R vs X. This does NOT require R to be a deterministic function of X;
+[11:09:36] [INFO]     it is just the definition of the regression slope, fully valid for data
+[11:09:36] [INFO]     with arbitrary scatter.
+[11:09:36] [INFO] 
+[11:09:36] [INFO]     Thus, Γ_N = 1 + α_eff
+[11:09:36] [INFO] 
+[11:09:36] [INFO]     For the TEP slope:
+[11:09:36] [INFO]     Γ_TEP = Cov(X + 2R, X) / Var(X)
+[11:09:36] [INFO]           = [Var(X) + 2Cov(R, X)] / Var(X)
+[11:09:36] [INFO]           = 1 + 2[Cov(R, X)/Var(X)]
+[11:09:36] [INFO]           = 1 + 2α_eff
+[11:09:36] [INFO] 
+[11:09:36] [INFO]     Substituting α_eff = Γ_N - 1 into the TEP equation:
+[11:09:36] [INFO]     Γ_TEP = 1 + 2(Γ_N - 1)
+[11:09:36] [INFO]     Γ_TEP = 2Γ_N - 1
+[11:09:36] [INFO] 
+[11:09:36] [INFO]     CONCLUSION:
+[11:09:36] [INFO]     This identity is EXACT for regression slopes. It does not assume α is
+[11:09:36] [INFO]     constant, nor does it assume zero scatter in the R_c vs ρ_c relationship.
+[11:09:36] [INFO]     It relies purely on the linearity of covariance.
+[11:09:36] [INFO] 
+[11:09:36] [INFO] --------------------------------------------------------------------------------
+[11:09:36] [INFO] EMPIRICAL MONTE CARLO DEMONSTRATION
+[11:09:36] [INFO] --------------------------------------------------------------------------------
+[11:09:36] [INFO] Testing identity with massive, non-constant scatter in R_c vs ρ_c...
+[11:09:36] [INFO] Input true α:        -0.400
+[11:09:36] [INFO] Scatter applied:     ±0.8 dex (huge variation!)
+[11:09:36] [INFO] Measured slope:      -0.352
+[11:09:36] [INFO] Measured Γ_N:        0.648
+[11:09:36] [INFO] Measured Γ_TEP:      0.297
+[11:09:36] [INFO] Predicted Γ_TEP:     0.297 (using 2Γ_N - 1)
+[11:09:36] [INFO] Difference:          5.55e-16
+[11:09:36] [INFO] Identity holds exact: True
+[11:09:36] [INFO] 
+[11:09:36] [INFO] ================================================================================
+[11:09:36] [INFO] RESPONSE TO REVIEWER:
+[11:09:36] [INFO] =====================
+[11:09:36] [INFO] The reviewer's concern that the derivation assumes a constant α is mathematically
+[11:09:36] [INFO] incorrect. Because the regression slope is defined by covariance, and covariance
+[11:09:36] [INFO] is a linear operator, the relationship Γ_TEP = 2Γ_N - 1 holds EXACTLY for the
+[11:09:36] [INFO] ensemble slopes, regardless of the cluster-to-cluster scatter in α.
+[11:09:36] [INFO] 
+[11:09:36] [INFO] Furthermore, using Γ_N = 0.748 from CMC simulations correctly captures the
+[11:09:36] [INFO] EFFECTIVE α of the mass-segregated pulsar population (α_eff = -0.252), which
+[11:09:36] [INFO] is the physically relevant parameter, rather than the bare structural α (-0.40)
+[11:09:36] [INFO] of the overall cluster light profile.

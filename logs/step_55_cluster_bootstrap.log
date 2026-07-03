@@ -1,0 +1,39 @@
+[11:05:30] [INFO] ==============================================================================
+[11:05:30] [INFO] STEP 5.75: CLUSTER BOOTSTRAP
+[11:05:30] [INFO] ==============================================================================
+[11:05:30] [INFO] 
+[11:05:30] [INFO] Loaded 198 GC pulsars, 202 field pulsars
+[11:05:30] [INFO] 
+[11:05:30] [INFO] --- Raw mean difference (cluster bootstrap) ---
+[11:05:30] [INFO]   Mean diff: +0.577 dex
+[11:05:30] [INFO]   Std:       0.113 dex
+[11:05:30] [INFO]   95% CI:    [+0.336, +0.776]
+[11:05:30] [INFO]   p-value:   0.0000
+[11:05:30] [INFO] 
+[11:05:30] [INFO] --- Period-only matched residual (cluster bootstrap) ---
+[11:05:36] [INFO]   Mean resid: +0.803 dex
+[11:05:36] [INFO]   Std:        0.104 dex
+[11:05:36] [INFO]   95% CI:     [+0.580, +0.980]
+[11:05:36] [INFO]   p-value:    0.0000
+[11:05:36] [INFO] 
+[11:05:36] [INFO] --- Period+B-field matched residual (cluster bootstrap) ---
+[11:05:46] [INFO]   Mean resid: +0.224 dex
+[11:05:46] [INFO]   Std:        0.038 dex
+[11:05:46] [INFO]   95% CI:     [+0.144, +0.293]
+[11:05:46] [INFO]   p-value:    0.0000
+[11:05:46] [INFO] 
+[11:05:46] [INFO] --- Gamma raw (cluster bootstrap) ---
+[11:05:47] [INFO]   Mean Gamma: 0.324
+[11:05:47] [INFO]   Std:        0.118
+[11:05:47] [INFO]   95% CI:     [0.115, 0.583]
+[11:05:47] [INFO]   p-value:    0.0008
+[11:05:47] [INFO] 
+[11:05:47] [INFO] --- Gamma period-only (cluster bootstrap) ---
+[11:05:56] [INFO]   Mean Gamma: 0.398
+[11:05:56] [INFO]   Std:        0.092
+[11:05:56] [INFO]   95% CI:     [0.232, 0.591]
+[11:05:56] [INFO]   p-value:    0.0000
+[11:05:56] [INFO] 
+[11:05:56] [INFO] Saved JSON: /Users/matthewsmawfield/www/Temporal Equivalence Principle/TEP-COS/results/outputs/step_55_cluster_bootstrap.json
+[11:05:56] [INFO] Saved Markdown: /Users/matthewsmawfield/www/Temporal Equivalence Principle/TEP-COS/results/outputs/step_55_cluster_bootstrap.md
+[11:05:56] [INFO] Done.

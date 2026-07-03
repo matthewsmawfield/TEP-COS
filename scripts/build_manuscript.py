@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """
-Build 10-TEP-COS-v0.6-Caracas.md from site/components HTML files.
+Build 10-TEP-COS-v0.7-Caracas.md from site/components HTML files.
 Converts HTML to Markdown and concatenates in order.
 """
 
@@ -93,7 +93,7 @@ def build_manuscript():
     """Build manuscript from components."""
     repo_root = Path(__file__).resolve().parents[1]
     components_dir = repo_root / "site" / "components"
-    output_file = repo_root / "10-TEP-COS-v0.6-Caracas.md"
+    output_file = repo_root / "10-TEP-COS-v0.7-Caracas.md"
     
     # Component files in order
     component_files = [
@@ -124,7 +124,7 @@ def build_manuscript():
     date_formatted = datetime.now().strftime('%d %B %Y')
     header = """# Temporal Equivalence Principle: Suppressed Density Scaling in Globular Cluster Pulsars
 **Matthew Lukin Smawfield**
-Version: v0.6 (Caracas)
+Version: v0.7 (Caracas)
 First published: 9 January 2026 · Last updated: {date}
 DOI: 10.5281/zenodo.18165798
 

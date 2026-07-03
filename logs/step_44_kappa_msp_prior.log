@@ -1,0 +1,4 @@
+[11:09:36] [INFO] ✅ κ_MSP empirical: 2.88e+04 ± 4.46e+04 (dimensionless)
+[11:09:36] [INFO]    Bare (Paper 11): 1.05e+06 (Cepheid domain, mag)
+[11:09:36] [INFO]    Effective screening S_MSP: 0.0274 (dense-cluster geometric suppression)
+[11:09:36] [INFO]    Output: /Users/matthewsmawfield/www/Temporal Equivalence Principle/TEP-COS/results/outputs/step_44_kappa_msp_prior.json

@@ -1,0 +1,114 @@
+{
+  "meta": {
+    "timestamp_utc": "2026-07-03T10:04:02.795010+00:00",
+    "sources": {
+      "freire_gcpsr": {
+        "url": "https://www3.mpifr-bonn.mpg.de/staff/pfreire/GCpsr.txt",
+        "sha256": "a8520b1133eb7d16cec8f6ede01e9248141e4aa806915ade6a21e1eae6cecf3e",
+        "bytes": 48158
+      },
+      "atnf_psrcat_pkg": {
+        "url": "https://www.atnf.csiro.au/research/pulsar/psrcat/downloads/psrcat_pkg.tar.gz",
+        "sha256": "2ea143fc2c9a01184f5a94715422351c49ecf97cae26004ea4897e56421d4cbd",
+        "bytes": 1224627
+      }
+    },
+    "selection": {
+      "msp_cut": "P0 < 0.03 s",
+      "field_exclusion": "Exclude ATNF rows with ASSOC containing 'GC' or tokens matching Freire cluster headers",
+      "note": "GC observed Pdot can be contaminated by line-of-sight acceleration; tau_c and B proxies are treated as proxies, not intrinsic ages/fields."
+    },
+    "counts": {
+      "gc_msp": 198,
+      "field_msp": 202
+    }
+  },
+  "base_log10_abs_pdot": {
+    "gc_mean": -19.170465888399214,
+    "field_mean": -19.761022001580034,
+    "diff_dex": 0.5905561131808206,
+    "t_stat": 7.804929484560872,
+    "t_p": 5.418251382627903e-14,
+    "mw_u": 29440.5,
+    "mw_p": 3.1557607105540055e-16,
+    "gc_n": 198,
+    "field_n": 202
+  },
+  "controls": {
+    "period_matched": {
+      "n_boot": 2000,
+      "diff_mean": 0.6116545605061704,
+      "diff_ci16": 0.5534652570095387,
+      "diff_ci84": 0.6674168630333027,
+      "p_two_sided": 0.0005,
+      "p_two_sided_note": "Bootstrap resolution floor: p \u2265 0.0005 (n_boot=2000)"
+    },
+    "period_and_bproxy_matched": {
+      "n_boot": 2000,
+      "diff_mean": 0.608908974037327,
+      "diff_ci16": 0.5601619738131055,
+      "diff_ci84": 0.6574116907312105,
+      "p_two_sided": 0.0005,
+      "p_two_sided_note": "Bootstrap resolution floor: p \u2265 0.0005 (n_boot=2000)"
+    }
+  },
+  "period_cut_sensitivity": [
+    {
+      "period_cut_ms": 10.0,
+      "n_gc": 177,
+      "n_field": 151,
+      "gc_mean_logpdot": -19.25206633750545,
+      "field_mean_logpdot": -20.029460623061286,
+      "diff_dex": 0.777394285555836,
+      "t_stat": 11.227545062714807,
+      "t_p": 9.455164961417669e-25,
+      "mw_p": 8.862435885494551e-24,
+      "period_matched_diff": 0.7781142631156668,
+      "period_matched_ci16": 0.7173459476556717,
+      "period_matched_ci84": 0.8404095557936803,
+      "period_matched_p": 0.0005,
+      "two_dim_matched_diff": 0.7781142631156653,
+      "two_dim_matched_ci16": 0.7173459476556723,
+      "two_dim_matched_ci84": 0.8404095557936773,
+      "two_dim_matched_p": 0.0005
+    },
+    {
+      "period_cut_ms": 30.0,
+      "n_gc": 198,
+      "n_field": 202,
+      "gc_mean_logpdot": -19.170465888399214,
+      "field_mean_logpdot": -19.761022001580034,
+      "diff_dex": 0.5905561131808206,
+      "t_stat": 7.804929484560872,
+      "t_p": 5.418251382627903e-14,
+      "mw_p": 3.1557607105540055e-16,
+      "period_matched_diff": 0.6116545605061704,
+      "period_matched_ci16": 0.5534652570095387,
+      "period_matched_ci84": 0.6674168630333027,
+      "period_matched_p": 0.0005,
+      "two_dim_matched_diff": 0.608908974037327,
+      "two_dim_matched_ci16": 0.5601619738131055,
+      "two_dim_matched_ci84": 0.6574116907312105,
+      "two_dim_matched_p": 0.0005
+    },
+    {
+      "period_cut_ms": 50.0,
+      "n_gc": 200,
+      "n_field": 229,
+      "gc_mean_logpdot": -19.158554668085923,
+      "field_mean_logpdot": -19.627035070804084,
+      "diff_dex": 0.4684804027181606,
+      "t_stat": 5.956612257422155,
+      "t_p": 5.411854430183007e-09,
+      "mw_p": 9.480770784748429e-12,
+      "period_matched_diff": 0.6139863125831305,
+      "period_matched_ci16": 0.5564969908981046,
+      "period_matched_ci84": 0.6710720041495182,
+      "period_matched_p": 0.0005,
+      "two_dim_matched_diff": 0.592103737707416,
+      "two_dim_matched_ci16": 0.5492399491878471,
+      "two_dim_matched_ci84": 0.6371390203856208,
+      "two_dim_matched_p": 0.0005
+    }
+  ]
+}
