@@ -3,7 +3,7 @@
 TEP Screening Module
 ====================
 
-Version: TEP v0.9 (Jakarta)
+Version: TEP v0.10 (Jakarta)
 
 Environment-dependent Temporal Shear suppression for the Temporal Equivalence Principle.
 

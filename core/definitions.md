@@ -34,7 +34,7 @@ The spatial profile and coherence structure of the scalar field $\phi$ (equivale
 
 ### A.5 Screening
 
-Screening is the continuous suppression of the locally observable Temporal Shear/source-charge sector, expressed through the conformal factor $\ln A(\phi)$, its gradient $\Sigma_\mu$, and its covariance $C_A$ (compactly denoted $\Theta$, $C_\Theta$ where convenient). It is not a binary on/off switch but a smooth, environment-dependent suppression governed by the operator
+Screening is the continuous suppression of the locally observable Temporal Shear/source-charge sector, expressed through the conformal factor $\ln A(\phi)$, its gradient $\Sigma_\mu$, and its covariance $C_A$. It is not a binary on/off switch but a smooth, environment-dependent suppression governed by the operator
 
 $$\Sigma_\mu^{\text{obs}} = \mathcal S_\Sigma(\mathcal E) \, \Sigma_\mu,$$
 
