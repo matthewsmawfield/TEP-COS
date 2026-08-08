@@ -6,7 +6,7 @@
     with precision tests in the screened Solar System regime. This section
     establishes the theoretical basis for the time-domain probe examined in this
     work: pulsar spin-down in globular clusters, based on the continuous geometric
-    screening framework established in TEP v0.9 Jakarta. This theoretical foundation is
+    screening framework established in TEP v0.10 Jakarta. This theoretical foundation is
     necessary to derive the specific quantitative predictions (Pulsar Ṗ drift)
     tested in the subsequent sections.
 </p>
@@ -140,11 +140,8 @@
     <h4>Observable Response Coefficient</h4>
     <p>
         <em>$\kappa_{\text{MSP}}$ is treated as an observable pulsar response coefficient.</em>
-        It is not identified with the microscopic coupling β. The microscopic coupling β is 
-        constrained by MICROSCOPE and Solar System PPN tests in the screened regime; 
-        κ<sub>MSP</sub> represents the effective amplified response in the unscreened globular 
-        cluster environment, connected to β through the transfer function of the screening 
-        mechanism (Appendix C). The empirical phenomenology is:
+        It is not identified with the microscopic coupling β. Solar-System PPN and MICROSCOPE tests constrain the environmentally screened effective source and composition-dependent couplings rather than directly determining the bare conformal parameter β. The observable κ<sub>MSP</sub> is connected to the microscopic sector only through the environmental transfer function; it represents the effective amplified response in the active-shear globular 
+        cluster environment (Appendix C). The empirical phenomenology is:
     </p>
     <div class="equation">
         \begin{equation} \label{eq:theory_4}
@@ -172,7 +169,24 @@
 </p>
 
 <p>
-    The sector-decoupling argument establishing why this large response coefficient coexists with Solar System and composition tests is derived in the screening hierarchy framework (Papers 6 and 11); in brief, MICROSCOPE bounds the composition-dependent scalar charge, Cassini bounds the disformal propagation sector, and neither directly constrains the conformal clock-rate response in the extended, low-density regime.
+    A complementary pipeline computation (step_44_kappa_msp_prior.json)
+    inverts the observed 0.63 dex raw excess with real cluster parameters
+    to derive a separately normalised full response coefficient
+    $\tilde\kappa_{\rm MSP} = (2.9 \pm 4.5)\times 10^4$ (dimensionless).
+    This quantity absorbs the potential depth and acceleration fraction
+    into a single response coefficient suitable for cross-probe comparison
+    with the Cepheid coefficient $\kappa_{\rm Cep} \sim 10^6$ mag
+    (Paper 11). The two normalisations — $\kappa_{\text{MSP}}^{\text{emp}} \approx 0.05$
+    as the fractional in-equation coupling in the spin-down
+    equation, and $\tilde\kappa_{\rm MSP} \sim 10^4$ as the full response
+    coefficient — trace back to the same bare geometric factor $\sim\!10^6$
+    with different screening normalisations. Paper 11's cross-probe
+    comparison uses $\tilde\kappa_{\rm MSP}$; the spin-down equations
+    here use $\kappa_{\text{MSP}}^{\text{emp}}$.
+</p>
+
+<p>
+    The sector-decoupling argument establishing why this large response coefficient coexists with Solar System and composition tests is derived in the screening hierarchy framework (Papers 6 and 11); in brief, MICROSCOPE constrains composition-dependent scalar charge, Cassini constrains the screened PPN/source-charge and Shapiro sector, and GW170817 constrains differential disformal cone tilt; none of these directly fixes the channel response coefficient κ<sub>MSP</sub>.
 </p>
 
 <p>
@@ -216,7 +230,8 @@
     <p>
         The screening hierarchy is governed by the gradient coherence 
         length. While the Temporal Topology saturation proximity scale $\rho_T \approx 
-        20$ g/cm³ marks the asymptotic saturation of the screening 
+        20$ g/cm³ (an observational proxy for the density projection of the
+        environmental operator $S_\Sigma(E)$) marks the asymptotic saturation of the screening 
         effect (Solar System regime), the onset of modulation occurs at 
         galactic-scale densities $\rho_{\rm half} \approx 10^{-23}$ g/cm³ 
         (Paper 11). These two numbers are not in conflict; they describe 
@@ -277,7 +292,7 @@
     </table>
     <p>
         The key observational signature in weakly screened systems is
-        <em>suppressed density scaling</em>: the TEP-enhanced time dilation
+        <em>suppressed density scaling</em>: the TEP clock response
         exhibits topological flattening once field gradients become coherent, producing
         residuals that do not scale with density as strongly as Newtonian
         dynamics predicts. The pulsar channel demonstrates this with a 4.1σ
@@ -387,13 +402,19 @@
     <p>
         Result: In a dense cluster core, the acceleration term exceeds the
         intrinsic spin-down by a factor of ~10<sup>2</sup>. This is why 45% of
-        GC pulsars show <em>negative</em> Ṗ (acceleration-dominated). Under TEP
-        with the geometrically screened coupling $\kappa_{\text{MSP}}^{\text{emp}} \approx 0.05$, the effective 
-        potential $\Phi_{\rm eff} = (1 + \kappa_{\text{MSP}}^{\text{emp}})\Phi$ drives the acceleration. 
-        Since the acceleration is the spatial gradient of this modified potential, the anomalous acceleration 
-        is precisely scaled by the coupling: $a_{\rm eff} = (1+\kappa_{\text{MSP}}^{\text{emp}}) a_\ell$. 
-        Because the baseline acceleration contribution to Ṗ already dominates by ~10<sup>2</sup>, the 
-        $\sim 5\%$ anomalous enhancement to the gradient term produces observable effects:
+        GC pulsars show <em>negative</em> Ṗ (acceleration-dominated). Under TEP,
+        the conformal factor modifies the clock-rate response to the
+        gravitational potential, not the acceleration directly. The screened
+        coupling $\kappa_{\text{MSP}}^{\text{emp}} \approx 0.05$ enters the
+        spin-down equation through the potential term
+        $\Phi_{\rm eff} = (1 + \kappa_{\text{MSP}}^{\text{emp}})\Phi$, but the
+        key observational signature is not amplitude enhancement — it is the
+        <em>suppressed density scaling</em> of the spin-down excess. Because the
+        TEP clock response scales with the potential $|\Phi| \propto \rho R_c^2$
+        rather than the acceleration $a \propto \rho R_c$, the response
+        saturates more rapidly in dense cores. The acceleration contribution
+        to Ṗ, while large in absolute terms, enters through the gradient of
+        the modified potential:
     </p>
     <div class="equation">
         \begin{equation} \label{eq:theory_13}
@@ -404,9 +425,19 @@
 \end{equation}
     </div>
     <p>
-        This explains the counterintuitive sign: cluster pulsars spin down
-        <em>faster</em> (not slower) because the TEP-enhanced acceleration term
-        dominates, amplifying the already-large dynamical contribution.
+        The critical prediction is the density-scaling slope. Newtonian
+        dynamics gives $\Gamma_N \approx 0.75$ (acceleration $\propto \rho R_c$),
+        while the TEP potential response gives
+        $\Gamma_{\rm TEP} = 2\Gamma_N - 1 \approx 0.50$ (potential
+        $\propto \rho R_c^2$). The observed $\Gamma = 0.39 \pm 0.08$ rejects
+        the Newtonian scaling at $4.1\sigma$ and matches the TEP prediction
+        at $0.9\sigma$ — without any fitted parameters. Full N-body/CMC
+        simulations confirm that standard Newtonian dynamics
+        <em>overpredicts</em> the spin-down excess by a factor of 3.1×
+        ($+1.88$ dex predicted vs $+0.61$ dex observed, $12.7\sigma$ tension),
+        precisely because the acceleration scaling is too steep. The TEP
+        potential-based response naturally flattens this scaling, bringing
+        the predicted excess into agreement with observation.
     </p>
 </div>
 

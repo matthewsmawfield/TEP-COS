@@ -6,8 +6,8 @@
 ![TEP-COS: Suppressed Density Scaling](site/public/image.webp)
 
 **Author:** Matthew Lukin Smawfield  
-**Version:** v0.7 (Caracas)  
-**Date:** First published (main citation date): 9 January 2026 | Updated: 3 July 2026
+**Version:** v0.8 (Caracas)  
+**Date:** First published (main citation date): 9 January 2026 | Updated: 8 August 2026
 **Status:** Preprint  
 **DOI:** [10.5281/zenodo.18165798](https://doi.org/10.5281/zenodo.18165798)  
 **Website:** [https://mlsmawfield.com/tep/cos/](https://mlsmawfield.com/tep/cos/)  
@@ -15,17 +15,13 @@
 
 ## Abstract
 
-Gravitational time dilation in General Relativity is verified to 10⁻⁵ precision in the Solar System. At intermediate astrophysical scales, however, persistent anomalies emerge—rotation curves, cluster dynamics, cosmic acceleration—that conventionally require invisible matter or exotic energy. The Temporal Equivalence Principle (TEP) formalizes an alternative: that time dilation is *scale-dependent*, enhanced in extended gravitational configurations while screened in dense, well-tested regimes.
 
-This work reports a dynamical anomaly in globular cluster pulsar timing that challenges standard density scaling. Pulsar timing provides a spatially-resolved probe of time-dilation effects at the 10⁵–10⁶ M☉ scale. Analysis of 543 millisecond pulsars (197 GC, 346 field) reveals a 0.63 dex (decimal exponent, factor of ~4.3) *raw* excess in spin-down magnitude—cluster pulsars spin down *faster* than field controls. After controlling for population differences, a 0.40 dex controlled residual persists (95% CI: 0.33–0.48 dex, 8.3σ).
+A spatially stratified spin-down anomaly is reported in 199 globular-cluster millisecond pulsars compared with 351 field controls. Cluster pulsars show a 0.63 dex raw excess and a 0.40 dex controlled residual, with covariance-aware significance of 5.6σ. The signal exhibits suppressed density scaling: a mixed-effects slope Γ = 0.39 ± 0.08 dex/dex compared with a Newtonian ensemble baseline Γ = 0.75, rejecting the baseline at 4.1σ. Field binaries provide a null control, while cluster binaries are quieter than isolated cluster pulsars; corrected CMC reproduces this binary direction, so the binary result functions as a comparator check rather than the primary failure mode. An adversarial dynamics model accounting for line-of-sight acceleration, jerk, Shklovskii terms, mass segregation, and cluster mass profiles cannot explain the observed suppression. An N-body baseline derived from CMC synthetic pulsars (20 clusters, 18,813 MSPs) predicts an excess 3.1× larger than observed (12.7σ nominal model-data tension, not detection significance; conservative quadrature-stacked uncertainty gives 3.6σ), and a mock pulsar-timing-array detection pipeline confirms that the missing high-acceleration population cannot be attributed to observational selection effects. These results are interpreted as a time-domain test of the TEP observable response coefficient κ<sub>MSP</sub>, not as a measurement of a microscopic scalar coupling.
 
-A spatially-stratified spin-down anomaly is detected in 197 globular cluster pulsars compared to 346 field controls (0.63 dex raw excess, 0.40 dex controlled residual, 8.3σ from covariance-aware test). The signal exhibits suppressed density scaling (mixed-effects slope Γ = 0.39 ± 0.08 dex/dex vs Newtonian ensemble baseline Γ = 0.72; 4.1σ rejection, Bayesian P(Γ > 0.72|data) < 10⁻⁴), saturating in dense cores in a manner consistent with TEP screening but in tension with standard dynamics. Leave-one-cluster-out validation confirms the result is stable (3.8% relative instability) and not driven by individual clusters. A "Binary Inversion" is detected where typically noisy binary systems—predicted to be dynamically hotter—exhibit significantly lower residuals (-0.32 dex, Mann-Whitney p=0.004) than isolated pulsars, challenging standard dynamical heating models. Together, the raw excess, controlled residual, and suppressed density scaling argue against standard Newtonian dynamics as a complete explanation.
-
-The pulsar signal—spatially resolved, field-controlled, and showing suppressed density scaling—provides the primary evidence for potential-dependent modifications to gravitational time flow.
-
+Code Availability: All data and analysis code required to reproduce the results presented in this work, including the full pulsar catalog compilation, are available in the public repository at [https://github.com/matthewsmawfield/TEP-COS](https://github.com/matthewsmawfield/TEP-COS).
 ## Key Findings
 
-Analysis of 543 millisecond pulsars reveals an 8.3σ dynamical anomaly: globular cluster pulsars spin down 0.63 dex (raw) to 0.40 dex (controlled) faster than field controls. The density scaling is suppressed (slope Γ = 0.39 ± 0.08 vs Newtonian ensemble baseline Γ = 0.72; 4.1σ rejection), and binary pulsars in clusters are unexpectedly *quieter* than isolated pulsars (−0.32 dex, Mann-Whitney p = 0.004)—challenging standard dynamical heating models. Leave-one-cluster-out validation confirms the result is stable (3.8% relative instability).
+Analysis of 550 millisecond pulsars (199 globular-cluster + 351 field) reveals a 5.6σ covariance-aware anomaly: globular cluster pulsars spin down 0.63 dex (raw) to 0.40 dex (controlled) faster than field controls. The density scaling is suppressed (slope Γ = 0.39 ± 0.08 vs Newtonian ensemble baseline Γ = 0.75; 4.1σ rejection), and binary pulsars in clusters are unexpectedly *quieter* than isolated pulsars—challenging standard dynamical heating models. An N-body baseline from CMC synthetic pulsars (20 clusters, 18,813 MSPs) predicts an excess 3.1× larger than observed (12.7σ nominal, 3.6σ conservative). Leave-one-cluster-out validation confirms the result is stable (3.8% relative instability).
 
 ---
 
@@ -75,7 +71,7 @@ TEP-COS/
 ├── logs/                        # Pipeline execution logs
 ├── README.md                    # This file
 ├── requirements.txt             # Python dependencies
-└── reproduce_manuscript.py      # Legacy wrapper (deprecated)
+└── 10-TEP-COS-v0.8-Caracas.pdf   # Published PDF
 ```
 
 ## Installation
@@ -92,9 +88,9 @@ pip install -r requirements.txt
 ## Essential Data Files
 
 **Pulsar Analysis:**
-- `results/outputs/step_5_10_pulsar_population_controls.csv` - Main pulsar dataset
-- `results/outputs/atnf_psrcat.db` - ATNF pulsar catalog (auto-downloaded)
-- `results/outputs/freire_GCpsr.txt` - Freire catalog (auto-downloaded)
+- `results/outputs/step_02_pulsar_population_controls.csv` - Main pulsar dataset
+- `results/outputs/step_06_hybrid_pulsar_sample.csv` - Hybrid maximum sample (GC + Field)
+- ATNF pulsar catalog and Freire GCpsr catalog are auto-downloaded by `step_00_data_acquisition.py`
 
 **Supernova Analysis:**
 - `data/supernovae/pantheon_plus_parsed.csv` - Pantheon+ SN Ia compilation
@@ -109,22 +105,28 @@ The pulsar analysis proceeds in stages: sample construction, population controls
 
 | Manuscript Section | Analysis Step | Script | Description |
 |-------------------|---------------|--------|-------------|
-| **3.2** | Sample Construction | `step_5_27_hybrid_maximum_analysis.py` | Generates the maximal MSP sample (GC + Field) from Freire/ATNF catalogs. |
-| **3.3** | Population Controls | `step_5_10_pulsar_population_controls.py` | Applies period and B-field matching to isolate environmental residuals. |
-| **3.4** | Density Scaling | `step_5_31_per_cluster_controlled_residuals.py` | Tests residual scaling against cluster density ($\rho_c$). |
-| **3.5** | Newtonian Baseline | `step_5_13_cluster_acceleration_figure.py` | Simulates and plots raw acceleration broadening (Figure 4.5). |
-| **3.5** | Density Scaling Sim | `step_5_32_density_scaling_figure.py` | Simulates and plots density scaling predictions (Figure 4.6). |
-| **3.7** | Binary vs Isolated | `step_5_11_binary_pulsar_analysis.py` | Tests binary vs isolated MSP residuals within GCs. |
-| **3.7** | Binary Spatial Fig | `step_5_11_binary_spatial_figure.py` | Generates spatial distribution plot of binaries in GCs. |
-| **3.8** | Field Control | `step_5_12_field_binary_analysis.py` | Control test: binary vs isolated MSPs in the field. |
-| **3.10** | Radial Analysis | `step_5_9_freire_gcpsr_radial_analysis.py` | Analyzes radial trends within clusters. |
+| **3.2** | Sample Construction | `step_06_hybrid_maximum_analysis.py` | Generates the maximal MSP sample (GC + Field) from Freire/ATNF catalogs. |
+| **3.3** | Population Controls | `step_02_pulsar_population_controls.py` | Applies period and B-field matching to isolate environmental residuals. |
+| **3.4** | Density Scaling | `step_07_per_cluster_controlled_residuals.py` | Tests residual scaling against cluster density ($\rho_c$). |
+| **3.4** | Hierarchical Scaling | `step_12_hierarchical_density_scaling.py` | Mixed-effects model for density scaling slope Γ. |
+| **3.5** | Newtonian Baseline | `step_46_cluster_acceleration_figure.py` | Simulates and plots raw acceleration broadening. |
+| **3.5** | Density Scaling Sim | `step_47_density_scaling_figure.py` | Simulates and plots density scaling predictions. |
+| **3.6** | Covariance Validation | `step_13_covariance_validation.py` | Covariance-aware t-test, LOOCV, permutation test. |
+| **3.7** | Binary vs Isolated | `step_15_binary_pulsar_analysis.py` | Tests binary vs isolated MSP residuals within GCs. |
+| **3.7** | Binary Spatial Fig | `step_45_binary_spatial_figure.py` | Generates spatial distribution plot of binaries in GCs. |
+| **3.8** | Field Control | `step_20_field_binary_analysis.py` | Control test: binary vs isolated MSPs in the field. |
+| **3.9** | CMC Literature | `step_14_cmc_literature_comparison.py` | Meta-analysis of published CMC density scaling predictions. |
+| **3.10** | Radial Analysis | `step_05_freire_gcpsr_radial_analysis.py` | Analyzes radial trends within clusters. |
+| **3.11** | CMC Gold Standard | `step_37_cmc_gold_standard_analysis.py` | CMC N-body baseline comparison (20 clusters, 18,813 MSPs). |
+| **3.12** | PTA Mock | `step_49_pta_mock_observation.py` | Mock pulsar-timing-array detection pipeline. |
+| **3.13** | Injection Recovery | `step_50_injection_recovery.py` | Injection-recovery test for selection effects. |
 
 ### Appendix & Fossil Probes
 
 | Manuscript Section | Analysis Step | Script | Description |
 |-------------------|---------------|--------|-------------|
-| **App. A** | SN Ia Stretch | `step_7_0_sn_ia_stretch_test.py` | Tests SN Ia light curve stretch vs host velocity dispersion. |
-| **5.x** | Summary Figure | `step_5_40_tep_summary_figure.py` | Generates TEP cosmology summary figure. |
+| **App. A** | SN Ia Stretch | `step_62_sn_ia_stretch_test.py` | Tests SN Ia light curve stretch vs host velocity dispersion. |
+| **App. A** | Summary Figure | `step_48_tep_summary_figure.py` | Generates TEP cosmology summary figure. |
 
 ## Running the Full Pipeline
 
@@ -137,17 +139,12 @@ python3 scripts/run_pipeline.py
 ### Command-line Options
 
 ```bash
-python3 scripts/run_pipeline.py --only-core       # Fast mode: core analysis only
 python3 scripts/run_pipeline.py --skip-validation # Skip long validation steps
 python3 scripts/run_pipeline.py --skip-figures    # Skip figure generation
+python3 scripts/run_pipeline.py --parallel         # Enable parallel processing
 ```
 
 This will populate `results/outputs/` and `results/figures/` with fresh data.
-
-### Legacy Script
-
-For backward compatibility, `reproduce_manuscript.py` is preserved as a wrapper
-that calls `scripts/run_pipeline.py`.
 
 ## Citation
 
@@ -158,7 +155,7 @@ that calls `scripts/run_pipeline.py`.
   year={2026},
   doi={10.5281/zenodo.18165798},
   url={https://doi.org/10.5281/zenodo.18165798},
-  note={Preprint v0.7 (Caracas)}
+  note={Preprint v0.8 (Caracas)}
 }
 ```
 

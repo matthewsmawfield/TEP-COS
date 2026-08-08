@@ -1,0 +1,106 @@
+<h1>Unified TEP Parameter Dictionary</h1>
+
+<p>
+    The TEP corpus uses related but distinct symbols across its papers. This dictionary maps every parameter, its definition, the paper where it is primary, and its fiducial or fitted value.
+</p>
+
+<table class="data-table">
+    <thead>
+        <tr>
+            <th>Symbol</th>
+            <th>Definition</th>
+            <th>Primary Paper</th>
+            <th>Fiducial / Fitted Value</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>$\beta_A$</td>
+            <td>Microscopic conformal coupling: $A(\phi) = \exp(\beta_A \phi/M_{\rm Pl})$</td>
+            <td>TEP (Paper 0)</td>
+            <td>Order unity; not directly fitted in pulsar channel</td>
+        </tr>
+        <tr>
+            <td>$\rho_T$</td>
+            <td>Temporal Topology saturation scale (series-level)</td>
+            <td>TEP-UCD (Paper 6)</td>
+            <td>$\approx 20$ g/cm³</td>
+        </tr>
+        <tr>
+            <td>$R_T(M)$</td>
+            <td>Temporal Topology saturation radius as function of mass</td>
+            <td>TEP-UCD (Paper 6)</td>
+            <td>$R_T \propto M^{1/3}$</td>
+        </tr>
+        <tr>
+            <td>$\kappa_{\text{MSP}}^{\text{emp}}$</td>
+            <td>In-equation acceleration coupling in the pulsar spin-down equation; screened by chameleon factor $\mathcal{S} \sim 10^{-8}$ from the bare $\sim\!10^6$ geometric factor</td>
+            <td>TEP-COS (Paper 10)</td>
+            <td>$\approx 0.05$ (dimensionless)</td>
+        </tr>
+        <tr>
+            <td>$\tilde\kappa_{\rm MSP}$</td>
+            <td>Full empirical response coefficient from pipeline inversion of the 0.63 dex raw excess with real cluster parameters; suitable for cross-probe comparison with $\kappa_{\rm Cep}$</td>
+            <td>TEP-COS (Paper 10)</td>
+            <td>$(2.9 \pm 4.5) \times 10^4$ (dimensionless)</td>
+        </tr>
+        <tr>
+            <td>$S_{\rm MSP}$</td>
+            <td>Effective screening factor: ratio of $\tilde\kappa_{\rm MSP}$ to the bare geometric factor $\sim\!10^6$</td>
+            <td>TEP-COS (Paper 10)</td>
+            <td>$\approx 0.027$</td>
+        </tr>
+        <tr>
+            <td>$\mathcal{S}(m_{\rm eff}, R_c)$</td>
+            <td>Chameleon screening factor suppressing the bare microscopic coupling to the in-equation coefficient</td>
+            <td>TEP-COS (Paper 10)</td>
+            <td>$\sim 10^{-8}$ in dense cluster cores</td>
+        </tr>
+        <tr>
+            <td>$\Gamma$</td>
+            <td>Density-scaling slope of the spin-down excess: $d(\log|\dot{P}|)/d(\log\rho)$</td>
+            <td>TEP-COS (Paper 10)</td>
+            <td>Observed: $0.39 \pm 0.08$; Newtonian: $0.75$; TEP prediction: $0.50$</td>
+        </tr>
+        <tr>
+            <td>$\Gamma_{\rm TEP} = 2\Gamma_N - 1$</td>
+            <td>Parameter-free TEP prediction for the density-scaling slope, derived from potential-based ($|\Phi| \propto \rho R_c^2$) vs acceleration-based ($a \propto \rho R_c$) scaling</td>
+            <td>TEP-COS (Paper 10)</td>
+            <td>$0.50 \pm 0.08$ (matches observation at $0.9\sigma$)</td>
+        </tr>
+        <tr>
+            <td>$\kappa_{\rm Cep}$</td>
+            <td>Cepheid observable response coefficient (P–L transfer × clock response)</td>
+            <td>TEP-H0 (Paper 11)</td>
+            <td>$(1.27 \pm 0.46) \times 10^6$ mag</td>
+        </tr>
+        <tr>
+            <td>$\alpha_{\rm clock}$</td>
+            <td>Shared underlying clock-response scale; unifies $\kappa_{\rm Cep}$ and $\tilde\kappa_{\rm MSP}$ via channel-specific transfer factors</td>
+            <td>TEP-H0 (Paper 11)</td>
+            <td>Derived; not independently fitted</td>
+        </tr>
+        <tr>
+            <td>$T_{\rm GC}$, $T_{\rm disk}$</td>
+            <td>Channel-specific environmental transfer factors: $T_{\rm GC} \sim 10^{-2}$–$10^{-1}$ (dense clusters), $T_{\rm disk} \sim 1$ (galactic disks)</td>
+            <td>TEP-H0 (Paper 11)</td>
+            <td>Derived from cluster/disk density contrast</td>
+        </tr>
+        <tr>
+            <td>$S(\rho)$</td>
+            <td>Continuous shear-suppression factor: $S(\rho) = [1 + (\rho/\rho_{\rm half})^2]^{-1}$</td>
+            <td>TEP-UCD (Paper 6)</td>
+            <td>$\rho_{\rm half} \approx 0.5\,M_\odot/\text{pc}^3$</td>
+        </tr>
+        <tr>
+            <td>$\mathcal{S}_\Sigma(\mathcal{E})$</td>
+            <td>Unified covariant screening operator; reduces to $S(\rho)$ or gradient-dependent $f(g)$ in appropriate limits</td>
+            <td>TEP-C0 (Paper 26)</td>
+            <td>Environment-dependent</td>
+        </tr>
+    </tbody>
+</table>
+
+<p style="font-size:0.9em; color:#666; margin-top:1em;">
+    <em>Note:</em> The two pulsar normalisations — $\kappa_{\text{MSP}}^{\text{emp}} \approx 0.05$ (in-equation coupling) and $\tilde\kappa_{\rm MSP} \sim 10^4$ (full response coefficient) — trace back to the same bare geometric factor $\sim\!10^6$ but absorb different combinations of the potential and acceleration normalisation. The cross-probe comparison with the Cepheid coefficient $\kappa_{\rm Cep}$ uses $\tilde\kappa_{\rm MSP}$, which is the quantity directly analogous to $\kappa_{\rm Cep}$. The key observational signature of the pulsar channel is the suppressed density scaling ($\Gamma = 0.39$ vs Newtonian $0.75$), reflecting the potential-based TEP clock response saturating more rapidly than the acceleration-based Newtonian prediction.
+</p>

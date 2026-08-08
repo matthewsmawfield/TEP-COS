@@ -279,7 +279,25 @@ Filter out foreground contaminants identified in literature.
     ($R_c \sim 1$ pc). Because the cluster core is dense, the local effective mass $m_{\rm eff}$ 
     is large, leading to severe geometric screening $\mathcal{S}(m_{\rm eff}, R_c) \sim 10^{-8}$. 
     This strong attenuation squashes the bare $\sim 10^6$ coupling down to the 
-    observed $\kappa_{\text{MSP}}^{\text{emp}} \approx 0.05$ response coefficient. This demonstrates 
-    <em>one possible</em> microscopic origin for the screened coupling, but the 
+    observed $\kappa_{\text{MSP}}^{\text{emp}} \approx 0.05$ response coefficient. This demonstrates
+    <em>one possible</em> microscopic origin for the screened coupling, but the
     empirical value is ultimately determined directly from data, not from this or any other transfer model.
+</p>
+
+<p>
+    The pipeline (step_44_kappa_msp_prior.json) provides a complementary
+    data-driven normalisation: by inverting the observed 0.63 dex raw excess
+    with real cluster parameters (core radii 0.1–0.5 pc, 64 pulsars across
+    7 clusters), it derives a full response coefficient
+    $\tilde\kappa_{\rm MSP} = (2.9 \pm 4.5)\times 10^4$ with an effective
+    screening factor $S_{\rm MSP} \approx 0.027$ relative to the bare
+    $\sim\!10^6$ scale. The chameleon screening factor
+    $\mathcal{S} \sim 10^{-8}$ and the pipeline's geometric suppression
+    factor $S_{\rm MSP} \approx 0.027$ operate at different levels of the
+    normalisation hierarchy: $\mathcal{S}$ suppresses the bare microscopic
+    coupling to the in-equation coefficient
+    $\kappa_{\text{MSP}}^{\text{emp}} \approx 0.05$, while $S_{\rm MSP}$
+    suppresses the bare geometric factor to the full response coefficient
+    $\tilde\kappa_{\rm MSP} \sim 10^4$. Paper 11 uses the latter for
+    cross-probe comparison with $\kappa_{\rm Cep}$.
 </p>

@@ -1,8 +1,8 @@
 {
   "name": "TEP-COS",
   "short_name": "TEP-COS",
-  "version": "v0.7 (Caracas)",
-  "last_updated": "3 July 2026",
+  "version": "v0.8 (Caracas)",
+  "last_updated": "8 August 2026",
   "start_url": ".",
   "display": "standalone",
   "theme_color": "#1C2E4A",
@@ -74,6 +74,12 @@
       "title": "Data Availability & Reproducibility",
       "file": "8_reproducibility.html",
       "order": 10
+    },
+    {
+      "id": "section-parameter-dictionary",
+      "title": "Unified TEP Parameter Dictionary",
+      "file": "9a_parameter_dictionary.html",
+      "order": 11
     }
   ]
 }

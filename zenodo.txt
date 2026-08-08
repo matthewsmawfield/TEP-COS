@@ -1,7 +1,7 @@
 A spatially stratified spin-down anomaly is reported in 199 globular-cluster millisecond pulsars compared with 351 field controls. Cluster pulsars show a 0.63 dex raw excess and a 0.40 dex controlled residual, with covariance-aware significance of 5.6σ. The signal exhibits suppressed density scaling: a mixed-effects slope Γ = 0.39 ± 0.08 dex/dex compared with a Newtonian ensemble baseline Γ = 0.75, rejecting the baseline at 4.1σ. Field binaries provide a null control, while cluster binaries are quieter than isolated cluster pulsars; corrected CMC reproduces this binary direction, so the binary result functions as a comparator check rather than the primary failure mode. An adversarial dynamics model accounting for line-of-sight acceleration, jerk, Shklovskii terms, mass segregation, and cluster mass profiles cannot explain the observed suppression. An N-body baseline derived from CMC synthetic pulsars (20 clusters, 18,813 MSPs) predicts an excess 3.1× larger than observed (12.7σ nominal model-data tension, not detection significance; conservative quadrature-stacked uncertainty gives 3.6σ), and a mock pulsar-timing-array detection pipeline confirms that the missing high-acceleration population cannot be attributed to observational selection effects. These results are interpreted as a time-domain test of the TEP observable response coefficient κ_MSP, not as a measurement of a microscopic scalar coupling.
 
-Website: https://mlsmawfield.com/tep/cos/
-Code Availability: https://github.com/matthewsmawfield/TEP-COS
+Website: https://mlsmawfield.com/tep/cos
+Repository: https://github.com/matthewsmawfield/TEP-COS
 
 DOI: 10.5281/zenodo.18165798
 

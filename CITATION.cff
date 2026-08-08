@@ -25,8 +25,8 @@ abstract: 'A spatially stratified spin-down anomaly is reported in 199 globular-
   effects. These results are interpreted as a time-domain test of the TEP observable
   response coefficient κ<sub>MSP</sub>, not as a measurement of a microscopic scalar
   coupling.'
-version: v0.7 (Caracas)
-date-released: 2026-01-09
+version: v0.8 (Caracas)
+date-released: 2026-08-08
 license: CC-BY-4.0
 keywords:
 - temporal equivalence principle
@@ -36,12 +36,12 @@ keywords:
 - screening transition
 - modified gravity
 repository-code: https://github.com/matthewsmawfield/TEP-COS
-url: https://github.com/matthewsmawfield/TEP-COS
+url: https://mlsmawfield.com/tep/cos
 doi: 10.5281/zenodo.18165798
 preferred-citation:
   type: article
   title: 'Temporal Equivalence Principle: Suppressed Density Scaling in Globular Cluster
-    Pulsars (Caracas v0.7)'
+    Pulsars (Caracas v0.8)'
   authors:
   - family-names: Smawfield
     given-names: Matthew Lukin

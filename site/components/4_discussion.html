@@ -68,9 +68,10 @@
 <h2>4.2 Cross-Scale Consistency with ρ<sub>T</sub></h2>
 
 <p>
-    The Temporal Topology saturation proximity scale ρ<sub>T</sub> ≈ 20 g/cm³, independently calibrated from 
-    terrestrial clock correlations, defines the screening threshold 
-    across all scales. Since ρ<sub>T</sub> far exceeds astrophysical densities, essentially all 
+    The Temporal Topology saturation scale ρ<sub>T</sub> ≈ 20 g/cm³, calibrated from
+    terrestrial clock correlations, provides a macroscopic saturation/proximity scale
+    within the broader environmental screening operator; it does not define a universal
+    local-density threshold across all systems. Since ρ<sub>T</sub> far exceeds astrophysical densities, essentially all
     extended gravitational systems are in the weak screening regime:
 </p>
 
@@ -488,8 +489,8 @@
 </div>
 
 <p>
-    This is a 1–10% effect. If TEP is correct, what pulsar astronomers measure as "cluster acceleration" is already 
-    a TEP-enhanced time dilation effect. The frameworks are not alternatives; they describe the same physics at different 
+    This is a 1–10% effect. If TEP is correct, what pulsar astronomers measure as "cluster acceleration" is already
+    a TEP-modified time dilation effect. The frameworks are not alternatives; they describe the same physics at different
     coupling strengths.
 </p>
 
@@ -498,7 +499,7 @@
     <p>
         The difficulty is that it is not possible to independently calibrate the cluster acceleration field for each pulsar without 
         detailed dynamical modeling (mass distribution, velocity anisotropy, pulsar orbits). The 0.612 dex controlled residual 
-        after population controls could reflect either incomplete dynamical modeling or TEP enhancement of the acceleration effect.
+        after population controls could reflect either incomplete dynamical modeling or the TEP potential-based clock response, which predicts suppressed density scaling relative to the Newtonian acceleration baseline.
     </p>
     <p>
         The Field Binary Control (Section 3.12) provides critical context: the binary vs isolated difference observed in clusters 
@@ -558,8 +559,8 @@
     Modified gravity theories with screening mechanisms are tightly constrained by laboratory atom interferometry 
     and Lunar Laser Ranging (LLR). Atom interferometry excludes a wide range of chameleon/symmetron parameters 
     in vacuum (Burrage et al. 2018). However, TEP posits a screening transition at $\rho_T \approx 20 \text{ g/cm}^3$. 
-    Laboratory vacuum chambers are embedded within the Earth's density field, which is well above $\rho_T$, 
-    ensuring the local environment is in a source/shear-suppressed regime. The predicted bare enhancement ($\kappa_{\text{bare}} \sim 10^6$) applies 
+    Laboratory vacuum chambers remain embedded within the Earth–Solar source environment, where the combined density, compactness, boundary conditions and source geometry suppress the locally observable Temporal Shear. This local suppression is governed by $S_\Sigma(\mathcal{E})$, not by the chamber's nominal vacuum density or by a binary comparison with $\rho_T$.
+    The predicted bare enhancement ($\kappa_{\text{bare}} \sim 10^6$) applies 
     only to extended, low-density systems (e.g., galactic halos). Inside dense globular clusters, it is suppressed to $\sim 0.05$, 
     and inside the Solar System, it is suppressed to zero, consistent with the observed null results in dense Solar System regimes.
 </p>
@@ -679,15 +680,15 @@
 
     <h4>The Scaling Analysis</h4>
     <p>
-        For self-gravitating clusters with central density ρ_T ∝ M/R_c³:
+        For self-gravitating clusters with central density ρ_c ∝ M/R_c³:
     </p>
     <ul>
-        <li><em>Acceleration (Newtonian):</em> a ∝ GM/R_c² ∝ ρ_T × R_c</li>
-        <li><em>Potential (TEP):</em> |Φ| ∝ GM/R_c ∝ ρ_T × R_c²</li>
+        <li><em>Acceleration (Newtonian):</em> a ∝ GM/R_c² ∝ ρ_c × R_c</li>
+        <li><em>Potential (TEP):</em> |Φ| ∝ GM/R_c ∝ ρ_c × R_c²</li>
     </ul>
 
     <p>
-        Across the cluster sample, let the effective scaling relationship between core radius and density be characterized by a log-log regression slope $s = \text{Cov}(\log R_c, \log \rho_T) / \text{Var}(\log \rho_T)$. By the exact linearity of covariance in Ordinary Least Squares (OLS) regression:
+        Across the cluster sample, let the effective scaling relationship between core radius and density be characterized by a log-log regression slope $s = \text{Cov}(\log R_c, \log \rho_c) / \text{Var}(\log \rho_c)$. By the exact linearity of covariance in Ordinary Least Squares (OLS) regression:
     </p>
     <ul>
         <li>Γ_N = d(log a)/d(log ρ) = 1 + s  (Newtonian)</li>
@@ -703,7 +704,7 @@
     </p>
     
     <div class="note-box" style="background-color: #f8f9fa; border-left: 4px solid #6c757d; padding: 10px; margin: 15px 0; font-size: 0.9em;">
-        <em>Note on Mathematical Exactness:</em> The identity Γ_TEP = 2Γ_N − 1 is an <em>exact</em> mathematical consequence of the definition of the regression slope. It does not assume that $\alpha$ is strictly constant across all clusters, nor does it require zero scatter in the $R_c$ vs $\rho_T$ relationship. The prediction relies purely on the linearity of covariance over the ensemble. Furthermore, taking $\Gamma_N$ from full N-body/CMC simulations natively captures the effective slope $s$ of the mass-segregated pulsar population, rather than the bare structural slope of the overall cluster light profile.
+        <em>Note on Mathematical Exactness:</em> The identity Γ_TEP = 2Γ_N − 1 is an <em>exact</em> mathematical consequence of the definition of the regression slope. It does not assume that $\alpha$ is strictly constant across all clusters, nor does it require zero scatter in the $R_c$ vs $\rho_c$ relationship. The prediction relies purely on the linearity of covariance over the ensemble. Furthermore, taking $\Gamma_N$ from full N-body/CMC simulations natively captures the effective slope $s$ of the mass-segregated pulsar population, rather than the bare structural slope of the overall cluster light profile.
     </div>
     
     <h4>Result</h4>
@@ -731,7 +732,7 @@
 <div class="critical-analysis">
     <h3>4.9.1 Parameter Sensitivity ($\rho_T$)</h3>
     <p>
-        The unification of terrestrial and cluster scales relies on the Temporal Topology saturation proximity scale $\rho_T \approx 20$ g/cm³. 
+        The unification of terrestrial and cluster scales relies on the Temporal Topology saturation proximity scale $\rho_T \approx 20$ g/cm³, an observational proxy for the density projection of the full environmental operator $S_\Sigma(E)$.
         How sensitive is the result to this parameter?
     </p>
     <ul>
@@ -739,7 +740,7 @@
             shifts $R_{\text{sol}}$ by only ~26%.</li>
         <li>Robustness: Since globular cluster core radii span a factor of ~10 (0.1 to 1 pc), an O(1) shift in $\rho_T$ 
             does not invalidate the predicted screening phenomenology; it shifts the precise onset of saturation. 
-            The fact that <em>all</em> observed clusters in the sample appear saturated (suppressed density scaling) suggests the analysis is well within the screened regime, making the conclusion robust to moderate uncertainties in $\rho_T$.</li>
+            The fact that <em>all</em> observed clusters in the sample exhibit the flattened-response behaviour expected once the weakly screened coherent-gradient response has entered its nonlinear regime, making the conclusion robust to moderate uncertainties in $\rho_T$.</li>
     </ul>
 
     <h3>4.9.2 Failure Modes and Confounds</h3>
@@ -865,7 +866,7 @@
         </thead>
         <tbody>
             <tr>
-                <td>Screening Threshold</td>
+                <td>Screening Velocity Scale</td>
                 <td>165 ± 25 km/s</td>
                 <td>&lt;100 or &gt;250 km/s</td>
                 <td>140–190 km/s</td>

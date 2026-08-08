@@ -1,3 +1,9 @@
+v0.8 (Caracas) — 8 August 2026
+
+- Canonical TEP architecture alignment: added S_Σ(E) environmental operator note
+- Clarified ρ_T as the observational proxy for density projection
+- Replaced "unscreened" with "active-shear" in the globular cluster environment description
+
 v0.7 (Caracas) - 3 July 2026
 
 - Expanded CMC baseline: 20 clusters, 18,813 filtered MSPs with fixed MSP period and mass-segregation spatial filters (was 13 clusters, 21.0M raw pulsars)
