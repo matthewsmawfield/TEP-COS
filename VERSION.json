@@ -1,8 +1,8 @@
 {
-  "version": "0.8",
+  "version": "0.9",
   "codename": "Caracas",
-  "date": "2026-08-08",
-  "previous_version": "0.7",
+  "date": "2026-09-13",
+  "previous_version": "0.8",
   "previous_date": "2026-04-29",
   "description": "Paper 10: Temporal Equivalence Principle: Suppressed Density Scaling in Globular Cluster Pulsars",
   "paper": "10"

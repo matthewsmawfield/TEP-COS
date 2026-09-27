@@ -52,7 +52,7 @@
 <p>
     SNe Ia in galaxies with higher velocity dispersion appear systematically fainter 
     (r = +0.22, p = 1.2×10<sup>−3</sup>, 218 SNe from Pantheon+). This direction matches the 
-    TEP prediction—deeper potentials correlate with enhanced time dilation—but the correlation 
+    TEP prediction—deeper potentials correlate with amplified time dilation—but the correlation 
     is <em>indistinguishable</em> from the standard mass-step effect. Partial correlation controlling 
     for host mass is null (r = −0.047, p = 0.49), indicating the signal is dominated by 
     established astrophysical systematics rather than a novel TEP signature. Consequently, 
@@ -140,66 +140,86 @@ Filter out foreground contaminants identified in literature.
 <ul>
     <li><code>scripts/steps/step_02_pulsar_population_controls.py</code>: Implements the exact matching procedure for pulsar controls.</li>
     <li><code>scripts/steps/step_12_hierarchical_density_scaling.py</code>: Runs the hierarchical mixed-effects model for density scaling.</li>
-    <li><code>scripts/steps/step_7_0_sn_ia_stretch_test.py</code>: SN Ia peak magnitude vs host velocity dispersion correlation (mB-σ test).</li>
+    <li><code>scripts/steps/step_62_sn_ia_stretch_test.py</code>: SN Ia peak magnitude vs host velocity dispersion correlation (mB-σ test).</li>
 </ul>
 
 <h2>Appendix C: Candidate Microscopic Transfer Model (Illustrative)</h2>
 
 <p>
-    This appendix presents one possible microscopic origin for $\kappa_{\text{MSP}}$ using a 
-    chameleon-type potential as an illustration; the empirical analysis is entirely independent 
-    of this model. It is not required for the empirical test, which treats $\kappa_{\text{MSP}}$ 
-    as an observable pulsar response coefficient determined from data.
+    This appendix presents one possible microscopic origin for $\kappa_{\text{MSP}}$ using the
+    canonical density-dependent-mass completion of Paper 0 as an illustration; the empirical
+    analysis is entirely independent of this model. It is not required for the empirical test,
+    which treats $\kappa_{\text{MSP}}$ as an observable pulsar response coefficient determined
+    from data.
 </p>
 
 <p>
-    The following derives an illustrative transfer model using chameleon-type equations as a 
-    candidate completion of the continuous Temporal Shear mechanism. As established in Paper 0, 
-    chameleon and Vainshtein-type completions are both phenomenologically viable; the empirical 
-    inference does not depend on which completion is correct.
+    The following derives an illustrative transfer model on the admissible branch of the scalar
+    sector, as a candidate completion of the continuous Temporal Shear mechanism. As established
+    in Paper 0, density-dependent-mass (chameleon-class), Vainshtein, and kinetic completions
+    remain candidate microscopic realizations of Temporal-Topology screening; the empirical
+    inference does not depend on which admissible completion is correct. What is fixed is the
+    admissible branch itself: on the universal coupling $\beta_A = -1$, the inverse-power
+    chameleon family admits no positive-density equilibrium and predicts the wrong environmental
+    direction, and is excluded by constraint F1. The derivation below therefore uses the
+    canonical matter-hosting potential — the quartic self-interaction — rather than the
+    excluded branch.
 </p>
 
 <h2>C.1 Motivation</h2>
 
 <p>
-    To satisfy precision tests in dense environments while allowing cosmological dynamics, 
-    a chameleon-like potential may be adopted. The following derivation shows how such a 
-    microscopic framework could, in principle, produce the bare geometric factor of $\sim 10^6$, 
-    which is then heavily attenuated by local screening down to the empirically observed 
-    $\kappa_{\text{MSP}}^{\text{emp}} \approx 0.05$ response coefficient in the cluster core.
+    To satisfy precision tests in dense environments while allowing cosmological dynamics,
+    a density-dependent mass may be adopted. On the canonical branch the operative
+    potential is the matter-hosting factor of the master form of Paper 0,
+    $V(\phi) = \lambda\phi^4/4$, the minimal admissible self-interaction for $\beta_A = -1$.
+    The following derivation shows how such a microscopic framework could, in principle,
+    produce the unsuppressed geometric factor of $\sim 10^6$, which is then heavily attenuated
+    by environmental screening down to the empirically observed
+    $\kappa_{\text{MSP}}^{\text{emp}} \approx 0.05$ response coefficient.
 </p>
 
 <h2>C.2 Effective Potential and Field Equilibrium</h2>
 
 <p>
-    For a potential of the form $V(\phi) = \Lambda^4 [1 + (\Lambda/\phi)^n]$ with $n > 0$, 
-    the effective potential including matter coupling is:
+    For the canonical matter-hosting potential $V(\phi) = \lambda\phi^4/4$ — the
+    weak-field branch of the master potential of Paper 0 — the effective potential
+    including matter coupling is:
 </p>
 
 <div class="equation">
     \begin{equation} \label{eq:appendix_1}
-    V_{\rm eff}(\phi; \rho) = V(\phi) + [A(\phi) - 1] \rho \approx V(\phi) +
-    \frac{\beta_A\phi}{M_{\rm Pl}}\rho
+    V_{\rm eff}(\phi; \rho) = \frac{\lambda}{4}\phi^4 + [A(\phi) - 1] \rho \approx
+    \frac{\lambda}{4}\phi^4 + \frac{\beta_A\phi}{M_{\rm Pl}}\rho
 \end{equation}
 </div>
 
 <p>
-    where $A(\phi) = \exp(\beta_A\phi/M_{\rm Pl})$ and the approximation holds for 
-    small $\beta_A\phi/M_{\rm Pl}$. The equilibrium field value $\phi_{\rm min}(\rho)$ 
-    and effective mass $m_{\rm eff}(\rho)$ are:
+    where $A(\phi) = \exp(\beta_A\phi/M_{\rm Pl})$ and the approximation holds for
+    small $\beta_A\phi/M_{\rm Pl}$. On the universal branch $\beta_A = -1$ the
+    matter-coupling slope is negative, balancing the positive potential slope at a
+    positive equilibrium field — precisely the sign structure the inverse-power family
+    lacks on this branch. The equilibrium field value $\phi_{\rm min}(\rho)$
+    and effective mass $m_{\rm eff}(\rho)$ are (Paper 0):
 </p>
 
 <div class="equation">
     \begin{equation} \label{eq:appendix_2}
-    \phi_{\rm min}(\rho) \approx \left[ \frac{n \Lambda^{n+4} M_{\rm Pl}}{\beta_A \rho} \right]^{1/(n+1)}, \quad m_{\rm eff}^2(\rho) \approx
-    \frac{(n+1) n \Lambda^{n+4}}{\phi_{\rm min}^{n+2}}
+    \phi_{\rm min}(\rho) \approx \left( \frac{\rho}{\lambda M_{\rm Pl}} \right)^{1/3}, \quad
+    m_{\rm eff}(\rho) \approx \sqrt{3}\,\lambda^{1/6} \left( \frac{\rho}{M_{\rm Pl}} \right)^{1/3}
 \end{equation}
 </div>
 
 <p>
-    The effective mass grows with ambient density, ensuring that in dense
-    regions (Solar System), the scalar field is massive and suppressed, while in
-    diffuse regions (clusters, cosmology), the field is light and dynamical.
+    Both quantities grow with ambient density and carry the correct signs: the
+    equilibrium field is positive and deepens in denser environments
+    ($\phi_{\rm min} \propto \rho^{1/3}$, consistent with $\phi &gt; 0$ inside
+    temporal wells), while the field is more massive and short-ranged in dense
+    regions (Solar System, compact bodies) and light and dynamical in diffuse
+    ones (clusters, cosmology). The quartic self-coupling is fixed by the corpus
+    reference value $\lambda_{\rm ref} \approx 7.5 \times 10^{-71}$, anchored to
+    the terrestrial saturation scale $R_T = \lambda_T$ of Paper 0; nothing in
+    this appendix is separately tuned.
 </p>
 
 <h2>C.3 Weak-Field Mapping</h2>
@@ -274,11 +294,15 @@ Filter out foreground contaminants identified in literature.
 </div>
 
 <p>
-    where the bare geometric factor $c^2/(4\pi G \rho_0 R_c^2) \approx 10^6$–$10^7$
+    where the unsuppressed geometric factor $c^2/(4\pi G \rho_0 R_c^2) \approx 10^6$–$10^7$
     for typical cluster densities ($\rho_0 \sim 10^{-18}$ g/cm³) and core radii
-    ($R_c \sim 1$ pc). Because the cluster core is dense, the local effective mass $m_{\rm eff}$ 
-    is large, leading to severe geometric screening $\mathcal{S}(m_{\rm eff}, R_c) \sim 10^{-8}$. 
-    This strong attenuation squashes the bare $\sim 10^6$ coupling down to the 
+    ($R_c \sim 1$ pc). On the admissible branch the screening factor
+    $\mathcal{S}(m_{\rm eff}, R_c)$ collects the suppression accumulated across the nested
+    domain hierarchy — the dense endpoints (the pulsar, its companion, the calibrator
+    environment) carry a large $m_{\rm eff}$ and are strongly self-screened, while the
+    diffuse cluster volume retains the lighter, active-shear field — yielding an aggregate
+    attenuation of order $\mathcal{S} \sim 10^{-8}$ at the in-equation level.
+    This strong attenuation squashes the unsuppressed $\sim 10^6$ coupling down to the
     observed $\kappa_{\text{MSP}}^{\text{emp}} \approx 0.05$ response coefficient. This demonstrates
     <em>one possible</em> microscopic origin for the screened coupling, but the
     empirical value is ultimately determined directly from data, not from this or any other transfer model.
@@ -290,14 +314,14 @@ Filter out foreground contaminants identified in literature.
     with real cluster parameters (core radii 0.1–0.5 pc, 64 pulsars across
     7 clusters), it derives a full response coefficient
     $\tilde\kappa_{\rm MSP} = (2.9 \pm 4.5)\times 10^4$ with an effective
-    screening factor $S_{\rm MSP} \approx 0.027$ relative to the bare
-    $\sim\!10^6$ scale. The chameleon screening factor
+    screening factor $S_{\rm MSP} \approx 0.030$ relative to the unsuppressed
+    $\sim\!10^6$ scale. The density-dependent screening factor
     $\mathcal{S} \sim 10^{-8}$ and the pipeline's geometric suppression
-    factor $S_{\rm MSP} \approx 0.027$ operate at different levels of the
-    normalisation hierarchy: $\mathcal{S}$ suppresses the bare microscopic
+    factor $S_{\rm MSP} \approx 0.030$ operate at different levels of the
+    normalisation hierarchy: $\mathcal{S}$ suppresses the unsuppressed microscopic
     coupling to the in-equation coefficient
     $\kappa_{\text{MSP}}^{\text{emp}} \approx 0.05$, while $S_{\rm MSP}$
-    suppresses the bare geometric factor to the full response coefficient
+    suppresses the unsuppressed geometric factor to the full response coefficient
     $\tilde\kappa_{\rm MSP} \sim 10^4$. Paper 11 uses the latter for
     cross-probe comparison with $\kappa_{\rm Cep}$.
 </p>

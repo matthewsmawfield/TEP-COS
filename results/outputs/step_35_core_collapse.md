@@ -13,23 +13,31 @@ Terzan 5, M62 (NGC 6266), M15 (NGC 7078), NGC 6752, NGC 6624, NGC 6397
 **Non-PCC Clusters (n=11):**
 47 Tuc (NGC 104), M28 (NGC 6626), Omega Centauri (NGC 5139), M13 (NGC 6205), M5 (NGC 5904), M2 (NGC 7089), M3 (NGC 5272), M53 (NGC 5024), M71 (NGC 6838), NGC 1851, M22 (NGC 6656)
 
+**Unclassified in this sample (n=8):**
+NGC 6517, NGC 6440, Terzan 1, NGC 6441, NGC 6760, M92 (NGC 6341), NGC 6544, NGC 6522
+
 ## Results
 
-### Density Scaling by PCC Status
+### Estimand A — cluster-mean log|Ṗ| vs log ρ_c (primary, cf. steps 12/24)
 
-| Group | N | Slope | Std Err | Correlation r | Correlation p |
-|-------|---|-------|---------|---------------|---------------|
-| PCC | 6 | 0.008 | 0.155 | 0.026 | 0.9613 |
-| non-PCC | 11 | 0.069 | 0.027 | 0.656 | 0.0284 |
+| Group | N | Slope | Std Err | r | p | vs Newtonian 0.748 |
+|-------|---|-------|---------|---|---|--------------------|
+| PCC | 6 | -0.090 | 0.291 | -0.153 | 0.7719 | 2.85σ |
+| non-PCC | 11 | 0.295 | 0.177 | 0.486 | 0.1298 | 2.50σ |
 
-### Slope Comparison
+Joint fit (y = a + b·ρ + c·I_PCC): shared slope 0.239 ± 0.149, PCC offset 0.396 ± 0.316 (t=1.25, p=0.230)
 
-| Metric | Value |
-|--------|-------|
-| Slope difference | -0.061 |
-| Std err (diff) | 0.158 |
-| Z-statistic | -0.39 |
-| Significance | 0.39σ |
+Pooled slope (classified subset): 0.369 ± 0.108
+Pooled slope (full sample): 0.430 ± 0.102
+
+### Estimand B — controlled residual (GC − matched field) vs log ρ_c
+
+| Group | N | Slope | Std Err | r | p | vs Newtonian 0.748 |
+|-------|---|-------|---------|---|---|--------------------|
+| PCC | 6 | 0.008 | 0.155 | 0.026 | 0.9613 | 4.62σ |
+| non-PCC | 11 | 0.069 | 0.027 | 0.656 | 0.0284 | 14.37σ |
+
+Joint fit: shared slope 0.060 ± 0.038, PCC offset 0.227 ± 0.081 (t=2.82, p=0.014)
 
 ### Residual Analysis
 
@@ -38,20 +46,21 @@ Terzan 5, M62 (NGC 6266), M15 (NGC 7078), NGC 6752, NGC 6624, NGC 6397
 | PCC | 6 | 0.3850373973305741 | 0.15937194236705404 |
 | non-PCC | 11 | 0.0682663846637175 | 0.09241920313680725 |
 
+Welch t-test p: 0.003000823986638495
+
 ## Conclusions
 
-- PCC and non-PCC clusters show CONSISTENT density scaling slopes
-- No evidence that core collapse status modifies the TEP signal
-- Residual difference detected (p=0.0030)
+- non-PCC subsample alone shows sub-Newtonian density scaling (0.295 +/- 0.177 vs Newtonian 0.748; 2.50sigma below) — the anomaly is not a core-collapse artifact
+- Pooled slope decomposes into shared within-class slope 0.239 +/- 0.149 plus a PCC intercept offset +0.396 +/- 0.316 dex (pooled-classified slope 0.369 exceeds each within-class slope — between-class offset structure)
+- PCC within-class slope -0.090 +/- 0.291 is flat at the highest densities (mean log rho_c ~ 5.2): consistent with a saturated response, not a steepening Newtonian one
+- PCC clusters carry systematically larger controlled residuals (+0.317 dex, p=0.0030) — the anomaly is strongest in the densest class rather than explained by it
 
 ## Implications for N-Body Pushback
 
-This analysis demonstrates that the suppressed density scaling signal is:
-1. Present in BOTH PCC and non-PCC clusters
-2. Statistically consistent between the two groups
-3. Not an artifact of "messy" core collapse dynamics
-
-The TEP interpretation remains viable regardless of cluster core status.
+The stratification decomposes the pooled density slope into a shared
+within-class trend and a PCC-class intercept offset. The anomaly is present
+in the non-PCC subsample alone and is largest in the densest (PCC) class —
+the opposite of what a core-collapse artifact predicts.
 
 ---
 

@@ -1,7 +1,7 @@
 {
   "data_source": "SDSS_specObj_DIRECT_STELLAR",
   "n_sample": 218,
-  "timestamp": "2026-07-03T11:13:02.109934",
+  "timestamp": "2026-09-20T19:04:05.741744",
   "sigma_range": {
     "min": 32.44382,
     "max": 349.3705,
@@ -21,7 +21,7 @@
         0.014,
         0.16431
       ],
-      "r": 0.15604709012919404,
+      "r": 0.15604709012919396,
       "p_value": 0.10515935782739982,
       "significance": 1.6203395484823064
     },
@@ -36,16 +36,16 @@
       "significance": 1.9695042259948718
     },
     "evolution_test": {
-      "correlation_difference": 0.033071514786155,
-      "z_statistic": 0.24818171485024138,
-      "p_value": 0.8039938132935831,
+      "correlation_difference": 0.03307151478615508,
+      "z_statistic": 0.24818171485024196,
+      "p_value": 0.8039938132935827,
       "evidence_for_evolution": false
     }
   },
   "selection_function_analysis": {
     "magnitude_redshift_correlation": {
-      "r": 0.9336928536883449,
-      "p_value": 2.6428930161586138e-98,
+      "r": 0.9336928536883441,
+      "p_value": 2.6428930161612978e-98,
       "potential_bias": true
     },
     "redshift_bins": {
@@ -63,7 +63,7 @@
           32.858288,
           349.3705
         ],
-        "correlation_r": 0.10219702434879002,
+        "correlation_r": 0.10219702434879008,
         "correlation_p": 0.38959244024652345,
         "significance": 0.8603567115400776
       },
@@ -99,7 +99,7 @@
           32.44382,
           312.65982
         ],
-        "correlation_r": 0.2898525207343852,
+        "correlation_r": 0.2898525207343853,
         "correlation_p": 0.012867874662996215,
         "significance": 2.48740519147902
       }
@@ -111,25 +111,25 @@
     }
   },
   "partial_correlation": {
-    "r_raw": 0.21780141521973087,
-    "r_partial_mass_controlled": -0.04659393710077179,
-    "p_partial": 0.4940104953811617,
-    "r_mass_mB": 0.564285378825223,
+    "r_raw": 0.2178014152197309,
+    "r_partial_mass_controlled": -0.04659393710077143,
+    "p_partial": 0.49401049538116504,
+    "r_mass_mB": 0.5642853788252226,
     "r_mass_sigma": 0.44695869899755425,
     "interpretation": "Mass-\u03c3 collinearity under TEP removes both signals when controlling for mass"
   },
   "pearson": {
-    "r": 0.21780141521973087,
+    "r": 0.2178014152197309,
     "p_value": 0.0012111078419130756,
     "significance_sigma": 3.236251126988192
   },
   "tertile_correlations": {
     "low": {
-      "r": 0.13307219079564472,
+      "r": 0.13307219079564475,
       "p": 0.26171553237947764
     },
     "mid": {
-      "r": 0.028115191380433058,
+      "r": 0.028115191380433037,
       "p": 0.8146462127665236
     },
     "high": {
@@ -160,11 +160,11 @@
     "p_value": 0.00014941253769795647
   },
   "linear_fit": {
-    "slope": 1.6900510226916363,
+    "slope": 1.690051022691637,
     "intercept": 16.084138978909884,
-    "r_squared": 0.047437456471717605,
+    "r_squared": 0.04743745647171761,
     "p_value": 0.0012111078419130745,
-    "std_error": 0.5152986365779617
+    "std_error": 0.5152986365779618
   },
   "binned": [
     {
@@ -216,8 +216,8 @@
     "cohens_d": -0.32073256755544394,
     "unscreened_correlation_r": 0.22217793042236308,
     "unscreened_correlation_p": 0.0037973663147705776,
-    "screened_correlation_r": -0.12755670065403865,
-    "screened_correlation_p": 0.37736458153803965
+    "screened_correlation_r": -0.1275567006540387,
+    "screened_correlation_p": 0.377364581538039
   },
   "multiple_comparison_correction": {
     "n_tests": 4,

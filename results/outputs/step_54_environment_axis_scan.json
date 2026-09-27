@@ -1,5 +1,5 @@
 {
-  "timestamp_utc": "2026-07-03T10:05:29.783737+00:00",
+  "timestamp_utc": "2026-09-23T16:03:53.344855+00:00",
   "regressions": [
     {
       "x_key": "log_rho_c",
@@ -78,5 +78,100 @@
       "std_err": 0.16967116471954824,
       "label": "Relaxation time proxy Rc/sigma_v"
     }
-  ]
+  ],
+  "channel_decomposition": {
+    "cluster_mean_logPdot": {
+      "ols": {
+        "n_clusters": 33,
+        "a_log_rho": 0.28164470676366804,
+        "a_log_rho_err": 0.2375561314260245,
+        "b_log_Rc": -0.09485149720904573,
+        "b_log_Rc_err": 0.5252076651849548,
+        "r_squared": 0.22325366359120602,
+        "channel_tests": {
+          "acceleration_rhoRc": {
+            "F": 5.430007811348874,
+            "p_value": 0.00971272059450386
+          },
+          "potential_rhoRc2": {
+            "F": 8.593491121553024,
+            "p_value": 0.001120690692149786
+          },
+          "rho2_bias": {
+            "F": 118.61382415024417,
+            "p_value": 5.6701947382758134e-15
+          }
+        }
+      },
+      "wls_n": {
+        "n_clusters": 33,
+        "a_log_rho": 0.22968297202069832,
+        "a_log_rho_err": 0.13464347342465324,
+        "b_log_Rc": -0.46927900509928744,
+        "b_log_Rc_err": 0.3193914173479799,
+        "r_squared": 0.49521158164712664,
+        "channel_tests": {
+          "acceleration_rhoRc": {
+            "F": 16.397344458787742,
+            "p_value": 1.5416121385452175e-05
+          },
+          "potential_rhoRc2": {
+            "F": 30.634815904737945,
+            "p_value": 5.6483856704170324e-08
+          },
+          "rho2_bias": {
+            "F": 228.19711689510174,
+            "p_value": 7.112013213852233e-19
+          }
+        }
+      }
+    },
+    "controlled_residuals": {
+      "wls_1_over_sem2": {
+        "n_clusters": 25,
+        "a_log_rho": 0.06975072748634935,
+        "a_log_rho_err": 0.025334930191339977,
+        "b_log_Rc": 0.029958353959542168,
+        "b_log_Rc_err": 0.07597620917683431,
+        "r_squared": 0.46932862144099474,
+        "channel_tests": {
+          "acceleration_rhoRc": {
+            "F": 1197.5353747424435,
+            "p_value": 3.5519471818782793e-23
+          },
+          "potential_rhoRc2": {
+            "F": 710.256645581252,
+            "p_value": 1.038320507671069e-20
+          },
+          "rho2_bias": {
+            "F": 9614.316139037122,
+            "p_value": 4.342646795974955e-33
+          }
+        }
+      },
+      "ols": {
+        "n_clusters": 25,
+        "a_log_rho": 0.09288108568467904,
+        "a_log_rho_err": 0.070234800190628,
+        "b_log_Rc": -0.11169734828355289,
+        "b_log_Rc_err": 0.15357853325496482,
+        "r_squared": 0.4445504251864718,
+        "channel_tests": {
+          "acceleration_rhoRc": {
+            "F": 121.18161446351316,
+            "p_value": 1.3256777414570709e-12
+          },
+          "potential_rhoRc2": {
+            "F": 96.00278521752307,
+            "p_value": 1.3551071349485158e-11
+          },
+          "rho2_bias": {
+            "F": 1558.8685701419956,
+            "p_value": 1.9990483364835106e-24
+          }
+        }
+      }
+    },
+    "verdict": "The fitted Rc exponent is consistent with zero across estimands and weightings, while the unsuppressed channel predictions (b = +1 acceleration, b = +2 potential depth) are rejected by the joint tests. The measured excess is a saturated density response rather than a linear response to any unsuppressed field variable."
+  }
 }

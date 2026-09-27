@@ -6,7 +6,7 @@
     with precision tests in the screened Solar System regime. This section
     establishes the theoretical basis for the time-domain probe examined in this
     work: pulsar spin-down in globular clusters, based on the continuous geometric
-    screening framework established in TEP v0.10 Jakarta. This theoretical foundation is
+    screening framework established in TEP v0.14 Jakarta. This theoretical foundation is
     necessary to derive the specific quantitative predictions (Pulsar Ṗ drift)
     tested in the subsequent sections.
 </p>
@@ -94,9 +94,9 @@
             operating via discrete boundary cutoffs or thin-shell transitions, 
             screening manifests as a continuous spatial profile governed by the 
             non-linear superposition of field gradients (Temporal Shear). 
-            This suppresses fifth forces and clock-rate enhancements in 
-            regions of high curvature (Solar System) while leaving 
-            low-curvature astrophysical environments accessible to 
+            This suppresses Temporal Shear and the associated clock-rate
+            responses in regions of high curvature (Solar System) while
+            leaving low-curvature astrophysical environments accessible to
             dynamics.
         </li>
     </ul>
@@ -140,7 +140,7 @@
     <h4>Observable Response Coefficient</h4>
     <p>
         <em>$\kappa_{\text{MSP}}$ is treated as an observable pulsar response coefficient.</em>
-        It is not identified with the microscopic coupling β. Solar-System PPN and MICROSCOPE tests constrain the environmentally screened effective source and composition-dependent couplings rather than directly determining the bare conformal parameter β. The observable κ<sub>MSP</sub> is connected to the microscopic sector only through the environmental transfer function; it represents the effective amplified response in the active-shear globular 
+        It is not identified with the microscopic coupling β. Solar-System PPN and MICROSCOPE tests constrain the environmentally screened effective source and composition-dependent couplings rather than directly determining the unsuppressed conformal parameter β. The observable κ<sub>MSP</sub> is connected to the microscopic sector only through the environmental transfer function, whose derivation from the action is not yet complete; κ<sub>MSP</sub> is therefore a phenomenological response coefficient fitted to data, in the PPN strategy of parameterising the observable response separately from the microscopic coupling. It represents the effective amplified response in the active-shear globular 
         cluster environment (Appendix C). The empirical phenomenology is:
     </p>
     <div class="equation">
@@ -151,10 +151,11 @@
     <p>
         where the empirically screened coefficient $\kappa_{\text{MSP}}^{\text{emp}}$
         is determined from observational data, not from a theoretical derivation.
-        The geometric compactness expressions and chameleon-type screening solutions 
-        are candidate <em>transfer models</em> that may relate microscopic couplings 
+        The geometric compactness expressions and density-dependent-mass screening
+        solutions are candidate <em>transfer models</em> that may relate microscopic couplings
         to observable responses; they are not required for the empirical test.
-        See Appendix C for a candidate chameleon transfer model.
+        See Appendix C for a candidate transfer model on the canonical admissible
+        potential of Paper 0.
     </p>
 </div>
 
@@ -179,7 +180,7 @@
     (Paper 11). The two normalisations — $\kappa_{\text{MSP}}^{\text{emp}} \approx 0.05$
     as the fractional in-equation coupling in the spin-down
     equation, and $\tilde\kappa_{\rm MSP} \sim 10^4$ as the full response
-    coefficient — trace back to the same bare geometric factor $\sim\!10^6$
+    coefficient — trace back to the same unsuppressed geometric factor $\sim\!10^6$
     with different screening normalisations. Paper 11's cross-probe
     comparison uses $\tilde\kappa_{\rm MSP}$; the spin-down equations
     here use $\kappa_{\text{MSP}}^{\text{emp}}$.
@@ -196,7 +197,6 @@
     strategy as the PPN (Parameterized Post-Newtonian) framework used to
     test GR in the Solar System. The effective screening framework motivates the response model tested here; candidate transfer models are discussed separately and are not required for the empirical inference.
 </p>
-</div>
 
 <p>
     For systems at intermediate scales (globular clusters, galaxy clusters,
@@ -272,7 +272,7 @@
                 <td>6 × 10<sup>27</sup> g</td>
                 <td>~5–13 g/cm³</td>
                 <td>Partial/Transition (ρ ~ ρ<sub>T</sub>)</td>
-                <td>GNSS correlations (L<sub>c</sub> ≈ 4,200 km)</td>
+                <td>GNSS correlations (R<sub>T</sub>(M<sub>&oplus;</sub>) ≈ 4,200 km)</td>
             </tr>
             <tr>
                 <td>Globular Cluster</td>
@@ -312,41 +312,65 @@
 
 <p>
     Under General Relativity, a pulsar's observed spin-down rate differs from
-    its intrinsic rate only by tiny gravitational corrections:
+    its intrinsic rate only through propagation and kinematic corrections. A
+    static potential offset cannot contribute: it rescales the received period
+    and the observer's time coordinate by the same factor, so it cancels
+    identically in the dimensionless drift, whose gravitational content is
+    carried by the acceleration, transverse-velocity (Shklovskii), and jerk
+    terms:
 </p>
 
 <div class="equation">
     \begin{equation} \label{eq:theory_7}
-    \dot{P}_{\text{obs}} = \dot{P}_{\text{int}} \left(1 +
-    \frac{\Phi}{c^2}\right)
+    \dot{P}_{\text{obs}} = \dot{P}_{\text{int}} + \left(\frac{a_\ell}{c} +
+    \frac{v_\perp^{2}}{D\,c} + \zeta\right) P
 \end{equation}
 </div>
 
 <p>
-    For a pulsar in a globular cluster with additional potential ΔΦ/c² ~
-    5×10<sup>−8</sup>, GR predicts a fractional change of only 0.000005%.
+    For a pulsar deeper in a globular-cluster potential by ΔΦ/c² ~
+    5×10<sup>−8</sup>, the received <em>period</em> is redshifted by
+    0.000005% — a period-level offset absorbed into the measured P and the
+    timing solution — while its contribution to Ṗ is identically zero. The GR
+    content of the Ṗ ensemble is the spread generated by the line-of-sight
+    acceleration term, the standard GC broadening channel.
 </p>
 
 <p>
-    TEP predicts a dramatically larger effect. If the effective potential is
-    enhanced by the screened coupling of $\sim 5\%$, this amplifies both
-    the time dilation (which slows intrinsic clocks) <em>and</em> the
-    gradient-driven acceleration term ($a_{\ell} \propto \nabla \Phi$). Since
-    cluster pulsars are dominated by the acceleration term (45% show negative
-    Ṗ), the net prediction is a broader |Ṗ| distribution with higher mean
-    magnitude:
+    TEP introduces an additional environment-dependent structure on the same
+    transport form. The scalar sector modifies both the clock-amplitude
+    response to the local field depth and the Temporal-Shear contribution to
+    the true acceleration field, through the distinct environmental
+    screening functions $S_A(E)$ and $S_\Sigma(E)$ of Section 2.1.1 rather
+    than a single coupling. Since cluster pulsars are dominated by the
+    acceleration term (45% show negative Ṗ), the discriminating channel is
+    the drift term, whose line-of-sight acceleration carries the screened
+    shear response:
 </p>
 
 <div class="equation">
     \begin{equation} \label{eq:theory_8}
-    \dot{P}_{\text{obs}} = \dot{P}_{\text{int}} \left(1 + \kappa_{\text{MSP}}^{\text{emp}}
-    \frac{\Phi}{c^2}\right) + (1 + \kappa_{\text{MSP}}^{\text{emp}}) \frac{P \cdot a_\ell}{c}
+    \dot{P}_{\text{obs}} = \dot{P}_{\text{int}} + \left(\frac{a_\ell}{c} +
+    v\,\partial_\parallel \ln A + \frac{v_\perp^{2}}{D\,c} + \zeta\right) P,
+    \qquad a_\ell = \bigl(1 + 2\beta_A^{2}\,S_\Sigma(E)\bigr)\,a_{N,\ell}
 \end{equation}
 </div>
 
 <p>
-    where the second term represents the line-of-sight acceleration
-    contribution, with $a_\ell \propto \nabla \Phi$.
+    where $v\,\partial_\parallel \ln A$ is the clock-gradient drift
+    accumulated as the pulsar moves through the temporal landscape — a term
+    with no Newtonian analogue — and $a_{N,\ell}$ is the Newtonian
+    line-of-sight acceleration. The two response functions are not
+    interchangeable: the clock-amplitude channel governed by $S_A(E)$
+    rescales the measured period and, being static on the relevant
+    timescales, cancels identically in the dimensionless drift, while the
+    screened shear response $S_\Sigma(E)$ enters through the true
+    acceleration itself. In coherent-gradient cores the shear contribution
+    is suppressed toward zero and $a_\ell$ approaches its Newtonian value —
+    the floor of the channel, which a temporal shear cannot undercut because
+    it only ever adds inward force. Assigning a single response coefficient
+    to the amplitude and drift channels would conflate them, which the
+    Temporal Topology explicitly distinguishes.
 </p>
 
 <div class="key-concept">
@@ -402,42 +426,64 @@
     <p>
         Result: In a dense cluster core, the acceleration term exceeds the
         intrinsic spin-down by a factor of ~10<sup>2</sup>. This is why 45% of
-        GC pulsars show <em>negative</em> Ṗ (acceleration-dominated). Under TEP,
-        the conformal factor modifies the clock-rate response to the
-        gravitational potential, not the acceleration directly. The screened
-        coupling $\kappa_{\text{MSP}}^{\text{emp}} \approx 0.05$ enters the
-        spin-down equation through the potential term
-        $\Phi_{\rm eff} = (1 + \kappa_{\text{MSP}}^{\text{emp}})\Phi$, but the
-        key observational signature is not amplitude enhancement — it is the
-        <em>suppressed density scaling</em> of the spin-down excess. Because the
-        TEP clock response scales with the potential $|\Phi| \propto \rho R_c^2$
-        rather than the acceleration $a \propto \rho R_c$, the response
-        saturates more rapidly in dense cores. The acceleration contribution
-        to Ṗ, while large in absolute terms, enters through the gradient of
-        the modified potential:
+        GC pulsars show <em>negative</em> Ṗ (acceleration-dominated). The
+        dynamical channel therefore dominates the drift budget; the
+        clock-amplitude channel does not enter the dimensionless drift at
+        all — the $\kappa_{A}\,\Phi/c^2 \sim 10^{-9}$ term rescales the
+        measured period and is absorbed by the per-pulsar timing solution.
+        The TEP discriminant is the screening state of the dynamical channel
+        itself: the drift is carried by the true acceleration $a_\ell$, which
+        approaches its Newtonian value as the shear response is screened in
+        coherent-gradient cores (Temporal Topology, Section 2.1.1) and cannot
+        fall below it. The measured excess therefore corresponds to an
+        empirical transmission of the Newtonian forward-model drift of order
+        $\kappa_{\text{MSP}}^{\text{emp}} \approx 0.05$ — the
+        Newtonian-calibrated model overpredicts the observed broadening by a
+        factor of about twenty:
     </p>
     <div class="equation">
         \begin{equation} \label{eq:theory_13}
-    \frac{\delta \dot{P}_{\text{TEP}}}{\dot{P}_{\text{int}}} =
+    \frac{\delta \dot{P}_{\text{obs}}}{\dot{P}_{\text{int}}} =
         \kappa_{\text{MSP}}^{\text{emp}} \cdot \frac{\delta
         \dot{P}_{\text{accel}}}{\dot{P}_{\text{int}}} \sim 0.05 \times 1.5
         \times 10^2 \sim 7.5
 \end{equation}
     </div>
     <p>
-        The critical prediction is the density-scaling slope. Newtonian
-        dynamics gives $\Gamma_N \approx 0.75$ (acceleration $\propto \rho R_c$),
-        while the TEP potential response gives
+        corresponding to an observed excess of $\sim 0.9$ dex above the
+        intrinsic spin-down — the correct order of magnitude for the
+        measured $+0.61$ dex, and far below the $\sim 2$ dex that the
+        Newtonian-calibrated forward model produces. The critical scaling
+        prediction follows the same logic. Newtonian dynamics gives
+        $\Gamma_N \approx 0.75$ (acceleration $\propto \rho R_c$). If the
+        residual response tracked the field depth it would give
         $\Gamma_{\rm TEP} = 2\Gamma_N - 1 \approx 0.50$ (potential
-        $\propto \rho R_c^2$). The observed $\Gamma = 0.39 \pm 0.08$ rejects
-        the Newtonian scaling at $4.1\sigma$ and matches the TEP prediction
-        at $0.9\sigma$ — without any fitted parameters. Full N-body/CMC
-        simulations confirm that standard Newtonian dynamics
+        $\propto \rho R_c^2$); that identity is the linearized benchmark,
+        not the deep-screening limit. In the saturated regime the response
+        flattens further: the explicit core-radius dependence of the
+        screened drift vanishes and the residual approaches a pure
+        density-like transfer. The measured decomposition confirms this
+        directly (Section 3.4, Step 54): regressing the cluster excess on
+        $(\log \rho_c, \log R_c)$ gives core-radius exponents consistent
+        with zero on every estimand ($b = -0.10 \pm 0.53$ on cluster-mean
+        $\log|\dot{P}|$; $b = +0.03 \pm 0.08$ on the controlled
+        residuals), rejecting both unsuppressed channels ($b = +1$,
+        acceleration; $b = +2$, potential) and the $\rho_c^2$ variance-bias
+        channel at high significance. The observed $\Gamma = 0.39 \pm 0.08$
+        rejects the Newtonian scaling at $4.1\sigma$ and remains consistent
+        with the potential benchmark ($0.50 \pm 0.08$) at $\sim 1\sigma$
+        combined uncertainty, while sitting below it in the direction
+        expected of a response already deeper into saturation than the
+        linearized estimate. Full N-body/CMC
+        simulations confirm that the Newtonian-calibrated forward model
         <em>overpredicts</em> the spin-down excess by a factor of 3.1×
-        ($+1.88$ dex predicted vs $+0.61$ dex observed, $12.7\sigma$ tension),
-        precisely because the acceleration scaling is too steep. The TEP
-        potential-based response naturally flattens this scaling, bringing
-        the predicted excess into agreement with observation.
+        ($+1.88$ dex predicted vs $+0.61$ dex observed, $12.7\sigma$ tension).
+        Because the drift channel is bounded below by its Newtonian value,
+        this shortfall cannot be a sub-Newtonian drift: it quantifies how far
+        the specific forward model — Newtonian-inferred cluster potentials
+        and the assumed pulsar spatial distribution — departs from the
+        screened interiors the data inhabit (the mass-calibration reading is
+        developed in Section 4).
     </p>
 </div>
 
@@ -481,6 +527,11 @@
         status of timing-based acceleration inferences: if proper time itself
         has additional structure, then timing residuals cannot be assumed to map
         one-to-one onto dynamical acceleration without additional controls.
+        This reframing is an interpretive consequence of the theory rather than
+        an independently testable claim; the testable content is the
+        density-scaling slope and the bivariate channel decomposition that
+        distinguish a screened, saturating response from any unsuppressed
+        environmental variable (Section 4.8).
     </p>
 </div>
 
@@ -490,7 +541,7 @@
     <h3>The Rosetta Stone</h3>
     <p>
         The TEP prediction for pulsar spin-down anomalies is a manifestation of
-        enhanced gravitational time dilation effects in deep potentials:
+        amplified gravitational time dilation in deep potentials:
     </p>
 
     <table class="data-table">
@@ -505,7 +556,7 @@
         <tbody>
             <tr>
                 <td>Pulsar population controls</td>
-                <td>0.000005%</td>
+                <td>Zero from a static potential (period-level only); drift via a<sub>ℓ</sub>, Shklovskii, jerk terms</td>
                 <td>
                     Environment dependence in observed log|Ṗ| with 0.63 dex raw
                     excess and 0.40 dex controlled residual after population
@@ -518,7 +569,7 @@
 
     <p>
         The pulsar channel provides the primary, spatially-resolved evidence for
-        potential-dependent anomalies in this work, bolstered by robust field
+        environment-dependent temporal anomalies in this work, bolstered by robust field
         controls.
     </p>
 </div>

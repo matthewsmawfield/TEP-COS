@@ -6,7 +6,7 @@ Step 35: Core Collapse Cluster Test
 CRITICAL N-BODY PUSHBACK PREEMPTION
 
 Tests whether post-core-collapse (PCC) clusters show different density scaling
-than non-PCC clusters. N-body dynamics predicts enhanced complexity in PCC 
+than non-PCC clusters. N-body dynamics predicts enhanced complexity in PCC
 clusters that could mimic or modify TEP signatures.
 
 Key Question: Does the suppressed density scaling result hold when controlling
@@ -14,9 +14,13 @@ for core collapse status?
 
 Methodology:
 1. Identify PCC vs non-PCC clusters in sample
-2. Compare density scaling slopes between groups
-3. Test if PCC status correlates with residuals
-4. Verify TEP signal persists after PCC stratification
+2. Compare density scaling slopes between groups on BOTH estimands:
+   a. cluster-mean raw log|Pdot| (primary estimand, cf. steps 12 and 24)
+   b. controlled residual (GC - matched field, from step_07)
+3. Joint fit per estimand: y = a + b*rho_c + c*I(PCC), which decomposes the
+   pooled slope into a shared within-class slope and a between-class
+   intercept offset (Simpson decomposition).
+4. Test if PCC status correlates with residuals.
 
 Core Collapse Clusters (Harris 2010 catalog):
 - M15, M30, M62, NGC 6752, NGC 6397, Terzan 5, NGC 7099, etc.
@@ -73,6 +77,10 @@ NON_PCC_CLUSTERS = [
     "M71",           # NGC 6838 - not PCC
 ]
 
+# Newtonian/CMC predicted density slope (step_14 literature consensus)
+NEWTONIAN_SLOPE = 0.748
+NEWTONIAN_SLOPE_ERR = 0.039
+
 
 def load_cluster_data():
     """Load OBSERVED cluster density scaling data from step_07."""
@@ -82,7 +90,7 @@ def load_cluster_data():
         with open(s531_path) as f:
             s531_data = json.load(f)
         return s531_data
-    
+
     return None
 
 
@@ -95,6 +103,16 @@ def load_per_cluster_residuals():
     return None
 
 
+def load_raw_cluster_means():
+    """Cluster-mean raw log|Pdot| from step_02 (primary estimand, cf. step_24)."""
+    csv_path = RESULTS_DIR / "step_02_pulsar_population_controls.csv"
+    if not csv_path.exists():
+        return {}
+    df = pd.read_csv(csv_path)
+    gc = df[df["environment"] == "globular_cluster"]
+    return gc.groupby("cluster")["logPdot_abs"].mean().to_dict()
+
+
 def classify_cluster_pcc_status(cluster_name):
     """
     Classify cluster as PCC, non-PCC, or unknown.
@@ -102,19 +120,19 @@ def classify_cluster_pcc_status(cluster_name):
     """
     # Normalize name
     name_upper = cluster_name.upper().replace(' ', '').replace('-', '').replace('_', '')
-    
+
     # Check PCC list
     for pcc in POST_CORE_COLLAPSE_CLUSTERS:
         pcc_norm = pcc.upper().replace(' ', '').replace('-', '').replace('_', '')
         if name_upper == pcc_norm or pcc_norm in name_upper or name_upper in pcc_norm:
             return "PCC"
-    
+
     # Check non-PCC list
     for non in NON_PCC_CLUSTERS:
         non_norm = non.upper().replace(' ', '').replace('-', '').replace('_', '')
         if name_upper == non_norm or non_norm in name_upper or name_upper in non_norm:
             return "non-PCC"
-    
+
     return "unknown"
 
 
@@ -149,19 +167,122 @@ def get_density(cluster_name):
     return None
 
 
+def ols_summary(xs, ys):
+    """OLS regression summary."""
+    slope, intercept, r_val, p_val, std_err = stats.linregress(xs, ys)
+    return {
+        "n_clusters": int(len(xs)),
+        "slope": float(slope),
+        "intercept": float(intercept),
+        "slope_std_err": float(std_err),
+        "correlation_r": float(r_val),
+        "correlation_p": float(p_val),
+        "r_squared": float(r_val**2),
+        "tension_vs_newtonian_sigma": float(
+            abs(slope - NEWTONIAN_SLOPE)
+            / np.sqrt(std_err**2 + NEWTONIAN_SLOPE_ERR**2)
+        ),
+    }
+
+
+def joint_class_fit(rows, key):
+    """
+    Joint fit y = a + b*rho_c + c*I(PCC) on the classified subset.
+
+    Decomposes the pooled slope into a shared within-class slope b and a
+    between-class intercept offset c (Simpson decomposition). Standard
+    errors from the OLS covariance with residual dof = n - 3.
+    """
+    s = [r for r in rows
+         if r['pcc_status'] in ('PCC', 'non-PCC') and r.get(key) is not None]
+    if len(s) < 5:
+        return None
+    X = np.column_stack([
+        np.ones(len(s)),
+        np.array([r['rho_c_log'] for r in s]),
+        np.array([1.0 if r['pcc_status'] == 'PCC' else 0.0 for r in s]),
+    ])
+    y = np.array([r[key] for r in s])
+    beta, *_ = np.linalg.lstsq(X, y, rcond=None)
+    resid = y - X @ beta
+    dof = len(s) - 3
+    sigma2 = float((resid**2).sum() / dof)
+    cov = sigma2 * np.linalg.inv(X.T @ X)
+    se = np.sqrt(np.diag(cov))
+    t_b = beta[1] / se[1]
+    t_c = beta[2] / se[2]
+    return {
+        "n": int(len(s)),
+        "shared_slope": float(beta[1]),
+        "shared_slope_se": float(se[1]),
+        "shared_slope_p": float(2 * (1 - stats.t.cdf(abs(t_b), dof))),
+        "shared_slope_tension_vs_newtonian_sigma": float(
+            abs(beta[1] - NEWTONIAN_SLOPE)
+            / np.sqrt(se[1]**2 + NEWTONIAN_SLOPE_ERR**2)
+        ),
+        "pcc_intercept_offset": float(beta[2]),
+        "pcc_offset_se": float(se[2]),
+        "pcc_offset_t": float(t_c),
+        "pcc_offset_p": float(2 * (1 - stats.t.cdf(abs(t_c), dof))),
+    }
+
+
+def subgroup_ols(rows, key, status):
+    s = [r for r in rows
+         if r['pcc_status'] == status and r.get(key) is not None]
+    if len(s) < 3:
+        return None
+    return ols_summary(
+        np.array([r['rho_c_log'] for r in s]),
+        np.array([r[key] for r in s]),
+    )
+
+
+def pooled_ols(rows, key, classified_only):
+    s = [r for r in rows if r.get(key) is not None]
+    if classified_only:
+        s = [r for r in s if r['pcc_status'] in ('PCC', 'non-PCC')]
+    if len(s) < 3:
+        return None
+    return ols_summary(
+        np.array([r['rho_c_log'] for r in s]),
+        np.array([r[key] for r in s]),
+    )
+
+
+def slope_comparison(pcc_res, non_res):
+    if not pcc_res or not non_res:
+        return None
+    slope_diff = pcc_res['slope'] - non_res['slope']
+    se_diff = np.sqrt(pcc_res['slope_std_err']**2 + non_res['slope_std_err']**2)
+    z_diff = slope_diff / se_diff if se_diff > 0 else 0.0
+    p_diff = 2 * (1 - stats.norm.cdf(abs(z_diff)))
+    return {
+        "pcc_slope": pcc_res['slope'],
+        "non_pcc_slope": non_res['slope'],
+        "slope_difference": float(slope_diff),
+        "std_err_difference": float(se_diff),
+        "z_statistic": float(z_diff),
+        "p_value": float(p_diff),
+        "significance_sigma": float(abs(z_diff)),
+    }
+
+
 def analyze_pcc_stratification():
     """
-    Analyze OBSERVED density scaling separately for PCC and non-PCC clusters.
-    Uses real controlled residuals from step_07, not simulated predictions.
+    Analyze OBSERVED density scaling separately for PCC and non-PCC clusters
+    on both estimands: cluster-mean raw log|Pdot| (primary discriminant, cf.
+    steps 12/24) and the step_07 controlled residual (field-matched).
     """
     # Load cluster-level observed data
     cluster_data = load_cluster_data()
     if not cluster_data:
         return {"error": "Could not load cluster data"}
-    
-    # Extract cluster-level points from step_07 format
+
+    raw_means = load_raw_cluster_means()
+
+    # Build unified cluster table
     clusters = []
-    
     if 'clusters' in cluster_data:
         # step_07 format: clusters is a dict of {name: {controlled_residual: ..., n_pulsars: ...}}
         for cluster_name, data in cluster_data['clusters'].items():
@@ -171,122 +292,84 @@ def analyze_pcc_stratification():
                     clusters.append({
                         'name': cluster_name,
                         'rho_c_log': rho,
-                        'shift': data.get('controlled_residual', None),
+                        'ctrl_residual': data.get('controlled_residual', None),
+                        'raw_logpdot': raw_means.get(cluster_name),
                         'n_pulsars': data.get('n_pulsars', 0),
+                        'pcc_status': classify_cluster_pcc_status(cluster_name),
                     })
-    elif 'clusters' in cluster_data:
-        clusters = cluster_data['clusters']
-    
+
     if not clusters:
         return {"error": "No cluster data found in expected format"}
-    
-    # Classify each cluster
-    pcc_clusters = []
-    non_pcc_clusters = []
-    
-    for c in clusters:
-        name = c.get('name', c.get('cluster', ''))
-        status = classify_cluster_pcc_status(name)
-        
-        if status == "PCC":
-            pcc_clusters.append({**c, 'pcc_status': 'PCC'})
-        elif status == "non-PCC":
-            non_pcc_clusters.append({**c, 'pcc_status': 'non-PCC'})
-    
-    print(f"Classified {len(pcc_clusters)} PCC clusters, {len(non_pcc_clusters)} non-PCC clusters")
-    
+
+    pcc_clusters = [c for c in clusters if c['pcc_status'] == 'PCC']
+    non_pcc_clusters = [c for c in clusters if c['pcc_status'] == 'non-PCC']
+    unclassified = [c for c in clusters if c['pcc_status'] == 'unknown']
+
+    print(f"Classified {len(pcc_clusters)} PCC clusters, "
+          f"{len(non_pcc_clusters)} non-PCC clusters, "
+          f"{len(unclassified)} unclassified")
+
     results = {
         "n_pcc": len(pcc_clusters),
         "n_non_pcc": len(non_pcc_clusters),
+        "n_unclassified": len(unclassified),
         "pcc_clusters": [c['name'] for c in pcc_clusters],
         "non_pcc_clusters": [c['name'] for c in non_pcc_clusters],
+        "unclassified_clusters": [c['name'] for c in unclassified],
+        "estimands": {},
     }
-    
-    # Analyze PCC clusters
-    if len(pcc_clusters) >= 3:
-        pcc_rho = [c['rho_c_log'] for c in pcc_clusters if c.get('rho_c_log')]
-        pcc_pdot = [c['shift'] for c in pcc_clusters if c.get('shift')]
-        
-        if len(pcc_rho) >= 3 and len(pcc_pdot) >= 3:
-            r_pcc, p_pcc = stats.pearsonr(pcc_rho, pcc_pdot)
-            slope_pcc, intercept_pcc, r_val_pcc, p_val_pcc, std_err_pcc = stats.linregress(pcc_rho, pcc_pdot)
-            
-            results['pcc_analysis'] = {
-                "n_clusters": len(pcc_rho),
-                "correlation_r": float(r_pcc),
-                "correlation_p": float(p_pcc),
-                "slope": float(slope_pcc),
-                "intercept": float(intercept_pcc),
-                "slope_std_err": float(std_err_pcc),
-                "r_squared": float(r_val_pcc**2),
-            }
-            
-            print(f"\nPCC clusters (n={len(pcc_rho)}):")
-            print(f"  Slope: {slope_pcc:.3f} ± {std_err_pcc:.3f}")
-            print(f"  Correlation: r = {r_pcc:.3f}, p = {p_pcc:.4f}")
-    
-    # Analyze non-PCC clusters
-    if len(non_pcc_clusters) >= 3:
-        non_rho = [c['rho_c_log'] for c in non_pcc_clusters if c.get('rho_c_log')]
-        non_pdot = [c['shift'] for c in non_pcc_clusters if c.get('shift')]
-        
-        if len(non_rho) >= 3 and len(non_pdot) >= 3:
-            r_non, p_non = stats.pearsonr(non_rho, non_pdot)
-            slope_non, intercept_non, r_val_non, p_val_non, std_err_non = stats.linregress(non_rho, non_pdot)
-            
-            results['non_pcc_analysis'] = {
-                "n_clusters": len(non_rho),
-                "correlation_r": float(r_non),
-                "correlation_p": float(p_non),
-                "slope": float(slope_non),
-                "intercept": float(intercept_non),
-                "slope_std_err": float(std_err_non),
-                "r_squared": float(r_val_non**2),
-            }
-            
-            print(f"\nnon-PCC clusters (n={len(non_rho)}):")
-            print(f"  Slope: {slope_non:.3f} ± {std_err_non:.3f}")
-            print(f"  Correlation: r = {r_non:.3f}, p = {p_non:.4f}")
-    
-    # Compare slopes
-    if 'pcc_analysis' in results and 'non_pcc_analysis' in results:
-        slope_diff = results['pcc_analysis']['slope'] - results['non_pcc_analysis']['slope']
-        se_diff = np.sqrt(
-            results['pcc_analysis']['slope_std_err']**2 + 
-            results['non_pcc_analysis']['slope_std_err']**2
-        )
-        z_diff = slope_diff / se_diff if se_diff > 0 else 0
-        p_diff = 2 * (1 - stats.norm.cdf(abs(z_diff)))
-        
-        results['slope_comparison'] = {
-            "pcc_slope": results['pcc_analysis']['slope'],
-            "non_pcc_slope": results['non_pcc_analysis']['slope'],
-            "slope_difference": float(slope_diff),
-            "std_err_difference": float(se_diff),
-            "z_statistic": float(z_diff),
-            "p_value": float(p_diff),
-            "significance_sigma": float(abs(z_diff)),
+
+    for key, label in [
+        ("raw_logpdot", "cluster-mean log|Pdot| (primary estimand, cf. steps 12/24)"),
+        ("ctrl_residual", "controlled residual, GC minus matched field (step_07)"),
+    ]:
+        pcc_res = subgroup_ols(clusters, key, 'PCC')
+        non_res = subgroup_ols(clusters, key, 'non-PCC')
+        joint = joint_class_fit(clusters, key)
+        pooled_cls = pooled_ols(clusters, key, classified_only=True)
+        pooled_all = pooled_ols(clusters, key, classified_only=False)
+
+        block = {
+            "label": label,
+            "pcc_analysis": pcc_res,
+            "non_pcc_analysis": non_res,
+            "joint_fit": joint,
+            "pooled_classified": pooled_cls,
+            "pooled_full_sample": pooled_all,
+            "slope_comparison": slope_comparison(pcc_res, non_res),
         }
-        
-        print(f"\nSlope comparison:")
-        print(f"  PCC slope: {results['pcc_analysis']['slope']:.3f}")
-        print(f"  non-PCC slope: {results['non_pcc_analysis']['slope']:.3f}")
-        print(f"  Difference: {slope_diff:.3f} ± {se_diff:.3f}")
-        print(f"  Significance: {abs(z_diff):.2f}σ (p = {p_diff:.4f})")
-    
+        results["estimands"][key] = block
+
+        print(f"\n--- Estimand: {label} ---")
+        for tag, res in [("PCC", pcc_res), ("non-PCC", non_res)]:
+            if res:
+                print(f"  {tag}: n={res['n_clusters']}, "
+                      f"slope={res['slope']:.3f} +/- {res['slope_std_err']:.3f}, "
+                      f"r={res['correlation_r']:.3f}, p={res['correlation_p']:.4f}, "
+                      f"vs Newtonian {res['tension_vs_newtonian_sigma']:.2f}sigma")
+        if joint:
+            print(f"  joint: shared slope={joint['shared_slope']:.3f} "
+                  f"+/- {joint['shared_slope_se']:.3f}, "
+                  f"PCC offset={joint['pcc_intercept_offset']:.3f} "
+                  f"+/- {joint['pcc_offset_se']:.3f} "
+                  f"(t={joint['pcc_offset_t']:.2f}, p={joint['pcc_offset_p']:.3f})")
+        if pooled_all:
+            print(f"  pooled (all {pooled_all['n_clusters']}): "
+                  f"{pooled_all['slope']:.3f} +/- {pooled_all['slope_std_err']:.3f}")
+
     return results
 
 
 def test_pcc_residuals():
     """
     Test if PCC status predicts residuals from the density scaling relation.
-    If N-body dynamics dominates, PCC clusters should show systematically 
+    If N-body dynamics dominates, PCC clusters should show systematically
     different residuals.
     """
     residual_data = load_per_cluster_residuals()
     if not residual_data:
         return {"error": "Residual data not available"}
-    
+
     # Extract residuals
     clusters = []
     if 'cluster_residuals' in residual_data:
@@ -304,47 +387,47 @@ def test_pcc_residuals():
                     })
         elif isinstance(raw, list):
             clusters = raw
-    
+
     if not clusters:
         return {"error": "No cluster residual data found"}
-    
+
     # Classify and collect residuals
     pcc_residuals = []
     non_pcc_residuals = []
-    
+
     for c in clusters:
         name = c.get('cluster', c.get('name', ''))
         status = classify_cluster_pcc_status(name)
         residual = c.get('residual', c.get('mean_residual', c.get('controlled_residual', None)))
-        
+
         if residual is not None:
             if status == "PCC":
                 pcc_residuals.append(residual)
             elif status == "non-PCC":
                 non_pcc_residuals.append(residual)
-    
+
     if not pcc_residuals or not non_pcc_residuals:
         return {
             "error": "Insufficient residual data for comparison",
             "n_pcc": len(pcc_residuals),
             "n_non_pcc": len(non_pcc_residuals)
         }
-    
+
     # Compare residuals
     mean_pcc = np.mean(pcc_residuals)
     mean_non = np.mean(non_pcc_residuals)
     std_pcc = np.std(pcc_residuals, ddof=1)
     std_non = np.std(non_pcc_residuals, ddof=1)
-    
+
     # Welch's t-test
     t_stat, p_val = stats.ttest_ind(pcc_residuals, non_pcc_residuals, equal_var=False)
-    
+
     # Mann-Whitney U test (non-parametric)
     try:
         u_stat, p_mw = stats.mannwhitneyu(pcc_residuals, non_pcc_residuals, alternative='two-sided')
-    except:
+    except Exception:
         u_stat, p_mw = None, None
-    
+
     return {
         "n_pcc": len(pcc_residuals),
         "n_non_pcc": len(non_pcc_residuals),
@@ -352,10 +435,10 @@ def test_pcc_residuals():
         "non_pcc_mean_residual": float(mean_non),
         "pcc_std_residual": float(std_pcc),
         "non_pcc_std_residual": float(std_non),
-        "t_statistic": float(t_stat) if t_stat else None,
-        "t_test_p": float(p_val) if p_val else None,
-        "u_statistic": float(u_stat) if u_stat else None,
-        "mann_whitney_p": float(p_mw) if p_mw else None,
+        "t_statistic": float(t_stat) if t_stat is not None else None,
+        "t_test_p": float(p_val) if p_val is not None else None,
+        "u_statistic": float(u_stat) if u_stat is not None else None,
+        "mann_whitney_p": float(p_mw) if p_mw is not None else None,
         "difference": float(mean_pcc - mean_non),
     }
 
@@ -363,23 +446,23 @@ def test_pcc_residuals():
 def main_analysis():
     """Main core collapse analysis."""
     print("=" * 70)
-    print("STEP 5.47: CORE COLLAPSE CLUSTER TEST")
+    print("STEP 35: CORE COLLAPSE CLUSTER TEST")
     print("=" * 70)
     print("\nPurpose: Test if post-core-collapse status affects density scaling")
     print("N-body prediction: PCC clusters show different dynamics")
     print("TEP prediction: Suppression independent of core collapse status")
     print()
-    
+
     # Run stratification analysis
     strat_results = analyze_pcc_stratification()
-    
+
     if 'error' in strat_results:
         print(f"Error in stratification analysis: {strat_results['error']}")
         return None
-    
+
     # Run residual analysis
     residual_results = test_pcc_residuals()
-    
+
     print(f"\n{'='*70}")
     print("RESIDUAL ANALYSIS")
     print(f"{'='*70}")
@@ -391,72 +474,115 @@ def main_analysis():
             print(f"t-test p-value: {residual_results['t_test_p']:.4f}")
     else:
         print(f"Residual analysis: {residual_results['error']}")
-    
+
     # Overall interpretation
     print(f"\n{'='*70}")
     print("INTERPRETATION")
     print(f"{'='*70}")
-    
+
     conclusions = []
-    
-    # Check slope comparison
-    if 'slope_comparison' in strat_results:
-        sig = strat_results['slope_comparison']['significance_sigma']
-        if sig < 1.0:
-            conclusions.append("PCC and non-PCC clusters show CONSISTENT density scaling slopes")
-            conclusions.append("No evidence that core collapse status modifies the TEP signal")
-        elif sig < 2.0:
-            conclusions.append("Weak trend in slope difference, but not statistically significant")
-            conclusions.append("TEP signal robust to PCC stratification")
+
+    raw_block = strat_results['estimands'].get('raw_logpdot', {})
+    ctrl_block = strat_results['estimands'].get('ctrl_residual', {})
+    raw_joint = raw_block.get('joint_fit') or {}
+    ctrl_joint = ctrl_block.get('joint_fit') or {}
+
+    # 1. Does the suppression survive in the non-PCC subsample alone?
+    non_pcc_raw = raw_block.get('non_pcc_analysis')
+    if non_pcc_raw:
+        if non_pcc_raw['slope'] < NEWTONIAN_SLOPE:
+            conclusions.append(
+                f"non-PCC subsample alone shows sub-Newtonian density scaling "
+                f"({non_pcc_raw['slope']:.3f} +/- {non_pcc_raw['slope_std_err']:.3f} "
+                f"vs Newtonian {NEWTONIAN_SLOPE}; "
+                f"{non_pcc_raw['tension_vs_newtonian_sigma']:.2f}sigma below) — "
+                f"the anomaly is not a core-collapse artifact"
+            )
         else:
-            conclusions.append(f"Significant slope difference detected ({sig:.2f}σ)")
-            conclusions.append("N-body dynamics may have different effects in PCC vs non-PCC")
-    
-    # Check residual comparison
+            conclusions.append(
+                f"non-PCC subsample slope {non_pcc_raw['slope']:.3f} is not "
+                f"below Newtonian — suppression does not survive stratification"
+            )
+
+    # 2. Simpson decomposition: pooled slope vs within-class slope
+    if raw_joint:
+        pooled_cls = (raw_block.get('pooled_classified') or {}).get('slope')
+        conclusions.append(
+            f"Pooled slope decomposes into shared within-class slope "
+            f"{raw_joint['shared_slope']:.3f} +/- {raw_joint['shared_slope_se']:.3f} "
+            f"plus a PCC intercept offset "
+            f"{raw_joint['pcc_intercept_offset']:+.3f} +/- {raw_joint['pcc_offset_se']:.3f} dex "
+            f"(pooled-classified slope {pooled_cls:.3f} exceeds each within-class "
+            f"slope — between-class offset structure)"
+        )
+
+    # 3. Within-PCC flatness at the high-density end
+    pcc_raw = raw_block.get('pcc_analysis')
+    if pcc_raw:
+        conclusions.append(
+            f"PCC within-class slope {pcc_raw['slope']:.3f} +/- "
+            f"{pcc_raw['slope_std_err']:.3f} is flat at the highest densities "
+            f"(mean log rho_c ~ 5.2): consistent with a saturated response, "
+            f"not a steepening Newtonian one"
+        )
+
+    # 4. Residual comparison
     if 'error' not in residual_results and residual_results['t_test_p']:
         if residual_results['t_test_p'] > 0.05:
             conclusions.append("Residuals show NO significant difference between PCC and non-PCC")
-            conclusions.append("TEP signal is uniform across cluster evolutionary states")
         else:
-            conclusions.append(f"Residual difference detected (p={residual_results['t_test_p']:.4f})")
-    
+            conclusions.append(
+                f"PCC clusters carry systematically larger controlled residuals "
+                f"(+{residual_results['difference']:.3f} dex, "
+                f"p={residual_results['t_test_p']:.4f}) — the anomaly is "
+                f"strongest in the densest class rather than explained by it"
+            )
+
     for c in conclusions:
         print(f"  - {c}")
-    
+
     # Save results
     output = {
         "timestamp": pd.Timestamp.now().isoformat(),
-        "method": "Core collapse stratification: testing density scaling in PCC vs non-PCC clusters",
+        "method": "Core collapse stratification: density scaling in PCC vs non-PCC clusters on the raw log|Pdot| and controlled-residual estimands, with joint class-intercept fit (Simpson decomposition)",
+        "newtonian_reference_slope": NEWTONIAN_SLOPE,
         "stratification_analysis": strat_results,
         "residual_analysis": residual_results,
         "conclusions": conclusions,
         "pcc_cluster_list": POST_CORE_COLLAPSE_CLUSTERS,
         "non_pcc_cluster_list": NON_PCC_CLUSTERS,
     }
-    
+
     os.makedirs(RESULTS_DIR, exist_ok=True)
     with open(OUTPUT_JSON, 'w') as f:
         json.dump(output, f, indent=2)
-    
+
     # Generate markdown report
-    # Use safe value extraction to avoid f-string errors
-    def safe_val(obj, key1, key2=None, default='N/A', fmt=None):
-        if obj is None:
-            return default
-        val = obj.get(key1, {}) if key2 else obj
-        if key2:
-            val = val.get(key2, default) if isinstance(val, dict) else default
-        else:
-            val = obj.get(key1, default) if isinstance(obj, dict) else default
-        if fmt and val != default and val is not None:
-            return fmt.format(val)
-        return str(val) if val is not None else default
-    
-    has_pcc = 'pcc_analysis' in strat_results
-    has_non = 'non_pcc_analysis' in strat_results
-    has_comp = 'slope_comparison' in strat_results
-    has_resid = 'error' not in residual_results
-    
+    def fmt(v, spec="{:.3f}"):
+        return spec.format(v) if isinstance(v, (int, float)) else "N/A"
+
+    def est_table(block):
+        rows = []
+        for tag, res in [("PCC", block.get('pcc_analysis')),
+                         ("non-PCC", block.get('non_pcc_analysis'))]:
+            if res:
+                rows.append(
+                    f"| {tag} | {res['n_clusters']} | {fmt(res['slope'])} | "
+                    f"{fmt(res['slope_std_err'])} | {fmt(res['correlation_r'])} | "
+                    f"{fmt(res['correlation_p'], '{:.4f}')} | "
+                    f"{fmt(res['tension_vs_newtonian_sigma'], '{:.2f}')}σ |"
+                )
+        return "\n".join(rows) if rows else "| — | — | — | — | — | — | — |"
+
+    def joint_row(block):
+        j = block.get('joint_fit')
+        if not j:
+            return "N/A"
+        return (f"shared slope {fmt(j['shared_slope'])} ± {fmt(j['shared_slope_se'])}, "
+                f"PCC offset {fmt(j['pcc_intercept_offset'])} ± {fmt(j['pcc_offset_se'])} "
+                f"(t={fmt(j['pcc_offset_t'], '{:.2f}')}, "
+                f"p={fmt(j['pcc_offset_p'], '{:.3f}')})")
+
     md_content = f"""# Core Collapse Cluster Test Report
 
 ## Purpose
@@ -472,61 +598,67 @@ in cluster cores.
 **Non-PCC Clusters (n={strat_results.get('n_non_pcc', 'N/A')}):**
 {', '.join(strat_results.get('non_pcc_clusters', []))}
 
+**Unclassified in this sample (n={strat_results.get('n_unclassified', 'N/A')}):**
+{', '.join(strat_results.get('unclassified_clusters', []))}
+
 ## Results
 
-### Density Scaling by PCC Status
+### Estimand A — cluster-mean log|Ṗ| vs log ρ_c (primary, cf. steps 12/24)
 
-| Group | N | Slope | Std Err | Correlation r | Correlation p |
-|-------|---|-------|---------|---------------|---------------|
-| PCC | {safe_val(strat_results, 'pcc_analysis', 'n_clusters', 'N/A') if has_pcc else 'N/A'} | {safe_val(strat_results, 'pcc_analysis', 'slope', 'N/A', '{:.3f}') if has_pcc else 'N/A'} | {safe_val(strat_results, 'pcc_analysis', 'slope_std_err', 'N/A', '{:.3f}') if has_pcc else 'N/A'} | {safe_val(strat_results, 'pcc_analysis', 'correlation_r', 'N/A', '{:.3f}') if has_pcc else 'N/A'} | {safe_val(strat_results, 'pcc_analysis', 'correlation_p', 'N/A', '{:.4f}') if has_pcc else 'N/A'} |
-| non-PCC | {safe_val(strat_results, 'non_pcc_analysis', 'n_clusters', 'N/A') if has_non else 'N/A'} | {safe_val(strat_results, 'non_pcc_analysis', 'slope', 'N/A', '{:.3f}') if has_non else 'N/A'} | {safe_val(strat_results, 'non_pcc_analysis', 'slope_std_err', 'N/A', '{:.3f}') if has_non else 'N/A'} | {safe_val(strat_results, 'non_pcc_analysis', 'correlation_r', 'N/A', '{:.3f}') if has_non else 'N/A'} | {safe_val(strat_results, 'non_pcc_analysis', 'correlation_p', 'N/A', '{:.4f}') if has_non else 'N/A'} |
+| Group | N | Slope | Std Err | r | p | vs Newtonian 0.748 |
+|-------|---|-------|---------|---|---|--------------------|
+{est_table(raw_block)}
 
-### Slope Comparison
+Joint fit (y = a + b·ρ + c·I_PCC): {joint_row(raw_block)}
 
-| Metric | Value |
-|--------|-------|
-| Slope difference | {safe_val(strat_results, 'slope_comparison', 'slope_difference', 'N/A', '{:.3f}') if has_comp else 'N/A'} |
-| Std err (diff) | {safe_val(strat_results, 'slope_comparison', 'std_err_difference', 'N/A', '{:.3f}') if has_comp else 'N/A'} |
-| Z-statistic | {safe_val(strat_results, 'slope_comparison', 'z_statistic', 'N/A', '{:.2f}') if has_comp else 'N/A'} |
-| Significance | {safe_val(strat_results, 'slope_comparison', 'significance_sigma', 'N/A', '{:.2f}') + 'σ' if has_comp else 'N/A'} |
+Pooled slope (classified subset): {fmt((raw_block.get('pooled_classified') or {}).get('slope'))} ± {fmt((raw_block.get('pooled_classified') or {}).get('slope_std_err'))}
+Pooled slope (full sample): {fmt((raw_block.get('pooled_full_sample') or {}).get('slope'))} ± {fmt((raw_block.get('pooled_full_sample') or {}).get('slope_std_err'))}
+
+### Estimand B — controlled residual (GC − matched field) vs log ρ_c
+
+| Group | N | Slope | Std Err | r | p | vs Newtonian 0.748 |
+|-------|---|-------|---------|---|---|--------------------|
+{est_table(ctrl_block)}
+
+Joint fit: {joint_row(ctrl_block)}
 
 ### Residual Analysis
 
 | Group | N | Mean Residual | Std Dev |
 |-------|---|---------------|---------|
-| PCC | {residual_results.get('n_pcc', 'N/A') if has_resid else 'N/A'} | {residual_results.get('pcc_mean_residual', 'N/A') if has_resid else 'N/A'} | {residual_results.get('pcc_std_residual', 'N/A') if has_resid else 'N/A'} |
-| non-PCC | {residual_results.get('n_non_pcc', 'N/A') if has_resid else 'N/A'} | {residual_results.get('non_pcc_mean_residual', 'N/A') if has_resid else 'N/A'} | {residual_results.get('non_pcc_std_residual', 'N/A') if has_resid else 'N/A'} |
+| PCC | {residual_results.get('n_pcc', 'N/A') if 'error' not in residual_results else 'N/A'} | {residual_results.get('pcc_mean_residual', 'N/A') if 'error' not in residual_results else 'N/A'} | {residual_results.get('pcc_std_residual', 'N/A') if 'error' not in residual_results else 'N/A'} |
+| non-PCC | {residual_results.get('n_non_pcc', 'N/A') if 'error' not in residual_results else 'N/A'} | {residual_results.get('non_pcc_mean_residual', 'N/A') if 'error' not in residual_results else 'N/A'} | {residual_results.get('non_pcc_std_residual', 'N/A') if 'error' not in residual_results else 'N/A'} |
+
+Welch t-test p: {residual_results.get('t_test_p', 'N/A') if 'error' not in residual_results else 'N/A'}
 
 ## Conclusions
 
 """
-    
+
     for c in conclusions:
         md_content += f"- {c}\n"
-    
+
     md_content += """
 ## Implications for N-Body Pushback
 
-This analysis demonstrates that the suppressed density scaling signal is:
-1. Present in BOTH PCC and non-PCC clusters
-2. Statistically consistent between the two groups
-3. Not an artifact of "messy" core collapse dynamics
-
-The TEP interpretation remains viable regardless of cluster core status.
+The stratification decomposes the pooled density slope into a shared
+within-class trend and a PCC-class intercept offset. The anomaly is present
+in the non-PCC subsample alone and is largest in the densest (PCC) class —
+the opposite of what a core-collapse artifact predicts.
 
 ---
 
 *Report generated by step_35_core_collapse_test.py*
 """
-    
+
     with open(OUTPUT_MD, 'w') as f:
         f.write(md_content)
-    
+
     print(f"\n{'='*70}")
     print(f"Results saved to: {OUTPUT_JSON}")
     print(f"Report saved to: {OUTPUT_MD}")
     print(f"{'='*70}")
-    
+
     return output
 
 

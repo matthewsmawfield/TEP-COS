@@ -6,8 +6,8 @@
 ![TEP-COS: Suppressed Density Scaling](site/public/image.webp)
 
 **Author:** Matthew Lukin Smawfield  
-**Version:** v0.8 (Caracas)  
-**Date:** First published (main citation date): 9 January 2026 | Updated: 8 August 2026
+**Version:** v0.9 (Caracas)  
+**Date:** First published: 9 January 2026 · **Last updated:** 13 September 2026
 **Status:** Preprint  
 **DOI:** [10.5281/zenodo.18165798](https://doi.org/10.5281/zenodo.18165798)  
 **Website:** [https://mlsmawfield.com/tep/cos/](https://mlsmawfield.com/tep/cos/)  
@@ -43,7 +43,7 @@ Analysis of 550 millisecond pulsars (199 globular-cluster + 351 field) reveals a
 | **Paper 11** | [TEP-H0](https://github.com/matthewsmawfield/TEP-H0) | The Cepheid Bias: Resolving the Hubble Tension | [10.5281/zenodo.18209702](https://doi.org/10.5281/zenodo.18209702) |
 | **Paper 12** | [TEP-JWST](https://github.com/matthewsmawfield/TEP-JWST) | The Temporal Equivalence Principle: A Unified Resolution to the JWST High-Redshift Anomalies | [10.5281/zenodo.19000827](https://doi.org/10.5281/zenodo.19000827) |
 | **Paper 13** | [TEP-WB](https://github.com/matthewsmawfield/TEP-WB) | The Temporal Equivalence Principle: Temporal Shear Recovery in Gaia DR3 Wide Binaries | [10.5281/zenodo.19102061](https://doi.org/10.5281/zenodo.19102061) |
-| **Paper 15** | [TEP-EFA](https://github.com/matthewsmawfield/TEP-EFA) | Temporal Equivalence Principle: Temporal Shear in the Earth Flyby Anomaly | [10.5281/zenodo.19454863](https://doi.org/10.5281/zenodo.19454863) |
+| **Paper 15** | [TEP-EFA](https://github.com/matthewsmawfield/TEP-EFA) | Temporal Equivalence Principle: Temporal Shear in the Earth Flyby Anomaly | [10.5281/zenodo.19454862](https://doi.org/10.5281/zenodo.19454862) |
 | **Paper 16** | [TEP-J0437](https://github.com/matthewsmawfield/TEP-J0437) | Synchronization Holonomy in Pulsar Scintillation | [10.5281/zenodo.19454620](https://doi.org/10.5281/zenodo.19454620) |
 | **Paper 17** | [TEP-LLR](https://github.com/matthewsmawfield/TEP-LLR) | Lunar Laser Ranging and the Nordtvedt Effect | [10.5281/zenodo.19446029](https://doi.org/10.5281/zenodo.19446029) |
 
@@ -71,7 +71,7 @@ TEP-COS/
 ├── logs/                        # Pipeline execution logs
 ├── README.md                    # This file
 ├── requirements.txt             # Python dependencies
-└── 10-TEP-COS-v0.8-Caracas.pdf   # Published PDF
+└── 10-TEP-COS-v0.9-Caracas.pdf   # Published PDF
 ```
 
 ## Installation
@@ -155,7 +155,7 @@ This will populate `results/outputs/` and `results/figures/` with fresh data.
   year={2026},
   doi={10.5281/zenodo.18165798},
   url={https://doi.org/10.5281/zenodo.18165798},
-  note={Preprint v0.8 (Caracas)}
+  note={Preprint v0.9 (Caracas)}
 }
 ```
 

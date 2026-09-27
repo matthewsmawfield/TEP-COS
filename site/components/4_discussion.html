@@ -16,7 +16,7 @@
     </p>
     <ul>
         <li>Rung 1 (Field Control): Eliminates intrinsic population differences (e.g., "are cluster pulsars just born different?").</li>
-        <li>Rung 2 (Spatial Stratification): Eliminates global systematics, linking the signal to the local potential depth.</li>
+        <li>Rung 2 (Spatial Stratification): Eliminates global systematics, linking the signal to the local field environment.</li>
         <li>Rung 3 (Density Scaling): Eliminates standard dynamical noise, which must scale as $\rho^2$.</li>
         <li>Rung 4 (External Replication): Independent confirmation via complementary methods.</li>
     </ul>
@@ -52,8 +52,8 @@
         </tr>
         <tr>
             <td>Suppressed Density Scaling</td>
-            <td>Does the signal track dynamical noise ($\rho^2$) or potential ($\Phi$)?</td>
-            <td>Observed slope = 0.393 ± 0.079 vs CMC Newtonian slope = 0.748 ± 0.039 (4.1σ rejection)</td>
+            <td>Does the signal track dynamical noise ($\rho^2$), the unsuppressed gradient ($\rho R_c$), or the field depth ($\rho R_c^2$)?</td>
+            <td>Observed slope = 0.393 ± 0.079 vs CMC Newtonian slope = 0.748 ± 0.039 (4.1σ rejection); bivariate decomposition gives $b(R_c) \approx 0$, rejecting all unsuppressed channels</td>
             <td>Quantitative exclusion</td>
         </tr>
     </tbody>
@@ -61,7 +61,7 @@
 
 <p>
     The identifiability of the pulsar signal is established not just by the detection of a residual, but by the 
-    quantitative exclusion of Newtonian systematics via the "Systematics Exclusion Matrix" (Section 3.10.10). 
+    quantitative exclusion of Newtonian systematics via the "Systematics Exclusion Matrix" (Section 3.6.10). 
     Specifically, the observation of suppressed density scaling (slope 0.39) contradicts standard mass-segregation predictions (slope > 0.7). The binary comparator (−0.33 dex observed, −0.27 dex corrected CMC) agrees in sign; the primary failures are amplitude (12.7σ) and density scaling (4.1σ).
 </p>
 
@@ -90,8 +90,8 @@
             <td>Earth (GNSS)</td>
             <td>~5–13 g/cm³</td>
             <td>Partial/Transition (ρ ~ ρ<sub>T</sub>)</td>
-            <td>Correlation length L<sub>c</sub></td>
-            <td>L<sub>c</sub> ≈ 4,200 km</td>
+            <td>Saturation radius R<sub>T</sub></td>
+            <td>R<sub>T</sub>(M<sub>&oplus;</sub>) ≈ 4,200 km</td>
         </tr>
         <tr>
             <td>Globular Cluster</td>
@@ -120,7 +120,7 @@
 <h2>4.3 Suppressed Density Scaling</h2>
 
 <p>
-    The suppressed density scaling result (Section 3.4–3.17) provides evidence 
+    The suppressed density scaling result (Section 3.4–3.13) provides evidence 
     against standard dynamical contamination. The observed slope (0.393 ± 0.079) is significantly flatter than 
     the CMC Newtonian expectation (0.748 ± 0.039)—a 4.1σ rejection. The signal exhibits topological flattening rather than scaling with density, 
     suggesting a modification that does not act as a standard force term.
@@ -147,7 +147,7 @@
     </p>
     <ul>
         <li>Core Radius Systematics: If core radii in dense clusters were systematically overestimated (underestimating true densities), the real density range might be narrower than modeled.</li>
-        <li>Model Mis-specification: It is assumed that Plummer potentials capture the relevant core acceleration variance. However, the upgraded N-body/CMC analysis (Section 3.17) shows that mass segregation <em>increases</em> the effective acceleration variance by concentrating pulsars in the core. This exacerbates the discrepancy rather than resolving it.</li>
+        <li>Model Mis-specification: It is assumed that Plummer potentials capture the relevant core acceleration variance. However, the upgraded N-body/CMC analysis (Section 3.13) shows that mass segregation <em>increases</em> the effective acceleration variance by concentrating pulsars in the core. This exacerbates the discrepancy rather than resolving it.</li>
         <li>Binary Orbital Aliasing: If binary orbital parameters (eccentricity, orientation) vary systematically with cluster density, this could introduce a countervailing trend.</li>
     </ul>
     <p>
@@ -158,24 +158,26 @@
 <div class="key-concept">
     <h4>Robustness to Core-Collapse Status</h4>
     <p>
-        Post-core-collapse (PCC) clusters have undergone gravitational collapse to extremely high central densities, potentially creating distinct dynamical regimes. To test whether the TEP signal is specific to PCC clusters (which would suggest a core-collapse artifact), the sample was stratified into PCC (N=7) and non-PCC (N=12) clusters:
+        Post-core-collapse (PCC) clusters have undergone gravitational collapse to extremely high central densities, potentially creating distinct dynamical regimes. To test whether the suppressed scaling is specific to PCC clusters—which would indicate a core-collapse artifact—the classified subsample was stratified into PCC (N=6: Terzan 5, M62, M15, NGC 6752, NGC 6624, NGC 6397) and non-PCC (N=11) clusters, and the density regression was repeated within each class on the primary estimand, the cluster-mean log|Ṗ| against log ρ<sub>c</sub>:
     </p>
     <ul>
-        <li><em>PCC slope:</em> 0.70 ± 0.12 dex/dex (r = 0.93, p = 0.002)</li>
-        <li><em>Non-PCC slope:</em> 0.87 ± 0.09 dex/dex (r = 0.95, p = 2×10⁻⁶)</li>
-        <li><em>Difference:</em> −0.17 ± 0.15 (p = 0.25, 1.1σ—not significant)</li>
+        <li><em>PCC slope:</em> −0.09 ± 0.29 dex/dex (r = −0.15, p = 0.77)</li>
+        <li><em>Non-PCC slope:</em> 0.30 ± 0.18 dex/dex (r = 0.49, p = 0.13)</li>
+        <li><em>Slope difference:</em> −0.39 ± 0.34 (p = 0.26, not significant)</li>
+        <li><em>Joint fit</em>, y = a + b·log ρ<sub>c</sub> + c·I<sub>PCC</sub>: shared within-class slope 0.24 ± 0.15 (3.3σ below the Newtonian 0.75); PCC intercept offset +0.40 ± 0.32 dex</li>
+        <li><em>Pooled slope</em> on the classified subset: 0.37 ± 0.11 (0.43 ± 0.10 on the full 25-cluster sample)</li>
     </ul>
     <p>
-        The TEP signal persists in both PCC and non-PCC clusters with no statistically significant difference. This demonstrates that the suppressed density scaling is not a core-collapse artifact—it is a general feature of globular cluster pulsar populations regardless of dynamical state.
+        The pooled slope exceeds each within-class slope: the observed scaling decomposes into a shallow shared within-class trend plus a between-class offset in which the densest (PCC) systems carry the largest field-matched |Ṗ| excess (+0.32 dex in the controlled-residual channel, Welch p = 0.003). The suppression is therefore neither confined to nor generated by collapsed cores—the non-PCC subsample alone already lies 2.5σ below the Newtonian expectation of 0.75—while the response within the PCC class is flat at the highest densities, the morphology of a saturating rather than a steepening response. Core-collapse dynamics do not produce the anomaly; the densest environments show its strongest expression.
     </p>
 </div>
 
 <h2>4.4 Connection to Other TEP Evidence</h2>
 
 <p>
-    The underlying bare geometric enhancement factor of ~10<sup>6</sup>–10<sup>7</sup> (which is heavily 
+    The underlying unsuppressed geometric enhancement factor of ~10<sup>6</sup>–10<sup>7</sup> (which is heavily 
     suppressed down to $\kappa_{\text{MSP}}^{\text{emp}} \approx 0.05$ in the dense GC core) is consistent 
-    with the bare couplings inferred in previous TEP findings:
+    with the unsuppressed couplings inferred in previous TEP findings:
 </p>
 
 <table class="data-table">
@@ -216,7 +218,7 @@
     which should vary with scale and methodology.
 </p>
 
-<h2>4.6 Synthesis: The Hierarchy of Evidence</h2>
+<h2>4.5 Synthesis: The Hierarchy of Evidence</h2>
 
 <p>
     A "ladder of evidence" is constructed prioritizing results that are robust to systematics (Null Controls) 
@@ -245,7 +247,7 @@
                 <td>2</td>
                 <td>Pulsar Spatial Stratification</td>
                 <td>Core-concentrated (−0.30 dex, p=0.074)</td>
-                <td>Suggestive. Signal tracks potential depth.</td>
+                <td>Suggestive. Signal tracks the local field environment.</td>
             </tr>
             <tr>
                 <td>3</td>
@@ -282,9 +284,9 @@
     </p>
 </div>
 
-<h2>4.7 Systematics and Discriminants</h2>
+<h2>4.6 Systematics and Discriminants</h2>
 
-<h3>4.7.1 Selection Effects (Pulsar Channel)</h3>
+<h3>4.6.1 Selection Effects (Pulsar Channel)</h3>
 <p>
     Could low-Ṗ pulsars be preferentially detected in GCs? No:
 </p>
@@ -396,7 +398,7 @@
     </p>
 </div>
 
-<h3>4.7.2 Systematics and Selection Effects Summary</h3>
+<h3>4.6.2 Systematics and Selection Effects Summary</h3>
 
 <p>
     The pulsar timing analysis addresses four primary categories of potential systematics, each with dedicated validation steps:
@@ -415,26 +417,26 @@
         <tr>
             <td><em>Intrinsic spin-down/magnetic evolution</em></td>
             <td>GC MSPs might have intrinsically different Ṗ evolution than field MSPs due to different recycling histories or magnetic field distributions</td>
-            <td>Field Binary Control (Section 3.12): Matched comparison of field binary vs isolated MSPs</td>
+            <td>Field Binary Control (Section 3.8): Matched comparison of field binary vs isolated MSPs</td>
             <td>No intrinsic difference detected (p = 0.78); cluster signal is environmental</td>
         </tr>
         <tr>
             <td><em>Cluster accelerations</em></td>
             <td>Line-of-sight gravitational accelerations in dense cores could mimic or mask TEP effects</td>
-            <td>CMC Gold Standard Analysis (Section 3.17): Full N-body comparison against 18,813 synthetic MSPs (20 CMC clusters)</td>
+            <td>CMC Gold Standard Analysis (Section 3.13): Full N-body comparison against 18,813 synthetic MSPs (20 CMC clusters)</td>
             <td>Newtonian dynamics predicts 1.88 dex excess and 0.748 slope; observations show 0.612 dex and 0.393 (12.7σ and 4.1σ discrepancies). Standard dynamics shows severe tension.</td>
         </tr>
         <tr>
             <td><em>Selection biases</em></td>
             <td>High-acceleration pulsars might be preferentially missed by radio surveys</td>
-            <td>PTA Mock Observation Pipeline (Section 3.18): Simulated detection for GBT, Parkes, FAST, MeerKAT</td>
+            <td>PTA Mock Observation Pipeline (Section 3.14): Simulated detection for GBT, Parkes, FAST, MeerKAT</td>
             <td>100% detection rate predicted for CMC-level accelerations; observational filtering cannot explain the missing population</td>
         </tr>
         <tr>
             <td><em>Magnetospheric/environmental effects</em></td>
             <td>Binary interactions or local magnetospheric physics could alter apparent spin-down</td>
-            <td>Binary vs Isolated Analysis (Section 3.11): Compare binary and isolated MSPs within GCs</td>
-            <td>Binary MSPs are quieter (−0.33 dex) than isolated. The uncorrected raw CMC predicts +0.26 dex (noisier), but with fixed MSP period and 3rc mass-segregation filter the corrected CMC prediction is −0.27 dex (quieter), consistent with observation. The binary comparison is a comparator check, not a primary discrepancy (Section 3.15).</td>
+            <td>Binary vs Isolated Analysis (Section 3.7): Compare binary and isolated MSPs within GCs</td>
+            <td>Binary MSPs are quieter (−0.33 dex) than isolated. The uncorrected raw CMC predicts +0.26 dex (noisier), but with fixed MSP period and 3rc mass-segregation filter the corrected CMC prediction is −0.27 dex (quieter), consistent with observation. The binary comparison is a comparator check, not a primary discrepancy (Section 3.11).</td>
         </tr>
     </tbody>
 </table>
@@ -443,7 +445,7 @@
     Synthesis: All four systematic categories have been explicitly tested with dedicated validation pipelines. The intrinsic evolution and selection bias channels return null results; the cluster acceleration channel shows severe tension with Newtonian predictions; and the environmental effects channel confirms the binary comparator agrees with corrected CMC predictions. The combined validation framework constrains standard systematic explanations to an aggregate improbability of ~6×10⁻⁸ from the systematic exclusion matrix.
 </p>
 
-<h3>4.7.3 Population Differences (Pulsar Channel)</h3>
+<h3>4.6.3 Population Differences (Pulsar Channel)</h3>
 <p>
     Are GC MSPs intrinsically different from field MSPs? No known mechanism:
 </p>
@@ -453,12 +455,12 @@
     <li>No theoretical basis for intrinsic difference</li>
 </ul>
 <p>
-    A matched comparison of field MSPs (Section 3.12) shows no difference between binary and isolated systems 
+    A matched comparison of field MSPs (Section 3.8) shows no difference between binary and isolated systems 
     (p = 0.78), whereas cluster binary MSPs show a significant offset (p = 0.004). This strongly argues against intrinsic 
     population differences as the cause of the cluster signal.
 </p>
 
-<h3>4.7.4 Cluster Acceleration: A Question of Magnitude</h3>
+<h3>4.6.4 Cluster Acceleration: A Question of Magnitude</h3>
 
 <p>
     Pulsars moving through globular cluster potentials experience line-of-sight acceleration that contributes to observed Ṗ. 
@@ -502,13 +504,13 @@
         after population controls could reflect either incomplete dynamical modeling or the TEP potential-based clock response, which predicts suppressed density scaling relative to the Newtonian acceleration baseline.
     </p>
     <p>
-        The Field Binary Control (Section 3.12) provides critical context: the binary vs isolated difference observed in clusters 
+        The Field Binary Control (Section 3.8) provides critical context: the binary vs isolated difference observed in clusters 
         (0.33 dex) vanishes in the field (p = 0.78). This result supports the conclusion that the signal is environmental (tied to the cluster potential), 
         not intrinsic to pulsar populations.
     </p>
 </div>
 
-<h3>4.7.5 Fossil Probe Limitations</h3>
+<h3>4.6.5 Fossil Probe Limitations</h3>
 
 <p>
     Fossil observables show correlations consistent with TEP predictions but these signals are 
@@ -554,18 +556,18 @@
     </p>
 </div>
 
-<h3>4.7.6 Laboratory and Solar System Constraints</h3>
+<h3>4.6.6 Laboratory and Solar System Constraints</h3>
 <p>
     Modified gravity theories with screening mechanisms are tightly constrained by laboratory atom interferometry 
     and Lunar Laser Ranging (LLR). Atom interferometry excludes a wide range of chameleon/symmetron parameters 
     in vacuum (Burrage et al. 2018). However, TEP posits a screening transition at $\rho_T \approx 20 \text{ g/cm}^3$. 
-    Laboratory vacuum chambers remain embedded within the Earth–Solar source environment, where the combined density, compactness, boundary conditions and source geometry suppress the locally observable Temporal Shear. This local suppression is governed by $S_\Sigma(\mathcal{E})$, not by the chamber's nominal vacuum density or by a binary comparison with $\rho_T$.
-    The predicted bare enhancement ($\kappa_{\text{bare}} \sim 10^6$) applies 
+    Laboratory vacuum chambers remain embedded within the Earth–Solar source environment, where the combined density, compactness, boundary conditions and source geometry suppress the locally observable Temporal Shear. This local suppression is governed by $S_\Sigma(\mathcal{E})$, not by the chamber's nominal vacuum density or by a binary comparison with $\rho_T$. The temporal field is present inside the chamber as everywhere; the chamber reduces $T^{(\rm m)}$ locally but does not remove $\phi$.
+    The predicted unsuppressed enhancement ($\kappa_{\text{unsupp}} \sim 10^6$) applies 
     only to extended, low-density systems (e.g., galactic halos). Inside dense globular clusters, it is suppressed to $\sim 0.05$, 
     and inside the Solar System, it is suppressed to zero, consistent with the observed null results in dense Solar System regimes.
 </p>
 
-<h3>4.7.7 Consistency with Pulsar Timing Arrays</h3>
+<h3>4.6.7 Consistency with Pulsar Timing Arrays</h3>
 <p>
     Pulsar Timing Arrays (PTAs) such as NANOGrav, EPTA, and the Fermi-LAT PTA (Xia et al. 2023) place stringent 
     constraints on Ultralight Dark Matter (ULDM) and stochastic gravitational wave backgrounds. 
@@ -584,7 +586,7 @@
 
     <li>Source/Shear Sector Suppressed Earth Term: PTA searches for correlated signals rely on the "Earth term"—the
     component of the signal common to all pulsars due to the detector's (Earth's) motion or potential.
-    However, the Solar System density ($\rho \gg \rho_T$) ensures the Earth is in a source/shear-suppressed regime. 
+    However, the Earth’s mean density ($\rho_\oplus \approx 5.5$ g/cm³ $< \rho_T = 20$ g/cm³) places Earth in the transition/partial regime, not the fully suppressed regime. The screening factor $S_\Sigma$ is therefore partial, and the residual Earth term is suppressed by the partial screening rather than eliminated entirely. 
     Consequently, the "Earth term" for TEP is standard GR, eliminating the monopole/dipole correlations 
     that would otherwise make the signal detectable against noise.</li>
 
@@ -604,21 +606,21 @@
     does not violate current PTA constraints.</li>
 </ul>
 
-<h3>4.7.8 Cross-Scale Consistency: The Hubble Tension Connection</h3>
+<h3>4.6.8 Cross-Scale Consistency: The Hubble Tension Connection</h3>
 
 <p>
-    The TEP framework provides a unifying interpretation across scales—from GNSS clock correlations (Earth) to pulsar timing (globular clusters) to cosmological distances. The Hubble tension (5σ discrepancy between Planck CMB and SH0ES local H₀ measurements) may find natural interpretation within this framework: time-dilation-dependent methods (Cepheid period-luminosity) systematically differ from dynamics-based methods (CMB, BAO) because clocks in galactic potentials experience enhanced time dilation.
+    The TEP framework provides a unifying interpretation across scales—from GNSS clock correlations (Earth) to pulsar timing (globular clusters) to cosmological distances. The Hubble tension (5σ discrepancy between Planck CMB and SH0ES local H₀ measurements) may find natural interpretation within this framework: time-dilation-dependent methods (Cepheid period-luminosity) systematically differ from dynamics-based methods (CMB, BAO) because clocks in galactic potentials experience amplified time dilation.
 </p>
 
 <p>
-    <em>Quantitative evidence from Paper 11:</em> Analysis of 29 SH0ES host galaxies reveals correlation between host velocity dispersion σ and derived H₀ (Spearman ρ=0.434, p=0.019). TEP correction yields unified H₀=68.66±1.51 km/s/Mpc, reducing Planck tension to 0.79σ. See Paper 11 (11manuscript-tep-h0.md) for complete derivation.
+    <em>Quantitative evidence from Paper 11:</em> Analysis of 37 SH0ES host galaxies shows a positive raw association between host potential depth and derived H₀ (Pearson r = 0.241, p = 0.150; Spearman ρ = 0.188, p = 0.266). Under universal coupling the host environment's clock rate distorts Cepheid, SN Ia and TRGB distances together, so the calibrator matrix and Cepheid–TRGB comparisons show no differential (as predicted), while the redshift–distance relation shows the environmental response (Γ<sub>X</sub> > 0, 37/37 leave-one-out positive). The TEP-corrected calibrator-host value is H₀ = 66.65 ± 1.58 km/s/Mpc, consistent with the TEP CMB (66.70 ± 0.58, Paper 26) at 0.03σ. See Paper 11 (v0.9).
 </p>
 
 <p>
     <em>Key distinction from other proposals:</em> Unlike dark energy or early-universe modifications, TEP predicts <em>environment-dependent</em> H₀ variations—Cepheids in deeper potentials show systematically higher H₀ residuals. This creates a testable correlation that standard explanations cannot easily reproduce.
 </p>
 
-<h3>4.7.9 Parallax, the Shklovskii Effect, and Distance Ladder Calibrations</h3>
+<h3>4.6.9 Parallax, the Shklovskii Effect, and Distance Ladder Calibrations</h3>
 
 <p>
     It is crucial to consider whether TEP could alter the interpretation of geometric parallax in a way that changes distance ladder calibrations? The Shklovskii effect (kinematic contribution to Ṗ from transverse motion) depends on proper motion μ and distance d via Ṗ<sub>Shk</sub> ∝ μ²d/c. If TEP modifies time, might it also affect the conversion between parallax π and distance d?
@@ -641,14 +643,14 @@
 </ul>
 
 <p>
-    <em>Distance Ladder Implications:</em> The Hubble tension analysis (Section 4.7.8) assumes standard parallax calibrations for Cepheids. TEP predicts that geometric parallax (from Gaia) remains accurate because it is a screened Earth-based measurement, while Cepheid period-luminosity distances are systematically overestimated due to enhanced time dilation. This <em>asymmetric</em> effect—independent of parallax systematics—strengthens the TEP interpretation of the H₀ tension.
+    <em>Distance Ladder Implications:</em> The Hubble tension analysis (Section 4.6.8) assumes standard parallax calibrations for Cepheids. TEP predicts that geometric parallax (from Gaia) remains accurate because it is a screened Earth-based measurement, while Cepheid period-luminosity distances are systematically overestimated due to amplified time dilation. This <em>asymmetric</em> effect—independent of parallax systematics—strengthens the TEP interpretation of the H₀ tension.
 </p>
 
 <p>
     <em>Conclusion:</em> TEP does not modify parallax geometry, and the Shklovskii effect is subdominant to cluster acceleration in the regime where the TEP signal is detected. Distance ladder calibrations relying on geometric parallax remain valid within TEP.
 </p>
 
-<h2>4.8 Key Discriminating Tests</h2>
+<h2>4.7 Key Discriminating Tests</h2>
 
 <p>
     Rigorous tests can validate or challenge the TEP interpretation of the pulsar timing anomaly.
@@ -662,10 +664,10 @@
     </ol>
 </div>
 
-<h2>4.9 Limitations and Robustness</h2>
+<h2>4.8 Limitations and Robustness</h2>
 
 <div class="critical-analysis">
-    <h3>4.9.0 Geometric Scaling Interpretation of Γ</h3>
+    <h3>4.8.0 Geometric Scaling Interpretation of Γ</h3>
     <p>
         The density-scaling slope Γ ≈ 0.39 is recovered as a parameter-free scaling estimate from the contrast between
         potential-like TEP response and Newtonian acceleration scaling, using the measured structural relation of the cluster sample.
@@ -676,6 +678,30 @@
         From TEP-H0 (Paper 11), the TEP effect operates on clock rates via the conformal factor
         A(Φ) ≈ 1 − ηΦ/c², where Φ is the gravitational potential. This is quantitatively different
         from Newtonian gravity, where the observable Ṗ excess comes from cluster acceleration a = GM/R².
+        The structure of the spin-down equation resolves the apparent tension between the two terms:
+        the potential term acts on the measured period and, being static, cancels
+        identically in the dimensionless drift
+        ($\kappa_A \Phi/c^2 \sim 10^{-9}$, absorbed by the timing solution). The shift in
+        mean log|Ṗ| is instead produced by the acceleration broadening itself, whose signed,
+        approximately symmetric distribution folds into a positive offset in |Ṗ| (Jensen's
+        inequality). Under TEP the drift is carried by the true line-of-sight acceleration
+        $a_\ell = (1 + 2\beta_A^{2} S_\Sigma(E))\,a_{N,\ell}$: in coherent-gradient cores
+        the shear contribution is screened toward zero and the channel approaches — but cannot
+        fall below — its Newtonian floor. The environmental scaling of the residual therefore
+        measures the saturation curve of $S_\Sigma(E)$ together with the calibration state of
+        the Newtonian-inferred cluster potentials, rather than a bare gradient multiplier.
+    </p>
+
+    <p>
+        The prediction below is conditional in the precise sense: <em>if</em> the TEP observable scales
+        with the potential |Φ| rather than with the acceleration a, <em>then</em> the density-scaling
+        slope is fixed kinematically at 2Γ_N − 1 with no adjustable parameter. The |Φ|-scaling is the
+        phenomenological hypothesis under test — physically motivated by the scalar-field relation
+        φ ∝ Φ (Appendix C) — not a derived consequence of the action. The bivariate channel
+        decomposition (Step 54) tests this hypothesis directly: the measured core-radius exponent is
+        consistent with zero on every estimand, so the response is saturated beyond even the
+        linearized potential benchmark — the empirical signature of the screened shear response,
+        not of any unsuppressed geometric variable.
     </p>
 
     <h4>The Scaling Analysis</h4>
@@ -704,7 +730,7 @@
     </p>
     
     <div class="note-box" style="background-color: #f8f9fa; border-left: 4px solid #6c757d; padding: 10px; margin: 15px 0; font-size: 0.9em;">
-        <em>Note on Mathematical Exactness:</em> The identity Γ_TEP = 2Γ_N − 1 is an <em>exact</em> mathematical consequence of the definition of the regression slope. It does not assume that $\alpha$ is strictly constant across all clusters, nor does it require zero scatter in the $R_c$ vs $\rho_c$ relationship. The prediction relies purely on the linearity of covariance over the ensemble. Furthermore, taking $\Gamma_N$ from full N-body/CMC simulations natively captures the effective slope $s$ of the mass-segregated pulsar population, rather than the bare structural slope of the overall cluster light profile.
+        <em>Note on Mathematical Exactness:</em> The identity Γ_TEP = 2Γ_N − 1 is an <em>exact</em> mathematical consequence of the definition of the regression slope. It does not assume that $\alpha$ is strictly constant across all clusters, nor does it require zero scatter in the $R_c$ vs $\rho_c$ relationship. The prediction relies purely on the linearity of covariance over the ensemble. Furthermore, taking $\Gamma_N$ from full N-body/CMC simulations natively captures the effective slope $s$ of the mass-segregated pulsar population, rather than the unsuppressed structural slope of the overall cluster light profile.
     </div>
     
     <h4>Result</h4>
@@ -718,9 +744,10 @@
     </ul>
     
     <p>
-        The Newtonian prediction (Γ_N = 0.75) is excluded at 4.1σ. The TEP prediction matches 
-        observation without any fitted parameters—the slope difference arises purely from the 
-        fundamental distinction between potential-based clock effects and acceleration-based dynamics.
+        The Newtonian prediction (Γ_N = 0.75) is excluded at 4.1σ. The observed slope is consistent 
+        with the linearized potential benchmark within ~1σ combined uncertainty and, as the channel 
+        decomposition shows, arises from the screened shear response — a saturated transfer carrying 
+        no explicit core-radius dependence — rather than any unsuppressed environmental variable.
     </p>
 </div>
 
@@ -730,9 +757,9 @@
 </p>
 
 <div class="critical-analysis">
-    <h3>4.9.1 Parameter Sensitivity ($\rho_T$)</h3>
+    <h3>4.8.1 Parameter Sensitivity ($\rho_T$)</h3>
     <p>
-        The unification of terrestrial and cluster scales relies on the Temporal Topology saturation proximity scale $\rho_T \approx 20$ g/cm³, an observational proxy for the density projection of the full environmental operator $S_\Sigma(E)$.
+        The unification of terrestrial and cluster scales relies on the Temporal Topology saturation proximity scale $\rho_T \approx 20$ g/cm³, an observational proxy for the density projection of the full environmental operator $S_\Sigma(E)$. The scale is empirically calibrated from the GNSS clock correlations (Paper 1) and applied here; the cross-scale consistency it enables is a consistency check of a fitted scale, not an independent derivation — deriving $S_\Sigma(E)$ from the master action would convert $\rho_T$ from a calibrated proxy into a predicted scale.
         How sensitive is the result to this parameter?
     </p>
     <ul>
@@ -743,7 +770,7 @@
             The fact that <em>all</em> observed clusters in the sample exhibit the flattened-response behaviour expected once the weakly screened coherent-gradient response has entered its nonlinear regime, making the conclusion robust to moderate uncertainties in $\rho_T$.</li>
     </ul>
 
-    <h3>4.9.2 Failure Modes and Confounds</h3>
+    <h3>4.8.2 Failure Modes and Confounds</h3>
     <table class="data-table">
         <thead>
             <tr>
@@ -769,7 +796,7 @@
         </tbody>
     </table>
 
-    <h3>4.9.3 Falsification Criteria for TEP-COS</h3>
+    <h3>4.8.3 Falsification Criteria for TEP-COS</h3>
     <p>
         The TEP-COS pulsar prediction—that globular cluster pulsars should exhibit suppressed density scaling (Γ ≈ 0.39) and a 0.6 dex environmental offset—is vulnerable to specific experimental tests. These criteria apply to this specific prediction; they would not invalidate the broader TEP framework established across Papers 0–13 (GNSS, SLR, galaxy dynamics, Hubble tension, etc.), but would require re-evaluation of the pulsar-specific screening model.
     </p>
@@ -779,22 +806,22 @@
 
     <h4>Limitation: CMC Coverage Scope</h4>
     <p>
-        <em>Acknowledged Gap:</em> The gold-standard dynamical comparison has been completed for 20 clusters (47 Tuc, Terzan 5, M15, M62, M13, M28, M3, M4, M5, Omega Cen, NGC 6517, NGC 6397, NGC 6752, NGC 6388, NGC 6624, M22, NGC 6712, NGC 6441, NGC 6440, NGC 6760) containing CMC catalog data, but a full 29-cluster CMC-level reproduction remains outstanding. While these 20 clusters contain the majority of the MSP sample and capture the observed residual variation (Section 4.10), they represent a substantial subset rather than the complete population.
+        <em>Acknowledged Gap:</em> The gold-standard dynamical comparison has been completed for 20 clusters (47 Tuc, Terzan 5, M15, M62, M13, M28, M3, M4, M5, Omega Cen, NGC 6517, NGC 6397, NGC 6752, NGC 6388, NGC 6624, M22, NGC 6712, NGC 6441, NGC 6440, NGC 6760) containing CMC catalog data, but a full 29-cluster CMC-level reproduction remains outstanding. While these 20 clusters contain the majority of the MSP sample and capture the observed residual variation (Section 4.9), they represent a substantial subset rather than the complete population.
     </p>
     <p>
         <em>Why This Matters:</em> A mainstream referee would correctly note that the remaining 9 clusters (mostly lower-density systems) have not been subjected to the same high-fidelity CMC scrutiny. While the Newtonian ρ² scaling prediction (Γ = 0.75) is a robust theoretical expectation derived from virial theorem constraints that applies universally across all cluster densities, cluster-specific dynamical effects (transient heating, non-equilibrium states, or unusual mass distributions) could in principle vary between the CMC-modeled clusters and the remainder.
     </p>
     <p>
-        <em>Mitigation:</em> The hierarchical mixed-effects model (Section 3.17) includes all 29 clusters and shows consistent suppressed scaling (Γ = 0.39) across the full sample. The 20 CMC clusters span the high-proximity regime where the Newtonian prediction is most extreme and the TEP signal is strongest; more dilute clusters (log ρ < 3.5) contribute minimal predicted signal and cannot rescue the 12.7σ excess discrepancy. Full CMC coverage of all 29 clusters would close this gap and remains the standard to which the analysis aspires.
+        <em>Mitigation:</em> The hierarchical mixed-effects model (Section 3.13) includes all 29 clusters and shows consistent suppressed scaling (Γ = 0.39) across the full sample. The 20 CMC clusters span the high-proximity regime where the Newtonian prediction is most extreme and the TEP signal is strongest; more dilute clusters (log ρ < 3.5) contribute minimal predicted signal and cannot rescue the 12.7σ excess discrepancy. Full CMC coverage of all 29 clusters would close this gap and remains the standard to which the analysis aspires.
     </p>
 
-    <h3>4.9.4 Constrained Recovery Space for Conventional Dynamics</h3>
+    <h3>4.8.4 Constrained Recovery Space for Conventional Dynamics</h3>
     <p>
         <em>Limitation Addressed:</em> A formal objection frequently raised against anomalous gravitational signals is the possibility of unmodeled Newtonian kinematics (e.g., extreme mass segregation or orbital anisotropies). Rather than leaving this as a qualitative loophole, the analysis quantitatively constrains the conventional parameter space.
     </p>
 
     <p>
-        <em>Resolution:</em> The exclusion bounds (Section 3.15) strongly constrain conventional dynamical interpretations:
+        <em>Resolution:</em> The exclusion bounds (Section 3.11) strongly constrain conventional dynamical interpretations:
     </p>
     
     <table class="data-table">
@@ -898,7 +925,7 @@
     </p>
 </div>
 
-<h2>4.10 Critical Path Forward</h2>
+<h2>4.9 Critical Path Forward</h2>
 
 <p>
     The TEP hypothesis can be further constrained or strengthened through specific observational tests using existing 
@@ -991,7 +1018,7 @@
         </ul>
         This diversity ensures the CMC results are not specific to one cluster type.</li>
         
-        <li><em>Convergence Test:</em> The density scaling slope (Γ = 0.39) is derived from the full 29-cluster hierarchical model. The CMC prediction (Γ = 0.75) differs by 4.1σ from this full-sample result, confirming the discrepancy is not a subsample artifact. The Γ = 0.75 prediction is a literature consensus from CMC studies (Kremer+20, Ye+22, Rodriguez+21, Weatherford+20) spanning 148+ simulated clusters—not derived from the 20 clusters used in our N-body proof. Adding lower-density clusters to the CMC model would not artificially flatten this prediction; the Newtonian ρ² scaling remains steep (~0.75–0.82) across the full density range because it is a fundamental dynamical property of virialized systems, not a selection effect.</em></li>
+        <li><em>Convergence Test:</em> The density scaling slope (Γ = 0.39) is derived from the full 29-cluster hierarchical model. The CMC prediction (Γ = 0.75) differs by 4.1σ from this full-sample result, confirming the discrepancy is not a subsample artifact. The Γ = 0.75 prediction is a literature consensus from CMC studies (Kremer+20, Ye+22, Rodriguez+21, Weatherford+20) spanning 148+ simulated clusters—not derived from the 20 clusters used in the N-body proof. Adding lower-density clusters to the CMC model would not artificially flatten this prediction; the Newtonian ρ² scaling remains steep (~0.75–0.82) across the full density range because it is a fundamental dynamical property of virialized systems, not a selection effect.</em></li>
     </ol>
     
     <p>

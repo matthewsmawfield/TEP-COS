@@ -1,7 +1,7 @@
 {
   "meta": {
     "script": "step_44_kappa_msp_prior.py",
-    "timestamp_utc": "2026-07-03T10:09:36.154464+00:00",
+    "timestamp_utc": "2026-09-13T10:13:00.143246+00:00",
     "description": "\u03ba_MSP empirical + screening factor from real pulsar data"
   },
   "inputs": {
@@ -9,7 +9,7 @@
     "f_accel_dominated": 0.45,
     "total_gc_pulsars": 64,
     "n_clusters": 7,
-    "kappa_bare_paper11": 1050000.0
+    "kappa_bare_paper11": 960000.0
   },
   "cluster_breakdown": [
     {
@@ -79,14 +79,14 @@
     "formula": "\u03ba_MSP^emp = (10^raw_dex - 1) / (f_accel \u00d7 <\u03a6/c\u00b2 \u00b7 \u03b4\u1e56_accel/\u1e56_int>)"
   },
   "screening": {
-    "effective_screening_factor_S_MSP": 0.0274,
-    "S_MSP_uncertainty": 0.0425,
+    "effective_screening_factor_S_MSP": 0.03,
+    "S_MSP_uncertainty": 0.0465,
     "interpretation": "Dense-cluster geometric suppression (higher \u03c1\u2080, smaller R_c) reduces bare \u03ba=1e+06 to effective \u03ba=2.9e+04; not pulsar-specific self-screening"
   },
   "cross_paper": {
-    "paper_11_bare_kappa_cep": 1050000.0,
+    "paper_11_bare_kappa_cep": 960000.0,
     "paper_11_kappa_cep_unc": 430000.0,
-    "tension_sigma": 2.362153370124942,
+    "tension_sigma": 2.153969329409496,
     "resolution": "Resolved via dense-cluster geometric suppression: bare coefficient ~10\u2076, effective in dense GCs ~10\u2074"
   }
 }

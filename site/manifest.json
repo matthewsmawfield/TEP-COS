@@ -1,8 +1,8 @@
 {
   "name": "TEP-COS",
   "short_name": "TEP-COS",
-  "version": "v0.8 (Caracas)",
-  "last_updated": "8 August 2026",
+  "version": "v0.9 (Caracas)",
+  "last_updated": "13 September 2026",
   "start_url": ".",
   "display": "standalone",
   "theme_color": "#1C2E4A",

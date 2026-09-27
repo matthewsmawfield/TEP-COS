@@ -1,9 +1,11 @@
 {
-  "timestamp": "2026-07-03T11:09:33.598012",
-  "method": "Core collapse stratification: testing density scaling in PCC vs non-PCC clusters",
+  "timestamp": "2026-09-27T02:26:20.371715",
+  "method": "Core collapse stratification: density scaling in PCC vs non-PCC clusters on the raw log|Pdot| and controlled-residual estimands, with joint class-intercept fit (Simpson decomposition)",
+  "newtonian_reference_slope": 0.748,
   "stratification_analysis": {
     "n_pcc": 6,
     "n_non_pcc": 11,
+    "n_unclassified": 8,
     "pcc_clusters": [
       "Terzan 5",
       "M62 (NGC 6266)",
@@ -25,32 +27,143 @@
       "NGC 1851",
       "M22 (NGC 6656)"
     ],
-    "pcc_analysis": {
-      "n_clusters": 6,
-      "correlation_r": 0.025834270109789864,
-      "correlation_p": 0.9612572158541202,
-      "slope": 0.00803407524464544,
-      "intercept": 0.34313969492974816,
-      "slope_std_err": 0.15544069474214098,
-      "r_squared": 0.0006674095121055823
-    },
-    "non_pcc_analysis": {
-      "n_clusters": 11,
-      "correlation_r": 0.6559587858223862,
-      "correlation_p": 0.028402699563807164,
-      "slope": 0.06938148011229082,
-      "intercept": -0.19021116579098057,
-      "slope_std_err": 0.02661189186370067,
-      "r_squared": 0.43028192869757914
-    },
-    "slope_comparison": {
-      "pcc_slope": 0.00803407524464544,
-      "non_pcc_slope": 0.06938148011229082,
-      "slope_difference": -0.06134740486764539,
-      "std_err_difference": 0.15770225860933237,
-      "z_statistic": -0.38900777584687696,
-      "p_value": 0.6972703942624883,
-      "significance_sigma": 0.38900777584687696
+    "unclassified_clusters": [
+      "NGC 6517",
+      "NGC 6440",
+      "Terzan 1",
+      "NGC 6441",
+      "NGC 6760",
+      "M92 (NGC 6341)",
+      "NGC 6544",
+      "NGC 6522"
+    ],
+    "estimands": {
+      "raw_logpdot": {
+        "label": "cluster-mean log|Pdot| (primary estimand, cf. steps 12/24)",
+        "pcc_analysis": {
+          "n_clusters": 6,
+          "slope": -0.090286177426349,
+          "intercept": -18.460097541429626,
+          "slope_std_err": 0.291066150984931,
+          "correlation_r": -0.15326323898399977,
+          "correlation_p": 0.7719051891783336,
+          "r_squared": 0.023489620423866625,
+          "tension_vs_newtonian_sigma": 2.854543473467325
+        },
+        "non_pcc_analysis": {
+          "n_clusters": 11,
+          "slope": 0.295241894684515,
+          "intercept": -20.782688840573712,
+          "slope_std_err": 0.17706223918194147,
+          "correlation_r": 0.485816647428204,
+          "correlation_p": 0.12977317185846718,
+          "r_squared": 0.2360178149183799,
+          "tension_vs_newtonian_sigma": 2.4971977117423076
+        },
+        "joint_fit": {
+          "n": 17,
+          "shared_slope": 0.2386631935498441,
+          "shared_slope_se": 0.1485873206307922,
+          "shared_slope_p": 0.1305394749256601,
+          "shared_slope_tension_vs_newtonian_sigma": 3.315556976415114,
+          "pcc_intercept_offset": 0.39633895018516513,
+          "pcc_offset_se": 0.31602283656272573,
+          "pcc_offset_t": 1.2541465499645874,
+          "pcc_offset_p": 0.23032541647118743
+        },
+        "pooled_classified": {
+          "n_clusters": 17,
+          "slope": 0.3691741836369495,
+          "intercept": -20.98684837610765,
+          "slope_std_err": 0.1080674996520281,
+          "correlation_r": 0.6614916485559517,
+          "correlation_p": 0.003828817917582334,
+          "r_squared": 0.43757120110927067,
+          "tension_vs_newtonian_sigma": 3.297307404297742
+        },
+        "pooled_full_sample": {
+          "n_clusters": 25,
+          "slope": 0.4298979754934469,
+          "intercept": -21.236634249251306,
+          "slope_std_err": 0.10164636200582129,
+          "correlation_r": 0.6614223018007827,
+          "correlation_p": 0.0003179136923088854,
+          "r_squared": 0.4374794613194456,
+          "tension_vs_newtonian_sigma": 2.921814257854043
+        },
+        "slope_comparison": {
+          "pcc_slope": -0.090286177426349,
+          "non_pcc_slope": 0.295241894684515,
+          "slope_difference": -0.38552807211086404,
+          "std_err_difference": 0.3406912690300497,
+          "z_statistic": -1.1316053775268882,
+          "p_value": 0.2578003782742151,
+          "significance_sigma": 1.1316053775268882
+        }
+      },
+      "ctrl_residual": {
+        "label": "controlled residual, GC minus matched field (step_07)",
+        "pcc_analysis": {
+          "n_clusters": 6,
+          "slope": 0.00803407524464544,
+          "intercept": 0.34313969492974816,
+          "slope_std_err": 0.15544069474214098,
+          "correlation_r": 0.02583427010978987,
+          "correlation_p": 0.9612572158541199,
+          "r_squared": 0.0006674095121055823,
+          "tension_vs_newtonian_sigma": 4.61732511462835
+        },
+        "non_pcc_analysis": {
+          "n_clusters": 11,
+          "slope": 0.06938148011229082,
+          "intercept": -0.19021116579098057,
+          "slope_std_err": 0.02661189186370067,
+          "correlation_r": 0.6559587858223862,
+          "correlation_p": 0.02840269956380716,
+          "r_squared": 0.43028192869757914,
+          "tension_vs_newtonian_sigma": 14.37314784682003
+        },
+        "joint_fit": {
+          "n": 17,
+          "shared_slope": 0.060378357547467426,
+          "shared_slope_se": 0.03788441905555393,
+          "shared_slope_p": 0.13331183065178576,
+          "shared_slope_tension_vs_newtonian_sigma": 12.6467951976206,
+          "pcc_intercept_offset": 0.22683470462910632,
+          "pcc_offset_se": 0.08057444956030836,
+          "pcc_offset_t": 2.815218792891971,
+          "pcc_offset_p": 0.013761727281656366
+        },
+        "pooled_classified": {
+          "n_clusters": 17,
+          "slope": 0.13507306487671206,
+          "intercept": -0.3941515166679791,
+          "slope_std_err": 0.03269367876927619,
+          "correlation_r": 0.7295612563768059,
+          "correlation_p": 0.0008877992518139012,
+          "r_squared": 0.5322596268061035,
+          "tension_vs_newtonian_sigma": 12.04395622564608
+        },
+        "pooled_full_sample": {
+          "n_clusters": 25,
+          "slope": 0.13783553079034272,
+          "intercept": -0.41473143957153435,
+          "slope_std_err": 0.0330097175480663,
+          "correlation_r": 0.6566546583267212,
+          "correlation_p": 0.00036346441704268573,
+          "r_squared": 0.431195340302183,
+          "tension_vs_newtonian_sigma": 11.941896411426642
+        },
+        "slope_comparison": {
+          "pcc_slope": 0.00803407524464544,
+          "non_pcc_slope": 0.06938148011229082,
+          "slope_difference": -0.06134740486764539,
+          "std_err_difference": 0.15770225860933237,
+          "z_statistic": -0.38900777584687696,
+          "p_value": 0.6972703942624883,
+          "significance_sigma": 0.38900777584687696
+        }
+      }
     }
   },
   "residual_analysis": {
@@ -67,9 +180,10 @@
     "difference": 0.31677101266685664
   },
   "conclusions": [
-    "PCC and non-PCC clusters show CONSISTENT density scaling slopes",
-    "No evidence that core collapse status modifies the TEP signal",
-    "Residual difference detected (p=0.0030)"
+    "non-PCC subsample alone shows sub-Newtonian density scaling (0.295 +/- 0.177 vs Newtonian 0.748; 2.50sigma below) \u2014 the anomaly is not a core-collapse artifact",
+    "Pooled slope decomposes into shared within-class slope 0.239 +/- 0.149 plus a PCC intercept offset +0.396 +/- 0.316 dex (pooled-classified slope 0.369 exceeds each within-class slope \u2014 between-class offset structure)",
+    "PCC within-class slope -0.090 +/- 0.291 is flat at the highest densities (mean log rho_c ~ 5.2): consistent with a saturated response, not a steepening Newtonian one",
+    "PCC clusters carry systematically larger controlled residuals (+0.317 dex, p=0.0030) \u2014 the anomaly is strongest in the densest class rather than explained by it"
   ],
   "pcc_cluster_list": [
     "M15",

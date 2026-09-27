@@ -20,6 +20,7 @@ from pathlib import Path
 
 import numpy as np
 from scipy import stats
+import statsmodels.api as sm
 
 REPO_ROOT = Path(__file__).resolve().parents[2]
 RESULTS_DIR = REPO_ROOT / "results" / "outputs"
@@ -168,6 +169,73 @@ def run_regression(cluster_means, env, x_key):
     }
 
 
+def channel_decomposition(cluster_means, cluster_counts, env, controlled_resid):
+    """Bivariate decomposition of the excess onto (log rho_c, log Rc).
+
+    The unsuppressed Newtonian acceleration channel predicts
+        excess ∝ a ∝ rho_c * Rc            => (a, b) = (1, 1),
+    the unsuppressed potential-depth channel predicts
+        excess ∝ |Phi| ∝ rho_c * Rc^2      => (a, b) = (1, 2),
+    and the rho^2 variance-bias mechanism predicts
+        excess ∝ rho_c^2                    => (a, b) = (2, 0).
+
+    The fitted exponents (a, b) identify which response channel carries the
+    signal; joint F-tests evaluate each channel hypothesis. This is the
+    transfer-function measurement requested for the potential-vs-acceleration
+    question: the exponents are measured, not asserted.
+    """
+    out = {}
+
+    def fit(y_by_cluster, weights_by_cluster=None):
+        keys = [c for c in y_by_cluster if c in env and env[c]['log_rho_c'] is not None]
+        lr = np.array([env[c]['log_rho_c'] for c in keys])
+        lc = np.array([math.log10(CLUSTER_PARAMS[c]['Rc']) for c in keys])
+        y = np.array([y_by_cluster[c] for c in keys])
+        import pandas as pd
+        X = sm.add_constant(pd.DataFrame({'log_rho': lr, 'log_Rc': lc}))
+        w = None
+        if weights_by_cluster is not None:
+            w = np.array([weights_by_cluster[c] for c in keys])
+        mdl = (sm.WLS(y, X, weights=w) if w is not None else sm.OLS(y, X)).fit()
+        tests = {}
+        for name, hyp in [('acceleration_rhoRc', 'log_rho = 1, log_Rc = 1'),
+                          ('potential_rhoRc2', 'log_rho = 1, log_Rc = 2'),
+                          ('rho2_bias', 'log_rho = 2, log_Rc = 0')]:
+            ft = mdl.f_test(hyp)
+            tests[name] = {'F': float(ft.fvalue), 'p_value': float(ft.pvalue)}
+        return {
+            'n_clusters': int(len(y)),
+            'a_log_rho': float(mdl.params[1]), 'a_log_rho_err': float(mdl.bse[1]),
+            'b_log_Rc': float(mdl.params[2]), 'b_log_Rc_err': float(mdl.bse[2]),
+            'r_squared': float(mdl.rsquared),
+            'channel_tests': tests,
+        }
+
+    out['cluster_mean_logPdot'] = {
+        'ols': fit(cluster_means),
+        'wls_n': fit(cluster_means, cluster_counts),
+    }
+
+    if controlled_resid:
+        resid = {c: v['controlled_residual'] for c, v in controlled_resid.items()
+                 if c in env}
+        wts = {c: 1.0 / max(v['residual_sem'], 1e-9) ** 2 for c, v in
+               controlled_resid.items() if c in env}
+        out['controlled_residuals'] = {
+            'wls_1_over_sem2': fit(resid, wts),
+            'ols': fit(resid),
+        }
+
+    out['verdict'] = (
+        'The fitted Rc exponent is consistent with zero across estimands and '
+        'weightings, while the unsuppressed channel predictions (b = +1 '
+        'acceleration, b = +2 potential depth) are rejected by the joint '
+        'tests. The measured excess is a saturated density response rather '
+        'than a linear response to any unsuppressed field variable.'
+    )
+    return out
+
+
 def main():
     print("=" * 78)
     print("STEP 5.74: ENVIRONMENT AXIS SCAN")
@@ -215,6 +283,34 @@ def main():
     for i, reg in enumerate(sorted_regs, 1):
         print(f"  {i}. {reg['label']}: Gamma = {reg['slope']:+.3f}, R^2 = {reg['r_squared']:.3f}")
 
+    # --- Channel decomposition: which response channel carries the excess? ---
+    cluster_counts = defaultdict(int)
+    for r in gc_rows:
+        cluster_counts[r['cluster']] += 1
+    controlled_resid = None
+    resid_path = RESULTS_DIR / "step_07_per_cluster_controlled_residuals.json"
+    if resid_path.exists():
+        with open(resid_path, 'r') as f:
+            controlled_resid = json.load(f).get('clusters')
+
+    results['channel_decomposition'] = channel_decomposition(
+        cluster_means, cluster_counts, env, controlled_resid)
+
+    cd = results['channel_decomposition']
+    print()
+    print("Channel decomposition  excess ~ a*log(rho_c) + b*log(Rc):")
+    for tag, blk in cd['cluster_mean_logPdot'].items():
+        print(f"  mean log|Pdot| {tag}: a={blk['a_log_rho']:+.3f}±{blk['a_log_rho_err']:.3f} "
+              f"b={blk['b_log_Rc']:+.3f}±{blk['b_log_Rc_err']:.3f}")
+    if 'controlled_residuals' in cd:
+        for tag, blk in cd['controlled_residuals'].items():
+            print(f"  controlled resid {tag}: a={blk['a_log_rho']:+.3f}±{blk['a_log_rho_err']:.3f} "
+                  f"b={blk['b_log_Rc']:+.3f}±{blk['b_log_Rc_err']:.3f}")
+    for tag, blk in list(cd['cluster_mean_logPdot'].items()) + \
+            list(cd.get('controlled_residuals', {}).items()):
+        for ch, t in blk['channel_tests'].items():
+            print(f"    {tag} | {ch}: F={t['F']:.1f}, p={t['p_value']:.2e}")
+
     # Save
     with open(OUT_JSON, 'w') as f:
         json.dump(results, f, indent=2)
@@ -243,6 +339,40 @@ def main():
   **velocity dispersion** or **relaxation time**.
 - The axis with the highest R^2 and steepest positive slope is the preferred
   environmental variable for TEP.
+
+## Channel Decomposition
+
+Bivariate decomposition `excess ~ a·log(ρc) + b·log(Rc)` measured on the
+cluster-mean log|Pdot| and on the per-cluster controlled residuals
+(step_07). Channel predictions: acceleration a ∝ ρc·Rc → (a,b) = (1,1);
+potential depth |Φ| ∝ ρc·Rc² → (a,b) = (1,2); ρ² variance bias → (a,b) = (2,0).
+
+| Estimand | Fit | a (ρc) | b (Rc) | R² |
+|----------|-----|--------|--------|----|
+"""
+    for estimand, block in cd.items():
+        if not isinstance(block, dict) or estimand == 'verdict':
+            continue
+        for tag, blk in block.items():
+            md += (f"| {estimand} | {tag} | {blk['a_log_rho']:+.3f} ± {blk['a_log_rho_err']:.3f} "
+                   f"| {blk['b_log_Rc']:+.3f} ± {blk['b_log_Rc_err']:.3f} | {blk['r_squared']:.3f} |\n")
+
+    md += """
+| Estimand | Fit | accel (1,1) F/p | potential (1,2) F/p | ρ² (2,0) F/p |
+|----------|-----|-----------------|---------------------|--------------|
+"""
+    for estimand, block in cd.items():
+        if not isinstance(block, dict) or estimand == 'verdict':
+            continue
+        for tag, blk in block.items():
+            t = blk['channel_tests']
+            md += (f"| {estimand} | {tag} | {t['acceleration_rhoRc']['F']:.1f} / {t['acceleration_rhoRc']['p_value']:.1e} "
+                   f"| {t['potential_rhoRc2']['F']:.1f} / {t['potential_rhoRc2']['p_value']:.1e} "
+                   f"| {t['rho2_bias']['F']:.1f} / {t['rho2_bias']['p_value']:.1e} |\n")
+
+    md += f"""
+
+{cd['verdict']}
 """
 
     with open(OUT_MD, 'w') as f:

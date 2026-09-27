@@ -31,7 +31,7 @@ PC_TO_M = 3.086e16
 P_TYPICAL = 3.0e-3
 PDOT_INT_TYPICAL = 1.0e-20
 F_ACCEL_DOM = 0.45
-KAPPA_BARE = 1.05e6  # Paper 11 Cepheid bare value
+KAPPA_BARE = 0.96e6  # Paper 0 §7 prespecified theory benchmark (kappa_canonical)
 KAPPA_BARE_UNC = 0.43e6
 
 STEP_5_41_JSON = RESULTS_DIR / "step_29_dynamical_calibration.json"

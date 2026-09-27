@@ -1,4 +1,4 @@
-v0.8 (Caracas) — 8 August 2026
+v0.9 (Caracas) — 13 September 2026
 
 - Canonical TEP architecture alignment: added S_Σ(E) environmental operator note
 - Clarified ρ_T as the observational proxy for density projection
