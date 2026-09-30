@@ -1231,12 +1231,12 @@
 </p>
 
 <div class="defense-box">
-    <h4>Interpretation: Nested Overlapping Time Domains</h4>
-    <p>The TEP framework offers a natural resolution to this inversion through "Nested Overlapping Time Domains." Non-linear scalar theories do not superimpose linearly; they create stacked boundary layers:</p>
+    <h4>Interpretation: Nested Screening Environments</h4>
+    <p>The TEP framework offers a natural resolution to this inversion: the observable response is set by the single screening field $\mathcal{S}_\Sigma(\mathcal{E})$ evaluated through three nested environments. Non-linear scalar screening does not superimpose linearly, so each boundary modifies the response seen within it:</p>
     <ul>
-        <li><em>Layer 1 (The Bath)</em>: The macroscopic cluster creates a +0.58 dex <em>model-derived</em> background temporal enhancement amplitude in the weakly screened regime (prior to companion-shielding corrections; the primary empirical residual is 0.40 dex).</li>
-        <li><em>Layer 2 (The Shield)</em>: A binary companion creates a stiff local field domain due to its steep curvature.</li>
-        <li><em>Layer 3 (The Anchor)</em>: The pulsar's own soliton boundary anchors to whatever immediate domain surrounds it.</li>
+        <li><em>Cluster background</em>: the macroscopic cluster creates a +0.58 dex <em>model-derived</em> background temporal enhancement amplitude in the weakly screened regime (prior to companion-shielding corrections; the primary empirical residual is 0.40 dex).</li>
+        <li><em>Companion domain</em>: a binary companion creates a stiff local field domain due to its steep curvature.</li>
+        <li><em>Pulsar boundary</em>: the pulsar's own field boundary anchors to whatever immediate domain surrounds it.</li>
     </ul>
     <p>When observed from Earth, the line of sight traverses these nested time domains. Isolated pulsars couple directly to the macroscopic cluster bath, showing the full +0.58 dex <em>model-derived</em> unshielded response amplitude. Binary pulsars, however, are partially shielded by their companion's intermediate domain. The companion "flattens" the local temporal topology relative to the cluster background, suppressing the TEP clock response and producing the observed −0.33 dex relative quietness.</p>
 </div>
@@ -1367,11 +1367,11 @@
     </p>
     <p>
         <em>TEP Consistency:</em> This mechanism uses TEP's continuous gradient suppression
-        framework (Temporal Shear), here implemented via the canonical density-dependent-mass
+        framework (Temporal Shear), here implemented via the illustrative amplitude-sector
         transfer model of Appendix C (Paper 0), expressed through the continuous geometric language of Temporal
-        Topology and Temporal Shear. The binary suppression emerges from Nested Overlapping Time Domains:
-        Layer 1 (cluster background field), Layer 2 (companion's suppressed Temporal Shear region), and
-        Layer 3 (pulsar's Temporal Topology anchoring to the local field profile). This non-linear
+        Topology and Temporal Shear. The binary suppression follows from this nesting of
+        screening environments — the cluster background field, the companion's suppressed
+        Temporal Shear region, and the pulsar's own anchoring boundary. This non-linear
         superposition explains why isolated pulsars show the full cluster enhancement while binary pulsars
         are partially shielded by the companion's intermediate domain.
     </p>
@@ -1394,7 +1394,7 @@
         <li><em>Spherical symmetry:</em> Tidal stretching modifies the saturation radius by
         δR/R<sub>sol</sub> ~ 10⁻³, introducing negligible correction.</li>
         <li><em>Suppressed shear region:</em> The companion's domain retains a residual shear
-        floor rather than being exactly flat; under the canonical density-dependent-mass
+        floor rather than being exactly flat; under the amplitude-sector (quartic)
         completion this residual contributes a ≪1% correction to the interpolation.</li>
         <li><em>Cluster geometry:</em> Both isolated and binary pulsars reside in the cluster core.
         The shielding fraction compares the <em>difference</em> between populations, so geometric factors
@@ -2087,8 +2087,8 @@
         The CMC analysis is fully reproducible:
     </p>
     <ul>
-        <li>Downloader: <code>scripts/steps/download_cmc_data.py</code> — downloads CMC catalogs with progress bar</li>
-        <li>Parser: <code>scripts/steps/cmc_parser.py</code> — extracts synthetic pulsar data from HDF5 and .dat files</li>
+        <li>Downloader: <code>scripts/steps/step_32_download_cmc_data.py</code> — downloads CMC catalogs with progress bar</li>
+        <li>Parser: <code>scripts/steps/step_01_cmc_parser.py</code> — extracts synthetic pulsar data from HDF5 and .dat files</li>
         <li>Analysis: <code>scripts/steps/step_37_cmc_gold_standard_analysis.py</code> — full comparison</li>
         <li>Results: <code>results/outputs/step_37_cmc_gold_standard.json</code></li>
     </ul>

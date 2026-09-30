@@ -7,7 +7,7 @@
   "identifier": "https://doi.org/10.5281/zenodo.18165798",
   "doi": "10.5281/zenodo.18165798",
   "name": "Temporal Equivalence Principle: Suppressed Density Scaling in Globular Cluster Pulsars",
-  "description": "A spatially stratified spin-down anomaly is reported in 199 globular-cluster millisecond pulsars compared with 351 field controls. Cluster pulsars show a 0.63 dex raw excess and a 0.40 dex controlled residual, with covariance-aware significance of 5.6σ. The signal exhibits suppressed density scaling: a mixed-effects slope Γ = 0.39 ± 0.08 dex/dex compared with a Newtonian ensemble baseline Γ = 0.75, rejecting the baseline at 4.1σ. Field binaries provide a null control, while cluster binaries are quieter than isolated cluster pulsars; corrected CMC reproduces this binary direction, so the binary result functions as a comparator check rather than the primary failure mode. An adversarial dynamics model accounting for line-of-sight acceleration, jerk, Shklovskii terms, mass segregation, and cluster mass profiles cannot explain the observed suppression. An N-body baseline derived from CMC synthetic pulsars (20 clusters, 18,813 MSPs) predicts an excess 3.1× larger than observed (12.7σ nominal model-data tension, not detection significance; conservative quadrature-stacked uncertainty gives 3.6σ), and a mock pulsar-timing-array detection pipeline confirms that the missing high-acceleration population cannot be attributed to observational selection effects. These results are interpreted as a time-domain test of the TEP observable response coefficient κ_MSP, not as a measurement of a microscopic scalar coupling.",
+  "description": "A spatially stratified spin-down anomaly is reported in 199 globular-cluster millisecond pulsars compared with 351 field controls. Cluster pulsars show a 0.63 dex raw excess and a 0.40 dex controlled residual, with covariance-aware significance of 5.6σ. The signal exhibits suppressed density scaling: a mixed-effects slope Γ = 0.39 ± 0.08 dex/dex compared with a Newtonian ensemble baseline Γ = 0.75, rejecting the baseline at 4.1σ. Field binaries provide a null control, while cluster binaries are quieter than isolated cluster pulsars; corrected CMC reproduces this binary direction, so the binary result functions as a comparator check rather than the primary failure mode. An adversarial dynamics model accounting for line-of-sight acceleration, jerk, Shklovskii terms, mass segregation, and cluster mass profiles cannot explain the observed suppression. An N-body baseline derived from CMC synthetic pulsars (20 clusters, 18,813 MSPs) predicts an excess 3.1 ×  larger than observed (12.7σ nominal model-data tension, not detection significance; conservative quadrature-stacked uncertainty gives 3.6σ), and a mock pulsar-timing-array detection pipeline confirms that the missing high-acceleration population cannot be attributed to observational selection effects. These results are interpreted as a time-domain test of the TEP observable response coefficient κ_MSP , not as a measurement of a microscopic scalar coupling. Code Availability: All data and analysis code required to reproduce the results presented in this work, including the full pulsar catalog compilation, are available in the public repository at https://github.com/matthewsmawfield/TEP-COS .",
   "author": [
     {
       "@type": "Person",
@@ -16,8 +16,8 @@
       "@id": "https://orcid.org/0009-0003-8219-3159"
     }
   ],
-  "datePublished": "2026-08-08",
-  "dateModified": "2026-09-13",
+  "datePublished": "2026-01-09",
+  "dateModified": "2026-09-30",
   "version": "0.9",
   "license": "https://creativecommons.org/licenses/by/4.0/",
   "codeRepository": "https://github.com/matthewsmawfield/TEP-COS",

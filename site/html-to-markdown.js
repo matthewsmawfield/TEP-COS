@@ -38,13 +38,15 @@ class HTMLToMarkdownConverter {
         html = html.replace(/<div[^>]*class=["'][^"']*manuscript-section[^"']*["'][^>]*data-section=["']([^"']*)["'][^>]*>/gi, '\n\n## $1\n\n');
         
         // Convert headers
-        html = html.replace(/<h1[^>]*>(.*?)<\/h1>/gi, '\n# $1\n\n');
-        html = html.replace(/<h2[^>]*>(.*?)<\/h2>/gi, '\n## $1\n\n');
-        html = html.replace(/<h3[^>]*>(.*?)<\/h3>/gi, '\n### $1\n\n');
-        html = html.replace(/<h4[^>]*>(.*?)<\/h4>/gi, '\n#### $1\n\n');
+        html = html.replace(/<h1[^>]*>([\s\S]*?)<\/h1>/gi, '\n# $1\n\n');
+        html = html.replace(/<h2[^>]*>([\s\S]*?)<\/h2>/gi, '\n## $1\n\n');
+        html = html.replace(/<h3[^>]*>([\s\S]*?)<\/h3>/gi, '\n### $1\n\n');
+        html = html.replace(/<h4[^>]*>([\s\S]*?)<\/h4>/gi, '\n#### $1\n\n');
+        html = html.replace(/<h5[^>]*>([\s\S]*?)<\/h5>/gi, '\n##### $1\n\n');
+        html = html.replace(/<h6[^>]*>([\s\S]*?)<\/h6>/gi, '\n###### $1\n\n');
         
         // Convert paragraphs (collapse internal whitespace to avoid markdown code-block indentation)
-        html = html.replace(/<p[^>]*>(.*?)<\/p>/gis, (match, inner) => {
+        html = html.replace(/<p\b[^>]*>(.*?)<\/p>/gis, (match, inner) => {
             const cleaned = inner.replace(/\s+/g, ' ').trim();
             return `${cleaned}\n\n`;
         });
@@ -81,7 +83,15 @@ class HTMLToMarkdownConverter {
         html = html.replace(/<blockquote[^>]*>(.*?)<\/blockquote>/gi, '\n> $1\n\n');
         
         // Convert code blocks
-        html = html.replace(/<pre[^>]*><code[^>]*>(.*?)<\/code><\/pre>/gi, '\n```\n$1\n```\n\n');
+        const codeBlocks = [];
+        html = html.replace(/<pre[^>]*>\s*<code[^>]*>([\s\S]*?)<\/code>\s*<\/pre>/gi, (match, code) => {
+            codeBlocks.push(code);
+            return `\n\n@@@CODEBLOCK_${codeBlocks.length - 1}@@@\n\n`;
+        });
+        html = html.replace(/<pre[^>]*>([\s\S]*?)<\/pre>/gi, (match, code) => {
+            codeBlocks.push(code);
+            return `\n\n@@@CODEBLOCK_${codeBlocks.length - 1}@@@\n\n`;
+        });
         html = html.replace(/<code[^>]*>(.*?)<\/code>/gi, '`$1`');
         
         // Convert line breaks
@@ -111,7 +121,6 @@ class HTMLToMarkdownConverter {
         
         html = html.replace(/<(?!\/?[a-zA-Z!])/g, '&lt;');
 
-        console.log("DEBUG: before sub preserve, html has sub:", html.includes("<sub>A</sub>"));
         // Preserve sub/sup tags before generic stripping
         const subTags = [];
         html = html.replace(/<sub>(.*?)<\/sub>/gi, (match, inner) => {
@@ -129,15 +138,15 @@ class HTMLToMarkdownConverter {
         
         // Restore MathJax expressions
         mathExpressions.forEach((expr, index) => {
-            html = html.replace(`__MATH_EXPRESSION_${index}__`, expr);
+            html = html.replace(`__MATH_EXPRESSION_${index}__`, () => expr);
         });
         
         // Restore sub/sup tags
         subTags.forEach((inner, index) => {
-            html = html.replace(`__SUB_${index}__`, `<sub>${inner}</sub>`);
+            html = html.replace(`__SUB_${index}__`, () => `<sub>${inner}</sub>`);
         });
         supTags.forEach((inner, index) => {
-            html = html.replace(`__SUP_${index}__`, `<sup>${inner}</sup>`);
+            html = html.replace(`__SUP_${index}__`, () => `<sup>${inner}</sup>`);
         });
         
         // Decode HTML entities
@@ -165,6 +174,19 @@ class HTMLToMarkdownConverter {
         // Clean up whitespace
         html = html.replace(/\n\s*\n\s*\n/g, '\n\n');
         html = html.replace(/^\s+|\s+$/g, '');
+
+        // Restore fenced code blocks after generic tag and whitespace cleanup
+        codeBlocks.forEach((code, index) => {
+            const decodedCode = code
+                .replace(/&amp;/g, '&')
+                .replace(/&lt;/g, '<')
+                .replace(/&gt;/g, '>')
+                .replace(/&quot;/g, '"')
+                .replace(/&#39;/g, "'")
+                .replace(/&nbsp;/g, ' ')
+                .replace(/^\n+|\n+$/g, '');
+            html = html.replace(`@@@CODEBLOCK_${index}@@@`, () => `\n\n\`\`\`\n${decodedCode}\n\`\`\`\n\n`);
+        });
         
         // Remove duplicate headers (same header appearing consecutively)
         html = html.replace(/(##\s+[^\n]+)\n+\1/g, '$1');
@@ -248,7 +270,7 @@ class HTMLToMarkdownConverter {
         const version = versionMatch ? versionMatch[1]
             .replace(/<[^>]+>/g, '')
             .replace(/^Version:\s*/i, '')
-            .trim() : 'v0.1 (Istanbul)';
+            .trim() : 'v0.9 (Caracas)';
         
         const dateMatch = html.match(/<div[^>]*class=["'][^"']*date[^"']*["'][^>]*>(.*?)<\/div>/i);
         const date = dateMatch ? dateMatch[1].replace(/<[^>]+>/g, '').trim() : 'First published: 31 December 2025';
@@ -368,16 +390,20 @@ class HTMLToMarkdownConverter {
      * Build the complete markdown document with metadata
      */
     buildMarkdownDocument(metadata, content) {
-        const now = new Date();
-        const timestamp = now.toLocaleDateString('en-GB', { day: 'numeric', month: 'long', year: 'numeric' });
-        
         // Clean up the title to remove the author part
         const cleanTitle = metadata.title.replace(' | Matthew Lukin Smawfield', '');
+        const dateParts = metadata.date
+            .replace(/^First published:\s*/i, '')
+            .split(/\s*[·|]\s*/);
+        const originalDate = dateParts[0].trim();
+        const timestamp = (dateParts[1] || '30 September 2026')
+            .replace(/^(?:Last updated|Updated):\s*/i, '')
+            .trim();
         
         return `# ${cleanTitle}
 **${metadata.author}**
 Version: ${metadata.version}
-First published: 9 January 2026 · Last updated: ${timestamp}
+First published: ${originalDate} · Last updated: ${timestamp}
 DOI: ${metadata.doi}
 
 ---
@@ -386,7 +412,7 @@ ${content}
 
 ---
 
-*This document was automatically generated from the TEP-COS research site. For the interactive version with figures and enhanced formatting, visit: https://matthewsmawfield.github.io/TEP-COS/*
+*This document was automatically generated from the TEP-COS research site. For the interactive version with figures and enhanced formatting, visit: https://mlsmawfield.com/tep/cos/*
 
 *Related Work:*
 - [TEP Theory](https://doi.org/10.5281/zenodo.16921911) (Foundational framework)

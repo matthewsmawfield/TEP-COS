@@ -3,7 +3,7 @@ User-agent: *
 Allow: /
 
 # Sitemap location
-Sitemap: https://matthewsmawfield.github.io/TEP-COS/sitemap.xml
+Sitemap: https://mlsmawfield.com/tep/cos/sitemap.xml
 
 # Disallow access to hidden directories and files
 Disallow: /.*

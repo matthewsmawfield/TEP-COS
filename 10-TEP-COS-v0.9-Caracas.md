@@ -1,7 +1,7 @@
 # TEP: Suppressed Density Scaling in Globular Cluster Pulsars
 **Matthew Lukin Smawfield**
 Version: v0.9 (Caracas)
-First published: 9 January 2026 · Last updated: 27 September 2026
+First published: 9 January 2026 · Last updated: 30 September 2026
 DOI: 10.5281/zenodo.18165798
 
 ---
@@ -77,7 +77,7 @@ The pulsar signal satisfies three independent criteria consistent with TEP: (i) 
 
 ## 2. Theoretical Framework: The Screening Transition
 
-The Temporal Equivalence Principle predicts that gravitational time dilation is enhanced at intermediate astrophysical scales while remaining consistent with precision tests in the screened Solar System regime. This section establishes the theoretical basis for the time-domain probe examined in this work: pulsar spin-down in globular clusters, based on the continuous geometric screening framework established in TEP v0.14 Jakarta. This theoretical foundation is necessary to derive the specific quantitative predictions (Pulsar Ṗ drift) tested in the subsequent sections.
+The Temporal Equivalence Principle predicts that gravitational time dilation is enhanced at intermediate astrophysical scales while remaining consistent with precision tests in the screened Solar System regime. This section establishes the theoretical basis for the time-domain probe examined in this work: pulsar spin-down in globular clusters, based on the continuous geometric screening framework established in TEP v0.15 Jakarta. This theoretical foundation is necessary to derive the specific quantitative predictions (Pulsar Ṗ drift) tested in the subsequent sections.
 
 ## 2.1 The TEP Modification
 
@@ -160,7 +160,7 @@ For systems at intermediate scales (globular clusters, galaxy clusters, cosmolog
 
 #### Screening and the Scale-Transition
 
-TEP requires intermediate-scale signals to coexist with strict Solar System bounds. This is achieved via a screening transition: the observable pulsar response coefficient $\kappa_{\text{MSP}}^{\text{emp}}$ is environment-dependent, its gradients geometrically suppressed in dense regimes (Solar System) but active in extended, low-density configurations (clusters).
+TEP requires intermediate-scale signals to coexist with strict Solar System bounds. This is achieved via a screening transition: the observable pulsar response coefficient $\kappa_{\text{MSP}}^{\text{emp}}$ is environment-dependent, its gradients geometrically suppressed in compact, steep-gradient regimes (Solar System) but active in extended, shallow-gradient configurations (clusters).
 
 Mechanistically, this operates via environment-responsive Temporal Shear suppression, acting on the Temporal Shear (field gradient). The observational consequence is a "flattening" behavior: clock-rate anomalies appear in diffuse potentials where gradients remain coherent, but vanish locally when the local topology is flattened. The absence of local anomalies constrains the environmental/source-screening function $S_\Sigma(E)$, not ρ<sub>T</sub> alone, rather than falsifying the underlying conformal coupling.
 
@@ -174,7 +174,7 @@ The screening hierarchy is governed by the gradient coherence length. While the 
 
 | System | Mass | Ambient ρ | Screening Status | TEP Observable |
 | --- | --- | --- | --- | --- |
-| Earth Interior | 6 × 10²⁷ g | ~5–13 g/cm³ | Partial/Transition (ρ ~ ρT) | GNSS correlations (RT(M&oplus;) ≈ 4,200 km) |
+| Earth Interior | 6 × 10²⁷ g | ~5–13 g/cm³ | Partial/Transition (ρ ~ ρT) | GNSS correlations (measured λT ≈ 4,200 km; geometric RT(M&oplus;) ≈ 4,146 km) |
 | Globular Cluster | 10⁶ M☉ | ~10⁻¹⁸ g/cm³ | Weak screening (ρ ≪ ρT) | Pulsar timing anomaly (this work) |
 | Galaxy Halo | 10¹² M☉ | ~10⁻²⁴ g/cm³ | Weak screening (ρ ≪ ρT) | External constraints |
 
@@ -810,15 +810,15 @@ If the low |Ṗ| effect in GC pulsars were due to cluster acceleration, binary a
 
 A natural concern is whether binary MSPs are intrinsically "better clocks" (e.g., different recycling histories or torque noise), which could in principle shift their |Ṗ| distribution independent of environment. This is directly tested by the Field Binary Control (Section 3.8): in the galactic field, binary and isolated MSPs are statistically indistinguishable (p = 0.78). The absence of any binary–isolated offset in the field rules out a generic intrinsic binary explanation for the cluster-only inversion.
 
-#### Interpretation: Nested Overlapping Time Domains
+#### Interpretation: Nested Screening Environments
 
-The TEP framework offers a natural resolution to this inversion through "Nested Overlapping Time Domains." Non-linear scalar theories do not superimpose linearly; they create stacked boundary layers:
+The TEP framework offers a natural resolution to this inversion: the observable response is set by the single screening field $\mathcal{S}_\Sigma(\mathcal{E})$ evaluated through three nested environments. Non-linear scalar screening does not superimpose linearly, so each boundary modifies the response seen within it:
 
-- *Layer 1 (The Bath)*: The macroscopic cluster creates a +0.58 dex *model-derived* background temporal enhancement amplitude in the weakly screened regime (prior to companion-shielding corrections; the primary empirical residual is 0.40 dex).
+- *Cluster background*: the macroscopic cluster creates a +0.58 dex *model-derived* background temporal enhancement amplitude in the weakly screened regime (prior to companion-shielding corrections; the primary empirical residual is 0.40 dex).
 
-- *Layer 2 (The Shield)*: A binary companion creates a stiff local field domain due to its steep curvature.
+- *Companion domain*: a binary companion creates a stiff local field domain due to its steep curvature.
 
-- *Layer 3 (The Anchor)*: The pulsar's own soliton boundary anchors to whatever immediate domain surrounds it.
+- *Pulsar boundary*: the pulsar's own field boundary anchors to whatever immediate domain surrounds it.
 
 When observed from Earth, the line of sight traverses these nested time domains. Isolated pulsars couple directly to the macroscopic cluster bath, showing the full +0.58 dex *model-derived* unshielded response amplitude. Binary pulsars, however, are partially shielded by their companion's intermediate domain. The companion "flattens" the local temporal topology relative to the cluster background, suppressing the TEP clock response and producing the observed −0.33 dex relative quietness.
 
@@ -865,7 +865,7 @@ f<sub>shield</sub> = 47%
 
 The observed suppression is 0.33 dex / 0.612 dex = 53%, matching the prediction within 10 percentage points. The model correctly predicts: (1) higher companion mass → stronger shielding, (2) wider separation → weaker shielding, and (3) the effect vanishes in the field (no cluster field to compete with), consistent with the null field control (p = 0.78).
 
-*TEP Consistency:* This mechanism uses TEP's continuous gradient suppression framework (Temporal Shear), here implemented via the canonical density-dependent-mass transfer model of Appendix C (Paper 0), expressed through the continuous geometric language of Temporal Topology and Temporal Shear. The binary suppression emerges from Nested Overlapping Time Domains: Layer 1 (cluster background field), Layer 2 (companion's suppressed Temporal Shear region), and Layer 3 (pulsar's Temporal Topology anchoring to the local field profile). This non-linear superposition explains why isolated pulsars show the full cluster enhancement while binary pulsars are partially shielded by the companion's intermediate domain.
+*TEP Consistency:* This mechanism uses TEP's continuous gradient suppression framework (Temporal Shear), here implemented via the illustrative amplitude-sector transfer model of Appendix C (Paper 0), expressed through the continuous geometric language of Temporal Topology and Temporal Shear. The binary suppression follows from this nesting of screening environments — the cluster background field, the companion's suppressed Temporal Shear region, and the pulsar's own anchoring boundary. This non-linear superposition explains why isolated pulsars show the full cluster enhancement while binary pulsars are partially shielded by the companion's intermediate domain.
 
 *Caveat: Confounded Period/Mass Correlations:* The model predicts that longer orbital periods and lower companion masses should yield weaker shielding (higher log|Ṗ|). However, validation against the binary sample reveals these correlations are confounded by evolutionary effects. Binary MSPs with high-mass companions exhibit log|Ṗ| ≈ −18.85, while those with low-mass companions show log|Ṗ| ≈ −19.38—a 0.5 dex spread that exceeds the predicted shielding effect. The physical origin is B-field burial during accretion: He WD companions form from long-period LMXBs with extended accretion that buries the magnetic field, yielding weaker B-fields and slower spin-down. This evolutionary effect dominates fine-grained correlations within the binary population. The screening mechanism correctly explains the binary vs isolated comparison (the primary −0.33 dex effect), but period/mass correlations within binaries are confounded by formation history.
 
@@ -873,7 +873,7 @@ The observed suppression is 0.33 dex / 0.612 dex = 53%, matching the prediction 
 
 - *Spherical symmetry:* Tidal stretching modifies the saturation radius by δR/R<sub>sol</sub> ~ 10⁻³, introducing negligible correction.
 
-- *Suppressed shear region:* The companion's domain retains a residual shear floor rather than being exactly flat; under the canonical density-dependent-mass completion this residual contributes a ≪1% correction to the interpolation.
+- *Suppressed shear region:* The companion's domain retains a residual shear floor rather than being exactly flat; under the amplitude-sector (quartic) completion this residual contributes a ≪1% correction to the interpolation.
 
 - *Cluster geometry:* Both isolated and binary pulsars reside in the cluster core. The shielding fraction compares the *difference* between populations, so geometric factors cancel.
 
@@ -1126,9 +1126,9 @@ The discrepancy between CMC predictions and observations indicates that standard
 
 The CMC analysis is fully reproducible:
 
-- Downloader: `scripts/steps/download_cmc_data.py` — downloads CMC catalogs with progress bar
+- Downloader: `scripts/steps/step_32_download_cmc_data.py` — downloads CMC catalogs with progress bar
 
-- Parser: `scripts/steps/cmc_parser.py` — extracts synthetic pulsar data from HDF5 and .dat files
+- Parser: `scripts/steps/step_01_cmc_parser.py` — extracts synthetic pulsar data from HDF5 and .dat files
 
 - Analysis: `scripts/steps/step_37_cmc_gold_standard_analysis.py` — full comparison
 
@@ -1317,7 +1317,7 @@ The Temporal Topology saturation scale ρ<sub>T</sub> ≈ 20 g/cm³, calibrated 
 
 | System | Ambient ρ | Screening Status | Prediction | Observation |
 | --- | --- | --- | --- | --- |
-| Earth (GNSS) | ~5–13 g/cm³ | Partial/Transition (ρ ~ ρT) | Saturation radius RT | RT(M&oplus;) ≈ 4,200 km |
+| Earth (GNSS) | ~5–13 g/cm³ | Partial/Transition (ρ ~ ρT) | Saturation radius RT | RT(M&oplus;) ≈ 4,146 km (GNSS-measured λT ≈ 4,200 km) |
 | Globular Cluster | ~10⁻¹⁸ g/cm³ | Weak screening ($\rho \ll \rho_T$) | Topologically flattened residual | +0.612 dex (this work) |
 | Galaxy Halo | ~10⁻²⁴ g/cm³ | Weak screening ($\rho \ll \rho_T$) | Active gradient coherence | External constraints (beyond scope) |
 
@@ -1545,7 +1545,7 @@ Explicit calculation for a pulsar moving at $v \sim 220$ km/s through the Galact
 
 The TEP framework provides a unifying interpretation across scales—from GNSS clock correlations (Earth) to pulsar timing (globular clusters) to cosmological distances. The Hubble tension (5σ discrepancy between Planck CMB and SH0ES local H₀ measurements) may find natural interpretation within this framework: time-dilation-dependent methods (Cepheid period-luminosity) systematically differ from dynamics-based methods (CMB, BAO) because clocks in galactic potentials experience amplified time dilation.
 
-*Quantitative evidence from Paper 11:* Analysis of 37 SH0ES host galaxies shows a positive raw association between host potential depth and derived H₀ (Pearson r = 0.241, p = 0.150; Spearman ρ = 0.188, p = 0.266). Under universal coupling the host environment's clock rate distorts Cepheid, SN Ia and TRGB distances together, so the calibrator matrix and Cepheid–TRGB comparisons show no differential (as predicted), while the redshift–distance relation shows the environmental response (Γ<sub>X</sub> > 0, 37/37 leave-one-out positive). The TEP-corrected calibrator-host value is H₀ = 66.65 ± 1.58 km/s/Mpc, consistent with the TEP CMB (66.70 ± 0.58, Paper 26) at 0.03σ. See Paper 11 (v0.9).
+*Quantitative evidence from Paper 11:* Analysis of 37 SH0ES host galaxies shows a positive raw association between host potential depth and derived H₀ (Pearson r = 0.241, p = 0.150; Spearman ρ = 0.188, p = 0.266). Under universal coupling the host environment's clock rate distorts Cepheid, SN Ia and TRGB distances together, so the calibrator matrix and Cepheid–TRGB comparisons show no differential (as predicted), while the redshift–distance relation shows the environmental response (Γ<sub>X</sub> > 0, 37/37 leave-one-out positive). The TEP-corrected calibrator-host value is H₀ = 66.65 ± 1.58 km/s/Mpc, consistent with the TEP CMB (66.70 ± 0.58, Paper 26) at 0.03σ (the host-level reconstruction; the prespecified primary ladder projection is 71.77 ± 0.99). See Paper 11 (v0.10).
 
 *Key distinction from other proposals:* Unlike dark energy or early-universe modifications, TEP predicts *environment-dependent* H₀ variations—Cepheids in deeper potentials show systematically higher H₀ residuals. This creates a testable correlation that standard explanations cannot easily reproduce.
 
@@ -1775,7 +1775,7 @@ The convergence of time-domain evidence across scales is noteworthy:
 
 | Scale | Observable | Result |
 | --- | --- | --- |
-| Earth (GNSS) | Clock correlations | RT(M&oplus;) ≈ 4,200 km → ρT ≈ 20 g/cm³ |
+| Earth (GNSS) | Clock correlations | RT(M&oplus;) ≈ 4,146 km → ρT ≈ 20 g/cm³ |
 | Globular Clusters | Pulsar spin-down | 0.63 dex raw excess; 0.40 dex controlled residual (this work) |
 | Galaxy Scale | External constraints | Beyond scope of this work |
 
@@ -1841,25 +1841,25 @@ The repository includes a comprehensive reproduction guide (see `README.md`) to 
 
 ## TEP Series: Foundational Theory
 
-Smawfield, M. L. (2025). *Temporal Equivalence Principle: Dynamic Time & Emergent Light Speed*. Preprint v0.14 (Jakarta). Zenodo. DOI: [10.5281/zenodo.16921911](https://doi.org/10.5281/zenodo.16921911) (Paper 0)
+Smawfield, M. L. (2025). *Temporal Equivalence Principle: Dynamic Time & Emergent Light Speed*. Preprint v0.15 (Jakarta). Zenodo. DOI: [10.5281/zenodo.16921911](https://doi.org/10.5281/zenodo.16921911) (Paper 0)
 
 Smawfield, M. L. (2025). *Global Time Echoes: Distance-Structured Correlations in GNSS Clocks*. Preprint v0.27 (Jaipur). Zenodo. DOI: [10.5281/zenodo.17127229](https://doi.org/10.5281/zenodo.17127229) (Paper 1)
 
 Smawfield, M. L. (2025). *Global Time Echoes: 25-Year Analysis of CODE Precise Clock Products*. Preprint v0.20 (Cairo). Zenodo. DOI: [10.5281/zenodo.17517141](https://doi.org/10.5281/zenodo.17517141) (Paper 2)
 
-Smawfield, M. L. (2025). *Global Time Echoes: Raw RINEX Consistency Test*. Preprint v0.6 (Kathmandu). Zenodo. DOI: [10.5281/zenodo.17860166](https://doi.org/10.5281/zenodo.17860166) (Paper 3)
+Smawfield, M. L. (2025). *Global Time Echoes: Raw RINEX Consistency Test*. Preprint v0.8 (Kathmandu). Zenodo. DOI: [10.5281/zenodo.17860166](https://doi.org/10.5281/zenodo.17860166) (Paper 3)
 
 Smawfield, M. L. (2025). *Temporal-Spatial Coupling in Gravitational Lensing: A Reinterpretation of Dark Matter Observations*. Preprint v0.8 (Tortola). Zenodo. DOI: [10.5281/zenodo.17982540](https://doi.org/10.5281/zenodo.17982540) (Paper 4)
 
-Smawfield, M. L. (2025). *Global Time Echoes: Empirical Synthesis*. Preprint v0.6 (Singapore). Zenodo. DOI: [10.5281/zenodo.18004832](https://doi.org/10.5281/zenodo.18004832) (Paper 5)
+Smawfield, M. L. (2025). *Global Time Echoes: Empirical Synthesis*. Preprint v0.7 (Singapore). Zenodo. DOI: [10.5281/zenodo.18004832](https://doi.org/10.5281/zenodo.18004832) (Paper 5)
 
 Smawfield, M. L. (2025). *Temporal Topology Saturation Scale: Cross-Scale Consistency of ρ_T*. Preprint v0.8 (New Delhi). Zenodo. DOI: [10.5281/zenodo.18064365](https://doi.org/10.5281/zenodo.18064365) (Paper 6)
 
 Smawfield, M. L. (2025). *The Soliton Wake: Exploring RBH-1 as a Temporal Topology Candidate*. Preprint v0.4 (Blantyre). Zenodo. DOI: [10.5281/zenodo.18059250](https://doi.org/10.5281/zenodo.18059250) (Paper 7)
 
-Smawfield, M. L. (2025). *Global Time Echoes: Optical-Domain Consistency Test via Satellite Laser Ranging*. Preprint v0.4 (Mombasa). Zenodo. DOI: [10.5281/zenodo.18064581](https://doi.org/10.5281/zenodo.18064581) (Paper 8)
+Smawfield, M. L. (2025). *Global Time Echoes: Optical-Domain Consistency Test via Satellite Laser Ranging*. Preprint v0.6 (Mombasa). Zenodo. DOI: [10.5281/zenodo.18064581](https://doi.org/10.5281/zenodo.18064581) (Paper 8)
 
-Smawfield, M. L. (2025). *What Do Precision Tests of General Relativity Actually Measure?*. Preprint v0.7 (Istanbul). Zenodo. DOI: [10.5281/zenodo.18109760](https://doi.org/10.5281/zenodo.18109760) (Paper 9)
+Smawfield, M. L. (2025). *What Do Precision Tests of General Relativity Actually Measure?*. Preprint v0.8 (Istanbul). Zenodo. DOI: [10.5281/zenodo.18109760](https://doi.org/10.5281/zenodo.18109760) (Paper 9)
 
 Smawfield, M. L. (2026). *Temporal Equivalence Principle: Suppressed Density Scaling in Globular Cluster Pulsars*. Preprint v0.9 (Caracas). Zenodo. DOI: [10.5281/zenodo.18165798](https://doi.org/10.5281/zenodo.18165798) (Paper 10 — this work)
 
@@ -2000,7 +2000,21 @@ To facilitate reproduction and independent verification of these results, the ex
 
 #### Pulsar Selection Criteria
 
-` # Standard Millisecond Pulsar (MSP) Definition P_spin &lt; 30 ms P_dot_intrinsic > 0 (where available) Not in binary with massive companion (> 10 M_sun) # Cluster Association Use Freire catalog "Cluster" field. Filter out foreground contaminants identified in literature. `  ## B.3 Analysis Code  All analysis steps are encapsulated in Python scripts available in the `scripts/` directory. Key reproduction scripts include:
+```
+# Standard Millisecond Pulsar (MSP) Definition
+P_spin < 30 ms
+P_dot_intrinsic > 0 (where available)
+Not in binary with massive companion (> 10 M_sun)
+
+# Cluster Association
+Use Freire catalog "Cluster" field.
+Filter out foreground contaminants identified in literature.
+    
+```
+
+## B.3 Analysis Code
+
+All analysis steps are encapsulated in Python scripts available in the `scripts/` directory. Key reproduction scripts include:
 
 - `scripts/steps/step_02_pulsar_population_controls.py`: Implements the exact matching procedure for pulsar controls.
 
@@ -2010,9 +2024,9 @@ To facilitate reproduction and independent verification of these results, the ex
 
 ## Appendix C: Candidate Microscopic Transfer Model (Illustrative)
 
-This appendix presents one possible microscopic origin for $\kappa_{\text{MSP}}$ using the canonical density-dependent-mass completion of Paper 0 as an illustration; the empirical analysis is entirely independent of this model. It is not required for the empirical test, which treats $\kappa_{\text{MSP}}$ as an observable pulsar response coefficient determined from data.
+This appendix presents one possible microscopic origin for $\kappa_{\text{MSP}}$ using the quartic amplitude-sector completion of Paper 0 (v0.15) as an illustration; the empirical analysis is entirely independent of this model. It is not required for the empirical test, which treats $\kappa_{\text{MSP}}$ as an observable pulsar response coefficient determined from data.
 
-The following derives an illustrative transfer model on the admissible branch of the scalar sector, as a candidate completion of the continuous Temporal Shear mechanism. As established in Paper 0, density-dependent-mass (chameleon-class), Vainshtein, and kinetic completions remain candidate microscopic realizations of Temporal-Topology screening; the empirical inference does not depend on which admissible completion is correct. What is fixed is the admissible branch itself: on the universal coupling $\beta_A = -1$, the inverse-power chameleon family admits no positive-density equilibrium and predicts the wrong environmental direction, and is excluded by constraint F1. The derivation below therefore uses the canonical matter-hosting potential — the quartic self-interaction — rather than the excluded branch.
+The following derives an illustrative transfer model on the admissible branch of the scalar sector, for the clock-amplitude channel of the Temporal-Topology response. As established in Paper 0 (v0.15), the shear-sector screening mechanism is the nonlinear kinetic completion $P(X,\phi)=X-V+X|X|/\Lambda_X^4$ — which pins the slope of the clock-rate landscape where it is already steep rather than flattening the field — while density-dependent-mass (chameleon-class), Vainshtein, and related completions remain candidate microscopic realizations rather than definitions of the framework; the empirical inference does not depend on which admissible completion is correct. What is fixed is the admissible branch itself: on the universal coupling $\beta_A = -1$, the inverse-power chameleon family admits no positive-density equilibrium and predicts the wrong environmental direction, and is excluded by constraint F1. The derivation below therefore uses the canonical matter-hosting potential — the quartic self-interaction retained in Paper 0 as the amplitude-sector candidate — rather than the excluded branch.
 
 ## C.1 Motivation
 
@@ -2034,7 +2048,7 @@ where $A(\phi) = \exp(\beta_A\phi/M_{\rm Pl})$ and the approximation holds for s
 m_{\rm eff}(\rho) \approx \sqrt{3}\,\lambda^{1/6} \left( \frac{\rho}{M_{\rm Pl}} \right)^{1/3}
 \end{equation}
 
-Both quantities grow with ambient density and carry the correct signs: the equilibrium field is positive and deepens in denser environments ($\phi_{\rm min} \propto \rho^{1/3}$, consistent with $\phi > 0$ inside temporal wells), while the field is more massive and short-ranged in dense regions (Solar System, compact bodies) and light and dynamical in diffuse ones (clusters, cosmology). The quartic self-coupling is fixed by the corpus reference value $\lambda_{\rm ref} \approx 7.5 \times 10^{-71}$, anchored to the terrestrial saturation scale $R_T = \lambda_T$ of Paper 0; nothing in this appendix is separately tuned.
+Both quantities grow with ambient density and carry the correct signs: the equilibrium field is positive and deepens in denser environments ($\phi_{\rm min} \propto \rho^{1/3}$, consistent with $\phi > 0$ inside temporal wells), while the field is more massive and short-ranged in dense regions (Solar System, compact bodies) and light and dynamical in diffuse ones (clusters, cosmology). The quartic self-coupling is fixed by the corpus operative coupling $\lambda_{\rm Cassini} = 10^{5}\lambda_{\rm ref} \approx 7.5 \times 10^{-66}$ — the branch consistent with the corrected linear-in-$S_\Sigma$ Cassini evaluation (Paper 0, step\_03; the fiducial reference normalization $\lambda_{\rm ref} \approx 7.5 \times 10^{-71}$ fails that bound by $\sim250\times$). The terrestrial saturation scale $R_T = \lambda_T$ of Paper 0 is a geometric identification $(3M/4\pi\bar\rho)^{1/3}$, independent of $\lambda$; nothing in this appendix is separately tuned.
 
 ## C.3 Weak-Field Mapping
 
@@ -2094,14 +2108,37 @@ The repository contains a deterministic, version-controlled analysis pipeline wi
 
 #### Repository Structure
 
-TEP-COS/ ├── data/ # Raw observational data │ ├── supernovae/ # Pantheon+ SN Ia data │ └── pulsars/ # Pulsar reference data ├── scripts/ │ ├── steps/ # Analysis pipeline steps │ ├── utils/ # Utility functions (logger.py) │ └── run_pipeline.py # Master orchestration script ├── results/ │ ├── outputs/ # JSON/CSV analytical outputs │ └── figures/ # Generated plots (PNG/PDF) ├── logs/ # Per-step execution logs ├── site/ │ └── components/ # Manuscript HTML sections ├── reproduce_manuscript.py # Legacy wrapper (deprecated) ├── requirements.txt # Python dependencies └── README.md # Documentation   ### Data Provenance 
+```
+TEP-COS/
+├── data/                          # Raw observational data
+│   ├── supernovae/               # Pantheon+ SN Ia data
+│   └── pulsars/                  # Pulsar reference data
+├── scripts/
+│   ├── steps/                     # Analysis pipeline steps
+│   ├── utils/                     # Utility functions (logger.py)
+│   └── run_pipeline.py          # Master orchestration script
+├── results/
+│   ├── outputs/                   # JSON/CSV analytical outputs
+│   └── figures/                   # Generated plots (PNG/PDF)
+├── logs/                          # Per-step execution logs
+├── site/
+│   └── components/                # Manuscript HTML sections
+├── reproduce_manuscript.py        # Legacy wrapper (deprecated)
+├── requirements.txt               # Python dependencies
+└── README.md                      # Documentation
+```
+
+### Data Provenance
+
 | Data Source | Provider | Access Method | Size | Location |
 | --- | --- | --- | --- | --- |
 | ATNF Pulsar Catalogue | ATNF | Auto-downloaded | ~10 MB | `results/outputs/atnf_psrcat.db` |
 | CMC Cluster Catalogs | Kremer et al. 2020 | Auto-downloaded | ~4.8 GB | `data/cmc/` (20 clusters, 18,813 synthetic MSPs) |
 | Pantheon+ SNe Ia | Scolnic et al. | Auto-downloaded | ~2 MB | Via astroquery |
 
-### Pipeline Architecture  The analysis pipeline comprises 26 deterministic steps organized into logical groups. Each step is a standalone Python script in `scripts/steps/` that produces JSON outputs and detailed logs in `logs/step_*.log`.
+### Pipeline Architecture
+
+The analysis pipeline comprises 26 deterministic steps organized into logical groups. Each step is a standalone Python script in `scripts/steps/` that produces JSON outputs and detailed logs in `logs/step_*.log`.
 
 #### Complete Step Inventory & Runtime
 
@@ -2151,9 +2188,43 @@ TEP-COS/ ├── data/ # Raw observational data │ ├── supernovae/ # Pa
 
 #### Quick Start (Full Reproduction)
 
-# 1. Clone repository git clone https://github.com/matthewsmawfield/TEP-COS.git cd TEP-COS # 2. Install dependencies pip install -r requirements.txt # 3. Run full pipeline (generates all results & figures) python scripts/run_pipeline.py # 4. Results will be in: # - results/outputs/ (JSON/CSV data) # - results/figures/ (PNG/PDF plots) # - logs/ (Detailed execution logs)   #### Command-Line Options The pipeline supports selective execution for faster testing:
+```
+# 1. Clone repository
+git clone https://github.com/matthewsmawfield/TEP-COS.git
+cd TEP-COS
 
-# Fast mode: core analysis only (skips long validations) python scripts/run_pipeline.py --only-core # Skip validation steps python scripts/run_pipeline.py --skip-validation # Skip figure generation python scripts/run_pipeline.py --skip-figures # Legacy wrapper (deprecated, calls run_pipeline.py) python reproduce_manuscript.py   #### System Requirements 
+# 2. Install dependencies
+pip install -r requirements.txt
+
+# 3. Run full pipeline (generates all results & figures)
+python scripts/run_pipeline.py
+
+# 4. Results will be in:
+#    - results/outputs/   (JSON/CSV data)
+#    - results/figures/   (PNG/PDF plots)
+#    - logs/              (Detailed execution logs)
+```
+
+#### Command-Line Options
+
+The pipeline supports selective execution for faster testing:
+
+```
+# Fast mode: core analysis only (skips long validations)
+python scripts/run_pipeline.py --only-core
+
+# Skip validation steps
+python scripts/run_pipeline.py --skip-validation
+
+# Skip figure generation
+python scripts/run_pipeline.py --skip-figures
+
+# Legacy wrapper (deprecated, calls run_pipeline.py)
+python reproduce_manuscript.py
+```
+
+#### System Requirements
+
 | Component | Minimum | Recommended | Tested On |
 | --- | --- | --- | --- |
 | CPU | 4 cores | 8+ cores | Apple M4 Pro (14-core) |
@@ -2161,18 +2232,29 @@ TEP-COS/ ├── data/ # Raw observational data │ ├── supernovae/ # Pa
 | Storage | 5 GB | 15 GB (includes 4.8 GB CMC data) | NVMe SSD |
 | Runtime | ~10 min | ~6 min | ~5.7 min (M4 Pro) |
 
-#### Key Analysis Outputs 
+#### Key Analysis Outputs
+
 - `results/outputs/step_02_pulsar_population_controls.csv` — Base pulsar dataset (400 MSPs with 198 GC, 202 field)
+
 - `results/outputs/step_06_hybrid_maximum_analysis.json` — Expanded hybrid pulsar summary (550 MSPs; 0.40 dex hybrid-controlled residual)
+
 - `results/outputs/step_15_binary_pulsar_analysis.json` — Binary vs isolated analysis results
+
 - `results/outputs/step_12_hierarchical_density_results.json` — Mixed-effects density-scaling results
+
 - `results/outputs/step_13_covariance_validation.json` — Covariance-aware and LOOCV validation
+
 - `results/outputs/step_21_integrated_binary_control.json` — Integrated differential test
+
 - `results/outputs/step_37_cmc_gold_standard.json` — CMC catalog comparison (20 clusters, 18,813 synthetic pulsars; 12.7σ nominal amplitude overprediction)
+
 - `results/outputs/step_41_exotic_physics_quantification.json` — Exotic-GR mechanism evaluation
+
 - `results/outputs/step_49_pta_mock_observation.json` — PTA mock observation results (observational filtering defense)
 
-#### Log Files Each step produces detailed logs:
+#### Log Files
+
+Each step produces detailed logs:
 
 - `logs/pipeline_master.log` — Master pipeline execution log
 
@@ -2218,7 +2300,7 @@ The TEP corpus uses related but distinct symbols across its papers. This diction
 
 ---
 
-*This document was automatically generated from the TEP-COS research site. For the interactive version with figures and enhanced formatting, visit: https://matthewsmawfield.github.io/TEP-COS/*
+*This document was automatically generated from the TEP-COS research site. For the interactive version with figures and enhanced formatting, visit: https://mlsmawfield.com/tep/cos/*
 
 *Related Work:*
 - [TEP Theory](https://doi.org/10.5281/zenodo.16921911) (Foundational framework)

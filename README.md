@@ -7,7 +7,7 @@
 
 **Author:** Matthew Lukin Smawfield  
 **Version:** v0.9 (Caracas)  
-**Date:** First published: 9 January 2026 · **Last updated:** 13 September 2026
+**Date:** First published: 9 January 2026 · **Last updated:** 30 September 2026
 **Status:** Preprint  
 **DOI:** [10.5281/zenodo.18165798](https://doi.org/10.5281/zenodo.18165798)  
 **Website:** [https://mlsmawfield.com/tep/cos/](https://mlsmawfield.com/tep/cos/)  
@@ -16,12 +16,16 @@
 ## Abstract
 
 
-A spatially stratified spin-down anomaly is reported in 199 globular-cluster millisecond pulsars compared with 351 field controls. Cluster pulsars show a 0.63 dex raw excess and a 0.40 dex controlled residual, with covariance-aware significance of 5.6σ. The signal exhibits suppressed density scaling: a mixed-effects slope Γ = 0.39 ± 0.08 dex/dex compared with a Newtonian ensemble baseline Γ = 0.75, rejecting the baseline at 4.1σ. Field binaries provide a null control, while cluster binaries are quieter than isolated cluster pulsars; corrected CMC reproduces this binary direction, so the binary result functions as a comparator check rather than the primary failure mode. An adversarial dynamics model accounting for line-of-sight acceleration, jerk, Shklovskii terms, mass segregation, and cluster mass profiles cannot explain the observed suppression. An N-body baseline derived from CMC synthetic pulsars (20 clusters, 18,813 MSPs) predicts an excess 3.1× larger than observed (12.7σ nominal model-data tension, not detection significance; conservative quadrature-stacked uncertainty gives 3.6σ), and a mock pulsar-timing-array detection pipeline confirms that the missing high-acceleration population cannot be attributed to observational selection effects. These results are interpreted as a time-domain test of the TEP observable response coefficient κ<sub>MSP</sub>, not as a measurement of a microscopic scalar coupling.
 
-Code Availability: All data and analysis code required to reproduce the results presented in this work, including the full pulsar catalog compilation, are available in the public repository at [https://github.com/matthewsmawfield/TEP-COS](https://github.com/matthewsmawfield/TEP-COS).
+
+
+
+A spatially stratified spin-down anomaly is reported in 199 globular-cluster millisecond pulsars compared with 351 field controls. Cluster pulsars show a 0.63 dex raw excess and a 0.40 dex controlled residual, with covariance-aware significance of 5.6σ. The signal exhibits suppressed density scaling: a mixed-effects slope Γ = 0.39 ± 0.08 dex/dex compared with a Newtonian ensemble baseline Γ = 0.75, rejecting the baseline at 4.1σ. Field binaries provide a null control, while cluster binaries are quieter than isolated cluster pulsars; corrected CMC reproduces this binary direction, so the binary result functions as a comparator check rather than the primary failure mode. An adversarial dynamics model accounting for line-of-sight acceleration, jerk, Shklovskii terms, mass segregation, and cluster mass profiles cannot explain the observed suppression. An N-body baseline derived from CMC synthetic pulsars (20 clusters, 18,813 MSPs) predicts an excess 3.1 ×  larger than observed (12.7σ nominal model-data tension, not detection significance; conservative quadrature-stacked uncertainty gives 3.6σ), and a mock pulsar-timing-array detection pipeline confirms that the missing high-acceleration population cannot be attributed to observational selection effects. These results are interpreted as a time-domain test of the TEP observable response coefficient κ_MSP , not as a measurement of a microscopic scalar coupling. Code Availability: All data and analysis code required to reproduce the results presented in this work, including the full pulsar catalog compilation, are available in the public repository at https://github.com/matthewsmawfield/TEP-COS .
+
+
 ## Key Findings
 
-Analysis of 550 millisecond pulsars (199 globular-cluster + 351 field) reveals a 5.6σ covariance-aware anomaly: globular cluster pulsars spin down 0.63 dex (raw) to 0.40 dex (controlled) faster than field controls. The density scaling is suppressed (slope Γ = 0.39 ± 0.08 vs Newtonian ensemble baseline Γ = 0.75; 4.1σ rejection), and binary pulsars in clusters are unexpectedly *quieter* than isolated pulsars—challenging standard dynamical heating models. An N-body baseline from CMC synthetic pulsars (20 clusters, 18,813 MSPs) predicts an excess 3.1× larger than observed (12.7σ nominal, 3.6σ conservative). Leave-one-cluster-out validation confirms the result is stable (3.8% relative instability).
+Analysis of 550 millisecond pulsars (199 globular-cluster + 351 field) reveals a 5.6σ covariance-aware anomaly: globular cluster pulsars spin down 0.63 dex (raw) to 0.40 dex (controlled) faster than field controls. The density scaling is suppressed (slope Γ = 0.39 ± 0.08 vs Newtonian ensemble baseline Γ = 0.75; 4.1σ rejection), and binary pulsars in clusters are unexpectedly *quieter* than isolated pulsars—challenging standard dynamical heating models. An N-body baseline from CMC synthetic pulsars (20 clusters, 18,813 MSPs) predicts an excess 3.1 ×  larger than observed (12.7σ nominal, 3.6σ conservative). Leave-one-cluster-out validation confirms the result is stable (3.8% relative instability).
 
 ---
 
@@ -45,7 +49,7 @@ Analysis of 550 millisecond pulsars (199 globular-cluster + 351 field) reveals a
 | **Paper 13** | [TEP-WB](https://github.com/matthewsmawfield/TEP-WB) | The Temporal Equivalence Principle: Temporal Shear Recovery in Gaia DR3 Wide Binaries | [10.5281/zenodo.19102061](https://doi.org/10.5281/zenodo.19102061) |
 | **Paper 15** | [TEP-EFA](https://github.com/matthewsmawfield/TEP-EFA) | Temporal Equivalence Principle: Temporal Shear in the Earth Flyby Anomaly | [10.5281/zenodo.19454862](https://doi.org/10.5281/zenodo.19454862) |
 | **Paper 16** | [TEP-J0437](https://github.com/matthewsmawfield/TEP-J0437) | Synchronization Holonomy in Pulsar Scintillation | [10.5281/zenodo.19454620](https://doi.org/10.5281/zenodo.19454620) |
-| **Paper 17** | [TEP-LLR](https://github.com/matthewsmawfield/TEP-LLR) | Lunar Laser Ranging and the Nordtvedt Effect | [10.5281/zenodo.19446029](https://doi.org/10.5281/zenodo.19446029) |
+| **Paper 17** | [TEP-LLR](https://github.com/matthewsmawfield/TEP-LLR) | Lunar Laser Ranging and the Nordtvedt Effect | [10.5281/zenodo.19446028](https://doi.org/10.5281/zenodo.19446028) |
 
 ## Directory Structure
 
