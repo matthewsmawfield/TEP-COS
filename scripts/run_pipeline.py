@@ -273,10 +273,6 @@ def run_pipeline():
         ("step_26_power_analysis.py", "Validation: Power Analysis"),
         ("step_27_monte_carlo_validation.py", "Validation: Monte Carlo Validation"),
         (
-            "step_28_sensitivity_cmc_report.py",
-            "Validation: Sensitivity & CMC Comparison Report",
-        ),
-        (
             "step_24_equal_cluster_weighting.py",
             "Validation: Equal Cluster Weighting",
         ),
@@ -342,6 +338,12 @@ def run_pipeline():
         (
             "step_19_derived_shielding_validation.py",
             "N-Body Pushback: Derived Shielding Validation",
+        ),
+        # Consolidated report — must run after step_25 (validation block),
+        # step_29 and step_31 (this block) so its inputs exist.
+        (
+            "step_28_sensitivity_cmc_report.py",
+            "N-Body Pushback: Sensitivity & CMC Comparison Report",
         ),
     ]
 

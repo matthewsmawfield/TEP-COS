@@ -270,7 +270,7 @@ class HTMLToMarkdownConverter {
         const version = versionMatch ? versionMatch[1]
             .replace(/<[^>]+>/g, '')
             .replace(/^Version:\s*/i, '')
-            .trim() : 'v0.9 (Caracas)';
+            .trim() : 'v0.10 (Caracas)';
         
         const dateMatch = html.match(/<div[^>]*class=["'][^"']*date[^"']*["'][^>]*>(.*?)<\/div>/i);
         const date = dateMatch ? dateMatch[1].replace(/<[^>]+>/g, '').trim() : 'First published: 31 December 2025';
@@ -351,7 +351,7 @@ class HTMLToMarkdownConverter {
             
             // Write to file with versioned filename
             const versionSlug = metadata.version.replace(/[()]/g, '').replace(/\s+/g, '-');
-            const outputPath = path.join(__dirname, '..', `10-TEP-COS-${versionSlug}.md`);
+            const outputPath = path.join(__dirname, '..', `E10-TEP-COS-${versionSlug}.md`);
             fs.writeFileSync(outputPath, markdown, 'utf8');
 
             // Keep the shared collection archive (../manuscripts/) in sync

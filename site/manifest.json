@@ -1,9 +1,9 @@
 {
   "name": "TEP-COS",
   "short_name": "TEP-COS",
-  "version": "v0.9 (Caracas)",
+  "version": "v0.10 (Caracas)",
   "first_published": "9 January 2026",
-  "last_updated": "30 September 2026",
+  "last_updated": "17 October 2026",
   "doi": "10.5281/zenodo.18165798",
   "start_url": ".",
   "display": "standalone",

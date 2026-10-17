@@ -1,5 +1,5 @@
 {
-  "timestamp": "2026-07-03T11:09:35.200971",
+  "timestamp": "2026-10-17T21:28:38.694877",
   "observed_values": {
     "raw_excess": 0.6116545605061704,
     "controlled_residual": 0.608908974037327,
@@ -9,15 +9,16 @@
     "n_clusters": 34
   },
   "cmc_predictions": {
-    "raw_excess": 1.880143026913185,
+    "raw_excess": 1.9316965926145222,
+    "raw_excess_pooled_legacy": 1.830819412944976,
     "density_slope": 0.7476777251184834,
     "density_slope_error": 0.0385519898860048,
-    "binary_diff": 0.2614807441864375
+    "binary_diff": -0.2035084987882545
   },
   "exotic_mechanism_evaluation": {
-    "excess_discrepancy_dex": 1.2684884664070144,
+    "excess_discrepancy_dex": 1.320042032108352,
     "slope_discrepancy_dex_dex": 0.35477222637647693,
-    "binary_discrepancy_dex": 0.5900970977072806,
+    "binary_discrepancy_dex": 0.12510785473258856,
     "mechanism_analyses": [
       {
         "name": "Extreme Mass Segregation Suppression",
@@ -85,13 +86,17 @@
     "n_params_exotic_gr": 8,
     "n_data": 34,
     "chi2_tep": 0.0,
-    "chi2_exotic_gr": 541.8472415355751,
+    "chi2_exotic_gr": 185.54631316857802,
+    "chi2_exotic_gr_full_stack": 34.44145972224589,
     "bic_tep": 10.579081573848484,
-    "bic_exotic_gr": 570.0581257325044,
-    "log_bayes_factor": 279.73952207932797,
-    "bayes_factor": 3.085537360291593e+121,
+    "bic_exotic_gr": 213.75719736550732,
+    "bic_exotic_gr_full_stack": 62.65234391917518,
+    "log_bayes_factor": 101.58905789582943,
+    "bayes_factor": 1.3169438724080196e+44,
+    "log_bayes_factor_full_stack": 26.03663117266335,
+    "bayes_factor_full_stack": 203032351982.73917,
     "evidence_strength": "Decisive",
-    "interpretation": "TEP is favored over exotic-GR by factor of 3.09e+121 (Decisive)"
+    "interpretation": "TEP is favored over exotic-GR by factor of 1.32e+44 (Decisive; 2.03e+11 under full uncertainty stack)"
   },
   "sensitivity_sweep": {
     "individual_tests": [
@@ -305,21 +310,25 @@
     "triple_discrepancy": {
       "raw_excess": {
         "observed": 0.6116545605061704,
-        "cmc_predicted": 1.880143026913185,
-        "discrepancy": 1.2684884664070144,
-        "significance": "22.3\u03c3"
+        "cmc_predicted": 1.9316965926145222,
+        "cmc_predicted_pooled_legacy": 1.830819412944976,
+        "discrepancy": 1.320042032108352,
+        "significance": "13.2\u03c3",
+        "significance_model_aware": "13.0\u03c3",
+        "significance_ensemble_propagated": "8.6\u03c3",
+        "significance_full_stack": "4.1\u03c3"
       },
       "density_scaling": {
         "observed": 0.3929054987420065,
         "cmc_predicted": 0.7476777251184834,
         "discrepancy": 0.35477222637647693,
-        "significance": "4.5\u03c3"
+        "significance": "4.1\u03c3"
       },
       "binary_inversion": {
         "observed": -0.32861635352084306,
-        "cmc_predicted": 0.2614807441864375,
-        "discrepancy": 0.5900970977072806,
-        "significance": "Opposite signs"
+        "cmc_predicted": -0.2035084987882545,
+        "discrepancy": 0.12510785473258856,
+        "significance": "Same sign; consistent magnitude"
       }
     },
     "exotic_mechanism_evaluation": {
@@ -330,17 +339,17 @@
       "note": "Each mechanism is evaluated independently. Probabilities are NOT combined multiplicatively because mechanisms may share physical causes (unknown dependence). For formal model comparison, use the BIC-based Bayes factor from calculate_bayesian_evidence_ratio()."
     },
     "bayesian_comparison": {
-      "bayes_factor": 3.085537360291593e+121,
+      "bayes_factor": 1.3169438724080196e+44,
       "evidence_strength": "Decisive",
-      "interpretation": "TEP is favored over exotic-GR by factor of 3.09e+121 (Decisive)"
+      "interpretation": "TEP is favored over exotic-GR by factor of 1.32e+44 (Decisive; 2.03e+11 under full uncertainty stack)"
     },
     "sensitivity_sweep": {
       "exclusion_zone": "Standard dynamics cannot reach observed slope 0.39 with any single-parameter variation. Would need 47% suppression of density scaling, requiring physically implausible parameter combinations.",
       "all_single_mechanisms_exclude": false
     },
     "combined_evidence": {
-      "total_sigma": 20.0,
-      "conclusion": "Standard dynamics fails on amplitude (22.3\u03c3 overprediction) and slope (4.5\u03c3 discrepancy). No tested exotic mechanism addresses all three failures simultaneously (0/5). TEP is favored by Bayes factor 3.09e+121 (Decisive evidence)."
+      "total_sigma": 13.809848055834959,
+      "conclusion": "Standard dynamics fails on amplitude (13.2\u03c3 nominal, 13.0\u03c3 model-aware, 8.6\u03c3 ensemble-propagated, 4.1\u03c3 full uncertainty stack) and slope (4.1\u03c3 discrepancy). No tested exotic mechanism addresses all three failures simultaneously (0/5). TEP is favored by Bayes factor 1.32e+44 (Decisive evidence)."
     },
     "mechanism_analyses": [
       {

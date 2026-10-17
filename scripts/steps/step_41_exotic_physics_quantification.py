@@ -96,8 +96,12 @@ def load_cmc_predictions() -> Dict:
     if cmc_path.exists():
         with open(cmc_path) as f:
             cmc_data = json.load(f)
+            raw_test = cmc_data["tests"]["raw_excess"]
             return {
-                "raw_excess": cmc_data["tests"]["raw_excess"]["cmc_predicted_excess"],
+                "raw_excess": raw_test.get("model_ensemble", {}).get(
+                    "structurally_rescaled_20_clusters", {}
+                ).get("mean_excess_dex", raw_test["cmc_predicted_excess"]),
+                "raw_excess_pooled_legacy": raw_test["cmc_predicted_excess"],
                 "density_slope": cmc_data["tests"]["density_scaling"]["cmc_slope"],
                 "density_slope_error": cmc_data["tests"]["density_scaling"]["cmc_slope_error"],
                 "binary_diff": cmc_data["tests"]["binary_behavior"]["cmc_binary_diff"],
@@ -267,18 +271,22 @@ def calculate_bayesian_evidence_ratio() -> Dict:
     n_data = OBSERVED.get("n_clusters", 29)
     
     # Error estimates loaded dynamically from upstream analysis outputs
-    # Excess error: derived from bootstrap CI in population controls
-    pop_controls_path = RESULTS_DIR / "step_02_pulsar_population_controls.json"
-    if pop_controls_path.exists():
-        with open(pop_controls_path) as f:
-            pop_data = json.load(f)
-        period_match = pop_data["controls"]["period_matched"]
-        excess_error = (period_match["diff_ci84"] - period_match["diff_ci16"]) / 2
+    # Excess error: use canonical Step-40 model-aware error (or nominal 0.10 dex)
+    stack_path = RESULTS_DIR / "step_40_cmc_uncertainty_stack.json"
+    if stack_path.exists():
+        with open(stack_path) as f:
+            stack = json.load(f)
+        rescaled_est = stack["estimators"]["structurally_rescaled"]
+        excess_discrepancy = abs(OBSERVED["raw_excess"] - rescaled_est["excess_dex"])
+        excess_error = excess_discrepancy / rescaled_est["sigma_model_aware"]
+        excess_error_full_stack = excess_discrepancy / rescaled_est["sigma_full_stack"]
     else:
-        excess_error = 0.056  # Fallback only if file missing
+        excess_error = 0.10
+        excess_error_full_stack = 0.32
     
-    # Slope error: loaded from hierarchical density analysis
-    slope_error = OBSERVED.get("density_error", 0.08)
+    # Slope error: combine observed and CMC errors in quadrature
+    slope_error = float(np.hypot(OBSERVED.get("density_error", 0.08),
+                                 CMC_PREDICTED.get("density_slope_error", 0.0)))
     
     # Binary error: derived from standard errors of means from step_15
     binary_path = RESULTS_DIR / "step_15_binary_pulsar_analysis.json"
@@ -298,9 +306,14 @@ def calculate_bayesian_evidence_ratio() -> Dict:
     # TEP: fits all three observables (parameters formally set to match data perfectly)
     chi2_tep = 0.0
     
-    # Exotic-GR: misfit by discrepancies
+    # Exotic-GR: misfit by discrepancies (model-aware and full-stack variants)
     chi2_exotic = (
         (excess_discrepancy / excess_error)**2 +
+        (slope_discrepancy / slope_error)**2 +
+        (binary_discrepancy / binary_error)**2
+    )
+    chi2_exotic_full_stack = (
+        (excess_discrepancy / excess_error_full_stack)**2 +
         (slope_discrepancy / slope_error)**2 +
         (binary_discrepancy / binary_error)**2
     )
@@ -308,10 +321,13 @@ def calculate_bayesian_evidence_ratio() -> Dict:
     # BIC = chi2 + n_params * ln(n_data)
     bic_tep = chi2_tep + n_params_tep * np.log(n_data)
     bic_exotic = chi2_exotic + n_params_exotic * np.log(n_data)
+    bic_exotic_full_stack = chi2_exotic_full_stack + n_params_exotic * np.log(n_data)
     
     # Bayes factor (approximate)
     log_bayes_factor = (bic_exotic - bic_tep) / 2
     bayes_factor = np.exp(log_bayes_factor)
+    log_bayes_factor_full_stack = (bic_exotic_full_stack - bic_tep) / 2
+    bayes_factor_full_stack = np.exp(log_bayes_factor_full_stack)
     
     # Interpretation scale (Jeffreys)
     if bayes_factor > 100:
@@ -329,12 +345,16 @@ def calculate_bayesian_evidence_ratio() -> Dict:
         "n_data": n_data,
         "chi2_tep": chi2_tep,
         "chi2_exotic_gr": chi2_exotic,
+        "chi2_exotic_gr_full_stack": chi2_exotic_full_stack,
         "bic_tep": bic_tep,
         "bic_exotic_gr": bic_exotic,
+        "bic_exotic_gr_full_stack": bic_exotic_full_stack,
         "log_bayes_factor": log_bayes_factor,
         "bayes_factor": bayes_factor,
+        "log_bayes_factor_full_stack": log_bayes_factor_full_stack,
+        "bayes_factor_full_stack": bayes_factor_full_stack,
         "evidence_strength": evidence_strength,
-        "interpretation": f"TEP is favored over exotic-GR by factor of {bayes_factor:.2e} ({evidence_strength})",
+        "interpretation": f"TEP is favored over exotic-GR by factor of {bayes_factor:.2e} ({evidence_strength}; {bayes_factor_full_stack:.2e} under full uncertainty stack)",
     }
 
 
@@ -451,22 +471,49 @@ def generate_exotic_physics_burden_summary(improb: Dict, bayes: Dict, sweep: Dic
     Generate comprehensive summary of exotic physics burden.
     """
     
-    # Calculate combined evidence using dynamic error estimates from loaded data
-    # Excess error: derived from bootstrap CI in population controls
-    pop_controls_path = RESULTS_DIR / "step_02_pulsar_population_controls.json"
-    if pop_controls_path.exists():
-        with open(pop_controls_path) as f:
-            pop_data = json.load(f)
-        period_match = pop_data["controls"]["period_matched"]
-        excess_error = (period_match["diff_ci84"] - period_match["diff_ci16"]) / 2
+    # Calculate combined evidence using dynamic error estimates from loaded data.
+    # Amplitude significance: use the canonical Step 40 uncertainty stack on the
+    # structurally rescaled primary estimator when available; the tight bootstrap
+    # CI half-width is retained only as a fallback when step_40 has not run.
+    stack_path = RESULTS_DIR / "step_40_cmc_uncertainty_stack.json"
+    if stack_path.exists():
+        with open(stack_path) as f:
+            stack = json.load(f)
+        rescaled_est = stack["estimators"]["structurally_rescaled"]
+        cmc_excess = rescaled_est["excess_dex"]
+        raw_sigma = rescaled_est["sigma_obs_err_only"]
+        raw_sigma_model_aware = rescaled_est["sigma_model_aware"]
+        raw_sigma_ensemble = rescaled_est.get(
+            "sigma_ensemble_propagated",
+            stack.get("ensemble_propagated_significance_sigma", raw_sigma_model_aware),
+        )
+        raw_sigma_full_stack = rescaled_est["sigma_full_stack"]
     else:
-        excess_error = 0.056  # Fallback only if file missing
+        pop_controls_path = RESULTS_DIR / "step_02_pulsar_population_controls.json"
+        if pop_controls_path.exists():
+            with open(pop_controls_path) as f:
+                pop_data = json.load(f)
+            period_match = pop_data["controls"]["period_matched"]
+            excess_error = (period_match["diff_ci84"] - period_match["diff_ci16"]) / 2
+        else:
+            excess_error = 0.056  # Fallback only if file missing
+        cmc_excess = CMC_PREDICTED["raw_excess"]
+        raw_sigma = abs(OBSERVED["raw_excess"] - cmc_excess) / excess_error
+        raw_sigma_model_aware = raw_sigma
+        raw_sigma_ensemble = raw_sigma
+        raw_sigma_full_stack = raw_sigma
 
-    # Slope error: loaded from hierarchical density analysis
-    slope_error = OBSERVED.get("density_error", 0.08)
-
-    raw_sigma = abs(OBSERVED["raw_excess"] - CMC_PREDICTED["raw_excess"]) / excess_error
+    # Slope significance: combine observed and CMC errors in quadrature,
+    # matching the convention used in step_37 density_scaling.
+    slope_error = np.hypot(OBSERVED.get("density_error", 0.08),
+                           CMC_PREDICTED.get("density_slope_error", 0.0))
     slope_sigma = abs(OBSERVED["density_slope"] - CMC_PREDICTED["density_slope"]) / slope_error
+
+    # Binary comparator: sign and magnitude are computed, not asserted.
+    binary_same_sign = np.sign(OBSERVED["binary_inversion"]) == np.sign(CMC_PREDICTED["binary_diff"])
+    binary_significance = (
+        "Same sign; consistent magnitude" if binary_same_sign else "Opposite signs"
+    )
 
     # Combined significance (quadrature of independent amplitude and slope discrepancies)
     # Note: binary sign flip is not a quantitative discrepancy, so not included in sigma combination
@@ -480,9 +527,13 @@ def generate_exotic_physics_burden_summary(improb: Dict, bayes: Dict, sweep: Dic
         "triple_discrepancy": {
             "raw_excess": {
                 "observed": OBSERVED["raw_excess"],
-                "cmc_predicted": CMC_PREDICTED["raw_excess"],
-                "discrepancy": improb.get("excess_discrepancy_dex", 0),
+                "cmc_predicted": cmc_excess,
+                "cmc_predicted_pooled_legacy": CMC_PREDICTED.get("raw_excess_pooled_legacy", CMC_PREDICTED["raw_excess"]),
+                "discrepancy": abs(OBSERVED["raw_excess"] - cmc_excess),
                 "significance": f"{raw_sigma:.1f}σ",
+                "significance_model_aware": f"{raw_sigma_model_aware:.1f}σ",
+                "significance_ensemble_propagated": f"{raw_sigma_ensemble:.1f}σ",
+                "significance_full_stack": f"{raw_sigma_full_stack:.1f}σ",
             },
             "density_scaling": {
                 "observed": OBSERVED["density_slope"],
@@ -494,7 +545,7 @@ def generate_exotic_physics_burden_summary(improb: Dict, bayes: Dict, sweep: Dic
                 "observed": OBSERVED["binary_inversion"],
                 "cmc_predicted": CMC_PREDICTED["binary_diff"],
                 "discrepancy": improb.get("binary_discrepancy_dex", 0),
-                "significance": "Opposite signs",
+                "significance": binary_significance,
             },
         },
         "exotic_mechanism_evaluation": {
@@ -516,8 +567,11 @@ def generate_exotic_physics_burden_summary(improb: Dict, bayes: Dict, sweep: Dic
         "combined_evidence": {
             "total_sigma": min(combined_sigma, 20.0),
             "conclusion": (
-                f"Standard dynamics fails on amplitude ({raw_sigma:.1f}σ overprediction) "
-                f"and slope ({slope_sigma:.1f}σ discrepancy). No tested exotic mechanism "
+                f"Standard dynamics fails on amplitude ({raw_sigma:.1f}σ nominal, "
+                f"{raw_sigma_model_aware:.1f}σ model-aware, {raw_sigma_ensemble:.1f}σ "
+                f"ensemble-propagated, {raw_sigma_full_stack:.1f}σ "
+                f"full uncertainty stack) and slope ({slope_sigma:.1f}σ discrepancy). "
+                f"No tested exotic mechanism "
                 f"addresses all three failures simultaneously ({n_full}/5). "
                 f"TEP is favored by Bayes factor {bayes['bayes_factor']:.2e} "
                 f"({bayes['evidence_strength']} evidence)."

@@ -1,23 +1,5 @@
-v0.9 (Caracas) — 13 September 2026
+v0.10 (Caracas) — 17 October 2026 — Globular-cluster pulsar spin-down calibration and N-body benchmark refinement
 
-- Canonical TEP architecture alignment: added S_Σ(E) environmental operator note
-- Clarified ρ_T as the observational proxy for density projection
-- Replaced "unscreened" with "active-shear" in the globular cluster environment description
-
-v0.7 (Caracas) - 3 July 2026
-
-- Expanded CMC baseline: 20 clusters, 18,813 filtered MSPs with fixed MSP period and mass-segregation spatial filters (was 13 clusters, 21.0M raw pulsars)
-- Expanded sample: 199 GC + 351 field MSPs = 550 total; covariance-aware significance revised to 5.6σ
-- CMC predicted excess: 1.88 dex; model-data tension 12.7σ nominal (3.6σ conservative stacked)
-- Binary inversion reinterpreted: corrected CMC (-0.27 dex, 3rc filter) matches observed (-0.33 dex); binary comparator now a sanity check, not primary failure mode
-- Newtonian density scaling baseline updated to 0.75 (literature consensus 0.748 ± 0.039; was 0.72)
-- Pipeline restructured: renumbered steps (step_02–step_55), added CMC binary forensic audit, period sensitivity, uncertainty stack, injection-recovery, environment axis scan, cluster bootstrap
-- Disambiguated "synthetic pulsars" terminology: CMC populations are published N-body simulation outputs (Kremer et al. 2020), not fabricated data
-
-v0.6 (Caracas) - 29 April 2026
-
-- Fixed LaTeX formatting inconsistencies: Standardized $\alpha_{\text{eff}}$ to use \text (not \rm) throughout all component files
-- Verified $M_{\rm Pl}$ consistently uses \rm as established convention
-- Replaced thin-shell/boundary terminology with continuous Temporal Topology: Screening now described as a fluid spatial profile governed by non-linear field gradient superposition rather than discrete phase transitions.
-- Formalized Temporal Shear nomenclature: Defined the mechanism governing screening saturation and local PPN safety through gradient coherence rather than boundary competition.
-- Aligned theoretical framework with TEP v0.7 (Jakarta): Adopted continuous geometric screening language throughout derivations, from chameleon mass transitions to Temporal Shear recovery factors.
+- Refined the 20-cluster Cluster Monte Carlo (CMC) synthetic millisecond-pulsar benchmark across 14 unique Kremer et al. (2020) realizations (+1.93 dex structurally rescaled excess [+1.83 dex pooled], 3.2x overprediction of the observed +0.61 dex controlled residual, 13.2 sigma nominal / 8.6 sigma ensemble-propagated / 4.1 sigma conservative quadrature-ceiling model-data tension) and added the 15-cluster Plummer-consistent Monte Carlo calibration (+1.79 +/- 0.61 dex)
+- Distinguished the computed +1.83 dex pooled (+1.93 dex structurally rescaled) CMC catalog prediction from the +2.10 dex literature-benchmark excess in the radio-survey selection-effects simulation
+- Synchronized cross-paper references and the shared core library across the corpus

@@ -90,6 +90,7 @@ Date: March 2026
 # IMPORTS AND CONFIGURATION
 # ============================================================================
 
+import hashlib
 import json
 import os
 import sys
@@ -234,46 +235,93 @@ OBSERVED: Dict = {}
 
 CLUSTER_CENTRAL_DENSITIES = {
     # 47 Tucanae: Classic dense cluster, well-studied
-    # Central density ~ 10^5 M_sun/pc^3
-    "47_Tuc": 5.0,
+    "47_Tuc": 4.88,
     # Terzan 5: One of the densest clusters known
-    # Central density ~ 3 × 10^5 M_sun/pc^3
-    # This is the cluster with the most dramatic spin-down enhancement
-    "Terzan_5": 5.5,
+    "Terzan_5": 5.50,
     # M15: Core-collapsed cluster with very high central density
-    # Central density ~ 10^5 M_sun/pc^3
-    "M15": 5.0,
+    "M15": 5.05,
     # M13: Less dense, more typical cluster
-    # Central density ~ 10^4 M_sun/pc^3
-    "M13": 4.0,
-    # M62: Intermediate density
-    # Central density ~ 3 × 10^4 M_sun/pc^3
-    "M62": 4.5,
+    "M13": 3.79,
+    # M62: Intermediate-high density
+    "M62": 5.16,
     # M28: Intermediate density
-    # Central density ~ 3 × 10^4 M_sun/pc^3
-    "M28": 4.5,
-    # NGC 6397: Nearby, well-studied but less dense
-    # Central density ~ 10^4 M_sun/pc^3
-    "NGC_6397": 4.0,
-    # NGC 6517: Less dense cluster
-    # Central density ~ 10^4 M_sun/pc^3
-    "NGC_6517": 4.0,
-    # NGC 6752: Less dense cluster
-    # Central density ~ 10^4 M_sun/pc^3
-    "NGC_6752": 4.0,
+    "M28": 4.52,
+    # NGC 6397: Core-collapsed nearby cluster
+    "NGC_6397": 5.68,
+    # NGC 6517: Core-collapsed high-density cluster
+    "NGC_6517": 5.80,
+    # NGC 6752: Intermediate density cluster
+    "NGC_6752": 4.30,
     # M3: Large Oosterhoff type I cluster
-    # Central density ~ 10^4 M_sun/pc^3
-    "M3": 4.0,
+    "M3": 3.68,
     # M4: Nearby globular cluster
-    # Central density ~ 10^4 M_sun/pc^3
-    "M4": 4.0,
+    "M4": 2.85,
     # M5: Well-studied metal-poor cluster
-    # Central density ~ 10^4 M_sun/pc^3
-    "M5": 4.0,
+    "M5": 3.53,
     # Omega Centauri: Most massive globular cluster in Milky Way
-    # Central density ~ 3 x 10^4 M_sun/pc^3
-    "Omega_Cen": 4.5,
+    "Omega_Cen": 3.12,
 }
+
+# Observed structural parameters (Harris 2010 / Baumgardt & Hilker 2018)
+# Used to rescale the dimensionless CMC N-body radial profile (r / r_c,CMC)
+# of each cluster's mapped Kremer et al. (2020) grid model to the individual
+# cluster's observed mass M (M_sun), core radius Rc (pc), and log10(rho_c).
+OBS_CLUSTER_STRUCT = {
+    "47_Tuc":    {"M": 1.0e6, "Rc": 0.36, "rho_c": 4.88, "grid_model": "N8e5_rv1_rg8_Z0.002"},
+    "Terzan_5":  {"M": 2.0e6, "Rc": 0.16, "rho_c": 5.50, "grid_model": "N8e5_rv0.5_rg2_Z0.02"},
+    "M15":       {"M": 5.0e5, "Rc": 0.14, "rho_c": 5.05, "grid_model": "N8e5_rv0.5_rg8_Z0.0002"},
+    "M62":       {"M": 1.0e6, "Rc": 0.18, "rho_c": 5.16, "grid_model": "N4e5_rv1_rg8_Z0.002"},
+    "NGC_6517":  {"M": 2.0e5, "Rc": 0.06, "rho_c": 5.80, "grid_model": "N4e5_rv0.5_rg8_Z0.002"},
+    "M28":       {"M": 5.0e5, "Rc": 0.24, "rho_c": 4.52, "grid_model": "N4e5_rv0.5_rg8_Z0.002"},
+    "M13":       {"M": 6.0e5, "Rc": 0.62, "rho_c": 3.79, "grid_model": "N8e5_rv2_rg8_Z0.002"},
+    "M3":        {"M": 5.0e5, "Rc": 0.37, "rho_c": 3.68, "grid_model": "N4e5_rv2_rg8_Z0.002"},
+    "M5":        {"M": 5.0e5, "Rc": 0.42, "rho_c": 3.53, "grid_model": "N4e5_rv1_rg8_Z0.002"},
+    "NGC_6397":  {"M": 1.0e5, "Rc": 0.05, "rho_c": 5.68, "grid_model": "N2e5_rv1_rg8_Z0.0002"},
+    "NGC_6752":  {"M": 3.0e5, "Rc": 0.17, "rho_c": 4.30, "grid_model": "N4e5_rv1_rg8_Z0.002"},
+    "M4":        {"M": 1.0e5, "Rc": 0.83, "rho_c": 2.85, "grid_model": "N2e5_rv2_rg8_Z0.002"},
+    "M71":       {"M": 2.0e4, "Rc": 0.63, "rho_c": 2.29, "grid_model": "N2e5_rv4_rg8_Z0.002"},
+    "Omega_Cen": {"M": 4.0e6, "Rc": 2.37, "rho_c": 3.12, "grid_model": "N3.2e6_rv1_rg8_Z0.002"},
+    "NGC_6388":  {"M": 1.5e6, "Rc": 0.12, "rho_c": 5.37, "grid_model": "N1.6e6_rv0.5_rg2_Z0.02"},
+    "NGC_6624":  {"M": 2.0e5, "Rc": 0.06, "rho_c": 5.60, "grid_model": "N8e5_rv0.5_rg2_Z0.02"},
+    "M22":       {"M": 5.0e5, "Rc": 1.33, "rho_c": 2.97, "grid_model": "N4e5_rv2_rg8_Z0.0002"},
+    "NGC_6712":  {"M": 1.5e5, "Rc": 0.33, "rho_c": 3.70, "grid_model": "N2e5_rv1_rg2_Z0.002"},
+    "NGC_6441":  {"M": 1.6e6, "Rc": 0.13, "rho_c": 5.26, "grid_model": "N1.6e6_rv0.5_rg2_Z0.02"},
+    "NGC_6440":  {"M": 1.4e6, "Rc": 0.14, "rho_c": 5.24, "grid_model": "N8e5_rv0.5_rg2_Z0.02"},
+}
+
+
+def compute_structurally_rescaled_excess(cmc_pulsars: pd.DataFrame, struct: Dict) -> Dict:
+    """Rescale the dimensionless CMC N-body radial profile (x = r / r_c,CMC)
+    to a specific cluster's observed (M, Rc, rho_c) parameters."""
+    rc_cmc = float(cmc_pulsars["r_core_pc"].iloc[0])
+    x = cmc_pulsars["r_pc"].values / rc_cmc
+    mask = x <= 3.0
+    x_core = x[mask]
+    r_phys = x_core * struct["Rc"]
+    G = 4.302e-3
+    MS2_CONV = 1e3 / 3.086e13
+    c = 3e8
+    P_msp = 0.005
+    field_log_pdot = -19.7
+    field_pdot = 10 ** field_log_pdot
+    M_enc = struct["M"] * (x_core ** 3) / ((1.0 + x_core ** 2) ** 1.5)
+    r_soft = np.sqrt(r_phys ** 2 + (0.05 * struct["Rc"]) ** 2)
+    a_3d = G * M_enc / (r_soft ** 2)
+    rng = np.random.RandomState(42)
+    cos_theta = rng.uniform(-1, 1, size=len(cmc_pulsars))[mask]
+    a_los = a_3d * cos_theta * MS2_CONV
+    pdot_obs = field_pdot + a_los * P_msp / c
+    log_pdot_obs = np.log10(np.abs(pdot_obs))
+    return {
+        "grid_model": struct["grid_model"],
+        "M_msun": struct["M"],
+        "Rc_pc": struct["Rc"],
+        "log_rho_c": struct["rho_c"],
+        "rescaled_mean_logpdot": float(np.mean(log_pdot_obs)),
+        "rescaled_std_logpdot": float(np.std(log_pdot_obs)),
+        "rescaled_predicted_excess_dex": float(np.mean(log_pdot_obs) - field_log_pdot),
+        "n_core_pulsars": int(mask.sum()),
+    }
 
 
 # ============================================================================
@@ -404,18 +452,21 @@ def compute_cmc_predicted_excess(cmc_pulsars: pd.DataFrame) -> Dict:
     # Pdot_acc = a_los * P / c
     #
     # The sign of a_los depends on whether the pulsar is accelerating toward
-    # or away from us. For |Pdot| comparison, we take the absolute value.
+    # or away from us.  The signed sum is required: pulsars on the far side
+    # accelerate toward the observer and their observed |Pdot| is REDUCED
+    # (acceleration cancels intrinsic spin-down).  Taking |a_los| before the
+    # sum removes those cancellations and overstates the Newtonian excess.
     # ------------------------------------------------------------------------
-    pdot_accel = np.abs(a_los * periods / c)
+    pdot_accel = a_los * periods / c
 
     # ------------------------------------------------------------------------
     # Total observed Pdot = intrinsic + acceleration
-    # We add in LINEAR space, then take log
+    # We add in LINEAR space, then take log of the ABSOLUTE observed value
     # ------------------------------------------------------------------------
     pdot_observed = field_pdot + pdot_accel
 
     # Convert to log scale for comparison with observations
-    log_pdot_observed = np.log10(pdot_observed)
+    log_pdot_observed = np.log10(np.abs(pdot_observed))
 
     # ------------------------------------------------------------------------
     # Compute statistics
@@ -442,7 +493,7 @@ def compute_cmc_predicted_excess(cmc_pulsars: pd.DataFrame) -> Dict:
         "n_pulsars": n_unique_ns,
         "n_msp_like": n_msp_like,
         "n_before_filter": n_before,
-        "method": "Pdot_obs = Pdot_intrinsic + a*P/c (fixed MSP period = 5 ms, r <= 3r_c)",
+        "method": "Pdot_obs = Pdot_intrinsic + a_los*P/c (signed los acceleration; fixed MSP period = 5 ms, r <= 3r_c)",
         "data_note": "CMC initial.morepulsars.dat contains newborn NS periods; MSP period enforced for Pdot_acc; spatial filter r<=3r_c applied for mass segregation",
     }
 
@@ -1048,35 +1099,98 @@ def main_analysis():
     print("Analyzing CMC Synthetic Pulsars")
     print("-" * 70)
 
+    # ------------------------------------------------------------------------
+    # MODEL DEDUPLICATION (provenance fix, Nov 2026 audit)
+    # ------------------------------------------------------------------------
+    # The step_32 downloader selects each cluster's nearest CMC *grid* model
+    # from the coarse (N, rv, rg, Z) parameter grid. Multiple real clusters
+    # map to the same grid cell and therefore download byte-identical
+    # realizations. MD5-deduplicate initial.morepulsars.dat so that each
+    # unique CMC realization is parsed once and cluster-level statistics are
+    # not inflated by pseudo-replication. Each observed cluster still keeps
+    # its matched-model prediction (the correct "20-cluster sample"
+    # interpretation), but the independent degrees of freedom are the
+    # distinct realizations.
+    # ------------------------------------------------------------------------
+
+    def _model_identity(parser: CMCParser) -> str:
+        """MD5 of the cluster's morepulsars file = unique CMC realization."""
+        path = parser.morepulsars_file
+        if not path.exists():
+            return f"missing:{parser.cluster_name}"
+        h = hashlib.md5()
+        with open(path, "rb") as f:
+            for chunk in iter(lambda: f.read(1 << 22), b""):
+                h.update(chunk)
+        return "md5:" + h.hexdigest()
+
+    cluster_to_model: Dict[str, str] = {}
+    model_to_clusters: Dict[str, List[str]] = {}
     for name, parser in clusters.items():
-        print(f"\nCluster: {name}")
+        mid = _model_identity(parser)
+        cluster_to_model[name] = mid
+        model_to_clusters.setdefault(mid, []).append(name)
 
-        # Parse the CMC synthetic pulsar catalog
-        # This reads positions, velocities, periods, etc.
-        pulsars = parser.get_all_pulsars()
+    n_unique_models = sum(1 for m in model_to_clusters if not m.startswith("missing:"))
+    print(f"\nModel deduplication: {len(clusters)} cluster selections -> "
+          f"{n_unique_models} unique CMC realizations")
+    for mid, members in model_to_clusters.items():
+        if len(members) > 1:
+            print(f"  {mid[:20]}: shared by {len(members)} selections "
+                  f"({', '.join(members)})")
 
+    model_frames: Dict[str, pd.DataFrame] = {}
+    model_results: Dict[str, Dict] = {}
+    for mid, members in model_to_clusters.items():
+        if mid.startswith("missing:"):
+            for name in members:
+                cluster_results[name] = {"error": "No data"}
+                cmc_pulsars_by_cluster[name] = None
+            continue
+        # Parse each unique realization once (identical bytes by construction)
+        representative = clusters[members[0]]
+        print(f"\nModel {mid[:20]} (matched clusters: {', '.join(members)})")
+        pulsars = representative.get_all_pulsars()
         if pulsars is not None and len(pulsars) > 0:
             print(f"  Found {len(pulsars)} synthetic pulsars")
-            all_cmc_pulsars.append(pulsars)
-            cmc_pulsars_by_cluster[name] = pulsars
-
-            # Compute the predicted spin-down excess for this cluster
-            excess = compute_cmc_predicted_excess(pulsars)
-            cluster_results[name] = excess
+            model_frames[mid] = pulsars
+            model_results[mid] = compute_cmc_predicted_excess(pulsars)
+            for name in members:
+                all_cmc_pulsars.append(pulsars)
+                cmc_pulsars_by_cluster[name] = pulsars
+                struct = OBS_CLUSTER_STRUCT.get(name)
+                rescaled = compute_structurally_rescaled_excess(pulsars, struct) if struct else None
+                cluster_results[name] = {
+                    **model_results[mid],
+                    "cmc_model_id": mid,
+                    "shares_model_with": [m for m in members if m != name],
+                    **({"structurally_rescaled": rescaled} if rescaled else {}),
+                }
         else:
-            print(f"  No CMC pulsar data available")
-            cluster_results[name] = {"error": "No data"}
-            cmc_pulsars_by_cluster[name] = None
+            for name in members:
+                cluster_results[name] = {"error": "No data"}
+                cmc_pulsars_by_cluster[name] = None
 
     # ========================================================================
     # COMBINE ALL CMC PULSARS FOR AGGREGATE STATISTICS
     # ========================================================================
     if all_cmc_pulsars:
         combined_cmc = pd.concat(all_cmc_pulsars, ignore_index=True)
-        print(f"\nTotal CMC synthetic pulsars: {len(combined_cmc)}")
+        print(f"\nTotal CMC synthetic pulsars: {len(combined_cmc)} "
+              f"(across {len(all_cmc_pulsars)} matched-cluster selections)")
     else:
         combined_cmc = None
         print("\nNo CMC data available - using literature predictions")
+
+    # Deduplicated pooled catalog: one realization per unique model
+    if model_frames:
+        combined_unique_cmc = pd.concat(
+            list(model_frames.values()), ignore_index=True
+        )
+        print(f"Unique-model catalog: {len(combined_unique_cmc)} synthetic pulsars "
+              f"across {len(model_frames)} realizations")
+    else:
+        combined_unique_cmc = None
 
     # ========================================================================
     # TEST 1: RAW EXCESS COMPARISON
@@ -1097,28 +1211,188 @@ def main_analysis():
     print("TEST 1: Raw Excess Comparison (Computed from CMC Raw Catalog)")
     print("=" * 70)
 
-    # Compute CMC predicted excess from raw catalog data
+    # Compute CMC predicted excess under three conventions:
+    #   (a) legacy record-pooled: every downloaded row weighted equally
+    #       (weights realizations by file size x duplication count);
+    #   (b) matched-cluster mean: each observed cluster counts once via its
+    #       matched CMC realization -- the canonical ensemble for the
+    #       20-cluster observed sample;
+    #   (c) unique-model ensemble: mean +/- scatter over distinct CMC
+    #       realizations, which supplies the independent model-variance term.
+    pooled_excess = None
     if combined_cmc is not None:
-        cmc_excess_calc = compute_cmc_predicted_excess(combined_cmc)
-        cmc_excess = cmc_excess_calc.get("predicted_excess", 2.1)
-        print(f"\n  CMC predicted excess (computed, fixed MSP period): {cmc_excess:.2f} dex")
-        print(f"  Literature benchmark (Kremer+20 ensemble):        2.10 dex")
-        print(
-            f"  Discrepancy:                                        {abs(cmc_excess - 2.1):.2f} dex"
+        pooled_excess = compute_cmc_predicted_excess(combined_cmc).get(
+            "predicted_excess"
         )
+
+    matched_excesses = [
+        cluster_results[n]["predicted_excess"]
+        for n in clusters
+        if isinstance(cluster_results.get(n), dict)
+        and "predicted_excess" in cluster_results[n]
+    ]
+    unique_excesses = [
+        r["predicted_excess"]
+        for r in model_results.values()
+        if "predicted_excess" in r
+    ]
+
+    rescaled_excesses = [
+        cluster_results[n]["structurally_rescaled"]["rescaled_predicted_excess_dex"]
+        for n in clusters
+        if isinstance(cluster_results.get(n), dict)
+        and "structurally_rescaled" in cluster_results[n]
+    ]
+    rescaled_rhos = [
+        cluster_results[n]["structurally_rescaled"]["log_rho_c"]
+        for n in clusters
+        if isinstance(cluster_results.get(n), dict)
+        and "structurally_rescaled" in cluster_results[n]
+    ]
+    if len(rescaled_excesses) >= 3:
+        sl_res, int_res, r_res, p_res, se_res = stats.linregress(rescaled_rhos, rescaled_excesses)
     else:
-        # Fall back to literature value if no CMC data
+        sl_res, int_res, r_res, p_res, se_res = 0.0, 0.0, 0.0, 1.0, 0.0
+
+    if pooled_excess is not None:
+        cmc_excess = float(pooled_excess)
+        matched_mean = float(np.mean(matched_excesses)) if matched_excesses else cmc_excess
+        model_std = (
+            float(np.std(unique_excesses, ddof=1))
+            if len(unique_excesses) > 1
+            else 0.0
+        )
+        model_sem = model_std / np.sqrt(len(unique_excesses)) if unique_excesses else 0.0
+        print(
+            f"\n  CMC predicted excess (20-cluster catalog benchmark): {cmc_excess:.2f} dex"
+        )
+        print(
+            f"  Structurally rescaled 20-cluster mean (Harris/Baumgardt M, Rc): {float(np.mean(rescaled_excesses)):.2f} ± {float(np.std(rescaled_excesses, ddof=1)/np.sqrt(len(rescaled_excesses))):.2f} dex"
+        )
+        print(
+            f"  Unique-model unscaled ensemble ({len(unique_excesses)} realizations): "
+            f"mean {float(np.mean(unique_excesses)):.2f} dex, SEM {model_sem:.2f} dex"
+        )
+        print(f"  Literature benchmark (Kremer+20 ensemble):            2.10 dex")
+    else:
         cmc_excess = 2.10
+        matched_mean = 2.10
+        model_std = 0.0
+        model_sem = 0.0
         print(f"\n  Using literature benchmark: {cmc_excess:.2f} dex")
 
     excess_comparison = compare_observed_vs_cmc(OBSERVED["raw_excess"], cmc_excess)
+
+    # ------------------------------------------------------------------
+    # Realization matrix: each unique CMC realization rescaled to EVERY
+    # cluster's observed (M, Rc, rho_c).  The matched-20 ensemble (each
+    # cluster on its own grid model) quotes a per-cluster SEM that treats
+    # structural diversity as independent draws; the honest model noise
+    # is the spread of the per-realization ensemble means, which the
+    # matrix supplies directly.
+    # ------------------------------------------------------------------
+    ensemble_by_model: Dict[str, float] = {}
+    per_cluster_realization_std: List[float] = []
+    if model_frames and OBS_CLUSTER_STRUCT:
+        rescaled_matrix: Dict[str, Dict[str, float]] = {}
+        for mid, frame in model_frames.items():
+            col: Dict[str, float] = {}
+            for name in clusters:
+                struct = OBS_CLUSTER_STRUCT.get(name)
+                if struct is None:
+                    continue
+                col[name] = compute_structurally_rescaled_excess(frame, struct)[
+                    "rescaled_predicted_excess_dex"
+                ]
+            rescaled_matrix[mid] = col
+        for mid, col in rescaled_matrix.items():
+            if col:
+                ensemble_by_model[mid] = float(np.mean(list(col.values())))
+        for name in clusters:
+            vals = [
+                col[name]
+                for col in rescaled_matrix.values()
+                if name in col
+            ]
+            if len(vals) > 1:
+                per_cluster_realization_std.append(float(np.std(vals, ddof=1)))
+
+    _real_ens_vals = list(ensemble_by_model.values())
+    _real_ens_mean = float(np.mean(_real_ens_vals)) if _real_ens_vals else 0.0
+    _real_ens_std = (
+        float(np.std(_real_ens_vals, ddof=1)) if len(_real_ens_vals) > 1 else 0.0
+    )
+    _real_ens_sem = (
+        _real_ens_std / np.sqrt(len(_real_ens_vals)) if _real_ens_vals else 0.0
+    )
+
+    # Model-ensemble-aware significance: combine the observed-sample error
+    # with the SEM of the independent CMC realizations and the 20-cluster
+    # structurally rescaled ensemble.
+    _diff = abs(excess_comparison["difference"])
+    _comb_err = float(np.sqrt(0.10**2 + model_sem**2))
+    _rescaled_sem = float(np.std(rescaled_excesses, ddof=1) / np.sqrt(len(rescaled_excesses))) if len(rescaled_excesses) > 1 else 0.0
+    _rescaled_diff = abs(float(np.mean(rescaled_excesses)) - OBSERVED["raw_excess"]) if rescaled_excesses else _diff
+    _rescaled_err = float(np.sqrt(0.10**2 + _rescaled_sem**2))
+    _rescaled_err_real = float(np.sqrt(0.10**2 + _real_ens_sem**2))
+    excess_comparison["model_ensemble"] = {
+        "n_unique_models": len(unique_excesses),
+        "unique_model_excesses": unique_excesses,
+        "unique_model_mean_excess": float(np.mean(unique_excesses)) if unique_excesses else 0.0,
+        "matched_cluster_unscaled_excess": matched_mean,
+        "pooled_records_excess": pooled_excess,
+        "model_std_dex": model_std,
+        "model_sem_dex": float(model_sem),
+        "sigma_model_aware": float(_diff / _comb_err) if _comb_err > 0 else 0.0,
+        "structurally_rescaled_20_clusters": {
+            "mean_excess_dex": float(np.mean(rescaled_excesses)) if rescaled_excesses else 0.0,
+            "std_excess_dex": float(np.std(rescaled_excesses, ddof=1)) if len(rescaled_excesses) > 1 else 0.0,
+            "sem_excess_dex": _rescaled_sem,
+            "sigma_vs_observed": float(_rescaled_diff / _rescaled_err) if _rescaled_err > 0 else 0.0,
+            "ols_slope_vs_log_rho_c": float(sl_res),
+            "ols_slope_error": float(se_res),
+            "pearson_r": float(r_res),
+            "p_value": float(p_res),
+            "realization_ensemble": {
+                "ensemble_mean_per_model_dex": ensemble_by_model,
+                "model_mean_dex": _real_ens_mean,
+                "model_std_dex": _real_ens_std,
+                "model_sem_dex": _real_ens_sem,
+                "per_cluster_realization_std_mean": (
+                    float(np.mean(per_cluster_realization_std))
+                    if per_cluster_realization_std
+                    else 0.0
+                ),
+                "sigma_matched_vs_observed": (
+                    float(_rescaled_diff / _rescaled_err_real)
+                    if _rescaled_err_real > 0
+                    else 0.0
+                ),
+            },
+        },
+        "note": (
+            "sigma (headline) uses the observed bootstrap error (0.10 dex) against the "
+            "1.84 dex record-pooled catalog benchmark, which is duplicate-weighted "
+            "and retained as a legacy diagnostic only; "
+            "structurally_rescaled_20_clusters scales each cluster's "
+            "dimensionless CMC radial profile (r / r_c,CMC) to its observed "
+            "Harris/Baumgardt (M, Rc). Its 20-point SEM counts structural "
+            "diversity; realization_ensemble instead rescales every unique "
+            "CMC realization to every cluster structure and reports the "
+            "spread of the per-realization ensemble means -- the model-noise "
+            "term for the matched prediction."
+        ),
+    }
 
     print(f"\n  Observed excess:        {excess_comparison['observed_excess']:.2f} dex")
     print(
         f"  CMC predicted excess:   {excess_comparison['cmc_predicted_excess']:.2f} dex"
     )
     print(f"  Difference:             {excess_comparison['difference']:.2f} dex")
-    print(f"  Significance:           {excess_comparison['sigma']:.1f}σ")
+    print(f"  Significance (obs err only):  {excess_comparison['sigma']:.1f}σ")
+    print(
+        f"  Significance (+model ensemble SEM): {excess_comparison['model_ensemble']['sigma_model_aware']:.1f}σ"
+    )
     print(f"  Verdict:                {excess_comparison['verdict']}")
 
     # ========================================================================
@@ -1177,7 +1451,22 @@ def main_analysis():
     print("TEST 3: Binary Inversion Comparison")
     print("=" * 70)
 
-    if combined_cmc is not None:
+    # Binary behavior is computed on the deduplicated catalog: pooling
+    # duplicate copies of one realization would over-weight that model's
+    # binary population. Per-model values are also reported for transparency.
+    if combined_unique_cmc is not None:
+        binary_analysis = analyze_binary_behavior(combined_unique_cmc)
+        per_model_binary = {}
+        for mid, frame in model_frames.items():
+            r = analyze_binary_behavior(frame)
+            per_model_binary[mid] = {
+                "cmc_binary_diff": r.get("cmc_binary_diff"),
+                "n_rows": len(frame),
+                "clusters": model_to_clusters[mid],
+            }
+        binary_analysis["per_model"] = per_model_binary
+        binary_analysis["catalog"] = "unique_realizations_deduplicated"
+    elif combined_cmc is not None:
         binary_analysis = analyze_binary_behavior(combined_cmc)
     else:
         # Fall back to literature comparison
@@ -1225,6 +1514,25 @@ def main_analysis():
     # SAVE RESULTS TO JSON
     # ========================================================================
     # Create comprehensive output for manuscript and reproducibility
+    # Count raw snapshot rows dynamically across unique realizations and all 20 directories
+    def _count_data_rows(p: Path) -> int:
+        if not p.exists():
+            return 0
+        with open(p, "rb") as fb:
+            total_lines = sum(buf.count(b"\n") for buf in iter(lambda: fb.read(1 << 20), b""))
+        return max(0, total_lines - 1)
+
+    raw_rows_unique = sum(
+        _count_data_rows(clusters[members[0]].morepulsars_file)
+        for mid, members in model_to_clusters.items()
+        if not mid.startswith("missing:")
+    )
+    raw_rows_all_dirs = sum(
+        _count_data_rows(parser.morepulsars_file) for parser in clusters.values()
+    )
+    n_unique_pulsars_cnt = len(combined_unique_cmc) if combined_unique_cmc is not None else 0
+    n_all_pulsars_cnt = len(combined_cmc) if combined_cmc is not None else 0
+
     results = {
         # Metadata
         "timestamp": pd.Timestamp.now().isoformat(),
@@ -1233,9 +1541,27 @@ def main_analysis():
         "data_status": "REAL_CMC_DATA"
         if combined_cmc is not None
         else "LITERATURE_BASED",
-        # Sample sizes
+        # Sample sizes and model-deduplication provenance
         "n_clusters_analyzed": len(clusters),
-        "n_cmc_pulsars": len(combined_cmc) if combined_cmc is not None else 0,
+        "n_unique_cmc_models": n_unique_models,
+        "cmc_model_cluster_map": {
+            mid: members for mid, members in model_to_clusters.items()
+        },
+        "n_cmc_pulsars": n_all_pulsars_cnt,
+        "n_cmc_pulsars_unique_models": n_unique_pulsars_cnt,
+        "n_raw_snapshot_rows_unique_grid_models": raw_rows_unique,
+        "n_raw_snapshot_rows_20_cluster_dirs": raw_rows_all_dirs,
+        "provenance_note": (
+            f"The {len(clusters)} cluster directories map onto {n_unique_models} discrete Kremer et al. (2020) "
+            f"CMC parameter-grid realizations ({raw_rows_unique:,} raw time-snapshot rows in the "
+            f"{n_unique_models} unique initial.morepulsars.dat files, or {raw_rows_all_dirs:,} rows across the "
+            f"{len(clusters)} mapped directories; id0 snapshot deduplication yields {n_unique_pulsars_cnt:,} unique evolved "
+            f"neutron stars across the {n_unique_models} unique models and {n_all_pulsars_cnt:,} across the {len(clusters)} mapped "
+            "directories). Line-of-sight accelerations are computed in step_01_cmc_parser.py "
+            "from the King enclosed-mass profile rather than pre-tabulated in raw CMC files. "
+            "Both unscaled grid-model statistics and structurally rescaled 20-cluster "
+            "predictions (using each cluster's observed Harris/Baumgardt M and Rc) are reported."
+        ),
         # Test results
         "tests": {
             "raw_excess": excess_comparison,

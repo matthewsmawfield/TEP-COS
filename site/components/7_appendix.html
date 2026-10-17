@@ -122,7 +122,7 @@
     <h4>Pulsar Selection Criteria</h4>
     <pre><code>
 # Standard Millisecond Pulsar (MSP) Definition
-P_spin < 30 ms
+P_spin &lt; 30 ms
 P_dot_intrinsic > 0 (where available)
 Not in binary with massive companion (> 10 M_sun)
 
@@ -143,30 +143,30 @@ Filter out foreground contaminants identified in literature.
     <li><code>scripts/steps/step_62_sn_ia_stretch_test.py</code>: SN Ia peak magnitude vs host velocity dispersion correlation (mB-σ test).</li>
 </ul>
 
-<h2>Appendix C: Candidate Microscopic Transfer Model (Illustrative)</h2>
+<h2>Appendix C: Microscopic Transfer Architecture and the $\kappa$ Bridge</h2>
 
 <p>
-    This appendix presents one possible microscopic origin for $\kappa_{\text{MSP}}$ using the
-    quartic amplitude-sector completion of Paper 0 (v0.15) as an illustration; the empirical
-    analysis is entirely independent of this model. It is not required for the empirical test,
-    which treats $\kappa_{\text{MSP}}$ as an observable pulsar response coefficient determined
-    from data.
+    This appendix connects the observable pulsar response coefficient $\kappa_{\text{MSP}}$ to the
+    canonical scalar-sector architecture of Paper 0 (v0.16) and the volumetric Temporal-Topology
+    susceptibility bridge established in Paper 11 (Step 62). While the primary empirical test treats
+    $\kappa_{\text{MSP}}$ as an observable pulsar response coefficient determined directly from data,
+    the derivation below shows how the same saturation scale $\rho_T \approx 20\ {\rm g\,cm^{-3}}$
+    and universal coupling $\beta_A = -1$ govern both the extragalactic stellar-envelope amplification
+    ($\kappa_{\rm gal} \sim 10^6$ mag) and the screened globular-cluster pulsar response.
 </p>
 
 <p>
-    The following derives an illustrative transfer model on the admissible branch of the scalar
+    The following derives the amplitude-sector transfer model on the admissible branch of the scalar
     sector, for the clock-amplitude channel of the Temporal-Topology response. As established
-    in Paper 0 (v0.15), the shear-sector screening mechanism is the nonlinear kinetic completion
-    $P(X,\phi)=X-V+X|X|/\Lambda_X^4$ — which pins the slope of the clock-rate landscape where it
-    is already steep rather than flattening the field — while density-dependent-mass
-    (chameleon-class), Vainshtein, and related completions remain candidate microscopic
-    realizations rather than definitions of the framework; the empirical
-    inference does not depend on which admissible completion is correct. What is fixed is the
+    in Paper 0 (v0.16), the shear-sector screening mechanism is the selected two-branch nonlinear kinetic completion
+    $P(X,\phi)=-V(\phi)+\frac{2k}{3\Lambda_X^2}X|X|^{1/2}+X|X|/\Lambda_X^4$ ($P_{,X}=k\sqrt\xi+2\xi$, $k\simeq16.03$ fixed by $a_0$; unit-term control $X-V+X|X|/\Lambda_X^4$) — which pins the slope of the clock-rate landscape where it
+    is already steep rather than flattening the field — while the quartic self-interaction $V(\phi)=\lambda\phi^4/4$
+    supplies the canonical matter-hosting amplitude-sector completion. What is fixed is the
     admissible branch itself: on the universal coupling $\beta_A = -1$, the inverse-power
     chameleon family admits no positive-density equilibrium and predicts the wrong environmental
     direction, and is excluded by constraint F1. The derivation below therefore uses the
     canonical matter-hosting potential — the quartic self-interaction retained in Paper 0 as the
-    amplitude-sector candidate — rather than the excluded branch.
+    amplitude-sector completion — rather than the excluded branch.
 </p>
 
 <h2>C.1 Motivation</h2>
@@ -178,8 +178,9 @@ Filter out foreground contaminants identified in literature.
     $V(\phi) = \lambda\phi^4/4$, the minimal admissible self-interaction for $\beta_A = -1$.
     The following derivation shows how such a microscopic framework could, in principle,
     produce the unsuppressed geometric factor of $\sim 10^6$, which is then heavily attenuated
-    by environmental screening down to the empirically observed
-    $\kappa_{\text{MSP}}^{\text{emp}} \approx 0.05$ response coefficient.
+    by environmental screening ($\mathcal{S}_{\text{MSP}} \approx 0.04$) down to the empirically
+    inferred $\kappa_{\text{MSP}}^{\text{emp}} \approx 3.8\times10^{4}$ response coefficient
+    (Step 44).
 </p>
 
 <h2>C.2 Effective Potential and Field Equilibrium</h2>
@@ -222,7 +223,7 @@ Filter out foreground contaminants identified in literature.
     ones (clusters, cosmology). The quartic self-coupling is fixed by the corpus
     operative coupling $\lambda_{\rm Cassini} = 10^{5}\lambda_{\rm ref} \approx
     7.5 \times 10^{-66}$ — the branch consistent with the corrected
-    linear-in-$S_\Sigma$ Cassini evaluation (Paper 0, step\_03; the fiducial
+    linear-in-$S_\Sigma$ Cassini evaluation (Paper 0, step_03; the fiducial
     reference normalization $\lambda_{\rm ref} \approx 7.5 \times 10^{-71}$
     fails that bound by $\sim250\times$). The terrestrial saturation scale
     $R_T = \lambda_T$ of Paper 0 is a geometric identification
@@ -311,19 +312,36 @@ Filter out foreground contaminants identified in literature.
     diffuse cluster volume retains the lighter, active-shear field — yielding an aggregate
     attenuation of order $\mathcal{S} \sim 10^{-8}$ at the in-equation level.
     This strong attenuation squashes the unsuppressed $\sim 10^6$ coupling down to the
-    observed $\kappa_{\text{MSP}}^{\text{emp}} \approx 0.05$ response coefficient. This demonstrates
-    <em>one possible</em> microscopic origin for the screened coupling, but the
-    empirical value is ultimately determined directly from data, not from this or any other transfer model.
+    inferred $\kappa_{\text{MSP}}^{\text{emp}} \approx 3.8\times10^{4}$ response coefficient
+    — equivalently $\kappa_{\text{MSP}}^{\text{emp}}/\kappa_{\rm bare} = \mathcal{S}_{\text{MSP}}
+    \approx 0.04$ (Step 44).
+
+    In the corpus-wide transfer architecture (Paper 0 §7; Paper 11, Step 62,
+    <code>step_62_q_structure_derivation.json</code>), the unsuppressed $\sim 10^6$ magnitude-sector
+    reference scale $\kappa_{\rm canonical} = 0.96 \times 10^6$ mag is grounded directly in the
+    volumetric Temporal-Topology susceptibility ratio $\rho_T/\bar\rho_{\rm proc}$: for a classical
+    Cepheid at the $P_0 = 10$ d pivot ($Q = 0.041$ d), the fundamental-mode period–mean-density
+    relation $\langle\rho\rangle(10\text{ d}) = 2.367\times 10^{-5}\ {\rm g\,cm^{-3}}$ yields
+    $\rho_T/\langle\rho\rangle(10\text{ d}) = 8.450\times 10^5$ at $\rho_T = 20\ {\rm g\,cm^{-3}}$,
+    which multiplied by the Wesenheit Leavitt projector $\Gamma_{\rm PL} = |b_W|/\ln 10 = 1.416$ mag at
+    the unit-transport benchmark $\lambda_0 = 1$ (with bare coupling $|\beta_A| = 1$ fixed by Paper 0) predicts $|\kappa_{P^2}^{\rm pred}(\lambda_0=1)| = 1.196\times 10^6$ mag,
+    matching the direct SH0ES $P^2$-carrier fit $(1.191 \pm 0.480)\times 10^6$ mag to $0.5\%$
+    ($\lambda_0 = 0.995 \pm 0.401$, inverting to $\rho_T^{\rm (Cepheid)} = 19.91 \pm 8.02\ {\rm g\,cm^{-3}}$).
+    While the Cepheid and galaxy inference channels (Papers 11–12) sample this unscreened diffuse-envelope
+    amplification directly (with only the order-unity coupled-envelope acoustic weight $\lambda_0 \approx 1$
+    remaining as the registered microphysical closure target), the globular-cluster pulsar timing observable
+    compounds the diffuse cluster core potential with the self-screened compact-endpoint boundary,
+    attenuating the unsuppressed $\sim 10^6$ scale by $S_{\rm MSP} \approx 0.030\text{--}0.040$.
 </p>
 
 <p>
-    The pipeline (step_44_kappa_msp_prior.json) provides a complementary
+    The pipeline (step_44_kappa_msp_prior.json) provides the corresponding
     data-driven normalisation: by inverting the observed 0.63 dex raw excess
     with real cluster parameters (core radii 0.1–0.5 pc, 64 pulsars across
     7 clusters), it derives a full response coefficient
     $\tilde\kappa_{\rm MSP} = (2.9 \pm 4.5)\times 10^4$ with an effective
     screening factor $S_{\rm MSP} \approx 0.030$ relative to the unsuppressed
-    $\sim\!10^6$ scale. The density-dependent screening factor
+    $\kappa_{\rm canonical} = 0.96\times 10^6$ scale. The density-dependent screening factor
     $\mathcal{S} \sim 10^{-8}$ and the pipeline's geometric suppression
     factor $S_{\rm MSP} \approx 0.030$ operate at different levels of the
     normalisation hierarchy: $\mathcal{S}$ suppresses the unsuppressed microscopic

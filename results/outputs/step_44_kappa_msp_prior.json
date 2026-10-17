@@ -1,14 +1,14 @@
 {
   "meta": {
     "script": "step_44_kappa_msp_prior.py",
-    "timestamp_utc": "2026-09-13T10:13:00.143246+00:00",
+    "timestamp_utc": "2026-10-17T21:32:14.774863+00:00",
     "description": "\u03ba_MSP empirical + screening factor from real pulsar data"
   },
   "inputs": {
     "observed_raw_excess_dex": 0.6295730049318884,
     "f_accel_dominated": 0.45,
-    "total_gc_pulsars": 64,
-    "n_clusters": 7,
+    "total_gc_pulsars": 70,
+    "n_clusters": 8,
     "kappa_bare_paper11": 960000.0
   },
   "cluster_breakdown": [
@@ -16,77 +16,85 @@
       "cluster": "47_Tuc",
       "n_pulsars": 20,
       "phi_c2": 1.3294111162312035e-07,
-      "a_mean_mps2": 1.772773587769498e-07,
-      "delta_pdot_frac": 177.3956225253,
-      "tep_factor": 2.3583171255588833e-05
+      "a_mean_mps2": 1.359423652666021e-07,
+      "delta_pdot_frac": 136.03305396924827,
+      "tep_factor": 1.808438541215979e-05
     },
     {
       "cluster": "M15",
       "n_pulsars": 8,
       "phi_c2": 1.914352007372933e-07,
-      "a_mean_mps2": 6.653596486996e-07,
-      "delta_pdot_frac": 665.8035177114076,
-      "tep_factor": 0.00012745823006467933
+      "a_mean_mps2": 5.00660052228943e-07,
+      "delta_pdot_frac": 500.9940482611171,
+      "tep_factor": 9.590789619705616e-05
     },
     {
       "cluster": "M13",
       "n_pulsars": 5,
       "phi_c2": 5.2209600201079984e-08,
-      "a_mean_mps2": 4.496752166556439e-08,
-      "delta_pdot_frac": 44.997520012239214,
-      "tep_factor": 2.349302529879105e-06
+      "a_mean_mps2": 3.473830413283669e-08,
+      "delta_pdot_frac": 34.761478451804564,
+      "tep_factor": 1.814882892367173e-06
     },
     {
       "cluster": "Terzan_5",
       "n_pulsars": 10,
       "phi_c2": 5.982350023040416e-07,
-      "a_mean_mps2": 1.7648982696449826e-06,
-      "delta_pdot_frac": 1766.0756534139252,
-      "tep_factor": 0.0010565282725891914
+      "a_mean_mps2": 1.339655150144241e-06,
+      "delta_pdot_frac": 1340.548849377159,
+      "tep_factor": 0.0008019632439958251
     },
     {
       "cluster": "M28",
       "n_pulsars": 10,
       "phi_c2": 9.970583371734027e-08,
-      "a_mean_mps2": 1.948099095918416e-07,
-      "delta_pdot_frac": 194.93986950484484,
-      "tep_factor": 1.9436642213730073e-05
+      "a_mean_mps2": 1.5033670555489787e-07,
+      "delta_pdot_frac": 150.4369968861553,
+      "tep_factor": 1.4999446196467037e-05
+    },
+    {
+      "cluster": "M62",
+      "n_pulsars": 6,
+      "phi_c2": 2.658822232462407e-07,
+      "a_mean_mps2": 5.413154369159326e-07,
+      "delta_pdot_frac": 541.676554619012,
+      "tep_factor": 0.00014402216662246664
     },
     {
       "cluster": "NGC_6440",
       "n_pulsars": 6,
       "phi_c2": 4.466821350536844e-07,
-      "a_mean_mps2": 1.4258487603618036e-06,
-      "delta_pdot_frac": 1426.7999603353605,
-      "tep_factor": 0.0006373260525771111
+      "a_mean_mps2": 1.0823419367912712e-06,
+      "delta_pdot_frac": 1083.063979444234,
+      "tep_factor": 0.00048378533073789023
     },
     {
       "cluster": "NGC_6752",
       "n_pulsars": 5,
       "phi_c2": 3.8287040147458666e-08,
-      "a_mean_mps2": 5.2007568838846784e-08,
-      "delta_pdot_frac": 52.04226368130098,
-      "tep_factor": 1.9925442389306005e-06
+      "a_mean_mps2": 3.9917579583023235e-08,
+      "delta_pdot_frac": 39.94420905572705,
+      "tep_factor": 1.5293455357751036e-06
     }
   ],
   "population_average": {
-    "avg_tep_factor": 0.00025151006192133035,
-    "std_tep_factor": 0.00038590264694124627
+    "avg_tep_factor": 0.00018688777008636314,
+    "std_tep_factor": 0.0002745975908562285
   },
   "derived": {
-    "kappa_msp_empirical": 28818.0,
-    "kappa_msp_empirical_uncertainty": 44629.1,
+    "kappa_msp_empirical": 38782.7,
+    "kappa_msp_empirical_uncertainty": 21731.9,
     "formula": "\u03ba_MSP^emp = (10^raw_dex - 1) / (f_accel \u00d7 <\u03a6/c\u00b2 \u00b7 \u03b4\u1e56_accel/\u1e56_int>)"
   },
   "screening": {
-    "effective_screening_factor_S_MSP": 0.03,
-    "S_MSP_uncertainty": 0.0465,
-    "interpretation": "Dense-cluster geometric suppression (higher \u03c1\u2080, smaller R_c) reduces bare \u03ba=1e+06 to effective \u03ba=2.9e+04; not pulsar-specific self-screening"
+    "effective_screening_factor_S_MSP": 0.0404,
+    "S_MSP_uncertainty": 0.0226,
+    "interpretation": "Dense-cluster geometric suppression (higher \u03c1\u2080, smaller R_c) reduces bare \u03ba=1e+06 to effective \u03ba=3.9e+04; not pulsar-specific self-screening"
   },
   "cross_paper": {
     "paper_11_bare_kappa_cep": 960000.0,
     "paper_11_kappa_cep_unc": 430000.0,
-    "tension_sigma": 2.153969329409496,
+    "tension_sigma": 2.1396350828332147,
     "resolution": "Resolved via dense-cluster geometric suppression: bare coefficient ~10\u2076, effective in dense GCs ~10\u2074"
   }
 }

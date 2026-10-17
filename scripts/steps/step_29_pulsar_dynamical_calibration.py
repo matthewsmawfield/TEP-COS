@@ -82,41 +82,42 @@ def predict_newtonian_shift(cluster_params, n_pulsars=1000):
     rc = cluster_params["rc"]
     rh = cluster_params["rh"]
     
-    # Simulate pulsar positions and velocities
-    # Pulsars follow density profile ~ (1 + (r/rc)^2)^(-3/2)
-    
-    # Generate positions
-    r_pulsars = np.random.exponential(scale=rc, size=n_pulsars)
-    r_pulsars = np.clip(r_pulsars, 0.01, 10*rh)  # Physical limits
+    # Simulate pulsar positions and velocities.
+    # The potential used below is Plummer-like, phi = phi0 / sqrt(1+x^2);
+    # the self-consistent density is rho ∝ (1+x^2)^(-5/2) and the enclosed
+    # mass is M(r) = M x^3 (1+x^2)^(-3/2).  Pulsar positions are drawn from
+    # the 3-D number-density profile n(r) ∝ r^2 (1+x^2)^(-5/2) by inverse-CDF
+    # sampling on a tabulated cumulative grid (reproducible under RANDOM_SEED).
+    x_grid = np.geomspace(1e-3, max(30.0, 10.0 * rh / rc), 20000)
+    cdf_integrand = x_grid ** 2 / (1.0 + x_grid ** 2) ** 2.5
+    cdf = np.concatenate([[0.0], np.cumsum(0.5 * (cdf_integrand[1:] + cdf_integrand[:-1]) * np.diff(x_grid))])
+    cdf /= cdf[-1]
+    u = np.random.uniform(0.0, 1.0, size=n_pulsars)
+    r_pulsars = rc * np.interp(u, cdf, x_grid)
+    r_pulsars = np.clip(r_pulsars, 0.01, 10 * rh)  # Physical limits
     
     # Calculate line-of-sight acceleration
     G = 4.302e-3  # pc (km/s)^2 / M_sun
     
     # Acceleration varies with position
     # a ~ G*M(r)/r^2, but M(r) increases with r in King model
-    a_los = []
+    x = r_pulsars / rc
+    # Plummer-consistent enclosed mass: continuous at rc, a -> 0 as r -> 0.
+    M_enclosed = M * x ** 3 / (1.0 + x ** 2) ** 1.5
+    # Line-of-sight component (random orientation); sign is retained because
+    # pulsars on the far side accelerate toward us, which DECREASES |Pdot|.
+    cos_theta = np.random.uniform(-1, 1, size=n_pulsars)
+    a_los = G * M_enclosed / r_pulsars ** 2 * cos_theta
     
-    for r in r_pulsars:
-        # Enclosed mass (simplified King model - uniform density core)
-        if r < rc:
-            M_enclosed = M * (r/rc)**3  # Core: uniform density sphere
-        else:
-            # Beyond core: King model falloff with finite mass
-            # King model: M(r) = M * [1 - 1/sqrt(1+(r/rc)²)] approximately
-            x = r / rc
-            M_enclosed = M * (1 - 1/np.sqrt(1 + x**2))
-        
-        # Line-of-sight component (random orientation)
-        cos_theta = np.random.uniform(-1, 1)
-        a = G * M_enclosed / r**2 * cos_theta
-        a_los.append(a)
-    
-    a_los = np.array(a_los)
-    
-    # Convert to pdot/p and log|Ṗ|
+    # Convert to pdot_acc and log|Ṗ|
     c = 3e5  # km/s
     pc_to_km = 3.086e13  # km/pc - CRITICAL UNIT CONVERSION
-    pdot_over_p = a_los / (c * pc_to_km)  # Now dimensionless: (km/s)^2/km / (km/s) = 1/s
+    P_SPIN_S = 5.0e-3    # canonical MSP period (s); matches step_37 convention
+    # Pdot_acc = P * a_los / c.  a_los is in (km/s)^2/pc, so a_los/c is in
+    # 1/s after the pc->km conversion; multiplying by P gives dimensionless
+    # Pdot_acc.  (The previous version compared a/c directly to Pdot,
+    # dropping the period factor and overstating the shift by ~1/P ~ 200x.)
+    pdot_acc = P_SPIN_S * a_los / (c * pc_to_km)  # dimensionless s/s
     
     # Load intrinsic field MSP spin-down from step_02 if available
     s10_path = Path("results/outputs/step_02_pulsar_population_controls.json")
@@ -127,8 +128,12 @@ def predict_newtonian_shift(cluster_params, n_pulsars=1000):
     else:
         log_pdot_intrinsic = -19.5  # Fallback: typical MSP intrinsic spin-down
     
-    # Observed spin-down includes acceleration contribution
-    log_pdot_obs = log_pdot_intrinsic + np.log10(1 + np.abs(pdot_over_p) / 10**log_pdot_intrinsic)
+    # Observed spin-down is the signed sum; the observable is |Pdot_obs|.
+    # Pulsars whose line-of-sight acceleration opposes the intrinsic
+    # spin-down land BELOW the intrinsic value, producing the cancellation
+    # floor that a positive-only |a| treatment removes.
+    pdot_obs = 10 ** log_pdot_intrinsic + pdot_acc
+    log_pdot_obs = np.log10(np.abs(pdot_obs))
     
     # Calculate shift from intrinsic
     shift_dex = np.mean(log_pdot_obs) - log_pdot_intrinsic
@@ -139,7 +144,8 @@ def predict_newtonian_shift(cluster_params, n_pulsars=1000):
         "predicted_std": float(shift_std),
         "n_pulsars": n_pulsars,
         "a_los_mean": float(np.mean(np.abs(a_los))),
-        "a_los_std": float(np.std(a_los))
+        "a_los_std": float(np.std(a_los)),
+        "p_spin_s": P_SPIN_S
     }
 
 
@@ -177,8 +183,10 @@ def analyze_dynamical_calibration():
     # Compare to observed (from step_02 results)
     # CRITICAL METHODOLOGY NOTE:
     # The observed residual (0.59 dex) is AFTER population controls (period+B-proxy matching).
-    # The Newtonian prediction (17.11 dex) is a RAW shift without such controls.
-    # For a fair comparison, we should either:
+    # The Newtonian prediction (~1.8 dex) is a RAW shift without such controls.
+    # The deficit is therefore quoted both against the controlled-residual
+    # uncertainty and against the inter-cluster scatter of the prediction
+    # (the honest model-systematic scale).
     s510_path = REPO_ROOT / "results" / "outputs" / "step_02_pulsar_population_controls.json"
     if not s510_path.exists():
         print(f"ERROR: Required input file not found: {s510_path}")
@@ -200,18 +208,23 @@ def analyze_dynamical_calibration():
     print(f"\nNewtonian Prediction (raw, no controls): {avg_predicted:.2f} ± {std_predicted:.2f} dex")
     print(f"Observed Residual (after population controls): {observed_residual:.2f} ± {observed_uncertainty:.2f} dex")
     print(f"\nNote: The Newtonian prediction is a raw shift; the observed is after")
-    print(f"period+B-proxy matching. Even the minimum controlled residual is")
-    print(f"far below the Newtonian expectation.")
+    print(f"period+B-proxy matching. The prediction scatter across clusters is")
+    print(f"the relevant model-systematic scale for the deficit, not the")
+    print(f"controlled-residual uncertainty alone.")
     
-    # Key test: Compare minimum observed to maximum predicted
-    # The observed residual (0.59 dex) represents the signal AFTER removing
-    # field-like populations. If Newtonian dynamics dominated, we would expect
-    # ~3.9 dex even after such controls (since acceleration affects all GC pulsars).
+    # Key comparison: the raw Newtonian prediction vs the controlled
+    # observed residual.  The deficit is quoted both against the observed
+    # uncertainty and against the inter-cluster scatter of the prediction,
+    # the latter being the honest model-systematic scale.
     difference = observed_residual - avg_predicted
     difference_sigma = difference / observed_uncertainty
+    deficit_ratio = avg_predicted / observed_residual if observed_residual else np.nan
+    deficit_sigma_model = abs(difference) / max(std_predicted, 1e-9)
     
     print(f"\nDifference (Observed - Predicted): {difference:.2f} dex")
-    print(f"Significance: {difference_sigma:.1f}σ")
+    print(f"Significance vs observed uncertainty: {difference_sigma:.1f}σ")
+    print(f"Deficit ratio (predicted/observed): {deficit_ratio:.2f}x")
+    print(f"Deficit vs inter-cluster prediction scatter: {deficit_sigma_model:.1f}σ")
     
     # Interpretation
     if abs(difference) > 2 * observed_uncertainty:
@@ -248,6 +261,8 @@ def analyze_dynamical_calibration():
         "comparison": {
             "difference_dex": float(difference),
             "significance_sigma": float(difference_sigma),
+            "deficit_ratio": float(deficit_ratio),
+            "deficit_sigma_model_scatter": float(deficit_sigma_model),
             "interpretation": interpretation,
             "verdict": verdict
         }

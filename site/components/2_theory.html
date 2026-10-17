@@ -6,7 +6,7 @@
     with precision tests in the screened Solar System regime. This section
     establishes the theoretical basis for the time-domain probe examined in this
     work: pulsar spin-down in globular clusters, based on the continuous geometric
-    screening framework established in TEP v0.15 Jakarta. This theoretical foundation is
+    screening framework established in TEP v0.16 Jakarta. This theoretical foundation is
     necessary to derive the specific quantitative predictions (Pulsar Ṗ drift)
     tested in the subsequent sections.
 </p>
@@ -77,8 +77,7 @@
         <li>
             Two-metric structure: Gravity is described by a
             Lorentzian metric $g_{\mu\nu}$ (Einstein frame); matter fields and
-            clocks couple to a causal (matter) metric $\tilde{g}_{\mu\nu}$
-            (Jordan frame). The metrics are related by a disformal map:
+            clocks couple to the canonical causal (matter) metric $\tilde{g}_{\mu\nu} = -A_{\rm loc}^2(u_{\rm grav}(\mathbf x))U_\mu U_\nu + A_{\rm sp}^2(u_{\rm drift}(t,\mathbf x))\Pi_{\mu\nu} + B(\phi)\Pi_\mu^\alpha\Pi_\nu^\beta\nabla_\alpha\phi\nabla_\beta\phi$ ($U_\mu\equiv-\nabla_\mu\bar\phi/\sqrt{2\bar X}$, $\Pi_{\mu\nu}=g_{\mu\nu}+U_\mu U_\nu$; Paper 0, §2.2, Step 80), written in conformal–disformal shorthand as
             $\tilde{g}_{\mu\nu} = A^2(\phi) g_{\mu\nu} + B(\phi) \nabla_\mu\phi
             \nabla_\nu\phi$, where $A(\phi) = \exp(\beta_A \phi/M_{\rm Pl})$ is
             the universal conformal factor.
@@ -103,7 +102,7 @@
 </div>
 
 <p>
-    The Action and Field Equations. The action in the Einstein
+    The Action and Field Equations. For comparison, the canonical scalar baseline in the Einstein
     frame is:
 </p>
 
@@ -117,7 +116,7 @@
 
 <p>
     where $\tilde{g}_{\mu\nu} = A^2(\phi) g_{\mu\nu} + B(\phi) \nabla_\mu\phi
-    \nabla_\nu\phi$ and the canonical kinetic term ensures standard hyperbolic evolution. Variation yields the Einstein equations
+    \nabla_\nu\phi$ (in isotropic shorthand). The operative TEP screening realization used across the corpus replaces this canonical scalar kinetic sector with the selected two-branch $P(X,\phi)$ completion $P(X,\phi)=-V(\phi)+\frac{2k}{3\Lambda_X^2}X|X|^{1/2}+X|X|/\Lambda_X^4$ ($P_{,X}=k\sqrt{\xi}+2\xi$, $k\simeq 16.03$; Paper 0, §2.2), for which static ellipticity and time-dependent hyperbolicity are certified on the adopted branch; the canonical equations below are retained to display the baseline scalar-tensor sourcing structure. Variation of the baseline action yields the Einstein equations
     $G_{\mu\nu} = M_{\rm Pl}^{-2} [T_{\mu\nu}(\phi) + T_{\mu\nu}^{\rm (matt)}]$
     and the scalar field equation:
 </p>
@@ -140,7 +139,7 @@
     <h4>Observable Response Coefficient</h4>
     <p>
         <em>$\kappa_{\text{MSP}}$ is treated as an observable pulsar response coefficient.</em>
-        It is not identified with the microscopic coupling β. Solar-System PPN and MICROSCOPE tests constrain the environmentally screened effective source and composition-dependent couplings rather than directly determining the unsuppressed conformal parameter β. The observable κ<sub>MSP</sub> is connected to the microscopic sector only through the environmental transfer function, whose derivation from the action is not yet complete; κ<sub>MSP</sub> is therefore a phenomenological response coefficient fitted to data, in the PPN strategy of parameterising the observable response separately from the microscopic coupling. It represents the effective amplified response in the active-shear globular 
+        It is not identified with the microscopic coupling $\beta_A$. Solar-System PPN and MICROSCOPE tests constrain the environmentally screened effective source and composition-dependent couplings rather than directly determining the unsuppressed conformal parameter $\beta_A$. In the corpus-wide transfer architecture (Paper 0 §7; Paper 11, Step 62), the unsuppressed $\sim 10^6$ reference scale arises from the volumetric saturation-to-envelope density ratio $\rho_T/\bar\rho_{\rm proc}$ at $\rho_T \approx 20\ {\rm g\,cm^{-3}}$ and the unit-transport benchmark $\lambda_0 = 1$ (with bare coupling $|\beta_A| = 1$ fixed by Paper 0), while the pulsar-timing channel compounds the cluster core potential with the self-screened compact-endpoint boundary. In the PPN strategy of parameterising the observable response separately from the microscopic coupling, $\kappa_{\text{MSP}}$ is fitted directly to data as the effective response in the active-shear globular 
         cluster environment (Appendix C). The empirical phenomenology is:
     </p>
     <div class="equation">
@@ -173,7 +172,7 @@
     A complementary pipeline computation (step_44_kappa_msp_prior.json)
     inverts the observed 0.63 dex raw excess with real cluster parameters
     to derive a separately normalised full response coefficient
-    $\tilde\kappa_{\rm MSP} = (2.9 \pm 4.5)\times 10^4$ (dimensionless).
+    $\tilde\kappa_{\rm MSP} = (3.9 \pm 2.2)\times 10^4$ (dimensionless).
     This quantity absorbs the potential depth and acceleration fraction
     into a single response coefficient suitable for cross-probe comparison
     with the Cepheid coefficient $\kappa_{\rm Cep} \sim 10^6$ mag
@@ -476,8 +475,8 @@
         expected of a response already deeper into saturation than the
         linearized estimate. Full N-body/CMC
         simulations confirm that the Newtonian-calibrated forward model
-        <em>overpredicts</em> the spin-down excess by a factor of 3.1×
-        ($+1.88$ dex predicted vs $+0.61$ dex observed, $12.7\sigma$ tension).
+        <em>overpredicts</em> the spin-down excess by a factor of 3.2×
+        ($+1.93$ dex structurally rescaled ($+1.83$ dex pooled) predicted vs $+0.61$ dex observed, $13.2\sigma$ nominal / $8.6\sigma$ ensemble-propagated / $4.1\sigma$ fully-correlated ceiling tension).
         Because the drift channel is bounded below by its Newtonian value,
         this shortfall cannot be a sub-Newtonian drift: it quantifies how far
         the specific forward model — Newtonian-inferred cluster potentials

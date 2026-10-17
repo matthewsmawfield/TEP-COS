@@ -2,7 +2,7 @@
 
 ## Executive Summary
 
-Standard dynamics fails on amplitude (22.3σ overprediction) and slope (4.5σ discrepancy). No tested exotic mechanism addresses all three failures simultaneously (0/5). TEP is favored by Bayes factor 3.09e+121 (Decisive evidence).
+Standard dynamics fails on amplitude (13.2σ nominal, 13.0σ model-aware, 8.6σ ensemble-propagated, 4.1σ full uncertainty stack) and slope (4.1σ discrepancy). No tested exotic mechanism addresses all three failures simultaneously (0/5). TEP is favored by Bayes factor 1.32e+44 (Decisive evidence).
 
 ---
 
@@ -12,9 +12,9 @@ Any exotic but still-GR explanation must simultaneously address three independen
 
 | Observable | Observed | CMC Predicted | Discrepancy | Significance |
 |------------|----------|---------------|-------------|--------------|
-| Raw Excess | 0.61 | 1.88 | 1.27 | 22.3σ |
-| Density Scaling | 0.39 | 0.75 | 0.35 | 4.5σ |
-| Binary Inversion | -0.33 | 0.26 | 0.59 | Opposite signs |
+| Raw Excess | 0.61 | 1.93 | 1.32 | 13.2σ |
+| Density Scaling | 0.39 | 0.75 | 0.35 | 4.1σ |
+| Binary Inversion | -0.33 | -0.20 | 0.13 | Same sign; consistent magnitude |
 
 
 ---
@@ -48,9 +48,9 @@ physical causes (dependence structure unknown). Each mechanism is evaluated inde
 
 ## 3. Bayesian Model Comparison
 
-- **Bayes factor (TEP vs exotic-GR)**: 3.09e+121
+- **Bayes factor (TEP vs exotic-GR)**: 1.32e+44
 - **Evidence strength**: Decisive
-- **Interpretation**: TEP is favored over exotic-GR by factor of 3.09e+121 (Decisive)
+- **Interpretation**: TEP is favored over exotic-GR by factor of 1.32e+44 (Decisive; 2.03e+11 under full uncertainty stack)
 
 ---
 
@@ -71,4 +71,4 @@ are constrained:
 3. CMC parameter sensitivity tests exclude standard explanations
 
 The standard scientific criterion—falsification of the null hypothesis—favors TEP over
-exotic-GR by 30855373602915930579688738270412783418665115076115927528806101661018478992434732475786164429266110403135157547697327570944.0:1 odds (Decisive evidence).
+exotic-GR by 131694387240801958253108066553881105811898368.0:1 odds (Decisive evidence).

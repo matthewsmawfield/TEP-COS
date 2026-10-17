@@ -168,7 +168,7 @@ def generate_report():
         s33['model_b_mixed_sigma'] = s33.get('rejection_sigma', 0)
 
     cmc_available = bool(s42 and s42.get('clusters') and s42.get('summary', {}).get('average_ratio') is not None)
-    s41_available = bool(s41 and s41.get('gc_field_difference'))
+    s41_available = bool(s41 and s41.get('comparison'))
 
     if cmc_available:
         key_finding = (
@@ -217,9 +217,13 @@ def generate_report():
             "across the tested ρ_intra sweep"
         )
     elif s41_available:
+        comp = s41['comparison']
         primary_detection_line = (
-            f"- Pulsar GC-Field difference: **{s41['gc_field_difference']['significance']:.1f}σ** "
-            f"(p = {s41['gc_field_difference']['p_value']:.1e})"
+            f"- Pulsar dynamical calibration: observed **{s41['observed']['residual_dex']:.2f} ± "
+            f"{s41['observed']['uncertainty_dex']:.2f} dex** vs Newtonian prediction "
+            f"**{s41['newtonian']['mean_predicted_shift_dex']:.2f} ± "
+            f"{s41['newtonian']['std_predicted_shift_dex']:.2f} dex** "
+            f"(deficit {comp['deficit_ratio']:.2f}×, verdict {comp['verdict']})"
         )
     else:
         primary_detection_line = "- Pulsar GC-Field difference: **not available**"

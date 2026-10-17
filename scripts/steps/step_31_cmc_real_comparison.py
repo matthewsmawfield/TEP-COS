@@ -60,8 +60,8 @@ CLUSTERS_WITH_REAL_DATA = {
         "n_pulsars_real": 8,
         "log_rho_c": 4.5,
         "rc": 0.24,
-        "cmc_available": False,
-        "nbody_prediction_shift": None,  # Pending corrected CMC analysis
+        "cmc_available": True,
+        "nbody_prediction_shift": None,  # Loaded dynamically from step_37
     },
     "M15": {
         "n_pulsars_real": 10,
@@ -197,10 +197,18 @@ def analyze_real_vs_synthetic(cluster_name, cluster_info, actual_cluster_data, c
         print(f"    Warning: No CSV data found for this cluster, skipping")
         return None
 
-    # Compare to N-body prediction: prefer per-cluster from step_37, fallback to config
+    # Compare to N-body prediction: prefer structurally rescaled per-cluster from step_37,
+    # with unscaled grid-cell excess recorded alongside for transparency.
     nbody_pred = cluster_info.get('nbody_prediction_shift')
-    if nbody_pred is None and cluster_name in cmc_cluster_details:
-        nbody_pred = cmc_cluster_details[cluster_name].get('predicted_excess')
+    nbody_pred_unscaled = None
+    grid_model = None
+    if cluster_name in cmc_cluster_details:
+        cd = cmc_cluster_details[cluster_name]
+        nbody_pred_unscaled = cd.get('predicted_excess')
+        sr = cd.get('structurally_rescaled') or {}
+        grid_model = sr.get('grid_model')
+        if nbody_pred is None:
+            nbody_pred = sr.get('rescaled_predicted_excess_dex', nbody_pred_unscaled)
 
     if nbody_pred is None:
         print(f"    N-body prediction: pending corrected CMC analysis")
@@ -232,7 +240,9 @@ def analyze_real_vs_synthetic(cluster_name, cluster_info, actual_cluster_data, c
         "cluster": cluster_name,
         "n_pulsars_real": n_pulsars_actual,
         "log_rho_c": cluster_info['log_rho_c'],
+        "grid_model": grid_model,
         "nbody_predicted_shift": nbody_pred,
+        "nbody_predicted_shift_unscaled_grid": nbody_pred_unscaled,
         "observed_shift_estimate": observed_shift,
         "ratio": ratio,
         "status": status,

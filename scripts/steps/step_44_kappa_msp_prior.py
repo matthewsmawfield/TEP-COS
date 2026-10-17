@@ -80,7 +80,7 @@ def main():
 
     name_map = {
         "47 Tuc": "47_Tuc", "M15": "M15", "M13": "M13",
-        "Terzan 5": "Terzan_5", "M28": "M28", "M62": "M62",
+        "Terzan 5": "Terzan_5", "M28": "M28", "M62": "M62", "NGC 6266": "M62",
         "M5": "M5", "M3": "M3", "M53": "M53",
         "Omega Cen": "Omega_Cen", "M2": "M2",
         "NGC 6440": "NGC_6440", "NGC 6544": "NGC_6544",
@@ -128,15 +128,17 @@ def main():
     # Empirical κ_MSP from pulsar data
     kappa_msp_emp = observed_frac / (F_ACCEL_DOM * avg_tep_factor)
 
-    # Uncertainty
+    # Uncertainty: standard error of the cluster-ensemble mean (SEM = std / sqrt(N_cl))
     tep_values = [c["tep_factor"] for c in cluster_factors]
     std_tep = (sum((t - avg_tep_factor)**2 for t in tep_values) / len(tep_values))**0.5
-    rel_err_avg = std_tep / avg_tep_factor
+    sem_tep = std_tep / math.sqrt(len(tep_values))
+    rel_err_avg = sem_tep / avg_tep_factor
     obs_frac_hi = 10**(observed_raw_dex + observed_raw_se) - 1.0
     obs_frac_lo = 10**(observed_raw_dex - observed_raw_se) - 1.0
     rel_err_obs = (obs_frac_hi - obs_frac_lo) / (2 * observed_frac)
     rel_err_kappa = math.sqrt(rel_err_avg**2 + rel_err_obs**2)
     kappa_msp_emp_unc = kappa_msp_emp * rel_err_kappa
+    kappa_msp_emp_unc_single_cluster_sd = kappa_msp_emp * math.sqrt((std_tep / avg_tep_factor)**2 + rel_err_obs**2)
 
     # Effective screening factor: S_MSP = κ_MSP^emp / κ_MSP^bare
     s_msp = kappa_msp_emp / KAPPA_BARE

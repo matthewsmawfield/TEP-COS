@@ -1,7 +1,41 @@
 {
-  "baseline_difference_dex": 1.2684884664070144,
+  "primary_estimator": "structurally_rescaled",
   "observed_excess_dex": 0.6116545605061704,
-  "cmc_predicted_excess_dex": 1.880143026913185,
+  "observed_error_dex": 0.1,
+  "estimators": {
+    "record_pooled_legacy": {
+      "excess_dex": 1.830819412944976,
+      "model_sem_dex": 0.22187617301358287,
+      "caveat": "duplicate-weighted pooled rows; retained as diagnostic",
+      "difference_dex": 1.2191648524388055,
+      "sigma_obs_err_only": 12.191648524388054,
+      "sigma_model_aware": 5.0095083074718625,
+      "sigma_ensemble_propagated": 7.9255217133492275,
+      "sigma_full_stack": 3.7881902088838735
+    },
+    "unique_model_unscaled": {
+      "excess_dex": 0.8177615808004715,
+      "model_sem_dex": 0.22187617301358287,
+      "caveat": "grid-cell profiles without cluster structural matching",
+      "difference_dex": 0.20610702029430106,
+      "sigma_obs_err_only": 2.0610702029430104,
+      "sigma_model_aware": 0.846886972116347,
+      "sigma_ensemble_propagated": 1.3398562641865406,
+      "sigma_full_stack": 0.6404159328406255
+    },
+    "structurally_rescaled": {
+      "excess_dex": 1.9316965926145222,
+      "model_sem_dex": 0.019404109597214027,
+      "caveat": "each unique CMC realization rescaled to each cluster's observed (M, Rc); SEM is the spread of the per-realization ensemble means",
+      "difference_dex": 1.320042032108352,
+      "sigma_obs_err_only": 13.200420321083518,
+      "sigma_model_aware": 12.95871406935778,
+      "sigma_ensemble_propagated": 8.581302001185694,
+      "sigma_full_stack": 4.101635879138853
+    }
+  },
+  "baseline_difference_dex": 1.320042032108352,
+  "cmc_predicted_excess_dex": 1.9316965926145222,
   "components": {
     "observed_residual": {
       "description": "Bootstrap uncertainty on the controlled residual",
@@ -9,10 +43,10 @@
       "source": "step_02 bootstrap CI",
       "included": true
     },
-    "cmc_sampling": {
-      "description": "CMC Monte Carlo sampling variance across cluster realizations",
-      "value_dex": 0.15,
-      "source": "Per-cluster std from 148-model literature spread",
+    "cmc_model_realization": {
+      "description": "SEM of the per-realization ensemble means across the unique CMC grid models (rescaled analysis)",
+      "value_dex": 0.019404109597214027,
+      "source": "step_37 model_ensemble.realization_ensemble (measured)",
       "included": true
     },
     "cluster_structural": {
@@ -40,13 +74,31 @@
       "included": true
     }
   },
-  "stacked_uncertainty_dex": 0.3545419580247167,
-  "baseline_significance_sigma": 12.684884664070143,
-  "conservative_significance_sigma": 3.57782326660074,
+  "stacked_uncertainty_dex": 0.32183306149191804,
+  "ensemble_propagated_stack": {
+    "n_clusters": 20,
+    "components_dex": {
+      "observed_residual_dex": 0.1,
+      "cmc_model_realization_sem_dex": 0.019404109597214027,
+      "cluster_structural_ensemble_dex": 0.07483314773547883,
+      "period_matched_distribution_dex": 0.08,
+      "radial_filter_1rc_to_5rc_std_dex": 0.03108769478782836,
+      "intrinsic_spindown_ensemble_dex": 0.017888543819998316
+    },
+    "stacked_uncertainty_dex": 0.15382770958602313,
+    "ensemble_propagated_significance_sigma": 8.581302001185694,
+    "description": "20-cluster ensemble propagation scaling uncorrelated per-cluster structural (\u00b10.20/sqrt(20) dex plus \u00b10.06 dex coherent zero-point) and intrinsic spin-down (\u00b10.08/sqrt(20) dex) terms by 1/sqrt(N_cl) and using the measured 1rc-5rc core radial-filter std from step_38."
+  },
+  "baseline_significance_sigma": 13.200420321083518,
+  "model_aware_significance_sigma": 12.95871406935778,
+  "ensemble_propagated_significance_sigma": 8.581302001185694,
+  "conservative_significance_sigma": 4.101635879138853,
+  "n_unique_cmc_realizations": 14,
+  "n_cluster_selections": 20,
   "notes": [
-    "Baseline 12.7 sigma uses only observed bootstrap uncertainty (0.10 dex).",
-    "Conservative stack quadratically combines all known uncertainty sources.",
-    "Even under conservative stacking, the discrepancy remains highly significant.",
-    "Missing: systematic uncertainty in CMC-to-real-cluster mapping (epoch, population matching)."
+    "Nominal 13.2 sigma uses only the observed bootstrap uncertainty and is a diagnostic, not the claim.",
+    "Model-aware 13.0 sigma adds the measured realization-to-realization SEM of the CMC ensemble.",
+    "Conservative stack 4.1 sigma adds structural, period-distribution, radial-filter and intrinsic spin-down terms in quadrature.",
+    "The 20 cluster selections map to a small number of unique CMC realizations; duplicated realizations are not independent draws."
   ]
 }

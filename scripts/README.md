@@ -53,5 +53,5 @@ cd site && npm run build
 | `step_12_hierarchical_density_results.json` | 12 | Γ = 0.39 ± 0.08 |
 | `step_13_covariance_validation.json` | 13 | 5.6σ covariance-aware significance |
 | `step_14_cmc_literature.json` | 14 | Γ_N = 0.75, 4.1σ rejection |
-| `step_40_cmc_uncertainty_stack.json` | 40 | 12.7σ nominal, 3.6σ conservative |
-| `step_37_cmc_gold_standard.json` | 37 | 20 clusters, 18,813 MSPs |
+| `step_40_cmc_uncertainty_stack.json` | 40 | 13.2σ nominal, 8.6σ ensemble-propagated, 4.1σ conservative |
+| `step_37_cmc_gold_standard.json` | 37 | 20 cluster selections, 14 unique realizations, 9,526 evolved neutron stars (6,617 unique) |
